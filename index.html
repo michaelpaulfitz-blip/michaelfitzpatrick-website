@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Fitzpatrick — Senior Product Manager (Technical)</title>
+<meta name="description" content="Michael Fitzpatrick — Senior Product Manager (Technical) with 14 years across Engineering and Product. Based in Seattle.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
+<style>
+  /* ─────────────────────────────────────────────
+     Warm Naturalist — portable design system
+     parchment · warm ink · Georgia serif · one clay accent · hairlines
+  ───────────────────────────────────────────── */
+  :root{
+    --bone:#F0EEE6;      /* page background */
+    --paper:#FAF9F4;     /* card / surface */
+    --ink:#1F1E1B;       /* primary text */
+    --faded:#6E675C;     /* secondary text, labels */
+    --clay:#C15F3C;      /* THE accent — terracotta */
+    --clay-deep:#A64E30;
+    --moss:#5B7052;      /* positive / success */
+    --brick:#9C3A2E;     /* negative / error */
+    --hairline:#DCD6C8;  /* borders, rules */
+    --serif:Georgia,'Times New Roman',serif;
+    --maxw:980px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bone); color:var(--ink);
+    font-family:var(--serif); font-variant-numeric:tabular-nums;
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--clay); text-decoration:none}
+  a:hover{color:var(--clay-deep)}
+
+  /* ── Eyebrow label ── */
+  .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--faded); font-weight:bold; margin-bottom:14px}
+
+  /* ── Top nav ── */
+  header.nav{position:sticky; top:0; z-index:100; background:rgba(240,238,230,.92);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline)}
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:20px; flex-wrap:wrap}
+  .wordmark{font-size:20px; font-weight:bold; color:var(--ink); letter-spacing:.2px; white-space:nowrap}
+  .wordmark .dot{color:var(--clay)}
+  nav.links{display:flex; gap:22px; flex-wrap:wrap}
+  nav.links a{color:var(--faded); font-size:14px; padding-bottom:3px;
+    border-bottom:2px solid transparent; transition:color .15s, border-color .15s}
+  nav.links a:hover{color:var(--ink)}
+  nav.links a.active{color:var(--ink); border-bottom-color:var(--clay)}
+
+  /* ── Section shell ── */
+  section{max-width:var(--maxw); margin:0 auto; padding:78px 28px; scroll-margin-top:70px}
+  section + section{border-top:1px solid var(--hairline)}
+  h1{font-size:56px; line-height:1.05; letter-spacing:-1px; font-weight:bold}
+  h2{font-size:30px; line-height:1.15; letter-spacing:-.4px; margin-bottom:8px}
+  h3{font-size:20px; margin-bottom:4px}
+  p{margin-bottom:16px}
+  p:last-child{margin-bottom:0}
+  strong{font-weight:bold; color:var(--ink)}
+
+  /* ── Hero ── */
+  #home{display:grid; grid-template-columns:1.15fr .85fr; gap:52px; align-items:center;
+    padding-top:64px; padding-bottom:64px}
+  .hero-copy p{color:var(--faded); font-size:17px}
+  .hero-copy p.lede{color:var(--ink); font-size:19px; margin-top:22px; margin-bottom:22px}
+  .hero-copy h1{margin-bottom:6px}
+  .hero-portrait{position:relative}
+  .hero-portrait img{width:100%; height:auto; display:block; border:1px solid var(--hairline); border-radius:8px}
+  .portrait-fallback{width:100%; aspect-ratio:4/5; border:1px solid var(--hairline); border-radius:8px;
+    background:var(--paper); display:flex; align-items:center; justify-content:center; text-align:center;
+    color:var(--faded); font-size:13px; letter-spacing:.5px; padding:24px}
+
+  /* ── Cards ── */
+  .card{background:var(--paper); border:1px solid var(--hairline); border-radius:6px;
+    padding:26px; margin-bottom:22px}
+  .card:last-child{margin-bottom:0}
+  .card p{color:var(--faded)}
+  .card .meta{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--clay);
+    font-weight:bold; margin-bottom:10px}
+  .card .shot{width:100%; height:auto; display:block; border:1px solid var(--hairline);
+    border-radius:6px; margin-bottom:18px}
+
+  /* ── Accomplishments list ── */
+  .accomplishments{list-style:none; margin:26px 0 0}
+  .accomplishments li{padding:18px 0; border-bottom:1px solid var(--hairline); color:var(--faded)}
+  .accomplishments li:last-child{border-bottom:none}
+  .accomplishments .label{display:block; font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--ink); font-weight:bold; margin-bottom:6px}
+
+  /* ── Board of directors grid ── */
+  .board{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:28px}
+  .board .role{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--clay);
+    font-weight:bold; margin:2px 0 12px}
+  .board ul{list-style:none}
+  .board li{padding:7px 0 7px 18px; position:relative; color:var(--faded); font-size:15px; line-height:1.5}
+  .board li::before{content:''; position:absolute; left:0; top:14px; width:6px; height:6px;
+    border-radius:50%; background:var(--clay)}
+  .board .card.person{padding:0; overflow:hidden}
+  .board .card.person .face{width:100%; height:300px; object-fit:cover; object-position:center 25%;
+    display:block; border-bottom:1px solid var(--hairline)}
+  .board .card.person .card-body{padding:22px 24px 24px}
+
+  /* ── Contact ── */
+  .contact-details{display:flex; gap:56px; flex-wrap:wrap; margin-top:26px}
+  .contact-detail .label{font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--faded); font-weight:bold; display:block; margin-bottom:5px}
+  .contact-detail .val{font-size:17px; color:var(--ink)}
+
+  /* ── Disclaimer note ── */
+  .note{font-size:14px; color:var(--faded); font-style:italic; border-left:2px solid var(--hairline);
+    padding-left:16px; margin:22px 0}
+
+  /* ── Footer ── */
+  footer{border-top:1px solid var(--hairline); text-align:center; padding:36px 28px;
+    color:var(--faded); font-size:13px; letter-spacing:.3px}
+  footer .wordmark{font-size:16px}
+
+  /* ── Botanical accent (inline, self-contained) ── */
+  .sprig{position:absolute; pointer-events:none; opacity:.5}
+
+  /* ── Responsive ── */
+  @media (max-width:760px){
+    body{font-size:16px}
+    h1{font-size:40px}
+    h2{font-size:26px}
+    #home{grid-template-columns:1fr; gap:34px; padding-top:44px}
+    .hero-portrait{max-width:340px}
+    .hero-portrait .sprig{display:none}
+    .board{grid-template-columns:1fr; gap:22px}
+    .contact-details{gap:28px}
+    section{padding:56px 22px}
+    nav.links{gap:16px}
+    nav.links a{font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
+    <nav class="links">
+      <a href="#home" class="active">Home</a>
+      <a href="#portfolio">Professional Portfolio</a>
+      <a href="#about">About Me</a>
+      <a href="#board">Personal Board of Directors</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-copy">
+    <h1>Hi, I&rsquo;m Mike Fitzpatrick</h1>
+    <p class="lede">Senior Product Manager (Technical) with 14 years of progressive experience across Engineering and Product functions.</p>
+    <p>As a product manager, I&rsquo;ve led multiple products from ideation through launch across Amazon Fresh and Amazon Music. My work has included setting product strategy with <strong>executive leadership</strong>, defining requirements, partnering closely with <strong>engineering</strong> and <strong>applied science</strong> teams on implementation, collaborating with <strong>design</strong> on user experience, and working with operations and business teams to support <strong>go-to-market execution</strong>.</p>
+    <p>Earlier in my career, I worked as a software engineer in Prime Video, where I built and maintained developer tools to diagnose a multi-model orchestration workflow.</p>
+    <p>I currently work for Amazon as a Senior Product Manager &mdash; Technical, and am based in Seattle.</p>
+  </div>
+  <div class="hero-portrait">
+    <img src="WebsitePhotoCropped.webp" alt="Michael Fitzpatrick">
+    <svg class="sprig" style="bottom:10px; right:-46px; width:92px" viewBox="0 0 120 120" fill="none" stroke="#C15F3C" stroke-width="1.4">
+      <path d="M60 118 C60 80 60 40 60 6"/>
+      <path d="M60 96 C44 92 34 80 30 66 M60 96 C76 92 86 80 90 66"/>
+      <path d="M60 74 C46 70 38 60 34 48 M60 74 C74 70 82 60 86 48"/>
+      <path d="M60 52 C48 49 42 41 39 31 M60 52 C72 49 78 41 81 31"/>
+      <path d="M60 32 C51 30 47 24 45 16 M60 32 C69 30 73 24 75 16"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ── PROFESSIONAL PORTFOLIO ── -->
+<section id="portfolio">
+  <div class="eyebrow">Professional Portfolio</div>
+  <h2>Selected work &amp; accomplishments</h2>
+  <p class="note">I ask that this content only be used in the context of hiring decisions. It is not intended for public distribution.</p>
+
+  <ul class="accomplishments">
+    <li>
+      <span class="label">Vision &amp; Funding</span>
+      Secured SVP-level backing and dedicated engineering headcount by pitching a 3-year vision to modernize Amazon&rsquo;s grocery supply chain management platform, supporting $30B annual revenue flow.
+    </li>
+    <li>
+      <span class="label">Legacy Modernization</span>
+      Orchestrated the consolidation of 30+ fragmented legacy tools into 8 unified workflows, solving top-10 critical customer pain points across 400+ users.
+    </li>
+    <li>
+      <span class="label">Global Execution</span>
+      Led a 14-engineer team to deliver a global MVP in 6 months; achieved 100% adoption and a 78% improvement in usability across 8 countries.
+    </li>
+  </ul>
+
+  <div style="margin-top:34px">
+    <div class="card">
+      <img class="shot" src="FeastInstockPortalScreenshots-4.webp" alt="Feast Instock Portal interface">
+      <div class="meta">Platform Rebuild · Grocery Replenishment</div>
+      <h3>Feast Instock Portal</h3>
+      <p>Amazon Fresh&rsquo;s primary platform for grocery replenishment and supply-chain decision-making, used by Instock Managers. The multi-year rebuild focused on modernizing a revenue-critical system operating at billions of dollars in annual scale, introducing modular architecture and AI-assisted diagnostics.</p>
+    </div>
+    <div class="card">
+      <img class="shot" src="AtlasScreenshot.webp" alt="Atlas diagnostic tool interface">
+      <div class="meta">Diagnostic Product Launch</div>
+      <h3>Atlas</h3>
+      <p>A diagnostics layer helping Instock Managers understand replenishment decisions and supply-chain breakdowns. Scaled to become the #1 diagnostic tool in Amazon Fresh, maintaining 92% weekly adoption.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ME ── -->
+<section id="about">
+  <div class="eyebrow">About Me</div>
+  <h2>Builder at heart, product manager by trade</h2>
+  <p style="color:var(--faded)">I&rsquo;m a technical product manager who started out as a software engineer &mdash; and never really stopped building. At Amazon I&rsquo;ve shipped products across Fresh and Music, but the throughline of my career has been turning ambiguous, revenue-critical problems into systems people actually want to use.</p>
+  <p style="color:var(--faded)">Outside of work, I build. Lately that&rsquo;s meant spinning up full-stack side projects with Claude Code &mdash; an autonomous prediction-market trading system, a job-hunting agent, a grocery-app parody &mdash; each one an excuse to go deep on a new corner of the stack. This site is one of them: hand-built, no page builder.</p>
+  <p style="color:var(--faded)">I&rsquo;m based in Seattle. When I&rsquo;m not shipping, you&rsquo;ll find me with my wife Carla and our resident Chief Morale Officer, Bailey.</p>
+</section>
+
+<!-- ── PERSONAL BOARD OF DIRECTORS ── -->
+<section id="board">
+  <div class="eyebrow">Personal Board of Directors</div>
+  <h2>My trusted advisors</h2>
+  <p style="color:var(--faded)">Every good leader benefits from trusted advisors. Mine don&rsquo;t sit in conference rooms &mdash; they live at home.</p>
+  <div class="board">
+    <div class="card person">
+      <img class="face" src="CarlaPhoto.webp" alt="Carla">
+      <div class="card-body">
+        <h3>Carla</h3>
+        <div class="role">Wife &middot; Chair</div>
+        <ul>
+          <li>Grounded perspective on trade-offs and priorities</li>
+          <li>Excellent at asking the question I&rsquo;m avoiding</li>
+          <li>Makes a mean batch of muffins when not managing electricity for Meta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card person">
+      <img class="face" src="PXL_20240529_225751682~2+(2).webp" alt="Bailey">
+      <div class="card-body">
+        <h3>Bailey</h3>
+        <div class="role">Chief Morale Officer</div>
+        <ul>
+          <li>Forces regular breaks and resets</li>
+          <li>Strong signal detector for stress</li>
+          <li>Reminds me that joy and focus aren&rsquo;t opposites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2>Get in touch</h2>
+  <p style="color:var(--faded)">Interested in working together? The best way to reach me is email &mdash; I&rsquo;ll be in touch shortly.</p>
+  <div class="contact-details">
+    <div class="contact-detail">
+      <span class="label">Location</span>
+      <span class="val">Seattle, WA 98106</span>
+    </div>
+    <div class="contact-detail">
+      <span class="label">Email</span>
+      <span class="val"><a href="mailto:MichaelPaulFitz@gmail.com">MichaelPaulFitz@gmail.com</a></span>
+    </div>
+    <div class="contact-detail">
+      <span class="label">Phone</span>
+      <span class="val">(206) 491-3479</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
+  <div style="margin-top:8px">Seattle, WA &middot; Built from scratch with Claude Code</div>
+</footer>
+
+<script>
+  // Highlight the nav link for the section currently in view.
+  const links = [...document.querySelectorAll('nav.links a')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        links.forEach(a => a.classList.remove('active'));
+        map.get(e.target.id)?.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section').forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>

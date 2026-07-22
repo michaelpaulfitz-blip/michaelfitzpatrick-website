@@ -75,7 +75,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="wordmark" href="/">Michael Fitzpatrick<span class="dot">.</span></a>
-    <span class="alt"><a href="index.html">Visual version →</a></span>
+    <span class="alt"><a href="/agentic-sdlc/index.html">Visual version →</a></span>
   </div>
 </header>
 
@@ -89,13 +89,13 @@ Researched and built with the same class of agentic tools it describes.</div>
 
 <div class="kicker">Chapter 1</div>
 <h2>Five years, five waves</h2>
-<div class="waverow"><strong>2021–2022, autocomplete.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/githubcopilot.svg" alt="">GitHub Copilot</span></span></div>
+<div class="waverow"><strong>2021–2022, autocomplete.</strong>&nbsp;<span class="brands"><span class="brand"><img src="/agentic-sdlc/logos/githubcopilot.svg" alt="">GitHub Copilot</span></span></div>
 <p>GitHub Copilot suggested the next line of code inside a single file. It was a helpful convenience that a developer could accept or ignore.</p>
-<div class="waverow"><strong>2022–2023, chat.</strong>&nbsp;<span class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img src="logos/githubcopilot.svg" alt="">Copilot Chat</span></span></div>
+<div class="waverow"><strong>2022–2023, chat.</strong>&nbsp;<span class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img src="/agentic-sdlc/logos/githubcopilot.svg" alt="">Copilot Chat</span></span></div>
 <p>ChatGPT and Copilot Chat let developers ask questions in plain language. A developer could paste an error and get an explanation without leaving the editor.</p>
-<div class="waverow"><strong>2023–2025, agents in the editor.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/cursor.svg" alt="">Cursor</span><span class="brand"><img src="logos/githubcopilot.svg" alt="">Copilot agent mode</span></span></div>
+<div class="waverow"><strong>2023–2025, agents in the editor.</strong>&nbsp;<span class="brands"><span class="brand"><img src="/agentic-sdlc/logos/cursor.svg" alt="">Cursor</span><span class="brand"><img src="/agentic-sdlc/logos/githubcopilot.svg" alt="">Copilot agent mode</span></span></div>
 <p>Cursor and Copilot's agent mode began planning changes, editing across multiple files, and running commands while the developer supervised in real time.</p>
-<div class="waverow"><strong>2025, delegation.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img src="logos/google.svg" alt="">Jules</span></span></div>
+<div class="waverow"><strong>2025, delegation.</strong>&nbsp;<span class="brands"><span class="brand"><img src="/agentic-sdlc/logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img src="/agentic-sdlc/logos/google.svg" alt="">Jules</span></span></div>
 <p>Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now accept a ticket, work in the background, and return a pull request for a human to review. The unit of work became a task rather than a keystroke.</p>
 <div class="waverow"><strong>2026, platforms and control planes.</strong></div>
 <p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal teams like ES365 are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
@@ -128,19 +128,19 @@ Researched and built with the same class of agentic tools it describes.</div>
 <h2>What the leaders have published</h2>
 <p>The companies reporting real numbers follow a common pattern: narrow agents pointed at verifiable work, with humans reviewing whatever lands.</p>
 <div class="callout">
-  <div class="meta"><img src="logos/google.svg" alt="">Google</div>
+  <div class="meta"><img src="/agentic-sdlc/logos/google.svg" alt="">Google</div>
   <p>80 percent of code changes in landed internal migrations are AI-authored, with every change human-reviewed, and engineers spending roughly half the time they used to. (<a class="src" href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta"><img src="logos/airbnb.svg" alt="">Amazon &amp; Airbnb</div>
+  <div class="meta"><img src="/agentic-sdlc/logos/airbnb.svg" alt="">Amazon &amp; Airbnb</div>
   <p>Amazon reports that its Java-upgrade agent saved the equivalent of 4,500 developer-years and about 260 million dollars in annualized efficiency. Airbnb migrated roughly 3,500 test files in six weeks against an estimate of a year and a half. (<a class="src" href="https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/">AWS</a>, <a class="src" href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta"><img src="logos/stripe.svg" alt="">Stripe &amp; <img src="logos/meta.svg" alt="">Meta</div>
+  <div class="meta"><img src="/agentic-sdlc/logos/stripe.svg" alt="">Stripe &amp; <img src="/agentic-sdlc/logos/meta.svg" alt="">Meta</div>
   <p>Stripe's internal agents merge about 1,300 pull requests a week, started from a Slack message or a ticket. Meta publishes its filters as openly as its wins: most generated tests are discarded, and only the ones that provably add coverage are kept. (<a class="src" href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents">Stripe</a>, <a class="src" href="https://arxiv.org/abs/2402.09171">Meta</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta"><img src="logos/spotify.svg" alt="">Spotify &amp; Backstage</div>
+  <div class="meta"><img src="/agentic-sdlc/logos/spotify.svg" alt="">Spotify &amp; Backstage</div>
   <p>Spotify's internal developer platform, built on Backstage, the most widely used internal-developer-platform framework, now exposes plugins as tools any agent can discover, with the platform brokering permissions. The developer platform is becoming the control plane for agents, which is the model ES365 is pursuing inside Microsoft. (<a class="src" href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify</a>, <a class="src" href="https://backstage.io/">Backstage</a>)</p>
 </div>
 
@@ -160,22 +160,26 @@ Researched and built with the same class of agentic tools it describes.</div>
 <h2>How I would approach the product role</h2>
 <p><strong>Start from the developer's problem.</strong> The work begins with listening. I would sit with the developers and codebase owners who use these tools, learn where their day actually stalls, and pair that with a clear view of where the technology is heading. Humility about their pain points and conviction about the direction are both required, and neither substitutes for the other.</p>
 <p><strong>Set the goals and define success.</strong> I would set explicit objectives for the space and define how success is measured before building, using outcome metrics rather than acceptance rate: lead time, change failure rate, and the share of engineering time spent on new work. Agreeing on the scoreboard early is what keeps a platform honest as it scales.</p>
-<p><strong>The hardest part is alignment.</strong> The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+<p><strong>The hardest part is alignment.</strong> The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing Azure teams in once the core is proven. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
 <p><strong>Then execute, measure, and iterate.</strong> With the vision agreed, the work becomes tactical: sequence the roadmap, ship in increments, watch the outcome metrics, and adjust. Move from early adopters to broad rollout along golden paths, and keep the feedback loop with developers tight enough that the platform keeps pace with what they actually need.</p>
 
 <div class="kicker">Chapter 7</div>
-<h2>Three Working Hypotheses</h2>
+<h2>Four Working Proposals</h2>
 <div class="callout">
-  <div class="meta">Hypothesis one</div>
+  <div class="meta">Proposal one</div>
   <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience. If the governed, instrumented route is also the easiest one, mandates become unnecessary. I saw this directly when I consolidated more than 30 internal tools into 8 workflows at Amazon: adoption reached 100 percent because the new path was simply better to use, and usability scores rose 78 percent.</p>
 </div>
 <div class="callout">
-  <div class="meta">Hypothesis two</div>
+  <div class="meta">Proposal two</div>
   <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability so a gain on one cannot quietly become a loss on the other, and track the gap between perceived and actual speedup, because the METR result shows it is real. Deciding what success looks like before shipping is what keeps a platform pointed at outcomes instead of activity.</p>
 </div>
 <div class="callout">
-  <div class="meta">Hypothesis three</div>
-  <p><strong>Curate more than you build.</strong> The ecosystem will produce more agent capability than any single team can. The platform's leverage is discovery, quality bars, and trust, so a developer can adopt a shared agent with the same confidence as a standard library.</p>
+  <div class="meta">Proposal three</div>
+  <p><strong>Converge on one shared platform, do not build many.</strong> The leverage is not in coding every capability, but in unifying the efforts already underway across Microsoft into a single cohesive platform and standard that teams across the company can adopt. Curate and converge rather than duplicate, so the whole company moves together instead of each org building its own.</p>
+</div>
+<div class="callout">
+  <div class="meta">Proposal four</div>
+  <p><strong>Route by cost, and keep it invisible to developers.</strong> Frontier models are not always necessary. A growing number of large engineering organizations now provision their own GPUs, including NVIDIA H200s, to run open-weight models on lower-complexity tasks, and report cutting AI development costs by around 70 percent. The subtle part is the product design: the routing has to be invisible. If the cheaper model is an opt-in, developers will not choose it, because no one trades quality for a budget line they cannot see. The platform should send each task to the least expensive model that can handle it well and reserve frontier models for the work that genuinely needs them, so the savings are large and no developer has to think about it.</p>
 </div>
 <p><strong>And the questions I would ask first:</strong> where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside ES365, with the team and the telemetry.</p>
 

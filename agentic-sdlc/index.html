@@ -170,6 +170,9 @@
   .align-arrow.contend{stroke:var(--brick); stroke-dasharray:4 3}
   #align[data-step="2"] .align-arrow.contend{opacity:.7}
   #align[data-step="3"] .align-arrow.contend, #align[data-step="4"] .align-arrow.contend{opacity:0}
+  .align-arrow.later{stroke-dasharray:5 3}
+  #align[data-step="3"] .align-arrow.later{opacity:0}
+  #align[data-step="4"] .align-arrow.later{opacity:.55}
   .charter-node{opacity:0; transition:opacity .55s ease}
   #align[data-step="2"] .charter-node, #align[data-step="3"] .charter-node, #align[data-step="4"] .charter-node{opacity:1}
   .adopt{opacity:0; transition:opacity .55s ease}
@@ -181,9 +184,9 @@
     border-radius:6px; padding:20px 22px; opacity:.45; transition:all .45s ease}
   .hypo h3{font-size:17px; margin-bottom:6px}
   .hypo p{font-size:14.5px; color:var(--faded)}
-  #vision[data-step="1"] .hypo-1, #vision[data-step="2"] .hypo-2, #vision[data-step="3"] .hypo-3{
+  #vision[data-step="1"] .hypo-1, #vision[data-step="2"] .hypo-2, #vision[data-step="3"] .hypo-3, #vision[data-step="4"] .hypo-4{
     opacity:1; border-left-color:var(--clay); box-shadow:0 2px 8px rgba(31,30,27,.06)}
-  #vision[data-step="4"] .hypo{opacity:1}
+  #vision[data-step="5"] .hypo{opacity:1}
 
   /* ── Prose / close ── */
   .prose{max-width:820px; margin:0 auto; padding:64px 28px; border-top:1px solid var(--hairline)}
@@ -235,7 +238,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="wordmark" href="/">Michael Fitzpatrick<span class="dot">.</span></a>
-    <span class="alt"><a href="basic.html">Prefer a simple reading view? →</a></span>
+    <span class="alt"><a href="/agentic-sdlc/basic.html">Prefer a simple reading view? →</a></span>
   </div>
 </header>
 
@@ -288,25 +291,25 @@
           <div class="tl-node n1">
             <div class="tl-yr">2021</div><div class="tl-dot"></div>
             <div class="tl-detail"><div class="tl-name">Autocomplete</div>
-              <div class="brands"><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">GitHub Copilot</span></div>
+              <div class="brands"><span class="brand"><img class="bi" src="/agentic-sdlc/logos/githubcopilot.svg" alt="">GitHub Copilot</span></div>
             </div>
           </div>
           <div class="tl-node n2">
             <div class="tl-yr">2022</div><div class="tl-dot"></div>
             <div class="tl-detail"><div class="tl-name">Chat</div>
-              <div class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">Copilot Chat</span></div>
+              <div class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img class="bi" src="/agentic-sdlc/logos/githubcopilot.svg" alt="">Copilot Chat</span></div>
             </div>
           </div>
           <div class="tl-node n3">
             <div class="tl-yr">2024</div><div class="tl-dot"></div>
             <div class="tl-detail"><div class="tl-name">Agents in the editor</div>
-              <div class="brands"><span class="brand"><img class="bi" src="logos/cursor.svg" alt="">Cursor</span><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">Copilot agent mode</span></div>
+              <div class="brands"><span class="brand"><img class="bi" src="/agentic-sdlc/logos/cursor.svg" alt="">Cursor</span><span class="brand"><img class="bi" src="/agentic-sdlc/logos/githubcopilot.svg" alt="">Copilot agent mode</span></div>
             </div>
           </div>
           <div class="tl-node n4">
             <div class="tl-yr">2025</div><div class="tl-dot"></div>
             <div class="tl-detail"><div class="tl-name">Delegation</div>
-              <div class="brands"><span class="brand"><img class="bi" src="logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img class="bi" src="logos/google.svg" alt="">Jules</span></div>
+              <div class="brands"><span class="brand"><img class="bi" src="/agentic-sdlc/logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img class="bi" src="/agentic-sdlc/logos/google.svg" alt="">Jules</span></div>
             </div>
           </div>
           <div class="tl-node n5">
@@ -482,28 +485,28 @@
   <div class="figure"><figure class="figure-inner">
     <div class="co-cards">
       <div class="co-card co-1">
-        <div class="co-head"><img class="bi" src="logos/google.svg" alt=""><span class="co-name">Google · Research</span></div>
+        <div class="co-head"><img class="bi" src="/agentic-sdlc/logos/google.svg" alt=""><span class="co-name">Google · Research</span></div>
         <h3>Migrations, AI-authored</h3>
         <div class="stat">80%</div>
         <div class="statcap">of code changes in landed internal migrations were AI-authored, every change human-reviewed</div>
         <p style="margin-top:14px">Engineers report roughly half the time on migration work.</p>
       </div>
       <div class="co-card co-2">
-        <div class="co-head"><span class="co-name">Amazon · AWS &nbsp;&amp;&nbsp; <img class="bi" src="logos/airbnb.svg" alt="" style="vertical-align:middle"> Airbnb</span></div>
+        <div class="co-head"><span class="co-name">Amazon · AWS &nbsp;&amp;&nbsp; <img class="bi" src="/agentic-sdlc/logos/airbnb.svg" alt="" style="vertical-align:middle"> Airbnb</span></div>
         <h3>The mechanical backlog, cleared</h3>
         <div class="stat">4,500</div>
         <div class="statcap">developer-years saved on Java upgrades, per Amazon; about $260M annualized</div>
         <p style="margin-top:14px">Airbnb: roughly 3,500 test files migrated in 6 weeks, versus an estimated 1.5 years.</p>
       </div>
       <div class="co-card co-3">
-        <div class="co-head"><img class="bi" src="logos/stripe.svg" alt=""><span class="co-name">Stripe &nbsp;&amp;&nbsp;</span> <img class="bi" src="logos/meta.svg" alt=""><span class="co-name">Meta</span></div>
+        <div class="co-head"><img class="bi" src="/agentic-sdlc/logos/stripe.svg" alt=""><span class="co-name">Stripe &nbsp;&amp;&nbsp;</span> <img class="bi" src="/agentic-sdlc/logos/meta.svg" alt=""><span class="co-name">Meta</span></div>
         <h3>Agents with quality gates</h3>
         <div class="stat">~1,300</div>
         <div class="statcap">pull requests merged per week by Stripe's internal agents</div>
         <p style="margin-top:14px">Meta keeps only tests that build, pass reliably, and add coverage. Most candidates are filtered out.</p>
       </div>
       <div class="co-card co-4">
-        <div class="co-head"><img class="bi" src="logos/spotify.svg" alt=""><span class="co-name">Spotify · Backstage</span></div>
+        <div class="co-head"><img class="bi" src="/agentic-sdlc/logos/spotify.svg" alt=""><span class="co-name">Spotify · Backstage</span></div>
         <h3>Platform as control plane</h3>
         <div class="stat">87%</div>
         <div class="statcap">of Spotify developers use the AI assistant built into their internal portal, weekly</div>
@@ -597,7 +600,7 @@
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">The hardest part is alignment</div>
-      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing Azure teams in once the core is proven. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Then execute, measure, and iterate</div>
@@ -613,6 +616,7 @@
       </defs>
       <g class="src-team">
         <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Azure, customer-facing</text>
+        <text x="91" y="93" text-anchor="middle" font-size="10.5" fill="#9C3A2E" font-style="italic">brought in later</text>
         <rect class="box" x="16" y="120" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="143" text-anchor="middle">Internal DevOps teams</text>
         <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">GitHub and DevDiv</text>
         <rect class="box" x="16" y="280" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="303" text-anchor="middle">Product orgs</text>
@@ -623,7 +627,7 @@
       <line class="align-arrow contend" x1="170" y1="219" x2="250" y2="180" marker-end="url(#ah2)"/>
       <line class="align-arrow contend" x1="170" y1="299" x2="250" y2="195" marker-end="url(#ah2)"/>
       <!-- converging arrows (aligned) -->
-      <line class="align-arrow" x1="170" y1="59"  x2="252" y2="158" marker-end="url(#ah2)"/>
+      <line class="align-arrow later" x1="170" y1="59"  x2="252" y2="158" marker-end="url(#ah2)"/>
       <line class="align-arrow" x1="170" y1="139" x2="252" y2="170" marker-end="url(#ah2)"/>
       <line class="align-arrow" x1="170" y1="219" x2="252" y2="182" marker-end="url(#ah2)"/>
       <line class="align-arrow" x1="170" y1="299" x2="252" y2="194" marker-end="url(#ah2)"/>
@@ -646,24 +650,28 @@
 <!-- ══════════ CH 7 · HYPOTHESES ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 7</div>
-  <h2>Three Working Hypotheses</h2>
-  <p class="dek">Early views I would bring in and then test against what the team already knows.</p>
+  <h2>Four Working Proposals</h2>
+  <p class="dek">Early proposals I would bring in and then test against what the team already knows.</p>
 </div>
 <section class="scrolly" id="vision" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
-      <div class="stepnum">Hypothesis one</div>
+      <div class="stepnum">Proposal one</div>
       <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience. If the governed, instrumented route is also the easiest one, mandates become unnecessary. I saw this directly when I consolidated more than 30 internal tools into 8 workflows at Amazon: adoption reached 100 percent because the new path was simply better to use, and usability scores rose 78 percent.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
-      <div class="stepnum">Hypothesis two</div>
+      <div class="stepnum">Proposal two</div>
       <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability so a gain on one cannot quietly become a loss on the other, and track the gap between perceived and actual speedup, because the METR result shows it is real. Deciding what success looks like before shipping is what keeps a platform pointed at outcomes instead of activity.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
-      <div class="stepnum">Hypothesis three</div>
-      <p><strong>Curate more than you build.</strong> The ecosystem will produce more agent capability than any single team can. The platform's leverage is discovery, quality bars, and trust, so a developer can adopt a shared agent with the same confidence as a standard library.</p>
+      <div class="stepnum">Proposal three</div>
+      <p><strong>Converge on one shared platform, do not build many.</strong> The leverage is not in coding every capability, but in unifying the efforts already underway across Microsoft into a single cohesive platform and standard that teams across the company can adopt. Curate and converge rather than duplicate, so the whole company moves together instead of each org building its own.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
+      <div class="stepnum">Proposal four</div>
+      <p><strong>Route by cost, and keep it invisible to developers.</strong> Frontier models are not always necessary. A growing number of large engineering organizations now provision their own GPUs, including NVIDIA H200s, to run open-weight models on lower-complexity tasks, and report cutting AI development costs by around 70 percent. The subtle part is the product design: the routing has to be invisible. If the cheaper model is an opt-in, developers will not choose it, because no one trades quality for a budget line they cannot see. The platform should send each task to the least expensive model that can handle it well and reserve frontier models for the work that genuinely needs them, so the savings are large and no developer has to think about it.</p>
+    </div></div>
+    <div class="step" data-index="5"><div class="step-card">
       <div class="stepnum">And the questions I would ask first</div>
       <p>Where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside ES365, with the team and the telemetry.</p>
     </div></div>
@@ -679,11 +687,15 @@
         <p>Throughput paired with stability. Perceived versus actual, tracked honestly.</p>
       </div>
       <div class="hypo hypo-3">
-        <h3>3 · Curate more than you build</h3>
-        <p>A trusted marketplace scales further than any single roadmap.</p>
+        <h3>3 · Converge on one shared platform</h3>
+        <p>Unify the efforts across Microsoft into one standard, not one per org.</p>
+      </div>
+      <div class="hypo hypo-4">
+        <h3>4 · Route by cost, invisibly</h3>
+        <p>Cheapest capable model per task, frontier only when needed, no opt-in.</p>
       </div>
     </div>
-    <figcaption>Hypotheses drawn from public evidence and my own platform work. The inside view comes first.</figcaption>
+    <figcaption>Proposals drawn from public evidence and my own platform work.</figcaption>
   </figure></div>
 </section>
 

@@ -4,13 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>The Agentic Wave — a visual essay · Michael Fitzpatrick</title>
-<meta name="description" content="A short visual essay on AI and agentic workflows across the software development lifecycle.">
+<title>Agentic Platform in the SDLC — Charter Proposal · Michael Fitzpatrick</title>
+<meta name="description" content="A charter proposal on agentic workflows across the software development lifecycle, prepared for Microsoft ES365.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
 <style>
-  /* ─────────────────────────────────────────────
-     Warm Naturalist — matches michaelfitzpatrick.me
-  ───────────────────────────────────────────── */
   :root{
     --bone:#F0EEE6; --paper:#FAF9F4; --ink:#1F1E1B; --faded:#6E675C;
     --clay:#C15F3C; --clay-deep:#A64E30; --moss:#5B7052; --brick:#9C3A2E;
@@ -25,6 +22,8 @@
   a{color:var(--clay); text-decoration:none}
   a:hover{color:var(--clay-deep)}
   strong{color:var(--ink)}
+  .src a, a.src{color:var(--faded); border-bottom:1px solid var(--hairline)}
+  .src a:hover, a.src:hover{color:var(--clay-deep); border-bottom-color:var(--clay)}
 
   .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase;
     color:var(--faded); font-weight:bold; margin-bottom:14px}
@@ -39,31 +38,32 @@
   .nav-inner .alt a{border-bottom:1px solid var(--hairline); padding-bottom:2px}
 
   /* ── Hero ── */
-  .hero{max-width:820px; margin:0 auto; padding:96px 28px 72px; text-align:left}
-  .hero h1{font-size:clamp(34px,5.5vw,58px); line-height:1.08; letter-spacing:-1px; margin-bottom:22px}
-  .hero p.lede{font-size:20px; color:var(--ink); margin-bottom:18px}
+  .hero{max-width:820px; margin:0 auto; padding:88px 28px 68px}
+  .hero h1{font-size:clamp(30px,4.6vw,48px); line-height:1.12; letter-spacing:-.6px; margin-bottom:22px}
+  .hero p.lede{font-size:19px; color:var(--ink); margin-bottom:18px}
   .hero p{color:var(--faded)}
   .byline{margin-top:26px; font-size:14px; color:var(--faded);
     border-top:1px solid var(--hairline); padding-top:14px}
   .note{font-size:15px; color:var(--faded); font-style:italic;
     border-left:2px solid var(--clay); padding-left:16px; margin-top:28px}
-  .scroll-hint{margin-top:48px; text-align:center; color:var(--faded); font-size:13px;
+  .scroll-hint{margin-top:44px; text-align:center; color:var(--faded); font-size:13px;
     letter-spacing:2px; text-transform:uppercase}
   .scroll-hint .arrow{display:block; font-size:20px; margin-top:6px; animation:bob 1.6s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
   /* ── Scrolly scaffold ── */
-  .chapter-head{max-width:820px; margin:0 auto; padding:64px 28px 8px}
+  .chapter-head{max-width:820px; margin:0 auto; padding:60px 28px 8px}
   .chapter-head h2{font-size:28px; letter-spacing:-.4px}
   .chapter-head .kicker{font-size:12px; letter-spacing:2px; text-transform:uppercase;
     color:var(--clay); font-weight:bold; margin-bottom:8px}
+  .chapter-head .dek{color:var(--faded); font-size:16px; margin-top:8px; max-width:640px}
 
   .scrolly{max-width:var(--maxw); margin:0 auto; padding:0 28px;
-    display:grid; grid-template-columns:minmax(300px,420px) 1fr; gap:48px}
+    display:grid; grid-template-columns:minmax(300px,400px) 1fr; gap:48px}
   .steps{padding:4vh 0 20vh}
-  .step{min-height:72vh; display:flex; align-items:center}
+  .step{min-height:74vh; display:flex; align-items:center}
   .step-card{background:var(--paper); border:1px solid var(--hairline); border-radius:6px;
-    padding:24px 26px; color:var(--faded); opacity:.35; transform:translateY(8px);
+    padding:24px 26px; color:var(--faded); opacity:.32; transform:translateY(8px);
     transition:opacity .4s ease, transform .4s ease; box-shadow:0 1px 2px rgba(31,30,27,.04)}
   .step.active .step-card{opacity:1; transform:none}
   .step-card .stepnum{font-size:11px; letter-spacing:2px; text-transform:uppercase;
@@ -77,48 +77,52 @@
   .figure svg{width:100%; height:auto; display:block}
   figcaption{font-size:12.5px; color:var(--faded); text-align:center; margin-top:10px}
 
-  /* ── SVG shared ── */
   text{font-family:var(--serif)}
   .svg-label{fill:var(--faded); font-size:12px}
   .svg-label-strong{fill:var(--ink); font-size:13px; font-weight:bold}
-  .box{fill:var(--paper); stroke:var(--hairline); stroke-width:1; rx:6;
-    transition:fill .5s ease, stroke .5s ease, opacity .5s ease}
 
-  /* Ch.1 timeline states */
-  .wave .node{fill:var(--paper); stroke:var(--hairline); stroke-width:1.5; transition:all .5s ease}
-  .wave text{transition:fill .5s ease}
-  .wave .cap{opacity:0; transition:opacity .5s ease}
-  #waves[data-step="1"] .wave-1 .node, #waves[data-step="2"] .wave-1 .node, #waves[data-step="3"] .wave-1 .node, #waves[data-step="4"] .wave-1 .node,
-  #waves[data-step="2"] .wave-2 .node, #waves[data-step="3"] .wave-2 .node, #waves[data-step="4"] .wave-2 .node,
-  #waves[data-step="3"] .wave-3 .node, #waves[data-step="4"] .wave-3 .node,
-  #waves[data-step="4"] .wave-4 .node{fill:var(--clay); stroke:var(--clay-deep)}
-  #waves[data-step="1"] .wave-1 .cap, #waves[data-step="2"] .wave-2 .cap,
-  #waves[data-step="3"] .wave-3 .cap, #waves[data-step="4"] .wave-4 .cap{opacity:1}
-  #waves[data-step="1"] .wave-1 .cap-t, #waves[data-step="2"] .wave-2 .cap-t,
-  #waves[data-step="3"] .wave-3 .cap-t, #waves[data-step="4"] .wave-4 .cap-t{fill:var(--ink); font-weight:bold}
-  .tl-line{stroke:var(--hairline); stroke-width:2}
-  .tl-progress{stroke:var(--clay); stroke-width:2; stroke-dasharray:720; stroke-dashoffset:720; transition:stroke-dashoffset .7s ease}
-  #waves[data-step="1"] .tl-progress{stroke-dashoffset:540}
-  #waves[data-step="2"] .tl-progress{stroke-dashoffset:360}
-  #waves[data-step="3"] .tl-progress{stroke-dashoffset:180}
-  #waves[data-step="4"] .tl-progress{stroke-dashoffset:0}
+  /* ── Brand chips ── */
+  .brands{display:flex; flex-wrap:wrap; gap:9px 14px; margin-top:6px; justify-content:center}
+  .brand{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--faded); white-space:nowrap}
+  .brand .bi{height:15px; width:auto; display:block; opacity:.9}
+  .brand svg.bi{height:15px}
 
-  /* Ch.2 lifecycle map states */
+  /* ══ Ch.1 horizontal timeline ══ */
+  .tl{width:100%; padding:6px 0}
+  .tl-wrap{position:relative}
+  .tl-line{position:absolute; left:10%; right:10%; top:37px; height:2px; background:var(--hairline)}
+  .tl-fill{position:absolute; left:10%; top:37px; height:2px; background:var(--clay);
+    width:0; transition:width .6s ease}
+  .tl-row{position:relative; display:flex}
+  .tl-node{flex:1; display:flex; flex-direction:column; align-items:center; text-align:center}
+  .tl-yr{font-size:12.5px; font-weight:bold; color:var(--faded); height:20px; transition:color .4s}
+  .tl-dot{width:13px; height:13px; border-radius:50%; margin:9px 0 0;
+    background:var(--paper); border:2px solid var(--hairline); transition:all .4s}
+  .tl-detail{margin-top:18px; opacity:0; transform:translateY(6px);
+    transition:opacity .45s, transform .45s; width:100%; padding:0 4px}
+  .tl-name{font-weight:bold; color:var(--ink); font-size:14.5px; margin-bottom:10px}
+  .tl-active .tl-yr{color:var(--clay-deep)}
+  .tl-active .tl-dot{background:var(--clay); border-color:var(--clay-deep); transform:scale(1.25)}
+  .tl-active .tl-detail{opacity:1; transform:none}
+
+  /* ══ Ch.2 lifecycle map ══ */
   .phase rect{fill:var(--paper); stroke:var(--hairline); stroke-width:1.2; transition:all .55s ease}
-  .phase text{fill:var(--faded); font-size:12.5px; transition:fill .55s ease}
+  .phase text{fill:var(--faded); font-size:12px; transition:fill .55s ease}
   #map[data-step="2"] .st-solved rect, #map[data-step="3"] .st-solved rect, #map[data-step="4"] .st-solved rect{fill:#E4EAE0; stroke:var(--moss)}
   #map[data-step="2"] .st-solved text, #map[data-step="3"] .st-solved text, #map[data-step="4"] .st-solved text{fill:var(--moss); font-weight:bold}
   #map[data-step="3"] .st-partial rect, #map[data-step="4"] .st-partial rect{fill:#F1E8D6; stroke:var(--amber)}
   #map[data-step="3"] .st-partial text, #map[data-step="4"] .st-partial text{fill:#8A6C2F; font-weight:bold}
   #map[data-step="4"] .st-open rect{fill:#F0DEDA; stroke:var(--brick)}
   #map[data-step="4"] .st-open text{fill:var(--brick); font-weight:bold}
+  .flow{stroke:var(--faded); stroke-width:1.4; fill:none; opacity:0; transition:opacity .5s ease}
+  #map[data-step="1"] .flow, #map[data-step="2"] .flow, #map[data-step="3"] .flow, #map[data-step="4"] .flow{opacity:.55}
   .map-legend{opacity:0; transition:opacity .5s ease}
   #map[data-step="2"] .leg-solved,#map[data-step="3"] .leg-solved,#map[data-step="4"] .leg-solved{opacity:1}
   #map[data-step="3"] .leg-partial,#map[data-step="4"] .leg-partial{opacity:1}
   #map[data-step="4"] .leg-open{opacity:1}
 
-  /* Ch.3 paradox chart states */
-  .bar{transition:height .7s ease, y .7s ease, opacity .5s ease; opacity:0}
+  /* ══ Ch.3 paradox chart ══ */
+  .bar{transition:opacity .5s ease; opacity:0}
   .bar-label{opacity:0; transition:opacity .5s ease .3s}
   #paradox[data-step="2"] .bar, #paradox[data-step="3"] .bar, #paradox[data-step="4"] .bar,
   #paradox[data-step="2"] .bar-label, #paradox[data-step="3"] .bar-label, #paradox[data-step="4"] .bar-label{opacity:1}
@@ -127,26 +131,28 @@
   .bottleneck{opacity:0; transition:opacity .6s ease}
   #paradox[data-step="4"] .bottleneck{opacity:1}
 
-  /* Ch.4 industry cards (HTML) */
-  .co-cards{position:relative; min-height:340px}
+  /* ══ Ch.4 industry cards ══ */
+  .co-cards{position:relative; min-height:360px}
   .co-card{position:absolute; inset:0; background:var(--paper); border:1px solid var(--hairline);
-    border-radius:6px; padding:28px; opacity:0; transform:translateY(10px);
+    border-radius:6px; padding:26px 28px; opacity:0; transform:translateY(10px);
     transition:opacity .5s ease, transform .5s ease; pointer-events:none}
-  .co-card .meta{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--clay);
-    font-weight:bold; margin-bottom:12px}
-  .co-card h3{font-size:22px; margin-bottom:10px}
-  .co-card p{color:var(--faded); font-size:15.5px; margin-bottom:10px}
-  .co-card .stat{font-size:34px; color:var(--ink); font-weight:bold; margin:6px 0 2px}
-  .co-card .statcap{font-size:12.5px; color:var(--faded)}
   #industry[data-step="1"] .co-1, #industry[data-step="2"] .co-2,
-  #industry[data-step="3"] .co-3, #industry[data-step="4"] .co-4{opacity:1; transform:none}
+  #industry[data-step="3"] .co-3, #industry[data-step="4"] .co-4{opacity:1; transform:none; pointer-events:auto}
+  .co-head{display:flex; align-items:center; gap:10px; margin-bottom:14px}
+  .co-head .bi{height:22px; width:auto}
+  .co-head .co-name{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--clay); font-weight:bold}
+  .co-card h3{font-size:21px; margin-bottom:10px}
+  .co-card p{color:var(--faded); font-size:15px; margin-bottom:10px}
+  .co-card .stat{font-size:32px; color:var(--ink); font-weight:bold; margin:4px 0 2px}
+  .co-card .statcap{font-size:12.5px; color:var(--faded)}
 
-  /* Ch.5 platform diagram states */
-  .plat-room{opacity:.25; transition:opacity .5s ease}
+  /* ══ Ch.5 platform diagram ══ */
+  .box{fill:var(--paper); stroke:var(--hairline); stroke-width:1; transition:fill .5s ease, opacity .5s ease}
   .plat-agents,.plat-systems{opacity:.35; transition:opacity .5s ease}
   #platform[data-step="1"] .plat-agents, #platform[data-step="1"] .plat-systems,
   #platform[data-step="2"] .plat-agents, #platform[data-step="2"] .plat-systems,
   #platform[data-step="3"] .plat-agents, #platform[data-step="3"] .plat-systems{opacity:1}
+  .plat-room{opacity:.2; transition:opacity .5s ease}
   #platform[data-step="2"] .plat-room, #platform[data-step="3"] .plat-room{opacity:1}
   .plat-measure{opacity:0; transition:opacity .5s ease}
   #platform[data-step="3"] .plat-measure{opacity:1}
@@ -155,7 +161,21 @@
   .order-line{stroke:var(--moss); stroke-width:1.5; opacity:0; transition:opacity .5s ease}
   #platform[data-step="2"] .order-line, #platform[data-step="3"] .order-line{opacity:.9}
 
-  /* Ch.6 hypotheses (HTML panels) */
+  /* ══ Ch.6 alignment diagram ══ */
+  .src-team{opacity:0; transition:opacity .5s ease}
+  #align[data-step="1"] .src-team, #align[data-step="2"] .src-team,
+  #align[data-step="3"] .src-team, #align[data-step="4"] .src-team{opacity:1}
+  .align-arrow{stroke:var(--faded); stroke-width:1.3; fill:none; opacity:0; transition:opacity .55s ease}
+  #align[data-step="3"] .align-arrow, #align[data-step="4"] .align-arrow{opacity:.6}
+  .align-arrow.contend{stroke:var(--brick); stroke-dasharray:4 3}
+  #align[data-step="2"] .align-arrow.contend{opacity:.7}
+  #align[data-step="3"] .align-arrow.contend, #align[data-step="4"] .align-arrow.contend{opacity:0}
+  .charter-node{opacity:0; transition:opacity .55s ease}
+  #align[data-step="2"] .charter-node, #align[data-step="3"] .charter-node, #align[data-step="4"] .charter-node{opacity:1}
+  .adopt{opacity:0; transition:opacity .55s ease}
+  #align[data-step="4"] .adopt{opacity:1}
+
+  /* ══ Ch.7 hypotheses ══ */
   .hypo-list{display:flex; flex-direction:column; gap:16px}
   .hypo{background:var(--paper); border:1px solid var(--hairline); border-left:3px solid var(--hairline);
     border-radius:6px; padding:20px 22px; opacity:.45; transition:all .45s ease}
@@ -165,8 +185,8 @@
     opacity:1; border-left-color:var(--clay); box-shadow:0 2px 8px rgba(31,30,27,.06)}
   #vision[data-step="4"] .hypo{opacity:1}
 
-  /* ── Prose sections (close) ── */
-  .prose{max-width:820px; margin:0 auto; padding:72px 28px; border-top:1px solid var(--hairline)}
+  /* ── Prose / close ── */
+  .prose{max-width:820px; margin:0 auto; padding:64px 28px; border-top:1px solid var(--hairline)}
   .prose h2{font-size:28px; margin-bottom:18px; letter-spacing:-.4px}
   .prose p{color:var(--faded); margin-bottom:16px}
   .builds{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:28px 0}
@@ -182,24 +202,28 @@
   /* ── Mobile ── */
   @media (max-width:820px){
     .scrolly{grid-template-columns:1fr; gap:0; padding:0 16px}
-    .figure{position:sticky; top:52px; height:46vh; z-index:5;
+    .figure{position:sticky; top:52px; height:48vh; z-index:5;
       background:var(--bone); padding:8px 0 10px; border-bottom:1px solid var(--hairline)}
     .figure-inner{height:100%; display:flex; flex-direction:column;
       align-items:center; justify-content:center}
     .figure svg{width:auto; height:calc(100% - 26px); max-width:100%}
+    .figure .tl, .figure .co-cards{height:auto; width:100%}
     figcaption{margin-top:4px}
-    .co-cards{min-height:0; height:calc(100% - 26px); width:100%}
-    .co-card{padding:18px 20px; overflow:hidden}
-    .co-card .stat{font-size:26px}
-    .co-card h3{font-size:18px}
-    .co-card p{font-size:13.5px}
-    .hypo-list{width:100%; gap:10px}
+    .co-cards{min-height:0; height:calc(100% - 20px); width:100%}
+    .co-card{padding:16px 18px; overflow:hidden}
+    .co-card .stat{font-size:24px}
+    .co-card h3{font-size:17px}
+    .co-card p{font-size:13px; margin-bottom:7px}
+    .co-head .bi{height:18px}
+    .tl-name{font-size:13px}
+    .brand{font-size:11.5px}
+    .hypo-list{width:100%; gap:9px}
     .hypo{padding:12px 16px}
     .hypo p{font-size:13px}
-    .step{min-height:60vh}
+    .step{min-height:62vh}
     .steps{order:2}
     .builds{grid-template-columns:1fr}
-    .hero{padding:64px 20px 48px}
+    .hero{padding:60px 20px 44px}
   }
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; animation:none !important}
@@ -217,164 +241,199 @@
 
 <!-- ══════════ HERO ══════════ -->
 <div class="hero">
-  <div class="eyebrow">A visual essay · July 2026</div>
-  <h1>How software gets built is changing faster than how we manage it.</h1>
-  <p class="lede">Five years ago, AI in development meant autocomplete. Today, agents plan work, write code, review it, test it, and come back with a pull request. This is a short tour of that shift: where it came from, what it has genuinely solved, and why the next gains will come from platforms.</p>
-  <p class="note">A note before we begin: I write this as an outsider looking in. Everything here comes from public research and engineering blogs, plus my own hands-on building with these tools. The teams running engineering systems inside large companies know things I can't see from here. Consider this a point of view I'd be eager to pressure-test on the inside.</p>
+  <div class="eyebrow">Charter proposal · ES365, Microsoft · July 2026</div>
+  <h1>Agentic Platform in the Software Development Lifecycle — Charter Proposal</h1>
+  <p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where an internal agentic platform like ES365 can focus next.</p>
+  <p class="note">A note on where this comes from. I prepared this while getting ready to meet the ES365 team. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The people building engineering systems inside Microsoft see things I cannot from the outside, so I am offering this as a starting point for a conversation and expect to revise it as I learn what your team already knows.</p>
   <div class="byline">Michael Fitzpatrick · Senior Product Manager (Technical) · Seattle<br>
-  Researched and built in a day with the same class of agentic tools it describes.</div>
+  Researched and built with the same class of agentic tools it describes.</div>
   <div class="scroll-hint">Scroll<span class="arrow">↓</span></div>
 </div>
 
-<!-- ══════════ CH 1 · FOUR WAVES ══════════ -->
+<!-- ══════════ CH 1 · TIMELINE ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 1</div>
-  <h2>Four waves in five years</h2>
+  <h2>Five years, five waves</h2>
+  <p class="dek">The tools got progressively more autonomous. Each wave changed what a developer hands off to the machine.</p>
 </div>
 <section class="scrolly" id="waves" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
       <div class="stepnum">2021 – 2022 · Autocomplete</div>
-      <p>GitHub Copilot launched as an "AI pair programmer." It suggested the next line of code inside a single file. Useful, narrow, and easy to ignore.</p>
+      <p>GitHub Copilot suggested the next line of code inside a single file. It was a helpful convenience that a developer could accept or ignore.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">2022 – 2023 · Chat</div>
-      <p>ChatGPT and Copilot Chat turned code into a conversation. Developers could paste an error and ask why it was happening, in plain English, without leaving the editor.</p>
+      <p>ChatGPT and Copilot Chat let developers ask questions in plain language. A developer could paste an error and get an explanation without leaving the editor.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">2023 – 2025 · Agents in the editor</div>
-      <p>Tools like Cursor and Copilot's agent mode began planning work, editing across many files, and running commands while the developer supervised in real time.</p>
+      <p>Cursor and Copilot's agent mode began planning changes, editing across multiple files, and running commands while the developer supervised in real time.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
-      <div class="stepnum">2025 – 2026 · Delegation</div>
-      <p>Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now take a ticket, work in the background, and return a pull request for human review.</p>
-      <p><strong>The unit of work shifted from a suggestion to a task.</strong></p>
+      <div class="stepnum">2025 · Delegation</div>
+      <p>Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now accept a ticket, work in the background, and return a pull request for a human to review. The unit of work became a task rather than a keystroke.</p>
+    </div></div>
+    <div class="step" data-index="5"><div class="step-card">
+      <div class="stepnum">2026 · Platforms and control planes</div>
+      <p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal teams like ES365 are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
-    <svg viewBox="0 0 560 420" role="img" aria-label="Timeline of four waves of AI in software development">
-      <line class="tl-line" x1="60" y1="60" x2="60" y2="380"/>
-      <line class="tl-progress" x1="60" y1="60" x2="60" y2="380" pathLength="720"/>
-      <g class="wave wave-1">
-        <circle class="node" cx="60" cy="80" r="11"/>
-        <text class="svg-label-strong" x="92" y="78">2021 · Autocomplete</text>
-        <g class="cap"><text class="svg-label cap-t" x="92" y="98">Copilot suggests the next line</text>
-        <text class="svg-label" x="92" y="116">One file · one suggestion at a time</text></g>
-      </g>
-      <g class="wave wave-2">
-        <circle class="node" cx="60" cy="160" r="11"/>
-        <text class="svg-label-strong" x="92" y="158">2022 · Chat</text>
-        <g class="cap"><text class="svg-label cap-t" x="92" y="178">Code becomes a conversation</text>
-        <text class="svg-label" x="92" y="196">Explain · debug · draft tests</text></g>
-      </g>
-      <g class="wave wave-3">
-        <circle class="node" cx="60" cy="240" r="11"/>
-        <text class="svg-label-strong" x="92" y="238">2024 · Agent mode</text>
-        <g class="cap"><text class="svg-label cap-t" x="92" y="258">Multi-file edits, supervised live</text>
-        <text class="svg-label" x="92" y="276">Cursor · Windsurf · Copilot agent mode</text></g>
-      </g>
-      <g class="wave wave-4">
-        <circle class="node" cx="60" cy="320" r="11"/>
-        <text class="svg-label-strong" x="92" y="318">2025 · Delegation</text>
-        <g class="cap"><text class="svg-label cap-t" x="92" y="338">Async agents return pull requests</text>
-        <text class="svg-label" x="92" y="356">Claude Code · Codex · Jules · Copilot agent</text></g>
-      </g>
-    </svg>
-    <figcaption>The arc: from a faster keyboard to a delegated teammate.</figcaption>
+    <div class="tl">
+      <div class="tl-wrap">
+        <div class="tl-line"></div>
+        <div class="tl-fill" id="tlFill"></div>
+        <div class="tl-row">
+          <div class="tl-node n1">
+            <div class="tl-yr">2021</div><div class="tl-dot"></div>
+            <div class="tl-detail"><div class="tl-name">Autocomplete</div>
+              <div class="brands"><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">GitHub Copilot</span></div>
+            </div>
+          </div>
+          <div class="tl-node n2">
+            <div class="tl-yr">2022</div><div class="tl-dot"></div>
+            <div class="tl-detail"><div class="tl-name">Chat</div>
+              <div class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">Copilot Chat</span></div>
+            </div>
+          </div>
+          <div class="tl-node n3">
+            <div class="tl-yr">2024</div><div class="tl-dot"></div>
+            <div class="tl-detail"><div class="tl-name">Agents in the editor</div>
+              <div class="brands"><span class="brand"><img class="bi" src="logos/cursor.svg" alt="">Cursor</span><span class="brand"><img class="bi" src="logos/githubcopilot.svg" alt="">Copilot agent mode</span></div>
+            </div>
+          </div>
+          <div class="tl-node n4">
+            <div class="tl-yr">2025</div><div class="tl-dot"></div>
+            <div class="tl-detail"><div class="tl-name">Delegation</div>
+              <div class="brands"><span class="brand"><img class="bi" src="logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img class="bi" src="logos/google.svg" alt="">Jules</span></div>
+            </div>
+          </div>
+          <div class="tl-node n5">
+            <div class="tl-yr">2026</div><div class="tl-dot"></div>
+            <div class="tl-detail"><div class="tl-name">Platforms and control planes</div>
+              <div class="brands"><span class="brand"><svg class="bi" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>Microsoft ES365</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figcaption>The arc runs from a faster keyboard to a delegated teammate, and now to a platform that manages many of them.</figcaption>
   </figure></div>
 </section>
 
 <!-- ══════════ CH 2 · LIFECYCLE MAP ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 2</div>
-  <h2>Coding was just the beachhead</h2>
+  <h2>Coding was only the beachhead</h2>
+  <p class="dek">A delivery pipeline runs from planning through operations and maintenance. AI now assists at every stage, but the progress is uneven.</p>
 </div>
 <section class="scrolly" id="map" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
-      <div class="stepnum">The whole lifecycle</div>
-      <p>Software isn't just written. It's planned, designed, reviewed, tested, built, deployed, operated, migrated, and documented. AI is now touching every one of these phases, unevenly.</p>
+      <div class="stepnum">The lifecycle</div>
+      <p>A typical delivery pipeline moves through planning, design, coding, review, testing, build, deployment, operations, migration, and documentation. AI tooling has reached all of these stages, and the honest assessment is that it has helped some far more than others.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
-      <div class="stepnum">Genuinely getting solved</div>
-      <p>The clearest measured wins are in work a machine can verify. Airbnb converted roughly 3,500 test files in six weeks, work estimated at a year and a half. Google reports 80% of code changes in its internal migrations are now AI-authored. First-pass code review arrives in seconds instead of hours.</p>
-      <p class="src">Sources: Airbnb Engineering, Google Research, GitHub</p>
+      <div class="stepnum">Where the wins are real</div>
+      <p>The strongest measured results are in work a machine can verify against tests. Airbnb converted about 3,500 test files in six weeks, a project it had estimated at a year and a half. Google reports that 80 percent of code changes in its internal migrations are now AI-authored. First-pass code review that once waited hours now arrives in seconds.</p>
+      <p class="src">Sources: <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb Engineering</a>, <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research</a>, <a href="https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/">GitHub</a></p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
-      <div class="stepnum">Partly there</div>
-      <p>Elsewhere, AI produces useful drafts while humans carry the judgment. Planning tools decompose epics but can't decide what's worth building. Incident tools summarize outages in minutes but their root-cause guesses still need verification. Coding itself is split: big gains on unfamiliar or boilerplate work, murkier results for experts deep in mature codebases.</p>
+      <div class="stepnum">Where AI drafts and humans decide</div>
+      <p>In other stages the tools produce useful drafts while people still carry the judgment. Planning agents decompose epics but do not decide what is worth building. Incident tools summarize an outage in minutes, but their root-cause guesses still need to be checked. Coding help is uneven: large gains on unfamiliar or boilerplate work, weaker results for experts deep inside a mature codebase.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
-      <div class="stepnum">Still open</div>
-      <p>The hardest problems remain human. Architectural tradeoffs that depend on organizational context. Deployment and config safety, where a wrong change has a blast radius. And the deepest one: trusting an agent's output without a person re-verifying everything.</p>
+      <div class="stepnum">Where the problems remain open</div>
+      <p>The hardest parts are still human. Architectural tradeoffs depend on organizational context a model does not have. Deployment and configuration safety carry a real blast radius. And trusting an agent's output without a person re-verifying it is the deepest unsolved problem of all.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
-    <svg viewBox="0 0 560 420" role="img" aria-label="Map of the software development lifecycle showing AI progress by phase">
-      <g class="phase st-partial"><rect x="20"  y="60"  width="96" height="52" rx="6"/><text x="68"  y="90" text-anchor="middle">Plan</text></g>
-      <g class="phase st-open">   <rect x="128" y="60"  width="96" height="52" rx="6"/><text x="176" y="90" text-anchor="middle">Design</text></g>
-      <g class="phase st-partial"><rect x="236" y="60"  width="96" height="52" rx="6"/><text x="284" y="90" text-anchor="middle">Code</text></g>
-      <g class="phase st-solved"> <rect x="344" y="60"  width="96" height="52" rx="6"/><text x="392" y="90" text-anchor="middle">Review</text></g>
-      <g class="phase st-solved"> <rect x="452" y="60"  width="96" height="52" rx="6"/><text x="500" y="90" text-anchor="middle">Test</text></g>
-      <g class="phase st-partial"><rect x="20"  y="132" width="96" height="52" rx="6"/><text x="68"  y="162" text-anchor="middle">Build / CI</text></g>
-      <g class="phase st-open">   <rect x="128" y="132" width="96" height="52" rx="6"/><text x="176" y="162" text-anchor="middle">Deploy</text></g>
-      <g class="phase st-partial"><rect x="236" y="132" width="96" height="52" rx="6"/><text x="284" y="162" text-anchor="middle">Operate</text></g>
-      <g class="phase st-solved"> <rect x="344" y="132" width="96" height="52" rx="6"/><text x="392" y="162" text-anchor="middle">Migrate</text></g>
-      <g class="phase st-partial"><rect x="452" y="132" width="96" height="52" rx="6"/><text x="500" y="162" text-anchor="middle">Docs</text></g>
+    <svg viewBox="0 0 560 430" role="img" aria-label="Map of the software development lifecycle showing AI progress by phase">
+      <defs>
+        <marker id="ah" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#6E675C"/>
+        </marker>
+      </defs>
+      <!-- row 1 -->
+      <g class="phase st-partial"><rect x="16"  y="56"  width="90" height="48" rx="6"/><text x="61"  y="84" text-anchor="middle">Plan</text></g>
+      <g class="phase st-open">   <rect x="124" y="56"  width="90" height="48" rx="6"/><text x="169" y="84" text-anchor="middle">Design</text></g>
+      <g class="phase st-partial"><rect x="232" y="56"  width="90" height="48" rx="6"/><text x="277" y="84" text-anchor="middle">Code</text></g>
+      <g class="phase st-solved"> <rect x="340" y="56"  width="90" height="48" rx="6"/><text x="385" y="84" text-anchor="middle">Review</text></g>
+      <g class="phase st-solved"> <rect x="448" y="56"  width="90" height="48" rx="6"/><text x="493" y="84" text-anchor="middle">Test</text></g>
+      <!-- row 2 -->
+      <g class="phase st-partial"><rect x="16"  y="150" width="90" height="48" rx="6"/><text x="61"  y="178" text-anchor="middle">Build / CI</text></g>
+      <g class="phase st-open">   <rect x="124" y="150" width="90" height="48" rx="6"/><text x="169" y="178" text-anchor="middle">Deploy</text></g>
+      <g class="phase st-partial"><rect x="232" y="150" width="90" height="48" rx="6"/><text x="277" y="178" text-anchor="middle">Operate</text></g>
+      <g class="phase st-solved"> <rect x="340" y="150" width="90" height="48" rx="6"/><text x="385" y="178" text-anchor="middle">Migrate</text></g>
+      <g class="phase st-partial"><rect x="448" y="150" width="90" height="48" rx="6"/><text x="493" y="178" text-anchor="middle">Docs</text></g>
+      <!-- flow arrows row 1 -->
+      <line class="flow" x1="108" y1="80" x2="122" y2="80" marker-end="url(#ah)"/>
+      <line class="flow" x1="216" y1="80" x2="230" y2="80" marker-end="url(#ah)"/>
+      <line class="flow" x1="324" y1="80" x2="338" y2="80" marker-end="url(#ah)"/>
+      <line class="flow" x1="432" y1="80" x2="446" y2="80" marker-end="url(#ah)"/>
+      <!-- wrap from Test down to Build/CI -->
+      <path class="flow" d="M493,106 C493,128 61,126 61,148" marker-end="url(#ah)"/>
+      <!-- flow arrows row 2 -->
+      <line class="flow" x1="108" y1="174" x2="122" y2="174" marker-end="url(#ah)"/>
+      <line class="flow" x1="216" y1="174" x2="230" y2="174" marker-end="url(#ah)"/>
+      <line class="flow" x1="324" y1="174" x2="338" y2="174" marker-end="url(#ah)"/>
+      <line class="flow" x1="432" y1="174" x2="446" y2="174" marker-end="url(#ah)"/>
+      <!-- legend -->
       <g class="map-legend leg-solved">
-        <rect x="20" y="250" width="14" height="14" rx="3" fill="#E4EAE0" stroke="#5B7052"/>
-        <text class="svg-label" x="42" y="262">Measured wins published (test generation, migration, first-pass review)</text>
+        <rect x="16" y="262" width="14" height="14" rx="3" fill="#E4EAE0" stroke="#5B7052"/>
+        <text class="svg-label" x="38" y="274">Measured wins published: test generation, migration, first-pass review</text>
       </g>
       <g class="map-legend leg-partial">
-        <rect x="20" y="286" width="14" height="14" rx="3" fill="#F1E8D6" stroke="#B08A3E"/>
-        <text class="svg-label" x="42" y="298">Useful drafts, human judgment still required</text>
+        <rect x="16" y="298" width="14" height="14" rx="3" fill="#F1E8D6" stroke="#B08A3E"/>
+        <text class="svg-label" x="38" y="310">Useful drafts, human judgment still required</text>
       </g>
       <g class="map-legend leg-open">
-        <rect x="20" y="322" width="14" height="14" rx="3" fill="#F0DEDA" stroke="#9C3A2E"/>
-        <text class="svg-label" x="42" y="334">Still open: judgment, safety, and trust</text>
+        <rect x="16" y="334" width="14" height="14" rx="3" fill="#F0DEDA" stroke="#9C3A2E"/>
+        <text class="svg-label" x="38" y="346">Still open: judgment, safety, and trust</text>
       </g>
     </svg>
-    <figcaption>An honest ledger beats a hype map. The green cells share one trait: a machine can verify the output.</figcaption>
+    <figcaption>The green stages share one property: a machine can check the result against tests.</figcaption>
   </figure></div>
 </section>
 
 <!-- ══════════ CH 3 · THE PARADOX ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 3</div>
-  <h2>The uncomfortable part</h2>
+  <h2>Perceived speed and measured speed diverge</h2>
+  <p class="dek">The most important evidence in this space is uncomfortable, and it shapes how a platform should be measured.</p>
 </div>
 <section class="scrolly" id="paradox" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
-      <div class="stepnum">Perception vs. measurement</div>
-      <p>Developers using these tools feel dramatically faster. The measured picture is murkier, and the gap between the two is where the interesting product problems live.</p>
+      <div class="stepnum">Two different pictures</div>
+      <p>Developers using these tools report feeling much faster. The measured results are less clear, and the gap between the two is where the interesting product problems sit.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">The METR trial</div>
-      <p>In a 2025 randomized trial, experienced engineers working in codebases they knew well were <strong>19% slower</strong> with AI assistance. Afterward, they believed they had been about <strong>20% faster</strong>.</p>
-      <p>The perception gap is the finding. Self-reported speedup can't be trusted as a metric.</p>
-      <p class="src">Source: METR, "Measuring the impact of early-2025 AI on experienced developer productivity"</p>
+      <p>In a 2025 randomized trial, experienced engineers working in codebases they knew well were 19 percent slower with AI assistance. Afterward they still estimated that the tools had made them about 20 percent faster.</p>
+      <p>This is why self-reported speedup cannot be used as the measure of success.</p>
+      <p class="src">Source: <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR randomized controlled trial, 2025</a></p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">The DORA signal</div>
-      <p>Google's DORA research found the organizational version of the same story: as AI adoption rose, teams pushed more code through the pipeline while delivery stability declined. Teams shipped bigger batches, and more of them broke.</p>
-      <p class="src">Source: DORA State of DevOps 2024 / 2025</p>
+      <p>Google's DORA research found a matching pattern at the organizational level. As AI adoption rose, teams pushed more code through the pipeline while delivery stability declined. Larger batches shipped, and more of them broke.</p>
+      <p class="src">Source: <a href="https://dora.dev/dora-report-2025/">DORA State of AI-assisted Software Development</a></p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
-      <div class="stepnum">What it means</div>
-      <p>Code generation improved faster than verification. The bottleneck moved downstream, into review, testing, and trust. Any serious effort in this space has to attack the whole pipeline, because speeding up typing alone just piles work at the next gate.</p>
+      <div class="stepnum">What it means for a platform</div>
+      <p>Generation improved faster than verification, so the bottleneck moved downstream into review, testing, and trust. A platform that speeds up writing without speeding up verification simply moves the pile of work to the next gate. The whole pipeline has to be addressed together.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
     <svg viewBox="0 0 560 420" role="img" aria-label="Chart comparing perceived versus measured productivity change with AI">
       <line x1="60" y1="210" x2="330" y2="210" stroke="#DCD6C8" stroke-width="2"/>
       <text class="svg-label" x="60" y="40">Experienced developers, mature codebases (METR RCT, 2025)</text>
-      <rect class="bar" x="95" y="110" width="70" height="100" fill="#5B7052" opacity="0" rx="3"/>
+      <rect class="bar" x="95" y="110" width="70" height="100" fill="#5B7052" rx="3"/>
       <g class="bar-label"><text class="svg-label-strong" x="130" y="98" text-anchor="middle">Felt: +20%</text>
       <text class="svg-label" x="130" y="240" text-anchor="middle">perceived</text></g>
-      <rect class="bar" x="215" y="210" width="70" height="95" fill="#9C3A2E" opacity="0" rx="3"/>
-      <g class="bar-label"><text class="svg-label-strong" x="250" y="332" text-anchor="middle">Measured: −19%</text>
-      <text class="svg-label" x="250" y="240" text-anchor="middle" opacity="0">.</text></g>
+      <rect class="bar" x="215" y="210" width="70" height="95" fill="#9C3A2E" rx="3"/>
+      <g class="bar-label"><text class="svg-label-strong" x="250" y="332" text-anchor="middle">Measured: −19%</text></g>
       <g class="dora-panel">
         <line x1="370" y1="60" x2="370" y2="340" stroke="#DCD6C8" stroke-width="1"/>
         <text class="svg-label-strong" x="395" y="80">DORA, org level</text>
@@ -384,96 +443,102 @@
         <text x="395" y="260" font-size="26" fill="#9C3A2E" font-weight="bold">▼ down</text>
       </g>
       <g class="bottleneck">
-        <text class="svg-label-strong" x="60" y="392">The constraint moved: writing code → verifying code.</text>
+        <text class="svg-label-strong" x="60" y="392">The constraint moved from writing code to verifying it.</text>
       </g>
     </svg>
-    <figcaption>The strongest independent evidence in the space points both directions at once.</figcaption>
+    <figcaption>The strongest independent evidence points in two directions at once, depending on the task.</figcaption>
   </figure></div>
 </section>
 
 <!-- ══════════ CH 4 · INDUSTRY ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 4</div>
-  <h2>What the leaders are publishing</h2>
+  <h2>What the leaders have published</h2>
+  <p class="dek">The companies reporting real numbers follow a common pattern: narrow agents pointed at verifiable work, with humans reviewing whatever lands.</p>
 </div>
 <section class="scrolly" id="industry" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
-      <div class="stepnum">A pattern in the results</div>
-      <p>The companies publishing real numbers share a playbook: narrow agents pointed at verifiable work, with humans reviewing everything that lands.</p>
+      <div class="stepnum">Migrations, AI-authored</div>
+      <p>Google reports that 80 percent of code changes in its landed internal migrations are AI-authored, with every change human-reviewed, and engineers spending roughly half the time they used to.</p>
+      <p class="src">Source: <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research</a></p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
-      <div class="stepnum">Migrations at scale</div>
-      <p>Amazon says its Java-upgrade agent saved the equivalent of 4,500 developer-years. Airbnb's test migration finished in six weeks instead of eighteen months. These are the flagship wins because the output is machine-checkable.</p>
+      <div class="stepnum">The mechanical backlog, cleared</div>
+      <p>Amazon reports that its Java-upgrade agent saved the equivalent of 4,500 developer-years and about 260 million dollars in annualized efficiency. Airbnb migrated roughly 3,500 test files in six weeks against an estimate of a year and a half.</p>
+      <p class="src">Sources: <a href="https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/">AWS</a>, <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb Engineering</a></p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
-      <div class="stepnum">Agents in production</div>
-      <p>Stripe's internal "Minions" merge about 1,300 pull requests a week, kicked off from Slack or a ticket. Meta publishes its filters as candidly as its wins: most generated tests get discarded, and only the provably useful ones survive.</p>
+      <div class="stepnum">Agents with quality gates</div>
+      <p>Stripe's internal agents merge about 1,300 pull requests a week, started from a Slack message or a ticket. Meta publishes its filters as openly as its wins: most generated tests are discarded, and only the ones that provably add coverage are kept.</p>
+      <p class="src">Sources: <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents">Stripe</a>, <a href="https://arxiv.org/abs/2402.09171">Meta TestGen-LLM</a></p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
-      <div class="stepnum">Where it's converging</div>
-      <p>Spotify shows the destination: its internal developer portal now exposes plugins as tools any agent can discover, with the portal brokering permissions. <strong>The developer platform is becoming the control plane for agents.</strong></p>
+      <div class="stepnum">Where it is converging</div>
+      <p>Spotify shows the destination. Its internal developer platform, built on Backstage, the most widely used internal-developer-platform framework, now exposes plugins as tools any agent can discover, with the platform brokering permissions. The developer platform is becoming the control plane for agents, which is the model ES365 is pursuing inside Microsoft.</p>
+      <p class="src">Source: <a href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify Engineering</a>, <a href="https://backstage.io/">Backstage</a></p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
     <div class="co-cards">
       <div class="co-card co-1">
-        <div class="meta">Google · Research blog</div>
+        <div class="co-head"><img class="bi" src="logos/google.svg" alt=""><span class="co-name">Google · Research</span></div>
         <h3>Migrations, AI-authored</h3>
         <div class="stat">80%</div>
-        <div class="statcap">of code changes in landed internal migrations were AI-authored, with every change human-reviewed</div>
-        <p style="margin-top:14px">Engineers report roughly half the total time on migration work.</p>
+        <div class="statcap">of code changes in landed internal migrations were AI-authored, every change human-reviewed</div>
+        <p style="margin-top:14px">Engineers report roughly half the time on migration work.</p>
       </div>
       <div class="co-card co-2">
-        <div class="meta">Amazon · AWS &amp; Airbnb Engineering</div>
+        <div class="co-head"><span class="co-name">Amazon · AWS &nbsp;&amp;&nbsp; <img class="bi" src="logos/airbnb.svg" alt="" style="vertical-align:middle"> Airbnb</span></div>
         <h3>The mechanical backlog, cleared</h3>
         <div class="stat">4,500</div>
-        <div class="statcap">developer-years saved on Java upgrades, per Amazon; ~$260M in annualized efficiency</div>
-        <p style="margin-top:14px">Airbnb: ~3,500 test files migrated in 6 weeks vs. an estimated 1.5 years.</p>
+        <div class="statcap">developer-years saved on Java upgrades, per Amazon; about $260M annualized</div>
+        <p style="margin-top:14px">Airbnb: roughly 3,500 test files migrated in 6 weeks, versus an estimated 1.5 years.</p>
       </div>
       <div class="co-card co-3">
-        <div class="meta">Stripe · Meta</div>
+        <div class="co-head"><img class="bi" src="logos/stripe.svg" alt=""><span class="co-name">Stripe &nbsp;&amp;&nbsp;</span> <img class="bi" src="logos/meta.svg" alt=""><span class="co-name">Meta</span></div>
         <h3>Agents with quality gates</h3>
         <div class="stat">~1,300</div>
-        <div class="statcap">pull requests merged per week by Stripe's one-shot "Minions" agents</div>
-        <p style="margin-top:14px">Meta's TestGen-LLM keeps only tests that build, pass reliably, and provably add coverage. Most candidates are filtered out by design.</p>
+        <div class="statcap">pull requests merged per week by Stripe's internal agents</div>
+        <p style="margin-top:14px">Meta keeps only tests that build, pass reliably, and add coverage. Most candidates are filtered out.</p>
       </div>
       <div class="co-card co-4">
-        <div class="meta">Spotify · Backstage</div>
-        <h3>Portal as control plane</h3>
+        <div class="co-head"><img class="bi" src="logos/spotify.svg" alt=""><span class="co-name">Spotify · Backstage</span></div>
+        <h3>Platform as control plane</h3>
         <div class="stat">87%</div>
-        <div class="statcap">of Spotify developers use AiKA, the AI assistant built into their internal portal, weekly</div>
-        <p style="margin-top:14px">Portal plugins are now exposed as agent-discoverable tools, with policy enforced centrally.</p>
+        <div class="statcap">of Spotify developers use the AI assistant built into their internal portal, weekly</div>
+        <p style="margin-top:14px">Portal plugins are exposed as agent-discoverable tools, with policy enforced centrally.</p>
       </div>
     </div>
-    <figcaption>Published, primary-source results. Vendor-reported figures treated as directional.</figcaption>
+    <figcaption>Published, primary-source results. Vendor-reported figures are treated as directional.</figcaption>
   </figure></div>
 </section>
 
 <!-- ══════════ CH 5 · THE PLATFORM ANSWER ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 5</div>
-  <h2>Why the next gains come from platforms</h2>
+  <h2>Why the next gains come from a platform</h2>
+  <p class="dek">This is the charter ES365 owns: the layer that turns scattered agents into a governed, measurable capability.</p>
 </div>
 <section class="scrolly" id="platform" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
-      <div class="stepnum">The problem with a thousand snowflakes</div>
-      <p>Individual tools got the industry this far. But thousands of developers each wiring up their own agents produces duplicated effort, ungoverned access to code and credentials, and no way to measure whether any of it works.</p>
+      <div class="stepnum">The cost of a thousand one-off setups</div>
+      <p>Individual tools brought the industry this far. But thousands of developers each wiring up their own agents produces duplicated effort, ungoverned access to code and credentials, and no consistent way to tell whether any of it is working.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">The platform layer</div>
-      <p>The answer looks like the internal developer platforms that tamed cloud infrastructure, extended to agents. <strong>Orchestration</strong>, so agents compose and reuse. <strong>Golden paths</strong>, so the well-instrumented route is also the easiest one. <strong>A curated marketplace</strong>, so teams share agents instead of rebuilding them. <strong>Governance</strong>, so an agent's access is brokered, scoped, and audited.</p>
+      <p>The answer resembles the internal developer platforms that brought order to cloud infrastructure, now extended to agents. Orchestration lets agents compose and reuse. Golden paths make the well-instrumented route the easiest one. A curated marketplace lets teams share agents instead of rebuilding them. Governance keeps an agent's access brokered, scoped, and audited. This is the ground ES365 covers, from source control through build, validation, and deployment.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Measurement lives here too</div>
-      <p>A platform is also where honest measurement becomes possible. Acceptance rate flatters the tool. The metrics that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once, and every team gets truthful numbers for free.</p>
+      <p>The platform is also where honest measurement becomes possible. Acceptance rate flatters the tool. The figures that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once and every team gets trustworthy numbers.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
     <svg viewBox="0 0 560 420" role="img" aria-label="Diagram of an agentic developer platform between developers with agents and engineering systems">
       <g class="plat-agents">
-        <text class="svg-label-strong" x="20" y="46">Developers + agents</text>
+        <text class="svg-label-strong" x="20" y="46">Developers and agents</text>
         <rect class="box" x="20" y="62"  width="120" height="40" rx="6"/><text class="svg-label" x="80" y="87" text-anchor="middle">IDE agents</text>
         <rect class="box" x="20" y="112" width="120" height="40" rx="6"/><text class="svg-label" x="80" y="137" text-anchor="middle">Async agents</text>
         <rect class="box" x="20" y="162" width="120" height="40" rx="6"/><text class="svg-label" x="80" y="187" text-anchor="middle">Custom agents</text>
@@ -491,11 +556,11 @@
       <line class="chaos-line" x1="140" y1="182" x2="420" y2="82"/>
       <g class="plat-room">
         <rect x="180" y="52" width="200" height="212" rx="8" fill="#FAF9F4" stroke="#C15F3C" stroke-width="1.5"/>
-        <text x="280" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F1E1B">The platform</text>
+        <text x="280" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F1E1B">The platform · ES365</text>
         <rect class="box" x="196" y="92"  width="168" height="34" rx="5"/><text class="svg-label" x="280" y="114" text-anchor="middle">Orchestration</text>
         <rect class="box" x="196" y="134" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="156" text-anchor="middle">Golden paths</text>
         <rect class="box" x="196" y="176" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="198" text-anchor="middle">Agent marketplace</text>
-        <rect class="box" x="196" y="218" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="240" text-anchor="middle">Governance &amp; access</text>
+        <rect class="box" x="196" y="218" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="240" text-anchor="middle">Governance and access</text>
       </g>
       <line class="order-line" x1="140" y1="82"  x2="180" y2="110"/>
       <line class="order-line" x1="140" y1="132" x2="180" y2="150"/>
@@ -514,28 +579,93 @@
   </figure></div>
 </section>
 
-<!-- ══════════ CH 6 · WHAT I'D FOCUS ON ══════════ -->
+<!-- ══════════ CH 6 · THE PM ROLE ══════════ -->
 <div class="chapter-head">
   <div class="kicker">Chapter 6</div>
-  <h2>Three working hypotheses, held loosely</h2>
+  <h2>How I would approach the product role</h2>
+  <p class="dek">A platform this early is as much an alignment problem as a build problem. Here is how I would run it.</p>
+</div>
+<section class="scrolly" id="align" data-step="0">
+  <div class="steps">
+    <div class="step" data-index="1"><div class="step-card">
+      <div class="stepnum">Start from the developer's problem</div>
+      <p>The work begins with listening. I would sit with the developers and codebase owners who use these tools, learn where their day actually stalls, and pair that with a clear view of where the technology is heading. Humility about their pain points and conviction about the direction are both required, and neither substitutes for the other.</p>
+    </div></div>
+    <div class="step" data-index="2"><div class="step-card">
+      <div class="stepnum">Set the goals and define success</div>
+      <p>I would set explicit objectives for the space and define how success is measured before building, using outcome metrics rather than acceptance rate: lead time, change failure rate, and the share of engineering time spent on new work. Agreeing on the scoreboard early is what keeps a platform honest as it scales.</p>
+    </div></div>
+    <div class="step" data-index="3"><div class="step-card">
+      <div class="stepnum">The hardest part is alignment</div>
+      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+    </div></div>
+    <div class="step" data-index="4"><div class="step-card">
+      <div class="stepnum">Then execute, measure, and iterate</div>
+      <p>With the vision agreed, the work becomes tactical: sequence the roadmap, ship in increments, watch the outcome metrics, and adjust. Move from early adopters to broad rollout along golden paths, and keep the feedback loop with developers tight enough that the platform keeps pace with what they actually need.</p>
+    </div></div>
+  </div>
+  <div class="figure"><figure class="figure-inner">
+    <svg viewBox="0 0 560 420" role="img" aria-label="Diagram showing many Microsoft teams aligning around one shared charter that developers adopt">
+      <defs>
+        <marker id="ah2" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#6E675C"/>
+        </marker>
+      </defs>
+      <g class="src-team">
+        <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Azure, customer-facing</text>
+        <rect class="box" x="16" y="120" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="143" text-anchor="middle">Internal DevOps teams</text>
+        <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">GitHub and DevDiv</text>
+        <rect class="box" x="16" y="280" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="303" text-anchor="middle">Product orgs</text>
+      </g>
+      <!-- contending arrows (early) -->
+      <line class="align-arrow contend" x1="170" y1="59"  x2="250" y2="150" marker-end="url(#ah2)"/>
+      <line class="align-arrow contend" x1="170" y1="139" x2="250" y2="165" marker-end="url(#ah2)"/>
+      <line class="align-arrow contend" x1="170" y1="219" x2="250" y2="180" marker-end="url(#ah2)"/>
+      <line class="align-arrow contend" x1="170" y1="299" x2="250" y2="195" marker-end="url(#ah2)"/>
+      <!-- converging arrows (aligned) -->
+      <line class="align-arrow" x1="170" y1="59"  x2="252" y2="158" marker-end="url(#ah2)"/>
+      <line class="align-arrow" x1="170" y1="139" x2="252" y2="170" marker-end="url(#ah2)"/>
+      <line class="align-arrow" x1="170" y1="219" x2="252" y2="182" marker-end="url(#ah2)"/>
+      <line class="align-arrow" x1="170" y1="299" x2="252" y2="194" marker-end="url(#ah2)"/>
+      <g class="charter-node">
+        <rect x="256" y="140" width="150" height="72" rx="8" fill="#FAF9F4" stroke="#C15F3C" stroke-width="1.5"/>
+        <text x="331" y="170" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F1E1B">One shared charter</text>
+        <text x="331" y="190" text-anchor="middle" font-size="11" fill="#6E675C">the agentic platform</text>
+      </g>
+      <g class="adopt">
+        <line class="align-arrow" x1="406" y1="176" x2="452" y2="176" marker-end="url(#ah2)" style="opacity:.6"/>
+        <rect class="box" x="456" y="150" width="90" height="52" rx="6" style="fill:#E4EAE0;stroke:#5B7052"/>
+        <text class="svg-label" x="501" y="172" text-anchor="middle" style="fill:#5B7052;font-weight:bold">Developer</text>
+        <text class="svg-label" x="501" y="188" text-anchor="middle" style="fill:#5B7052;font-weight:bold">teams adopt</text>
+      </g>
+    </svg>
+    <figcaption>Much of the product job is turning competing approaches into one charter teams will sign up for.</figcaption>
+  </figure></div>
+</section>
+
+<!-- ══════════ CH 7 · HYPOTHESES ══════════ -->
+<div class="chapter-head">
+  <div class="kicker">Chapter 7</div>
+  <h2>Three Working Hypotheses</h2>
+  <p class="dek">Early views I would bring in and then test against what the team already knows.</p>
 </div>
 <section class="scrolly" id="vision" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
       <div class="stepnum">Hypothesis one</div>
-      <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience, every time. If the governed, instrumented route is also the easiest one, you don't have to mandate anything. I watched this play out firsthand consolidating 30+ internal tools into 8 workflows at Amazon: adoption hit 100% because the new path was simply better, and usability scores rose 78%.</p>
+      <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience. If the governed, instrumented route is also the easiest one, mandates become unnecessary. I saw this directly when I consolidated more than 30 internal tools into 8 workflows at Amazon: adoption reached 100 percent because the new path was simply better to use, and usability scores rose 78 percent.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">Hypothesis two</div>
-      <p><strong>Measure outcomes on a counterbalanced scorecard.</strong> Pair throughput with stability so a win on one can't quietly become a loss on the other. Track the gap between perceived and actual speedup directly, because the METR result shows it's real. I learned the hard way that a product without an agreed success metric stalls; the fix made measurement the first feature, and adoption followed.</p>
+      <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability so a gain on one cannot quietly become a loss on the other, and track the gap between perceived and actual speedup, because the METR result shows it is real. Deciding what success looks like before shipping is what keeps a platform pointed at outcomes instead of activity.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Hypothesis three</div>
       <p><strong>Curate more than you build.</strong> The ecosystem will produce more agent capability than any single team can. The platform's leverage is discovery, quality bars, and trust, so a developer can adopt a shared agent with the same confidence as a standard library.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
-      <div class="stepnum">And the questions I'd ask first</div>
-      <p>Where does agent output actually stall today: review, CI, or trust? Which workflows have the strongest verification oracles, making them ripest for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside, with the teams and the telemetry.</p>
+      <div class="stepnum">And the questions I would ask first</div>
+      <p>Where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside ES365, with the team and the telemetry.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -545,15 +675,15 @@
         <p>Golden paths beat mandates. Convenience is the adoption strategy.</p>
       </div>
       <div class="hypo hypo-2">
-        <h3>2 · Measure outcomes, counterbalanced</h3>
-        <p>Throughput paired with stability. Perceived vs. actual tracked honestly.</p>
+        <h3>2 · Measure outcomes on a balanced scorecard</h3>
+        <p>Throughput paired with stability. Perceived versus actual, tracked honestly.</p>
       </div>
       <div class="hypo hypo-3">
         <h3>3 · Curate more than you build</h3>
-        <p>A trusted marketplace scales further than any roadmap.</p>
+        <p>A trusted marketplace scales further than any single roadmap.</p>
       </div>
     </div>
-    <figcaption>Hypotheses from public evidence and my own platform work. The inside view comes first.</figcaption>
+    <figcaption>Hypotheses drawn from public evidence and my own platform work. The inside view comes first.</figcaption>
   </figure></div>
 </section>
 
@@ -561,44 +691,48 @@
 <div class="prose">
   <div class="eyebrow">About the author</div>
   <h2>Why I care about this</h2>
-  <p>I've spent 14 years across engineering and product. At Amazon, I rebuilt the internal supply-chain platform behind a $30B grocery business: 30+ fragmented tools consolidated into 8 workflows, adopted by 100% of users across 8 countries, with usability up 78%. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80%. Before any of that, I was a software engineer.</p>
-  <p>I never stopped building. This page, the agentic job-search tool that runs my mornings, and a multi-agent trading system were all built hands-on with the tools this essay describes.</p>
+  <p>I have spent 14 years across engineering and product. At Amazon I rebuilt the internal supply-chain platform behind a $30B grocery business, consolidating more than 30 fragmented tools into 8 workflows adopted by 100 percent of users across 8 countries, with usability up 78 percent. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80 percent. Before any of that, I was a software engineer.</p>
+  <p>I have kept building. This page, the agentic job-search tool that runs my mornings, and a multi-agent trading system were all built hands-on with the class of tools this proposal describes.</p>
   <div class="builds">
     <div class="build-card"><div class="meta">JobBot 3000</div><p>Agentic job-sourcing pipeline. ATS connectors, LLM scoring, deployed on Google Cloud, runs daily.</p></div>
     <div class="build-card"><div class="meta">MATES</div><p>Multi-agent prediction-market trading system with live APIs and backtesting.</p></div>
-    <div class="build-card"><div class="meta">Frida (Amazon)</div><p>LLM natural-language layer over a causal diagnostics engine. 80% faster investigations.</p></div>
+    <div class="build-card"><div class="meta">Frida (Amazon)</div><p>LLM natural-language layer over a causal diagnostics engine. 80 percent faster investigations.</p></div>
   </div>
-  <p>The teams building agentic engineering platforms are working on what I think is the most consequential product problem in software right now. I'd love to be part of it.</p>
+  <p>The teams building agentic engineering platforms are working on what I believe is the most consequential product problem in software right now. I would like to help ES365 build it.</p>
   <p><a href="/">More about me →</a></p>
 </div>
 
 <div class="prose">
-  <div class="eyebrow">Sources &amp; further reading</div>
+  <div class="eyebrow">Sources and further reading</div>
   <p class="sources">
-    <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR: Measuring the impact of AI on experienced developer productivity</a> ·
+    <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR: measuring the impact of AI on experienced developer productivity</a> ·
     <a href="https://dora.dev/dora-report-2025/">DORA: State of AI-assisted software development</a> ·
-    <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb: Accelerating large-scale test migration with LLMs</a> ·
-    <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research: Accelerating code migrations with AI</a> ·
+    <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb: accelerating large-scale test migration with LLMs</a> ·
+    <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research: accelerating code migrations with AI</a> ·
     <a href="https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/">AWS: Amazon Q Developer's $260M milestone</a> ·
     <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents">Stripe: Minions, one-shot coding agents</a> ·
     <a href="https://arxiv.org/abs/2402.09171">Meta: TestGen-LLM</a> ·
     <a href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify: AiKA and Portal</a> ·
-    <a href="https://developer.microsoft.com/blog/learn-from-microsoft-transform-software-development-through-an-agentic-platform">Microsoft: Transforming software development through an agentic platform</a> ·
-    <a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research">GitClear: AI code quality research</a>
+    <a href="https://backstage.io/">Backstage: internal developer platform framework</a> ·
+    <a href="https://developer.microsoft.com/blog/learn-from-microsoft-transform-software-development-through-an-agentic-platform">Microsoft: transforming software development through an agentic platform</a> ·
+    <a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/">Microsoft Agent Framework (Build 2026)</a> ·
+    <a href="https://techcommunity.microsoft.com/blog/appsonazureblog/how-microsoft-1es-uses-agentic-ai-to-take-on-security-and-compliance-at-scale/4515191">Microsoft 1ES: agentic AI for security and compliance at scale</a>
   </p>
 </div>
 
 <footer>
   <span class="wordmark">Michael Fitzpatrick<span class="dot">.</span></span><br>
-  Temporary essay page · not indexed · © 2026
+  Charter proposal · prepared for ES365, Microsoft · not indexed · © 2026
 </footer>
 
 <script>
 (function(){
   var sections = Array.prototype.slice.call(document.querySelectorAll('section.scrolly'));
-  var ticking = false;
+  var fill = document.getElementById('tlFill');
+  var fillByStep = {1:'10%',2:'30%',3:'50%',4:'70%',5:'90%'};
+  var scheduled = false;
   function update(){
-    ticking = false;
+    scheduled = false;
     var mid = window.innerHeight * 0.55;
     sections.forEach(function(section){
       var steps = section.querySelectorAll('.step');
@@ -612,10 +746,18 @@
       for(var j = 0; j < steps.length; j++){
         steps[j].classList.toggle('active', j + 1 === active);
       }
+      if(section.id === 'waves'){
+        var nodes = section.querySelectorAll('.tl-node');
+        for(var k = 0; k < nodes.length; k++){
+          nodes[k].classList.toggle('tl-active', k + 1 === active);
+        }
+        if(fill){ fill.style.width = active ? (fillByStep[active] || '0') : '0'; }
+      }
     });
   }
   function onScroll(){
-    if(!ticking){ ticking = true; requestAnimationFrame(update); }
+    update();
+    if(!scheduled){ scheduled = true; requestAnimationFrame(update); }
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll, {passive:true});

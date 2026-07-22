@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>The Agentic Wave — reading view · Michael Fitzpatrick</title>
-<meta name="description" content="A short essay on AI and agentic workflows across the software development lifecycle.">
+<title>Agentic Platform in the SDLC — Charter Proposal (reading view) · Michael Fitzpatrick</title>
+<meta name="description" content="A charter proposal on agentic workflows across the software development lifecycle, prepared for Microsoft ES365.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
 <style>
   :root{
@@ -29,7 +29,7 @@
   main{max-width:var(--maxw); margin:0 auto; padding:56px 24px 40px}
   .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase;
     color:var(--faded); font-weight:bold; margin-bottom:14px}
-  h1{font-size:clamp(30px,5vw,44px); line-height:1.1; letter-spacing:-.8px; margin-bottom:20px}
+  h1{font-size:clamp(28px,4.4vw,40px); line-height:1.14; letter-spacing:-.5px; margin-bottom:20px}
   h2{font-size:24px; letter-spacing:-.3px; margin:52px 0 14px; padding-top:28px;
     border-top:1px solid var(--hairline)}
   .kicker{font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--clay);
@@ -44,9 +44,14 @@
   .callout{background:var(--paper); border:1px solid var(--hairline); border-radius:6px;
     padding:20px 22px; margin:20px 0}
   .callout .meta{font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--clay); font-weight:bold; margin-bottom:8px}
+    color:var(--clay); font-weight:bold; margin-bottom:8px; display:flex; align-items:center; gap:8px}
+  .callout .meta img{height:16px; width:auto}
   .callout p{font-size:15px; margin-bottom:8px}
   .callout p:last-child{margin-bottom:0}
+  .waverow{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px}
+  .waverow .brands{display:inline-flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .waverow .brand{display:inline-flex; align-items:center; gap:5px; font-size:13px; color:var(--faded)}
+  .waverow .brand img{height:14px; width:auto; opacity:.85}
   .stat-row{display:flex; gap:24px; flex-wrap:wrap; margin:8px 0 4px}
   .stat b{display:block; font-size:28px; color:var(--ink)}
   .stat span{font-size:12.5px; color:var(--faded)}
@@ -58,6 +63,7 @@
   .legend .solved::before{background:#E4EAE0; border:1px solid var(--moss)}
   .legend .partial::before{background:#F1E8D6; border:1px solid var(--amber)}
   .legend .open::before{background:#F0DEDA; border:1px solid var(--brick)}
+  .src a, a.src{color:var(--faded); border-bottom:1px solid var(--hairline)}
   .sources{font-size:13px; color:var(--faded); line-height:1.9}
   .sources a{border-bottom:1px solid var(--hairline)}
   footer{border-top:1px solid var(--hairline); text-align:center; padding:32px 24px;
@@ -74,117 +80,132 @@
 </header>
 
 <main>
-<div class="eyebrow">An essay · July 2026</div>
-<h1>How software gets built is changing faster than how we manage it.</h1>
-<p class="lede">Five years ago, AI in development meant autocomplete. Today, agents plan work, write code, review it, test it, and come back with a pull request. This is a short tour of that shift: where it came from, what it has genuinely solved, and why the next gains will come from platforms.</p>
-<p class="note">A note before we begin: I write this as an outsider looking in. Everything here comes from public research and engineering blogs, plus my own hands-on building with these tools. The teams running engineering systems inside large companies know things I can't see from here. Consider this a point of view I'd be eager to pressure-test on the inside.</p>
+<div class="eyebrow">Charter proposal · ES365, Microsoft · July 2026</div>
+<h1>Agentic Platform in the Software Development Lifecycle — Charter Proposal</h1>
+<p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where an internal agentic platform like ES365 can focus next.</p>
+<p class="note">A note on where this comes from. I prepared this while getting ready to meet the ES365 team. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The people building engineering systems inside Microsoft see things I cannot from the outside, so I am offering this as a starting point for a conversation and expect to revise it as I learn what your team already knows.</p>
 <div class="byline">Michael Fitzpatrick · Senior Product Manager (Technical) · Seattle<br>
-Researched and built in a day with the same class of agentic tools it describes.</div>
+Researched and built with the same class of agentic tools it describes.</div>
 
 <div class="kicker">Chapter 1</div>
-<h2>Four waves in five years</h2>
-<p><strong>2021–2022, autocomplete.</strong> GitHub Copilot launched as an "AI pair programmer." It suggested the next line of code inside a single file. Useful, narrow, and easy to ignore.</p>
-<p><strong>2022–2023, chat.</strong> ChatGPT and Copilot Chat turned code into a conversation. Developers could paste an error and ask why it was happening, in plain English, without leaving the editor.</p>
-<p><strong>2023–2025, agents in the editor.</strong> Tools like Cursor and Copilot's agent mode began planning work, editing across many files, and running commands while the developer supervised in real time.</p>
-<p><strong>2025–2026, delegation.</strong> Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now take a ticket, work in the background, and return a pull request for human review. <strong>The unit of work shifted from a suggestion to a task.</strong></p>
+<h2>Five years, five waves</h2>
+<div class="waverow"><strong>2021–2022, autocomplete.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/githubcopilot.svg" alt="">GitHub Copilot</span></span></div>
+<p>GitHub Copilot suggested the next line of code inside a single file. It was a helpful convenience that a developer could accept or ignore.</p>
+<div class="waverow"><strong>2022–2023, chat.</strong>&nbsp;<span class="brands"><span class="brand">ChatGPT (OpenAI)</span><span class="brand"><img src="logos/githubcopilot.svg" alt="">Copilot Chat</span></span></div>
+<p>ChatGPT and Copilot Chat let developers ask questions in plain language. A developer could paste an error and get an explanation without leaving the editor.</p>
+<div class="waverow"><strong>2023–2025, agents in the editor.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/cursor.svg" alt="">Cursor</span><span class="brand"><img src="logos/githubcopilot.svg" alt="">Copilot agent mode</span></span></div>
+<p>Cursor and Copilot's agent mode began planning changes, editing across multiple files, and running commands while the developer supervised in real time.</p>
+<div class="waverow"><strong>2025, delegation.</strong>&nbsp;<span class="brands"><span class="brand"><img src="logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img src="logos/google.svg" alt="">Jules</span></span></div>
+<p>Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now accept a ticket, work in the background, and return a pull request for a human to review. The unit of work became a task rather than a keystroke.</p>
+<div class="waverow"><strong>2026, platforms and control planes.</strong></div>
+<p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal teams like ES365 are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
 
 <div class="kicker">Chapter 2</div>
-<h2>Coding was just the beachhead</h2>
-<p>Software isn't just written. It's planned, designed, reviewed, tested, built, deployed, operated, migrated, and documented. AI is now touching every one of these phases, unevenly. An honest ledger of the lifecycle looks like this:</p>
+<h2>Coding was only the beachhead</h2>
+<p>A typical delivery pipeline moves through planning, design, coding, review, testing, build, deployment, operations, migration, and documentation. AI tooling has reached all of these stages, and the honest assessment is that it has helped some far more than others.</p>
 <ul class="legend">
-  <li class="solved"><strong>Measured wins published:</strong> test generation, large mechanical migrations, and first-pass code review. Airbnb converted roughly 3,500 test files in six weeks, work estimated at a year and a half. Google reports 80% of code changes in its internal migrations are now AI-authored. First-pass review arrives in seconds instead of hours.</li>
-  <li class="partial"><strong>Useful drafts, human judgment still required:</strong> planning, coding itself, build triage, incident response, documentation. Planning tools decompose epics but can't decide what's worth building. Incident tools summarize outages in minutes but their root-cause guesses still need verification. Coding is split: big gains on unfamiliar or boilerplate work, murkier results for experts deep in mature codebases.</li>
-  <li class="open"><strong>Still open:</strong> architectural tradeoffs that depend on organizational context, deployment and config safety where a wrong change has a blast radius, and the deepest one: trusting an agent's output without a person re-verifying everything.</li>
+  <li class="solved"><strong>Where the wins are measured:</strong> test generation, large mechanical migrations, and first-pass code review. Airbnb converted about 3,500 test files in six weeks, a project it had estimated at a year and a half. Google reports that 80 percent of code changes in its internal migrations are now AI-authored. First-pass review that once waited hours now arrives in seconds.</li>
+  <li class="partial"><strong>Where AI drafts and humans decide:</strong> planning, coding itself, build triage, incident response, and documentation. Planning agents decompose epics but do not decide what is worth building. Incident tools summarize an outage in minutes, but their root-cause guesses still need to be checked. Coding help is uneven, with large gains on unfamiliar or boilerplate work and weaker results for experts inside a mature codebase.</li>
+  <li class="open"><strong>Where the problems remain open:</strong> architectural tradeoffs that depend on organizational context, deployment and configuration safety where a wrong change has a real blast radius, and trusting an agent's output without a person re-verifying it.</li>
 </ul>
-<p>The green cells share one trait: a machine can verify the output.</p>
+<p>The stages in the first group share one property: a machine can check the result against tests.</p>
 
 <div class="kicker">Chapter 3</div>
-<h2>The uncomfortable part</h2>
-<p>Developers using these tools feel dramatically faster. The measured picture is murkier, and the gap between the two is where the interesting product problems live.</p>
+<h2>Perceived speed and measured speed diverge</h2>
+<p>Developers using these tools report feeling much faster. The measured results are less clear, and the gap between the two is where the interesting product problems sit.</p>
 <div class="callout">
   <div class="meta">The METR trial · 2025</div>
   <div class="stat-row">
     <div class="stat"><b>+20%</b><span>how much faster developers believed they were</span></div>
     <div class="stat"><b>−19%</b><span>how much slower they actually were, measured</span></div>
   </div>
-  <p style="margin-top:10px">In a randomized trial, experienced engineers working in codebases they knew well were 19% slower with AI assistance, while believing they had been about 20% faster. The perception gap is the finding: self-reported speedup can't be trusted as a metric.</p>
+  <p style="margin-top:10px">In a randomized trial, experienced engineers working in codebases they knew well were 19 percent slower with AI assistance, while estimating afterward that the tools had made them about 20 percent faster. This is why self-reported speedup cannot be used as the measure of success. (<a class="src" href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR</a>)</p>
 </div>
-<p>Google's DORA research found the organizational version of the same story: as AI adoption rose, teams pushed more code through the pipeline while delivery stability declined. Teams shipped bigger batches, and more of them broke.</p>
-<p><strong>What it means:</strong> code generation improved faster than verification. The bottleneck moved downstream, into review, testing, and trust. Any serious effort in this space has to attack the whole pipeline, because speeding up typing alone just piles work at the next gate.</p>
+<p>Google's DORA research found a matching pattern at the organizational level. As AI adoption rose, teams pushed more code through the pipeline while delivery stability declined. Larger batches shipped, and more of them broke. (<a class="src" href="https://dora.dev/dora-report-2025/">DORA 2025</a>)</p>
+<p><strong>What it means for a platform:</strong> generation improved faster than verification, so the bottleneck moved downstream into review, testing, and trust. A platform that speeds up writing without speeding up verification simply moves the pile of work to the next gate. The whole pipeline has to be addressed together.</p>
 
 <div class="kicker">Chapter 4</div>
-<h2>What the leaders are publishing</h2>
-<p>The companies publishing real numbers share a playbook: narrow agents pointed at verifiable work, with humans reviewing everything that lands.</p>
+<h2>What the leaders have published</h2>
+<p>The companies reporting real numbers follow a common pattern: narrow agents pointed at verifiable work, with humans reviewing whatever lands.</p>
 <div class="callout">
-  <div class="meta">Google</div>
-  <p>80% of code changes in landed internal migrations are AI-authored, with every change human-reviewed. Engineers report roughly half the total time on migration work.</p>
+  <div class="meta"><img src="logos/google.svg" alt="">Google</div>
+  <p>80 percent of code changes in landed internal migrations are AI-authored, with every change human-reviewed, and engineers spending roughly half the time they used to. (<a class="src" href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta">Amazon &amp; Airbnb</div>
-  <p>Amazon says its Java-upgrade agent saved the equivalent of 4,500 developer-years and ~$260M in annualized efficiency. Airbnb's test migration finished in six weeks instead of eighteen months.</p>
+  <div class="meta"><img src="logos/airbnb.svg" alt="">Amazon &amp; Airbnb</div>
+  <p>Amazon reports that its Java-upgrade agent saved the equivalent of 4,500 developer-years and about 260 million dollars in annualized efficiency. Airbnb migrated roughly 3,500 test files in six weeks against an estimate of a year and a half. (<a class="src" href="https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/">AWS</a>, <a class="src" href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta">Stripe &amp; Meta</div>
-  <p>Stripe's internal "Minions" agents merge about 1,300 pull requests a week, kicked off from Slack or a ticket. Meta publishes its filters as candidly as its wins: most generated tests are discarded, and only the provably useful survive.</p>
+  <div class="meta"><img src="logos/stripe.svg" alt="">Stripe &amp; <img src="logos/meta.svg" alt="">Meta</div>
+  <p>Stripe's internal agents merge about 1,300 pull requests a week, started from a Slack message or a ticket. Meta publishes its filters as openly as its wins: most generated tests are discarded, and only the ones that provably add coverage are kept. (<a class="src" href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents">Stripe</a>, <a class="src" href="https://arxiv.org/abs/2402.09171">Meta</a>)</p>
 </div>
 <div class="callout">
-  <div class="meta">Spotify</div>
-  <p>87% of Spotify developers use AiKA, the AI assistant built into their internal portal, weekly. Portal plugins are now exposed as agent-discoverable tools, with policy enforced centrally. <strong>The developer platform is becoming the control plane for agents.</strong></p>
+  <div class="meta"><img src="logos/spotify.svg" alt="">Spotify &amp; Backstage</div>
+  <p>Spotify's internal developer platform, built on Backstage, the most widely used internal-developer-platform framework, now exposes plugins as tools any agent can discover, with the platform brokering permissions. The developer platform is becoming the control plane for agents, which is the model ES365 is pursuing inside Microsoft. (<a class="src" href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify</a>, <a class="src" href="https://backstage.io/">Backstage</a>)</p>
 </div>
 
 <div class="kicker">Chapter 5</div>
-<h2>Why the next gains come from platforms</h2>
-<p>Individual tools got the industry this far. But thousands of developers each wiring up their own agents produces duplicated effort, ungoverned access to code and credentials, and no way to measure whether any of it works.</p>
-<p>The answer looks like the internal developer platforms that tamed cloud infrastructure, extended to agents:</p>
+<h2>Why the next gains come from a platform</h2>
+<p>Individual tools brought the industry this far. But thousands of developers each wiring up their own agents produces duplicated effort, ungoverned access to code and credentials, and no consistent way to tell whether any of it is working.</p>
+<p>The answer resembles the internal developer platforms that brought order to cloud infrastructure, now extended to agents:</p>
 <ul>
   <li><strong>Orchestration</strong>, so agents compose and reuse rather than reinvent.</li>
   <li><strong>Golden paths</strong>, so the well-instrumented route is also the easiest one.</li>
   <li><strong>A curated marketplace</strong>, so teams share agents instead of rebuilding them.</li>
   <li><strong>Governance</strong>, so an agent's access is brokered, scoped, and audited.</li>
 </ul>
-<p>Measurement lives here too. Acceptance rate flatters the tool. The metrics that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once, and every team gets truthful numbers for free.</p>
+<p>This is the ground ES365 covers, from source control through build, validation, and deployment. Measurement belongs here too. Acceptance rate flatters the tool. The figures that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once, and every team gets trustworthy numbers.</p>
 
 <div class="kicker">Chapter 6</div>
-<h2>Three working hypotheses, held loosely</h2>
+<h2>How I would approach the product role</h2>
+<p><strong>Start from the developer's problem.</strong> The work begins with listening. I would sit with the developers and codebase owners who use these tools, learn where their day actually stalls, and pair that with a clear view of where the technology is heading. Humility about their pain points and conviction about the direction are both required, and neither substitutes for the other.</p>
+<p><strong>Set the goals and define success.</strong> I would set explicit objectives for the space and define how success is measured before building, using outcome metrics rather than acceptance rate: lead time, change failure rate, and the share of engineering time spent on new work. Agreeing on the scoreboard early is what keeps a platform honest as it scales.</p>
+<p><strong>The hardest part is alignment.</strong> The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+<p><strong>Then execute, measure, and iterate.</strong> With the vision agreed, the work becomes tactical: sequence the roadmap, ship in increments, watch the outcome metrics, and adjust. Move from early adopters to broad rollout along golden paths, and keep the feedback loop with developers tight enough that the platform keeps pace with what they actually need.</p>
+
+<div class="kicker">Chapter 7</div>
+<h2>Three Working Hypotheses</h2>
 <div class="callout">
   <div class="meta">Hypothesis one</div>
-  <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience, every time. If the governed, instrumented route is also the easiest one, you don't have to mandate anything. I watched this play out firsthand consolidating 30+ internal tools into 8 workflows at Amazon: adoption hit 100% because the new path was simply better, and usability scores rose 78%.</p>
+  <p><strong>Make the safe path the fast path.</strong> Adoption follows convenience. If the governed, instrumented route is also the easiest one, mandates become unnecessary. I saw this directly when I consolidated more than 30 internal tools into 8 workflows at Amazon: adoption reached 100 percent because the new path was simply better to use, and usability scores rose 78 percent.</p>
 </div>
 <div class="callout">
   <div class="meta">Hypothesis two</div>
-  <p><strong>Measure outcomes on a counterbalanced scorecard.</strong> Pair throughput with stability so a win on one can't quietly become a loss on the other. Track the gap between perceived and actual speedup directly, because the METR result shows it's real. I learned the hard way that a product without an agreed success metric stalls; the fix made measurement the first feature, and adoption followed.</p>
+  <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability so a gain on one cannot quietly become a loss on the other, and track the gap between perceived and actual speedup, because the METR result shows it is real. Deciding what success looks like before shipping is what keeps a platform pointed at outcomes instead of activity.</p>
 </div>
 <div class="callout">
   <div class="meta">Hypothesis three</div>
   <p><strong>Curate more than you build.</strong> The ecosystem will produce more agent capability than any single team can. The platform's leverage is discovery, quality bars, and trust, so a developer can adopt a shared agent with the same confidence as a standard library.</p>
 </div>
-<p><strong>And the questions I'd ask first:</strong> where does agent output actually stall today: review, CI, or trust? Which workflows have the strongest verification oracles, making them ripest for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside, with the teams and the telemetry.</p>
+<p><strong>And the questions I would ask first:</strong> where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside ES365, with the team and the telemetry.</p>
 
 <div class="kicker">About the author</div>
 <h2>Why I care about this</h2>
-<p>I've spent 14 years across engineering and product. At Amazon, I rebuilt the internal supply-chain platform behind a $30B grocery business: 30+ fragmented tools consolidated into 8 workflows, adopted by 100% of users across 8 countries, with usability up 78%. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80%. Before any of that, I was a software engineer.</p>
-<p>I never stopped building. This page, the agentic job-search tool that runs my mornings, and a multi-agent trading system were all built hands-on with the tools this essay describes.</p>
-<p>The teams building agentic engineering platforms are working on what I think is the most consequential product problem in software right now. I'd love to be part of it.</p>
+<p>I have spent 14 years across engineering and product. At Amazon I rebuilt the internal supply-chain platform behind a $30B grocery business, consolidating more than 30 fragmented tools into 8 workflows adopted by 100 percent of users across 8 countries, with usability up 78 percent. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80 percent. Before any of that, I was a software engineer.</p>
+<p>I have kept building. This page, the agentic job-search tool that runs my mornings, and a multi-agent trading system were all built hands-on with the class of tools this proposal describes.</p>
+<p>The teams building agentic engineering platforms are working on what I believe is the most consequential product problem in software right now. I would like to help ES365 build it.</p>
 <p><a href="/">More about me →</a></p>
 
-<div class="kicker">Sources &amp; further reading</div>
+<div class="kicker">Sources and further reading</div>
 <p class="sources">
-  <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR: Measuring the impact of AI on experienced developer productivity</a> ·
+  <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR: measuring the impact of AI on experienced developer productivity</a> ·
   <a href="https://dora.dev/dora-report-2025/">DORA: State of AI-assisted software development</a> ·
-  <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb: Accelerating large-scale test migration with LLMs</a> ·
-  <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research: Accelerating code migrations with AI</a> ·
+  <a href="https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/">Airbnb: accelerating large-scale test migration with LLMs</a> ·
+  <a href="https://research.google/blog/accelerating-code-migrations-with-ai/">Google Research: accelerating code migrations with AI</a> ·
   <a href="https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/">AWS: Amazon Q Developer's $260M milestone</a> ·
   <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents">Stripe: Minions, one-shot coding agents</a> ·
   <a href="https://arxiv.org/abs/2402.09171">Meta: TestGen-LLM</a> ·
   <a href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify: AiKA and Portal</a> ·
-  <a href="https://developer.microsoft.com/blog/learn-from-microsoft-transform-software-development-through-an-agentic-platform">Microsoft: Transforming software development through an agentic platform</a> ·
-  <a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research">GitClear: AI code quality research</a>
+  <a href="https://backstage.io/">Backstage: internal developer platform framework</a> ·
+  <a href="https://developer.microsoft.com/blog/learn-from-microsoft-transform-software-development-through-an-agentic-platform">Microsoft: transforming software development through an agentic platform</a> ·
+  <a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/">Microsoft Agent Framework (Build 2026)</a> ·
+  <a href="https://techcommunity.microsoft.com/blog/appsonazureblog/how-microsoft-1es-uses-agentic-ai-to-take-on-security-and-compliance-at-scale/4515191">Microsoft 1ES: agentic AI for security and compliance at scale</a>
 </p>
 </main>
 
 <footer>
   <span style="font-weight:bold">Michael Fitzpatrick<span style="color:var(--clay)">.</span></span><br>
-  Temporary essay page · not indexed · © 2026
+  Charter proposal · prepared for ES365, Microsoft · not indexed · © 2026
 </footer>
 
 </body>

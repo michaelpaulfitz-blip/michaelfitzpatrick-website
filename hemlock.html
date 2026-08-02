@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hemlock Holdings — Michael Fitzpatrick</title>
+<meta name="description" content="Hemlock Holdings is a private quantitative trading firm researching and trading prediction and event markets through MATES, a proprietary multi-agent AI system.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
+<style>
+  /* ─────────────────────────────────────────────
+     Warm Naturalist — shared with michaelfitzpatrick.me
+  ───────────────────────────────────────────── */
+  :root{
+    --bone:#F0EEE6; --paper:#FAF9F4; --ink:#1F1E1B; --faded:#6E675C;
+    --clay:#C15F3C; --clay-deep:#A64E30; --moss:#5B7052; --brick:#9C3A2E;
+    --hairline:#DCD6C8; --serif:Georgia,'Times New Roman',serif; --maxw:980px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bone); color:var(--ink); font-family:var(--serif);
+    font-variant-numeric:tabular-nums; font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased}
+  a{color:var(--clay); text-decoration:none}
+  a:hover{color:var(--clay-deep)}
+  .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faded); font-weight:bold; margin-bottom:14px}
+
+  /* ── Top nav ── */
+  header.nav{position:sticky; top:0; z-index:100; background:rgba(240,238,230,.92);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline)}
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:20px; flex-wrap:wrap}
+  .wordmark{font-size:20px; font-weight:bold; color:var(--ink); letter-spacing:.2px; white-space:nowrap}
+  .wordmark .dot{color:var(--clay)}
+  nav.links{display:flex; gap:22px; flex-wrap:wrap; align-items:baseline}
+  nav.links a{color:var(--faded); font-size:14px; padding-bottom:3px;
+    border-bottom:2px solid transparent; transition:color .15s, border-color .15s}
+  nav.links a:hover{color:var(--ink)}
+  nav.links a.active{color:var(--ink); border-bottom-color:var(--clay)}
+  .tree-ico{fill:var(--clay); vertical-align:-1px; margin-right:5px}
+
+  /* ── Sections ── */
+  section{max-width:var(--maxw); margin:0 auto; padding:70px 28px; scroll-margin-top:70px}
+  section + section{border-top:1px solid var(--hairline)}
+  h1{font-size:56px; line-height:1.04; letter-spacing:-1px; font-weight:bold}
+  h2{font-size:28px; line-height:1.15; letter-spacing:-.4px; margin-bottom:16px}
+  p{margin-bottom:18px; color:var(--faded)}
+  p:last-child{margin-bottom:0}
+  strong{color:var(--ink); font-weight:bold}
+
+  /* ── Hero ── */
+  #hero{display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; padding-top:60px; padding-bottom:56px}
+  .hero-copy h1{margin-bottom:18px}
+  .hero-copy .lede{font-size:19px; color:var(--ink); margin-bottom:26px}
+  .hero-art{position:relative}
+  .hero-art img{width:100%; height:auto; display:block}
+
+  /* ── CTA button ── */
+  .cta{display:inline-block; font-size:15px; font-weight:bold; color:var(--paper);
+    background:var(--clay); border:1px solid var(--clay-deep); padding:12px 24px;
+    border-radius:6px; letter-spacing:.3px; transition:background .15s}
+  .cta:hover{background:var(--clay-deep); color:var(--paper)}
+  .cta .arw{margin-left:6px}
+  .cta-note{display:block; margin-top:10px; font-size:12px; color:var(--faded); letter-spacing:.3px}
+
+  /* ── Body prose ── */
+  .prose{max-width:720px}
+  .prose p{font-size:17px}
+
+  /* ── Stat callout ── */
+  .stat{background:var(--paper); border:1px solid var(--hairline); border-radius:8px;
+    padding:26px 28px; margin:30px 0; display:flex; align-items:baseline; gap:20px; flex-wrap:wrap}
+  .stat .num{font-size:44px; font-weight:bold; color:var(--clay); letter-spacing:-1px; line-height:1}
+  .stat .lbl{font-size:15px; color:var(--faded); max-width:460px; line-height:1.5}
+  .stat .lbl strong{color:var(--ink)}
+
+  /* ── Fir sprig accent (white-bg jpg → multiply into the paper) ── */
+  .sprig-accent{float:right; width:190px; margin:0 0 14px 28px; mix-blend-mode:multiply; pointer-events:none}
+
+  /* ── Closed note ── */
+  .note{border-left:2px solid var(--clay); background:var(--paper);
+    padding:16px 20px; margin-top:34px; font-size:15px; color:var(--faded)}
+  .note strong{color:var(--ink)}
+
+  footer{border-top:1px solid var(--hairline); text-align:center; padding:36px 28px; color:var(--faded); font-size:13px; letter-spacing:.3px}
+  footer .wordmark{font-size:16px}
+  footer a{color:var(--faded)} footer a:hover{color:var(--ink)}
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    h1{font-size:40px}
+    #hero{grid-template-columns:1fr; gap:26px; padding-top:40px}
+    .hero-art{max-width:360px; margin:0 auto}
+    .sprig-accent{width:130px; margin-left:16px}
+    section{padding:52px 22px}
+    nav.links{gap:15px}
+    nav.links a{font-size:13px}
+    .stat .num{font-size:36px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Michael Fitzpatrick<span class="dot">.</span></a>
+    <nav class="links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#portfolio">Professional Portfolio</a>
+      <a href="hemlock.html" class="active"><svg class="tree-ico" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 2.5 8.2 8.4h2.2L6.4 14h2.6l-3.2 4.8h5.1V22h2.2v-3.2h5.1L14.9 14h2.6l-4-5.6h2.2L12 2.5z"/></svg>Hemlock Holdings</a>
+      <a href="/agentic-sdlc/">Agentic SDLC Proposal</a>
+      <a href="index.html#about">About Me</a>
+      <a href="index.html#board">Personal Board of Directors</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Private Quantitative Trading Firm</div>
+    <h1>Hemlock Holdings</h1>
+    <p class="lede">A privately held quantitative trading firm operating in prediction and event markets &mdash; venues like Kalshi and Polymarket, where contracts settle on real-world outcomes. We hunt for the places the crowd has mispriced the future.</p>
+    <a class="cta" href="https://mates-trading.com" target="_blank" rel="noopener">View the live dashboard<span class="arw">&rarr;</span></a>
+    <span class="cta-note">Opens the live MATES trading desk at mates-trading.com</span>
+  </div>
+  <div class="hero-art">
+    <img src="evergreen_stand.webp" alt="Vintage botanical illustration of a stand of hemlock and conifer trees">
+  </div>
+</section>
+
+<!-- ── THE FIRM ── -->
+<section id="firm">
+  <div class="prose">
+    <img class="sprig-accent" src="fir_sprig.jpg" alt="Hemlock sprig with cones">
+    <div class="eyebrow">The Firm</div>
+    <h2>Pricing the future, independently of the crowd</h2>
+    <p><strong>Hemlock Holdings LLC</strong> is a privately held quantitative trading firm operating in prediction and event markets &mdash; exchanges like <strong>Kalshi</strong> and <strong>Polymarket</strong>, where contracts resolve on real-world outcomes. We hunt for the places the crowd has mispriced the future.</p>
+    <p>At the core is <strong>MATES</strong>, our proprietary multi-agent AI trading system. MATES runs an autonomous research desk: independent agents investigate each market from primary sources under a strict, point-in-time discipline, form a probability independent of the market price, and surface only the wagers where the two meaningfully diverge. Every position is sized by risk-managed, time-adjusted rules &mdash; never on hunches.</p>
+
+    <div class="stat">
+      <div class="num">150%+</div>
+      <div class="lbl">In backtesting, the strategy has modeled <strong>annualized returns in excess of 150%</strong>.</div>
+    </div>
+
+    <div class="note"><strong>Hemlock is currently closed to outside capital.</strong></div>
+  </div>
+</section>
+
+<footer>
+  <a class="wordmark" href="index.html">Michael Fitzpatrick<span class="dot">.</span></a>
+  <div style="margin-top:8px">Hemlock Holdings LLC &middot; <a href="https://mates-trading.com" target="_blank" rel="noopener">mates-trading.com</a></div>
+</footer>
+
+</body>
+</html>

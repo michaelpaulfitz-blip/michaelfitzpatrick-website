@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Agentic Platform in the SDLC — Charter Proposal · Michael Fitzpatrick</title>
-<meta name="description" content="A charter proposal on agentic workflows across the software development lifecycle, prepared for Microsoft ES365.">
+<meta name="description" content="A charter proposal on agentic workflows across the software development lifecycle: what has changed, what remains unsolved, and where an internal agentic platform should focus next.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
 <style>
   :root{
@@ -244,10 +244,10 @@
 
 <!-- ══════════ HERO ══════════ -->
 <div class="hero">
-  <div class="eyebrow">Charter proposal · ES365, Microsoft · July 2026</div>
+  <div class="eyebrow">Charter proposal · Agentic developer platforms · 2026</div>
   <h1>Agentic Platform in the Software Development Lifecycle — Charter Proposal</h1>
-  <p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where an internal agentic platform like ES365 can focus next.</p>
-  <p class="note">A note on where this comes from. I prepared this while getting ready to meet the ES365 team. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The people building engineering systems inside Microsoft see things I cannot from the outside, so I am offering this as a starting point for a conversation and expect to revise it as I learn what your team already knows.</p>
+  <p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where an internal agentic platform can focus next.</p>
+  <p class="note">A note on where this comes from. I put this together to think through where agentic tooling is heading across the software development lifecycle. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The teams building engineering systems inside any large company see things an outsider cannot, so I offer this as a starting point for a conversation and expect to revise it as I learn what a given team already knows.</p>
   <div class="byline">Michael Fitzpatrick · Senior Product Manager (Technical) · Seattle<br>
   Researched and built with the same class of agentic tools it describes.</div>
   <div class="scroll-hint">Scroll<span class="arrow">↓</span></div>
@@ -279,7 +279,7 @@
     </div></div>
     <div class="step" data-index="5"><div class="step-card">
       <div class="stepnum">2026 · Platforms and control planes</div>
-      <p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal teams like ES365 are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
+      <p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal platform teams across the industry are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -315,7 +315,7 @@
           <div class="tl-node n5">
             <div class="tl-yr">2026</div><div class="tl-dot"></div>
             <div class="tl-detail"><div class="tl-name">Platforms and control planes</div>
-              <div class="brands"><span class="brand"><svg class="bi" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>Microsoft ES365</span></div>
+              <div class="brands"><span class="brand"><svg class="bi" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>Microsoft</span><span class="brand"><img class="bi" src="/agentic-sdlc/logos/spotify.svg" alt="">Spotify</span></div>
             </div>
           </div>
         </div>
@@ -478,7 +478,7 @@
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Where it is converging</div>
-      <p>Spotify shows the destination. Its internal developer platform, built on Backstage, the most widely used internal-developer-platform framework, now exposes plugins as tools any agent can discover, with the platform brokering permissions. The developer platform is becoming the control plane for agents, which is the model ES365 is pursuing inside Microsoft.</p>
+      <p>Spotify shows the destination. Its internal developer platform, built on Backstage, the most widely used internal-developer-platform framework, now exposes plugins as tools any agent can discover, with the platform brokering permissions. The developer platform is becoming the control plane for agents, and it is the model the most advanced engineering organizations are converging on.</p>
       <p class="src">Source: <a href="https://backstage.spotify.com/discover/blog/aika-data-plugins-coming-to-portal/">Spotify Engineering</a>, <a href="https://backstage.io/">Backstage</a></p>
     </div></div>
   </div>
@@ -521,7 +521,7 @@
 <div class="chapter-head">
   <div class="kicker">Chapter 5</div>
   <h2>Why the next gains come from a platform</h2>
-  <p class="dek">This is the charter ES365 owns: the layer that turns scattered agents into a governed, measurable capability.</p>
+  <p class="dek">This is the charter an internal platform owns: the layer that turns scattered agents into a governed, measurable capability.</p>
 </div>
 <section class="scrolly" id="platform" data-step="0">
   <div class="steps">
@@ -531,7 +531,7 @@
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">The platform layer</div>
-      <p>The answer resembles the internal developer platforms that brought order to cloud infrastructure, now extended to agents. Orchestration lets agents compose and reuse. Golden paths make the well-instrumented route the easiest one. A curated marketplace lets teams share agents instead of rebuilding them. Governance keeps an agent's access brokered, scoped, and audited. This is the ground ES365 covers, from source control through build, validation, and deployment.</p>
+      <p>The answer resembles the internal developer platforms that brought order to cloud infrastructure, now extended to agents. Orchestration lets agents compose and reuse. Golden paths make the well-instrumented route the easiest one. A curated marketplace lets teams share agents instead of rebuilding them. Governance keeps an agent's access brokered, scoped, and audited. This is the ground an internal agentic platform covers, from source control through build, validation, and deployment.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Measurement lives here too</div>
@@ -559,7 +559,7 @@
       <line class="chaos-line" x1="140" y1="182" x2="420" y2="82"/>
       <g class="plat-room">
         <rect x="180" y="52" width="200" height="212" rx="8" fill="#FAF9F4" stroke="#C15F3C" stroke-width="1.5"/>
-        <text x="280" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F1E1B">The platform · ES365</text>
+        <text x="280" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F1E1B">The platform</text>
         <rect class="box" x="196" y="92"  width="168" height="34" rx="5"/><text class="svg-label" x="280" y="114" text-anchor="middle">Orchestration</text>
         <rect class="box" x="196" y="134" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="156" text-anchor="middle">Golden paths</text>
         <rect class="box" x="196" y="176" width="168" height="34" rx="5"/><text class="svg-label" x="280" y="198" text-anchor="middle">Agent marketplace</text>
@@ -600,7 +600,7 @@
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">The hardest part is alignment</div>
-      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across Microsoft into one vision that developer teams will actually adopt. Azure's customer-facing teams, internal DevOps groups, GitHub, DevDiv, and individual product orgs all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing Azure teams in once the core is proven. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across a large engineering organization into one vision that developer teams will actually adopt. Platform groups, internal DevOps teams, the developer-tools org, and individual product teams all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing teams in once the core is proven. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Then execute, measure, and iterate</div>
@@ -608,17 +608,17 @@
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
-    <svg viewBox="0 0 560 420" role="img" aria-label="Diagram showing many Microsoft teams aligning around one shared charter that developers adopt">
+    <svg viewBox="0 0 560 420" role="img" aria-label="Diagram showing many engineering teams aligning around one shared charter that developers adopt">
       <defs>
         <marker id="ah2" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto">
           <path d="M0,0 L6,3 L0,6 Z" fill="#6E675C"/>
         </marker>
       </defs>
       <g class="src-team">
-        <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Azure, customer-facing</text>
+        <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Customer-facing teams</text>
         <text x="91" y="93" text-anchor="middle" font-size="10.5" fill="#9C3A2E" font-style="italic">brought in later</text>
         <rect class="box" x="16" y="120" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="143" text-anchor="middle">Internal DevOps teams</text>
-        <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">GitHub and DevDiv</text>
+        <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">Developer-tools org</text>
         <rect class="box" x="16" y="280" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="303" text-anchor="middle">Product orgs</text>
       </g>
       <!-- contending arrows (early) -->
@@ -665,7 +665,7 @@
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Proposal three</div>
-      <p><strong>Converge on one shared platform, do not build many.</strong> The leverage is not in coding every capability, but in unifying the efforts already underway across Microsoft into a single cohesive platform and standard that teams across the company can adopt. Curate and converge rather than duplicate, so the whole company moves together instead of each org building its own.</p>
+      <p><strong>Converge on one shared platform, do not build many.</strong> The leverage is not in coding every capability, but in unifying the efforts already underway across a large organization into a single cohesive platform and standard that teams across the company can adopt. Curate and converge rather than duplicate, so the whole company moves together instead of each org building its own.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Proposal four</div>
@@ -673,7 +673,7 @@
     </div></div>
     <div class="step" data-index="5"><div class="step-card">
       <div class="stepnum">And the questions I would ask first</div>
-      <p>Where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside ES365, with the team and the telemetry.</p>
+      <p>Where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside the organization, with the team and the telemetry.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -688,7 +688,7 @@
       </div>
       <div class="hypo hypo-3">
         <h3>3 · Converge on one shared platform</h3>
-        <p>Unify the efforts across Microsoft into one standard, not one per org.</p>
+        <p>Unify the efforts across the organization into one standard, not one per org.</p>
       </div>
       <div class="hypo hypo-4">
         <h3>4 · Route by cost, invisibly</h3>
@@ -710,7 +710,7 @@
     <div class="build-card"><div class="meta"><a href="https://mates-trading.com/" target="_blank" rel="noopener">MATES ↗</a></div><p>Multi-agent prediction-market trading system with live APIs and backtesting.</p></div>
     <div class="build-card"><div class="meta">Frida (Amazon)</div><p>LLM natural-language layer over a causal diagnostics engine. 80 percent faster investigations.</p></div>
   </div>
-  <p>The teams building agentic engineering platforms are working on what I believe is the most consequential product problem in software right now. I would like to help ES365 build it.</p>
+  <p>The teams building agentic engineering platforms are working on what I believe is the most consequential product problem in software right now. I would like to help build it.</p>
   <p><a href="/">More about me →</a></p>
 </div>
 
@@ -734,7 +734,7 @@
 
 <footer>
   <span class="wordmark">Michael Fitzpatrick<span class="dot">.</span></span><br>
-  Charter proposal · prepared for ES365, Microsoft · not indexed · © 2026
+  Charter proposal · Agentic developer platforms · not indexed · © 2026
 </footer>
 
 <script>

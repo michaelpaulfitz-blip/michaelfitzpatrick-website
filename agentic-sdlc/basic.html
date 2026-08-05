@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Agentic Platform in the SDLC — Charter Proposal (reading view) · Michael Fitzpatrick</title>
-<meta name="description" content="A charter proposal on agentic workflows across the software development lifecycle: what has changed, what remains unsolved, and where an internal agentic platform should focus next.">
+<title>AI Development on a Core Engineering Platform (reading view) · Michael Fitzpatrick</title>
+<meta name="description" content="A point of view on AI development across the software development lifecycle, and the core engineering platform that turns scattered agents into a governed, measurable capability.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
 <style>
   :root{
@@ -80,10 +80,10 @@
 </header>
 
 <main>
-<div class="eyebrow">Charter proposal · Agentic developer platforms · 2026</div>
-<h1>Agentic Platform in the Software Development Lifecycle — Charter Proposal</h1>
-<p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where an internal agentic platform can focus next.</p>
-<p class="note">A note on where this comes from. I put this together to think through where agentic tooling is heading across the software development lifecycle. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The teams building engineering systems inside any large company see things an outsider cannot, so I offer this as a starting point for a conversation and expect to revise it as I learn what a given team already knows.</p>
+<div class="eyebrow">A point of view · Prepared for Twitch · 2026</div>
+<h1>AI Development on a Core Engineering Platform</h1>
+<p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where a core engineering platform can focus next.</p>
+<p class="note">A note on where this comes from. I put this together to think through where agentic tooling is heading across the software development lifecycle. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The teams building engineering systems inside a company like Twitch see things an outsider cannot, so I offer this as a starting point for a conversation and expect to revise it as I learn what your team already knows.</p>
 <div class="byline">Michael Fitzpatrick · Senior Product Manager (Technical) · Seattle<br>
 Researched and built with the same class of agentic tools it describes.</div>
 
@@ -98,7 +98,7 @@ Researched and built with the same class of agentic tools it describes.</div>
 <div class="waverow"><strong>2025, delegation.</strong>&nbsp;<span class="brands"><span class="brand"><img src="/agentic-sdlc/logos/anthropic.svg" alt="">Claude Code</span><span class="brand">OpenAI Codex</span><span class="brand"><img src="/agentic-sdlc/logos/google.svg" alt="">Jules</span></span></div>
 <p>Claude Code, OpenAI Codex, Google Jules, and GitHub's coding agent now accept a ticket, work in the background, and return a pull request for a human to review. The unit of work became a task rather than a keystroke.</p>
 <div class="waverow"><strong>2026, platforms and control planes.</strong></div>
-<p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal platform teams across the industry are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this charter is about.</p>
+<p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal platform teams across the industry are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this piece is about.</p>
 
 <div class="kicker">Chapter 2</div>
 <h2>Coding was only the beachhead</h2>
@@ -154,13 +154,13 @@ Researched and built with the same class of agentic tools it describes.</div>
   <li><strong>A curated marketplace</strong>, so teams share agents instead of rebuilding them.</li>
   <li><strong>Governance</strong>, so an agent's access is brokered, scoped, and audited.</li>
 </ul>
-<p>This is the ground an internal agentic platform covers, from source control through build, validation, and deployment. Measurement belongs here too. Acceptance rate flatters the tool. The figures that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once, and every team gets trustworthy numbers.</p>
+<p>This is the ground a core engineering platform covers, from source control through build, validation, and deployment. Measurement belongs here too. Acceptance rate flatters the tool. The figures that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once, and every team gets trustworthy numbers.</p>
 
 <div class="kicker">Chapter 6</div>
 <h2>How I would approach the product role</h2>
 <p><strong>Start from the developer's problem.</strong> The work begins with listening. I would sit with the developers and codebase owners who use these tools, learn where their day actually stalls, and pair that with a clear view of where the technology is heading. Humility about their pain points and conviction about the direction are both required, and neither substitutes for the other.</p>
 <p><strong>Set the goals and define success.</strong> I would set explicit objectives for the space and define how success is measured before building, using outcome metrics rather than acceptance rate: lead time, change failure rate, and the share of engineering time spent on new work. Agreeing on the scoreboard early is what keeps a platform honest as it scales.</p>
-<p><strong>The hardest part is alignment.</strong> The largest share of this job is not building. It is combining strong and often competing ideas from across a large engineering organization into one vision that developer teams will actually adopt. Platform groups, internal DevOps teams, the developer-tools org, and individual product teams all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing teams in once the core is proven. Much of the role is defending and evangelizing a shared charter so the company converges rather than fragments.</p>
+<p><strong>The hardest part is alignment.</strong> The largest share of this job is not building. It is combining strong and often competing ideas from across a large engineering organization into one vision that developer teams will actually adopt. Platform groups, internal DevOps teams, the developer-tools org, and individual product teams all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing teams in once the core is proven. Much of the role is defending and evangelizing a shared platform so the company converges rather than fragments.</p>
 <p><strong>Then execute, measure, and iterate.</strong> With the vision agreed, the work becomes tactical: sequence the roadmap, ship in increments, watch the outcome metrics, and adjust. Move from early adopters to broad rollout along golden paths, and keep the feedback loop with developers tight enough that the platform keeps pace with what they actually need.</p>
 
 <div class="kicker">Chapter 7</div>
@@ -187,7 +187,7 @@ Researched and built with the same class of agentic tools it describes.</div>
 <h2>Why I care about this</h2>
 <p>I have spent 14 years across engineering and product. At Amazon I rebuilt the internal supply-chain platform behind a $30B grocery business, consolidating more than 30 fragmented tools into 8 workflows adopted by 100 percent of users across 8 countries, with usability up 78 percent. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80 percent. Before any of that, I was a software engineer.</p>
 <p>I have kept building. This page, the <a href="https://www.jobbot-3000.com/public" target="_blank" rel="noopener">agentic job-search tool</a> that runs my mornings, and a <a href="https://mates-trading.com/" target="_blank" rel="noopener">multi-agent trading system</a> were all built hands-on with the class of tools this proposal describes.</p>
-<p>The teams building agentic engineering platforms are working on what I believe is the most consequential product problem in software right now. I would like to help build it.</p>
+<p>Building the core engineering platform that AI development runs on is, I believe, the most consequential product problem in software right now. I would like to help Twitch build it.</p>
 <p><a href="/">More about me →</a></p>
 
 <div class="kicker">Sources and further reading</div>
@@ -209,7 +209,7 @@ Researched and built with the same class of agentic tools it describes.</div>
 
 <footer>
   <span style="font-weight:bold">Michael Fitzpatrick<span style="color:var(--clay)">.</span></span><br>
-  Charter proposal · Agentic developer platforms · not indexed · © 2026
+  AI development on a core engineering platform · not indexed · © 2026
 </footer>
 
 </body>

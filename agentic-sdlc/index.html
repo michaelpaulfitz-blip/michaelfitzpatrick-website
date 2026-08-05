@@ -246,8 +246,8 @@
 <div class="hero">
   <div class="eyebrow">A point of view · Prepared for Twitch · 2026</div>
   <h1>AI Development on a Core Engineering Platform</h1>
-  <p class="lede">Over the past five years, AI in development has moved from autocomplete to agents that plan work, write code, review it, test it, and open a pull request for a human to approve. This proposal traces that shift across the software development lifecycle: what it has genuinely changed, what remains unsolved, and where a core engineering platform can focus next.</p>
-  <p class="note">A note on where this comes from. I put this together to think through where agentic tooling is heading across the software development lifecycle. It draws on public research, company engineering blogs, and my own hands-on work with these tools. The teams building engineering systems inside a company like Twitch see things an outsider cannot, so I offer this as a starting point for a conversation and expect to revise it as I learn what your team already knows.</p>
+  <p class="lede">Over the past five years, AI in development went from autocomplete to agents that take a ticket, write the code, review it, run the tests, and hand a person a pull request to approve. This is a walk through what that actually changed across the software development lifecycle, what it hasn't, and where the next real gains come from: the core engineering platform every developer builds on.</p>
+  <p class="note">Where this comes from, in a sentence. I wrote it to work out my own thinking on where AI dev tooling is going and what a platform team should do about it. It leans on public research, engineering blogs, and what I've built with these tools myself. The people inside Twitch's Platform Core Engineering org know things I can't see from the outside, so treat this as a conversation-starter — I'd expect a good chunk of it to change once I hear what you already know.</p>
   <div class="byline">Michael Fitzpatrick · Senior Product Manager (Technical) · Seattle<br>
   Researched and built with the same class of agentic tools it describes.</div>
   <div class="scroll-hint">Scroll<span class="arrow">↓</span></div>
@@ -279,7 +279,7 @@
     </div></div>
     <div class="step" data-index="5"><div class="step-card">
       <div class="stepnum">2026 · Platforms and control planes</div>
-      <p>The current frontier is turning individual agents into an organizational capability. Microsoft's Agent Framework reached general availability in April 2026, and internal platform teams across the industry are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely. This is the wave this piece is about.</p>
+      <p>The frontier now is less about any single agent and more about running lots of them as a governed capability. Microsoft's Agent Framework hit general availability in April 2026, and platform teams across the industry are wrapping orchestration, governance, and a marketplace around agents so thousands of developers can use them safely instead of each wiring up their own.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -335,7 +335,7 @@
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
       <div class="stepnum">The lifecycle</div>
-      <p>A typical delivery pipeline moves through planning, design, coding, review, testing, build, deployment, operations, migration, and documentation. AI tooling has reached all of these stages, and the honest assessment is that it has helped some far more than others.</p>
+      <p>A typical delivery pipeline moves through planning, design, coding, review, testing, build, deployment, operations, migration, and documentation. AI tooling has reached all of these stages. It has helped some of them a great deal more than others.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">Where the wins are real</div>
@@ -404,7 +404,7 @@
 <div class="chapter-head">
   <div class="kicker">Chapter 3</div>
   <h2>Perceived speed and measured speed diverge</h2>
-  <p class="dek">The most important evidence in this space is uncomfortable, and it shapes how a platform should be measured.</p>
+  <p class="dek">The most important evidence here is uncomfortable, and it should shape how you measure a platform.</p>
 </div>
 <section class="scrolly" id="paradox" data-step="0">
   <div class="steps">
@@ -521,25 +521,25 @@
 <div class="chapter-head">
   <div class="kicker">Chapter 5</div>
   <h2>Why the next gains come from a platform</h2>
-  <p class="dek">This is the mandate a core engineering platform owns: the layer that turns scattered agents into a governed, measurable capability.</p>
+  <p class="dek">This is where a core engineering platform earns its keep: turning a sprawl of scattered agents into something governed and measurable.</p>
 </div>
 <section class="scrolly" id="platform" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
       <div class="stepnum">The cost of a thousand one-off setups</div>
-      <p>Individual tools brought the industry this far. But thousands of developers each wiring up their own agents produces duplicated effort, ungoverned access to code and credentials, and no consistent way to tell whether any of it is working.</p>
+      <p>Individual tools got the industry this far. But thousands of developers each wiring up their own agents means duplicated effort, ungoverned access to code and credentials, and no real way to know whether any of it is working.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">The platform layer</div>
-      <p>The answer resembles the internal developer platforms that brought order to cloud infrastructure, now extended to agents. Orchestration lets agents compose and reuse. Golden paths make the well-instrumented route the easiest one. A curated marketplace lets teams share agents instead of rebuilding them. Governance keeps an agent's access brokered, scoped, and audited. This is the ground a core engineering platform covers, from source control through build, validation, and deployment.</p>
+      <p>It looks a lot like the internal developer platforms that tamed cloud infrastructure, aimed now at agents. Orchestration, so agents compose and reuse instead of reinventing. Golden paths, so the instrumented route is also the easiest one. A marketplace, so teams share agents instead of rebuilding them. Governance, so every agent's access is brokered, scoped, and logged — down to the MCP tools it can call and the context it can see. And it serves every developer persona, not just app engineers: ML and MLOps, data science, whoever else builds here.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Measurement lives here too</div>
-      <p>The platform is also where honest measurement becomes possible. Acceptance rate flatters the tool. The figures that matter are outcomes: lead time, change failure rate, and where engineering hours actually go. Instrument the platform once and every team gets trustworthy numbers.</p>
+      <p>The platform is also the only place honest measurement is even possible. Acceptance rate flatters the tool. The numbers that matter are outcomes: lead time, change failure rate, where engineering hours actually go, and whether developers adopt what you ship and keep using it. Instrument the platform once, and every team gets numbers they can trust.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
-    <svg viewBox="0 0 560 420" role="img" aria-label="Diagram of an agentic developer platform between developers with agents and engineering systems">
+    <svg viewBox="0 0 560 420" role="img" aria-label="Diagram of a core engineering platform sitting between developers with agents and the engineering systems they touch">
       <g class="plat-agents">
         <text class="svg-label-strong" x="20" y="46">Developers and agents</text>
         <rect class="box" x="20" y="62"  width="120" height="40" rx="6"/><text class="svg-label" x="80" y="87" text-anchor="middle">IDE agents</text>
@@ -586,25 +586,25 @@
 <div class="chapter-head">
   <div class="kicker">Chapter 6</div>
   <h2>How I would approach the product role</h2>
-  <p class="dek">A platform this early is as much an alignment problem as a build problem. Here is how I would run it.</p>
+  <p class="dek">A platform this early is as much an alignment problem as a build problem. Here's how I'd run it.</p>
 </div>
 <section class="scrolly" id="align" data-step="0">
   <div class="steps">
     <div class="step" data-index="1"><div class="step-card">
       <div class="stepnum">Start from the developer's problem</div>
-      <p>The work begins with listening. I would sit with the developers and codebase owners who use these tools, learn where their day actually stalls, and pair that with a clear view of where the technology is heading. Humility about their pain points and conviction about the direction are both required, and neither substitutes for the other.</p>
+      <p>It starts with the developers. On this platform they are the customer, and the only score that counts is whether they adopt what I ship, lean on it, and tell other teams to use it. So I would spend the early weeks sitting with the engineers and codebase owners who live in these tools, finding where their day actually stalls, and weighing that against where the technology is clearly headed. You need both: the humility to hear the pain, and the spine to still make a call on direction.</p>
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">Set the goals and define success</div>
-      <p>I would set explicit objectives for the space and define how success is measured before building, using outcome metrics rather than acceptance rate: lead time, change failure rate, and the share of engineering time spent on new work. Agreeing on the scoreboard early is what keeps a platform honest as it scales.</p>
+      <p>I would nail down what we are trying to move, and how we will know, before writing a line of code. Outcome metrics, not acceptance rate: lead time, change failure rate, adoption, and the share of engineering time going to new work instead of toil. Pick the scoreboard early and the platform stays honest as it grows.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">The hardest part is alignment</div>
-      <p>The largest share of this job is not building. It is combining strong and often competing ideas from across a large engineering organization into one vision that developer teams will actually adopt. Platform groups, internal DevOps teams, the developer-tools org, and individual product teams all arrive with their own approaches, some complementary and some in tension. It often makes sense to align the internal engineering groups first and bring the customer-facing teams in once the core is proven. Much of the role is defending and evangelizing a shared platform so the company converges rather than fragments.</p>
+      <p>A lot of this job is not building; it is alignment. I would work directly with the principal engineers and engineering managers who own the surrounding systems, get the dependent teams pointed the same way, and referee the competing priorities that always surface when several strong teams each show up with their own approach. Most of that comes down to making the technical tradeoffs legible, so people argue about the right things and then commit. Early on I would get the internal engineering groups aligned first, then pull the broader customer teams in once the core actually works.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Then execute, measure, and iterate</div>
-      <p>With the vision agreed, the work becomes tactical: sequence the roadmap, ship in increments, watch the outcome metrics, and adjust. Move from early adopters to broad rollout along golden paths, and keep the feedback loop with developers tight enough that the platform keeps pace with what they actually need.</p>
+      <p>Then it gets tactical: sequence the roadmap, ship in small increments, watch the metrics, adjust. I would own launches end to end — the migration path off the old thing, the docs, the adoption push — because a capability nobody moves onto is the same as one you never shipped. Start with a few early-adopter teams, widen along the golden paths, and keep the loop with developers tight enough that the platform keeps up with what they actually need.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -615,11 +615,11 @@
         </marker>
       </defs>
       <g class="src-team">
-        <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Customer-facing teams</text>
+        <rect class="box" x="16" y="40"  width="150" height="38" rx="6"/><text class="svg-label" x="91" y="63" text-anchor="middle">Broader customer teams</text>
         <text x="91" y="93" text-anchor="middle" font-size="10.5" fill="#9C3A2E" font-style="italic">brought in later</text>
-        <rect class="box" x="16" y="120" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="143" text-anchor="middle">Internal DevOps teams</text>
-        <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">Developer-tools org</text>
-        <rect class="box" x="16" y="280" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="303" text-anchor="middle">Product orgs</text>
+        <rect class="box" x="16" y="120" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="143" text-anchor="middle">PEs &amp; eng managers</text>
+        <rect class="box" x="16" y="200" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="223" text-anchor="middle">Internal DevOps / infra</text>
+        <rect class="box" x="16" y="280" width="150" height="38" rx="6"/><text class="svg-label" x="91" y="303" text-anchor="middle">ML &amp; data teams</text>
       </g>
       <!-- contending arrows (early) -->
       <line class="align-arrow contend" x1="170" y1="59"  x2="250" y2="150" marker-end="url(#ah2)"/>
@@ -643,7 +643,7 @@
         <text class="svg-label" x="501" y="188" text-anchor="middle" style="fill:#5B7052;font-weight:bold">teams adopt</text>
       </g>
     </svg>
-    <figcaption>Much of the product job is turning competing approaches into one platform teams will sign up for.</figcaption>
+    <figcaption>A lot of the job is turning competing approaches into one platform teams actually adopt.</figcaption>
   </figure></div>
 </section>
 
@@ -651,7 +651,7 @@
 <div class="chapter-head">
   <div class="kicker">Chapter 7</div>
   <h2>Four Working Proposals</h2>
-  <p class="dek">Early proposals I would bring in and then test against what the team already knows.</p>
+  <p class="dek">Four things I would walk in the door with, then pressure-test against what the team already knows.</p>
 </div>
 <section class="scrolly" id="vision" data-step="0">
   <div class="steps">
@@ -661,19 +661,19 @@
     </div></div>
     <div class="step" data-index="2"><div class="step-card">
       <div class="stepnum">Proposal two</div>
-      <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability so a gain on one cannot quietly become a loss on the other, and track the gap between perceived and actual speedup, because the METR result shows it is real. Deciding what success looks like before shipping is what keeps a platform pointed at outcomes instead of activity.</p>
+      <p><strong>Measure outcomes on a balanced scorecard.</strong> Pair throughput with stability, so a win on one does not quietly become a loss on the other, and put adoption right next to them — a tool nobody uses is not a win at any speed. Track the gap between how fast developers feel and how fast they actually are, because METR shows that gap is real. Decide what success looks like before shipping, or the platform drifts toward measuring activity.</p>
     </div></div>
     <div class="step" data-index="3"><div class="step-card">
       <div class="stepnum">Proposal three</div>
-      <p><strong>Converge on one shared platform, do not build many.</strong> The leverage is not in coding every capability, but in unifying the efforts already underway across a large organization into a single cohesive platform and standard that teams across the company can adopt. Curate and converge rather than duplicate, so the whole company moves together instead of each org building its own.</p>
+      <p><strong>Converge on one platform instead of ten.</strong> The win here is not building every capability yourself. It is pulling the efforts already scattered around the company into one platform and standard people actually want to adopt. Curate more than you build, so the whole org moves together instead of four teams each shipping their own half-finished version.</p>
     </div></div>
     <div class="step" data-index="4"><div class="step-card">
       <div class="stepnum">Proposal four</div>
-      <p><strong>Route by cost, and keep it invisible to developers.</strong> Frontier models are not always necessary. A growing number of large engineering organizations now provision their own GPUs, including NVIDIA H200s, to run open-weight models on lower-complexity tasks, and report cutting AI development costs by around 70 percent. The subtle part is the product design: the routing has to be invisible. If the cheaper model is an opt-in, developers will not choose it, because no one trades quality for a budget line they cannot see. The platform should send each task to the least expensive model that can handle it well and reserve frontier models for the work that genuinely needs them, so the savings are large and no developer has to think about it.</p>
+      <p><strong>Route by cost, and hide it from developers.</strong> You do not need a frontier model for everything. More and more large eng orgs are standing up their own GPUs — NVIDIA H200s and the like — to run open-weight models on the easy tasks, and reporting AI-dev cost cuts of around 70 percent. The whole trick is in the product design: the routing has to be invisible. Make the cheap model an opt-in and nobody picks it, because no one trades quality for a budget line they cannot even see. So the platform quietly sends each task to the cheapest model that can do it well, and saves the frontier ones for the work that genuinely needs them.</p>
     </div></div>
     <div class="step" data-index="5"><div class="step-card">
       <div class="stepnum">And the questions I would ask first</div>
-      <p>Where does agent output actually stall today, in review, in CI, or in trust? Which workflows have the strongest verification, making them the best candidates for delegation? What does the cost curve look like at full scale, and where do smaller, cheaper models fit? The answers live inside the organization, with the team and the telemetry.</p>
+      <p>Where does agent output actually stall today — in review, in CI, or in trust? Which workflows have the strongest verification, making them the safest to delegate? What does the cost curve look like at full scale, and where do the smaller, cheaper models earn their place? I cannot answer these from the outside. They live inside the team and the telemetry, which is exactly the conversation I want to have.</p>
     </div></div>
   </div>
   <div class="figure"><figure class="figure-inner">
@@ -684,11 +684,11 @@
       </div>
       <div class="hypo hypo-2">
         <h3>2 · Measure outcomes on a balanced scorecard</h3>
-        <p>Throughput paired with stability. Perceived versus actual, tracked honestly.</p>
+        <p>Throughput, stability, and adoption together. Track the felt-versus-real speed gap honestly.</p>
       </div>
       <div class="hypo hypo-3">
         <h3>3 · Converge on one shared platform</h3>
-        <p>Unify the efforts across the organization into one standard, not one per org.</p>
+        <p>One platform for the whole org, not one per team.</p>
       </div>
       <div class="hypo hypo-4">
         <h3>4 · Route by cost, invisibly</h3>
@@ -703,14 +703,14 @@
 <div class="prose">
   <div class="eyebrow">About the author</div>
   <h2>Why I care about this</h2>
-  <p>I have spent 14 years across engineering and product. At Amazon I rebuilt the internal supply-chain platform behind a $30B grocery business, consolidating more than 30 fragmented tools into 8 workflows adopted by 100 percent of users across 8 countries, with usability up 78 percent. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80 percent. Before any of that, I was a software engineer.</p>
-  <p>I have kept building. This page, the agentic job-search tool that runs my mornings, and a multi-agent trading system were all built hands-on with the class of tools this proposal describes.</p>
+  <p>I have spent 14 years across engineering and product. At Amazon I rebuilt the internal supply-chain platform behind a $30B grocery business, consolidating more than 30 fragmented tools into 8 workflows adopted by 100 percent of users across 8 countries, with usability up 78 percent. I shipped an LLM-powered diagnostic assistant that cut investigation time by 80 percent. Before any of that, I wrote and shipped code for a living.</p>
+  <p>I have not stopped building. This page, the AI job-search tool that runs my mornings, and a multi-agent trading system were all hands-on, with the same kind of tooling I am describing here.</p>
   <div class="builds">
     <div class="build-card"><div class="meta"><a href="https://www.jobbot-3000.com/public" target="_blank" rel="noopener">JobBot 3000 ↗</a></div><p>Agentic job-sourcing pipeline. ATS connectors, LLM scoring, deployed on Google Cloud, runs daily.</p></div>
     <div class="build-card"><div class="meta"><a href="https://mates-trading.com/" target="_blank" rel="noopener">MATES ↗</a></div><p>Multi-agent prediction-market trading system with live APIs and backtesting.</p></div>
     <div class="build-card"><div class="meta">Frida (Amazon)</div><p>LLM natural-language layer over a causal diagnostics engine. 80 percent faster investigations.</p></div>
   </div>
-  <p>Building the core engineering platform that AI development runs on is, I believe, the most consequential product problem in software right now. I would like to help Twitch build it.</p>
+  <p>To me, building the core platform that all this AI development runs on is the most consequential product problem in software right now. I would like to help Twitch build it.</p>
   <p><a href="/">More about me →</a></p>
 </div>
 

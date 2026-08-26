@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ground Freight: A Point of View · Michael Fitzpatrick</title>
+<meta name="description" content="How a truck move actually works, where it breaks, and where I have solved this shape of problem before. Prepared for a conversation with Flexport.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   Flexport design language
+   Tokens read from flexport.com/styles.2e3092627221cb6df741.css, 2026-08-26.
+   Fonts: GT America / GT America Extended are licensed and self-hosted by
+   Flexport, so we substitute Inter (body) and Archivo at a widened width
+   axis (headings). Close, not identical.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --midnight:#052439; --midnight-400:#1e3a4d; --midnight-600:#041d2e;
+  --midnight-800:#020e17; --midnight-300:#506674; --midnight-200:#82929c;
+  --midnight-100:#b4bdc4;
+  --seafoam:#45dabe; --seafoam-3:#7deed8; --seafoam-5:#319a86; --seafoam-6:#1d5a4f;
+  --teal:#015f74; --teal-1:#e4f1f4;
+  --indigo:#566ae5; --indigo-600:#4555b7; --indigo-1:#ebedfd;
+  --electric:#2365ff; --electric-h:#1a52d9;
+  --red:#d82f57; --red-1:#fce8ed; --orange:#f58039; --yellow:#ffa81d;
+  --white:#fff; --terrain-1:#fbf9f6; --terrain:#f4f2ef; --terrain-2:#e8e6e3;
+  --dawn:#f0f8f9; --grey-100:#e5e8ea; --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6;
+  --dgrey-1:#4d5563; --dgrey-2:#6b747e; --glass:#ffffff33;
+  --maxw:1180px;
+  --r:.3125rem; --r-media:.6875rem; --r-lg:1.25rem; --r-pill:1.875rem;
+  --head:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--terrain-1); color:var(--midnight);
+  font-family:var(--body); font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+/* Flexport uses ZERO or slightly POSITIVE tracking on headings.
+   Most tech sites use negative. This is the fastest tell. */
+h1,h2,h3,h4,.num,.eyebrow{
+  font-family:var(--head); font-variation-settings:'wdth' 112;
+  font-weight:500; letter-spacing:.01em; text-wrap:balance;
+}
+a{color:var(--electric); text-decoration:none}
+a:hover{color:var(--electric-h)}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.5rem}
+@media(max-width:767px){.wrap{padding:0 1.25rem}}
+
+/* ── Arrow motif (verbatim path from Flexport's icon sprite) ── */
+.arrowfield{position:absolute; inset:0; overflow:hidden; pointer-events:none}
+.arrowfield svg{width:100%; height:100%; display:block}
+
+/* ── Nav ── */
+header.nav{
+  position:sticky; top:0; z-index:100; background:var(--midnight);
+  border-bottom:1px solid var(--midnight-400);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:1rem 2.5rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;
+}
+.wordmark{
+  font-family:var(--head); font-variation-settings:'wdth' 112; font-weight:700;
+  font-size:1.0625rem; color:var(--white); letter-spacing:.01em; white-space:nowrap;
+  display:flex; align-items:center; gap:.5rem;
+}
+.wordmark .mark{width:14px; height:14px; fill:var(--seafoam); flex:none}
+nav.links{display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center}
+nav.links a{
+  color:var(--midnight-100); font-size:.8125rem; padding-bottom:.1875rem;
+  border-bottom:2px solid transparent; transition:color .15s,border-color .15s;
+}
+nav.links a:hover{color:var(--white); border-bottom-color:var(--seafoam)}
+.navtag{
+  font-size:.6875rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--midnight-200); border:1px solid var(--midnight-400);
+  border-radius:var(--r-pill); padding:.25rem .625rem; white-space:nowrap;
+}
+
+/* ── Bands. Flexport alternates warm off-white and midnight full-width. ── */
+.band{padding:6rem 0; position:relative}
+.band-dark{background:var(--midnight); color:var(--white)}
+.band-light{background:var(--terrain-1)}
+.band-dawn{background:var(--dawn)}
+@media(max-width:767px){.band{padding:3.5rem 0}}
+
+/* ── Hero ── */
+.hero{background:var(--midnight); color:var(--white); position:relative; overflow:hidden;
+  padding:7rem 0 6.5rem}
+.hero .wrap{position:relative; z-index:2}
+.hero h1{
+  font-size:clamp(2.25rem,1.2rem+4.4vw,3.75rem); line-height:1.06;
+  color:var(--white); max-width:22ch; margin-bottom:1.5rem;
+}
+.hero .lede{
+  font-size:1.125rem; line-height:1.55; color:var(--midnight-100);
+  max-width:56ch; margin-bottom:2rem;
+}
+.hero .lede strong{color:var(--white); font-weight:500}
+.eyebrow{
+  font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--seafoam); font-weight:700; margin-bottom:1.25rem; display:block;
+}
+.band-light .eyebrow,.band-dawn .eyebrow{color:var(--seafoam-5)}
+
+/* ── Buttons: inset ring, not border. Flexport's signature. ── */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem; font-family:var(--body);
+  font-size:.875rem; font-weight:500; padding:.75rem 1.375rem;
+  border-radius:var(--r); border:none; cursor:pointer; transition:.18s;
+}
+.btn-primary{background:var(--electric); color:var(--white)}
+.btn-primary:hover{background:var(--electric-h); color:var(--white)}
+.btn-ghost{
+  background:transparent; color:var(--white);
+  box-shadow:0 0 0 .125rem var(--midnight-300) inset;
+}
+.btn-ghost:hover{box-shadow:0 0 0 .125rem var(--seafoam) inset; color:var(--seafoam)}
+.btn .chev{width:13px;height:13px;fill:currentColor;flex:none}
+
+/* ── Section headers ── */
+.sechead{max-width:62ch; margin-bottom:3rem}
+.sechead h2{font-size:clamp(1.75rem,.9rem+2.6vw,2.375rem); line-height:1.15; margin-bottom:.875rem}
+.band-dark .sechead h2{color:var(--white)}
+.sechead p{font-size:1.0625rem; color:var(--dgrey-1); line-height:1.55}
+.band-dark .sechead p{color:var(--midnight-100)}
+.pillarnum{
+  font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
+  font-size:.75rem; letter-spacing:.16em; color:var(--seafoam-5);
+  display:block; margin-bottom:.75rem;
+}
+.band-dark .pillarnum{color:var(--seafoam)}
+
+/* ── Placeholder canvas (scaffold only, replaced by real content) ── */
+.canvas{
+  border:1px dashed var(--lgrey-2); border-radius:var(--r-media);
+  background:var(--white); padding:3rem 2.5rem; text-align:center;
+}
+.band-dark .canvas{border-color:var(--midnight-300); background:var(--midnight-600)}
+.canvas .ph-label{
+  font-family:var(--head); font-variation-settings:'wdth' 112; font-weight:500;
+  font-size:1.0625rem; color:var(--dgrey-2); margin-bottom:.5rem;
+}
+.band-dark .canvas .ph-label{color:var(--midnight-100)}
+.canvas .ph-sub{font-size:.875rem; color:var(--lgrey-3); max-width:52ch; margin:0 auto}
+
+/* ── Spec list: what goes in each pillar ── */
+.spec{list-style:none; margin-top:2rem; display:grid; gap:.75rem}
+.spec li{
+  display:grid; grid-template-columns:18px 1fr; gap:.875rem; align-items:start;
+  font-size:.9375rem; color:var(--dgrey-1); line-height:1.5;
+}
+.band-dark .spec li{color:var(--midnight-100)}
+.spec li svg{width:11px;height:11px;fill:var(--seafoam-5);margin-top:.375rem}
+.band-dark .spec li svg{fill:var(--seafoam)}
+.spec li strong{color:var(--midnight); font-weight:600}
+.band-dark .spec li strong{color:var(--white)}
+
+/* ── Metric tile. Flexport shows metrics as oversized standalone numerals. ── */
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:2.5rem; margin-top:3rem}
+.metric .num{
+  font-size:clamp(2.5rem,1.4rem+3.4vw,3.5rem); line-height:1; font-weight:500;
+  font-variation-settings:'wdth' 118; letter-spacing:0;
+  font-variant-numeric:lining-nums tabular-nums; display:block; margin-bottom:.625rem;
+}
+.band-dark .metric .num{color:var(--seafoam)}
+.band-light .metric .num{color:var(--teal)}
+.metric .cap{font-size:.8125rem; line-height:1.4; color:var(--dgrey-2); max-width:24ch}
+.band-dark .metric .cap{color:var(--midnight-100)}
+
+/* ── Build notes: FOR MIKE ONLY. Delete this block before presenting. ── */
+.buildnotes{background:var(--midnight-800); color:var(--midnight-100); padding:4rem 0}
+.buildnotes .inner{
+  border:1px dashed var(--seafoam-6); border-radius:var(--r-media);
+  padding:2.25rem 2rem; background:#02121d;
+}
+.buildnotes h3{color:var(--seafoam); font-size:1.125rem; margin-bottom:.375rem}
+.buildnotes .warn{
+  font-size:.6875rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--yellow); font-weight:700; margin-bottom:1.25rem; display:block;
+}
+.buildnotes ol{margin:1rem 0 0 1.125rem; display:grid; gap:.625rem}
+.buildnotes li{font-size:.9375rem; line-height:1.5}
+.buildnotes li strong{color:var(--white)}
+.buildnotes p{font-size:.9375rem; line-height:1.55; margin-bottom:.75rem}
+.buildnotes code{
+  font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.8125rem;
+  background:#041d2e; padding:.125rem .375rem; border-radius:3px; color:var(--seafoam-3);
+}
+
+/* ── Footer ── */
+footer{background:var(--midnight); color:var(--midnight-200); padding:2.5rem 0;
+  border-top:1px solid var(--midnight-400); font-size:.8125rem}
+footer .wrap{display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap}
+footer a{color:var(--midnight-100)}
+footer a:hover{color:var(--seafoam)}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <span class="wordmark">
+      <svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+      Michael Fitzpatrick
+    </span>
+    <nav class="links">
+      <a href="#lifecycle">01 &middot; The Lifecycle</a>
+      <a href="#mapping">02 &middot; Pattern Match</a>
+      <a href="#ninety">First 90 Days</a>
+    </nav>
+    <span class="navtag">Prepared for Flexport</span>
+  </div>
+</header>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="arrowfield" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="arrows" width="52" height="42" patternUnits="userSpaceOnUse">
+          <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+                fill="#ffffff" fill-opacity=".055" transform="translate(6,8)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arrows)"/>
+      <!-- the one seafoam arrow, Flexport's signature accent -->
+      <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+            fill="#45dabe" fill-opacity=".85" transform="translate(682,138)"/>
+      <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+            fill="#45dabe" fill-opacity=".25" transform="translate(890,222)"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow">Ground Transportation &middot; A Point of View</span>
+    <h1>Twelve handoffs, and nobody owns the middle.</h1>
+    <p class="lede">
+      A truck move is a chain of handoffs between parties with misaligned incentives and no shared
+      system of record. <strong>The receiver controls the appointment and bears none of the cost of a
+      bad one.</strong> The carrier bears all of it and controls nothing. This is what I have come to
+      understand about ground freight, and where I think the leverage is.
+    </p>
+    <a class="btn btn-ghost" href="#lifecycle">
+      Start with the lifecycle
+      <svg class="chev" viewBox="0 0 26 26" aria-hidden="true"><path d="M9.306 17.962L14.268 13 9.306 8.027 10.833 6.5l6.5 6.5-6.5 6.5-1.527-1.538z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════ PILLAR 01 ══════════════ -->
+<section class="band band-light" id="lifecycle">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">PILLAR 01</span>
+      <h2>The ground freight lifecycle, and where it breaks</h2>
+      <p>
+        Two lanes running left to right. The top lane is the physical movement of the freight. The
+        bottom lane is the information, the money, and the verification that has to move alongside
+        it. The interesting part is where those two lanes fall out of step.
+      </p>
+    </div>
+
+    <div class="canvas">
+      <div class="ph-label">Interactive lifecycle diagram goes here</div>
+      <p class="ph-sub">
+        Twelve steps, two swim lanes, hover-to-expand pain markers. Empty for now.
+      </p>
+    </div>
+
+    <ul class="spec">
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>The twelve steps.</strong> Quote, tender, accept or reject, cover, dispatch,
+        pickup appointment, in transit, delivery appointment, POD, invoice, settlement, claims.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Two lanes.</strong> Physical custody on top, informational and financial
+        underneath, so the reader can see where custody changes hands but the data does not.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Pain markers.</strong> Roughly ten, of which three are visually loud and the
+        rest are quiet. A wall of equally weighted markers reads as noise.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Each marker expands to:</strong> what the pain is, who feels it, frequency and
+        cost, what people do about it today, whether Flexport touches it, and whether it is an AI
+        opportunity or a human-plus-agent opportunity.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>The annotation that makes it a PM artifact:</strong> at each step, who controls
+        the decision versus who bears the cost. That inversion is the actual mechanism behind most of
+        these failures, and no other candidate will have drawn it.</span></li>
+    </ul>
+
+    <div class="metrics">
+      <div class="metric"><span class="num">39.3%</span><span class="cap">of all stops incur detention beyond the free period</span></div>
+      <div class="metric"><span class="num">~41%</span><span class="cap">of earned detention ever converts to cash</span></div>
+      <div class="metric"><span class="num">$15.1B</span><span class="cap">annual industry cost of detention</span></div>
+      <div class="metric"><span class="num">$2.336</span><span class="cap">marginal cost per mile to operate a truck, 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PILLAR 02 ══════════════ -->
+<section class="band band-dark" id="mapping">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">PILLAR 02</span>
+      <h2>Where I have solved this shape of problem before</h2>
+      <p>
+        On the left, the hard problems this role actually has to solve. On the right, work I have
+        delivered against the same underlying shape. The domain is different. The problem is not.
+      </p>
+    </div>
+
+    <div class="canvas">
+      <div class="ph-label">Mapping board goes here</div>
+      <p class="ph-sub">
+        Problem cards on the left, delivered-work cards on the right, connectors between them.
+        Empty for now.
+      </p>
+    </div>
+
+    <ul class="spec">
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Left column framing.</strong> Not "job requirements." The hard problems in the
+        role. Same content, and it reads as a pattern library rather than a defence.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Right column.</strong> Feast Instock Portal, OADS, UARC2, Freyja, Procurability
+        at Amazon Go, BPSI, Sourceability in Feast 2.0, Frida. Each with the outcome attached.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Deliberately plain.</strong> This is the one section that should not sparkle.
+        It is a reference board, and over-designing it tips into self-congratulation.</span></li>
+      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        <span><strong>Doubles as on-screen notes.</strong> When a behavioural question lands, the
+        matching story is already visible on the shared screen.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ CLOSER ══════════════ -->
+<section class="band band-dawn" id="ninety">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">CLOSER</span>
+      <h2>If I had ninety days</h2>
+      <p>
+        One screen. What I would work on first, what I would measure, and what would prove me wrong.
+        Held loosely, because this is built from outside with partial information.
+      </p>
+    </div>
+    <div class="canvas">
+      <div class="ph-label">Ninety-day point of view goes here</div>
+      <p class="ph-sub">
+        Three bullets, one metric, one falsifier. Sixty seconds of screen time. Empty for now.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BUILD NOTES ══════════════
+     FOR MIKE ONLY. Delete this entire <section> before presenting.
+     ═══════════════════════════════════════════ -->
+<section class="buildnotes">
+  <div class="wrap">
+    <div class="inner">
+      <span class="warn">Internal &middot; delete this section before presenting</span>
+      <h3>Where we left off, 2026-08-26</h3>
+      <p>
+        Interview moved to <strong>Tuesday</strong> with Phil Song, Senior Director of Ops Tech
+        Product and Data Services, based in Hong Kong. He came up through six years of Operational
+        Excellence at Flexport and eight years at PayPal in ops and risk. <strong>He is not a
+        trucking domain expert.</strong> He owns internal operator tooling and the data layer, so
+        lead with workflow diagnosis and the data model, not trucking vocabulary.
+      </p>
+      <p>
+        Scaffolding only. Design tokens are real, read from Flexport's live CSS bundle. The arrow
+        motif is their actual SVG path. Fonts are the closest Google Fonts substitutes, since
+        GT America is licensed.
+      </p>
+      <h3 style="margin-top:1.75rem">Next steps</h3>
+      <ol>
+        <li><strong>Pillar 01.</strong> Build the two-lane lifecycle. Long pole. Decide single line
+          versus stacked lanes by mocking both.</li>
+        <li><strong>Pain cards.</strong> Pull from <code>06-pain-inventory.md</code>. Pick ten, make
+          three loud. Add the control-versus-cost annotation.</li>
+        <li><strong>Pillar 02.</strong> First pass at the mapping, then Mike reviews and rewrites
+          heavily. He knows which stories carry.</li>
+        <li><strong>Closer.</strong> Ninety-day view. Draft after the other two are settled.</li>
+        <li><strong>Rehearsal.</strong> Time-box the walkthrough to five minutes and practise the
+          segue out loud. Reserve real time for behavioural answers.</li>
+      </ol>
+      <p style="margin-top:1.25rem">
+        Research lives in <code>C:\dev\jobbot3000\demos\flexport\research\</code> and in the Drive
+        folder. Start with <code>00-EXECUTIVE-BRIEF.md</code>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Michael Fitzpatrick &middot; Seattle</span>
+    <span><a href="/">michaelfitzpatrick.me</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

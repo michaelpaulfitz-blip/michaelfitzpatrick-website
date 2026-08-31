@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Recent Experience Note · Michael Fitzpatrick · Flexport Senior PM, Visibility</title>
+<meta name="description" content="UARC2, a supply chain visibility and failure-diagnostics platform built 0 to 1 at Amazon Fresh. Prepared for Flexport's Senior Product Manager, Visibility role.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Flexport design language. Tokens read from flexport.com's live CSS bundle.
+   GT America is licensed, so Archivo (widened) and Inter stand in. */
+:root{
+  --midnight:#052439; --midnight-400:#1e3a4d; --midnight-600:#041d2e;
+  --midnight-300:#506674; --midnight-200:#82929c; --midnight-100:#b4bdc4;
+  --seafoam:#45dabe; --seafoam-5:#319a86; --teal:#015f74; --teal-1:#e4f1f4;
+  --electric:#2365ff; --electric-h:#1a52d9;
+  --white:#fff; --terrain-1:#fbf9f6; --terrain-2:#e8e6e3; --dawn:#f0f8f9;
+  --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6; --dgrey-1:#4d5563; --dgrey-2:#6b747e;
+  --maxw:860px;
+  --r:.3125rem; --r-media:.6875rem; --r-pill:1.875rem;
+  --head:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--terrain-1); color:var(--midnight);
+  font-family:var(--body); font-size:16.5px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+/* Flexport uses zero or slightly POSITIVE tracking on headings. */
+h1,h2,.num,.eyebrow,.wordmark{
+  font-family:var(--head); font-variation-settings:'wdth' 112;
+  font-weight:500; letter-spacing:.01em; text-wrap:balance;
+}
+a{color:var(--electric); text-decoration:none}
+a:hover{color:var(--electric-h)}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.25rem}
+@media(max-width:767px){.wrap{padding:0 1.25rem}}
+
+/* ── Header ── */
+.masthead{background:var(--midnight); color:var(--white); position:relative; overflow:hidden;
+  padding:2.75rem 0 3.25rem}
+.masthead .wrap{position:relative; z-index:2}
+.arrowfield{position:absolute; inset:0; pointer-events:none}
+.arrowfield svg{width:100%; height:100%; display:block}
+.topline{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  flex-wrap:wrap; margin-bottom:2.5rem;
+}
+.wordmark{
+  font-weight:700; font-size:1rem; color:var(--white);
+  display:flex; align-items:center; gap:.5rem;
+}
+.wordmark .mark{width:13px; height:13px; fill:var(--seafoam); flex:none}
+.roletag{
+  font-size:.6875rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--midnight-100); border:1px solid var(--midnight-400);
+  border-radius:var(--r-pill); padding:.3125rem .75rem;
+}
+.eyebrow{
+  font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--seafoam); font-weight:700; display:block; margin-bottom:1rem;
+}
+.masthead h1{
+  font-size:clamp(1.875rem,1.1rem+2.9vw,2.625rem); line-height:1.12;
+  color:var(--white); max-width:20ch; margin-bottom:1.125rem;
+}
+.masthead .lede{
+  font-size:1.0625rem; line-height:1.55; color:var(--midnight-100); max-width:62ch;
+}
+.byline{
+  margin-top:1.75rem; padding-top:1.25rem; border-top:1px solid var(--midnight-400);
+  font-size:.8125rem; color:var(--midnight-200);
+}
+.byline strong{color:var(--white); font-weight:500}
+
+/* ── Metrics. Flexport shows these as oversized standalone numerals. ── */
+.metrics{
+  background:var(--dawn); border-bottom:1px solid var(--terrain-2);
+  padding:2.75rem 0;
+}
+.metrics .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:2rem}
+.metric .num{
+  font-size:clamp(2.125rem,1.4rem+2.4vw,2.875rem); line-height:1; font-weight:500;
+  font-variation-settings:'wdth' 118; letter-spacing:0; color:var(--teal);
+  font-variant-numeric:lining-nums tabular-nums; display:block; margin-bottom:.5rem;
+}
+.metric .cap{font-size:.8125rem; line-height:1.4; color:var(--dgrey-2); max-width:22ch}
+
+/* ── Body ── */
+.note{padding:3.5rem 0 4rem}
+.note h2{
+  font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
+  color:var(--seafoam-5); margin:2.5rem 0 .875rem; display:flex; align-items:center; gap:.5rem;
+}
+.note h2:first-child{margin-top:0}
+.note h2 svg{width:10px; height:10px; fill:var(--seafoam-5); flex:none}
+.note p{margin-bottom:1.125rem; color:var(--midnight)}
+.note p:last-child{margin-bottom:0}
+.note p strong{font-weight:600}
+.rule{height:1px; background:var(--terrain-2); margin:2.75rem 0}
+
+/* Pull quote for the outcome */
+.outcome{
+  background:var(--white); border-left:3px solid var(--seafoam);
+  border-radius:0 var(--r-media) var(--r-media) 0;
+  padding:1.75rem 1.875rem; margin-top:.5rem;
+}
+.outcome p{margin-bottom:0}
+
+/* ── Footer ── */
+footer{
+  background:var(--midnight); color:var(--midnight-200);
+  padding:2.25rem 0; font-size:.8125rem;
+}
+footer .wrap{display:flex; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
+footer a{color:var(--midnight-100)}
+footer a:hover{color:var(--seafoam)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="arrowfield" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="arrows" width="54" height="44" patternUnits="userSpaceOnUse">
+          <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+                fill="#ffffff" fill-opacity=".05" transform="translate(7,9)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arrows)"/>
+      <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+            fill="#45dabe" fill-opacity=".8" transform="translate(742,118)"/>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <div class="topline">
+      <span class="wordmark">
+        <svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
+        Michael Fitzpatrick
+      </span>
+      <span class="roletag">Senior Product Manager, Visibility</span>
+    </div>
+
+    <span class="eyebrow">Recent Experience Note</span>
+    <h1>UARC2: supply chain visibility and failure diagnostics</h1>
+    <p class="lede">
+      A net-new 0-to-1 platform that identifies true causational relationships and pinpoints
+      exactly which events drive stockouts, built and launched at Amazon Fresh.
+    </p>
+
+    <p class="byline">
+      <strong>Michael Fitzpatrick</strong> &middot; Senior Product Manager (Technical) &middot; Seattle
+    </p>
+  </div>
+</header>
+
+<section class="metrics">
+  <div class="wrap">
+    <div class="grid">
+      <div class="metric"><span class="num">4x</span><span class="cap">more accurate than the system it replaced</span></div>
+      <div class="metric"><span class="num">92%</span><span class="cap">adoption as the default decision layer</span></div>
+      <div class="metric"><span class="num">200 bps</span><span class="cap">instock lift in some grocery categories</span></div>
+      <div class="metric"><span class="num">7</span><span class="cap">functional customer orgs aligned</span></div>
+    </div>
+  </div>
+</section>
+
+<article class="note">
+  <div class="wrap">
+
+    <h2><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>The charter</h2>
+    <p>
+      At Amazon Fresh, I owned the product charter for our inventory visibility and diagnostics
+      platform. As part of that charter, I proposed and led a net-new 0-to-1 initiative called
+      UARC2, a supply chain visibility and failure-diagnostics system that identifies true
+      causational relationships and pinpoints exactly which events drive stockouts.
+    </p>
+
+    <h2><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>Finding the opportunity</h2>
+    <p>
+      To start the product development lifecycle, I gathered user feedback on the biggest
+      opportunities across our supply chain and identified our stockout-attribution tooling as the
+      highest-value one. Researching the existing solution, I saw it only surfaced correlations
+      preceding stockouts, not causes. I formed a hypothesis: if we installed additional
+      instrumentation along the supply chain, we could decompose the entire physical and virtual
+      operation into a connected set of links, and isolate true causation instead of correlation.
+      I pitched our science lead on a prototype, ran an experiment at a single fulfillment center,
+      and the results were promising enough that I built a data-backed proposal to leadership.
+    </p>
+
+    <h2><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>Execution</h2>
+    <p>
+      We won approval and funding, and I executed development over the next 12 months. I ran a
+      daily standup with our engineering and science team to drive delivery, a weekly tactical sync
+      with my IC and first-line-manager partners to resolve open questions fast, and a biweekly
+      sync with my Senior Manager and Director stakeholders for hot topics and strategic trade-offs.
+      Later in development, I demoed the product to Amazon VP-level leadership, which won additional
+      funding for the following year's roadmap.
+    </p>
+    <p>
+      Once live, the system let us trace a single stockout back to its true root cause, whether
+      external, like a crop failure in a strawberry field, or internal, like a bug in how our
+      forecast-and-buying system handled frequent-reorder, long-lead-time products, so teams could
+      react strategically instead of guessing.
+    </p>
+
+    <h2><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>The hard part</h2>
+    <p>
+      One of the harder parts of the project was aligning senior stakeholders on strategic
+      priorities. I had seven functional customer orgs, each wanting its own features prioritized,
+      which created real friction early in roadmap planning. I defused it by aligning the team
+      around an objective prioritization framework that weighed actionability alongside raw impact
+      to order the epics, so tradeoffs were decided by shared criteria rather than by whoever pushed
+      hardest. I also stayed close to the Senior Managers and Directors, and brought in ICs and
+      first-line managers from their orgs for a weekly working sync. Involving those operators
+      directly earned trust, kept their leaders tightly looped in, and turned prioritization from a
+      negotiation into a collaboration. This process built customer buy-in and insulated the product
+      team from roadmap thrash, letting us ship the highest-priority items on schedule and deliver
+      for our customers.
+    </p>
+
+    <div class="rule"></div>
+
+    <h2><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>Outcome</h2>
+    <div class="outcome">
+      <p>
+        We launched in January 2026. UARC2 proved <strong>4x more accurate</strong> than the system
+        it replaced, reached <strong>92% adoption</strong> as the default decision layer for our
+        instock and supply-chain teams, and lifted instock, our NSM, by up to
+        <strong>200 bps</strong> in some grocery categories.
+      </p>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>Michael Fitzpatrick &middot; Seattle</span>
+    <span><a href="/">michaelfitzpatrick.me</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

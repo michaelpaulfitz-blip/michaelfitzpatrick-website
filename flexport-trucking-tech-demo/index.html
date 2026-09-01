@@ -159,7 +159,8 @@ nav.links a:hover,nav.links button:hover{color:var(--white); border-bottom-color
 
 /* ═══ PILLAR 02: mapping board ═══ */
 .board{position:relative; display:grid; grid-template-columns:1fr 88px 1fr; gap:0;
-  align-items:start; margin-top:1rem}
+  align-items:stretch; margin-top:1rem}
+.edgelayer{align-self:stretch; min-height:100%}
 @media(max-width:900px){.board{grid-template-columns:1fr; gap:1.5rem}
   .board .edgelayer{display:none}}
 .boardcol{display:flex; flex-direction:column; gap:.625rem}
@@ -558,7 +559,13 @@ footer a:hover{color:var(--seafoam)}
   function drawEdges(active){
     if(!svg || !layer.offsetParent) return;
     var lr = layer.getBoundingClientRect();
-    svg.setAttribute("viewBox","0 0 "+lr.width+" "+lr.height);
+    var board = document.querySelector(".board");
+    var h = lr.height || (board ? board.getBoundingClientRect().height : 0);
+    var w = lr.width || 88;
+    if(!h){ svg.innerHTML=""; return; }
+    svg.setAttribute("viewBox","0 0 "+w+" "+h);
+    svg.setAttribute("preserveAspectRatio","none");
+    svg.style.height = h + "px";
     var out = edges.map(function(e){
       var pe = document.querySelector('[data-p="'+e.problem+'"]');
       var we = document.querySelector('[data-w="'+e.work+'"]');

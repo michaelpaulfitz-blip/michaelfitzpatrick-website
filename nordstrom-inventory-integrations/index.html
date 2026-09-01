@@ -4,110 +4,534 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Inventory Integrations · Michael Fitzpatrick</title>
-<meta name="description" content="Prepared for a conversation about the Senior Product Manager, Inventory Integrations role.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B2%3C/text%3E%3C/svg%3E">
+<title>Inventory integrations · a working model · Michael Fitzpatrick</title>
+<meta name="description" content="An outside-in model of Nordstrom's inventory systems, pieced together from public job postings, and where I would look for leverage. Prepared for a conversation about the Senior Product Manager, Inventory Integrations role.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23191a1b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* Restrained black-and-white, in the spirit of Nordstrom's own minimal aesthetic.
-   Placeholder styling. If we add real content, pull their live design tokens first
-   the same way we did for Flexport. */
+/* ═══════════════════════════════════════════════════════════════════
+   Nordstrom Design Language System (NDLS), full-line property.
+   Tokens read from the live CSSOM on nordstrom.com, 2026-09-01.
+   Brandon Text is licensed and self-hosted, so Jost stands in as the
+   closest Futura-lineage substitute.
+   Three rules that matter most: letter-spacing is ZERO everywhere,
+   nothing is uppercase, and the ink is #191a1b rather than pure black.
+   ═══════════════════════════════════════════════════════════════════ */
 :root{
-  --ink:#111111;
-  --ink-70:#4a4a4a;
-  --ink-40:#8a8a8a;
-  --rule:#e0e0e0;
-  --paper:#ffffff;
-  --wash:#f7f7f7;
-  --maxw:900px;
-  --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --gray-10:#f0f3f5; --gray-20:#dce3e6; --gray-30:#c2cbcd; --gray-40:#a4afb2;
+  --gray-50:#838d91; --gray-60:#647175; --gray-70:#50575a; --gray-80:#3e4142;
+  --gray-90:#2b2e2f; --gray-100:#191a1b;
+  --ink:#191a1b; --ink-subtle:#647175; --ink-inverse:#ffffff;
+  --bg:#ffffff; --bg-subtle:#f0f3f5;
+  --border:#838d91; --border-subtle:#c2cbcd;
+  --success:#157e64; --success-bg:#ddf9f1;
+  --warning:#946500; --warning-bg:#fff4d1;
+  --info:#186adc;    --info-bg:#ecf5fd;
+  --elev-1:0px 1px 4px 0px rgba(25,26,27,.15);
+  --elev-2:0px 2px 8px 0px rgba(25,26,27,.15);
+  --r:4px; --r-sm:8px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:40px; --s8:48px; --s9:64px; --s10:80px; --s11:96px;
+  --font:'Jost',Arial,sans-serif;
+  --maxw:1180px; --prose:760px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  background:var(--paper); color:var(--ink); font-family:var(--sans);
-  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  background:var(--bg); color:var(--ink); font-family:var(--font);
+  font-size:16px; line-height:1.5; letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:var(--maxw); margin:0 auto; padding:0 2rem}
-@media(max-width:640px){.wrap{padding:0 1.25rem}}
+/* Letter-spacing stays at 0 on every heading. This is the single most
+   common way to get Nordstrom wrong. */
+h1,h2,h3,h4{font-weight:700; letter-spacing:0; text-transform:none}
+a{color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+a:hover{color:var(--gray-70)}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--s6)}
+.prose{max-width:var(--prose)}
+@media(max-width:767px){.wrap{padding:0 var(--s4)}}
 
-header.mast{border-bottom:1px solid var(--rule); padding:1.5rem 0}
-.mast-inner{
-  max-width:var(--maxw); margin:0 auto; padding:0 2rem;
-  display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+/* ── Header: 112px, transparent, no bottom border ── */
+header.site{height:112px; display:flex; align-items:center}
+.site .wrap{display:flex; align-items:baseline; justify-content:space-between;
+  gap:var(--s5); flex-wrap:wrap; width:100%}
+.wordmark{font-size:20px; font-weight:700; letter-spacing:0}
+.sitetag{font-size:14px; color:var(--ink-subtle)}
+
+/* ── Hero ── */
+.hero{padding:var(--s7) 0 var(--s10)}
+.eyebrow{font-size:12px; line-height:16px; color:var(--ink-subtle); margin-bottom:var(--s4)}
+.hero h1{font-size:40px; line-height:48px; max-width:16ch; margin-bottom:var(--s5)}
+@media(max-width:767px){.hero h1{font-size:28px; line-height:36px}}
+.lede{font-size:18px; line-height:28px; max-width:62ch; color:var(--ink)}
+.lede + .lede{margin-top:var(--s4)}
+.muted{color:var(--ink-subtle)}
+
+/* ── Sections, separated by hairlines rather than cards ── */
+section{padding:var(--s10) 0; border-top:1px solid var(--border-subtle)}
+@media(max-width:767px){section{padding:var(--s8) 0}}
+.sectionhead{margin-bottom:var(--s8)}
+.sectionhead h2{font-size:32px; line-height:40px; margin-bottom:var(--s4)}
+@media(max-width:767px){.sectionhead h2{font-size:24px; line-height:32px}}
+.sectionhead p{font-size:18px; line-height:28px; color:var(--ink-subtle); max-width:62ch}
+
+/* ── The stack diagram ── */
+.stack{margin-top:var(--s6)}
+.layer{display:grid; grid-template-columns:132px 1fr; gap:var(--s5); align-items:center}
+@media(max-width:767px){.layer{grid-template-columns:1fr; gap:var(--s2)}}
+.layer-label{font-size:14px; line-height:20px; color:var(--ink-subtle); text-align:right}
+@media(max-width:767px){.layer-label{text-align:left}}
+.layer-body{display:grid; gap:var(--s3)}
+.layer-body.two{grid-template-columns:1fr 1fr}
+@media(max-width:767px){.layer-body.two{grid-template-columns:1fr}}
+.node{
+  border:1px solid var(--border-subtle); border-radius:var(--r);
+  padding:var(--s4) var(--s5); background:var(--bg);
 }
-.wordmark{font-weight:600; font-size:.9375rem; letter-spacing:.02em}
-.roletag{
-  font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+.node h3{font-size:16px; line-height:24px; margin-bottom:var(--s1)}
+.node p{font-size:14px; line-height:20px; color:var(--ink-subtle)}
+.node.legacy{background:var(--warning-bg); border-color:#e8d49a}
+.node.legacy h3{color:var(--warning)}
+.node.target{background:var(--success-bg); border-color:#a7ddcb}
+.node.target h3{color:var(--success)}
+.node.role{background:var(--info-bg); border-color:#b9d4f6; box-shadow:var(--elev-1)}
+.node.role h3{color:var(--info)}
+.node.role p{color:var(--gray-70)}
+.rolebadge{
+  display:inline-block; font-size:12px; line-height:16px; color:var(--info);
+  border:1px solid #b9d4f6; border-radius:500px; padding:2px 10px; margin-left:var(--s2);
+  vertical-align:2px; font-weight:400;
+}
+.connector{
+  height:var(--s5); margin-left:calc(132px + var(--s5)); width:1px;
+  background:var(--border-subtle);
+}
+@media(max-width:767px){.connector{margin-left:var(--s4); height:var(--s4)}}
+.legend{
+  display:flex; gap:var(--s5); flex-wrap:wrap; margin-top:var(--s6);
+  font-size:14px; line-height:20px; color:var(--ink-subtle);
+}
+.legend span{display:flex; align-items:center; gap:var(--s2)}
+.swatch{width:12px; height:12px; border-radius:2px; border:1px solid var(--border-subtle); flex:none}
+.sw-legacy{background:var(--warning-bg); border-color:#e8d49a}
+.sw-target{background:var(--success-bg); border-color:#a7ddcb}
+.sw-role{background:var(--info-bg); border-color:#b9d4f6}
+
+/* ── Tables ── */
+table{width:100%; border-collapse:collapse; margin-top:var(--s5); font-size:16px}
+th,td{text-align:left; padding:var(--s4) var(--s4) var(--s4) 0;
+  border-bottom:1px solid var(--border-subtle); vertical-align:top; line-height:24px}
+th{font-weight:700; font-size:14px; line-height:20px; color:var(--ink-subtle)}
+td.sys{white-space:nowrap; font-weight:700}
+.tablewrap{overflow-x:auto}
+
+/* ── Opportunity list ── */
+.opps{list-style:none; counter-reset:o; margin-top:var(--s6)}
+.opps li{
+  counter-increment:o; padding:var(--s5) 0; border-bottom:1px solid var(--border-subtle);
+  display:grid; grid-template-columns:40px 1fr; gap:var(--s4);
+}
+.opps li:last-child{border-bottom:none}
+.opps li::before{
+  content:counter(o); font-size:16px; font-weight:700; color:var(--ink-subtle);
+  line-height:24px;
+}
+.opps h3{font-size:18px; line-height:28px; margin-bottom:var(--s2)}
+.opps p{font-size:16px; line-height:24px; color:var(--gray-70); max-width:70ch}
+.opps .ev{
+  font-size:14px; line-height:20px; color:var(--ink-subtle); margin-top:var(--s3);
+  padding-left:var(--s4); border-left:2px solid var(--border-subtle);
+}
+.pri{
+  display:inline-block; font-size:12px; line-height:16px; color:var(--info);
+  border:1px solid #b9d4f6; background:var(--info-bg); border-radius:500px;
+  padding:2px 10px; margin-left:var(--s2); vertical-align:2px; font-weight:400;
 }
 
-.hero{padding:5rem 0 4rem; border-bottom:1px solid var(--rule)}
-.eyebrow{
-  font-size:.6875rem; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--ink-40); display:block; margin-bottom:1.25rem;
-}
-h1{
-  font-size:clamp(1.875rem,1.2rem+2.6vw,2.75rem); line-height:1.15; font-weight:500;
-  letter-spacing:-.01em; max-width:22ch; margin-bottom:1.25rem; text-wrap:balance;
-}
-.lede{font-size:1.0625rem; color:var(--ink-70); max-width:58ch}
+/* ── Questions ── */
+.qs{list-style:none; margin-top:var(--s5)}
+.qs li{padding:var(--s4) 0; border-bottom:1px solid var(--border-subtle);
+  font-size:18px; line-height:28px}
+.qs li:last-child{border-bottom:none}
 
-.section{padding:4rem 0; border-bottom:1px solid var(--rule)}
-.section:last-of-type{border-bottom:none}
-h2{
-  font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
-  color:var(--ink-40); margin-bottom:1.25rem;
-}
-.placeholder{
-  border:1px dashed var(--rule); background:var(--wash);
-  padding:3rem 2rem; text-align:center; border-radius:2px;
-}
-.placeholder .label{font-size:1rem; font-weight:500; color:var(--ink-70); margin-bottom:.5rem}
-.placeholder .sub{font-size:.875rem; color:var(--ink-40); max-width:48ch; margin:0 auto}
+/* ── Note block ── */
+.note{background:var(--bg-subtle); border-radius:var(--r-sm);
+  padding:var(--s5) var(--s6); margin-top:var(--s6)}
+.note h3{font-size:16px; line-height:24px; margin-bottom:var(--s2)}
+.note p{font-size:14px; line-height:20px; color:var(--gray-70); max-width:78ch}
+.note p + p{margin-top:var(--s3)}
 
-footer{padding:2.5rem 0; color:var(--ink-40); font-size:.8125rem}
-footer .wrap{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
-footer a{color:var(--ink-70); text-decoration:none}
-footer a:hover{color:var(--ink)}
+footer{border-top:1px solid var(--border-subtle); padding:var(--s7) 0 var(--s9);
+  font-size:14px; line-height:20px; color:var(--ink-subtle)}
+footer .wrap{display:flex; justify-content:space-between; gap:var(--s4); flex-wrap:wrap}
 </style>
 </head>
 <body>
 
-<header class="mast">
-  <div class="mast-inner">
+<header class="site">
+  <div class="wrap">
     <span class="wordmark">Michael Fitzpatrick</span>
-    <span class="roletag">Senior Product Manager, Inventory Integrations</span>
+    <span class="sitetag">Senior Product Manager, Inventory Integrations</span>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Prepared for Nordstrom</span>
-    <h1>Inventory Integrations</h1>
+<div class="wrap">
+  <div class="hero">
+    <span class="eyebrow">A working model, built from the outside</span>
+    <h1>Inventory integrations, as best I can tell from here.</h1>
     <p class="lede">
-      The seam between the physical systems and the financial ledger. Placeholder page, ready for
-      content.
+      This is what I pieced together about Nordstrom's inventory systems from your own job postings
+      and public filings. I built it to have a more useful conversation, and I would genuinely like
+      to know where it is wrong.
     </p>
+    <p class="lede muted">
+      Everything shaded green is confirmed in writing somewhere public. Everything shaded amber is
+      my inference, and the biggest inference of all is what happens to RMS.
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sectionhead prose">
+      <h2>The stack, and the seam in the middle of it</h2>
+      <p>
+        Five layers. Finance sits on top and reconciles against everything below it. The physical
+        world sits at the bottom and knows what is actually on a shelf. The role in question lives
+        in the middle, keeping those two from disagreeing while functions are pulled off the legacy
+        stack one at a time.
+      </p>
+    </div>
+
+    <div class="stack">
+
+      <div class="layer">
+        <div class="layer-label">Finance</div>
+        <div class="layer-body">
+          <div class="node">
+            <h3>General ledger, month-end close</h3>
+            <p>Everything below this line eventually has to agree with it, in dollars.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="layer">
+        <div class="layer-label">Financial record</div>
+        <div class="layer-body two">
+          <div class="node legacy">
+            <h3>RMS, the stock ledger</h3>
+            <p>Oracle Retail, on premises. Whether it stays as the system of record is the question I most want answered.</p>
+          </div>
+          <div class="node target">
+            <h3>MFP moving to Toolio</h3>
+            <p>Cloud SaaS for merchandise and financial planning. Open to buy, spend controls, price type.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="layer">
+        <div class="layer-label">Integration</div>
+        <div class="layer-body">
+          <div class="node role">
+            <h3>The integration layer <span class="rolebadge">this role</span></h3>
+            <p>
+              RIB, the legacy integration bus, giving way to a new API platform with distributed
+              ledger transaction validation. The stated goal is a common inventory language across
+              systems that currently do not share one.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="layer">
+        <div class="layer-label">Operations</div>
+        <div class="layer-body two">
+          <div class="node legacy">
+            <h3>SIM, store inventory</h3>
+            <p>Legacy, with a store inventory ownership migration referenced in current postings.</p>
+          </div>
+          <div class="node target">
+            <h3>Consolidation onto a single WMS</h3>
+            <p>Warehouse management unified rather than run per site.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="layer">
+        <div class="layer-label">Physical</div>
+        <div class="layer-body">
+          <div class="node">
+            <h3>Stores, distribution centers, digital fulfillment</h3>
+            <p>RFID mandated on suppliers since 2022. Robotics automation on the west coast. The units are already well counted.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="legend">
+      <span><i class="swatch sw-legacy"></i>Legacy, status unconfirmed</span>
+      <span><i class="swatch sw-target"></i>Confirmed target</span>
+      <span><i class="swatch sw-role"></i>Where this role sits</span>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section>
   <div class="wrap">
-    <h2>Content</h2>
-    <div class="placeholder">
-      <div class="label">Nothing here yet</div>
-      <p class="sub">
-        Page scaffolded and deployed. When we add content, pull Nordstrom's live design tokens
-        first, the same way we did for the Flexport pages.
+    <div class="sectionhead prose">
+      <h2>What is moving, and what I could not confirm</h2>
+      <p>
+        The shape that struck me is that this is not a single ERP replacement. It reads as a
+        decomposition, with functions leaving the Oracle suite one at a time toward a mix of
+        purchased SaaS and systems built in house.
+      </p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>System</th><th>Today</th><th>Direction</th><th>Confidence</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sys">RMS</td>
+            <td>Retail Merchandising System, the stock ledger of record. On premises.</td>
+            <td>Unclear. It may remain the ledger, or be replaced behind the new platform.</td>
+            <td>Inferred</td>
+          </tr>
+          <tr>
+            <td class="sys">RIB</td>
+            <td>Retail Integration Bus. The legacy integration layer.</td>
+            <td>Replaced by a new API platform with distributed ledger transaction validation.</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td class="sys">MFP</td>
+            <td>Merchandise Financial Planning.</td>
+            <td>Toolio, cloud SaaS. Open to buy, spend controls, price type planning.</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td class="sys">SIM</td>
+            <td>Store Inventory Management.</td>
+            <td>Store inventory ownership migration referenced, end state unclear.</td>
+            <td>Partial</td>
+          </tr>
+          <tr>
+            <td class="sys">Warehouses</td>
+            <td>Multiple systems across sites.</td>
+            <td>Consolidation onto a single WMS.</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td class="sys">Wholesale</td>
+            <td>Legacy buying tools.</td>
+            <td>NuORDER by Lightspeed, expanded in late 2025.</td>
+            <td>Confirmed</td>
+          </tr>
+          <tr>
+            <td class="sys">Data platform</td>
+            <td>Oracle and Java on premises, with AWS in the mix.</td>
+            <td>Kafka, BigQuery, Airflow, Kubernetes, Terraform.</td>
+            <td>Confirmed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note prose">
+      <h3>How I built this, and how much to trust it</h3>
+      <p>
+        Almost all of it comes from Nordstrom's own open engineering and product postings, which
+        name systems far more directly than any press release does. The rest comes from public
+        filings around the take private in May 2025 and from trade coverage of the supplier RFID
+        mandate and the west coast automation work.
+      </p>
+      <p>
+        I have no inside information and I have never worked on a packaged ERP, so treat the
+        directional arrows as hypotheses rather than as a roadmap. The one I would most like
+        corrected is RMS.
       </p>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sectionhead prose">
+      <h2>Where I would look for leverage</h2>
+      <p>
+        These are patterns rather than proposals. I would expect at least a few of them to already
+        be underway, and the ones that are not are probably not underway for a reason I cannot see
+        from out here.
+      </p>
+    </div>
+
+    <ol class="opps">
+      <li>
+        <div>
+          <h3>Reconciliation as a product, not a month-end report <span class="pri">where I would start</span></h3>
+          <p>
+            Most retailers find ledger discrepancies at close, which means the break gets
+            investigated weeks after the transaction that caused it. The alternative is
+            transaction-level detection with alerting, so a bad feed surfaces the day it lands and
+            the investigation starts while the context is still warm.
+          </p>
+          <p class="ev">
+            Closest thing I have built: a stockout root cause engine at Amazon Fresh that moved
+            attribution from correlation to causation, four times more accurate than what it
+            replaced.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>An alert without an owner does not get fixed <span class="pri">where I would start</span></h3>
+          <p>
+            Exception routing tends to get built as a queue. Queues accumulate. What changes
+            behaviour is a named accountable party per exception class, plus a daily report that
+            makes the backlog visible to the person who can clear it.
+          </p>
+          <p class="ev">
+            At Amazon Go, a daily error report paired with explicit SKU ownership moved
+            procurability from 93 percent to 99 percent.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Decommissioning as a funded workstream with its own metric <span class="pri">where I would start</span></h3>
+          <p>
+            Migrations stall in the last twenty percent because nobody is measured on turning the
+            old system off. Making decommissioning a tracked deliverable with a cost number attached
+            turns cleanup into value delivery, which also makes it fundable.
+          </p>
+          <p class="ev">
+            Consolidated more than thirty internal tools into eight workflows for an eight country
+            grocery operation, with full adoption and no interruption to the operation.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>An append only transaction log, with the ledger as a projection</h3>
+          <p>
+            If every receipt, sale, markdown, transfer and adjustment is an immutable event, then
+            reconciliation becomes a replay rather than an investigation, and recovering from a bad
+            feed becomes rebuilding a projection rather than hand correcting balances. The phrase
+            distributed ledger transaction validation in your postings suggests this is already the
+            direction.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The gap between counting units and valuing them</h3>
+          <p>
+            RFID has largely solved knowing how many are on the shelf. It does not touch valuation.
+            Markdown timing, returns to vendor, shrink classification and transfer costing all move
+            dollars without moving units, and they are a large share of what makes a ledger
+            disagree with the floor.
+          </p>
+          <p class="ev">
+            Replaced an ordering algorithm that optimised for labour with no shrink constraint,
+            reducing shrink by 9.15 percent, worth roughly 6.4 million dollars a year.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Strangler fig, with the new platform running in shadow first</h3>
+          <p>
+            Run the new inventory platform in parallel computing the same numbers against live
+            traffic, compare continuously, and cut over per function once divergence falls under an
+            agreed threshold. It turns a migration decision into an evidence threshold.
+          </p>
+          <p class="ev">
+            Ran the same pattern at small scale by prototyping at a single fulfilment centre before
+            proposing the full build.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Catch bad data at ingress rather than at reconciliation</h3>
+          <p>
+            Validating a feed at the boundary is cheaper than discovering the consequence three
+            systems downstream. Predictive validation on inbound data is the version of this that
+            scales, and it is the only one of the four AI applications in the posting that pays for
+            itself immediately.
+          </p>
+          <p class="ev">
+            Two API contract changes made my service the source of truth for assortment coverage.
+            Errors down twenty percent, data four times fresher, bad assortments down forty percent.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>A common inventory language is a contract problem before it is a schema problem</h3>
+          <p>
+            Canonical models tend to die in committee, because every team wants their fields in it.
+            Consumer driven contracts with automated contract tests survive, because the model only
+            has to satisfy the systems actually consuming it, and breakage is caught in a pipeline
+            rather than in production.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The systems question and the ownership question are the same question</h3>
+          <p>
+            A store inventory ownership migration is an org change wearing a systems name. You
+            cannot settle where inventory truth lives in the data without also settling who is
+            accountable for it, and the posting is unusually candid that scope and ownership are
+            still forming.
+          </p>
+          <p class="ev">
+            Won ownership of a sourceability calculation from two peer organisations, then moved it
+            from 88 to 92 percent within three months.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sectionhead prose">
+      <h2>What I would most like to ask</h2>
+      <p>
+        In rough order of how much the answer would change my understanding of the job.
+      </p>
+    </div>
+    <ol class="qs prose">
+      <li>What is the thing about Nordstrom's inventory systems that outsiders consistently get wrong?</li>
+      <li>Does RMS stay as the stock ledger of record, or is it eventually replaced too?</li>
+      <li>Is the strategy best of breed SaaS per domain with an integration and ledger layer built in house, or is there a single target for inventory financials?</li>
+      <li>When the ledger is wrong today, who finds out first, and how long does it take?</li>
+      <li>Is the common inventory language a data contract, a canonical model, or an agreement between teams?</li>
+      <li>What is the real driver: accuracy across store, distribution centre and digital, month end reconciliation pain, or the cost of running the legacy stack?</li>
+      <li>Where is the boundary of this role today, and who else believes they own part of it?</li>
+      <li>What has been tried against this before, and why did it not stick?</li>
+    </ol>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <span>Michael Fitzpatrick &middot; Seattle</span>
+    <span>Michael Fitzpatrick, Seattle</span>
     <span><a href="/">michaelfitzpatrick.me</a></span>
   </div>
 </footer>

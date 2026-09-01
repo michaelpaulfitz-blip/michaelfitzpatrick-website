@@ -4,214 +4,325 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Ground Freight: A Point of View · Michael Fitzpatrick</title>
-<meta name="description" content="How a truck move actually works, where it breaks, and how that maps to work I have delivered. Prepared for a conversation with Flexport.">
+<title>Ground Freight, End to End · Michael Fitzpatrick</title>
+<meta name="description" content="Twelve handoffs, where they break, and who pays for it. Prepared for a conversation with Flexport.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   Flexport design language
-   Tokens read from flexport.com/styles.2e3092627221cb6df741.css, 2026-08-26.
-   Fonts: GT America / GT America Extended are licensed and self-hosted by
-   Flexport, so we substitute Inter (body) and Archivo at a widened width
-   axis (headings). Close, not identical.
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══ Flexport design language. Tokens read from their live CSS bundle. ═══ */
 :root{
   --midnight:#052439; --midnight-400:#1e3a4d; --midnight-600:#041d2e;
-  --midnight-800:#020e17; --midnight-300:#506674; --midnight-200:#82929c;
-  --midnight-100:#b4bdc4;
+  --midnight-700:#031622; --midnight-800:#020e17;
+  --midnight-300:#506674; --midnight-200:#82929c; --midnight-100:#b4bdc4;
   --seafoam:#45dabe; --seafoam-3:#7deed8; --seafoam-5:#319a86; --seafoam-6:#1d5a4f;
   --teal:#015f74; --teal-1:#e4f1f4;
   --indigo:#566ae5; --indigo-600:#4555b7; --indigo-1:#ebedfd;
   --electric:#2365ff; --electric-h:#1a52d9;
-  --red:#d82f57; --red-1:#fce8ed; --orange:#f58039; --yellow:#ffa81d;
+  --red:#d82f57; --red-1:#fce8ed; --coral:#fa5959;
+  --orange:#f58039; --yellow:#ffa81d;
   --white:#fff; --terrain-1:#fbf9f6; --terrain:#f4f2ef; --terrain-2:#e8e6e3;
   --dawn:#f0f8f9; --grey-100:#e5e8ea; --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6;
   --dgrey-1:#4d5563; --dgrey-2:#6b747e; --glass:#ffffff33;
-  --maxw:1180px;
+  --maxw:1240px;
   --r:.3125rem; --r-media:.6875rem; --r-lg:1.25rem; --r-pill:1.875rem;
   --head:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
   --body:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--terrain-1); color:var(--midnight);
-  font-family:var(--body); font-size:16px; line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
-/* Flexport uses ZERO or slightly POSITIVE tracking on headings.
-   Most tech sites use negative. This is the fastest tell. */
-h1,h2,h3,h4,.num,.eyebrow{
+body{background:var(--terrain-1); color:var(--midnight); font-family:var(--body);
+  font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.num,.eyebrow,.wordmark,.pillarnum{
   font-family:var(--head); font-variation-settings:'wdth' 112;
-  font-weight:500; letter-spacing:.01em; text-wrap:balance;
-}
+  font-weight:500; letter-spacing:.01em; text-wrap:balance}
 a{color:var(--electric); text-decoration:none}
 a:hover{color:var(--electric-h)}
-.wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.5rem}
-@media(max-width:767px){.wrap{padding:0 1.25rem}}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.25rem}
+@media(max-width:767px){.wrap{padding:0 1.125rem}}
+button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit}
 
-/* ── Arrow motif (verbatim path from Flexport's icon sprite) ── */
-.arrowfield{position:absolute; inset:0; overflow:hidden; pointer-events:none}
-.arrowfield svg{width:100%; height:100%; display:block}
+/* ═══ Nav ═══ */
+header.nav{position:sticky; top:0; z-index:60; background:var(--midnight);
+  border-bottom:1px solid var(--midnight-400)}
+.nav-inner{max-width:var(--maxw); margin:0 auto; padding:.875rem 2.25rem; display:flex;
+  align-items:center; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
+.wordmark{font-weight:700; font-size:1rem; color:var(--white); display:flex;
+  align-items:center; gap:.5rem; white-space:nowrap}
+.wordmark .mark{width:13px;height:13px;fill:var(--seafoam);flex:none}
+nav.links{display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center}
+nav.links a,nav.links button{color:var(--midnight-100); font-size:.8125rem;
+  padding-bottom:.1875rem; border-bottom:2px solid transparent; transition:.15s}
+nav.links a:hover,nav.links button:hover{color:var(--white); border-bottom-color:var(--seafoam)}
 
-/* ── Nav ── */
-header.nav{
-  position:sticky; top:0; z-index:100; background:var(--midnight);
-  border-bottom:1px solid var(--midnight-400);
-}
-.nav-inner{
-  max-width:var(--maxw); margin:0 auto; padding:1rem 2.5rem;
-  display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;
-}
-.wordmark{
-  font-family:var(--head); font-variation-settings:'wdth' 112; font-weight:700;
-  font-size:1.0625rem; color:var(--white); letter-spacing:.01em; white-space:nowrap;
-  display:flex; align-items:center; gap:.5rem;
-}
-.wordmark .mark{width:14px; height:14px; fill:var(--seafoam); flex:none}
-nav.links{display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center}
-nav.links a{
-  color:var(--midnight-100); font-size:.8125rem; padding-bottom:.1875rem;
-  border-bottom:2px solid transparent; transition:color .15s,border-color .15s;
-}
-nav.links a:hover{color:var(--white); border-bottom-color:var(--seafoam)}
-.navtag{
-  font-size:.6875rem; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--midnight-200); border:1px solid var(--midnight-400);
-  border-radius:var(--r-pill); padding:.25rem .625rem; white-space:nowrap;
-}
+/* ═══ Draft banner ═══ */
+.draftbar{background:var(--yellow); color:var(--midnight-800); font-size:.75rem;
+  font-weight:600; letter-spacing:.06em; text-transform:uppercase; text-align:center;
+  padding:.4375rem 1rem}
 
-/* ── Bands. Flexport alternates warm off-white and midnight full-width. ── */
-.band{padding:6rem 0; position:relative}
+/* ═══ Bands ═══ */
+.band{padding:5rem 0; position:relative}
 .band-dark{background:var(--midnight); color:var(--white)}
 .band-light{background:var(--terrain-1)}
 .band-dawn{background:var(--dawn)}
-@media(max-width:767px){.band{padding:3.5rem 0}}
-
-/* ── Hero ── */
-.hero{background:var(--midnight); color:var(--white); position:relative; overflow:hidden;
-  padding:7rem 0 6.5rem}
-.hero .wrap{position:relative; z-index:2}
-.hero h1{
-  font-size:clamp(2.25rem,1.2rem+4.4vw,3.75rem); line-height:1.06;
-  color:var(--white); max-width:22ch; margin-bottom:1.5rem;
-}
-.hero .lede{
-  font-size:1.125rem; line-height:1.55; color:var(--midnight-100);
-  max-width:56ch; margin-bottom:2rem;
-}
-.hero .lede strong{color:var(--white); font-weight:500}
-.eyebrow{
-  font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--seafoam); font-weight:700; margin-bottom:1.25rem; display:block;
-}
+@media(max-width:767px){.band{padding:3rem 0}}
+.eyebrow{font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--seafoam); font-weight:700; margin-bottom:1.125rem; display:block}
 .band-light .eyebrow,.band-dawn .eyebrow{color:var(--seafoam-5)}
-
-/* ── Buttons: inset ring, not border. Flexport's signature. ── */
-.btn{
-  display:inline-flex; align-items:center; gap:.5rem; font-family:var(--body);
-  font-size:.875rem; font-weight:500; padding:.75rem 1.375rem;
-  border-radius:var(--r); border:none; cursor:pointer; transition:.18s;
-}
-.btn-primary{background:var(--electric); color:var(--white)}
-.btn-primary:hover{background:var(--electric-h); color:var(--white)}
-.btn-ghost{
-  background:transparent; color:var(--white);
-  box-shadow:0 0 0 .125rem var(--midnight-300) inset;
-}
-.btn-ghost:hover{box-shadow:0 0 0 .125rem var(--seafoam) inset; color:var(--seafoam)}
-.btn .chev{width:13px;height:13px;fill:currentColor;flex:none}
-
-/* ── Section headers ── */
-.sechead{max-width:62ch; margin-bottom:3rem}
+.pillarnum{font-variation-settings:'wdth' 118; font-weight:700; font-size:.75rem;
+  letter-spacing:.16em; color:var(--seafoam-5); display:block; margin-bottom:.75rem}
+.band-dark .pillarnum{color:var(--seafoam)}
+.sechead{max-width:64ch; margin-bottom:2.75rem}
 .sechead h2{font-size:clamp(1.75rem,.9rem+2.6vw,2.375rem); line-height:1.15; margin-bottom:.875rem}
-.h2sub{
-  display:block; font-size:.9375rem; font-weight:400; font-variation-settings:'wdth' 100;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--midnight-200);
-  margin-top:.625rem;
-}
-.band-light .h2sub,.band-dawn .h2sub{color:var(--dgrey-2)}
 .band-dark .sechead h2{color:var(--white)}
 .sechead p{font-size:1.0625rem; color:var(--dgrey-1); line-height:1.55}
 .band-dark .sechead p{color:var(--midnight-100)}
-.pillarnum{
-  font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
-  font-size:.75rem; letter-spacing:.16em; color:var(--seafoam-5);
-  display:block; margin-bottom:.75rem;
-}
-.band-dark .pillarnum{color:var(--seafoam)}
 
-/* ── Placeholder canvas (scaffold only, replaced by real content) ── */
-.canvas{
-  border:1px dashed var(--lgrey-2); border-radius:var(--r-media);
-  background:var(--white); padding:3rem 2.5rem; text-align:center;
-}
-.band-dark .canvas{border-color:var(--midnight-300); background:var(--midnight-600)}
-.canvas .ph-label{
-  font-family:var(--head); font-variation-settings:'wdth' 112; font-weight:500;
-  font-size:1.0625rem; color:var(--dgrey-2); margin-bottom:.5rem;
-}
-.band-dark .canvas .ph-label{color:var(--midnight-100)}
-.canvas .ph-sub{font-size:.875rem; color:var(--lgrey-3); max-width:52ch; margin:0 auto}
+/* ═══ Hero ═══ */
+.hero{background:var(--midnight); color:var(--white); position:relative;
+  overflow:hidden; padding:6rem 0 5.5rem}
+.hero .wrap{position:relative;z-index:2}
+.arrowfield{position:absolute; inset:0; pointer-events:none}
+.arrowfield svg{width:100%;height:100%;display:block}
+.hero h1{font-size:clamp(2.125rem,1.2rem+4.2vw,3.5rem); line-height:1.07;
+  color:var(--white); max-width:20ch; margin-bottom:1.25rem}
+.hero .lede{font-size:1.125rem; line-height:1.55; color:var(--midnight-100);
+  max-width:58ch; margin-bottom:1.75rem}
+.hero .lede strong{color:var(--white);font-weight:500}
+.hero .byline{font-size:.8125rem; color:var(--midnight-200); padding-top:1.25rem;
+  border-top:1px solid var(--midnight-400); max-width:58ch}
 
-/* ── Spec list: what goes in each pillar ── */
-.spec{list-style:none; margin-top:2rem; display:grid; gap:.75rem}
-.spec li{
-  display:grid; grid-template-columns:18px 1fr; gap:.875rem; align-items:start;
-  font-size:.9375rem; color:var(--dgrey-1); line-height:1.5;
-}
-.band-dark .spec li{color:var(--midnight-100)}
-.spec li svg{width:11px;height:11px;fill:var(--seafoam-5);margin-top:.375rem}
-.band-dark .spec li svg{fill:var(--seafoam)}
-.spec li strong{color:var(--midnight); font-weight:600}
-.band-dark .spec li strong{color:var(--white)}
+/* ═══ Buttons: inset ring, Flexport's signature ═══ */
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-size:.875rem;
+  font-weight:500; padding:.6875rem 1.25rem; border-radius:var(--r); transition:.18s}
+.btn-primary{background:var(--electric); color:var(--white)}
+.btn-primary:hover{background:var(--electric-h)}
+.btn-ghost{background:transparent; color:var(--white);
+  box-shadow:0 0 0 .125rem var(--midnight-300) inset}
+.btn-ghost:hover{box-shadow:0 0 0 .125rem var(--seafoam) inset; color:var(--seafoam)}
 
-/* ── Metric tile. Flexport shows metrics as oversized standalone numerals. ── */
-.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:2.5rem; margin-top:3rem}
-.metric .num{
-  font-size:clamp(2.5rem,1.4rem+3.4vw,3.5rem); line-height:1; font-weight:500;
-  font-variation-settings:'wdth' 118; letter-spacing:0;
-  font-variant-numeric:lining-nums tabular-nums; display:block; margin-bottom:.625rem;
-}
+/* ═══ PILLAR 01: lifecycle ═══ */
+.lifewrap{position:relative; margin-top:1rem}
+.lifescroll{overflow-x:auto; overflow-y:visible; padding-bottom:1.25rem;
+  scrollbar-width:thin}
+.lifescroll::-webkit-scrollbar{height:8px}
+.lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
+.lifegrid{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(196px,1fr);
+  gap:.625rem; min-width:min-content}
+.single-line .lifegrid{grid-auto-columns:minmax(164px,1fr)}
+.stepcol{display:flex; flex-direction:column; gap:.5rem}
+.stephead{display:flex; align-items:baseline; gap:.4375rem; padding:0 .125rem}
+.stepnum{font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
+  font-size:.6875rem; letter-spacing:.08em; color:var(--seafoam-5)}
+.stepname{font-family:var(--head); font-weight:600; font-size:.9375rem; line-height:1.2}
+.cell{border-radius:var(--r-media); padding:.75rem .8125rem; font-size:.78125rem;
+  line-height:1.45; min-height:104px}
+.cell-phys{background:var(--white); border:1px solid var(--terrain-2); color:var(--dgrey-1)}
+.cell-info{background:var(--dawn); border:1px solid #d8e8ec; color:var(--dgrey-1)}
+.single-line .cell-info{display:none}
+.holders{display:flex; flex-direction:column; gap:.25rem; font-size:.6875rem}
+.holder{display:flex; align-items:center; gap:.375rem; padding:.3125rem .5rem;
+  border-radius:var(--r); background:var(--terrain); color:var(--dgrey-2)}
+.holder b{font-weight:600; color:var(--midnight); font-size:.6875rem}
+.holder .k{font-size:.5625rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--lgrey-3); flex:none; width:44px}
+.split .holder{background:#fdf1e6; color:#8a4a12}
+.split .holder b{color:#7a3f0c}
+.splitflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--orange); font-weight:700; padding-left:.125rem}
+.alignflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--seafoam-5); font-weight:700; padding-left:.125rem}
+.mrow{display:flex; flex-wrap:wrap; gap:.3125rem; min-height:1.5rem}
+.mbadge{font-size:.6875rem; font-weight:600; padding:.3125rem .5625rem;
+  border-radius:var(--r-pill); transition:.15s; text-align:left; line-height:1.25}
+.mbadge.quiet{background:var(--terrain-2); color:var(--dgrey-2)}
+.mbadge.quiet:hover{background:var(--lgrey-2); color:var(--midnight)}
+.mbadge.loud{background:var(--red); color:var(--white); box-shadow:0 0 0 3px var(--red-1)}
+.mbadge.loud:hover{background:#b8244a}
+.lanelabels{display:grid; gap:.5rem; margin-bottom:.5rem}
+.lanekey{display:flex; gap:1.25rem; flex-wrap:wrap; font-size:.75rem; color:var(--dgrey-2);
+  margin-bottom:1.25rem}
+.lanekey span{display:flex; align-items:center; gap:.4375rem}
+.swatch{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid var(--terrain-2)}
+
+/* ═══ Metrics ═══ */
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:2.25rem; margin-top:3rem}
+.metric .num{font-size:clamp(2rem,1.3rem+2.6vw,2.875rem); line-height:1; font-weight:500;
+  font-variation-settings:'wdth' 118; letter-spacing:0; display:block; margin-bottom:.5rem;
+  font-variant-numeric:lining-nums tabular-nums}
+.band-light .metric .num,.band-dawn .metric .num{color:var(--teal)}
 .band-dark .metric .num{color:var(--seafoam)}
-.band-light .metric .num{color:var(--teal)}
 .metric .cap{font-size:.8125rem; line-height:1.4; color:var(--dgrey-2); max-width:24ch}
 .band-dark .metric .cap{color:var(--midnight-100)}
 
-/* ── Build notes: FOR MIKE ONLY. Delete this block before presenting. ── */
-.buildnotes{background:var(--midnight-800); color:var(--midnight-100); padding:4rem 0}
-.buildnotes .inner{
-  border:1px dashed var(--seafoam-6); border-radius:var(--r-media);
-  padding:2.25rem 2rem; background:#02121d;
-}
-.buildnotes h3{color:var(--seafoam); font-size:1.125rem; margin-bottom:.375rem}
-.buildnotes .warn{
-  font-size:.6875rem; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--yellow); font-weight:700; margin-bottom:1.25rem; display:block;
-}
-.buildnotes ol{margin:1rem 0 0 1.125rem; display:grid; gap:.625rem}
-.buildnotes li{font-size:.9375rem; line-height:1.5}
-.buildnotes li strong{color:var(--white)}
-.buildnotes p{font-size:.9375rem; line-height:1.55; margin-bottom:.75rem}
-.buildnotes code{
-  font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.8125rem;
-  background:#041d2e; padding:.125rem .375rem; border-radius:3px; color:var(--seafoam-3);
-}
+/* ═══ PILLAR 02: mapping board ═══ */
+.board{position:relative; display:grid; grid-template-columns:1fr 88px 1fr; gap:0;
+  align-items:start; margin-top:1rem}
+@media(max-width:900px){.board{grid-template-columns:1fr; gap:1.5rem}
+  .board .edgelayer{display:none}}
+.boardcol{display:flex; flex-direction:column; gap:.625rem}
+.colhead{font-size:.6875rem; letter-spacing:.13em; text-transform:uppercase;
+  font-weight:700; color:var(--seafoam); margin-bottom:.375rem}
+.edgelayer{position:relative}
+.edgelayer svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;
+  pointer-events:none}
+.pcard,.wcard{border-radius:var(--r-media); padding:.9375rem 1rem; cursor:pointer;
+  transition:.18s; border:1px solid transparent}
+.pcard{background:var(--midnight-600); border-color:var(--midnight-400)}
+.wcard{background:var(--midnight-600); border-color:var(--midnight-400)}
+.pcard:hover,.wcard:hover{border-color:var(--midnight-300)}
+.pcard.on,.wcard.on{border-color:var(--seafoam); background:var(--midnight-400)}
+.pcard.off,.wcard.off{opacity:.28}
+.ctitle{font-family:var(--head); font-weight:600; font-size:.9375rem; line-height:1.3;
+  color:var(--white); margin-bottom:.375rem}
+.cmeta{font-size:.75rem; line-height:1.45; color:var(--midnight-200)}
+.wcard .outcome{font-family:var(--head); font-variation-settings:'wdth' 115;
+  font-weight:600; font-size:.875rem; color:var(--seafoam); margin-bottom:.375rem;
+  font-variant-numeric:lining-nums tabular-nums}
+.boardhint{font-size:.8125rem; color:var(--midnight-200); margin-top:1.5rem;
+  padding-top:1.25rem; border-top:1px solid var(--midnight-400)}
 
-/* ── Footer ── */
-footer{background:var(--midnight); color:var(--midnight-200); padding:2.5rem 0;
+/* ═══ Closer ═══ */
+.bets{display:grid; grid-template-columns:repeat(auto-fit,minmax(272px,1fr)); gap:1.25rem;
+  margin-top:.5rem}
+.bet{background:var(--white); border:1px solid var(--terrain-2);
+  border-radius:var(--r-media); padding:1.375rem}
+.bet h3{font-size:1.0625rem; line-height:1.25; margin-bottom:.625rem}
+.bet p{font-size:.875rem; line-height:1.5; color:var(--dgrey-1); margin-bottom:.625rem}
+.bet .fm{font-size:.75rem; color:var(--teal); border-top:1px solid var(--terrain-2);
+  padding-top:.625rem; margin-top:.875rem}
+.bet .fm b{display:block; font-size:.625rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--lgrey-3); margin-bottom:.25rem}
+.closerfoot{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.75rem; margin-top:2.25rem; padding-top:1.75rem; border-top:1px solid var(--terrain-2)}
+.cf h4{font-size:.6875rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--seafoam-5); font-weight:700; margin-bottom:.5rem}
+.cf p{font-size:.875rem; line-height:1.5; color:var(--dgrey-1)}
+.cf ul{list-style:none; font-size:.875rem; color:var(--dgrey-1)}
+.cf li{padding:.25rem 0 .25rem .9375rem; position:relative}
+.cf li:before{content:''; position:absolute; left:0; top:.75rem; width:5px; height:5px;
+  background:var(--seafoam-5); border-radius:1px}
+
+/* ═══ References ═══ */
+.refs{background:var(--midnight-700); color:var(--midnight-100)}
+details.refbox{border:1px solid var(--midnight-400); border-radius:var(--r-media);
+  background:var(--midnight-600); overflow:hidden}
+details.refbox summary{list-style:none; cursor:pointer; padding:1.25rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem}
+details.refbox summary::-webkit-details-marker{display:none}
+.refsum-l{display:flex;flex-direction:column;gap:.25rem}
+.refsum-l b{font-family:var(--head); font-weight:600; font-size:1rem; color:var(--white)}
+.refsum-l span{font-size:.8125rem; color:var(--midnight-200)}
+.refchev{color:var(--seafoam); font-size:.8125rem; font-weight:600; flex:none}
+details[open] .refchev .c-open{display:none}
+details:not([open]) .refchev .c-close{display:none}
+.refbody{padding:0 1.5rem 1.5rem; border-top:1px solid var(--midnight-400)}
+.refgroup{margin-top:1.5rem}
+.refgroup h4{font-size:.6875rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--seafoam); font-weight:700; margin-bottom:.75rem}
+ol.reflist,ul.reflist{list-style:none; display:grid; gap:.5rem}
+.reflist li{font-size:.8125rem; line-height:1.45; display:grid;
+  grid-template-columns:2.25rem 1fr; gap:.5rem; align-items:start}
+.reflist .rn{color:var(--midnight-300); font-variant-numeric:tabular-nums; font-size:.75rem}
+.reflist a{color:var(--midnight-100); word-break:break-word}
+.reflist a:hover{color:var(--seafoam)}
+.reflist .rl{display:block; color:var(--white); font-weight:500; margin-bottom:.125rem}
+
+/* ═══ Modals ═══ */
+.scrim{position:fixed; inset:0; background:#052439cc; backdrop-filter:blur(3px);
+  z-index:200; display:flex; align-items:center; justify-content:center; padding:1.5rem}
+.scrim[hidden]{display:none}
+.modal{background:var(--white); border-radius:var(--r-lg); max-width:600px; width:100%;
+  max-height:86vh; overflow-y:auto; padding:2rem}
+.modal.tone-red{border-top:5px solid var(--coral)}
+.modal.tone-yellow{border-top:5px solid var(--yellow)}
+.modal .mtag{font-size:.625rem; letter-spacing:.13em; text-transform:uppercase;
+  font-weight:700; margin-bottom:.75rem; display:block}
+.tone-red .mtag{color:var(--coral)}
+.tone-yellow .mtag{color:#b57d0a}
+.modal h3{font-size:1.3125rem; line-height:1.25; margin-bottom:.875rem}
+.modal p{font-size:.9375rem; line-height:1.6; color:var(--dgrey-1); margin-bottom:1.25rem}
+.modal .mact{display:flex; gap:.75rem; flex-wrap:wrap; align-items:center}
+.modal .mact .btn-primary{background:var(--midnight)}
+.modal .mact .btn-primary:hover{background:var(--midnight-800)}
+.modal .mlink{font-size:.875rem; font-weight:500}
+
+/* Marker detail modal */
+.mkmodal{background:var(--white); border-radius:var(--r-lg); max-width:680px; width:100%;
+  max-height:86vh; overflow-y:auto}
+.mkhead{padding:1.75rem 2rem 1.375rem; border-bottom:1px solid var(--terrain-2)}
+.mkhead.loud{border-top:5px solid var(--red); border-radius:var(--r-lg) var(--r-lg) 0 0}
+.mkhead.quiet{border-top:5px solid var(--lgrey-2); border-radius:var(--r-lg) var(--r-lg) 0 0}
+.mkstep{font-size:.6875rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--seafoam-5); font-weight:700; margin-bottom:.5rem; display:block}
+.mkhead h3{font-size:1.375rem; line-height:1.22}
+.mkbody{padding:1.5rem 2rem 2rem}
+.mkbody p.what{font-size:.9375rem; line-height:1.6; color:var(--midnight); margin-bottom:1.5rem}
+.mkgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.125rem}
+.mkf{border-top:1px solid var(--terrain-2); padding-top:.75rem}
+.mkf b{display:block; font-size:.625rem; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--lgrey-3); font-weight:700; margin-bottom:.3125rem}
+.mkf span{font-size:.8125rem; line-height:1.45; color:var(--dgrey-1)}
+.mkinv{background:#fdf1e6; border-radius:var(--r-media); padding:1rem 1.125rem;
+  margin:1.5rem 0; display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+.mkinv .mkf{border-top-color:#f0d9c0}
+.mkinv .mkf b{color:#a35a13}
+.mkinv .mkf span{color:#7a3f0c; font-weight:500}
+.mkai{display:inline-flex; align-items:center; gap:.4375rem; font-size:.6875rem;
+  font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.3125rem .625rem;
+  border-radius:var(--r-pill); margin-top:.25rem}
+.ai-replace{background:var(--seafoam);color:#04302a}
+.ai-assist{background:var(--indigo-1);color:var(--indigo-600)}
+.ai-none{background:var(--terrain-2);color:var(--dgrey-2)}
+.mkclose{position:sticky; bottom:0; background:var(--white); padding:1rem 2rem 1.25rem;
+  border-top:1px solid var(--terrain-2)}
+
+/* ═══ TODO panel (draft only) ═══ */
+.todo{position:fixed; right:1.25rem; bottom:1.25rem; z-index:120; width:min(374px,calc(100vw - 2.5rem))}
+.todo-toggle{width:100%; background:var(--yellow); color:var(--midnight-800);
+  border-radius:var(--r-media); padding:.75rem 1rem; font-weight:700; font-size:.8125rem;
+  display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+  box-shadow:0 4px 18px #05243933}
+.todo-body{background:var(--midnight-800); border:1px solid var(--seafoam-6);
+  border-radius:var(--r-media); margin-bottom:.5rem; max-height:60vh; overflow-y:auto;
+  padding:1.125rem; display:none}
+.todo.open .todo-body{display:block}
+.todo-body h4{color:var(--yellow); font-size:.6875rem; letter-spacing:.12em;
+  text-transform:uppercase; font-weight:700; margin-bottom:.875rem}
+.titem{border-top:1px solid var(--midnight-400); padding:.875rem 0}
+.titem:first-of-type{border-top:none;padding-top:0}
+.titem .tq{color:var(--white); font-size:.875rem; font-weight:600; line-height:1.35;
+  margin-bottom:.4375rem; display:flex; gap:.5rem}
+.titem .tid{color:var(--seafoam); font-size:.6875rem; font-weight:700; flex:none; padding-top:.125rem}
+.titem .tw{color:var(--midnight-100); font-size:.78125rem; line-height:1.45; margin-bottom:.5rem}
+.titem .tp{color:var(--midnight-100); font-size:.78125rem; line-height:1.45;
+  background:var(--midnight-700); border-left:2px solid var(--seafoam); padding:.5rem .625rem;
+  border-radius:0 var(--r) var(--r) 0}
+.titem .tp b{color:var(--seafoam); display:block; font-size:.625rem; letter-spacing:.1em;
+  text-transform:uppercase; margin-bottom:.25rem}
+
+/* ═══ Draft ID chips ═══ */
+.cid{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.5625rem;
+  letter-spacing:.04em; color:var(--lgrey-3); background:var(--terrain-2);
+  padding:.0625rem .3125rem; border-radius:2px; margin-left:.375rem; font-weight:400}
+.band-dark .cid{background:var(--midnight-700); color:var(--midnight-300)}
+body:not(.draft) .cid{display:none}
+body:not(.draft) .todo{display:none}
+body:not(.draft) .draftbar{display:none}
+
+footer{background:var(--midnight); color:var(--midnight-200); padding:2.25rem 0;
   border-top:1px solid var(--midnight-400); font-size:.8125rem}
-footer .wrap{display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap}
+footer .wrap{display:flex; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
 footer a{color:var(--midnight-100)}
 footer a:hover{color:var(--seafoam)}
 </style>
 </head>
 <body>
 
-<!-- ══════════════ NAV ══════════════ -->
+<div class="draftbar">Working draft &middot; not final &middot; content IDs shown for editing</div>
+
 <header class="nav">
   <div class="nav-inner">
     <span class="wordmark">
@@ -221,198 +332,339 @@ footer a:hover{color:var(--seafoam)}
     <nav class="links">
       <a href="#lifecycle">01 &middot; The Lifecycle</a>
       <a href="#mapping">02 &middot; Experience Mapping</a>
-      <a href="#ninety">First 90 Days</a>
+      <a href="#closer">First 90 Days</a>
+      <a href="#references">References</a>
+      <button id="reshow">Show notices</button>
     </nav>
-    <span class="navtag">Prepared for Flexport</span>
   </div>
 </header>
 
-<!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
   <div class="arrowfield" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <pattern id="arrows" width="52" height="42" patternUnits="userSpaceOnUse">
-          <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
-                fill="#ffffff" fill-opacity=".055" transform="translate(6,8)"/>
-        </pattern>
-      </defs>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="arrows" width="52" height="42" patternUnits="userSpaceOnUse">
+        <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
+              fill="#ffffff" fill-opacity=".055" transform="translate(6,8)"/>
+      </pattern></defs>
       <rect width="100%" height="100%" fill="url(#arrows)"/>
-      <!-- the one seafoam arrow, Flexport's signature accent -->
       <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
-            fill="#45dabe" fill-opacity=".85" transform="translate(682,138)"/>
+            fill="#45dabe" fill-opacity=".85" transform="translate(742,132)"/>
       <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
-            fill="#45dabe" fill-opacity=".25" transform="translate(890,222)"/>
+            fill="#45dabe" fill-opacity=".22" transform="translate(948,216)"/>
     </svg>
   </div>
   <div class="wrap">
-    <span class="eyebrow">Ground Transportation &middot; A Point of View</span>
-    <h1>Twelve handoffs, and nobody owns the middle.</h1>
-    <p class="lede">
-      A truck move is a chain of handoffs between parties with misaligned incentives and no shared
-      system of record. <strong>The receiver controls the appointment and bears none of the cost of a
-      bad one.</strong> The carrier bears all of it and controls nothing. This is what I have come to
-      understand about ground freight, and where I think the leverage is.
-    </p>
-    <a class="btn btn-ghost" href="#lifecycle">
-      Start with the lifecycle
-      <svg class="chev" viewBox="0 0 26 26" aria-hidden="true"><path d="M9.306 17.962L14.268 13 9.306 8.027 10.833 6.5l6.5 6.5-6.5 6.5-1.527-1.538z"/></svg>
-    </a>
+    <span class="eyebrow" id="heroEyebrow"></span>
+    <h1 id="heroTitle"></h1>
+    <p class="lede" id="heroLede"></p>
+    <a class="btn btn-ghost" href="#lifecycle">Start with the lifecycle</a>
+    <p class="byline" id="heroByline"></p>
   </div>
 </section>
 
-<!-- ══════════════ PILLAR 01 ══════════════ -->
 <section class="band band-light" id="lifecycle">
   <div class="wrap">
     <div class="sechead">
       <span class="pillarnum">PILLAR 01</span>
       <h2>The ground freight lifecycle, and where it breaks</h2>
-      <p>
-        Two lanes running left to right. The top lane is the physical movement of the freight. The
-        bottom lane is the information, the money, and the verification that has to move alongside
-        it. The interesting part is where those two lanes fall out of step.
-      </p>
+      <p>Twelve handoffs. The top lane is the freight itself. The bottom lane is the information,
+      the money, and the verification that has to travel alongside it. The interesting part is the
+      row underneath, where physical custody and the authoritative record keep coming apart.</p>
     </div>
-
-    <div class="canvas">
-      <div class="ph-label">Interactive lifecycle diagram goes here</div>
-      <p class="ph-sub">
-        Twelve steps, two swim lanes, hover-to-expand pain markers. Empty for now.
-      </p>
+    <div class="lanekey">
+      <span><i class="swatch" style="background:#fff"></i> Physical custody</span>
+      <span><i class="swatch" style="background:#f0f8f9;border-color:#d8e8ec"></i> Information, money, verification</span>
+      <span><i class="swatch" style="background:#fdf1e6;border-color:#f0d9c0"></i> Custody and record held by different parties</span>
+      <span><i class="swatch" style="background:#d82f57;border-color:#d82f57"></i> Loud pain point</span>
     </div>
-
-    <ul class="spec">
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>The twelve steps.</strong> Quote, tender, accept or reject, cover, dispatch,
-        pickup appointment, in transit, delivery appointment, POD, invoice, settlement, claims.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Two lanes.</strong> Physical custody on top, informational and financial
-        underneath, so the reader can see where custody changes hands but the data does not.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Pain markers.</strong> Roughly ten, of which three are visually loud and the
-        rest are quiet. A wall of equally weighted markers reads as noise.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Each marker expands to:</strong> what the pain is, who feels it, frequency and
-        cost, what people do about it today, whether Flexport touches it, and whether it is an AI
-        opportunity or a human-plus-agent opportunity.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>The annotation that makes it a PM artifact:</strong> at each step, who controls
-        the decision versus who bears the cost. That inversion is the actual mechanism behind most of
-        these failures, and no other candidate will have drawn it.</span></li>
-    </ul>
-
-    <div class="metrics">
+    <div class="lifewrap"><div class="lifescroll"><div class="lifegrid" id="lifegrid"></div></div></div>
+    <div class="metrics" id="lifeMetrics">
       <div class="metric"><span class="num">39.3%</span><span class="cap">of all stops incur detention beyond the free period</span></div>
       <div class="metric"><span class="num">~41%</span><span class="cap">of earned detention ever converts to cash</span></div>
       <div class="metric"><span class="num">$15.1B</span><span class="cap">annual industry cost of detention</span></div>
-      <div class="metric"><span class="num">$2.336</span><span class="cap">marginal cost per mile to operate a truck, 2025</span></div>
+      <div class="metric"><span class="num">$2.336</span><span class="cap">marginal cost per mile to run a truck, 2025</span></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════ PILLAR 02 ══════════════ -->
 <section class="band band-dark" id="mapping">
   <div class="wrap">
     <div class="sechead">
       <span class="pillarnum">PILLAR 02</span>
-      <h2>Trucking Tech &lt;---&gt; Mike <span class="h2sub">Experience Mapping</span></h2>
-      <p>
-        On the left, the hard problems this role actually has to solve. On the right, work I have
-        delivered against the same underlying shape. The domain is different. The problem is not.
-      </p>
+      <h2>Trucking Tech &lt;---&gt; Mike</h2>
+      <p>On the left, the hard problems this role has to solve. On the right, work I have delivered
+      against the same underlying shape. Click either side to see what connects.</p>
     </div>
-
-    <div class="canvas">
-      <div class="ph-label">Mapping board goes here</div>
-      <p class="ph-sub">
-        Problem cards on the left, delivered-work cards on the right, connectors between them.
-        Empty for now.
-      </p>
+    <div class="board">
+      <div class="boardcol" id="colProblems"><div class="colhead">The hard problems</div></div>
+      <div class="edgelayer" id="edgeLayer"><svg id="edgeSvg"></svg></div>
+      <div class="boardcol" id="colWork"><div class="colhead">Where I have done this</div></div>
     </div>
-
-    <ul class="spec">
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Left column framing.</strong> Not "job requirements." The hard problems in the
-        role. Same content, and it reads as a pattern library rather than a defence.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Right column.</strong> Feast Instock Portal, OADS, UARC2, Freyja, Procurability
-        at Amazon Go, BPSI, Sourceability in Feast 2.0, Frida. Each with the outcome attached.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Deliberately plain.</strong> This is the one section that should not sparkle.
-        It is a reference board, and over-designing it tips into self-congratulation.</span></li>
-      <li><svg viewBox="0 0 28 28"><path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"/></svg>
-        <span><strong>Doubles as on-screen notes.</strong> When a behavioural question lands, the
-        matching story is already visible on the shared screen.</span></li>
-    </ul>
+    <p class="boardhint">The domain is different. The problem shape is not. Click any card to trace its connections.</p>
   </div>
 </section>
 
-<!-- ══════════════ CLOSER ══════════════ -->
-<section class="band band-dawn" id="ninety">
+<section class="band band-dawn" id="closer">
   <div class="wrap">
     <div class="sechead">
       <span class="pillarnum">CLOSER</span>
       <h2>If I had ninety days</h2>
-      <p>
-        One screen. What I would work on first, what I would measure, and what would prove me wrong.
-        Held loosely, because this is built from outside with partial information.
-      </p>
+      <p id="closerFraming"></p>
     </div>
-    <div class="canvas">
-      <div class="ph-label">Ninety-day point of view goes here</div>
-      <p class="ph-sub">
-        Three bullets, one metric, one falsifier. Sixty seconds of screen time. Empty for now.
-      </p>
-    </div>
+    <div class="bets" id="bets"></div>
+    <div class="closerfoot" id="closerFoot"></div>
   </div>
 </section>
 
-<!-- ══════════════ BUILD NOTES ══════════════
-     FOR MIKE ONLY. Delete this entire <section> before presenting.
-     ═══════════════════════════════════════════ -->
-<section class="buildnotes">
+<section class="band refs" id="references">
   <div class="wrap">
-    <div class="inner">
-      <span class="warn">Internal &middot; delete this section before presenting</span>
-      <h3>Where we left off, 2026-08-26</h3>
-      <p>
-        Interview moved to <strong>Tuesday</strong> with Phil Song, Senior Director of Ops Tech
-        Product and Data Services, based in Hong Kong. He came up through six years of Operational
-        Excellence at Flexport and eight years at PayPal in ops and risk. <strong>He is not a
-        trucking domain expert.</strong> He owns internal operator tooling and the data layer, so
-        lead with workflow diagnosis and the data model, not trucking vocabulary.
-      </p>
-      <p>
-        Scaffolding only. Design tokens are real, read from Flexport's live CSS bundle. The arrow
-        motif is their actual SVG path. Fonts are the closest Google Fonts substitutes, since
-        GT America is licensed.
-      </p>
-      <h3 style="margin-top:1.75rem">Next steps</h3>
-      <ol>
-        <li><strong>Pillar 01.</strong> Build the two-lane lifecycle. Long pole. Decide single line
-          versus stacked lanes by mocking both.</li>
-        <li><strong>Pain cards.</strong> Pull from <code>06-pain-inventory.md</code>. Pick ten, make
-          three loud. Add the control-versus-cost annotation.</li>
-        <li><strong>Pillar 02.</strong> First pass at the mapping, then Mike reviews and rewrites
-          heavily. He knows which stories carry.</li>
-        <li><strong>Closer.</strong> Ninety-day view. Draft after the other two are settled.</li>
-        <li><strong>Rehearsal.</strong> Time-box the walkthrough to five minutes and practise the
-          segue out loud. Reserve real time for behavioural answers.</li>
-      </ol>
-      <p style="margin-top:1.25rem">
-        Research lives in <code>C:\dev\jobbot3000\demos\flexport\research\</code> and in the Drive
-        folder. Start with <code>00-EXECUTIVE-BRIEF.md</code>.
-      </p>
+    <div class="sechead">
+      <span class="pillarnum">RECEIPTS</span>
+      <h2>References</h2>
+      <p style="color:var(--midnight-100)">Everything on this page traces back to a public source.
+      The full list is long on purpose.</p>
     </div>
+    <details class="refbox" id="refbox">
+      <summary>
+        <span class="refsum-l">
+          <b>Sources</b>
+          <span id="refCount"></span>
+        </span>
+        <span class="refchev"><span class="c-close">Open &darr;</span><span class="c-open">Close &uarr;</span></span>
+      </summary>
+      <div class="refbody" id="refBody"></div>
+    </details>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>Michael Fitzpatrick &middot; Seattle</span>
-    <span><a href="/">michaelfitzpatrick.me</a></span>
-  </div>
-</footer>
+<footer><div class="wrap">
+  <span>Michael Fitzpatrick &middot; Seattle</span>
+  <span><a href="/">michaelfitzpatrick.me</a></span>
+</div></footer>
 
+<div class="scrim" id="scrim" hidden><div id="scrimInner"></div></div>
+
+<div class="todo" id="todo">
+  <div class="todo-body" id="todoBody"></div>
+  <button class="todo-toggle" id="todoToggle"><span>Open decisions</span><span id="todoCount"></span></button>
+</div>
+
+<script src="content.js"></script>
+<script>
+(function(){
+  "use strict";
+  var C = window.CONTENT || CONTENT;
+  var isDraft = (typeof DRAFT !== "undefined") && DRAFT;
+  var layout  = (typeof LAYOUT !== "undefined") ? LAYOUT : "two-lane";
+  if(isDraft) document.body.classList.add("draft");
+  if(layout === "single-line") document.body.classList.add("single-line");
+
+  function esc(s){ return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function id(x){ return isDraft ? '<span class="cid">'+esc(x)+'</span>' : ''; }
+  function $(s){ return document.querySelector(s); }
+
+  /* ---- Hero ---- */
+  var m = C.meta||{};
+  $("#heroEyebrow").textContent = m.preparedFor||"";
+  $("#heroTitle").textContent   = m.title||"";
+  $("#heroLede").innerHTML      = esc(m.subtitle||"");
+  $("#heroByline").textContent  = [m.author,m.date].filter(Boolean).join("  ·  ");
+
+  /* ---- Lifecycle ---- */
+  var steps   = (C.lifecycle&&C.lifecycle.steps)||[];
+  var markers = C.markers||[];
+  var byStep  = {};
+  markers.forEach(function(k){ (byStep[k.step]=byStep[k.step]||[]).push(k); });
+
+  $("#lifegrid").innerHTML = steps.map(function(s,i){
+    var split = s.custodyHolder !== s.dataHolder;
+    var mk = (byStep[s.id]||[]).map(function(k){
+      return '<button class="mbadge '+esc(k.weight)+'" data-mk="'+esc(k.id)+'">'+esc(k.title)+'</button>';
+    }).join("");
+    return '<div class="stepcol">'
+      + '<div class="stephead"><span class="stepnum">'+String(i+1).padStart(2,"0")+'</span>'
+      + '<span class="stepname">'+esc(s.name)+'</span>'+id(s.id)+'</div>'
+      + '<div class="cell cell-phys">'+esc(s.physical)+'</div>'
+      + '<div class="cell cell-info">'+esc(s.informational)+'</div>'
+      + '<div class="holders'+(split?" split":"")+'">'
+      +   '<div class="holder"><span class="k">Custody</span><b>'+esc(s.custodyHolder)+'</b></div>'
+      +   '<div class="holder"><span class="k">Record</span><b>'+esc(s.dataHolder)+'</b></div>'
+      +   (split ? '<span class="splitflag">Split</span>' : '<span class="alignflag">Aligned</span>')
+      + '</div>'
+      + '<div class="mrow">'+mk+'</div>'
+      + '</div>';
+  }).join("");
+
+  /* ---- Marker modal ---- */
+  var scrim = $("#scrim"), scrimInner = $("#scrimInner");
+  function openScrim(html){ scrimInner.innerHTML = html; scrim.hidden = false;
+    document.body.style.overflow="hidden"; }
+  function closeScrim(){ scrim.hidden = true; scrimInner.innerHTML=""; document.body.style.overflow=""; }
+  scrim.addEventListener("click", function(e){ if(e.target===scrim) closeScrim(); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeScrim(); });
+
+  function aiClass(v){ var s=String(v||"").toLowerCase();
+    if(s.indexOf("replace")===0) return "ai-replace";
+    if(s.indexOf("assist")===0)  return "ai-assist"; return "ai-none"; }
+  function aiLabel(v){ var s=String(v||""); var head=s.split(":")[0].trim();
+    var rest=s.indexOf(":")>-1 ? s.slice(s.indexOf(":")+1).trim() : "";
+    return {head:head||"none", rest:rest}; }
+
+  function fld(label,val){ return val ? '<div class="mkf"><b>'+esc(label)+'</b><span>'+esc(val)+'</span></div>' : ''; }
+
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-mk]"); if(!b) return;
+    var k = markers.filter(function(x){return x.id===b.getAttribute("data-mk");})[0]; if(!k) return;
+    var st = steps.filter(function(s){return s.id===k.step;})[0];
+    var ai = aiLabel(k.aiOpportunity);
+    openScrim('<div class="mkmodal">'
+      + '<div class="mkhead '+esc(k.weight)+'">'
+      +   '<span class="mkstep">'+esc(st?st.name:k.step)+' &middot; '+esc(k.step)+'</span>'
+      +   '<h3>'+esc(k.title)+id(k.id)+'</h3></div>'
+      + '<div class="mkbody">'
+      +   '<p class="what">'+esc(k.what)+'</p>'
+      +   '<div class="mkinv">'
+      +     fld("Controls the decision", k.controlsDecision)
+      +     fld("Bears the cost", k.bearsCost)
+      +   '</div>'
+      +   '<div class="mkgrid">'
+      +     fld("Who feels it", k.who)
+      +     fld("How often", k.frequency)
+      +     fld("What it costs", k.cost)
+      +     fld("What people do today", k.workaround)
+      +     fld("Flexport angle", k.flexportAngle)
+      +     fld("Source", k.source)
+      +   '</div>'
+      +   '<div class="mkf" style="margin-top:1.125rem"><b>Automation opportunity</b>'
+      +     '<span><span class="mkai '+aiClass(ai.head)+'">'+esc(ai.head)+'</span><br>'+esc(ai.rest)+'</span></div>'
+      + '</div>'
+      + '<div class="mkclose"><button class="btn btn-primary" data-close>Close</button></div>'
+      + '</div>');
+  });
+  document.addEventListener("click", function(e){ if(e.target.closest("[data-close]")) closeScrim(); });
+
+  /* ---- Mapping board ---- */
+  var mp = C.mapping||{}, problems=mp.problems||[], work=mp.work||[], edges=mp.edges||[];
+  $("#colProblems").insertAdjacentHTML("beforeend", problems.map(function(p){
+    return '<div class="pcard" data-p="'+esc(p.id)+'"><div class="ctitle">'+esc(p.title)+id(p.id)+'</div>'
+      + '<div class="cmeta">'+esc(p.why||"")+'</div></div>'; }).join(""));
+  $("#colWork").insertAdjacentHTML("beforeend", work.map(function(w){
+    return '<div class="wcard" data-w="'+esc(w.id)+'"><div class="outcome">'+esc(w.outcome||"")+'</div>'
+      + '<div class="ctitle">'+esc(w.name)+id(w.id)+'</div>'
+      + '<div class="cmeta">'+esc(w.detail||"")+'</div></div>'; }).join(""));
+
+  var svg = $("#edgeSvg"), layer = $("#edgeLayer");
+  function drawEdges(active){
+    if(!svg || !layer.offsetParent) return;
+    var lr = layer.getBoundingClientRect();
+    svg.setAttribute("viewBox","0 0 "+lr.width+" "+lr.height);
+    var out = edges.map(function(e){
+      var pe = document.querySelector('[data-p="'+e.problem+'"]');
+      var we = document.querySelector('[data-w="'+e.work+'"]');
+      if(!pe||!we) return "";
+      var a=pe.getBoundingClientRect(), b=we.getBoundingClientRect();
+      var y1=a.top-lr.top+a.height/2, y2=b.top-lr.top+b.height/2, x2=lr.width;
+      var on = !active || active===e.problem || active===e.work;
+      var col = e.strength==="primary" ? "#45deae" : "#506674";
+      return '<path d="M0,'+y1+' C'+(x2*0.5)+','+y1+' '+(x2*0.5)+','+y2+' '+x2+','+y2+'" '
+        + 'fill="none" stroke="'+col+'" stroke-width="'+(e.strength==="primary"?2:1.25)+'" '
+        + 'opacity="'+(on?(e.strength==="primary"?0.85:0.45):0.07)+'"/>';
+    }).join("");
+    svg.innerHTML = out;
+  }
+  var activeId = null;
+  function setActive(kind,val){
+    activeId = (activeId===val) ? null : val;
+    var linkedW={}, linkedP={};
+    if(activeId){ edges.forEach(function(e){
+      if(e.problem===activeId) linkedW[e.work]=1;
+      if(e.work===activeId)    linkedP[e.problem]=1; }); }
+    document.querySelectorAll(".pcard").forEach(function(el){
+      var i=el.getAttribute("data-p");
+      el.classList.toggle("on", !!activeId && (i===activeId||linkedP[i]));
+      el.classList.toggle("off", !!activeId && !(i===activeId||linkedP[i])); });
+    document.querySelectorAll(".wcard").forEach(function(el){
+      var i=el.getAttribute("data-w");
+      el.classList.toggle("on", !!activeId && (i===activeId||linkedW[i]));
+      el.classList.toggle("off", !!activeId && !(i===activeId||linkedW[i])); });
+    drawEdges(activeId);
+  }
+  document.addEventListener("click", function(e){
+    var p=e.target.closest("[data-p]"), w=e.target.closest("[data-w]");
+    if(p) setActive("p", p.getAttribute("data-p"));
+    else if(w) setActive("w", w.getAttribute("data-w"));
+  });
+  window.addEventListener("resize", function(){ drawEdges(activeId); });
+  setTimeout(function(){ drawEdges(null); }, 60);
+  if(window.ResizeObserver){ new ResizeObserver(function(){ drawEdges(activeId); }).observe(layer); }
+
+  /* ---- Closer ---- */
+  var cl = C.closer||{};
+  $("#closerFraming").textContent = cl.framing||"";
+  $("#bets").innerHTML = (cl.bets||[]).map(function(b){
+    return '<div class="bet"><h3>'+esc(b.title)+id(b.id)+'</h3>'
+      + '<p>'+esc(b.what)+'</p><p style="color:var(--dgrey-2)">'+esc(b.why)+'</p>'
+      + (b.firstMove?'<div class="fm"><b>First move</b>'+esc(b.firstMove)+'</div>':'')
+      + '</div>'; }).join("");
+  var cf = [];
+  if(cl.metric)    cf.push('<div class="cf"><h4>How I would be judged</h4><p>'+esc(cl.metric)+'</p></div>');
+  if(cl.falsifier) cf.push('<div class="cf"><h4>What would prove me wrong</h4><p>'+esc(cl.falsifier)+'</p></div>');
+  if((cl.asks||[]).length) cf.push('<div class="cf"><h4>What I would need</h4><ul>'
+      + cl.asks.map(function(a){return '<li>'+esc(a)+'</li>';}).join("")+'</ul></div>');
+  $("#closerFoot").innerHTML = cf.join("");
+
+  /* ---- References ---- */
+  var rf = C.references||{}, prim=rf.primary||[], sec=rf.secondary||[];
+  var secCount = sec.reduce(function(n,g){ return n + ((g.items||[]).length||0); }, 0);
+  $("#refCount").textContent = prim.length + " primary sources, " + secCount + " in the full list";
+  var html = '<div class="refgroup"><h4>Primary sources</h4><ol class="reflist">'
+    + prim.map(function(r,i){ return '<li><span class="rn">'+String(i+1).padStart(2,"0")+'</span>'
+        + '<span><a class="rl" href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.label||r.title)+'</a>'
+        + (r.title&&r.label?'<span style="color:var(--midnight-300)">'+esc(r.title)+'</span>':'')+'</span></li>'; }).join("")
+    + '</ol></div>';
+  sec.forEach(function(g){
+    html += '<div class="refgroup"><h4>'+esc(g.group)+'</h4><ul class="reflist">'
+      + (g.items||[]).map(function(r){ return '<li><span class="rn">&middot;</span>'
+          + '<span><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.title||r.url)+'</a></span></li>'; }).join("")
+      + '</ul></div>';
+  });
+  $("#refBody").innerHTML = html;
+
+  /* ---- Popups ---- */
+  var KEY = "fp_notices_seen_v1";
+  var queue = (C.popups||[]).slice();
+  function showNext(){
+    if(!queue.length){ closeScrim(); try{localStorage.setItem(KEY,"1");}catch(e){} return; }
+    var p = queue.shift();
+    openScrim('<div class="modal tone-'+esc(p.tone)+'">'
+      + '<span class="mtag">'+(p.tone==="red"?"Please read first":"A note on what this is")+'</span>'
+      + '<h3>'+esc(p.title)+'</h3><p>'+esc(p.body)+'</p>'
+      + '<div class="mact"><button class="btn btn-primary" data-next>'+esc(p.dismissLabel||"Got it")+'</button>'
+      + (p.linkLabel?'<a class="mlink" href="'+esc(p.linkTarget||"#references")+'" data-next>'+esc(p.linkLabel)+'</a>':'')
+      + '</div></div>');
+  }
+  document.addEventListener("click", function(e){ if(e.target.closest("[data-next]")) showNext(); });
+  var seen=false; try{ seen = localStorage.getItem(KEY)==="1"; }catch(e){}
+  if(!seen) setTimeout(showNext, 320);
+  $("#reshow").addEventListener("click", function(){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    queue = (C.popups||[]).slice(); showNext(); });
+
+  /* ---- TODO panel ---- */
+  if(isDraft){
+    var todos = (C.todos||[]).filter(function(t){ return t.status!=="done"; });
+    $("#todoCount").textContent = todos.length ? todos.length+" open" : "none";
+    $("#todoBody").innerHTML = '<h4>Decisions we still owe this page</h4>' + (todos.length
+      ? todos.map(function(t){ return '<div class="titem">'
+          + '<div class="tq"><span class="tid">'+esc(t.id)+'</span><span>'+esc(t.question)+'</span></div>'
+          + (t.why?'<div class="tw">'+esc(t.why)+'</div>':'')
+          + (t.proposal?'<div class="tp"><b>My proposal</b>'+esc(t.proposal)+'</div>':'')
+          + '</div>'; }).join("")
+      : '<div class="tw">Nothing open. Flip DRAFT to false in content.js.</div>');
+    $("#todoToggle").addEventListener("click", function(){ $("#todo").classList.toggle("open"); });
+  }
+})();
+</script>
 </body>
 </html>

@@ -403,6 +403,7 @@ a{color:var(--electric);text-decoration:none}
 
   /* ---- highlight engine. Dim, never hide. No layout shift. ---- */
   var pinned = null;           // {type:"q"|"m", id}
+  var currentMoment = null;    // whichever moment the story panel is showing
   function clearVisual(){
     document.querySelectorAll(".qchip,.moment").forEach(function(el){
       el.classList.remove("lit","dimmed","pinned"); });
@@ -441,6 +442,7 @@ a{color:var(--electric);text-decoration:none}
   /* ---- story panel ---- */
   function showStory(mid){
     var m=byM[mid]; if(!m) return;
+    currentMoment = mid;
     $("#storyEmpty").classList.add("gone");
     $("#story").classList.add("on");
     $("#stWhen").textContent = m.when;
@@ -454,6 +456,7 @@ a{color:var(--electric);text-decoration:none}
       return '<div class="frag">'+esc(f)+'</div>'; }).join("");
   }
   function hideStory(){
+    currentMoment = null;
     $("#story").classList.remove("on");
     $("#storyEmpty").classList.remove("gone");
   }
@@ -501,9 +504,13 @@ a{color:var(--electric);text-decoration:none}
     }
     if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
       e.preventDefault();
-      var idx = (pinned && pinned.type==="m") ? M.map(function(m){return m.id;}).indexOf(pinned.id) : -1;
-      idx = e.key==="ArrowRight" ? Math.min(M.length-1, idx+1) : Math.max(0, idx<0?0:idx-1);
-      pin("m", M[idx].id);
+      var ids = M.map(function(m){return m.id;});
+      var here = currentMoment ? ids.indexOf(currentMoment) : -1;
+      var idx;
+      if(here < 0){ idx = e.key==="ArrowRight" ? 0 : M.length-1; }
+      else { idx = e.key==="ArrowRight" ? Math.min(M.length-1, here+1)
+                                        : Math.max(0, here-1); }
+      pin("m", ids[idx]);
     }
   });
 

@@ -21,7 +21,7 @@
     --hairline:#DCD6C8;
     --serif:Georgia,'Times New Roman',serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    --maxw:1080px;
+    --maxw:1560px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
   body{
@@ -65,18 +65,29 @@
 
   .tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:6px;
     background:var(--paper); margin-top:22px}
-  table{border-collapse:collapse; width:100%; min-width:860px}
+  table{border-collapse:collapse; width:100%; min-width:1180px; table-layout:fixed}
+  /* Column widths. Everything left over goes to "What it is", which is the
+     column that was wrapping into tall rows. */
+  th:nth-child(1),td:nth-child(1){width:44px}    /* #        */
+  th:nth-child(2),td:nth-child(2){width:186px}   /* Project  */
+  th:nth-child(3),td:nth-child(3){width:104px}   /* Company  */
+  th:nth-child(4),td:nth-child(4){width:232px}   /* Path     */
+  th:nth-child(5),td:nth-child(5){width:96px}    /* Status   */
+  th:nth-child(7),td:nth-child(7){width:182px}   /* Dates    */
   th{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--faded);
-    font-weight:bold; text-align:left; padding:14px 16px; border-bottom:1px solid var(--hairline);
+    font-weight:bold; text-align:left; padding:12px 14px; border-bottom:1px solid var(--hairline);
     white-space:nowrap}
-  td{padding:16px; border-bottom:1px solid var(--hairline); vertical-align:top;
-    font-size:15px; color:var(--faded); line-height:1.55}
+  td{padding:13px 14px; border-bottom:1px solid var(--hairline); vertical-align:top;
+    font-size:15px; color:var(--faded); line-height:1.5}
   tr:last-child td{border-bottom:none}
   td .name{display:block; color:var(--ink); font-weight:bold; font-size:16px; margin-bottom:3px}
   td.when{white-space:nowrap; font-size:14px}
   code, .sha{font-family:var(--mono); font-size:13px; color:var(--ink);
     background:rgba(220,214,200,.42); padding:1px 5px; border-radius:3px}
-  .path{font-family:var(--mono); font-size:13.5px}
+  .path{font-family:var(--mono); font-size:13px; overflow-wrap:anywhere}
+  td.num{color:var(--faded); font-size:14px; font-variant-numeric:tabular-nums;
+    text-align:right; padding-right:10px}
+  td.co{color:var(--ink); font-weight:bold; font-size:15px}
 
   .pill{display:inline-block; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
     font-weight:bold; padding:3px 9px; border-radius:11px; border:1px solid var(--hairline);
@@ -143,18 +154,22 @@
   <div class="tablewrap">
     <table>
       <thead>
-        <tr><th>Project</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
+        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
       </thead>
       <tbody>
         <tr>
+          <td class="num">1</td>
           <td><span class="name">Personal site</span>Warm Naturalist rebuild</td>
+          <td class="co"></td>
           <td class="path"><a href="/">/</a></td>
           <td><span class="pill live">Live</span></td>
           <td>The homepage itself. Hero, professional portfolio, about, personal board of directors, contact. Origin of the design system every other page inherits.</td>
           <td class="when">2026-07-10 &rarr; present<br><span class="sha">2a60bee</span></td>
         </tr>
         <tr>
+          <td class="num">2</td>
           <td><span class="name">Hemlock Holdings</span>Private quantitative trading firm</td>
+          <td class="co"></td>
           <td class="path"><a href="/hemlock.html">/hemlock.html</a></td>
           <td><span class="pill live">Live</span></td>
           <td>Standalone page for the MATES trading work, presented as a private quant firm. Added with the tree iconography that is still in the nav link.</td>
@@ -171,46 +186,58 @@
   <div class="tablewrap">
     <table>
       <thead>
-        <tr><th>Project</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
+        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
       </thead>
       <tbody>
         <tr>
+          <td class="num">3</td>
           <td><span class="name">AI Development on a Core Engineering Platform</span>Agentic SDLC charter</td>
+          <td class="co">Twitch</td>
           <td class="path"><a href="/agentic-sdlc/">/agentic-sdlc/</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>Scrollytelling charter proposal. Started life as a generic visual essay, was tailored to <strong>Microsoft ES365</strong>, genericized again, then re-tailored to a <strong>Twitch</strong> Principal / Core Engineering role JD. Current live copy reads &ldquo;Prepared for Twitch.&rdquo; Nav link existed 22 Jul to 24 Aug.</td>
           <td class="when">2026-07-22 &rarr; present<br>added <span class="sha">90aec5f</span><br>nav added <span class="sha">fe3cc5a</span><br>nav removed <span class="sha">33d9497</span></td>
         </tr>
         <tr>
+          <td class="num">4</td>
           <td><span class="name">Agentic SDLC &mdash; reading view</span>Fallback / plain version</td>
+          <td class="co">Twitch</td>
           <td class="path"><a href="/agentic-sdlc/basic.html">/agentic-sdlc/basic.html</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>Non-scrollytelling reading-view companion to the page above, for anyone who wants the argument without the animation. Never appeared in the nav.</td>
           <td class="when">2026-07-22 &rarr; present<br><span class="sha">90aec5f</span></td>
         </tr>
         <tr>
+          <td class="num">5</td>
           <td><span class="name">Ground Freight, End to End</span>Flexport Staff PM, Trucking Tech</td>
+          <td class="co">Flexport</td>
           <td class="path"><a href="/flexport-trucking-tech-demo/">/flexport-trucking-tech-demo/</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>Two-pillar demo built in Flexport&rsquo;s design language, with an interactive experience-mapping board. Data-driven off <span class="path">content.js</span>. Originally lived at <span class="path">/flexport/</span>.</td>
           <td class="when">2026-08-26 &rarr; present<br>added <span class="sha">77eb7f6</span><br>renamed <span class="sha">e68a2e5</span><br>built out <span class="sha">df21600</span><br>fix <span class="sha">0d8348e</span></td>
         </tr>
         <tr>
+          <td class="num">6</td>
           <td><span class="name">Recent Experience Note</span>Flexport Senior PM, Visibility</td>
+          <td class="co">Flexport</td>
           <td class="path"><a href="/flexport-senior-product-manager-visibility/">/flexport-senior-product-manager-visibility/</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>One-pager framing the UARC2 stockout root-cause work as directly relevant experience for the Flexport Senior PM, Visibility role.</td>
           <td class="when">2026-08-31 &rarr; present<br><span class="sha">9d87d07</span></td>
         </tr>
         <tr>
+          <td class="num">7</td>
           <td><span class="name">Inventory Integrations</span>Prepared for Nordstrom</td>
+          <td class="co">Nordstrom</td>
           <td class="path"><a href="/nordstrom-inventory-integrations/">/nordstrom-inventory-integrations/</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>Nordstrom inventory-integrations page, built in a parallel session. Committed as a scaffold; check it is filled in before sending the link anywhere.</td>
           <td class="when">2026-09-01 &rarr; present<br><span class="sha">434a658</span></td>
         </tr>
         <tr>
+          <td class="num">8</td>
           <td><span class="name">This directory</span>Private index</td>
+          <td class="co"></td>
           <td class="path"><a href="/directory/zp6997dkz76mm58zz6xp/">/directory/zp6997dkz76mm58zz6xp/</a></td>
           <td><span class="pill unlinked">Unlinked</span></td>
           <td>The page you are reading. The public stub at <span class="path">/directory</span> is linked from the homepage nav and reveals nothing; this slug is not published anywhere.</td>
@@ -227,11 +254,13 @@
   <div class="tablewrap">
     <table>
       <thead>
-        <tr><th>Project</th><th>Path</th><th>Status</th><th>What it was / recovery</th><th>Dates &amp; commits</th></tr>
+        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it was / recovery</th><th>Dates &amp; commits</th></tr>
       </thead>
       <tbody>
         <tr>
+          <td class="num">9</td>
           <td><span class="name">TaktStack redirect page</span>Production Intelligence</td>
+          <td class="co"></td>
           <td class="path">/TaktStack/index.html</td>
           <td><span class="pill removed">Removed</span></td>
           <td>A dark-themed meta-refresh + <span class="path">location.replace</span> bounce to the TaktStack app on Cloud Run. Deleted the same day it was added, once a Render rewrite rule took over the proxying.
@@ -240,7 +269,9 @@
           <td class="when">added 2026-08-14 <span class="sha">3e3c486</span><br>deleted 2026-08-14 <span class="sha">4a4a1c7</span></td>
         </tr>
         <tr>
+          <td class="num">10</td>
           <td><span class="name">Ground Freight: A Point of View</span>Original Flexport demo path</td>
+          <td class="co">Flexport</td>
           <td class="path">/flexport/index.html</td>
           <td><span class="pill removed">Removed</span></td>
           <td>First scaffolding of the Flexport trucking demo, before the folder was renamed to <span class="path">flexport-trucking-tech-demo</span>. The old URL is dead; the content lives on at the new path, but this is the original scaffold if you want it.
@@ -261,11 +292,13 @@
   <div class="tablewrap">
     <table>
       <thead>
-        <tr><th>Project</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
+        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
       </thead>
       <tbody>
         <tr>
+          <td class="num">11</td>
           <td><span class="name">TaktStack</span>Production Intelligence demo</td>
+          <td class="co"></td>
           <td class="path">/TaktStack &rarr; Cloud Run</td>
           <td><span class="pill external">External</span></td>
           <td>Full demo app deployed to Google Cloud Run at <span class="path">taktstack-716283169700.us-west1.run.app/TaktStack</span>, wired in through a <strong>Render rewrite rule</strong> configured in the Render dashboard, not in this repo. Nav link ran 14 Aug to 24 Aug. If the path ever 404s, check the Render rewrite before checking git.</td>

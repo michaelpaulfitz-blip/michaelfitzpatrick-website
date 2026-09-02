@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Ground Freight, End to End · Michael Fitzpatrick</title>
+<title>UARC2 Product Walkthrough · Michael Fitzpatrick</title>
 <meta name="description" content="Twelve handoffs, where they break, and who pays for it. Prepared for a conversation with Flexport.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,6 +131,52 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
 .btn-ghost{background:transparent; color:var(--white);
   box-shadow:0 0 0 .125rem var(--midnight-300) inset}
 .btn-ghost:hover{box-shadow:0 0 0 .125rem var(--seafoam) inset; color:var(--seafoam)}
+
+/* ═══ UARC2 WALKTHROUGH ═══ */
+.walkbar{display:flex; gap:1rem; align-items:flex-start; justify-content:space-between;
+  flex-wrap:wrap; margin-bottom:2rem; padding-bottom:1.5rem;
+  border-bottom:1px solid var(--terrain-2)}
+.walkchips{display:flex; gap:.4375rem; flex-wrap:wrap; flex:1}
+.walkchip{font-size:.75rem; font-weight:500; padding:.4375rem .8125rem;
+  border-radius:var(--r-pill); background:var(--white); color:var(--dgrey-1);
+  box-shadow:0 0 0 1px var(--terrain-2) inset; transition:.15s; white-space:nowrap}
+.walkchip:hover{box-shadow:0 0 0 1px var(--seafoam-5) inset; color:var(--teal)}
+.walkchip .n{color:var(--lgrey-3); margin-left:.375rem; font-variant-numeric:tabular-nums}
+.walktoggle{font-size:.8125rem; font-weight:500; color:var(--electric);
+  padding:.4375rem 0; white-space:nowrap; flex:none}
+.walktoggle:hover{color:var(--electric-h)}
+
+.walkgroup{margin-bottom:2.5rem; scroll-margin-top:5rem}
+.walkgroup:last-child{margin-bottom:0}
+.walkgh{display:flex; align-items:baseline; gap:.75rem; margin-bottom:.875rem;
+  padding-bottom:.5rem; border-bottom:2px solid var(--seafoam)}
+.walkgh h3{font-size:1.0625rem; line-height:1.25; font-weight:600}
+.walkgh .gn{font-size:.6875rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--lgrey-3); font-weight:700; flex:none}
+
+.walkitem{border:1px solid var(--terrain-2); border-radius:var(--r-media);
+  background:var(--white); margin-bottom:.5rem; overflow:hidden}
+.walkitem[open]{border-color:var(--lgrey-2)}
+.walkitem summary{list-style:none; cursor:pointer; padding:.9375rem 1.125rem;
+  display:flex; align-items:flex-start; gap:.75rem; transition:.15s}
+.walkitem summary::-webkit-details-marker{display:none}
+.walkitem summary:hover{background:var(--terrain-1)}
+.walkq{font-family:var(--head); font-variation-settings:'wdth' 108; font-weight:600;
+  font-size:.9375rem; line-height:1.35; flex:1; color:var(--midnight)}
+.walkmark{flex:none; width:16px; height:16px; margin-top:.125rem; color:var(--lgrey-3);
+  font-size:.75rem; line-height:16px; text-align:center; transition:.15s}
+.walkitem[open] .walkmark{color:var(--seafoam-5); transform:rotate(90deg)}
+.walka{padding:0 1.125rem 1.25rem 3rem; font-size:.9375rem; line-height:1.62;
+  color:var(--dgrey-1)}
+.walkitem.pending{background:#fffdf5; border-color:#f3e4bd}
+.walkitem.pending summary:hover{background:#fffaeb}
+.walkitem.pending .walkmark{color:#c08a12}
+.verbal{display:inline-flex; align-items:center; gap:.4375rem; font-size:.75rem;
+  font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#8a6209;
+  background:#fdf3d6; border-radius:var(--r-pill); padding:.3125rem .75rem;
+  margin-top:.25rem}
+.walka .lead{margin-bottom:.75rem}
+@media(max-width:600px){.walka{padding-left:1.125rem}}
 
 /* ═══ PILLAR 01: lifecycle ═══ */
 .lifewrap{position:relative; margin-top:1rem}
@@ -374,9 +420,10 @@ footer a:hover{color:var(--seafoam)}
       Michael Fitzpatrick
     </span>
     <nav class="links">
-      <a href="#lifecycle" data-sec="lifecycle">01 &middot; The Lifecycle</a>
-      <a href="#mapping" data-sec="mapping">02 &middot; Experience Mapping</a>
+      <a href="#walkthrough" data-sec="walkthrough">UARC2 Walkthrough</a>
       <a href="#closer" data-sec="closer">First 90 Days</a>
+      <a href="#lifecycle" data-sec="lifecycle">Background &middot; The Lifecycle</a>
+      <a href="#mapping" data-sec="mapping">Background &middot; Experience Map</a>
       <a href="#references" data-sec="references">References</a>
       <a href="#appendix" data-sec="appendix">Appendix</a>
     </nav>
@@ -402,17 +449,46 @@ footer a:hover{color:var(--seafoam)}
     <span class="eyebrow" id="heroEyebrow"></span>
     <h1 id="heroTitle"></h1>
     <p class="lede" id="heroLede"></p>
-    <a class="btn btn-ghost" href="#lifecycle">Start with the lifecycle</a>
+    <a class="btn btn-ghost" href="#walkthrough">Start the walkthrough</a>
     <p class="byline" id="heroByline"></p>
+  </div>
+</section>
+
+<section class="band band-light" id="walkthrough">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">THE PRODUCT</span>
+      <h2>UARC2: supply chain visibility and failure diagnostics</h2>
+      <p id="walkIntro"></p>
+    </div>
+    <div class="walkbar">
+      <div class="walkchips" id="walkChips"></div>
+      <button class="walktoggle" id="walkToggle" data-state="closed">Expand all</button>
+    </div>
+    <div id="walkGroups"></div>
+  </div>
+</section>
+
+<section class="band band-dawn" id="closer">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">CLOSER</span>
+      <h2>If I had ninety days</h2>
+      <p id="closerFraming"></p>
+    </div>
+    <div class="bets" id="bets"></div>
+    <div class="closerfoot" id="closerFoot"></div>
   </div>
 </section>
 
 <section class="band band-light" id="lifecycle">
   <div class="wrap">
     <div class="sechead">
-      <span class="pillarnum">PILLAR 01</span>
+      <span class="pillarnum">BACKGROUND 01</span>
       <h2>The ground freight lifecycle, and where it breaks</h2>
-      <p>Twelve handoffs. The top lane is the freight itself. The bottom lane is the information,
+      <p>Background rather than the main event. I built this while learning the domain, and I am
+      keeping it here because it is the clearest way to show how I take a new operation apart.
+      Twelve handoffs. The top lane is the freight itself. The bottom lane is the information,
       the money, and the verification that has to travel alongside it. The interesting part is the
       row underneath, where physical custody and the authoritative record keep coming apart.</p>
     </div>
@@ -435,7 +511,7 @@ footer a:hover{color:var(--seafoam)}
 <section class="band band-dark" id="mapping">
   <div class="wrap">
     <div class="sechead">
-      <span class="pillarnum">PILLAR 02</span>
+      <span class="pillarnum">BACKGROUND 02</span>
       <h2>Trucking Tech &lt;---&gt; Mike</h2>
       <p>On the left, the hard problems this role has to solve. On the right, work I have delivered
       against the same underlying shape. Click either side to see what connects.</p>
@@ -446,18 +522,6 @@ footer a:hover{color:var(--seafoam)}
       <div class="boardcol" id="colWork"><div class="colhead">Where I have done this</div></div>
     </div>
     <p class="boardhint">The domain is different. The problem shape is not. Click any card to trace its connections.</p>
-  </div>
-</section>
-
-<section class="band band-dawn" id="closer">
-  <div class="wrap">
-    <div class="sechead">
-      <span class="pillarnum">CLOSER</span>
-      <h2>If I had ninety days</h2>
-      <p id="closerFraming"></p>
-    </div>
-    <div class="bets" id="bets"></div>
-    <div class="closerfoot" id="closerFoot"></div>
   </div>
 </section>
 
@@ -526,6 +590,53 @@ footer a:hover{color:var(--seafoam)}
   $("#heroTitle").textContent   = m.title||"";
   $("#heroLede").innerHTML      = esc(m.subtitle||"");
   $("#heroByline").textContent  = [m.author,m.date].filter(Boolean).join("  ·  ");
+
+  /* ---- UARC2 walkthrough ---- */
+  var wk = C.walkthrough || {groups:[]};
+  var wkIntro = $("#walkIntro");
+  if(wkIntro) wkIntro.textContent = wk.intro || "";
+
+  var chipsEl = $("#walkChips"), groupsEl = $("#walkGroups");
+  if(groupsEl){
+    chipsEl.innerHTML = (wk.groups||[]).map(function(g){
+      return '<button class="walkchip" data-jump="'+esc(g.id)+'">'+esc(g.name)
+        + '<span class="n">'+g.items.length+'</span></button>';
+    }).join("");
+
+    groupsEl.innerHTML = (wk.groups||[]).map(function(g,gi){
+      var items = g.items.map(function(it){
+        var body = it.pending
+          ? '<span class="verbal">Covered verbally</span>'
+          : '<p>'+esc(it.a)+'</p>';
+        // a pending item may still carry written lead-in prose before the marker
+        if(it.pending && it.a && it.a.replace(/Mike will discuss this verbally\.?/,"").trim()){
+          body = '<p class="lead">'+esc(it.a.replace(/Mike will discuss this verbally\.?/,"").trim())+'</p>'
+               + '<span class="verbal">Rest covered verbally</span>';
+        }
+        return '<details class="walkitem'+(it.pending?" pending":"")+'">'
+          + '<summary><span class="walkmark">&#9656;</span>'
+          + '<span class="walkq">'+esc(it.q)+id(it.id)+'</span></summary>'
+          + '<div class="walka">'+body+'</div></details>';
+      }).join("");
+      return '<div class="walkgroup" id="'+esc(g.id)+'">'
+        + '<div class="walkgh"><span class="gn">'+String(gi+1).padStart(2,"0")+'</span>'
+        + '<h3>'+esc(g.name)+'</h3></div>' + items + '</div>';
+    }).join("");
+
+    document.addEventListener("click", function(e){
+      var c = e.target.closest("[data-jump]"); if(!c) return;
+      var t = document.getElementById(c.getAttribute("data-jump"));
+      if(t) t.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    var wt = $("#walkToggle");
+    wt.addEventListener("click", function(){
+      var open = wt.getAttribute("data-state") === "closed";
+      groupsEl.querySelectorAll("details.walkitem").forEach(function(d){ d.open = open; });
+      wt.setAttribute("data-state", open ? "open" : "closed");
+      wt.textContent = open ? "Collapse all" : "Expand all";
+    });
+  }
 
   /* ---- Lifecycle ---- */
   var steps   = (C.lifecycle&&C.lifecycle.steps)||[];

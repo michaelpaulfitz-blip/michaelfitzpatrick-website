@@ -15,8 +15,8 @@ const LAYOUT = "two-lane";    // "two-lane" | "single-line"
 
 const CONTENT = {
   "meta": {
-    "title": "Ground freight, end to end",
-    "subtitle": "Twelve handoffs, where they break, and who pays for it",
+    "title": "One product, broken all the way down",
+    "subtitle": "The product is UARC2, a supply chain visibility and failure diagnostics platform I proposed and led at Amazon Fresh. It launched in January 2026. Below is the strategy, the trade-offs, the execution, and the numbers. Underneath that is background work I did on ground freight while preparing for this conversation.",
     "preparedFor": "Flexport · Staff Product Manager, Trucking Technology",
     "author": "Michael Fitzpatrick",
     "date": "September 2026"
@@ -153,6 +153,257 @@ const CONTENT = {
       "proposal": "If BPSI gets folded into the UARC2 detail, move the actionability-axis sentence into E24's note or add a second supporting edge from W02 into R03. Losing the mechanism entirely would leave R03 resting on one win and one field-research story."
     }
   ],
+  "walkthrough": {
+    "intro": "The product I keep coming back to is UARC2, a supply chain visibility and failure diagnostics platform I proposed and led at Amazon Fresh. It launched in January 2026. Below is how I would break it down against the four layers, plus the follow-ups underneath them.",
+    "groups": [
+      {
+        "id": "G01",
+        "name": "The Why (Strategy)",
+        "items": [
+          {
+            "id": "Q01",
+            "q": "What was the specific pain point you set out to solve?",
+            "a": "When a product went out of stock at Amazon Fresh, nobody could tell you why. We had tooling that showed what happened in the window before a stockout, but it surfaced correlations rather than causes. An instock manager would see that a stockout followed a forecast miss, a late inbound truck, and a vendor short-ship, and have no way to know which one actually drove it. In practice that meant every org defaulted to blaming whatever they did not control, and we spent real money reacting to the wrong thing.",
+            "pending": false
+          },
+          {
+            "id": "Q02",
+            "q": "How did you validate this was the right problem to solve?",
+            "a": "I started from users rather than from a solution. I went out across the supply chain orgs and gathered feedback on where their biggest opportunities were, and stockout attribution came back as the highest-value gap. Then I audited the existing tool to understand why it was falling short, which is where I found the correlation problem. That gave me a testable hypothesis: if we instrumented more points along the chain, we could decompose the entire operation, physical and virtual, into a connected set of links and isolate true causation. Rather than ask for funding on the strength of a hypothesis, I pitched our science lead on building a prototype and we ran it at a single fulfillment center first. The results were strong enough that I walked into leadership with data instead of an opinion.",
+            "pending": false
+          },
+          {
+            "id": "Q03",
+            "q": "Why this problem over the other things you could have worked on?",
+            "a": "Two reasons. First, it sat upstream of a lot of other work. Every org had its own theory about what drove stockouts, so without a shared answer we were funding several parallel guesses at once. Fixing attribution made everyone else's prioritization better. Second, instock was our north star metric, so improving root-cause accuracy paid out across the whole organization rather than inside one team's lane.",
+            "pending": false
+          },
+          {
+            "id": "Q04",
+            "q": "Who was the customer, and what did they actually tell you?",
+            "a": "Seven functional orgs, with instock managers and supply chain analysts as the day-to-day users. The consistent message was that they did not lack data, they lacked a defensible answer. They would walk into a weekly business review with three plausible explanations for the same stockout and no way to choose between them, so the conversation became about whose theory was most persuasive rather than what was actually true.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G02",
+        "name": "Discovery and Trade-offs",
+        "items": [
+          {
+            "id": "Q05",
+            "q": "What alternative solutions did you consider?",
+            "a": "The obvious alternative was to improve the existing correlation tool rather than replace it. That was genuinely tempting because it was cheaper, lower risk, and would have shown progress faster. Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q06",
+            "q": "Why did you pick this path over those alternatives?",
+            "a": "Improving the existing tool would have made a correlation engine more precise, and precision on the wrong construct does not help anyone. The users' problem was not that the correlations were noisy, it was that correlation could not answer the question they were being asked in a business review. That is a structural limit rather than a tuning problem, so incremental work on it had a ceiling we would hit quickly. Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q07",
+            "q": "What did you intentionally NOT build, and why?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q08",
+            "q": "What did you cut to get to a shippable MVP?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          }
+        ]
+      },
+      {
+        "id": "G03",
+        "name": "Execution and Delivery",
+        "items": [
+          {
+            "id": "Q09",
+            "q": "How did you partner with Engineering and Science?",
+            "a": "I ran three cadences at three altitudes, deliberately. A daily standup with the engineering and science team to keep delivery unblocked. A weekly tactical sync with my IC and first-line-manager counterparts inside the customer orgs, so open questions got resolved in days instead of escalating. And a biweekly with Senior Managers and Directors for hot topics and strategic trade-offs. The middle one carried the most weight. Pulling operators from the customer orgs into a working session every week meant decisions were made by people who actually did the job, and it kept their leadership looped in without me having to escalate to get there.",
+            "pending": false
+          },
+          {
+            "id": "Q10",
+            "q": "How did you partner with Design?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q11",
+            "q": "Describe a specific technical hurdle or pivot you navigated.",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q12",
+            "q": "How did you keep seven orgs aligned without the roadmap thrashing?",
+            "a": "This was the hardest part of the program. Seven functional customer orgs each wanted their own features prioritized first, which created real friction early in roadmap planning. I defused it by moving the argument off personalities and onto shared criteria. We aligned on an objective prioritization framework that weighed actionability alongside raw impact, so a high-impact item nobody could act on ranked below a moderate-impact item a team could act on tomorrow. Once the criteria were agreed, sequencing stopped being a negotiation and became arithmetic. Combined with the weekly working sync, that converted prioritization from something done to those orgs into something done with them. It built the buy-in that later showed up as adoption, and it insulated the team from thrash so we shipped the top items on schedule.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G04",
+        "name": "Impact (Metrics)",
+        "items": [
+          {
+            "id": "Q13",
+            "q": "What was the concrete outcome?",
+            "a": "We launched in January 2026. UARC2 came in 4x more accurate than the system it replaced, roughly 8 MAPE against 32. It reached 92% adoption as the default decision layer for our instock and supply chain teams. And it lifted instock, our north star, by up to 200 basis points in some grocery categories. Concretely, once it was live we could trace a single stockout back to its actual root cause, whether that was external like a crop failure in a strawberry field, or internal like a bug in how our forecast and buying system handled frequent-reorder, long-lead-time products. Teams could act on a specific defect instead of arguing about which theory to believe.",
+            "pending": false
+          },
+          {
+            "id": "Q14",
+            "q": "What was your north star metric and how did you pick it?",
+            "a": "Instock rate was the north star for the business, and for the product itself the measure that mattered was attribution accuracy, which we tracked as MAPE against a ground-truth set. I picked accuracy as the product metric deliberately, because adoption of a diagnostics tool is downstream of trust, and trust is downstream of being right. Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q15",
+            "q": "How do you know the 4x improvement was real and not measurement choice?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q16",
+            "q": "What would you do differently today?",
+            "a": "I would fight harder for the north star metric, and earlier. Partway through the program, leadership pushed to drop the north star metric we had defined, and I let it go rather than spending the capital to defend it. That turned out to be expensive. Without a shared definition of success, each org drifted back to its own measure, and I paid for it in months of adoption churn re-litigating things I thought were settled. I eventually reinstated the metric and adoption followed. What I took from it is that a north star is not documentation, it is the mechanism that holds a coalition together, and it is worth spending real political capital on at the start rather than cheaper capital cleaning up later.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G05",
+        "name": "Show Backbone",
+        "items": [
+          {
+            "id": "Q17",
+            "q": "Tell me about saying no to a high-stakes stakeholder to protect the product.",
+            "a": "My director committed to a VP that we would launch in two weeks. The scope that implied would have shipped something producing answers we could not stand behind, and in a diagnostics product a confidently wrong root cause is worse than no answer, because people act on it. So I said no to the date. What I did not do was simply push back. I built three options with explicit trade-offs: what we could genuinely ship in two weeks and what it would and would not be able to claim, an intermediate scope, and the full launch criteria I believed we needed. Then I asked for a meeting with my director and the VP in the same room rather than relaying my position through my director, so the trade-off was decided by the person who owned the consequence and had the full picture. We landed on a middle option with launch criteria I could defend.",
+            "pending": false
+          },
+          {
+            "id": "Q18",
+            "q": "What did holding that line cost you?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          }
+        ]
+      },
+      {
+        "id": "G06",
+        "name": "Technical Depth",
+        "items": [
+          {
+            "id": "Q19",
+            "q": "What were the data inputs?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q20",
+            "q": "How does the causal logic actually work?",
+            "a": "The core idea was to stop treating the supply chain as a black box with a stockout at the end of it, and instead model it as a connected graph of links where each link has an observable state and a defined handoff to the next one. If you can see the state at every link, you can walk backward from the failure and identify the first link where the actual state diverged from the expected state, rather than reporting everything that happened to co-occur beforehand. That is what turned a list of correlated events into a single attributable cause. Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q21",
+            "q": "What did the system architecture look like?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          },
+          {
+            "id": "Q22",
+            "q": "Where did SQL come into it?",
+            "a": "Mike will discuss this verbally.",
+            "pending": true
+          }
+        ]
+      },
+      {
+        "id": "G07",
+        "name": "STAR+ (the 90-second arc)",
+        "items": [
+          {
+            "id": "Q23",
+            "q": "Give me the whole thing in ninety seconds.",
+            "a": "Situation: at Amazon Fresh, when a product went out of stock, no one could say why. Our tooling surfaced correlations rather than causes, so seven orgs each had a theory and no shared answer. Task: I owned the charter for our inventory visibility and diagnostics platform, and I proposed we replace attribution entirely rather than tune what we had. Action: I validated the problem with users, formed a hypothesis that instrumenting more of the chain would let us isolate causation, prototyped it with our science lead, and ran it at one fulfillment center before asking for money. I took the data to leadership, won funding, and ran a twelve-month build on three cadences. When seven orgs fought over sequencing, I moved the argument onto an objective framework that weighed actionability alongside impact. When my director promised a VP a two-week launch, I brought three scoped options into a room with both of them rather than accept a date that would have shipped answers we could not defend. Result: we launched in January 2026 at 4x the accuracy of the prior system, 92% adoption, and up to 200 basis points of instock lift. Learning: I gave up our north star metric under pressure partway through and paid for it in months of adoption churn. The metric was the thing holding the coalition together, and I did not understand that until it was gone.",
+            "pending": false
+          },
+          {
+            "id": "Q24",
+            "q": "What did you learn, beyond the result?",
+            "a": "Two things. The first is the metric lesson above, which I now treat as a rule: define the north star early, get it agreed in writing, and spend capital defending it before you need it rather than after. The second is that adoption is a design problem and not a rollout problem. The 92% number was not the result of a good launch plan, it was the result of the weekly working sync a year earlier, where the operators who would eventually use the tool were the ones deciding what got built. By the time we shipped, it was already their product.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G08",
+        "name": "Values: Act like an entrepreneur",
+        "items": [
+          {
+            "id": "Q25",
+            "q": "How does this story show it?",
+            "a": "Nobody asked me to build this. I found the gap by talking to users, formed a hypothesis, and de-risked it with a prototype at a single site before asking anyone to fund it. That is the part I would point to: I did not bring leadership a pitch, I brought them a result from an experiment I ran on the margins of my existing charter.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G09",
+        "name": "Values: Win as a team",
+        "items": [
+          {
+            "id": "Q26",
+            "q": "How does this story show it?",
+            "a": "Seven functional orgs with competing priorities could easily have made this a political program. Instead of managing them through their leaders, I brought their ICs and first-line managers into a weekly working sync and let them make the calls, then kept their leadership informed. The coalition, rather than the algorithm, is what produced 92% adoption.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G10",
+        "name": "Values: Simplify",
+        "items": [
+          {
+            "id": "Q27",
+            "q": "How does this story show it?",
+            "a": "The whole product is a simplification. We took a tangled operation that produced an unreadable list of correlated events and decomposed it into a connected set of links with observable states, so a user could get one attributable cause instead of five plausible ones. The measure of success was that an instock manager stopped needing to interpret the tool and could just act on it.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G11",
+        "name": "Values: Play the long game",
+        "items": [
+          {
+            "id": "Q28",
+            "q": "How does this story show it?",
+            "a": "The clearest example is the one where I got it wrong first. I let the north star metric go under short-term pressure, which bought a quiet quarter and cost months of churn. Reinstating it was the long-game call, and it is the reason I now treat the metric as infrastructure rather than as paperwork. The launch-criteria decision was the same instinct applied correctly: taking a later date to ship something we could defend.",
+            "pending": false
+          }
+        ]
+      },
+      {
+        "id": "G12",
+        "name": "Values: Empower the client",
+        "items": [
+          {
+            "id": "Q29",
+            "q": "How does this story show it?",
+            "a": "My clients were internal, the instock and supply chain teams, and the measure of whether I empowered them is whether they chose to use the thing. Ninety-two percent adoption as the default decision layer is the answer. Before UARC2 they went into business reviews with three theories and no way to choose. After it they went in with a root cause and a specific defect to fix.",
+            "pending": false
+          }
+        ]
+      }
+    ]
+  },
   "lifecycle": {
     "lanes": {
       "physical": "Physical custody",

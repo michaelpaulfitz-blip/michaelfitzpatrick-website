@@ -511,7 +511,9 @@ a{color:var(--electric);text-decoration:none}
   function lock(animate){
     $("#opening").classList.add("gone");
     $("#locked").classList.add("on");
-    requestAnimationFrame(function(){
+    // Double rAF: the first frame applies display:flex, the second gives us
+    // settled geometry to measure. A single frame measures a zero-size gutter.
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
       buildPaths();
       if(animate && !reduced){
         $("#locked").classList.add("animating");
@@ -523,7 +525,15 @@ a{color:var(--electric);text-decoration:none}
         });
         setTimeout(function(){ $("#locked").classList.remove("animating"); }, 1600);
       }
-    });
+    }); });
+    // Webfonts land after first paint and change chip widths, which would leave
+    // the connectors pointing at stale positions. Redraw once they settle.
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){
+        buildPaths();
+        if(pinned) applyState(pinned); else applyState(null);
+      });
+    }
     try{ sessionStorage.setItem(KEY,"1"); }catch(err){}
   }
   $("#goBtn").addEventListener("click", function(){ lock(true); });

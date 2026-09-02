@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Otto HQ</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #2b2722;
+    --muted: #7a7368;
+    --card: #ffffff;
+    --border: #e7e0d6;
+    --accent: #c75b12;
+    --accent-soft: #fdeadd;
+    --yellow-bg: #fff6d6;
+    --yellow-border: #e3c94f;
+    --row-hover: #f6f1e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1d1a17;
+      --ink: #ece7df;
+      --muted: #a89f92;
+      --card: #262220;
+      --border: #3a342e;
+      --accent: #e8823d;
+      --accent-soft: #3a2a1c;
+      --yellow-bg: #322b0e;
+      --yellow-border: #8a7a1f;
+      --row-hover: #2d2825;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  header.masthead { text-align: center; padding: 28px 0 8px; }
+  .wordmark {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 64px; font-weight: 700; letter-spacing: 2px;
+    margin: 0; line-height: 1;
+  }
+  .wordmark .flip { color: var(--accent); }
+  .tagline { color: var(--muted); margin: 10px 0 0; font-size: 18px; }
+  .temp-note {
+    display: inline-block; margin-top: 14px; padding: 4px 12px;
+    border: 1px dashed var(--border); border-radius: 999px;
+    color: var(--muted); font-size: 13px;
+  }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 22px 0 8px; }
+  nav.toc a {
+    text-decoration: none; color: var(--accent); font-size: 14px; font-weight: 600;
+    padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--card);
+  }
+  nav.toc a:hover { background: var(--accent-soft); }
+
+  section.card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px 24px; margin: 26px 0;
+  }
+  section.card > h2 {
+    margin: 0 0 4px; font-family: Georgia, serif; font-size: 28px;
+  }
+  .aka { color: var(--muted); font-size: 14px; margin: 0 0 14px; font-style: italic; }
+
+  .namebox {
+    background: var(--yellow-bg); border: 1px solid var(--yellow-border);
+    border-radius: 8px; padding: 10px 14px; font-size: 14px; margin: 0 0 18px;
+  }
+  .namebox strong { display: block; margin-bottom: 2px; }
+
+  ul.ideas { margin: 6px 0 0; padding-left: 22px; }
+  ul.ideas li { margin: 7px 0; }
+  ul.ideas .tag { color: var(--muted); font-size: 13px; }
+
+  /* ---- thin expandable table rows ---- */
+  .tablewrap { overflow-x: auto; }
+  .tbl { min-width: 760px; border-top: 1px solid var(--border); }
+  .tbl-head, .rowline {
+    display: grid; gap: 12px; align-items: baseline;
+    padding: 8px 10px;
+  }
+  .cols-research .tbl-head, .cols-research .rowline {
+    grid-template-columns: 96px 1.4fr 2fr 110px 90px;
+  }
+  .cols-epics .tbl-head, .cols-epics .rowline {
+    grid-template-columns: 34px 1.3fr 110px 2fr 110px 90px;
+  }
+  .tbl-head {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+  }
+  .tbl details { border-bottom: 1px solid var(--border); }
+  .tbl summary { cursor: pointer; list-style: none; }
+  .tbl summary::-webkit-details-marker { display: none; }
+  .tbl summary:hover { background: var(--row-hover); }
+  .rowline { font-size: 14px; }
+  .rowline .title { font-weight: 600; }
+  .rowline .title::before { content: "▸ "; color: var(--accent); }
+  .tbl details[open] .rowline .title::before { content: "▾ "; }
+  .rowline .origin, .rowline .who, .rowline .date { color: var(--muted); font-size: 13px; }
+  .rowline .doc a { color: var(--accent); font-size: 13px; }
+  .rowline .doc .none { color: var(--muted); font-size: 13px; }
+  .status { font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .expand {
+    padding: 4px 10px 16px; font-size: 14.5px; max-width: 72ch; color: var(--ink);
+  }
+  .expand p { margin: 8px 0; }
+
+  .subsection h3 { font-family: Georgia, serif; font-size: 21px; margin: 26px 0 6px; }
+  .emptystate { color: var(--muted); font-style: italic; font-size: 14px; padding: 12px 10px; }
+
+  details.bigfold {
+    border: 1px solid var(--border); border-radius: 8px; padding: 0; margin-top: 10px;
+  }
+  details.bigfold > summary {
+    cursor: pointer; padding: 12px 16px; font-weight: 600; color: var(--accent);
+  }
+  details.bigfold > .foldbody { padding: 2px 20px 18px; max-width: 76ch; }
+  .foldbody h4 { margin: 18px 0 6px; }
+  .foldbody code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: 13.5px; }
+  .foldbody ul { padding-left: 22px; } .foldbody li { margin: 5px 0; }
+
+  .advice { background: var(--accent-soft); border-radius: 8px; padding: 12px 16px; font-size: 14px; margin-top: 16px; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 50px; }
+  footer .palindrome { letter-spacing: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1 class="wordmark">O<span class="flip">tt</span>O</h1>
+    <p class="tagline">Your life, automated. <em>(Otto, not Auto.)</em></p>
+    <span class="temp-note">🏕️ Temporary quarters — Otto gets his own address someday</span>
+    <nav class="toc">
+      <a href="#glovebox">The Glovebox</a>
+      <a href="#stacks">The Stacks</a>
+      <a href="#best-practices">Best Practices</a>
+      <a href="#grand-tour">The Grand Tour</a>
+    </nav>
+  </header>
+
+  <!-- ============ IDEA LIST / PARKING LOT ============ -->
+  <section class="card" id="glovebox">
+    <h2>🧤 The Glovebox</h2>
+    <p class="aka">the idea list / parking lot — where ideas ride along until it's their turn to drive</p>
+    <div class="namebox">
+      <strong>🏷️ Alternative names (revisit anytime):</strong>
+      The Parking Lot · The Idea List · The Hopper · The Back Burner · The Junk Drawer · The Someday Pile
+      — current pick is <em>The Glovebox</em> because Otto is car-adjacent and it's where you stash things you'll need later.
+    </div>
+    <ul class="ideas">
+      <li>Permanent home for Otto — new domain or subdomain, migrate off <code>/otto</code>. <span class="tag">[infra]</span></li>
+      <li>Name for the reminder / action-item module — needs alignment. <span class="tag">[naming]</span></li>
+      <li>Wake-up target: keep 6:00 or renegotiate to 6:30? <span class="tag">[habits]</span></li>
+      <li>Phone notifications strategy — PWA? Push? Email digest? <span class="tag">[research candidate]</span></li>
+      <li>Paper journal → photo → transcription pipeline for the journaling module. <span class="tag">[journaling]</span></li>
+      <li>Session naming convention for the Researcher/Owner column (this session = <strong>HQ</strong>). <span class="tag">[process]</span></li>
+      <li>Finalize section names — Glovebox / Stacks / Grand Tour are all provisional. <span class="tag">[naming]</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ RESEARCH REPOSITORY ============ -->
+  <section class="card" id="stacks">
+    <h2>📚 The Stacks</h2>
+    <p class="aka">the research repository — everything we've gone deep on, filed and summarized</p>
+    <div class="namebox">
+      <strong>🏷️ Alternative names (revisit anytime):</strong>
+      Research Repository · Otto's Almanac · The Test Bench · Field Notes · Service Records
+      — current pick is <em>The Stacks</em>, as in library stacks. (Research Repository remains a dignified fallback.)
+    </div>
+
+    <p style="font-size:14px; color:var(--muted); margin-top:0;">Rows are collapsed to stay thin — click any row to expand its summary.</p>
+    <div class="tablewrap"><div class="tbl cols-research">
+      <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
+
+      <details>
+        <summary><div class="rowline">
+          <span class="date">2026-09-02</span>
+          <span class="title">Project-level settings in Claude Code (CLAUDE.md &amp; friends)</span>
+          <span class="origin">Mike asked for the proper term for project-level rules/procedures and best practices for using them, ahead of instituting Otto's own project rules.</span>
+          <span class="who">HQ</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>The feature is called <strong>project memory</strong> — a <code>CLAUDE.md</code> file at the project root, loaded automatically into every session in that directory (vs. the global <code>~/.claude/CLAUDE.md</code>, which applies everywhere). Alongside it: <code>.claude/settings.json</code> holds machine-enforced project settings (permissions, hooks), and project-scoped skills/agents live under <code>.claude/</code> too.</p>
+          <p>Full write-up lives in the <a href="#best-practices">Best Practices</a> section below. Otto's own <code>CLAUDE.md</code> was created 2026-09-02 with the project's tone setting as its first entry.</p>
+        </div>
+      </details>
+    </div></div>
+
+    <!-- ---- AI BEST PRACTICES SUBSECTION ---- -->
+    <div class="subsection" id="ai-best-practices">
+      <h3>🤖 AI Best Practices</h3>
+      <p class="aka">findings from the Best Practices Bootcamp epic — same shape as The Stacks, kept separate for now (may merge later)</p>
+      <div class="tablewrap"><div class="tbl cols-research">
+        <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
+        <div class="emptystate">Nothing here yet — this table fills up when the Best Practices Bootcamp epic kicks off. 🎓</div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ============ BEST PRACTICES ============ -->
+  <section class="card" id="best-practices">
+    <h2>🛠️ Best Practices</h2>
+    <p class="aka">how we work on Otto — reference material, expand what you need</p>
+
+    <div class="subsection">
+      <h3>Project-Level Best Practices</h3>
+      <details class="bigfold">
+        <summary>Project memory (CLAUDE.md) &amp; project settings — the full guide</summary>
+        <div class="foldbody">
+          <p><strong>TL;DR:</strong> The feature is called <strong>project memory</strong> — a <code>CLAUDE.md</code> file at the repository root (or <code>.claude/CLAUDE.md</code>), loaded automatically into every Claude Code session in that project. Commit it to git so it's shared. It holds <em>instructions Claude follows</em>; its sibling <code>.claude/settings.json</code> holds <em>machine-enforced configuration</em> (permissions, hooks, env vars). The global <code>~/.claude/CLAUDE.md</code> covers personal preferences across all projects; project memory loads after it and overrides it where they conflict.</p>
+
+          <h4>The file landscape</h4>
+          <ul>
+            <li><code>CLAUDE.md</code> (project root) — team-shared project memory: build/test commands, conventions, architecture pointers, workflow rules.</li>
+            <li><code>CLAUDE.local.md</code> — gitignored personal overrides for this project (sandbox URLs, local shortcuts).</li>
+            <li><code>~/.claude/CLAUDE.md</code> — global personal instructions for every project.</li>
+            <li><code>@file</code> imports — inside CLAUDE.md, <code>@path/to/file</code> pulls another file into context at session start (e.g. <code>@README</code>) instead of duplicating its text.</li>
+            <li><code>.claude/rules/*.md</code> — path-scoped rules with YAML frontmatter (<code>paths: src/**/*.ts</code>) that load only when Claude touches matching files, saving context.</li>
+            <li><code>.claude/settings.json</code> / <code>settings.local.json</code> — enforced settings: permission allowlists, hooks, environment variables. Local overrides shared; add local to <code>.gitignore</code>.</li>
+            <li>Project-scoped skills and agents live under <code>.claude/skills/</code> and <code>.claude/agents/</code>.</li>
+          </ul>
+
+          <h4>Writing an effective CLAUDE.md</h4>
+          <ul>
+            <li><strong>Keep it under ~200 lines.</strong> It's loaded into every session's context — bloat costs tokens and reduces adherence. Split growing detail into path-scoped rules.</li>
+            <li><strong>Structure with headers and bullets;</strong> one entry per concept, no repetition.</li>
+            <li><strong>Be concrete enough to verify:</strong> "run <code>npm test</code> before committing" beats "test your changes."</li>
+            <li><strong>Include:</strong> build/test commands, style specifics, project-structure pointers, workflow rules, gotchas and anti-patterns, decisions that differ from defaults.</li>
+            <li><strong>Exclude:</strong> long prose and tutorials (use skills for repeatable workflows), anything derivable from the code, README duplicates (import instead), personal preferences (those go global or local).</li>
+            <li><strong>Iterate:</strong> when Claude gets something wrong twice, add a rule; trim stale rules regularly; watch for conflicting instructions across files.</li>
+            <li>If something <em>must always</em> happen at a specific moment (e.g. lint before every commit), use a <strong>hook</strong> in settings.json — hooks execute deterministically; memory is guidance Claude follows but the harness doesn't enforce.</li>
+          </ul>
+
+          <h4>Project settings (.claude/settings.json)</h4>
+          <ul>
+            <li>Commit team-wide permission allowlists (pre-approving safe, frequent commands) so sessions prompt less; keep personal exceptions in <code>settings.local.json</code>.</li>
+            <li>Hooks automate lifecycle actions (pre/post tool-use, session start) for enforcement that shouldn't depend on Claude remembering.</li>
+            <li>Precedence, high to low: managed (org) → command line → local settings → shared project settings → user settings.</li>
+          </ul>
+
+          <h4>Useful commands</h4>
+          <ul>
+            <li><code>/init</code> — auto-generate or improve a CLAUDE.md by scanning the codebase.</li>
+            <li><code>/memory</code> — browse and edit all memory files.</li>
+            <li><code>/context</code> — verify which memory files loaded this session.</li>
+            <li><code>/doctor</code> — audit setup; flags bloated or redundant memory content.</li>
+          </ul>
+
+          <p style="color:var(--muted); font-size:13.5px;">Researched 2026-09-02 by a dispatched subagent against the official Claude Code docs (<a href="https://code.claude.com/docs/en/memory.md">memory</a>, <a href="https://code.claude.com/docs/en/settings.md">settings</a>). Otto's own CLAUDE.md follows these practices — meta-compliance achieved.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT EPICS ============ -->
+  <section class="card" id="grand-tour">
+    <h2>🗺️ The Grand Tour</h2>
+    <p class="aka">project epics — the big legs of Otto's journey, loosely in driving order</p>
+    <div class="namebox">
+      <strong>🏷️ Alternative names (revisit anytime):</strong>
+      Project Epics · Quest Log · The Road Atlas · The Saga Board · The Itinerary
+      — current pick is <em>The Grand Tour</em> (a road trip with stops, which is exactly what this is).
+    </div>
+
+    <p style="font-size:14px; color:var(--muted); margin-top:0;">Same thin-row construct as The Stacks, with two adaptations: <em>Date researched → Date added</em>, plus a <em>Status</em> column and a loose order number. Click rows to expand.</p>
+    <div class="tablewrap"><div class="tbl cols-epics">
+      <div class="tbl-head"><span>#</span><span>Epic</span><span>Status</span><span>Origin</span><span>Owner</span><span>Doc</span></div>
+
+      <details>
+        <summary><div class="rowline">
+          <span>1</span>
+          <span class="title">Best Practices Bootcamp</span>
+          <span class="status">🚧 Up next</span>
+          <span class="origin">2026-09-02 — after ~6 months of AI-assisted building (demo projects, personal site, Hemlock, Mates), Mike wants to pause and study best practices deliberately instead of only accreting them.</span>
+          <span class="who">Mike + HQ</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Deep research into best practices for AI-assisted development ("vibe coding" and its more disciplined cousins): workflow patterns, project memory usage, testing habits, review practices, when to plan vs. when to prompt. Findings get distilled into the <a href="#ai-best-practices">AI Best Practices</a> table.</p>
+          <p>Spoiler: Otto itself is the training ground where these practices get ingrained into muscle memory.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>2</span>
+          <span class="title">Deep Research</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-09-02 — Mike has a stack of topics he wants investigated before design decisions get made.</span>
+          <span class="who">Mike + HQ</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Dispatch subagents to research a variety of topics Mike has ideas about (details revealed when the epic starts — very mysterious, very exciting). Everything lands in The Stacks with proper Origin entries so nobody ever wonders "wait, why did we research this?"</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>3</span>
+          <span class="title">Idea Spitballing</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-09-02 — planned follow-up to the research epics: turn findings into an actual roadmap.</span>
+          <span class="who">Mike + Claude</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Post-research riffing session(s): novel, interesting, whimsical ideas bounced back and forth until they condense into concrete action items tagged to epics. The fun one.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>4</span>
+          <span class="title">Module: Action Items <em>(name TBD)</em></span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-08-24 — from the founding brain dump: Google Tasks is gone and Google Keep's mobile UI drives Mike up a wall.</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>The reminder / to-do module: quick entry, easy management, its own interface. First order of business is agreeing on a name (currently riding in the Glovebox). May stay standalone or integrate with other modules — TBD as the architecture emerges.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>5</span>
+          <span class="title">Module: Habit Tracker</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-08-24 — founding brain dump; tied for most important feature. The monthly haircut must never be forgotten again.</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Daily / weekly / monthly habit cadences. Open design question: one unified interface vs. per-cadence views — plan is to research existing habit-app UIs, then prototype a couple and pick. Five seed habits are ready to plant (6:00 wake, cold-shower finish, dishwasher, coffee→shower→breakfast ordering, weekend meal prep) — note the morning routine is <em>sequenced</em>, which suggests routine-ordering support, not just checkboxes.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>6</span>
+          <span class="title">Module: Daily Briefing</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-08-24 — founding brain dump; inspired by Gemini's daily brief. One place that answers "what's up today?"</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>A "today" view coalescing due habits + action items into one daily report, possibly published as a phone notification. Later extension: morning priority headlines pulled from email / calendar / messages.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>7</span>
+          <span class="title">Module: Journaling</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-08-24 — founding brain dump (rescued from project memory — Mike sensed there were modules he was forgetting, and this was one).</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Support Mike's journaling practice. Leading idea: keep the pretty paper journal, photograph pages, and have Claude transcribe them into a searchable digital record — best of both worlds. Digital-first entry remains an option; entry mode TBD.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>8</span>
+          <span class="title">Module: Goals</span>
+          <span class="status">🗺️ Queued</span>
+          <span class="origin">2026-08-24 — founding brain dump (also rescued from project memory). 2026 goals currently live only in the paper journal.</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>Digitize and track annual / quarterly goals so they stay visible and get reviewed, rather than living beautifully but invisibly on paper. Likely ties into the Daily Briefing and Journaling modules.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>9</span>
+          <span class="title">DevOps &amp; Maintenance</span>
+          <span class="status">♻️ Ongoing</span>
+          <span class="origin">2026-09-02 — Mike wants self-healing, agentic development practices baked into this project from early on.</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>The umbrella for infrastructure and process: hosting (GCP is the presumed home), CI/CD, monitoring, and experiments in self-healing agentic development — agents that detect, diagnose, and fix issues with minimal human intervention. Also covers this portal's own care and feeding.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><div class="rowline">
+          <span>10</span>
+          <span class="title">Miscellaneous &amp; Other</span>
+          <span class="status">♻️ Ongoing</span>
+          <span class="origin">2026-09-02 — because action items will get tagged to epics, and someone has to hold the random $#!%.</span>
+          <span class="who">—</span>
+          <span class="doc"><span class="none">—</span></span>
+        </div></summary>
+        <div class="expand">
+          <p>The junk drawer of epics. Anything that defies categorization lands here, judgment-free, until a pattern emerges and it graduates into a real epic.</p>
+        </div>
+      </details>
+    </div></div>
+
+    <div class="advice">
+      <strong>💡 Claude's field suggestions for this table</strong> — the research-table construct ports over cleanly; the two columns already adapted are noted above. Candidates to add as the project matures (deliberately left out for now to keep rows thin): <strong>Priority</strong> (order number covers it today), <strong>Depends-on</strong> (epic prerequisites), <strong>Target window</strong> (rough timeframe, once one exists), and <strong>Tags</strong> for cross-cutting themes. Recommendation: add each only when its absence actually hurts.
+    </div>
+  </section>
+
+  <footer>
+    <div class="palindrome">O T T O</div>
+    <div>v0.1.0 · est. 2026-09-02 · built by Mike &amp; Claude · reads the same in both directions, works in all of them</div>
+  </footer>
+
+</div>
+</body>
+</html>

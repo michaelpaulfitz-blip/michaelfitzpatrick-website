@@ -11,6 +11,7 @@
    ========================================================================== */
 
 const DRAFT  = true;          // draft banner, TODO panel, visible content IDs
+const SHOW_TODOS = false;    // the floating "Open decisions" panel. Independent of DRAFT.
 const LAYOUT = "two-lane";    // "two-lane" | "single-line"
 
 const CONTENT = {

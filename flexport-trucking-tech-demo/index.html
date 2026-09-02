@@ -569,7 +569,7 @@ footer a:hover{color:var(--seafoam)}
   <button class="todo-toggle" id="todoToggle"><span>Open decisions</span><span id="todoCount"></span></button>
 </div>
 
-<script src="content.js?v=202609011919"></script>
+<script src="content.js?v=202609012140"></script>
 <script>
 (function(){
   "use strict";
@@ -854,7 +854,9 @@ footer a:hover{color:var(--seafoam)}
     queue = (C.popups||[]).slice(); showNext(); });
 
   /* ---- TODO panel ---- */
-  if(isDraft){
+  var showTodos = (typeof SHOW_TODOS === "undefined") ? isDraft : !!SHOW_TODOS;
+  if(!showTodos){ var _t = $("#todo"); if(_t) _t.remove(); }
+  if(isDraft && showTodos){
     var todos = (C.todos||[]).filter(function(t){ return t.status!=="done"; });
     $("#todoCount").textContent = todos.length ? todos.length+" open" : "none";
     $("#todoBody").innerHTML = '<h4>Decisions we still owe this page</h4>' + (todos.length

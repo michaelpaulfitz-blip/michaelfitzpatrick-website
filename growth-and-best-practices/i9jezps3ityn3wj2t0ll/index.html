@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Growth and Best Practices — Michael Fitzpatrick</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
+<style>
+  /* Warm Naturalist — same tokens as index.html and the Directory */
+  :root{
+    --bone:#F0EEE6;
+    --paper:#FAF9F4;
+    --ink:#1F1E1B;
+    --faded:#6E675C;
+    --clay:#C15F3C;
+    --clay-deep:#A64E30;
+    --moss:#5B7052;
+    --brick:#9C3A2E;
+    --hairline:#DCD6C8;
+    --serif:Georgia,'Times New Roman',serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    background:var(--bone); color:var(--ink);
+    font-family:var(--serif); font-variant-numeric:tabular-nums;
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--clay); text-decoration:none}
+  a:hover{color:var(--clay-deep)}
+
+  .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--faded); font-weight:bold; margin-bottom:14px}
+
+  header.head{border-bottom:1px solid var(--hairline); background:rgba(240,238,230,.92)}
+  .head-inner{max-width:var(--maxw); margin:0 auto; padding:26px 28px;
+    display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap}
+  .wordmark{font-size:20px; font-weight:bold; color:var(--ink); letter-spacing:.2px}
+  .wordmark .dot{color:var(--clay)}
+  .head-inner .back{font-size:14px; color:var(--faded)}
+  .head-inner .back:hover{color:var(--clay-deep)}
+
+  main{max-width:var(--maxw); margin:0 auto; padding:44px 28px 20px}
+  h1{font-size:40px; line-height:1.1; letter-spacing:-.8px; margin-bottom:10px}
+  h2{font-size:26px; line-height:1.2; letter-spacing:-.3px; margin-bottom:6px}
+  p{margin-bottom:16px; color:var(--faded)}
+  p:last-child{margin-bottom:0}
+  strong{font-weight:bold; color:var(--ink)}
+
+  section{padding:38px 0}
+  section + section{border-top:1px solid var(--hairline)}
+  .lede{color:var(--ink); font-size:19px; max-width:62ch}
+  .sub{max-width:72ch}
+
+  .warn{background:var(--paper); border:1px solid var(--hairline);
+    border-left:3px solid var(--clay); border-radius:6px; padding:20px 22px; margin-top:24px}
+  .warn p{color:var(--faded); font-size:15px; margin-bottom:10px}
+  .warn p:last-child{margin-bottom:0}
+  .warn .label{font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--clay); font-weight:bold; display:block; margin-bottom:8px}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:22px}
+  .card{background:var(--paper); border:1px solid var(--hairline); border-radius:6px; padding:22px 24px}
+  .card p{font-size:15px; margin-bottom:0}
+  .card .k{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faded);
+    font-weight:bold; display:block; margin-bottom:8px}
+
+  .tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:6px;
+    background:var(--paper); margin-top:22px}
+  table{border-collapse:collapse; width:100%; min-width:820px}
+  th{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--faded);
+    font-weight:bold; text-align:left; padding:12px 14px; border-bottom:1px solid var(--hairline);
+    white-space:nowrap}
+  td{padding:13px 14px; border-bottom:1px solid var(--hairline); vertical-align:top;
+    font-size:15px; color:var(--faded); line-height:1.5}
+  tr:last-child td{border-bottom:none}
+  td .name{display:block; color:var(--ink); font-weight:bold; font-size:16px; margin-bottom:3px}
+  td.when{white-space:nowrap; font-size:14px; width:120px}
+  td.status{width:110px}
+  code, .path{font-family:var(--mono); font-size:13px; color:var(--ink);
+    background:rgba(220,214,200,.42); padding:1px 5px; border-radius:3px; overflow-wrap:anywhere}
+
+  .pill{display:inline-block; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
+    font-weight:bold; padding:3px 9px; border-radius:11px; border:1px solid var(--hairline);
+    white-space:nowrap}
+  .pill.done{color:var(--moss); border-color:var(--moss)}
+  .pill.queued{color:var(--clay); border-color:var(--clay)}
+  .pill.idea{color:var(--faded)}
+
+  ul.plain{list-style:none; margin-top:14px}
+  ul.plain li{padding:10px 0; border-bottom:1px solid var(--hairline); color:var(--faded); font-size:15.5px}
+  ul.plain li:last-child{border-bottom:none}
+  ul.plain li .d{font-family:var(--mono); font-size:13px; color:var(--ink); margin-right:12px}
+
+  .note{font-size:14px; color:var(--faded); font-style:italic;
+    border-left:2px solid var(--hairline); padding-left:16px; margin:22px 0}
+
+  footer{border-top:1px solid var(--hairline); text-align:center; padding:34px 28px;
+    color:var(--faded); font-size:13px; letter-spacing:.3px}
+  footer .wordmark{font-size:16px}
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    h1{font-size:32px}
+    h2{font-size:23px}
+    main{padding:32px 22px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-inner">
+    <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
+    <a class="back" href="/directory/zp6997dkz76mm58zz6xp/">Site Directory &rarr;</a>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="eyebrow">Private Workspace &middot; Not linked, not indexed</div>
+  <h1>Growth and Best Practices</h1>
+  <p class="lede">Home base for everything that makes working with Claude Code better across <em>every</em> project, not just one. Standing conventions, research findings, and the running list of improvements worth making.</p>
+  <p class="sub">Maintained from the <span class="path">central_dev_management_and_improvements</span> directory, which exists purely for cross-project work. Individual projects keep their own notes; anything that should apply everywhere gets promoted here.</p>
+
+  <div class="warn">
+    <span class="label">Read this before you paste the link anywhere</span>
+    <p>This page is protected by an unguessable URL and nothing else. That is <strong>obscurity, not authentication</strong>. Anyone who has the link can read this page in full.</p>
+    <p>Treat it as semi-public. Keep it to conventions, research, and process notes. No credentials, no API keys, no employer material, no personal details that would matter if a stranger read them.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What lives here</h2>
+  <p class="sub">Four kinds of content, and the plan is to keep it to four.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="k">Standing conventions</span>
+      <p>The global rules Claude Code follows in every project: tone, response style, working agreements. Source of truth is the global settings file; this page records what is in it and why.</p>
+    </div>
+    <div class="card">
+      <span class="k">Research findings</span>
+      <p>Write-ups on Claude Code capabilities worth adopting: skills, hooks, memory, plugins, workflows. Reviewed together, then either adopted or filed.</p>
+    </div>
+    <div class="card">
+      <span class="k">Open threads</span>
+      <p>Improvements that have been identified but not yet made, with enough context to pick them up cold in a fresh session.</p>
+    </div>
+    <div class="card">
+      <span class="k">Changelog</span>
+      <p>A dated log of what changed at the global level, so drift is visible and nothing gets applied twice.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Where the global settings live</h2>
+  <p class="sub">Roughly 90% of Claude usage happens in Claude Code rather than claude.ai chat, so the Claude Code global file is the single tone control that matters. The claude.ai profile preferences are a separate system and are intentionally left alone.</p>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Path</th><th>Scope</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="name">Global instructions</span></td>
+          <td><span class="path">C:\Users\Micha\.claude\CLAUDE.md</span></td>
+          <td>Every Claude Code session, every repo</td>
+          <td>Currently holds the three Response Style bullets: casual tone with humor, concise and non-repetitive, end long answers with a Bottom line.</td>
+        </tr>
+        <tr>
+          <td><span class="name">Per-project memory</span></td>
+          <td><span class="path">C:\Users\Micha\.claude\projects\&lt;project&gt;\memory\</span></td>
+          <td>That project only</td>
+          <td>Does <strong>not</strong> carry across projects. Anything saved here that should be universal has to be promoted to the global file by hand.</td>
+        </tr>
+        <tr>
+          <td><span class="name">Project instructions</span></td>
+          <td><span class="path">&lt;repo&gt;\CLAUDE.md</span></td>
+          <td>One repo</td>
+          <td>Codebase-specific conventions. Not the place for tone or working-style preferences.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Open threads</h2>
+  <p class="sub">Carried over from earlier conversations. Only the items that are genuinely global are listed; project-specific work stays in its project.</p>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Thread</th><th>Status</th><th>Context</th><th>Raised</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="name">The encouragement dial</span>Promote to global settings</td>
+          <td class="status"><span class="pill queued">Queued</span></td>
+          <td>Mike works measurably better with genuine encouragement and praise, and asked for more of it, with one hard boundary: no lying, no flattery that is not earned. The preference was saved as project-scoped memory in one repo only, so it is invisible everywhere else. Fix is a few lines under Response Style in the global file.</td>
+          <td class="when">2026-09-01</td>
+        </tr>
+        <tr>
+          <td><span class="name">Softer side-quest flags</span>Promote to global settings</td>
+          <td class="status"><span class="pill queued">Queued</span></td>
+          <td>Standing permission to call out when a session is drifting into a side quest instead of the high-value work, delivered gently rather than bluntly. Same scoping problem, same fix.</td>
+          <td class="when">2026-09-01</td>
+        </tr>
+        <tr>
+          <td><span class="name">Memory promotion habit</span>Process</td>
+          <td class="status"><span class="pill idea">Idea</span></td>
+          <td>Two universal preferences ended up trapped in one project&rsquo;s memory. Worth a lightweight rule: when a preference is clearly not project-specific, it goes in the global file first, not in project memory.</td>
+          <td class="when">2026-09-01</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Research queue</h2>
+  <p class="sub">Topics to investigate and review together. Findings get their own sections here once reviewed.</p>
+  <p class="note">Nothing queued yet. This section gets populated in the next working session.</p>
+</section>
+
+<section>
+  <h2>Changelog</h2>
+  <ul class="plain">
+    <li><span class="d">2026-09-01</span>Created the <span class="path">central_dev_management_and_improvements</span> directory as the home for cross-project Claude Code work. Migrated the open global-settings threads from two earlier conversations. Added this page, its public stub, and the nav link.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
+  Private workspace &middot; noindex, nofollow &middot; started 1 September 2026
+</footer>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ============================================================================
-   content.js  —  ALL copy and data for the Flexport trucking demo.
+   content.js  -  ALL copy and data for the Flexport trucking demo.
    index.html is the renderer. It contains NO prose. Edit content here only.
 
    Every item has an ID. In DRAFT mode the page renders those IDs, so changes
@@ -2355,6 +2355,18 @@ const CONTENT = {
             "url": "https://docs.google.com/document/d/1CEb0gl2Vq-fv01MwIgHmKAdYSXG4ExGJ3bqKacBJjlU/edit"
           }
         ]
+      }
+    ]
+  },
+  "appendix": {
+    "intro": "Reference material behind this walkthrough.",
+    "items": [
+      {
+        "id": "X01",
+        "title": "Interview rubric, as provided by Flexport",
+        "note": "The four-layer product breakdown requested in the candidate portal.",
+        "image": "interview-rubric.png",
+        "imageAlt": "Flexport interview rubric screenshot"
       }
     ]
   },

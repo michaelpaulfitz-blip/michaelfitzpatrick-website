@@ -25,7 +25,7 @@
   --white:#fff; --terrain-1:#fbf9f6; --terrain:#f4f2ef; --terrain-2:#e8e6e3;
   --dawn:#f0f8f9; --grey-100:#e5e8ea; --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6;
   --dgrey-1:#4d5563; --dgrey-2:#6b747e; --glass:#ffffff33;
-  --maxw:1240px;
+  --maxw:1240px; --rail:230px;
   --r:.3125rem; --r-media:.6875rem; --r-lg:1.25rem; --r-pill:1.875rem;
   --head:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
   --body:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -41,9 +41,12 @@ a{color:var(--electric); text-decoration:none}
 a:hover{color:var(--electric-h)}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.25rem}
 @media(max-width:767px){.wrap{padding:0 1.125rem}}
+/* Wide screens: the fixed rail eats 230px on the left, so widen the content
+   block rather than let it drift right of the optical centre on a shared screen. */
+@media(min-width:1600px){:root{--maxw:1400px}}
 button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit}
 
-/* ═══ Nav ═══ */
+/* ═══ Nav: horizontal bar under 1024px, left rail at 1024px and up ═══ */
 header.nav{position:sticky; top:0; z-index:60; background:var(--midnight);
   border-bottom:1px solid var(--midnight-400)}
 .nav-inner{max-width:var(--maxw); margin:0 auto; padding:.875rem 2.25rem; display:flex;
@@ -52,9 +55,36 @@ header.nav{position:sticky; top:0; z-index:60; background:var(--midnight);
   align-items:center; gap:.5rem; white-space:nowrap}
 .wordmark .mark{width:13px;height:13px;fill:var(--seafoam);flex:none}
 nav.links{display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center}
-nav.links a,nav.links button{color:var(--midnight-100); font-size:.8125rem;
+nav.links a{color:var(--midnight-100); font-size:.8125rem;
   padding-bottom:.1875rem; border-bottom:2px solid transparent; transition:.15s}
-nav.links a:hover,nav.links button:hover{color:var(--white); border-bottom-color:var(--seafoam)}
+nav.links a:hover{color:var(--white); border-bottom-color:var(--seafoam)}
+nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
+.nav-foot{display:flex; align-items:center}
+.navbtn{color:var(--midnight-100); font-size:.8125rem; padding-bottom:.1875rem;
+  border-bottom:2px solid transparent; transition:.15s}
+.navbtn:hover{color:var(--white); border-bottom-color:var(--seafoam)}
+
+@media(min-width:1024px){
+  body{padding-left:var(--rail)}
+  header.nav{position:fixed; top:0; left:0; bottom:0; width:var(--rail);
+    border-bottom:none; border-right:1px solid var(--midnight-400);
+    overflow-y:auto; overscroll-behavior:contain}
+  .nav-inner{max-width:none; margin:0; min-height:100%; padding:1.75rem 0 1.5rem;
+    flex-direction:column; align-items:stretch; justify-content:flex-start;
+    flex-wrap:nowrap; gap:2.25rem}
+  .wordmark{padding:0 1.25rem; white-space:normal; align-items:flex-start;
+    line-height:1.25; gap:.5625rem}
+  .wordmark .mark{margin-top:.25rem}
+  nav.links{flex-direction:column; align-items:stretch; flex-wrap:nowrap; gap:.125rem}
+  nav.links a{padding:.625rem 1.25rem; border-bottom:none;
+    border-left:2px solid transparent; line-height:1.3}
+  nav.links a:hover{color:var(--white); border-left-color:var(--midnight-300)}
+  nav.links a.active{color:var(--seafoam); border-left-color:var(--seafoam)}
+  .nav-foot{margin-top:auto; padding:1.25rem 1.25rem 0;
+    border-top:1px solid var(--midnight-400)}
+  .navbtn{display:block; width:100%; text-align:left; padding:0; border-bottom:none}
+  .navbtn:hover{color:var(--seafoam)}
+}
 
 /* ═══ Draft banner ═══ */
 .draftbar{background:var(--yellow); color:var(--midnight-800); font-size:.75rem;
@@ -231,6 +261,19 @@ ol.reflist,ul.reflist{list-style:none; display:grid; gap:.5rem}
 .reflist a:hover{color:var(--seafoam)}
 .reflist .rl{display:block; color:var(--white); font-weight:500; margin-bottom:.125rem}
 
+/* ═══ Appendix ═══ */
+.apxgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:1.25rem; margin-top:.5rem}
+.apxcard{background:var(--white); border:1px solid var(--terrain-2);
+  border-radius:var(--r-media); padding:1.375rem}
+.apxcard h3{font-size:1.0625rem; line-height:1.25; margin-bottom:.5rem}
+.apxcard p{font-size:.875rem; line-height:1.5; color:var(--dgrey-1); margin-bottom:1.125rem}
+.apxcard img{display:block; width:100%; max-width:100%; height:auto;
+  border-radius:var(--r-media); border:1px solid var(--terrain-2)}
+.apxph{border:1px dashed var(--lgrey-2); border-radius:var(--r-media);
+  background:var(--terrain); color:var(--lgrey-3); font-size:.8125rem;
+  text-align:center; padding:2.5rem 1rem}
+
 /* ═══ Modals ═══ */
 .scrim{position:fixed; inset:0; background:#052439cc; backdrop-filter:blur(3px);
   z-index:200; display:flex; align-items:center; justify-content:center; padding:1.5rem}
@@ -331,12 +374,13 @@ footer a:hover{color:var(--seafoam)}
       Michael Fitzpatrick
     </span>
     <nav class="links">
-      <a href="#lifecycle">01 &middot; The Lifecycle</a>
-      <a href="#mapping">02 &middot; Experience Mapping</a>
-      <a href="#closer">First 90 Days</a>
-      <a href="#references">References</a>
-      <button id="reshow">Show notices</button>
+      <a href="#lifecycle" data-sec="lifecycle">01 &middot; The Lifecycle</a>
+      <a href="#mapping" data-sec="mapping">02 &middot; Experience Mapping</a>
+      <a href="#closer" data-sec="closer">First 90 Days</a>
+      <a href="#references" data-sec="references">References</a>
+      <a href="#appendix" data-sec="appendix">Appendix</a>
     </nav>
+    <div class="nav-foot"><button class="navbtn" id="reshow">Show notices</button></div>
   </div>
 </header>
 
@@ -435,6 +479,17 @@ footer a:hover{color:var(--seafoam)}
       </summary>
       <div class="refbody" id="refBody"></div>
     </details>
+  </div>
+</section>
+
+<section class="band band-light" id="appendix">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="pillarnum">APPENDIX</span>
+      <h2>Appendix</h2>
+      <p id="apxIntro"></p>
+    </div>
+    <div class="apxgrid" id="apxItems"></div>
   </div>
 </section>
 
@@ -637,6 +692,35 @@ footer a:hover{color:var(--seafoam)}
       + '</ul></div>';
   });
   $("#refBody").innerHTML = html;
+
+  /* ---- Appendix ---- */
+  var apx = C.appendix||{};
+  $("#apxIntro").textContent = apx.intro||"";
+  $("#apxItems").innerHTML = (apx.items||[]).map(function(a){
+    var src = (typeof a.image === "string") ? a.image : "";
+    var media = src
+      ? '<img src="'+esc(src)+'" alt="'+esc(a.imageAlt||"")+'" loading="lazy">'
+      : '<div class="apxph">Image not yet added</div>';
+    return '<div class="apxcard"><h3>'+esc(a.title)+id(a.id)+'</h3>'
+      + (a.note ? '<p>'+esc(a.note)+'</p>' : '')
+      + media + '</div>'; }).join("");
+
+  /* ---- Nav active state ---- */
+  var navLinks = [].slice.call(document.querySelectorAll("nav.links a[data-sec]"));
+  var navSecs  = navLinks.map(function(a){ return document.getElementById(a.getAttribute("data-sec")); })
+                         .filter(Boolean);
+  if(window.IntersectionObserver && navSecs.length){
+    var currentSec = null;
+    var paintNav = function(){
+      navLinks.forEach(function(a){
+        a.classList.toggle("active", a.getAttribute("data-sec") === currentSec); });
+    };
+    var navObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) currentSec = e.target.id; });
+      paintNav();
+    }, {rootMargin:"-30% 0px -60% 0px", threshold:0});
+    navSecs.forEach(function(s){ navObs.observe(s); });
+  }
 
   /* ---- Popups ---- */
   var KEY = "fp_notices_seen_v1";

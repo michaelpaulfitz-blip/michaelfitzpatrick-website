@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
+<title>US Ground Freight Lifecycle: Handoffs, Records, and Misaligned Incentives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400;100..125,500;100..125,700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#052439; --midnight-400:#1e3a4d; --midnight-300:#506674; --midnight-200:#82929c; --midnight-100:#b4bdc4;
+  --seafoam:#45dabe; --seafoam-3:#7deed8; --seafoam-5:#319a86; --seafoam-6:#1d5a4f;
+  --teal:#015f74; --teal-1:#e4f1f4; --electric:#2365ff; --indigo:#566ae5; --indigo-1:#ebedfd;
+  --red:#d82f57; --red-1:#fce8ed; --coral:#fa5959; --orange:#f58039; --yellow:#ffa81d;
+  --white:#fff; --terrain-1:#fbf9f6; --terrain:#f4f2ef; --terrain-2:#e8e6e3; --dawn:#f0f8f9;
+  --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6; --dgrey-1:#4d5563; --dgrey-2:#6b747e;
+  --r:5px; --r-media:11px; --r-lg:20px; --r-pill:30px;
+}
+*{box-sizing:border-box}
+html{background:var(--terrain-1);color:var(--midnight)}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--terrain-1);overflow-x:hidden}
+button{font:inherit}
+.wrap{max-width:1760px;margin:0 auto}
+.hero{padding:42px 44px 26px}
+.eyebrow{font:700 12px/1 Archivo,Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;font-variation-settings:'wdth' 112;letter-spacing:.01em}
+h1{margin:0;max-width:1180px;font-size:clamp(34px,4vw,66px);line-height:.98;font-weight:700}
+.hero-copy{max-width:990px;margin:22px 0 0;color:var(--dgrey-1);font-size:18px;line-height:1.55}
+.thesis{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(340px,.75fr);gap:28px;align-items:end;padding:0 44px 38px}
+.thesis-box{border-left:4px solid var(--seafoam);padding:8px 0 8px 20px;font:500 19px/1.55 Archivo,Inter,sans-serif}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.metric{padding:8px 10px 12px;border-top:1px solid var(--midnight-100)}
+.metric strong{display:block;font:700 34px/1 Archivo,Inter,sans-serif;font-variation-settings:'wdth' 112;color:var(--midnight)}
+.metric span{display:block;margin-top:7px;color:var(--dgrey-2);font-size:12px;line-height:1.35}
+
+.dark-band{background:var(--midnight);color:var(--white);padding:32px 32px 30px;position:relative}
+.band-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;padding:0 10px 20px}
+.band-head h2{margin:0;font-size:28px}
+.band-head p{margin:0;max-width:700px;color:var(--midnight-100);font-size:14px;line-height:1.45;text-align:right}
+.key{display:flex;gap:18px;align-items:center;margin-top:10px;font-size:12px;color:var(--midnight-100)}
+.key span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.dot.split{background:var(--red)} .dot.align{background:var(--seafoam)}
+
+.rail-shell{background:var(--midnight-600,#041d2e);border:1px solid var(--midnight-400);border-radius:var(--r-media);padding:14px 12px 16px;overflow:hidden}
+.rail{display:grid;grid-template-columns:132px repeat(12,minmax(0,1fr));grid-template-rows:auto 76px 34px 76px auto;align-items:stretch;min-width:0}
+.corner{grid-column:1;grid-row:1;padding:8px 8px 12px;color:var(--midnight-100);font-size:11px;text-transform:uppercase;letter-spacing:.09em}
+.step-head{padding:6px 5px 10px;text-align:center;min-width:0}
+.step-head button{border:0;background:transparent;color:var(--white);padding:0;width:100%;cursor:pointer}
+.step-num{display:block;color:var(--seafoam);font:700 11px/1 Archivo;letter-spacing:.09em;margin-bottom:7px}
+.step-name{display:block;font:700 12px/1.15 Archivo,Inter,sans-serif;letter-spacing:.01em;overflow-wrap:anywhere}
+.lane-label{display:flex;align-items:center;padding:0 12px;border-right:1px solid var(--midnight-400);color:var(--midnight-100);font:700 11px/1.25 Archivo;text-transform:uppercase;letter-spacing:.08em}
+.lane-label b{color:var(--white);display:block;font-size:12px;margin-top:4px;letter-spacing:.02em;text-transform:none}
+.lane-cell{display:flex;align-items:center;justify-content:center;padding:7px 4px;position:relative;border-left:1px solid rgba(255,255,255,.045)}
+.party{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;border-radius:var(--r);padding:6px 4px;text-align:center;font-size:11px;font-weight:700;line-height:1.15;border:1px solid transparent}
+.party.custody{background:#0f3248;border-color:#24495e;color:#e8f3f7}
+.party.record{background:#183344;border-color:#385566;color:#dce5eb}
+.split-cell .party{box-shadow:inset 0 -2px 0 rgba(216,47,87,.72)}
+.aligned-cell .party{background:#123f3a;border-color:var(--seafoam-5);color:#dffff8;box-shadow:inset 0 0 0 1px rgba(69,218,190,.18)}
+.connector-label{padding:0 8px;display:flex;align-items:center;justify-content:center;color:var(--midnight-100);font-size:10px;text-transform:uppercase;letter-spacing:.08em;border-right:1px solid var(--midnight-400)}
+.connector{position:relative;display:grid;place-items:center;border-left:1px solid rgba(255,255,255,.045)}
+.connector:before{content:"";height:26px;width:2px;background:var(--red);opacity:.72}
+.connector:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 -19px 0 var(--red),0 19px 0 var(--red)}
+.connector.aligned:before{height:30px;width:4px;background:var(--seafoam)}
+.connector.aligned:after{width:11px;height:11px;background:var(--seafoam);box-shadow:0 -18px 0 var(--seafoam),0 18px 0 var(--seafoam)}
+.quiet-label{padding:10px 8px 0;color:var(--midnight-100);font-size:10px;text-transform:uppercase;letter-spacing:.08em;border-right:1px solid var(--midnight-400)}
+.marker-slot{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;padding:8px 3px 0;border-left:1px solid rgba(255,255,255,.045);min-width:0}
+.quiet-marker{width:28px;height:28px;border-radius:50%;border:1px solid var(--midnight-300);background:transparent;color:var(--midnight-100);font-size:9px;font-weight:700;cursor:pointer;padding:0}
+.quiet-marker:hover,.quiet-marker:focus-visible{border-color:var(--seafoam);color:var(--white);outline:none}
+.loud-pin{width:31px;height:31px;border-radius:50%;border:0;background:var(--red);color:#fff;font-size:9px;font-weight:700;cursor:pointer;box-shadow:0 0 0 4px rgba(216,47,87,.18)}
+.loud-pin:focus-visible{outline:2px solid var(--seafoam);outline-offset:2px}
+
+.insight-row{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin:18px 10px 0;padding:14px 16px;border-top:1px solid var(--midnight-400);border-bottom:1px solid var(--midnight-400)}
+.insight-stat{font:700 clamp(24px,2.6vw,42px)/1 Archivo;color:var(--white)}
+.insight-stat em{font-style:normal;color:var(--red)}
+.insight-center{font:700 12px/1.2 Archivo;text-transform:uppercase;letter-spacing:.12em;color:var(--seafoam);text-align:center}
+.insight-copy{font-size:13px;line-height:1.45;color:var(--midnight-100);text-align:right}
+
+.pain-band{padding:38px 44px 42px}
+.section-kicker{font:700 11px/1 Archivo;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.pain-band h2{font-size:31px;margin:0 0 8px}
+.pain-intro{max-width:800px;margin:0 0 24px;color:var(--dgrey-1);font-size:15px;line-height:1.5}
+.loud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.loud-card{display:flex;flex-direction:column;min-height:285px;background:var(--white);border:1px solid #e4d9d8;border-top:5px solid var(--red);border-radius:var(--r-media);padding:18px;cursor:pointer;text-align:left;color:var(--midnight);box-shadow:none}
+.loud-card:hover,.loud-card:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.loud-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dgrey-2)}
+.loud-card h3{margin:12px 0 10px;font-size:23px;line-height:1.08}
+.loud-card p{margin:0;color:var(--dgrey-1);font-size:13.5px;line-height:1.45}
+.big-number{font:700 31px/1 Archivo;color:var(--red);margin-top:auto;padding-top:17px}
+.big-number small{display:block;margin-top:6px;font:500 11px/1.3 Inter;color:var(--dgrey-2)}
+.inversion{margin-top:15px;display:grid;grid-template-columns:1fr 34px 1fr;border-top:1px solid var(--terrain-2);padding-top:14px;align-items:center}
+.inv-side span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--dgrey-2);margin-bottom:5px}
+.inv-side strong{font-size:12px;line-height:1.25}
+.inv-arrow{font:700 22px/1 Archivo;color:var(--orange);text-align:center}
+
+.quiet-strip{margin-top:22px;padding:15px 18px;border-top:1px solid var(--terrain-2);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.quiet-strip b{font:700 11px/1 Archivo;letter-spacing:.08em;text-transform:uppercase;color:var(--dgrey-2);margin-right:4px}
+.quiet-chip{border:1px solid var(--lgrey-2);background:transparent;border-radius:var(--r-pill);padding:8px 11px;color:var(--dgrey-1);font-size:11px;cursor:pointer}
+.quiet-chip:hover,.quiet-chip:focus-visible{border-color:var(--midnight);color:var(--midnight);outline:none}
+
+.bottom-band{background:var(--midnight);color:#fff;padding:30px 44px 36px}
+.bottom-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.bottom-band h2{margin:0 0 9px;font-size:29px}
+.bottom-band p{margin:0;color:var(--midnight-100);font-size:14px;line-height:1.5}
+.arrow-wall{height:112px;display:flex;overflow:hidden;align-items:center;gap:0}
+.arrow-glyph{width:84px;min-width:84px;height:84px;opacity:.055;fill:#fff;margin-right:-22px}
+.arrow-glyph.accent{opacity:1;fill:var(--seafoam)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+.legend span{font-size:11px;color:var(--midnight-100)}
+.legend i{width:14px;height:8px;display:inline-block;margin-right:6px;border-radius:2px;vertical-align:1px}
+.legend .loud{background:var(--red)} .legend .quiet{background:var(--midnight-300)} .legend .align{background:var(--seafoam)}
+
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;background:rgba(2,14,23,.76);z-index:50;display:grid;place-items:center;padding:24px}
+.dialog{width:min(920px,96vw);max-height:88vh;overflow:auto;background:var(--terrain-1);border-radius:var(--r-media);padding:0;color:var(--midnight);box-shadow:0 0 .875rem 0 #00000033}
+.dialog-head{position:sticky;top:0;background:var(--midnight);color:#fff;padding:18px 20px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start;z-index:2}
+.dialog-head h3{margin:4px 0 0;font-size:25px;line-height:1.15}
+.dialog-close{background:transparent;color:#fff;border:0;font-size:28px;cursor:pointer;line-height:1;padding:4px 8px}
+.dialog-body{padding:22px}
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.detail{background:#fff;border:1px solid var(--terrain-2);border-radius:var(--r);padding:13px}
+.detail.wide{grid-column:1/-1}
+.detail .lab{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dgrey-2);margin-bottom:6px;font-weight:700}
+.detail .val{font-size:13.5px;line-height:1.48}
+.decision-block{grid-column:1/-1;display:grid;grid-template-columns:1fr 44px 1fr;gap:10px;align-items:center;background:#fff6ea;border:1px solid #efc28a;border-radius:var(--r-media);padding:16px}
+.decision-block .label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#7a3f0c;margin-bottom:5px;font-weight:700}
+.decision-block .value{font-size:14px;font-weight:700;line-height:1.35}
+.decision-block .arrow{font-size:24px;text-align:center;color:var(--orange);font-weight:700}
+.step-modal-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.step-modal-col{padding:16px;background:#fff;border:1px solid var(--terrain-2);border-radius:var(--r-media)}
+.step-modal-col h4{margin:0 0 8px;font-family:Archivo;font-size:14px}
+.step-modal-col p{margin:0;color:var(--dgrey-1);font-size:13.5px;line-height:1.5}
+
+@media(max-width:1250px){
+  .hero,.thesis,.pain-band,.bottom-band{padding-left:24px;padding-right:24px}
+  .dark-band{padding-left:16px;padding-right:16px}
+  .rail{grid-template-columns:108px repeat(12,minmax(0,1fr))}
+  .step-name{font-size:10.5px}.party{font-size:9.5px}.lane-label{font-size:9px}
+}
+@media(max-width:1023px){
+  .thesis,.bottom-grid{grid-template-columns:1fr}
+  .loud-grid{grid-template-columns:1fr}
+  .band-head{display:block}.band-head p{text-align:left;margin-top:8px}
+  .rail-shell{background:transparent;border:0;padding:0}
+  .rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:10px}
+  .corner,.lane-label,.connector-label,.quiet-label{display:none}
+  .step-head,.lane-cell,.connector,.marker-slot{grid-column:auto!important;grid-row:auto!important;border:0}
+  .step-head{background:#0a2d43;border:1px solid var(--midnight-400);border-radius:var(--r-media) var(--r-media) 0 0;padding:12px}
+  .lane-cell{background:#0a2d43;padding:7px 12px}
+  .connector{height:28px;background:#0a2d43}
+  .marker-slot{background:#0a2d43;padding:10px 8px 13px;border-radius:0 0 var(--r-media) var(--r-media)}
+  .insight-row{grid-template-columns:1fr;margin-left:0;margin-right:0}.insight-copy{text-align:left}.insight-center{text-align:left}
+}
+@media(max-width:640px){
+  .hero{padding-top:26px}
+  .hero-copy{font-size:16px}.metrics{grid-template-columns:1fr 1fr}
+  .rail{grid-template-columns:1fr}
+  .step-modal-columns,.detail-grid,.decision-block{grid-template-columns:1fr}
+  .decision-block .arrow{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">US Ground Freight Lifecycle</div>
+    <h1>Twelve handoffs. No shared system of record.</h1>
+    <p class="hero-copy">A truck move looks linear on paper. Operationally, physical custody and the authoritative record keep changing hands , and the party controlling the decision is usually not the party paying for it.</p>
+  </section>
+
+  <section class="thesis">
+    <div class="thesis-box">The broker sits in the middle absorbing every mismatch: between the shipper's data, the receiver's appointment, the carrier's truck, and the facility's timestamps. Its margin is the residual after all of them.</div>
+    <div class="metrics" aria-label="Supporting freight statistics">
+      <div class="metric"><strong>39.3%</strong><span>of stops incur detention beyond free time</span></div>
+      <div class="metric"><strong>~41%</strong><span>of earned detention ever converts to cash</span></div>
+      <div class="metric"><strong>$15.1B</strong><span>annual industry cost of detention</span></div>
+      <div class="metric"><strong>$2.336</strong><span>marginal cost per mile to run a truck, 2025</span></div>
+    </div>
+  </section>
+
+  <section class="dark-band" aria-labelledby="map-title">
+    <div class="band-head">
+      <div>
+        <h2 id="map-title">Where the physical move and the record diverge</h2>
+        <div class="key"><span><i class="dot split"></i>split</span><span><i class="dot align"></i>aligned</span></div>
+      </div>
+      <p>Every column is one operational handoff. Click a step for the physical and informational detail; click a marker for the failure mode.</p>
+    </div>
+    <div class="rail-shell">
+      <div class="rail" id="rail"></div>
+      <div class="insight-row">
+        <div class="insight-stat"><em>11</em> of 12 steps split</div>
+        <div class="insight-center">The pattern</div>
+        <div class="insight-copy">The only moment physical custody and the authoritative record align is the pickup appointment , where the facility controls both.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain-band" aria-labelledby="pain-title">
+    <div class="section-kicker">Three failures worth fixing first</div>
+    <h2 id="pain-title">The appointment record sits upstream of all three.</h2>
+    <p class="pain-intro">These are not equally weighted observations. They are the three places where a shared operational artifact can convert coordination failure into measurable value.</p>
+    <div class="loud-grid" id="loudGrid"></div>
+    <div class="quiet-strip" id="quietStrip"><b>Other observed failures</b></div>
+  </section>
+
+  <section class="bottom-band">
+    <div class="bottom-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--seafoam)">The product implication</div>
+        <h2>Make the shared record the product.</h2>
+        <p>The most valuable systems in brokerage are not another dashboard on top of the workflow. They are the artifacts both sides accept as authoritative: appointment confirmations, arrival/departure timestamps, carrier-selection evidence, and settlement documentation.</p>
+        <div class="legend"><span><i class="loud"></i>loud pain</span><span><i class="quiet"></i>quiet pain</span><span><i class="align"></i>aligned custody + record</span></div>
+      </div>
+      <div class="arrow-wall" aria-hidden="true" id="arrowWall"></div>
+    </div>
+  </section>
+</div>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="dialog" role="document">
+    <div class="dialog-head">
+      <div><div class="eyebrow" id="modalEyebrow" style="color:var(--seafoam);margin:0 0 4px"></div><h3 id="modalTitle"></h3></div>
+      <button class="dialog-close" id="modalClose" type="button" aria-label="Close dialog">×</button>
+    </div>
+    <div class="dialog-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  steps: [
+    {id:"S01",name:"Quote",physical:"Nothing moves yet. The freight is still sitting at the shipper.",informational:"The shipper asks for a price on a lane. The broker prices off historical lane cost, market data, equipment type, and expected accessorials.",custodyHolder:"Shipper",dataHolder:"Broker"},
+    {id:"S02",name:"Tender",physical:"Still nothing. The truck has not been assigned.",informational:"The shipper formally offers the load at a contracted rate, as an EDI 204 or an API call, carrying stop sequence, appointment windows, weight, and reference numbers.",custodyHolder:"Shipper",dataHolder:"Shipper TMS"},
+    {id:"S03",name:"Accept or reject",physical:"Nothing moves. The freight is still on the origin dock while the load works its way down the routing guide.",informational:"The carrier answers with an EDI 990. Every decline pushes the load one position deeper into the routing guide, and each position past the primary costs roughly 5 to 15 percent more.",custodyHolder:"Shipper",dataHolder:"Shipper TMS"},
+    {id:"S04",name:"Cover",physical:"Still nothing physical. Somewhere a truck is finishing another load and does not know about this one yet.",informational:"The broker buys a truck, working its own network first and the load boards last. The signed rate confirmation is the binding document, and the shipper's record now reads covered without saying by whom.",custodyHolder:"Shipper",dataHolder:"Broker"},
+    {id:"S05",name:"Dispatch",physical:"A truck starts moving toward the origin, empty. The freight itself has still not moved.",informational:"The carrier assigns a driver and equipment and passes the rate confirmation down. Hours of service feasibility gets checked here for the first time, well after the appointment window was promised at tender.",custodyHolder:"Shipper",dataHolder:"Carrier"},
+    {id:"S06",name:"Pickup appointment",physical:"The driver arrives at the origin dock and waits. The freight crosses into the trailer only when the facility is ready to load it.",informational:"The facility's scheduling portal holds the slot, the gate time, and the in and out stamps. Free time runs from the scheduled appointment time rather than from actual arrival, so that portal record is already the billing record.",custodyHolder:"Facility",dataHolder:"Facility"},
+    {id:"S07",name:"In transit",physical:"The freight is on the road, sealed in the trailer, under the driver's control for the length of the run.",informational:"Status flows as EDI 214, an ELD API pull, or a driver app ping. Coverage is thinnest on one to five truck carriers, which is exactly who moves spot freight, so the broker fills the gap with manual check calls.",custodyHolder:"Driver",dataHolder:"Broker"},
+    {id:"S08",name:"Delivery appointment",physical:"The truck sits at the receiver's gate. The freight is still on the trailer and the driver cannot leave.",informational:"The receiver sets the appointment and decides whether to honor it. Detention accrues against a scheduled time the receiver controls, and the receiver carries none of the cost of a bad slot.",custodyHolder:"Driver",dataHolder:"Receiver"},
+    {id:"S09",name:"POD",physical:"The freight comes off the trailer and into the receiver's building. Damage or shortage is noted at this moment or it is never noted at all.",informational:"The signed bill of lading, carrying any OS&D notation, becomes the proof of delivery. It often rides in the cab for days, and nothing downstream can be billed until it lands.",custodyHolder:"Receiver",dataHolder:"Driver"},
+    {id:"S10",name:"Invoice",physical:"Nothing moves. The freight is in the receiver's inventory and the transportation event is finished.",informational:"The carrier bills by EDI 210 with the POD, lumper receipts, and detention documentation attached. Accessorial disputes start here, because the carrier, the broker, the shipper, and the facility each hold a different set of arrival timestamps and none of those sets is shared.",custodyHolder:"Receiver",dataHolder:"Broker"},
+    {id:"S11",name:"Settlement",physical:"Nothing moves. The only thing still in motion is cash.",informational:"The broker remits by EDI 820, typically net 30 from POD, while collecting from the shipper on net 60 to 90. Small carriers cannot finance that gap, so many sell the invoice to a factor at 1 to 5 percent and the factor becomes the party owed.",custodyHolder:"Receiver",dataHolder:"Factor"},
+    {id:"S12",name:"Claims",physical:"The damaged or short freight sits at the receiver, sometimes refused at the door and sometimes accepted with an exception written on the paperwork.",informational:"The Carmack Amendment places near strict liability on the carrier, with nine months to file and two years plus a day to sue. The outcome turns on the POD notation and the document file, which the broker assembled and holds.",custodyHolder:"Receiver",dataHolder:"Broker"}
+  ],
+  markers: [
+    {id:"P01",step:"S08",loud:true,title:"Detention is earned, invoiced, and then never paid",what:"Free time starts from the scheduled appointment time, not from when the driver actually arrives. So the appointment record is the billing record, and the party that holds it wins the argument.",who:"Carriers, and owner-operators hardest of all",frequency:"39.3% of all stops run past the free period",cost:"$15.1B a year industry-wide. Carriers invoice only 75% of the time, and only 55% of those invoices get paid, so roughly 41% of earned detention ever becomes cash.",workaround:"Chase the paperwork inside a 24 to 48 hour window, or write it off.",controlsDecision:"The receiver, who sets and honors the appointment",bearsCost:"The carrier, who has no control over either",flexportAngle:"Flexport books the appointment, so it is already holding the evidence and not turning it into money for its carriers.",aiOpportunity:"replace",aiText:"",source:"ATRI detention study; FreightWaves detention pay clauses",metric:"$15.1B",metricCaption:"annual detention cost"},
+    {id:"P02",step:"S06",loud:true,title:"Booking one load can mean logging into six different portals",what:"No standard exists for facility appointment booking, so each stop is its own system with its own rules and its own confirmation chase. A six-stop shipment means six separate logins and six separate follow-ups afterward.",who:"Broker and 3PL scheduling clerks, and carrier dispatchers",frequency:"Every load, multiplied by the number of stops on it",cost:"Paid in headcount rather than in a line item. Opendock alone covers 4,000+ warehouses and 14M+ annual appointments, and it is one vendor among many.",workaround:"In-house manual portal entry, or outsourcing the same work to cheaper offshore labor pools.",controlsDecision:"The facility, which picks its own scheduling system and writes its own rules",bearsCost:"The broker, which staffs a human for every portal the facility chose",flexportAngle:"Flexport already books these appointments at volume, which gives it the facility relationships and the repetition data to turn portal coverage into a durable asset.",aiOpportunity:"assist",aiText:"An agent can draft and chase most bookings, but the genuinely hard part is write access to thousands of portals with no public API.",source:"Qued CEO interview; Opendock published coverage figures",metric:"6×",metricCaption:"portals can sit inside one multi-stop load"},
+    {id:"P03",step:"S05",loud:true,title:"The last free day arrives before the terminal has a slot to give",what:"Demurrage and per diem clocks run on calendar days while terminal gate slots are rationed, so a container can pass its last free day waiting for an appointment that does not exist yet. Chassis availability constrains the same move a second time.",who:"Drayage carriers and dispatchers, and the cargo owner downstream",frequency:"Every container. Drayage productivity is 1 to 3 turns per day, so one badly placed slot costs a large share of a truck's day.",cost:"Split chassis moves add 45 to 90 minutes per trip with no reimbursement, and equipment providers apply severe penalties for returning a chassis to the wrong terminal.",workaround:"Pre-pull containers early to beat free time, refresh terminal portals by hand hunting for cancellations, and absorb the per diem when neither works.",controlsDecision:"The terminal, alongside the equipment provider that sets chassis rules",bearsCost:"The drayage carrier",flexportAngle:"This pain sits on the seam between Flexport's ocean business and its trucking business, and Flexport knows the container's arrival before anyone downstream does.",aiOpportunity:"assist",aiText:"The countdown and dollar exposure are straightforward once the data sits in one place, but booking the terminal slot runs into the same missing-API wall.",source:"Harbor Trucking Association chassis white paper; Land Line coverage of the D.C. Circuit ruling",metric:"45–90 min",metricCaption:"added by split chassis moves"},
+    {id:"P04",step:"S04",loud:false,title:"The carrier who books the load is not always the carrier who shows up",what:"Carrier identity theft has become the dominant fraud vector. A fraudster takes over a legitimate carrier's authority or email domain and books freight under someone else's safety record.",who:"Brokers, legitimate carriers, and shippers",frequency:"TIA members filed 1,611 fraud reports across eight months, up 65% over the prior period.",cost:"Average gross cost of roughly $402,000 per responding firm, with more than $40,000 lost per fraudulent load.",workaround:"Third-party vetting subscriptions, callback verification, and a hand-maintained blacklist living in the TMS.",controlsDecision:"The broker, choosing a carrier under time pressure",bearsCost:"The broker on the cargo claim, and the legitimate carrier whose safety record was borrowed",flexportAngle:"Fraud signals improve with scale, one of the few genuine data network effects in freight.",aiOpportunity:"assist",aiText:"Anomaly detection is a good fit while identity verification depends on authoritative external data and human escalation.",source:"TIA fraud survey; Verisk CargoNet 2025 cargo theft data"},
+    {id:"P05",step:"S11",loud:false,title:"Carriers take a lower rate to get paid sooner",what:"Standard broker terms run 30 to 45 days while an owner-operator's fuel bill comes due at the pump today.",who:"Small carriers and owner-operators",frequency:"Every invoice",cost:"Quick pay commonly runs about 3%; factoring lands nearer 4% effective after fees.",workaround:"Factor the invoice, buy quick pay, or choose brokers by payment speed ahead of rate.",controlsDecision:"The broker, which sets carrier terms",bearsCost:"The carrier financing the gap, and ultimately the broker paying a hidden rate premium",flexportAngle:"Payment speed is a pricing lever, and a broker paying faster buys capacity cheaper.",aiOpportunity:"assist",aiText:"Automated POD capture and accessorial validation can shorten the cycle without asking a model to make the credit decision.",source:"FreightWaves carrier payment reporting; published factoring and quick pay rate ranges"},
+    {id:"P06",step:"S03",loud:false,title:"The routing guide holds right up until the market moves",what:"Contract rates are backward-looking averages of where spot has been, so when spot climbs past contract the primary carrier declines and the load cascades down the guide.",who:"Shippers first, then the broker holding a fixed-price commitment",frequency:"Continuous through 2026",cost:"Each position beyond primary costs roughly 5 to 15% more.",workaround:"Spot scramble, mini-bids, and more frequent contract renegotiation.",controlsDecision:"The carrier, deciding load by load whether contract still beats spot",bearsCost:"The shipper on cost and OTIF, and the broker whose margin compresses",flexportAngle:"Routing guide depth is a shipper's single best cost-control number.",aiOpportunity:"assist",aiText:"Predicting which tenders will reject is tractable; repricing remains commercial judgment.",source:"FreightWaves SONAR OTRI; J.B. Hunt and Schneider public commentary"},
+    {id:"P07",step:"S04",loud:false,title:"A small carrier can lose access to freight without ever being told why",what:"After the Supreme Court's unanimous Montgomery decision in May 2026, carrier selection is documented legal exposure, so brokers cull hard using third-party scores.",who:"Small carriers and broker compliance teams",frequency:"Rising sharply since May 2026",cost:"Landstar cut its approved network from over 100,000 carriers in Q2 2022 to 64,600 in Q2 2026.",workaround:"Brokers subscribe to vetting services and cull the list.",controlsDecision:"The broker, applying a third-party score",bearsCost:"The small carrier losing access, and the broker paying for capacity it removed",flexportAngle:"Montgomery converts vetting from a checkbox into a system of record.",aiOpportunity:"assist",aiText:"A model can assemble and refresh the evidence file while the selection decision stays human-reviewable.",source:"Montgomery v. Caribe Transport II; Landstar disclosures; ATRI verdict study"},
+    {id:"P08",step:"S07",loud:false,title:"Visibility works best on the fleets that need it least",what:"Location arrives through an ELD integration or driver app ping, with a manual status message as fallback. Quality drops off on one-to-five-truck carriers moving spot freight.",who:"Brokerage operations teams and drivers",frequency:"Every load, daily",cost:"No credible non-vendor figure exists for tracking compliance or check calls per load.",workaround:"Manual check calls, increasingly placed by voice agents.",controlsDecision:"The carrier and driver, who decide whether to share location",bearsCost:"The broker staffing the gap, and the shipper receiving a decaying ETA",flexportAngle:"The interesting remaining work is what the collected data feeds; dwell distributions by facility are a valuable proprietary dataset.",aiOpportunity:"replace",aiText:"Scripted, high-volume, low-stakes calls with a clean human escalation path are the clearest production win in freight AI today.",source:"Ally Logistics CEO on manual touches; visibility provider architecture notes"},
+    {id:"P09",step:"S08",loud:false,title:"An appointment time is a request, and plenty of facilities treat it that way",what:"A facility confirms a slot and then works the dock in arrival order, so the appointment lives in the booking system while the yard runs first come first served.",who:"Drivers most of all, then the carrier",frequency:"Constant. Average dwell is 119 minutes per stop.",cost:"Feeds detention directly; DOT OIG linked dwell increases to higher crash rates.",workaround:"Word of mouth.",controlsDecision:"The facility, which sets the appointment and decides whether to honor it",bearsCost:"The carrier and driver",flexportAngle:"Flexport books enough appointments to know which facilities honor them; facility dwell is a major source of quote error.",aiOpportunity:"assist",aiText:"This is a data problem first; the useful output is a facility reliability score.",source:"SONAR dwell data; DOT OIG detention report; TruckersReport"},
+    {id:"P10",step:"S10",loud:false,title:"Four parties hold four different arrival times and none is authoritative",what:"Accessorial disputes come down to timestamps. Carrier, broker, shipper, and facility can each hold a different arrival time.",who:"Carrier billing clerks and broker accounts payable",frequency:"Every settlement carrying an accessorial",cost:"Magnitude is unmeasured; the mechanism is well documented.",workaround:"Freight audit programs after the fact, plus rate-confirmation authorization clauses.",controlsDecision:"Whoever holds the record the other parties will accept , usually nobody",bearsCost:"The carrier, which discounts or writes off the invoice",flexportAngle:"Publishing a shared arrival/departure record to both sides turns an accessorial argument into a calculation.",aiOpportunity:"assist",aiText:"Document extraction and invoice matching are ready today; reconciliation becomes trivial once a shared timestamp exists.",source:"FreightWaves settlement error taxonomy; rate confirmation clause reporting"}
+  ]
+};
+
+const rail = document.getElementById("rail");
+const byStep = id => DATA.markers.filter(m=>m.step===id);
+
+function renderRail(){
+  rail.innerHTML = "";
+  const corner = document.createElement("div"); corner.className="corner"; corner.textContent="12-step lifecycle"; rail.appendChild(corner);
+
+  DATA.steps.forEach((s,i)=>{
+    const head=document.createElement("div"); head.className="step-head"; head.style.gridColumn=String(i+2); head.style.gridRow="1";
+    head.innerHTML=`<button type="button" data-step="${s.id}" aria-label="Open details for ${s.name}"><span class="step-num">${String(i+1).padStart(2,"0")}</span><span class="step-name">${s.name}</span></button>`;
+    rail.appendChild(head);
+  });
+
+  const custodyLabel=document.createElement("div"); custodyLabel.className="lane-label"; custodyLabel.style.gridColumn="1"; custodyLabel.style.gridRow="2"; custodyLabel.innerHTML=`Lane 1<b>Physical custody</b>`; rail.appendChild(custodyLabel);
+  DATA.steps.forEach((s,i)=>{
+    const aligned=s.custodyHolder===s.dataHolder;
+    const c=document.createElement("div"); c.className=`lane-cell ${aligned?"aligned-cell":"split-cell"}`; c.style.gridColumn=String(i+2); c.style.gridRow="2"; c.innerHTML=`<div class="party custody">${s.custodyHolder}</div>`; rail.appendChild(c);
+  });
+
+  const connectorLabel=document.createElement("div"); connectorLabel.className="connector-label"; connectorLabel.style.gridColumn="1"; connectorLabel.style.gridRow="3"; connectorLabel.textContent="same owner?"; rail.appendChild(connectorLabel);
+  DATA.steps.forEach((s,i)=>{
+    const aligned=s.custodyHolder===s.dataHolder;
+    const c=document.createElement("div"); c.className=`connector ${aligned?"aligned":""}`; c.style.gridColumn=String(i+2); c.style.gridRow="3"; rail.appendChild(c);
+  });
+
+  const recordLabel=document.createElement("div"); recordLabel.className="lane-label"; recordLabel.style.gridColumn="1"; recordLabel.style.gridRow="4"; recordLabel.innerHTML=`Lane 2<b>Authoritative record</b>`; rail.appendChild(recordLabel);
+  DATA.steps.forEach((s,i)=>{
+    const aligned=s.custodyHolder===s.dataHolder;
+    const c=document.createElement("div"); c.className=`lane-cell ${aligned?"aligned-cell":"split-cell"}`; c.style.gridColumn=String(i+2); c.style.gridRow="4"; c.innerHTML=`<div class="party record">${s.dataHolder}</div>`; rail.appendChild(c);
+  });
+
+  const quietLabel=document.createElement("div"); quietLabel.className="quiet-label"; quietLabel.style.gridColumn="1"; quietLabel.style.gridRow="5"; quietLabel.textContent="pain markers"; rail.appendChild(quietLabel);
+  DATA.steps.forEach((s,i)=>{
+    const slot=document.createElement("div"); slot.className="marker-slot"; slot.style.gridColumn=String(i+2); slot.style.gridRow="5";
+    byStep(s.id).forEach(m=>{
+      const b=document.createElement("button");
+      b.type="button"; b.dataset.marker=m.id; b.textContent=m.id; b.className=m.loud?"loud-pin":"quiet-marker"; b.setAttribute("aria-label",`Open ${m.id}: ${m.title}`);
+      slot.appendChild(b);
+    });
+    rail.appendChild(slot);
+  });
+}
+
+function renderPain(){
+  const loud = DATA.markers.filter(m=>m.loud);
+  const grid=document.getElementById("loudGrid");
+  grid.innerHTML=loud.map(m=>`
+    <button type="button" class="loud-card" data-marker="${m.id}">
+      <div class="loud-meta"><span>${m.id} · ${DATA.steps.find(s=>s.id===m.step).name}</span><span>LOUD</span></div>
+      <h3>${m.title}</h3>
+      <p>${m.what}</p>
+      <div class="big-number">${m.metric}<small>${m.metricCaption}</small></div>
+      <div class="inversion">
+        <div class="inv-side"><span>Controls decision</span><strong>${m.controlsDecision}</strong></div>
+        <div class="inv-arrow">→</div>
+        <div class="inv-side"><span>Bears cost</span><strong>${m.bearsCost}</strong></div>
+      </div>
+    </button>`).join("");
+
+  const strip=document.getElementById("quietStrip");
+  DATA.markers.filter(m=>!m.loud).forEach(m=>{
+    const b=document.createElement("button"); b.type="button"; b.className="quiet-chip"; b.dataset.marker=m.id; b.textContent=`${m.id} · ${m.title}`; strip.appendChild(b);
+  });
+}
+
+function renderArrows(){
+  const wall=document.getElementById("arrowWall");
+  const path=`M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z`;
+  for(let i=0;i<11;i++){
+    wall.insertAdjacentHTML("beforeend",`<svg class="arrow-glyph ${i===7?"accent":""}" viewBox="0 0 28 28"><path d="${path}"/></svg>`);
+  }
+}
+
+const modal=document.getElementById("modal"), title=document.getElementById("modalTitle"), eyebrow=document.getElementById("modalEyebrow"), body=document.getElementById("modalBody"), closeBtn=document.getElementById("modalClose");
+let lastFocus=null;
+
+function openStep(id){
+  const s=DATA.steps.find(x=>x.id===id); if(!s)return;
+  lastFocus=document.activeElement; eyebrow.textContent=`${s.id} · operational handoff`; title.textContent=s.name;
+  const aligned=s.custodyHolder===s.dataHolder;
+  body.innerHTML=`
+    <div class="step-modal-columns">
+      <div class="step-modal-col"><h4>Physical</h4><p>${s.physical}</p></div>
+      <div class="step-modal-col"><h4>Information / verification</h4><p>${s.informational}</p></div>
+    </div>
+    <div class="decision-block" style="margin-top:14px;${aligned?"background:#e8fbf6;border-color:#8ee5d3":""}">
+      <div><div class="label">Physical custody</div><div class="value">${s.custodyHolder}</div></div>
+      <div class="arrow">${aligned?"=":"≠"}</div>
+      <div><div class="label">Authoritative record</div><div class="value">${s.dataHolder}</div></div>
+    </div>`;
+  showModal();
+}
+
+function openMarker(id){
+  const m=DATA.markers.find(x=>x.id===id); if(!m)return;
+  lastFocus=document.activeElement; eyebrow.textContent=`${m.id} · ${DATA.steps.find(s=>s.id===m.step).name}${m.loud?" · loud pain":""}`; title.textContent=m.title;
+  body.innerHTML=`
+    <div class="decision-block">
+      <div><div class="label">Controls decision</div><div class="value">${m.controlsDecision}</div></div>
+      <div class="arrow">→</div>
+      <div><div class="label">Bears cost</div><div class="value">${m.bearsCost}</div></div>
+    </div>
+    <div class="detail-grid" style="margin-top:14px">
+      <div class="detail wide"><div class="lab">What happens</div><div class="val">${m.what}</div></div>
+      <div class="detail"><div class="lab">Who feels it</div><div class="val">${m.who}</div></div>
+      <div class="detail"><div class="lab">Frequency</div><div class="val">${m.frequency}</div></div>
+      <div class="detail wide"><div class="lab">Cost</div><div class="val">${m.cost}</div></div>
+      <div class="detail"><div class="lab">Current workaround</div><div class="val">${m.workaround}</div></div>
+      <div class="detail"><div class="lab">AI opportunity · ${m.aiOpportunity}</div><div class="val">${m.aiText||m.aiOpportunity}</div></div>
+      <div class="detail wide"><div class="lab">Flexport angle</div><div class="val">${m.flexportAngle}</div></div>
+      <div class="detail wide"><div class="lab">Source</div><div class="val">${m.source}</div></div>
+    </div>`;
+  showModal();
+}
+
+function showModal(){modal.hidden=false;document.body.style.overflow="hidden";closeBtn.focus()}
+function hideModal(){modal.hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
+closeBtn.addEventListener("click",hideModal);
+modal.addEventListener("click",e=>{if(e.target===modal)hideModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!modal.hidden)hideModal()});
+document.addEventListener("click",e=>{
+  const step=e.target.closest("[data-step]"); if(step)openStep(step.dataset.step);
+  const marker=e.target.closest("[data-marker]"); if(marker)openMarker(marker.dataset.marker);
+});
+
+renderRail(); renderPain(); renderArrows();
+</script>
+</body>
+</html>

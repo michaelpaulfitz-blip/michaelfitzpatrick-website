@@ -385,11 +385,11 @@ a{color:var(--electric);text-decoration:none}
     svg.setAttribute("preserveAspectRatio","none");
     var out=[]; PATHS=[];
     Q.forEach(function(q){
-      var qe=document.querySelector('[data-q="'+q.id+'"]'); if(!qe) return;
+      var qe=document.querySelector('.qchip[data-q="'+q.id+'"]'); if(!qe) return;
       var a=qe.getBoundingClientRect();
       var x1=a.left-g.left+a.width/2, y1=0;
       (q.links||[]).forEach(function(l){
-        var me=document.querySelector('[data-m="'+l.moment+'"]'); if(!me) return;
+        var me=document.querySelector('.moment[data-m="'+l.moment+'"]'); if(!me) return;
         var b=me.getBoundingClientRect();
         var x2=b.left-g.left+b.width/2, y2=g.height;
         var d="M"+x1+","+y1+" C"+x1+","+(g.height*0.55)+" "+x2+","+(g.height*0.45)+" "+x2+","+y2;
@@ -432,7 +432,8 @@ a{color:var(--electric);text-decoration:none}
       if(act[k]) p.setAttribute("class","link "+(act[k]==="primary"?"active":"support"));
       else p.setAttribute("class","link off"); });
     if(pinned){
-      var sel = pinned.type==="q" ? '[data-q="'+pinned.id+'"]' : '[data-m="'+pinned.id+'"]';
+      var sel = pinned.type==="q" ? '.qchip[data-q="'+pinned.id+'"]'
+                                       : '.moment[data-m="'+pinned.id+'"]';
       var pe=document.querySelector(sel); if(pe) pe.classList.add("pinned");
     }
   }

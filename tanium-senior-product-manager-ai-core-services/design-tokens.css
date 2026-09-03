@@ -1,0 +1,100 @@
+/* Tanium design tokens
+   Read directly from the live Tailwind v4 theme block in
+   /_next/static/chunks/06u3lnvlzmor1.css on 2026-09-03.
+   Nothing here is guessed. Evidence is noted per token. */
+
+:root{
+  /* ---- SURFACES ----
+     Dark is the default register: class="dark" appears 25x in the homepage and
+     Atlas markup, "light" 0x. --token-bg-background resolves to navy-600. */
+  --tn-navy-600:    #101842;  /* PAGE BACKGROUND. Base of the 9-step alpha ramp. A blue-black, not neutral black */
+  --tn-navy-900:    #070a20;  /* deepest surface, footer and hero base */
+  --tn-navy-800:    #0a0f2b;  /* section step-down */
+  --tn-navy-700:    #0d1337;
+  --tn-navy-500:    #151e4c;
+  --tn-navy-100:    #324183;  /* lightest navy, borders on dark */
+
+  /* ---- BRAND ACCENT ----
+     The only value in the whole system namespaced to the company:
+     --color-tanium-red-*. This is the single reserved accent. */
+  --tn-red-500:     #e01a33;  /* THE brand red. --token-bg-button-primary */
+  --tn-red-400:     #ff2742;  /* --token-text-link-active on DARK. Use this on navy */
+  --tn-red-600:     #d4122a;  /* --token-text-link on light, --token-border-primary */
+  --tn-red-900:     #751323;  /* --token-bg-button-primary-hover. Darkens, does not lift */
+
+  /* ---- NEUTRALS ----
+     Warm bone rather than grey. Base of the --color-alpha-neutral ramp. */
+  --tn-neutral-200: #efeeeb;  /* 12+ appearances. Warm off-white, the heading colour on dark */
+  --tn-neutral-400: #c6c5c5;  /* --token-text-body on DARK */
+  --tn-neutral-800: #4a4949;  /* --token-text-body on LIGHT */
+  --tn-neutral-300: #dddddd;  /* --token-border-subtle */
+  --tn-white:       #ffffff;
+  --tn-black:       #000000;
+
+  /* ---- SUPPORTING ---- */
+  --tn-gold-300:    #ddc186;  /* --token-text-eyebrow on DARK. The secondary accent */
+  --tn-mint-alpha:  #0ef19a33;/* --token-bg-cta-bar. Reserved for CTA bars only */
+  --tn-green-500:   #9bf04c;
+  --tn-sky-500:     #4a9fe8;
+
+  /* ---- RADIUS ----
+     Small and tight. Nothing is very rounded. */
+  --tn-r-md:  .375rem;  /* DOMINANT. rounded-md 23x, rounded 46x */
+  --tn-r-lg:  .5rem;    /* 16x */
+  --tn-r-sm:  .25rem;   /* 10x */
+  --tn-r-pill: 96px;    /* --Border-Radius-round, pills and avatars only */
+
+  /* ---- TYPE ----
+     Headings and body are the SAME family. --font-heading, --font-body,
+     --font-ui and --font-caption all resolve to var(--font-inter).
+     Self-hosted Inter variable (weight 100..900), which is on Google Fonts,
+     so no substitution is required. Inconsolata is their mono voice. */
+  --tn-font:  'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --tn-mono:  'Inconsolata', ui-monospace, SFMono-Regular, monospace;
+
+  /* ---- SPACING AND LAYOUT ---- */
+  --tn-space: .25rem;   /* 4px base */
+  --tn-measure: 800px;  /* max-w-[800px] appears 11x, the dominant text column */
+  --tn-transition: .15s cubic-bezier(.4,0,.2,1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   THREE RULES THAT DEFINE THE LOOK. Getting any of them wrong makes
+   the page read as generic immediately.
+
+   1. NO SHADOWS FOR DEPTH.
+      20 box-shadow declarations exist; 2 are `none` and 18 are the single
+      Tailwind ring composite. `shadow-focus-ring` appears 265 times and is
+      ALWAYS focus-visible only, so it is a keyboard affordance rather than
+      elevation. Depth comes from TRANSLUCENT PANEL STACKING:
+        background: rgb(239 238 235 / .10);   (bg-neutral-200/10, 18x)
+        box-shadow: 0 0 0 1px var(--tn-navy-100) inset;  (ring-1 ring-inset, 9x)
+      Alpha steps in use: /5, /10, /15, /20.
+
+   2. NEGATIVE LETTER-SPACING ON HEADINGS, UNIFORMLY.
+      Every heading token from 2xl up carries the identical value:
+        --text-{2xl..8xl}--letter-spacing: -.02em
+      Body has no tracking token (0). Positive tracking exists only as
+      opt-in utilities for small uppercase eyebrows.
+      NOTE: this is the exact opposite of Flexport, which used positive
+      tracking. Do not carry the old value across.
+
+   3. BUTTONS FILL AND DARKEN. They never lift.
+        primary        background: var(--tn-red-500)
+        primary:hover  background: var(--tn-red-900)
+        secondary      background: var(--tn-red-900); border 1px
+        focus          box-shadow ring, focus-visible ONLY
+      Tertiary and nav links are text-only with hover:underline and
+      text-decoration-skip-ink:none, transition-colors 200ms.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ---- VISUAL REGISTER ----
+   Dark-dominant and technical, but not dense. Deep navy ground, warm bone
+   text rather than pure white, generous 800px measure, display type up to
+   5rem. Signature motif is translucent panel stacking with a 1px inset ring.
+   Secondary motif is the paired eyebrow chip system in gold, pink, purple
+   and green. Breakpoints: 375px, 640, 768, 1024, 1280, 1536.
+
+   ACCENT DISCIPLINE: #e01a33 is the one reserved accent, stepping to
+   #ff2742 on the navy ground exactly as Tanium does for active links.
+   Gold #ddc186 is the only secondary highlight. Mint stays reserved. */

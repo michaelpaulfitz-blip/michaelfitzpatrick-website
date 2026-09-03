@@ -293,9 +293,7 @@
   (function(){
     const links = [...document.querySelectorAll('.rail a')];
     const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    let ticking = false;
     function update(){
-      ticking = false;
       const line = window.innerHeight * 0.4;
       let current = sections[0];
       for (const s of sections){
@@ -305,7 +303,9 @@
       if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) current = sections[sections.length - 1];
       links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
     }
-    window.addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    // Seven rect reads per scroll event is cheap; no rAF throttling needed, and
+    // skipping rAF means it still tracks in throttled/background tabs.
+    window.addEventListener('scroll', update, {passive:true});
     window.addEventListener('resize', update);
     update();
   })();

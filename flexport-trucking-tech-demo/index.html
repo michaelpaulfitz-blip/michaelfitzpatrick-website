@@ -199,21 +199,23 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 .lifewrap{position:relative; margin-top:.75rem; --lifelabel:112px}
 
 /* The process line, with vehicles moving steadily left to right. */
-.flowline{position:relative; height:26px; margin-left:var(--lifelabel);
+.flowline{position:relative; height:36px; margin-left:var(--lifelabel);
   margin-bottom:.375rem}
-.flowrule{position:absolute; left:0; right:0; top:12px; height:2px; border-radius:2px;
+.flowrule{position:absolute; left:0; right:0; top:17px; height:2px; border-radius:2px;
   background:linear-gradient(90deg,var(--seafoam-5) 0%,var(--teal) 55%,var(--midnight-300) 100%);
   opacity:.45}
 .flowveh{position:absolute; inset:0; overflow:hidden}
-.veh{position:absolute; top:1px; width:22px; height:22px; color:var(--teal);
-  animation:drive 26s linear infinite; will-change:transform}
+/* translateX(100%) resolves against the ELEMENT's own width, so animating the
+   transform moved these ~30px and reset. Animate `left`, where a percentage
+   resolves against the containing block, and they cross the whole rule. */
+.veh{position:absolute; top:3px; width:31px; height:31px; color:var(--teal);
+  animation:drive 13s linear infinite; will-change:left}
 .veh svg{width:100%;height:100%;display:block}
-.veh:nth-child(2){animation-delay:-8.6667s}
-.veh:nth-child(3){animation-delay:-17.3333s}
-@keyframes drive{from{transform:translateX(-30px)}
-  to{transform:translateX(calc(100% + 30px))}}
-@media(prefers-reduced-motion:reduce){.veh{animation:none; left:0}
-  .veh:nth-child(2){left:38%} .veh:nth-child(3){left:76%}}
+.veh:nth-child(2){animation-delay:-4.3333s}
+.veh:nth-child(3){animation-delay:-8.6667s}
+@keyframes drive{from{left:-36px} to{left:100%}}
+@media(prefers-reduced-motion:reduce){.veh{animation:none; left:2%}
+  .veh:nth-child(2){left:46%} .veh:nth-child(3){left:90%}}
 .flowcaps{display:flex; justify-content:space-between; margin-left:var(--lifelabel);
   font-size:.625rem; letter-spacing:.1em; text-transform:uppercase;
   color:var(--lgrey-3); font-weight:700; margin-bottom:.5rem}
@@ -222,7 +224,7 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 .lifescroll{overflow-x:visible; overflow-y:visible; padding-bottom:.5rem}
 .lifetable{display:grid;
   grid-template-columns:var(--lifelabel) repeat(12, minmax(0,1fr));
-  grid-template-rows:auto 84px 100px 30px 30px 78px;
+  grid-template-rows:auto 84px 100px 32px 32px 78px;
   gap:.3125rem; align-items:stretch}
 .rowlabel{display:flex; flex-direction:column; justify-content:center;
   padding:.25rem .625rem .25rem 0; font-size:.6875rem; line-height:1.25;
@@ -231,7 +233,14 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 .rowlabel b{font-family:var(--head); font-variation-settings:'wdth' 112;
   font-weight:700; font-size:.6875rem; letter-spacing:.07em; text-transform:uppercase;
   color:var(--midnight)}
-.rowlabel span{font-size:.625rem; color:var(--lgrey-3); font-weight:400; margin-top:.125rem}
+.rowlabel span{font-size:.625rem; color:var(--lgrey-3); font-weight:400;
+  margin-top:.125rem; line-height:1.2}
+/* Custody and Record sit in two 32px rows and their labels used to collide.
+   Custody is now a single word; Record keeps its subtext but is anchored to the
+   bottom of its row so it drops clear of the one above it. */
+.rowlabel.pad0{padding-top:0; padding-bottom:0}
+.rowlabel.pad0 b{line-height:1}
+.rowlabel.low{justify-content:flex-end}
 
 .stcell{display:flex; align-items:center; gap:.25rem; padding:.125rem}
 .stnum{font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
@@ -764,15 +773,16 @@ footer a:hover{color:var(--seafoam)}
 
     // Column 1: the row labels.
     var LABELS = [
-      { r:1, b:"Step",     s:"" },
-      { r:2, b:"Physical", s:"What is happening to the freight" },
-      { r:3, b:"Information", s:"Data, money, and verification" },
-      { r:4, b:"Custody",  s:"Who holds the freight" },
-      { r:5, b:"Record",      s:"Who holds the authoritative record" },
-      { r:6, b:"Friction", s:"Where it breaks" }
+      { r:1, b:"Process steps",            s:"" },
+      { r:2, b:"Freight location",         s:"Where the freight physically is" },
+      { r:3, b:"Process step information", s:"" },
+      { r:4, b:"Custody",                  s:"" },
+      { r:5, b:"Record",                   s:"Authoritative version" },
+      { r:6, b:"Pain points",              s:"Where the friction lands" }
     ];
     LABELS.forEach(function(L){
-      html += '<div class="rowlabel" style="grid-column:1;grid-row:'+L.r+'">'
+      var cls = "rowlabel" + (L.r===4 ? " pad0" : "") + (L.r===5 ? " pad0 low" : "");
+      html += '<div class="'+cls+'" style="grid-column:1;grid-row:'+L.r+'">'
         + '<b>'+esc(L.b)+'</b>'
         + (L.s ? '<span>'+esc(L.s)+'</span>' : '') + '</div>';
     });

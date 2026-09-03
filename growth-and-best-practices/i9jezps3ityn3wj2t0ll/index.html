@@ -43,7 +43,22 @@
   .head-inner .back{font-size:14px; color:var(--faded)}
   .head-inner .back:hover{color:var(--clay-deep)}
 
-  main{max-width:var(--maxw); margin:0 auto; padding:44px 28px 20px}
+  /* Layout: sticky left rail + content column */
+  .shell{max-width:var(--maxw); margin:0 auto; padding:0 28px;
+    display:grid; grid-template-columns:210px minmax(0,1fr); gap:48px; align-items:start}
+  main{padding:44px 0 20px; min-width:0}
+
+  aside.rail{position:sticky; top:0; align-self:start; padding:52px 0 40px;
+    max-height:100vh; overflow-y:auto}
+  .rail .k{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faded);
+    font-weight:bold; display:block; margin-bottom:12px; padding-left:14px}
+  .rail ul{list-style:none}
+  .rail li{margin:0}
+  .rail a{display:block; padding:7px 14px; font-size:14.5px; line-height:1.35; color:var(--faded);
+    border-left:2px solid var(--hairline); transition:color .15s, border-color .15s}
+  .rail a:hover{color:var(--ink)}
+  .rail a.active{color:var(--ink); font-weight:bold; border-left-color:var(--clay)}
+  section{scroll-margin-top:24px}
   h1{font-size:40px; line-height:1.1; letter-spacing:-.8px; margin-bottom:10px}
   h2{font-size:26px; line-height:1.2; letter-spacing:-.3px; margin-bottom:6px}
   p{margin-bottom:16px; color:var(--faded)}
@@ -102,11 +117,17 @@
     color:var(--faded); font-size:13px; letter-spacing:.3px}
   footer .wordmark{font-size:16px}
 
-  @media (max-width:760px){
+  @media (max-width:900px){
+    .shell{display:block; padding:0 22px}
+    aside.rail{position:static; max-height:none; padding:28px 0 0; overflow:visible}
+    .rail ul{display:flex; flex-wrap:wrap; gap:6px 4px}
+    .rail a{border-left:none; border-bottom:2px solid var(--hairline); padding:5px 10px; font-size:13.5px}
+    .rail a.active{border-bottom-color:var(--clay)}
+    .rail .k{padding-left:0}
     body{font-size:16px}
     h1{font-size:32px}
     h2{font-size:23px}
-    main{padding:32px 22px 16px}
+    main{padding:32px 0 16px}
   }
 </style>
 </head>
@@ -119,9 +140,24 @@
   </div>
 </header>
 
+<div class="shell">
+
+<aside class="rail" aria-label="Sections">
+  <span class="k">On this page</span>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#what-lives-here">What lives here</a></li>
+    <li><a href="#global-settings">Where the global settings live</a></li>
+    <li><a href="#open-threads">Open threads</a></li>
+    <li><a href="#research-queue">Research queue</a></li>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#changelog">Changelog</a></li>
+  </ul>
+</aside>
+
 <main>
 
-<section>
+<section id="overview">
   <div class="eyebrow">Private Workspace &middot; Not linked, not indexed</div>
   <h1>Growth and Best Practices</h1>
   <p class="lede">Home base for everything that makes working with Claude Code better across <em>every</em> project, not just one. Standing conventions, research findings, and the running list of improvements worth making.</p>
@@ -134,7 +170,7 @@
   </div>
 </section>
 
-<section>
+<section id="what-lives-here">
   <h2>What lives here</h2>
   <p class="sub">Four kinds of content, and the plan is to keep it to four.</p>
   <div class="grid">
@@ -157,7 +193,7 @@
   </div>
 </section>
 
-<section>
+<section id="global-settings">
   <h2>Where the global settings live</h2>
   <p class="sub">Roughly 90% of Claude usage happens in Claude Code rather than claude.ai chat, so the Claude Code global file is the single tone control that matters. The claude.ai profile preferences are a separate system and are intentionally left alone.</p>
   <div class="tablewrap">
@@ -189,7 +225,7 @@
   </div>
 </section>
 
-<section>
+<section id="open-threads">
   <h2>Open threads</h2>
   <p class="sub">Carried over from earlier conversations. Only the items that are genuinely global are listed; project-specific work stays in its project.</p>
   <div class="tablewrap">
@@ -221,25 +257,59 @@
   </div>
 </section>
 
-<section>
+<section id="research-queue">
   <h2>Research queue</h2>
   <p class="sub">Topics to investigate and review together. Findings get their own sections here once reviewed.</p>
   <p class="note">Nothing queued yet. This section gets populated in the next working session.</p>
 </section>
 
-<section>
+<section id="glossary">
+  <h2>Glossary</h2>
+  <p class="sub">Shared vocabulary so Mike and Claude mean the same thing by the same word. The canonical copy lives in the global settings file; this is the readable mirror.</p>
+  <p class="note">Empty for now. Terms get added here as they are agreed.</p>
+</section>
+
+<section id="changelog">
   <h2>Changelog</h2>
   <ul class="plain">
+    <li><span class="d">2026-09-01</span>Added the left-side section rail with scroll-tracked highlighting, and an empty Glossary section.</li>
     <li><span class="d">2026-09-01</span>Created the <span class="path">central_dev_management_and_improvements</span> directory as the home for cross-project Claude Code work. Migrated the open global-settings threads from two earlier conversations. Added this page, its public stub, and the nav link.</li>
   </ul>
 </section>
 
 </main>
 
+</div>
+
 <footer>
   <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
   Private workspace &middot; noindex, nofollow &middot; started 1 September 2026
 </footer>
+
+<script>
+  // Highlight the rail link for the section currently in view.
+  // The "current" section is the last one whose top has crossed a line
+  // 40% down the viewport, which feels right for both short and tall sections.
+  (function(){
+    const links = [...document.querySelectorAll('.rail a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    let ticking = false;
+    function update(){
+      ticking = false;
+      const line = window.innerHeight * 0.4;
+      let current = sections[0];
+      for (const s of sections){
+        if (s.getBoundingClientRect().top <= line) current = s;
+      }
+      // At the very bottom, the last section wins even if it is short.
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) current = sections[sections.length - 1];
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+    }
+    window.addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 
 </body>
 </html>

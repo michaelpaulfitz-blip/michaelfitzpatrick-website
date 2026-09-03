@@ -32,6 +32,9 @@ Tracked as `T07` in the draft TODO panel.
 
 ## State
 
-`DRAFT = true`. Content IDs are visible on every card and the TODO panel is on, so the
-content pass can be given as "kill R11, W07 needs a harder number". Flip `DRAFT` and
-`SHOW_TODOS` to `false` in `content.js`, bump the cache-buster, and redeploy to ship.
+SHIPPED. `DRAFT = false` and `SHOW_TODOS = false`. No draft bar, no open-decisions panel,
+no content IDs on cards. Verified at 1600px: 29 connectors, idle opacity 0.10, trace and
+Escape both correct, coach mark intact, `noindex, nofollow` present, both scripts stamped.
+
+To take another content pass, flip both flags back to `true`, bump the cache-buster in
+`index.html`, and redeploy.

@@ -6,8 +6,8 @@
    Bump the ?v= cache-buster in index.html on EVERY change to this file.
    ═══════════════════════════════════════════════════════════════════════ */
 
-const DRAFT      = true;    // draft bar, TODO panel, visible content IDs
-const SHOW_TODOS = true;
+const DRAFT      = false;    // draft bar, TODO panel, visible content IDs
+const SHOW_TODOS = false;
 
 const CONTENT = {
 

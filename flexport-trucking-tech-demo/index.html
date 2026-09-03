@@ -870,7 +870,7 @@ footer a:hover{color:var(--seafoam)}
       document.getElementById("coachTitle").textContent = st.title;
       document.getElementById("coachBody").textContent  = st.body;
       if(!placeCoach(st.target)){ coach.hidden = true; return; }
-      requestAnimationFrame(function(){ coach.classList.add("on","pulse"); });
+      setTimeout(function(){ coach.classList.add("on","pulse"); }, 20);
       coachState = i + 1;
     }
     function killCoach(){
@@ -947,6 +947,7 @@ footer a:hover{color:var(--seafoam)}
   // Layout settles a frame after paint, and webfonts land later still and change
   // card heights. Draw on both, plus a late backstop.
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ drawEdges(activeId); }); });
+  setTimeout(function(){ drawEdges(activeId); }, 80);
   if(document.fonts && document.fonts.ready){
     document.fonts.ready.then(function(){ drawEdges(activeId); });
   }

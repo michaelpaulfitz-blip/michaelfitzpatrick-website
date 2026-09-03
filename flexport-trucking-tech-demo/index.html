@@ -844,7 +844,6 @@ footer a:hover{color:var(--seafoam)}
   var coach = document.getElementById("coach");
   if(coach && problems.length){
     var coachState = 0, coachDead = false;
-    window.__coachDbg = {state:0, dead:false, calls:0, inView:null, shown:0, target:null, placed:null};
     var STEPS = [
       { target: problems[0] && problems[0].id,
         title: "Click a hard problem",
@@ -866,15 +865,11 @@ footer a:hover{color:var(--seafoam)}
       return true;
     }
     function showCoach(i){
-      var st = STEPS[i];
-      window.__coachDbg.shown++; window.__coachDbg.target = st && st.target;
-      if(!st || !st.target || coachDead) return;
+      var st = STEPS[i]; if(!st || !st.target || coachDead) return;
       coach.hidden = false;
       document.getElementById("coachTitle").textContent = st.title;
       document.getElementById("coachBody").textContent  = st.body;
-      var ok = placeCoach(st.target);
-      window.__coachDbg.placed = ok;
-      if(!ok){ coach.hidden = true; return; }
+      if(!placeCoach(st.target)){ coach.hidden = true; return; }
       requestAnimationFrame(function(){ coach.classList.add("on","pulse"); });
       coachState = i + 1;
     }
@@ -915,9 +910,6 @@ footer a:hover{color:var(--seafoam)}
       return r.top < window.innerHeight * 0.6 && r.bottom > 0;
     }
     function maybeShowCoach(){
-      window.__coachDbg.calls++;
-      window.__coachDbg.state = coachState; window.__coachDbg.dead = coachDead;
-      window.__coachDbg.inView = coachInView();
       if(coachState !== 0 || coachDead) return;
       if(!coachInView()) return;
       coachState = -1;                       // claim it so both paths cannot double-fire
@@ -934,6 +926,15 @@ footer a:hover{color:var(--seafoam)}
       io.observe(document.getElementById("colProblems"));
     }
     setTimeout(maybeShowCoach, 700);         // covers a deep link that lands already scrolled
+
+    // Belt and braces. Some embedded and in-app browsers deliver neither
+    // IntersectionObserver callbacks nor scroll events, and this prompt is the
+    // whole reason the board gets used. Poll briefly, then stop.
+    var coachPoll = setInterval(function(){
+      if(coachState !== 0 || coachDead){ clearInterval(coachPoll); return; }
+      maybeShowCoach();
+    }, 400);
+    setTimeout(function(){ clearInterval(coachPoll); }, 90000);
 
     window.addEventListener("resize", function(){
       if(!coachDead && coachState >= 1 && coachState <= 2){

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>UARC2 Product Walkthrough · Michael Fitzpatrick</title>
+<title>Trucking Lifecycle and Experience Map · Michael Fitzpatrick</title>
 <meta name="description" content="Twelve handoffs, where they break, and who pays for it. Prepared for a conversation with Flexport.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -908,8 +908,8 @@ footer a:hover{color:var(--seafoam)}
             io.disconnect();
           }
         });
-      }, {threshold:.35});
-      io.observe(document.getElementById("mapping"));
+      }, {threshold:0, rootMargin:"0px 0px -45% 0px"});
+      io.observe(document.getElementById("colProblems"));
     } else { setTimeout(function(){ showCoach(0); }, 900); }
 
     window.addEventListener("resize", function(){
@@ -920,7 +920,13 @@ footer a:hover{color:var(--seafoam)}
   }
 
   window.addEventListener("resize", function(){ drawEdges(activeId); });
-  setTimeout(function(){ drawEdges(null); }, 60);
+  // Layout settles a frame after paint, and webfonts land later still and change
+  // card heights. Draw on both, plus a late backstop.
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ drawEdges(activeId); }); });
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ drawEdges(activeId); });
+  }
+  setTimeout(function(){ drawEdges(activeId); }, 400);
   if(window.ResizeObserver){ new ResizeObserver(function(){ drawEdges(activeId); }).observe(layer); }
 
   /* ---- Closer ---- */

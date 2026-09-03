@@ -91,6 +91,14 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
   font-weight:600; letter-spacing:.06em; text-transform:uppercase; text-align:center;
   padding:.4375rem 1rem}
 
+.apxsub{margin-top:3rem; padding-top:2.25rem; border-top:1px solid var(--terrain-2)}
+.apxsub h3{font-size:1.25rem; margin-bottom:.625rem}
+.apxsub > p{font-size:.9375rem; color:var(--dgrey-1); line-height:1.6;
+  max-width:70ch; margin-bottom:1.75rem}
+.navsub{display:block; font-size:.6875rem; color:var(--midnight-300);
+  letter-spacing:.04em; margin-top:.0625rem}
+nav.links a.active .navsub{color:var(--seafoam-5)}
+
 /* ═══ Bands ═══ */
 .band{padding:5rem 0; position:relative}
 .band-dark{background:var(--midnight); color:var(--white)}
@@ -179,30 +187,57 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
 @media(max-width:600px){.walka{padding-left:1.125rem}}
 
 /* ═══ PILLAR 01: lifecycle ═══ */
+/* Full-bleed: the diagram escapes the centred wrap and uses every pixel
+   available beside the fixed rail, so all twelve steps fit in one view. */
+.fullbleed{padding:0 1.5rem}
+@media(max-width:767px){.fullbleed{padding:0 1rem}}
 .lifewrap{position:relative; margin-top:1rem}
-.lifescroll{overflow-x:auto; overflow-y:visible; padding-bottom:1.25rem;
-  scrollbar-width:thin}
-.lifescroll::-webkit-scrollbar{height:8px}
-.lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
-.lifegrid{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(196px,1fr);
-  gap:.625rem; min-width:min-content}
-.single-line .lifegrid{grid-auto-columns:minmax(164px,1fr)}
-.stepcol{display:flex; flex-direction:column; gap:.5rem}
-.stephead{display:flex; align-items:baseline; gap:.4375rem; padding:0 .125rem}
+.lifescroll{overflow-x:visible; overflow-y:visible; padding-bottom:.5rem}
+.lifegrid{display:grid; grid-auto-flow:column; grid-auto-columns:1fr;
+  gap:.4375rem; position:relative; padding-top:2.25rem}
+
+/* The process line. One rule runs the whole width, a dot marks each step, and a
+   chevron sits in every gap so the left-to-right movement is explicit. */
+.lifegrid:before{content:''; position:absolute; left:0; right:0; top:.6875rem;
+  height:2px; border-radius:2px;
+  background:linear-gradient(90deg,var(--seafoam-5) 0%,var(--teal) 55%,var(--midnight-300) 100%);
+  opacity:.4}
+.stepcol{display:flex; flex-direction:column; gap:.4375rem; position:relative; min-width:0}
+.stepcol:before{content:''; position:absolute; top:.25rem; left:50%;
+  transform:translateX(-50%); width:15px; height:15px; border-radius:50%;
+  background:var(--terrain-1); border:2px solid var(--seafoam-5); z-index:2}
+.stepcol:not(:last-child):after{content:''; position:absolute; top:.5rem;
+  right:calc(-.4375rem - 3px); width:0; height:0; z-index:3;
+  border-top:5px solid transparent; border-bottom:5px solid transparent;
+  border-left:7px solid var(--teal); opacity:.75}
+@media(max-width:1100px){
+  .lifescroll{overflow-x:auto; scrollbar-width:thin; padding-bottom:1rem}
+  .lifescroll::-webkit-scrollbar{height:8px}
+  .lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
+  .lifegrid{grid-auto-columns:minmax(172px,1fr); min-width:min-content}
+}
+.lifeflowcap{display:flex; justify-content:space-between; font-size:.625rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--lgrey-3);
+  font-weight:700; margin:0 .125rem .375rem}
+.stephead{display:flex; align-items:center; gap:.3125rem; padding:0 .125rem;
+  flex-wrap:wrap}
+.stepico{width:15px; height:15px; flex:none; color:var(--teal); margin-right:.0625rem}
+.stepico svg{width:100%; height:100%; display:block}
 .stepnum{font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
   font-size:.6875rem; letter-spacing:.08em; color:var(--seafoam-5)}
-.stepname{font-family:var(--head); font-weight:600; font-size:.9375rem; line-height:1.2}
-.cell{border-radius:var(--r-media); padding:.75rem .8125rem; font-size:.78125rem;
-  line-height:1.45; min-height:104px}
+.stepname{font-family:var(--head); font-weight:600; font-size:.8125rem; line-height:1.15}
+.cell{border-radius:var(--r-media); padding:.5625rem .625rem; font-size:.71875rem;
+  line-height:1.4; min-height:92px; display:-webkit-box; -webkit-line-clamp:7;
+  -webkit-box-orient:vertical; overflow:hidden}
 .cell-phys{background:var(--white); border:1px solid var(--terrain-2); color:var(--dgrey-1)}
 .cell-info{background:var(--dawn); border:1px solid #d8e8ec; color:var(--dgrey-1)}
 .single-line .cell-info{display:none}
 .holders{display:flex; flex-direction:column; gap:.25rem; font-size:.6875rem}
-.holder{display:flex; align-items:center; gap:.375rem; padding:.3125rem .5rem;
+.holder{display:flex; align-items:center; gap:.25rem; padding:.25rem .375rem;
   border-radius:var(--r); background:var(--terrain); color:var(--dgrey-2)}
 .holder b{font-weight:600; color:var(--midnight); font-size:.6875rem}
-.holder .k{font-size:.5625rem; letter-spacing:.09em; text-transform:uppercase;
-  color:var(--lgrey-3); flex:none; width:44px}
+.holder .k{font-size:.5rem; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--lgrey-3); flex:none; width:38px}
 .split .holder{background:#fdf1e6; color:#8a4a12}
 .split .holder b{color:#7a3f0c}
 .splitflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
@@ -210,7 +245,7 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
 .alignflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
   color:var(--seafoam-5); font-weight:700; padding-left:.125rem}
 .mrow{display:flex; flex-wrap:wrap; gap:.3125rem; min-height:1.5rem}
-.mbadge{font-size:.6875rem; font-weight:600; padding:.3125rem .5625rem;
+.mbadge{font-size:.625rem; font-weight:600; padding:.25rem .4375rem;
   border-radius:var(--r-pill); transition:.15s; text-align:left; line-height:1.25}
 .mbadge.quiet{background:var(--terrain-2); color:var(--dgrey-2)}
 .mbadge.quiet:hover{background:var(--lgrey-2); color:var(--midnight)}
@@ -234,7 +269,8 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
 .band-dark .metric .cap{color:var(--midnight-100)}
 
 /* ═══ PILLAR 02: mapping board ═══ */
-.board{position:relative; display:grid; grid-template-columns:1fr 88px 1fr; gap:0;
+.board{position:relative; display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(130px,15vw,300px) minmax(0,1fr); gap:0;
   align-items:stretch; margin-top:1rem}
 .edgelayer{align-self:stretch; min-height:100%}
 @media(max-width:900px){.board{grid-template-columns:1fr; gap:1.5rem}
@@ -260,6 +296,27 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
   font-variant-numeric:lining-nums tabular-nums}
 .boardhint{font-size:.8125rem; color:var(--midnight-200); margin-top:1.5rem;
   padding-top:1.25rem; border-top:1px solid var(--midnight-400)}
+
+/* ═══ Coach mark: unmissable prompt to actually click a problem ═══ */
+.coach{position:absolute; z-index:40; width:246px; background:var(--orange);
+  color:#2a1403; border-radius:var(--r-media); padding:.875rem 1rem;
+  box-shadow:0 10px 30px rgba(5,36,57,.45); opacity:0; transform:translateY(6px);
+  transition:opacity .28s, transform .28s; pointer-events:none}
+.coach.on{opacity:1; transform:none; pointer-events:auto}
+.coach:after{content:''; position:absolute; left:-9px; top:22px; width:0; height:0;
+  border-top:9px solid transparent; border-bottom:9px solid transparent;
+  border-right:9px solid var(--orange)}
+.coach b{display:block; font-family:var(--head); font-variation-settings:'wdth' 112;
+  font-weight:700; font-size:.9375rem; line-height:1.25; margin-bottom:.3125rem}
+.coach p{font-size:.8125rem; line-height:1.4; color:#4a2a08; margin:0}
+.coach .x{position:absolute; top:.4375rem; right:.5625rem; font-size:.875rem;
+  line-height:1; color:#7a4a12; padding:.125rem .25rem}
+.coach .x:hover{color:#2a1403}
+.coach.pulse{animation:coachPulse 1.7s ease-in-out infinite}
+@keyframes coachPulse{0%,100%{box-shadow:0 10px 30px rgba(5,36,57,.45)}
+  50%{box-shadow:0 10px 30px rgba(5,36,57,.45),0 0 0 7px rgba(245,128,57,.24)}}
+.pcard.coachtarget{box-shadow:0 0 0 2px var(--orange) inset}
+@media(prefers-reduced-motion:reduce){.coach,.coach.pulse{animation:none;transition:none}}
 
 /* ═══ Closer ═══ */
 .bets{display:grid; grid-template-columns:repeat(auto-fit,minmax(272px,1fr)); gap:1.25rem;
@@ -420,10 +477,8 @@ footer a:hover{color:var(--seafoam)}
       Michael Fitzpatrick
     </span>
     <nav class="links">
-      <a href="#walkthrough" data-sec="walkthrough">UARC2 Walkthrough</a>
-      <a href="#closer" data-sec="closer">First 90 Days</a>
-      <a href="#lifecycle" data-sec="lifecycle">Background &middot; The Lifecycle</a>
-      <a href="#mapping" data-sec="mapping">Background &middot; Experience Map</a>
+      <a href="#lifecycle" data-sec="lifecycle">Trucking Lifecycle</a>
+      <a href="#mapping" data-sec="mapping">Trucking Tech &rarr; Mike Fitzpatrick<br><span class="navsub">Experience Map</span></a>
       <a href="#references" data-sec="references">References</a>
       <a href="#appendix" data-sec="appendix">Appendix</a>
     </nav>
@@ -454,41 +509,16 @@ footer a:hover{color:var(--seafoam)}
   </div>
 </section>
 
-<section class="band band-light" id="walkthrough">
-  <div class="wrap">
-    <div class="sechead">
-      <span class="pillarnum">THE PRODUCT</span>
-      <h2>UARC2: supply chain visibility and failure diagnostics</h2>
-      <p id="walkIntro"></p>
-    </div>
-    <div class="walkbar">
-      <div class="walkchips" id="walkChips"></div>
-      <button class="walktoggle" id="walkToggle" data-state="closed">Expand all</button>
-    </div>
-    <div id="walkGroups"></div>
-  </div>
-</section>
 
-<section class="band band-dawn" id="closer">
-  <div class="wrap">
-    <div class="sechead">
-      <span class="pillarnum">CLOSER</span>
-      <h2>If I had ninety days</h2>
-      <p id="closerFraming"></p>
-    </div>
-    <div class="bets" id="bets"></div>
-    <div class="closerfoot" id="closerFoot"></div>
-  </div>
-</section>
+
+
 
 <section class="band band-light" id="lifecycle">
   <div class="wrap">
     <div class="sechead">
-      <span class="pillarnum">BACKGROUND 01</span>
+      <span class="pillarnum">TRUCKING LIFECYCLE</span>
       <h2>The ground freight lifecycle, and where it breaks</h2>
-      <p>Background rather than the main event. I built this while learning the domain, and I am
-      keeping it here because it is the clearest way to show how I take a new operation apart.
-      Twelve handoffs. The top lane is the freight itself. The bottom lane is the information,
+      <p>Twelve handoffs, left to right. The top lane is the freight itself. The bottom lane is the information,
       the money, and the verification that has to travel alongside it. The interesting part is the
       row underneath, where physical custody and the authoritative record keep coming apart.</p>
     </div>
@@ -498,7 +528,13 @@ footer a:hover{color:var(--seafoam)}
       <span><i class="swatch" style="background:#fdf1e6;border-color:#f0d9c0"></i> Custody and record held by different parties</span>
       <span><i class="swatch" style="background:#d82f57;border-color:#d82f57"></i> Loud pain point</span>
     </div>
-    <div class="lifewrap"><div class="lifescroll"><div class="lifegrid" id="lifegrid"></div></div></div>
+  </div>
+
+  <div class="fullbleed">
+    <div class="lifeflowcap"><span>Freight enters the chain</span><span>Freight is delivered, paid for, and closed out</span></div><div class="lifewrap"><div class="lifescroll"><div class="lifegrid" id="lifegrid"></div></div></div>
+  </div>
+
+  <div class="wrap">
     <div class="metrics" id="lifeMetrics">
       <div class="metric"><span class="num">39.3%</span><span class="cap">of all stops incur detention beyond the free period</span></div>
       <div class="metric"><span class="num">~41%</span><span class="cap">of earned detention ever converts to cash</span></div>
@@ -511,7 +547,7 @@ footer a:hover{color:var(--seafoam)}
 <section class="band band-dark" id="mapping">
   <div class="wrap">
     <div class="sechead">
-      <span class="pillarnum">BACKGROUND 02</span>
+      <span class="pillarnum">EXPERIENCE MAP</span>
       <h2>Trucking Tech &lt;---&gt; Mike</h2>
       <p>On the left, the hard problems this role has to solve. On the right, work I have delivered
       against the same underlying shape. Click either side to see what connects.</p>
@@ -520,6 +556,11 @@ footer a:hover{color:var(--seafoam)}
       <div class="boardcol" id="colProblems"><div class="colhead">The hard problems</div></div>
       <div class="edgelayer" id="edgeLayer"><svg id="edgeSvg"></svg></div>
       <div class="boardcol" id="colWork"><div class="colhead">Where I have done this</div></div>
+      <div class="coach" id="coach" hidden>
+        <button class="x" id="coachX" aria-label="Dismiss">&times;</button>
+        <b id="coachTitle"></b>
+        <p id="coachBody"></p>
+      </div>
     </div>
     <p class="boardhint">The domain is different. The problem shape is not. Click any card to trace its connections.</p>
   </div>
@@ -554,6 +595,13 @@ footer a:hover{color:var(--seafoam)}
       <p id="apxIntro"></p>
     </div>
     <div class="apxgrid" id="apxItems"></div>
+
+    <div class="apxsub">
+      <h3>A1 &middot; If I had ninety days</h3>
+      <p id="closerFraming"></p>
+      <div class="bets" id="bets"></div>
+      <div class="closerfoot" id="closerFoot"></div>
+    </div>
   </div>
 </section>
 
@@ -569,6 +617,7 @@ footer a:hover{color:var(--seafoam)}
   <button class="todo-toggle" id="todoToggle"><span>Open decisions</span><span id="todoCount"></span></button>
 </div>
 
+<script src="icons.js"></script>
 <script src="content.js?v=202609012140"></script>
 <script>
 (function(){
@@ -638,6 +687,23 @@ footer a:hover{color:var(--seafoam)}
     });
   }
 
+  /* ---- Step icons. Lucide (ISC) via icons.js, one per lifecycle step. ---- */
+  var STEP_ICON = {
+    S01:"document", S02:"package",  S03:"verified",  S04:"handshake",
+    S05:"truck",    S06:"warehouse",S07:"container", S08:"calendar",
+    S09:"verified", S10:"receipt",  S11:"money",     S12:"warning"
+  };
+  function stepIcon(sid){
+    var ic = (typeof ICONS !== "undefined") && ICONS[STEP_ICON[sid]];
+    if(!ic) return "";
+    var attrs = ic.stroke
+      ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+      : 'fill="currentColor"';
+    return '<span class="stepico" aria-hidden="true"><svg viewBox="'+ic.viewBox+'" '+attrs+'>'
+      + ic.d.map(function(d){ return '<path d="'+d+'"/>'; }).join("")
+      + '</svg></span>';
+  }
+
   /* ---- Lifecycle ---- */
   var steps   = (C.lifecycle&&C.lifecycle.steps)||[];
   var markers = C.markers||[];
@@ -651,6 +717,7 @@ footer a:hover{color:var(--seafoam)}
     }).join("");
     return '<div class="stepcol">'
       + '<div class="stephead"><span class="stepnum">'+String(i+1).padStart(2,"0")+'</span>'
+      + stepIcon(s.id)
       + '<span class="stepname">'+esc(s.name)+'</span>'+id(s.id)+'</div>'
       + '<div class="cell cell-phys">'+esc(s.physical)+'</div>'
       + '<div class="cell cell-info">'+esc(s.informational)+'</div>'
@@ -738,11 +805,12 @@ footer a:hover{color:var(--seafoam)}
       if(!pe||!we) return "";
       var a=pe.getBoundingClientRect(), b=we.getBoundingClientRect();
       var y1=a.top-lr.top+a.height/2, y2=b.top-lr.top+b.height/2, x2=lr.width;
-      var on = !active || active===e.problem || active===e.work;
+      var idle = !active;
+      var on = active && (active===e.problem || active===e.work);
       var col = e.strength==="primary" ? "#45deae" : "#506674";
       return '<path d="M0,'+y1+' C'+(x2*0.5)+','+y1+' '+(x2*0.5)+','+y2+' '+x2+','+y2+'" '
         + 'fill="none" stroke="'+col+'" stroke-width="'+(e.strength==="primary"?2:1.25)+'" '
-        + 'opacity="'+(on?(e.strength==="primary"?0.85:0.45):0.07)+'"/>';
+        + 'opacity="'+(idle ? 0.10 : (on ? (e.strength==="primary"?0.9:0.5) : 0.05))+'"/>';
     }).join("");
     svg.innerHTML = out;
   }
@@ -768,6 +836,89 @@ footer a:hover{color:var(--seafoam)}
     if(p) setActive("p", p.getAttribute("data-p"));
     else if(w) setActive("w", w.getAttribute("data-w"));
   });
+  /* ---- Coach mark ----------------------------------------------------
+     State 1: appears when the board scrolls into view, points at a problem.
+     State 2: after the first click, moves and says try another.
+     State 3: any further interaction dismisses it for good.
+     -------------------------------------------------------------------- */
+  var coach = document.getElementById("coach");
+  if(coach && problems.length){
+    var coachState = 0, coachDead = false;
+    var STEPS = [
+      { target: problems[0] && problems[0].id,
+        title: "Click a hard problem",
+        body:  "Pick any card on the left. The board traces it to the work I have delivered against that same shape." },
+      { target: problems[Math.min(3, problems.length-1)] && problems[Math.min(3, problems.length-1)].id,
+        title:  "Try another one",
+        body:   "Each problem lights a different set. Clicking a card on the right traces it back the other way." }
+    ];
+    function placeCoach(pid){
+      var card = document.querySelector('.pcard[data-p="'+pid+'"]');
+      var board = document.querySelector(".board");
+      if(!card || !board) return false;
+      var b = board.getBoundingClientRect(), c = card.getBoundingClientRect();
+      var col = document.getElementById("colProblems").getBoundingClientRect();
+      coach.style.left = Math.round(col.right - b.left + 18) + "px";
+      coach.style.top  = Math.round(c.top - b.top) + "px";
+      document.querySelectorAll(".pcard.coachtarget").forEach(function(e){ e.classList.remove("coachtarget"); });
+      card.classList.add("coachtarget");
+      return true;
+    }
+    function showCoach(i){
+      var st = STEPS[i]; if(!st || !st.target || coachDead) return;
+      coach.hidden = false;
+      document.getElementById("coachTitle").textContent = st.title;
+      document.getElementById("coachBody").textContent  = st.body;
+      if(!placeCoach(st.target)){ coach.hidden = true; return; }
+      requestAnimationFrame(function(){ coach.classList.add("on","pulse"); });
+      coachState = i + 1;
+    }
+    function killCoach(){
+      if(coachDead) return;
+      coachDead = true; coachState = 3;
+      coach.classList.remove("on","pulse");
+      document.querySelectorAll(".pcard.coachtarget").forEach(function(e){ e.classList.remove("coachtarget"); });
+      setTimeout(function(){ coach.hidden = true; }, 300);
+    }
+    document.getElementById("coachX").addEventListener("click", function(e){
+      e.stopPropagation(); killCoach(); });
+
+    // Any card click advances the coach, then retires it.
+    document.addEventListener("click", function(e){
+      if(coachDead) return;
+      if(!e.target.closest("[data-p],[data-w]")) return;
+      if(coachState === 1){
+        coach.classList.remove("on","pulse");
+        setTimeout(function(){ showCoach(1); }, 260);
+      } else if(coachState >= 2){
+        killCoach();
+      }
+    }, true);
+
+    // Anything else the user does on the page retires it too.
+    ["keydown","wheel"].forEach(function(ev){
+      document.addEventListener(ev, function(){ if(coachState >= 2) killCoach(); }, {passive:true});
+    });
+
+    if(window.IntersectionObserver){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting && coachState === 0 && !coachDead){
+            setTimeout(function(){ showCoach(0); }, 420);
+            io.disconnect();
+          }
+        });
+      }, {threshold:.35});
+      io.observe(document.getElementById("mapping"));
+    } else { setTimeout(function(){ showCoach(0); }, 900); }
+
+    window.addEventListener("resize", function(){
+      if(!coachDead && coachState >= 1 && coachState <= 2){
+        placeCoach(STEPS[coachState-1].target);
+      }
+    });
+  }
+
   window.addEventListener("resize", function(){ drawEdges(activeId); });
   setTimeout(function(){ drawEdges(null); }, 60);
   if(window.ResizeObserver){ new ResizeObserver(function(){ drawEdges(activeId); }).observe(layer); }

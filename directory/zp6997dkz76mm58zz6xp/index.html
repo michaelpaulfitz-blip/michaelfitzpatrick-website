@@ -10,110 +10,93 @@
 <style>
   /* Warm Naturalist — same tokens as index.html */
   :root{
-    --bone:#F0EEE6;
-    --paper:#FAF9F4;
-    --ink:#1F1E1B;
-    --faded:#6E675C;
-    --clay:#C15F3C;
-    --clay-deep:#A64E30;
-    --moss:#5B7052;
-    --brick:#9C3A2E;
-    --hairline:#DCD6C8;
+    --bone:#F0EEE6; --paper:#FAF9F4; --ink:#1F1E1B; --faded:#6E675C;
+    --clay:#C15F3C; --clay-deep:#A64E30; --moss:#5B7052; --brick:#9C3A2E;
+    --slate:#4A6070; --hairline:#DCD6C8;
     --serif:Georgia,'Times New Roman',serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    --maxw:1560px;
+    --maxw:1680px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
-  body{
-    background:var(--bone); color:var(--ink);
-    font-family:var(--serif); font-variant-numeric:tabular-nums;
-    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
-  }
+  body{background:var(--bone); color:var(--ink); font-family:var(--serif);
+    font-variant-numeric:tabular-nums; font-size:16px; line-height:1.5;
+    -webkit-font-smoothing:antialiased}
   a{color:var(--clay); text-decoration:none}
-  a:hover{color:var(--clay-deep)}
+  a:hover{color:var(--clay-deep); text-decoration:underline}
 
-  .eyebrow{font-size:11px; letter-spacing:2px; text-transform:uppercase;
-    color:var(--faded); font-weight:bold; margin-bottom:14px}
-
-  header.head{border-bottom:1px solid var(--hairline); background:rgba(240,238,230,.92)}
-  .head-inner{max-width:var(--maxw); margin:0 auto; padding:26px 28px}
-  .wordmark{font-size:20px; font-weight:bold; color:var(--ink); letter-spacing:.2px}
+  header.head{border-bottom:1px solid var(--hairline)}
+  .head-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .wordmark{font-size:17px; font-weight:bold; letter-spacing:.2px}
   .wordmark .dot{color:var(--clay)}
+  .headmeta{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--faded)}
 
-  main{max-width:var(--maxw); margin:0 auto; padding:44px 28px 20px}
-  h1{font-size:40px; line-height:1.1; letter-spacing:-.8px; margin-bottom:10px}
-  h2{font-size:26px; line-height:1.2; letter-spacing:-.3px; margin-bottom:6px}
-  p{margin-bottom:16px; color:var(--faded)}
-  p:last-child{margin-bottom:0}
-  strong{font-weight:bold; color:var(--ink)}
+  main{max-width:var(--maxw); margin:0 auto; padding:22px 24px 8px}
+  h1{font-size:26px; line-height:1.15; letter-spacing:-.4px; display:inline}
+  .h1line{margin-bottom:6px}
+  .h1line .counts{font-size:12px; letter-spacing:1.4px; text-transform:uppercase;
+    color:var(--faded); margin-left:14px; white-space:nowrap}
+  .h1line .counts b{color:var(--ink)}
+  .oneline{font-size:14px; color:var(--faded); margin-bottom:12px}
 
-  section{padding:38px 0}
-  section + section{border-top:1px solid var(--hairline)}
-  .lede{color:var(--ink); font-size:19px; max-width:62ch}
-  .sub{max-width:72ch}
+  .warn{background:var(--paper); border:1px solid var(--hairline); border-left:3px solid var(--clay);
+    border-radius:5px; padding:9px 13px; margin-bottom:22px; font-size:13px; color:var(--faded)}
+  .warn b{color:var(--ink)}
 
-  .warn{background:var(--paper); border:1px solid var(--hairline);
-    border-left:3px solid var(--clay); border-radius:6px; padding:20px 22px; margin-top:24px}
-  .warn p{color:var(--faded); font-size:15px; margin-bottom:10px}
-  .warn p:last-child{margin-bottom:0}
-  .warn .label{font-size:11px; letter-spacing:2px; text-transform:uppercase;
-    color:var(--clay); font-weight:bold; display:block; margin-bottom:8px}
+  h2{font-size:15px; letter-spacing:1.8px; text-transform:uppercase; color:var(--faded);
+    font-weight:bold; margin:26px 0 8px}
+  h2:first-of-type{margin-top:0}
+  h2 .hint{text-transform:none; letter-spacing:0; font-weight:normal; font-size:13px; margin-left:10px}
 
-  .count{display:flex; gap:44px; flex-wrap:wrap; margin-top:26px}
-  .count div .n{font-size:30px; font-weight:bold; color:var(--ink); display:block; line-height:1.2}
-  .count div .k{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--faded); font-weight:bold}
-
-  .tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:6px;
-    background:var(--paper); margin-top:22px}
-  table{border-collapse:collapse; width:100%; min-width:1180px; table-layout:fixed}
-  /* Column widths. Everything left over goes to "What it is", which is the
-     column that was wrapping into tall rows. */
-  th:nth-child(1),td:nth-child(1){width:44px}    /* #        */
-  th:nth-child(2),td:nth-child(2){width:186px}   /* Project  */
-  th:nth-child(3),td:nth-child(3){width:104px}   /* Company  */
-  th:nth-child(4),td:nth-child(4){width:232px}   /* Path     */
-  th:nth-child(5),td:nth-child(5){width:96px}    /* Status   */
-  th:nth-child(7),td:nth-child(7){width:182px}   /* Dates    */
-  th{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--faded);
-    font-weight:bold; text-align:left; padding:12px 14px; border-bottom:1px solid var(--hairline);
-    white-space:nowrap}
-  td{padding:13px 14px; border-bottom:1px solid var(--hairline); vertical-align:top;
-    font-size:15px; color:var(--faded); line-height:1.5}
+  .tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:5px; background:var(--paper)}
+  table{border-collapse:collapse; width:100%; table-layout:fixed}
+  th{font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--faded);
+    font-weight:bold; text-align:left; padding:7px 11px; border-bottom:1px solid var(--hairline);
+    white-space:nowrap; background:rgba(220,214,200,.28)}
+  td{padding:7px 11px; border-bottom:1px solid var(--hairline); vertical-align:top;
+    font-size:14px; color:var(--faded); line-height:1.45}
   tr:last-child td{border-bottom:none}
-  td .name{display:block; color:var(--ink); font-weight:bold; font-size:16px; margin-bottom:3px}
-  td.when{white-space:nowrap; font-size:14px}
-  code, .sha{font-family:var(--mono); font-size:13px; color:var(--ink);
-    background:rgba(220,214,200,.42); padding:1px 5px; border-radius:3px}
-  .path{font-family:var(--mono); font-size:13px; overflow-wrap:anywhere}
-  td.num{color:var(--faded); font-size:14px; font-variant-numeric:tabular-nums;
-    text-align:right; padding-right:10px}
-  td.co{color:var(--ink); font-weight:bold; font-size:15px}
+  td .name{display:block; color:var(--ink); font-weight:bold; font-size:14.5px}
+  td.num{text-align:right; padding-right:8px; font-size:12px; white-space:nowrap}
+  td.co{color:var(--ink); font-weight:bold}
+  td.when{white-space:nowrap; font-size:12px; font-family:var(--mono)}
+  code,.sha,.path{font-family:var(--mono); font-size:12.5px}
+  .sha{color:var(--ink); background:rgba(220,214,200,.42); padding:0 4px; border-radius:3px}
+  .path{overflow-wrap:anywhere}
+  .rec{display:block; margin-top:3px; font-family:var(--mono); font-size:11.5px; color:var(--ink);
+    background:rgba(220,214,200,.42); padding:2px 5px; border-radius:3px; overflow-wrap:anywhere}
 
-  .pill{display:inline-block; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
-    font-weight:bold; padding:3px 9px; border-radius:11px; border:1px solid var(--hairline);
-    white-space:nowrap}
+  /* Site table columns */
+  #site th:nth-child(1),#site td:nth-child(1){width:34px}
+  #site th:nth-child(2),#site td:nth-child(2){width:210px}
+  #site th:nth-child(3),#site td:nth-child(3){width:88px}
+  #site th:nth-child(4),#site td:nth-child(4){width:246px}
+  #site th:nth-child(5),#site td:nth-child(5){width:86px}
+  #site th:nth-child(7),#site td:nth-child(7){width:150px}
+  /* SOP table columns */
+  #sop th:nth-child(1),#sop td:nth-child(1){width:34px}
+  #sop th:nth-child(2),#sop td:nth-child(2){width:230px}
+  #sop th:nth-child(3),#sop td:nth-child(3){width:84px}
+  #sop th:nth-child(5),#sop td:nth-child(5){width:250px}
+  #sop th:nth-child(6),#sop td:nth-child(6){width:168px}
+
+  .pill{display:inline-block; font-size:9.5px; letter-spacing:1.2px; text-transform:uppercase;
+    font-weight:bold; padding:2px 7px; border-radius:10px; border:1px solid var(--hairline); white-space:nowrap}
   .pill.live{color:var(--moss); border-color:var(--moss)}
   .pill.unlinked{color:var(--clay); border-color:var(--clay)}
   .pill.removed{color:var(--brick); border-color:var(--brick)}
-  .pill.external{color:var(--faded)}
+  .pill.external,.pill.ref{color:var(--faded)}
+  .pill.sop{color:var(--slate); border-color:var(--slate)}
 
-  pre{font-family:var(--mono); font-size:13px; color:var(--ink);
-    background:rgba(220,214,200,.42); padding:10px 12px; border-radius:4px;
-    overflow-x:auto; margin-top:8px; line-height:1.5}
+  .note{font-size:12.5px; color:var(--faded); font-style:italic; margin-top:9px}
+  .note code{background:rgba(220,214,200,.42); padding:0 4px; border-radius:3px; font-style:normal}
 
-  .note{font-size:14px; color:var(--faded); font-style:italic;
-    border-left:2px solid var(--hairline); padding-left:16px; margin:22px 0}
-
-  footer{border-top:1px solid var(--hairline); text-align:center; padding:34px 28px;
-    color:var(--faded); font-size:13px; letter-spacing:.3px}
-  footer .wordmark{font-size:16px}
+  footer{border-top:1px solid var(--hairline); margin-top:26px; padding:14px 24px 22px;
+    color:var(--faded); font-size:12px; text-align:center}
 
   @media (max-width:760px){
-    body{font-size:16px}
-    h1{font-size:32px}
-    h2{font-size:23px}
-    main{padding:32px 22px 16px}
-    .count{gap:26px}
+    main{padding:16px 14px 8px} h1{font-size:22px}
+    .h1line .counts{display:block; margin:6px 0 0}
   }
 </style>
 </head>
@@ -122,216 +105,232 @@
 <header class="head">
   <div class="head-inner">
     <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
+    <div class="headmeta">Private index &middot; noindex, nofollow &middot; rebuilt 3 Sep 2026</div>
   </div>
 </header>
 
 <main>
 
-<section>
-  <div class="eyebrow">Private Index &middot; Not linked, not indexed</div>
+<div class="h1line">
   <h1>Site Directory</h1>
-  <p class="lede">Every demo project, job-specific page, and sub-site that has ever lived on michaelfitzpatrick.me, including the ones that were unlinked from the nav or deleted from the repo.</p>
-  <p class="sub">Reconstructed from the full git history of <span class="path">michaelpaulfitz-blip/michaelfitzpatrick-website</span> on 1 September 2026. Deleted pages are still recoverable from history; the recovery command is listed with each one.</p>
+  <span class="counts"><b>12</b> pages &middot; <b>2</b> linked &middot; <b>7</b> unlinked &middot; <b>2</b> removed &middot; <b>1</b> external &nbsp;|&nbsp; <b>4</b> SOPs</span>
+</div>
+<p class="oneline">Every page that has ever lived on michaelfitzpatrick.me, plus the job-hunt playbooks. Removed pages are recoverable from git; the command is in the row.</p>
 
-  <div class="count">
-    <div><span class="n">12</span><span class="k">Entries</span></div>
-    <div><span class="n">2</span><span class="k">Live &amp; linked</span></div>
-    <div><span class="n">7</span><span class="k">Live, unlinked</span></div>
-    <div><span class="n">2</span><span class="k">Removed</span></div>
-    <div><span class="n">1</span><span class="k">External proxy</span></div>
-  </div>
+<div class="warn">
+  <b>Obscurity, not authentication.</b> No login, no IP check. Anyone with the link, or who gets it from browser history, a screen share, or a referrer header, reads this in full. Keep it to URLs: no salary figures, no recruiter names, no interview feedback, no credentials.
+</div>
 
-  <div class="warn">
-    <span class="label">Read this before you paste the link anywhere</span>
-    <p>This page is protected by an unguessable URL and nothing else. That is <strong>obscurity, not authentication</strong>. There is no login, no password, no IP check. Anyone who has the link, or who ever gets it out of your browser history, a chat message, a screen share, a bookmark sync, or a referrer header, can read this page in full.</p>
-    <p>Treat it as semi-public. Do not put anything genuinely sensitive here: no salary figures, no recruiter names, no interview feedback, no credentials, no unreleased employer material. It is a working index of URLs, and that is all it should ever be.</p>
-  </div>
-</section>
+<h2>Playbooks &amp; SOPs <span class="hint">Job-hunt mechanics. Markdown is canonical; the Doc is a disposable export.</span></h2>
+<div class="tablewrap">
+  <table id="sop">
+    <thead>
+      <tr><th>#</th><th>Document</th><th>Kind</th><th>What it does</th><th>Local path</th><th>Google Doc / skill</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">S1</td>
+        <td><span class="name">Company Research Playbook</span>Ten layers, corpus + brief</td>
+        <td><span class="pill sop">SOP</span></td>
+        <td>Company research end to end. Depth dial (scalpel / standard / sledgehammer), subagent fan-out, mandatory ~5pp brief on top of the full corpus.</td>
+        <td class="path">jobbot3000/docs/company-research-playbook.md</td>
+        <td><a href="https://docs.google.com/document/d/1CEb0gl2Vq-fv01MwIgHmKAdYSXG4ExGJ3bqKacBJjlU/edit">Doc</a><br><code>/company-research</code></td>
+      </tr>
+      <tr>
+        <td class="num">S2</td>
+        <td><span class="name">JD Mining Playbook</span>Mode A pre-research, Mode B post</td>
+        <td><span class="pill sop">SOP</span></td>
+        <td>Decode a JD. Mechanical term count, stated/hinted/unstated projects and competencies, hedge words, the four-verb test, one-sentence read.</td>
+        <td class="path">jobbot3000/docs/jd-mining-playbook.md</td>
+        <td><a href="https://docs.google.com/document/d/1THg8PK65LApzdN_auYqKk3H-WJwknv9fAiD5NP7Gqzw/edit">Doc</a><br><code>/jd-mining</code></td>
+      </tr>
+      <tr>
+        <td class="num">S3</td>
+        <td><span class="name">Interview Rehearsal Playbook</span>Out loud, scored, three passes</td>
+        <td><span class="pill sop">SOP</span></td>
+        <td>Question set, coverage matrix, story assignment, cold/refined/hostile-follow-up drilling against a 10-point rubric. One rule: speak it before you write it.</td>
+        <td class="path">jobbot3000/docs/interview-rehearsal-playbook.md</td>
+        <td><a href="https://docs.google.com/document/d/1QRxQv4yWHHQpRYBc_twVT04zENBM3_XEaUNtOfPN7OY/edit">Doc</a><br><code>/interview-rehearsal</code></td>
+      </tr>
+      <tr>
+        <td class="num">S4</td>
+        <td><span class="name">Experience Map Feature Spec</span>Company-agnostic build spec</td>
+        <td><span class="pill sop">SOP</span></td>
+        <td>Build instructions for the two-section interview artifact: interactive Experience Map plus References. Reference implementation is the Flexport page below.</td>
+        <td class="path">jobbot3000/docs/experience-map-spec.md</td>
+        <td><a href="https://docs.google.com/document/d/1D0jfjH-j2v7us6AUgmqKo53DX6kwHpDOVb7uDcnM6ag/edit">Doc</a><br><code>/experience-map</code></td>
+      </tr>
+      <tr>
+        <td class="num">R1</td>
+        <td><span class="name">AI / Agentic PM Primer</span>Vocabulary, [SWAP] vs [NEW]</td>
+        <td><span class="pill ref">Ref</span></td>
+        <td>Five-page primer on agentic and LLM platform vocabulary for a technical PM. Roughly 70% is renaming things you already do.</td>
+        <td class="path">jobbot3000/docs/ai-pm-primer.md</td>
+        <td>local only</td>
+      </tr>
+      <tr>
+        <td class="num">R2</td>
+        <td><span class="name">Open Items &amp; Loose Threads</span>Snapshot, 1 Sep 2026</td>
+        <td><span class="pill ref">Ref</span></td>
+        <td>What was closed, what is still open, and where the global tone settings live. Point-in-time, so treat as stale after a week.</td>
+        <td class="path">jobbot3000/docs/open-items-2026-09-01.md</td>
+        <td><a href="https://docs.google.com/document/d/1xLuOWa5Ixm4HySwGU7NVjFbGZRGy1kB_wcV6bSb7yro/edit">Doc</a></td>
+      </tr>
+      <tr>
+        <td class="num">R3</td>
+        <td><span class="name">JD Mining · TrueBlue</span>Sr PM, Enterprise AI</td>
+        <td><span class="pill ref">Output</span></td>
+        <td>Worked example of S2 in Mode B. Read this to see what good output looks like before firing the skill again.</td>
+        <td class="path">jobbot3000/docs/jd-mining-trueblue-sr-pm-enterprise-ai.md</td>
+        <td>local only</td>
+      </tr>
+      <tr>
+        <td class="num">R4</td>
+        <td><span class="name">Flexport build specs</span>Trace, Altitude Toggle, Coverage State</td>
+        <td><span class="pill ref">Output</span></td>
+        <td>Company-specific UI specs for the Flexport walkthrough. Not reusable as written, but the structure is a decent template.</td>
+        <td class="path">jobbot3000/demos/flexport/SPEC-*.md</td>
+        <td>local only</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">All Docs live in one Drive folder: <a href="https://drive.google.com/drive/folders/1_k-3lYGYa7uwqs6EuikszNACTOkTAC-y">SOPs</a>. Skills are in <code>jobbot3000/.claude/skills/</code> and only load in that project.</p>
 
-<section>
-  <h2>Live and linked in the nav</h2>
-  <p class="sub">Reachable from the top nav on the homepage.</p>
-  <div class="tablewrap">
-    <table>
-      <thead>
-        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="num">1</td>
-          <td><span class="name">Personal site</span>Warm Naturalist rebuild</td>
-          <td class="co"></td>
-          <td class="path"><a href="/">/</a></td>
-          <td><span class="pill live">Live</span></td>
-          <td>The homepage itself. Hero, professional portfolio, about, personal board of directors, contact. Origin of the design system every other page inherits.</td>
-          <td class="when">2026-07-10 &rarr; present<br><span class="sha">2a60bee</span></td>
-        </tr>
-        <tr>
-          <td class="num">2</td>
-          <td><span class="name">Hemlock Holdings</span>Private quantitative trading firm</td>
-          <td class="co"></td>
-          <td class="path"><a href="/hemlock.html">/hemlock.html</a></td>
-          <td><span class="pill live">Live</span></td>
-          <td>Standalone page for the MATES trading work, presented as a private quant firm. Added with the tree iconography that is still in the nav link.</td>
-          <td class="when">2026-08-02 &rarr; present<br><span class="sha">2319fab</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section>
-  <h2>Live but unlinked</h2>
-  <p class="sub">Still deployed and reachable by direct URL. Nothing on the site points at them, so they are effectively private-by-obscurity too.</p>
-  <div class="tablewrap">
-    <table>
-      <thead>
-        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="num">3</td>
-          <td><span class="name">AI Development on a Core Engineering Platform</span>Agentic SDLC charter</td>
-          <td class="co">Twitch</td>
-          <td class="path"><a href="/agentic-sdlc/">/agentic-sdlc/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>Scrollytelling charter proposal. Started life as a generic visual essay, was tailored to <strong>Microsoft ES365</strong>, genericized again, then re-tailored to a <strong>Twitch</strong> Principal / Core Engineering role JD. Current live copy reads &ldquo;Prepared for Twitch.&rdquo; Nav link existed 22 Jul to 24 Aug.</td>
-          <td class="when">2026-07-22 &rarr; present<br>added <span class="sha">90aec5f</span><br>nav added <span class="sha">fe3cc5a</span><br>nav removed <span class="sha">33d9497</span></td>
-        </tr>
-        <tr>
-          <td class="num">4</td>
-          <td><span class="name">Agentic SDLC &mdash; reading view</span>Fallback / plain version</td>
-          <td class="co">Twitch</td>
-          <td class="path"><a href="/agentic-sdlc/basic.html">/agentic-sdlc/basic.html</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>Non-scrollytelling reading-view companion to the page above, for anyone who wants the argument without the animation. Never appeared in the nav.</td>
-          <td class="when">2026-07-22 &rarr; present<br><span class="sha">90aec5f</span></td>
-        </tr>
-        <tr>
-          <td class="num">5</td>
-          <td><span class="name">Ground Freight, End to End</span>Flexport Staff PM, Trucking Tech</td>
-          <td class="co">Flexport</td>
-          <td class="path"><a href="/flexport-trucking-tech-demo/">/flexport-trucking-tech-demo/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>Two-pillar demo built in Flexport&rsquo;s design language, with an interactive experience-mapping board. Data-driven off <span class="path">content.js</span>. Originally lived at <span class="path">/flexport/</span>.</td>
-          <td class="when">2026-08-26 &rarr; present<br>added <span class="sha">77eb7f6</span><br>renamed <span class="sha">e68a2e5</span><br>built out <span class="sha">df21600</span><br>fix <span class="sha">0d8348e</span></td>
-        </tr>
-        <tr>
-          <td class="num">6</td>
-          <td><span class="name">Recent Experience Note</span>Flexport Senior PM, Visibility</td>
-          <td class="co">Flexport</td>
-          <td class="path"><a href="/flexport-senior-product-manager-visibility/">/flexport-senior-product-manager-visibility/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>One-pager framing the UARC2 stockout root-cause work as directly relevant experience for the Flexport Senior PM, Visibility role.</td>
-          <td class="when">2026-08-31 &rarr; present<br><span class="sha">9d87d07</span></td>
-        </tr>
-        <tr>
-          <td class="num">7</td>
-          <td><span class="name">Inventory Integrations</span>Prepared for Nordstrom</td>
-          <td class="co">Nordstrom</td>
-          <td class="path"><a href="/nordstrom-inventory-integrations/">/nordstrom-inventory-integrations/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>Nordstrom inventory-integrations page, built in a parallel session. Committed as a scaffold; check it is filled in before sending the link anywhere.</td>
-          <td class="when">2026-09-01 &rarr; present<br><span class="sha">434a658</span></td>
-        </tr>
-        <tr>
-          <td class="num">8</td>
-          <td><span class="name">This directory</span>Private index</td>
-          <td class="co"></td>
-          <td class="path"><a href="/directory/zp6997dkz76mm58zz6xp/">/directory/zp6997dkz76mm58zz6xp/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>The page you are reading. The public stub at <span class="path">/directory</span> is linked from the homepage nav and reveals nothing; this slug is not published anywhere.</td>
-          <td class="when">2026-09-01 &rarr; present</td>
-        </tr>
-        <tr>
-          <td class="num">9</td>
-          <td><span class="name">Growth and Best Practices</span>Cross-project Claude Code workspace</td>
-          <td class="co"></td>
-          <td class="path"><a href="/growth-and-best-practices/i9jezps3ityn3wj2t0ll/">/growth-and-best-practices/i9jezps3ityn3wj2t0ll/</a></td>
-          <td><span class="pill unlinked">Unlinked</span></td>
-          <td>Private home base for global Claude Code conventions, research, and open improvement threads. Same pattern as this directory: a public stub at <span class="path">/growth-and-best-practices</span> is linked from the homepage nav and reveals nothing; the slug is not published anywhere.</td>
-          <td class="when">2026-09-01 &rarr; present</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section>
-  <h2>Removed from the repo</h2>
-  <p class="sub">Deleted or renamed away. The files are gone from the working tree but still live in git history, so every one of these is recoverable with the command shown.</p>
-  <div class="tablewrap">
-    <table>
-      <thead>
-        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it was / recovery</th><th>Dates &amp; commits</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="num">10</td>
-          <td><span class="name">TaktStack redirect page</span>Production Intelligence</td>
-          <td class="co"></td>
-          <td class="path">/TaktStack/index.html</td>
-          <td><span class="pill removed">Removed</span></td>
-          <td>A dark-themed meta-refresh + <span class="path">location.replace</span> bounce to the TaktStack app on Cloud Run. Deleted the same day it was added, once a Render rewrite rule took over the proxying.
-            <pre>git show 3e3c486:TaktStack/index.html &gt; recovered.html</pre>
-          </td>
-          <td class="when">added 2026-08-14 <span class="sha">3e3c486</span><br>deleted 2026-08-14 <span class="sha">4a4a1c7</span></td>
-        </tr>
-        <tr>
-          <td class="num">11</td>
-          <td><span class="name">Ground Freight: A Point of View</span>Original Flexport demo path</td>
-          <td class="co">Flexport</td>
-          <td class="path">/flexport/index.html</td>
-          <td><span class="pill removed">Removed</span></td>
-          <td>First scaffolding of the Flexport trucking demo, before the folder was renamed to <span class="path">flexport-trucking-tech-demo</span>. The old URL is dead; the content lives on at the new path, but this is the original scaffold if you want it.
-            <pre>git show 77eb7f6:flexport/index.html &gt; recovered.html</pre>
-          </td>
-          <td class="when">added 2026-08-26 <span class="sha">77eb7f6</span><br>renamed away 2026-08-26 <span class="sha">e68a2e5</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p class="note">Earlier tailorings of <span class="path">/agentic-sdlc/</span> are also recoverable, since only the newest version is deployed. The Microsoft ES365 charter proposal: <code>git show fa67867:agentic-sdlc/index.html</code>. The genericized charter: <code>git show c868857:agentic-sdlc/index.html</code>. The original July visual essay, &ldquo;The Agentic Wave&rdquo;: <code>git show 90aec5f:agentic-sdlc/index.html</code>.</p>
-</section>
-
-<section>
-  <h2>External</h2>
-  <p class="sub">Served under a michaelfitzpatrick.me path but hosted somewhere else, so it does not live in this repo and will not show up in git history.</p>
-  <div class="tablewrap">
-    <table>
-      <thead>
-        <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is / who it was for</th><th>Dates &amp; commits</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="num">12</td>
-          <td><span class="name">TaktStack</span>Production Intelligence demo</td>
-          <td class="co"></td>
-          <td class="path">/TaktStack &rarr; Cloud Run</td>
-          <td><span class="pill external">External</span></td>
-          <td>Full demo app deployed to Google Cloud Run at <span class="path">taktstack-716283169700.us-west1.run.app/TaktStack</span>, wired in through a <strong>Render rewrite rule</strong> configured in the Render dashboard, not in this repo. Nav link ran 14 Aug to 24 Aug. If the path ever 404s, check the Render rewrite before checking git.</td>
-          <td class="when">2026-08-14 &rarr; present<br>nav added <span class="sha">29d241a</span><br>nav removed <span class="sha">33d9497</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section>
-  <h2>How to keep this current</h2>
-  <p class="sub">Two commands rebuild most of this table from scratch, in case it drifts:</p>
-  <pre>git log --diff-filter=A --name-only --all --pretty=format:"%h %ad %s" --date=short
-git log --diff-filter=D --name-only --all --pretty=format:"%h %ad %s" --date=short</pre>
-  <p class="note">One blind spot worth remembering: anything proxied by a Render rewrite rule, like TaktStack, is invisible to git entirely. The Render dashboard is the only record of those.</p>
-</section>
+<h2>Site pages <span class="hint">Everything ever deployed under michaelfitzpatrick.me.</span></h2>
+<div class="tablewrap">
+  <table id="site">
+    <thead>
+      <tr><th>#</th><th>Project</th><th>Company</th><th>Path</th><th>Status</th><th>What it is</th><th>Dates &amp; commits</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td><span class="name">Personal site</span>Warm Naturalist rebuild</td>
+        <td class="co"></td>
+        <td class="path"><a href="/">/</a></td>
+        <td><span class="pill live">Linked</span></td>
+        <td>The homepage. Origin of the design system every other page inherits.</td>
+        <td class="when">2026-07-10<br><span class="sha">2a60bee</span></td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td><span class="name">Hemlock Holdings</span>Private quant firm</td>
+        <td class="co"></td>
+        <td class="path"><a href="/hemlock.html">/hemlock.html</a></td>
+        <td><span class="pill live">Linked</span></td>
+        <td>The MATES trading work, presented as a private quant firm.</td>
+        <td class="when">2026-08-02<br><span class="sha">2319fab</span></td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td><span class="name">Ground Freight, End to End</span>Staff PM, Trucking Tech</td>
+        <td class="co">Flexport</td>
+        <td class="path"><a href="/flexport-trucking-tech-demo/">/flexport-trucking-tech-demo/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Two-pillar demo in Flexport&rsquo;s design language with an interactive experience-mapping board. Data-driven off <span class="path">content.js</span>. Reference implementation for S4.</td>
+        <td class="when">2026-08-26<br><span class="sha">77eb7f6</span> <span class="sha">e68a2e5</span><br><span class="sha">df21600</span> <span class="sha">0d8348e</span></td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td><span class="name">Ground Freight v2 &mdash; The Trace</span>Staff PM, Trucking Tech</td>
+        <td class="co">Flexport</td>
+        <td class="path"><a href="/flexport-trucking-tech-demo-v2/">/flexport-trucking-tech-demo-v2/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Rebuild to the Trace spec. Leads with the UARC2 walkthrough and demotes the two pillars to background. Keyboard timeline nav, connector paths, cache-busted content.</td>
+        <td class="when">2026-09-01<br><span class="sha">6402337</span> <span class="sha">0710e8c</span><br><span class="sha">71a57c6</span> <span class="sha">0604323</span></td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td><span class="name">Recent Experience Note</span>Senior PM, Visibility</td>
+        <td class="co">Flexport</td>
+        <td class="path"><a href="/flexport-senior-product-manager-visibility/">/flexport-senior-product-manager-visibility/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>One-pager framing the UARC2 stockout root-cause work for the Visibility role.</td>
+        <td class="when">2026-08-31<br><span class="sha">9d87d07</span></td>
+      </tr>
+      <tr>
+        <td class="num">6</td>
+        <td><span class="name">Inventory Integrations</span>Prepared for Nordstrom</td>
+        <td class="co">Nordstrom</td>
+        <td class="path"><a href="/nordstrom-inventory-integrations/">/nordstrom-inventory-integrations/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Built in a parallel session. Confirm it is filled in before sending the link anywhere.</td>
+        <td class="when">2026-09-01<br><span class="sha">434a658</span> <span class="sha">b1e38ac</span></td>
+      </tr>
+      <tr>
+        <td class="num">7</td>
+        <td><span class="name">AI Development on a Core Engineering Platform</span>Agentic SDLC charter</td>
+        <td class="co">Twitch</td>
+        <td class="path"><a href="/agentic-sdlc/">/agentic-sdlc/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Scrollytelling charter. Started generic, tailored to <b>Microsoft ES365</b>, genericized, then re-tailored to Twitch. Live copy reads &ldquo;Prepared for Twitch.&rdquo; Earlier tailorings recoverable.<span class="rec">git show fa67867:agentic-sdlc/index.html   # ES365
+git show c868857:agentic-sdlc/index.html   # generic
+git show 90aec5f:agentic-sdlc/index.html   # July essay</span></td>
+        <td class="when">2026-07-22<br>nav <span class="sha">fe3cc5a</span> &rarr; <span class="sha">33d9497</span></td>
+      </tr>
+      <tr>
+        <td class="num">8</td>
+        <td><span class="name">Agentic SDLC &mdash; reading view</span>Plain fallback</td>
+        <td class="co">Twitch</td>
+        <td class="path"><a href="/agentic-sdlc/basic.html">/agentic-sdlc/basic.html</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Non-scrollytelling companion. Never in the nav.</td>
+        <td class="when">2026-07-22<br><span class="sha">90aec5f</span></td>
+      </tr>
+      <tr>
+        <td class="num">9</td>
+        <td><span class="name">This directory</span>Private index</td>
+        <td class="co"></td>
+        <td class="path"><a href="/directory/zp6997dkz76mm58zz6xp/">/directory/zp6997dkz76mm58zz6xp/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>The page you are reading. Public stub at <span class="path">/directory</span> is in the nav and reveals nothing.</td>
+        <td class="when">2026-09-01</td>
+      </tr>
+      <tr>
+        <td class="num">10</td>
+        <td><span class="name">Growth and Best Practices</span>Claude Code workspace</td>
+        <td class="co"></td>
+        <td class="path"><a href="/growth-and-best-practices/i9jezps3ityn3wj2t0ll/">/growth-and-best-practices/i9jezps3ityn3wj2t0ll/</a></td>
+        <td><span class="pill unlinked">Unlinked</span></td>
+        <td>Global Claude Code conventions, research, open improvement threads. Same stub pattern as this page.</td>
+        <td class="when">2026-09-01</td>
+      </tr>
+      <tr>
+        <td class="num">11</td>
+        <td><span class="name">TaktStack redirect</span>Production Intelligence</td>
+        <td class="co"></td>
+        <td class="path">/TaktStack/index.html</td>
+        <td><span class="pill removed">Removed</span></td>
+        <td>Meta-refresh bounce to Cloud Run. Deleted the same day, once a Render rewrite took over.<span class="rec">git show 3e3c486:TaktStack/index.html &gt; recovered.html</span></td>
+        <td class="when">2026-08-14<br><span class="sha">3e3c486</span> &rarr; <span class="sha">4a4a1c7</span></td>
+      </tr>
+      <tr>
+        <td class="num">12</td>
+        <td><span class="name">Ground Freight: A Point of View</span>Original demo path</td>
+        <td class="co">Flexport</td>
+        <td class="path">/flexport/index.html</td>
+        <td><span class="pill removed">Removed</span></td>
+        <td>First scaffold, before the folder rename. Content lives on at the new path.<span class="rec">git show 77eb7f6:flexport/index.html &gt; recovered.html</span></td>
+        <td class="when">2026-08-26<br><span class="sha">77eb7f6</span> &rarr; <span class="sha">e68a2e5</span></td>
+      </tr>
+      <tr>
+        <td class="num">13</td>
+        <td><span class="name">TaktStack</span>Production Intelligence demo</td>
+        <td class="co"></td>
+        <td class="path">/TaktStack &rarr; Cloud Run</td>
+        <td><span class="pill external">External</span></td>
+        <td>Hosted at <span class="path">taktstack-716283169700.us-west1.run.app</span>, wired in by a <b>Render rewrite rule</b> set in the Render dashboard, not this repo. If it 404s, check Render before git.</td>
+        <td class="when">2026-08-14<br>nav <span class="sha">29d241a</span> &rarr; <span class="sha">33d9497</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">Rebuild the site table from git: <code>git log --diff-filter=A --name-only --all --pretty=format:"%h %ad %s" --date=short</code> and the same with <code>--diff-filter=D</code>. Blind spot: anything proxied by a Render rewrite is invisible to git.</p>
 
 </main>
 
-<footer>
-  <div class="wordmark">Michael Fitzpatrick<span class="dot">.</span></div>
-  Private index &middot; noindex, nofollow &middot; generated 1 September 2026
-</footer>
+<footer>Michael Fitzpatrick<span style="color:var(--clay)">.</span> &middot; private index &middot; rebuilt 3 September 2026</footer>
 
 </body>
 </html>

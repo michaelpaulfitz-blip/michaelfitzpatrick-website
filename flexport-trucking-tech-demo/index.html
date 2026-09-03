@@ -119,17 +119,22 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 
 /* ═══ Hero ═══ */
 .hero{background:var(--midnight); color:var(--white); position:relative;
-  overflow:hidden; padding:6rem 0 5.5rem}
+  overflow:hidden; padding:2.25rem 0 2rem}
 .hero .wrap{position:relative;z-index:2}
 .arrowfield{position:absolute; inset:0; pointer-events:none}
 .arrowfield svg{width:100%;height:100%;display:block}
-.hero h1{font-size:clamp(2.125rem,1.2rem+4.2vw,3.5rem); line-height:1.07;
-  color:var(--white); max-width:20ch; margin-bottom:1.25rem}
-.hero .lede{font-size:1.125rem; line-height:1.55; color:var(--midnight-100);
-  max-width:58ch; margin-bottom:1.75rem}
+.hero h1{font-size:clamp(1.375rem,.9rem+1.4vw,1.75rem); line-height:1.15;
+  color:var(--white); max-width:30ch; margin-bottom:.625rem}
+.hero .lede{font-size:.9375rem; line-height:1.55; color:var(--midnight-100);
+  max-width:82ch; margin-bottom:.875rem}
 .hero .lede strong{color:var(--white);font-weight:500}
-.hero .byline{font-size:.8125rem; color:var(--midnight-200); padding-top:1.25rem;
-  border-top:1px solid var(--midnight-400); max-width:58ch}
+.hero .byline{font-size:.75rem; color:var(--midnight-200); padding-top:.625rem;
+  border-top:1px solid var(--midnight-400); max-width:82ch}
+.scrollcue{display:inline-block; font-family:var(--head);
+  font-variation-settings:'wdth' 112; font-weight:700; font-size:.9375rem;
+  letter-spacing:.02em; color:var(--yellow); animation:cueBlink 1.5s ease-in-out infinite}
+@keyframes cueBlink{0%,100%{opacity:1}50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.scrollcue{animation:none}}
 
 /* ═══ Buttons: inset ring, Flexport's signature ═══ */
 .btn{display:inline-flex; align-items:center; gap:.5rem; font-size:.875rem;
@@ -191,7 +196,7 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
    available beside the fixed rail. */
 .fullbleed{padding:0 1.5rem}
 @media(max-width:767px){.fullbleed{padding:0 1rem}}
-.lifewrap{position:relative; margin-top:.75rem; --lifelabel:132px}
+.lifewrap{position:relative; margin-top:.75rem; --lifelabel:112px}
 
 /* The process line, with vehicles moving steadily left to right. */
 .flowline{position:relative; height:26px; margin-left:var(--lifelabel);
@@ -266,7 +271,7 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 .lanekey span{display:flex; align-items:center; gap:.4375rem}
 .swatch{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid var(--terrain-2)}
 
-@media(max-width:1240px){
+@media(max-width:1180px){
   .lifescroll{overflow-x:auto; scrollbar-width:thin; padding-bottom:1rem}
   .lifescroll::-webkit-scrollbar{height:8px}
   .lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
@@ -521,7 +526,7 @@ footer a:hover{color:var(--seafoam)}
     <span class="eyebrow" id="heroEyebrow"></span>
     <h1 id="heroTitle"></h1>
     <p class="lede" id="heroLede"></p>
-    <a class="btn btn-ghost" href="#walkthrough">Start the walkthrough</a>
+    <p><span class="scrollcue">Scroll down to learn more!</span></p>
     <p class="byline" id="heroByline"></p>
   </div>
 </section>
@@ -761,9 +766,9 @@ footer a:hover{color:var(--seafoam)}
     var LABELS = [
       { r:1, b:"Step",     s:"" },
       { r:2, b:"Physical", s:"What is happening to the freight" },
-      { r:3, b:"Record",   s:"Data, money, and verification" },
+      { r:3, b:"Information", s:"Data, money, and verification" },
       { r:4, b:"Custody",  s:"Who holds the freight" },
-      { r:5, b:"System",   s:"Who holds the authoritative record" },
+      { r:5, b:"Record",      s:"Who holds the authoritative record" },
       { r:6, b:"Friction", s:"Where it breaks" }
     ];
     LABELS.forEach(function(L){

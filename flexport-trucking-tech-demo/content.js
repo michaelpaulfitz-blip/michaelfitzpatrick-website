@@ -10,14 +10,14 @@
    Generated 2026-09-01. Safe to hand-edit from here.
    ========================================================================== */
 
-const DRAFT  = true;          // draft banner, TODO panel, visible content IDs
+const DRAFT  = false;          // draft banner, TODO panel, visible content IDs
 const SHOW_TODOS = false;    // the floating "Open decisions" panel. Independent of DRAFT.
 const LAYOUT = "two-lane";    // "two-lane" | "single-line"
 
 const CONTENT = {
   "meta": {
-    "title": "One product, broken all the way down",
-    "subtitle": "The product is UARC2, a supply chain visibility and failure diagnostics platform I proposed and led at Amazon Fresh. It launched in January 2026. Below is the strategy, the trade-offs, the execution, and the numbers. Underneath that is background work I did on ground freight while preparing for this conversation.",
+    "title": "Trucking lifecycle, and where my experience fits",
+    "subtitle": "Phil, I really enjoyed our conversation yesterday. I built this afterwards so you can explore it yourself: the trucking lifecycle end to end with the places it genuinely breaks, and how my experience maps against what this role needs.",
     "preparedFor": "Flexport · Staff Product Manager, Trucking Technology",
     "author": "Michael Fitzpatrick",
     "date": "September 2026"

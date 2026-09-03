@@ -188,74 +188,91 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
 
 /* ═══ PILLAR 01: lifecycle ═══ */
 /* Full-bleed: the diagram escapes the centred wrap and uses every pixel
-   available beside the fixed rail, so all twelve steps fit in one view. */
+   available beside the fixed rail. */
 .fullbleed{padding:0 1.5rem}
 @media(max-width:767px){.fullbleed{padding:0 1rem}}
-.lifewrap{position:relative; margin-top:1rem}
-.lifescroll{overflow-x:visible; overflow-y:visible; padding-bottom:.5rem}
-.lifegrid{display:grid; grid-auto-flow:column; grid-auto-columns:1fr;
-  gap:.4375rem; position:relative; padding-top:2.25rem}
+.lifewrap{position:relative; margin-top:.75rem; --lifelabel:132px}
 
-/* The process line. One rule runs the whole width, a dot marks each step, and a
-   chevron sits in every gap so the left-to-right movement is explicit. */
-.lifegrid:before{content:''; position:absolute; left:0; right:0; top:.6875rem;
-  height:2px; border-radius:2px;
+/* The process line, with vehicles moving steadily left to right. */
+.flowline{position:relative; height:26px; margin-left:var(--lifelabel);
+  margin-bottom:.375rem}
+.flowrule{position:absolute; left:0; right:0; top:12px; height:2px; border-radius:2px;
   background:linear-gradient(90deg,var(--seafoam-5) 0%,var(--teal) 55%,var(--midnight-300) 100%);
-  opacity:.4}
-.stepcol{display:flex; flex-direction:column; gap:.4375rem; position:relative; min-width:0}
-.stepcol:before{content:''; position:absolute; top:.25rem; left:50%;
-  transform:translateX(-50%); width:15px; height:15px; border-radius:50%;
-  background:var(--terrain-1); border:2px solid var(--seafoam-5); z-index:2}
-.stepcol:not(:last-child):after{content:''; position:absolute; top:.5rem;
-  right:calc(-.4375rem - 3px); width:0; height:0; z-index:3;
-  border-top:5px solid transparent; border-bottom:5px solid transparent;
-  border-left:7px solid var(--teal); opacity:.75}
-@media(max-width:1100px){
-  .lifescroll{overflow-x:auto; scrollbar-width:thin; padding-bottom:1rem}
-  .lifescroll::-webkit-scrollbar{height:8px}
-  .lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
-  .lifegrid{grid-auto-columns:minmax(172px,1fr); min-width:min-content}
-}
-.lifeflowcap{display:flex; justify-content:space-between; font-size:.625rem;
-  letter-spacing:.1em; text-transform:uppercase; color:var(--lgrey-3);
-  font-weight:700; margin:0 .125rem .375rem}
-.stephead{display:flex; align-items:center; gap:.3125rem; padding:0 .125rem;
-  flex-wrap:wrap}
-.stepico{width:15px; height:15px; flex:none; color:var(--teal); margin-right:.0625rem}
-.stepico svg{width:100%; height:100%; display:block}
-.stepnum{font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
-  font-size:.6875rem; letter-spacing:.08em; color:var(--seafoam-5)}
-.stepname{font-family:var(--head); font-weight:600; font-size:.8125rem; line-height:1.15}
-.cell{border-radius:var(--r-media); padding:.5625rem .625rem; font-size:.71875rem;
-  line-height:1.4; min-height:92px; display:-webkit-box; -webkit-line-clamp:7;
-  -webkit-box-orient:vertical; overflow:hidden}
+  opacity:.45}
+.flowveh{position:absolute; inset:0; overflow:hidden}
+.veh{position:absolute; top:1px; width:22px; height:22px; color:var(--teal);
+  animation:drive 26s linear infinite; will-change:transform}
+.veh svg{width:100%;height:100%;display:block}
+.veh:nth-child(2){animation-delay:-8.6667s}
+.veh:nth-child(3){animation-delay:-17.3333s}
+@keyframes drive{from{transform:translateX(-30px)}
+  to{transform:translateX(calc(100% + 30px))}}
+@media(prefers-reduced-motion:reduce){.veh{animation:none; left:0}
+  .veh:nth-child(2){left:38%} .veh:nth-child(3){left:76%}}
+.flowcaps{display:flex; justify-content:space-between; margin-left:var(--lifelabel);
+  font-size:.625rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--lgrey-3); font-weight:700; margin-bottom:.5rem}
+
+/* The table. Fixed row heights so every cell gets the same vertical space. */
+.lifescroll{overflow-x:visible; overflow-y:visible; padding-bottom:.5rem}
+.lifetable{display:grid;
+  grid-template-columns:var(--lifelabel) repeat(12, minmax(0,1fr));
+  grid-template-rows:auto 84px 100px 30px 30px 78px;
+  gap:.3125rem; align-items:stretch}
+.rowlabel{display:flex; flex-direction:column; justify-content:center;
+  padding:.25rem .625rem .25rem 0; font-size:.6875rem; line-height:1.25;
+  color:var(--dgrey-2); font-weight:600; text-align:right; align-items:flex-end;
+  border-right:1px solid var(--terrain-2)}
+.rowlabel b{font-family:var(--head); font-variation-settings:'wdth' 112;
+  font-weight:700; font-size:.6875rem; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--midnight)}
+.rowlabel span{font-size:.625rem; color:var(--lgrey-3); font-weight:400; margin-top:.125rem}
+
+.stcell{display:flex; align-items:center; gap:.25rem; padding:.125rem}
+.stnum{font-family:var(--head); font-variation-settings:'wdth' 118; font-weight:700;
+  font-size:.9375rem; color:var(--teal); line-height:1}
+.stico{width:14px;height:14px;flex:none;color:var(--seafoam-5)}
+.stico svg{width:100%;height:100%;display:block}
+.stname{font-family:var(--head); font-weight:600; font-size:.75rem; line-height:1.1;
+  min-width:0}
+
+.cell{border-radius:var(--r-media); padding:.5rem .5625rem; font-size:.71875rem;
+  line-height:1.38; overflow:hidden; display:flex; align-items:flex-start;
+  cursor:pointer; transition:box-shadow .15s}
+.cell:hover{box-shadow:0 0 0 1px var(--lgrey-2) inset}
 .cell-phys{background:var(--white); border:1px solid var(--terrain-2); color:var(--dgrey-1)}
 .cell-info{background:var(--dawn); border:1px solid #d8e8ec; color:var(--dgrey-1)}
-.single-line .cell-info{display:none}
-.holders{display:flex; flex-direction:column; gap:.25rem; font-size:.6875rem}
-.holder{display:flex; align-items:center; gap:.25rem; padding:.25rem .375rem;
-  border-radius:var(--r); background:var(--terrain); color:var(--dgrey-2)}
-.holder b{font-weight:600; color:var(--midnight); font-size:.6875rem}
-.holder .k{font-size:.5rem; letter-spacing:.07em; text-transform:uppercase;
-  color:var(--lgrey-3); flex:none; width:38px}
-.split .holder{background:#fdf1e6; color:#8a4a12}
-.split .holder b{color:#7a3f0c}
-.splitflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--orange); font-weight:700; padding-left:.125rem}
-.alignflag{font-size:.5625rem; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--seafoam-5); font-weight:700; padding-left:.125rem}
-.mrow{display:flex; flex-wrap:wrap; gap:.3125rem; min-height:1.5rem}
-.mbadge{font-size:.625rem; font-weight:600; padding:.25rem .4375rem;
-  border-radius:var(--r-pill); transition:.15s; text-align:left; line-height:1.25}
+
+/* Custody and record: consecutive identical holders merge into one oval. */
+.holdcell{display:flex; align-items:center; justify-content:center; gap:.3125rem;
+  border-radius:var(--r-pill); font-size:.6875rem; padding:0 .625rem; overflow:hidden;
+  background:var(--terrain); color:var(--dgrey-2); white-space:nowrap}
+.holdcell b{font-weight:600; color:var(--midnight)}
+.holdcell.split{background:#fdf1e6; color:#8a4a12}
+.holdcell.split b{color:#7a3f0c}
+
+.paincell{display:flex; flex-direction:column; gap:.25rem; overflow:hidden}
+.mbadge{font-size:.625rem; font-weight:600; padding:.25rem .4375rem; border-radius:var(--r);
+  text-align:left; line-height:1.2; transition:.15s}
 .mbadge.quiet{background:var(--terrain-2); color:var(--dgrey-2)}
 .mbadge.quiet:hover{background:var(--lgrey-2); color:var(--midnight)}
-.mbadge.loud{background:var(--red); color:var(--white); box-shadow:0 0 0 3px var(--red-1)}
+.mbadge.loud{background:var(--red); color:var(--white)}
 .mbadge.loud:hover{background:#b8244a}
-.lanelabels{display:grid; gap:.5rem; margin-bottom:.5rem}
+.painhd{display:block; font-size:.5rem; letter-spacing:.11em; font-weight:700;
+  margin-bottom:.1875rem; opacity:.92}
+
 .lanekey{display:flex; gap:1.25rem; flex-wrap:wrap; font-size:.75rem; color:var(--dgrey-2);
   margin-bottom:1.25rem}
 .lanekey span{display:flex; align-items:center; gap:.4375rem}
 .swatch{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid var(--terrain-2)}
+
+@media(max-width:1240px){
+  .lifescroll{overflow-x:auto; scrollbar-width:thin; padding-bottom:1rem}
+  .lifescroll::-webkit-scrollbar{height:8px}
+  .lifescroll::-webkit-scrollbar-thumb{background:var(--lgrey-2); border-radius:4px}
+  .lifetable{grid-template-columns:var(--lifelabel) repeat(12, minmax(150px,1fr));
+    min-width:min-content}
+}
 
 /* ═══ Metrics ═══ */
 .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
@@ -531,7 +548,11 @@ footer a:hover{color:var(--seafoam)}
   </div>
 
   <div class="fullbleed">
-    <div class="lifeflowcap"><span>Freight enters the chain</span><span>Freight is delivered, paid for, and closed out</span></div><div class="lifewrap"><div class="lifescroll"><div class="lifegrid" id="lifegrid"></div></div></div>
+    <div class="lifewrap">
+      <div class="flowcaps"><span>Freight enters the chain</span><span>Delivered, paid for, closed out</span></div>
+      <div class="flowline"><div class="flowrule"></div><div class="flowveh" id="flowVeh"></div></div>
+      <div class="lifescroll"><div class="lifetable" id="lifegrid"></div></div>
+    </div>
   </div>
 
   <div class="wrap">
@@ -710,25 +731,84 @@ footer a:hover{color:var(--seafoam)}
   var byStep  = {};
   markers.forEach(function(k){ (byStep[k.step]=byStep[k.step]||[]).push(k); });
 
-  $("#lifegrid").innerHTML = steps.map(function(s,i){
-    var split = s.custodyHolder !== s.dataHolder;
-    var mk = (byStep[s.id]||[]).map(function(k){
-      return '<button class="mbadge '+esc(k.weight)+'" data-mk="'+esc(k.id)+'">'+esc(k.title)+'</button>';
-    }).join("");
-    return '<div class="stepcol">'
-      + '<div class="stephead"><span class="stepnum">'+String(i+1).padStart(2,"0")+'</span>'
-      + stepIcon(s.id)
-      + '<span class="stepname">'+esc(s.name)+'</span>'+id(s.id)+'</div>'
-      + '<div class="cell cell-phys">'+esc(s.physical)+'</div>'
-      + '<div class="cell cell-info">'+esc(s.informational)+'</div>'
-      + '<div class="holders'+(split?" split":"")+'">'
-      +   '<div class="holder"><span class="k">Custody</span><b>'+esc(s.custodyHolder)+'</b></div>'
-      +   '<div class="holder"><span class="k">Record</span><b>'+esc(s.dataHolder)+'</b></div>'
-      +   (split ? '<span class="splitflag">Split</span>' : '<span class="alignflag">Aligned</span>')
-      + '</div>'
-      + '<div class="mrow">'+mk+'</div>'
-      + '</div>';
-  }).join("");
+  /* Consecutive identical holders collapse into one spanning oval, so an
+     unchanged custody chain reads as one continuous run rather than N boxes. */
+  function runsOf(key){
+    var out=[], i=0;
+    while(i < steps.length){
+      var v = steps[i][key], j = i;
+      while(j+1 < steps.length && steps[j+1][key] === v) j++;
+      out.push({value:v, start:i, span:j-i+1});
+      i = j+1;
+    }
+    return out;
+  }
+
+  function vehicle(name){
+    var ic = (typeof ICONS !== "undefined") && ICONS[name];
+    if(!ic) return "";
+    return '<span class="veh"><svg viewBox="'+ic.viewBox+'" fill="none" stroke="currentColor" '
+      + 'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+      + ic.d.map(function(d){ return '<path d="'+d+'"/>'; }).join("") + '</svg></span>';
+  }
+  var vehEl = document.getElementById("flowVeh");
+  if(vehEl) vehEl.innerHTML = vehicle("truck") + vehicle("ship") + vehicle("plane");
+
+  (function renderLifecycle(){
+    var html = "";
+
+    // Column 1: the row labels.
+    var LABELS = [
+      { r:1, b:"Step",     s:"" },
+      { r:2, b:"Physical", s:"What is happening to the freight" },
+      { r:3, b:"Record",   s:"Data, money, and verification" },
+      { r:4, b:"Custody",  s:"Who holds the freight" },
+      { r:5, b:"System",   s:"Who holds the authoritative record" },
+      { r:6, b:"Friction", s:"Where it breaks" }
+    ];
+    LABELS.forEach(function(L){
+      html += '<div class="rowlabel" style="grid-column:1;grid-row:'+L.r+'">'
+        + '<b>'+esc(L.b)+'</b>'
+        + (L.s ? '<span>'+esc(L.s)+'</span>' : '') + '</div>';
+    });
+
+    steps.forEach(function(st,i){
+      var c = i + 2;                                  // grid column, 1 is the label
+      html += '<div class="stcell" style="grid-column:'+c+';grid-row:1">'
+        + '<span class="stnum">'+String(i+1).padStart(2,"0")+'</span>'
+        + stepIcon(st.id)
+        + '<span class="stname">'+esc(st.name)+'</span></div>';
+
+      html += '<div class="cell cell-phys" style="grid-column:'+c+';grid-row:2" '
+        + 'data-step="'+esc(st.id)+'" title="'+esc(st.physical)+'">'
+        + esc(st.physShort || st.physical) + '</div>';
+
+      html += '<div class="cell cell-info" style="grid-column:'+c+';grid-row:3" '
+        + 'data-step="'+esc(st.id)+'" title="'+esc(st.informational)+'">'
+        + esc(st.infoShort || st.informational) + '</div>';
+
+      var mk = (byStep[st.id]||[]).map(function(k){
+        return '<button class="mbadge '+esc(k.weight)+'" data-mk="'+esc(k.id)+'">'
+          + (k.weight === "loud" ? '<span class="painhd">! PAIN POINT !</span>' : '')
+          + esc(k.title) + '</button>';
+      }).join("");
+      html += '<div class="paincell" style="grid-column:'+c+';grid-row:6">'+mk+'</div>';
+    });
+
+    // Rows 4 and 5: merged runs.
+    runsOf("custodyHolder").forEach(function(r){
+      html += '<div class="holdcell" style="grid-column:'+(r.start+2)+' / span '+r.span
+        + ';grid-row:4"><b>'+esc(r.value)+'</b></div>';
+    });
+    runsOf("dataHolder").forEach(function(r){
+      var split = steps.slice(r.start, r.start+r.span)
+        .some(function(st){ return st.custodyHolder !== st.dataHolder; });
+      html += '<div class="holdcell'+(split?" split":"")+'" style="grid-column:'+(r.start+2)
+        + ' / span '+r.span+';grid-row:5"><b>'+esc(r.value)+'</b></div>';
+    });
+
+    document.getElementById("lifegrid").innerHTML = html;
+  })();
 
   /* ---- Marker modal ---- */
   var scrim = $("#scrim"), scrimInner = $("#scrimInner");

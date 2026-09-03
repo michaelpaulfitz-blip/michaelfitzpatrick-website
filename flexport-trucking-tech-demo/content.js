@@ -418,7 +418,9 @@ const CONTENT = {
         "informational": "The shipper asks for a price on a lane. The broker prices off historical lane cost, market data, equipment type, and expected accessorials.",
         "custodyHolder": "Shipper",
         "dataHolder": "Broker",
-        "markers": []
+        "markers": [],
+        "physShort": "Nothing moves. Freight sits at the shipper.",
+        "infoShort": "Shipper asks a price on a lane. Broker prices off lane history and market data."
       },
       {
         "id": "S02",
@@ -427,7 +429,9 @@ const CONTENT = {
         "informational": "The shipper formally offers the load at a contracted rate, as an EDI 204 or an API call, carrying stop sequence, appointment windows, weight, and reference numbers.",
         "custodyHolder": "Shipper",
         "dataHolder": "Shipper TMS",
-        "markers": []
+        "markers": [],
+        "physShort": "Still nothing. No truck has been assigned.",
+        "infoShort": "Shipper offers the load at contract rate by EDI 204, with stops and windows."
       },
       {
         "id": "S03",
@@ -436,7 +440,9 @@ const CONTENT = {
         "informational": "The carrier answers with an EDI 990. Every decline pushes the load one position deeper into the routing guide, and each position past the primary costs roughly 5 to 15 percent more.",
         "custodyHolder": "Shipper",
         "dataHolder": "Shipper TMS",
-        "markers": []
+        "markers": [],
+        "physShort": "Nothing moves. Freight sits on the origin dock.",
+        "infoShort": "Carrier answers with EDI 990. Each decline down the guide costs 5 to 15% more."
       },
       {
         "id": "S04",
@@ -445,7 +451,9 @@ const CONTENT = {
         "informational": "The broker buys a truck, working its own network first and the load boards last. The signed rate confirmation is the binding document, and the shipper's record now reads covered without saying by whom.",
         "custodyHolder": "Shipper",
         "dataHolder": "Broker",
-        "markers": []
+        "markers": [],
+        "physShort": "Still nothing. A truck is finishing another load.",
+        "infoShort": "Broker buys a truck, own network first. Signed rate confirmation is binding."
       },
       {
         "id": "S05",
@@ -454,7 +462,9 @@ const CONTENT = {
         "informational": "The carrier assigns a driver and equipment and passes the rate confirmation down. Hours of service feasibility gets checked here for the first time, well after the appointment window was promised at tender.",
         "custodyHolder": "Shipper",
         "dataHolder": "Carrier",
-        "markers": []
+        "markers": [],
+        "physShort": "An empty truck heads to origin. Freight has not moved.",
+        "infoShort": "Carrier assigns driver and equipment. Hours of service checked only now."
       },
       {
         "id": "S06",
@@ -463,7 +473,9 @@ const CONTENT = {
         "informational": "The facility's scheduling portal holds the slot, the gate time, and the in and out stamps. Free time runs from the scheduled appointment time rather than from actual arrival, so that portal record is already the billing record.",
         "custodyHolder": "Facility",
         "dataHolder": "Facility",
-        "markers": []
+        "markers": [],
+        "physShort": "Driver waits at the origin dock. Loading starts later.",
+        "infoShort": "Facility portal holds slot and gate stamps. Free time runs from appointment."
       },
       {
         "id": "S07",
@@ -472,7 +484,9 @@ const CONTENT = {
         "informational": "Status flows as EDI 214, an ELD API pull, or a driver app ping. Coverage is thinnest on one to five truck carriers, which is exactly who moves spot freight, so the broker fills the gap with manual check calls.",
         "custodyHolder": "Driver",
         "dataHolder": "Broker",
-        "markers": []
+        "markers": [],
+        "physShort": "Freight is on the road, sealed under the driver.",
+        "infoShort": "Status by EDI 214, ELD pull, or app ping. Small fleets need check calls."
       },
       {
         "id": "S08",
@@ -481,7 +495,9 @@ const CONTENT = {
         "informational": "The receiver sets the appointment and decides whether to honor it. Detention accrues against a scheduled time the receiver controls, and the receiver carries none of the cost of a bad slot.",
         "custodyHolder": "Driver",
         "dataHolder": "Receiver",
-        "markers": []
+        "markers": [],
+        "physShort": "Truck sits at the receiver gate. Freight stays loaded.",
+        "infoShort": "Receiver sets the appointment and decides whether to honor it. Detention runs."
       },
       {
         "id": "S09",
@@ -490,7 +506,9 @@ const CONTENT = {
         "informational": "The signed bill of lading, carrying any OS&D notation, becomes the proof of delivery. It often rides in the cab for days, and nothing downstream can be billed until it lands.",
         "custodyHolder": "Receiver",
         "dataHolder": "Driver",
-        "markers": []
+        "markers": [],
+        "physShort": "Freight comes off the trailer. Damage is noted now.",
+        "infoShort": "Signed bill of lading becomes the POD. Nothing bills until it lands."
       },
       {
         "id": "S10",
@@ -499,7 +517,9 @@ const CONTENT = {
         "informational": "The carrier bills by EDI 210 with the POD, lumper receipts, and detention documentation attached. Accessorial disputes start here, because the carrier, the broker, the shipper, and the facility each hold a different set of arrival timestamps and none of those sets is shared.",
         "custodyHolder": "Receiver",
         "dataHolder": "Broker",
-        "markers": []
+        "markers": [],
+        "physShort": "Nothing moves. Freight is in receiver inventory.",
+        "infoShort": "Carrier bills by EDI 210 with POD. Four parties hold different timestamps."
       },
       {
         "id": "S11",
@@ -508,7 +528,9 @@ const CONTENT = {
         "informational": "The broker remits by EDI 820, typically net 30 from POD, while collecting from the shipper on net 60 to 90. Small carriers cannot finance that gap, so many sell the invoice to a factor at 1 to 5 percent and the factor becomes the party owed.",
         "custodyHolder": "Receiver",
         "dataHolder": "Factor",
-        "markers": []
+        "markers": [],
+        "physShort": "Nothing moves. Only cash is still in motion.",
+        "infoShort": "Broker remits by EDI 820 net 30 and collects net 60 to 90. Carriers factor."
       },
       {
         "id": "S12",
@@ -517,7 +539,9 @@ const CONTENT = {
         "informational": "The Carmack Amendment places near strict liability on the carrier, with nine months to file and two years plus a day to sue. The outcome turns on the POD notation and the document file, which the broker assembled and holds.",
         "custodyHolder": "Receiver",
         "dataHolder": "Broker",
-        "markers": []
+        "markers": [],
+        "physShort": "Damaged or short freight sits at the receiver.",
+        "infoShort": "Carmack puts near strict liability on the carrier. Broker holds the file."
       }
     ]
   },

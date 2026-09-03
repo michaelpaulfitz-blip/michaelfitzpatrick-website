@@ -540,10 +540,10 @@ footer a:hover{color:var(--seafoam)}
       row underneath, where physical custody and the authoritative record keep coming apart.</p>
     </div>
     <div class="lanekey">
-      <span><i class="swatch" style="background:#fff"></i> Physical custody</span>
-      <span><i class="swatch" style="background:#f0f8f9;border-color:#d8e8ec"></i> Information, money, verification</span>
       <span><i class="swatch" style="background:#fdf1e6;border-color:#f0d9c0"></i> Custody and record held by different parties</span>
       <span><i class="swatch" style="background:#d82f57;border-color:#d82f57"></i> Loud pain point</span>
+      <span><i class="swatch" style="background:#e8e6e3"></i> Quieter pain point</span>
+      <span style="color:var(--lgrey-3)">Click any cell for the full text</span>
     </div>
   </div>
 
@@ -856,6 +856,32 @@ footer a:hover{color:var(--seafoam)}
       + '<div class="mkclose"><button class="btn btn-primary" data-close>Close</button></div>'
       + '</div>');
   });
+  document.addEventListener("click", function(e){
+    var cellEl = e.target.closest(".cell[data-step]"); if(!cellEl) return;
+    var st = steps.filter(function(x){ return x.id === cellEl.getAttribute("data-step"); })[0];
+    if(!st) return;
+    var idx = steps.indexOf(st) + 1;
+    var split = st.custodyHolder !== st.dataHolder;
+    openScrim('<div class="mkmodal">'
+      + '<div class="mkhead quiet">'
+      +   '<span class="mkstep">Step '+String(idx).padStart(2,"0")+' &middot; '+esc(st.id)+'</span>'
+      +   '<h3>'+esc(st.name)+'</h3></div>'
+      + '<div class="mkbody">'
+      +   '<div class="mkf" style="border-top:none;padding-top:0"><b>Physical</b>'
+      +     '<span>'+esc(st.physical)+'</span></div>'
+      +   '<div class="mkf" style="margin-top:1.125rem"><b>Information, money, verification</b>'
+      +     '<span>'+esc(st.informational)+'</span></div>'
+      +   '<div class="mkinv" style="grid-template-columns:1fr 1fr">'
+      +     '<div class="mkf"><b>Holds the freight</b><span>'+esc(st.custodyHolder)+'</span></div>'
+      +     '<div class="mkf"><b>Holds the record</b><span>'+esc(st.dataHolder)+'</span></div>'
+      +   '</div>'
+      +   (split ? '<p style="font-size:.8125rem;color:#8a4a12;margin-top:-.5rem">'
+                 + 'Custody and the authoritative record sit with different parties at this step.</p>' : '')
+      + '</div>'
+      + '<div class="mkclose"><button class="btn btn-primary" data-close>Close</button></div>'
+      + '</div>');
+  });
+
   document.addEventListener("click", function(e){ if(e.target.closest("[data-close]")) closeScrim(); });
 
   /* ---- Mapping board ---- */

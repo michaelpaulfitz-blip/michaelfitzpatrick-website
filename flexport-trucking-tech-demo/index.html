@@ -900,17 +900,32 @@ footer a:hover{color:var(--seafoam)}
       document.addEventListener(ev, function(){ if(coachState >= 2) killCoach(); }, {passive:true});
     });
 
+    // Trigger on first sight of the problems column. IntersectionObserver is the
+    // nice path, but a plain scroll check is the one that always works, so run
+    // both and let whichever arrives first win.
+    function coachInView(){
+      var col = document.getElementById("colProblems");
+      if(!col) return false;
+      var r = col.getBoundingClientRect();
+      return r.top < window.innerHeight * 0.6 && r.bottom > 0;
+    }
+    function maybeShowCoach(){
+      if(coachState !== 0 || coachDead) return;
+      if(!coachInView()) return;
+      coachState = -1;                       // claim it so both paths cannot double-fire
+      setTimeout(function(){ coachState = 0; showCoach(0); }, 380);
+      window.removeEventListener("scroll", onCoachScroll);
+    }
+    function onCoachScroll(){ maybeShowCoach(); }
+    window.addEventListener("scroll", onCoachScroll, {passive:true});
+
     if(window.IntersectionObserver){
       var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
-          if(en.isIntersecting && coachState === 0 && !coachDead){
-            setTimeout(function(){ showCoach(0); }, 420);
-            io.disconnect();
-          }
-        });
-      }, {threshold:0, rootMargin:"0px 0px -45% 0px"});
+        entries.forEach(function(en){ if(en.isIntersecting) maybeShowCoach(); });
+      }, {threshold:0, rootMargin:"0px 0px -40% 0px"});
       io.observe(document.getElementById("colProblems"));
-    } else { setTimeout(function(){ showCoach(0); }, 900); }
+    }
+    setTimeout(maybeShowCoach, 700);         // covers a deep link that lands already scrolled
 
     window.addEventListener("resize", function(){
       if(!coachDead && coachState >= 1 && coachState <= 2){

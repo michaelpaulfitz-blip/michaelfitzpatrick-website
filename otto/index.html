@@ -161,11 +161,12 @@
 <aside class="sidenav">
   <a class="side-brand" href="#top">O<span class="flip">tt</span>O</a>
   <nav>
-    <a href="#glovebox">🧤 The Glovebox</a>
-    <a href="#stacks">📚 The Stacks</a>
-    <a href="#ai-best-practices" class="subitem">🤖 AI Best Practices</a>
+    <a href="#action-items">✅ Action Items</a>
+    <a href="#mikes-action-items">🎯 Mike's Action Items</a>
+    <a href="#idea-pile">💡 The Idea Pile</a>
     <a href="#best-practices">🛠️ Best Practices</a>
-    <a href="#grand-tour">🗺️ The Grand Tour</a>
+    <a href="#project-epics">🗺️ Project Epics</a>
+    <a href="#appendix">📎 Appendix</a>
   </nav>
   <div class="side-note">🏕️ temporary quarters</div>
 </aside>
@@ -176,22 +177,35 @@
     <p class="tagline">Your life, automated. <em>(Otto, not Auto.)</em></p>
     <span class="temp-note">🏕️ Temporary quarters — Otto gets his own address someday</span>
     <nav class="toc">
-      <a href="#glovebox">The Glovebox</a>
-      <a href="#stacks">The Stacks</a>
+      <a href="#action-items">Action Items</a>
+      <a href="#mikes-action-items">Mike's Action Items</a>
+      <a href="#idea-pile">The Idea Pile</a>
       <a href="#best-practices">Best Practices</a>
-      <a href="#grand-tour">The Grand Tour</a>
+      <a href="#project-epics">Project Epics</a>
+      <a href="#appendix">Appendix</a>
     </nav>
   </header>
 
+  <!-- ============ ACTION ITEMS (project) ============ -->
+  <section class="card" id="action-items">
+    <h2>✅ Action Items</h2>
+    <p class="aka">uncategorized project to-dos — more granular than epics; a temporary holding pen while we build fast (will likely retire once real tooling exists)</p>
+    <ul class="ideas">
+      <li>The Great Roundup — centralize Mike's action items from ~a dozen Google Docs into one place, then organize and prune together (many are stale). <span class="tag">[2026-09-03 · queued]</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ MIKE'S ACTION ITEMS (module) ============ -->
+  <section class="card" id="mikes-action-items">
+    <h2>🎯 Mike's Action Items</h2>
+    <p class="aka">future home of the to-do / action-item tracker module — the most urgently needed module of them all</p>
+    <div class="emptystate" id="mai-placeholder">Blank by design for now. Foundational research is underway — links to the research docs will land here.</div>
+  </section>
+
   <!-- ============ IDEA LIST / PARKING LOT ============ -->
-  <section class="card" id="glovebox">
-    <h2>🧤 The Glovebox</h2>
-    <p class="aka">the idea list / parking lot — where ideas ride along until it's their turn to drive</p>
-    <div class="namebox">
-      <strong>🏷️ Alternative names (revisit anytime):</strong>
-      The Parking Lot · The Idea List · The Hopper · The Back Burner · The Junk Drawer · The Someday Pile
-      — current pick is <em>The Glovebox</em> because Otto is car-adjacent and it's where you stash things you'll need later.
-    </div>
+  <section class="card" id="idea-pile">
+    <h2>💡 The Idea Pile</h2>
+    <p class="aka">the idea list / parking lot — every idea lands here with a date and a name on it</p>
     <ul class="ideas">
       <li>Permanent home for Otto — new domain or subdomain, migrate off <code>/otto</code>. <span class="tag">[infra]</span></li>
       <li>Name for the reminder / action-item module — needs alignment. <span class="tag">[naming]</span></li>
@@ -199,53 +213,13 @@
       <li>Phone notifications strategy — PWA? Push? Email digest? <span class="tag">[research candidate]</span></li>
       <li>Paper journal → photo → transcription pipeline for the journaling module. <span class="tag">[journaling]</span></li>
       <li>Session naming convention for the Researcher/Owner column (this session = <strong>HQ</strong>). <span class="tag">[process]</span></li>
-      <li>Finalize section names — Glovebox / Stacks / Grand Tour are all provisional. <span class="tag">[naming]</span></li>
-      <li>Upgrade the Glovebox into a table with Date + Recorded-by columns (Mike / Claude / Shared) — exact build instructions coming from Mike in a future exchange. <span class="tag">[2026-09-03 · Mike]</span></li>
+      <li>Upgrade the Idea Pile into a table with Date + Recorded-by columns (Mike / Claude / Shared) — exact build instructions coming from Mike in a future exchange. <span class="tag">[2026-09-03 · Mike]</span></li>
+      <li>Voice-first capture as a P0 requirement for the action-item module — tap one button, talk, item recorded. Mike named it as an evaluation criterion; flagging it as a design cornerstone. <span class="tag">[2026-09-03 · Shared]</span></li>
       <li>Idea scoreboard — tally Glovebox entries by Mike / Claude / Shared and hold a quarterly awards ceremony (categories: Most Whimsical, Most Actually Shipped). <span class="tag">[2026-09-03 · Claude]</span></li>
       <li>Ethos pills in the page header — tiny badges for the three themes (Practical · Whimsical · Learning Lab) so the project's spirit stays visible. <span class="tag">[2026-09-03 · Claude]</span></li>
       <li>The Great Roundup — centralize action items scattered across ~a dozen Google Docs into a new Action Items section: dump raw, then organize and prune together. <span class="tag">[2026-09-03 · Mike]</span></li>
       <li>Automate the Roundup — Claude fetches the docs via Drive access and does the dump itself, so nobody copy-pastes a dozen documents by hand. <span class="tag">[2026-09-03 · Claude]</span></li>
     </ul>
-  </section>
-
-  <!-- ============ RESEARCH REPOSITORY ============ -->
-  <section class="card" id="stacks">
-    <h2>📚 The Stacks</h2>
-    <p class="aka">the research repository — everything we've gone deep on, filed and summarized</p>
-    <div class="namebox">
-      <strong>🏷️ Alternative names (revisit anytime):</strong>
-      Research Repository · Otto's Almanac · The Test Bench · Field Notes · Service Records
-      — current pick is <em>The Stacks</em>, as in library stacks. (Research Repository remains a dignified fallback.)
-    </div>
-
-    <p style="font-size:14px; color:var(--muted); margin-top:0;">Rows are collapsed to stay thin — click any row to expand its summary.</p>
-    <div class="tablewrap"><div class="tbl cols-research">
-      <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
-
-      <details>
-        <summary><div class="rowline">
-          <span class="date">2026-09-02</span>
-          <span class="title">Project-level settings in Claude Code (CLAUDE.md &amp; friends)</span>
-          <span class="origin">Mike asked for the proper term for project-level rules/procedures and best practices for using them, ahead of instituting Otto's own project rules.</span>
-          <span class="who">HQ</span>
-          <span class="doc"><span class="none">—</span></span>
-        </div></summary>
-        <div class="expand">
-          <p>The feature is called <strong>project memory</strong> — a <code>CLAUDE.md</code> file at the project root, loaded automatically into every session in that directory (vs. the global <code>~/.claude/CLAUDE.md</code>, which applies everywhere). Alongside it: <code>.claude/settings.json</code> holds machine-enforced project settings (permissions, hooks), and project-scoped skills/agents live under <code>.claude/</code> too.</p>
-          <p>Full write-up lives in the <a href="#best-practices">Best Practices</a> section below. Otto's own <code>CLAUDE.md</code> was created 2026-09-02 with the project's tone setting as its first entry.</p>
-        </div>
-      </details>
-    </div></div>
-
-    <!-- ---- AI BEST PRACTICES SUBSECTION ---- -->
-    <div class="subsection" id="ai-best-practices">
-      <h3>🤖 AI Best Practices</h3>
-      <p class="aka">findings from the Best Practices Bootcamp epic — same shape as The Stacks, kept separate for now (may merge later)</p>
-      <div class="tablewrap"><div class="tbl cols-research">
-        <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
-        <div class="emptystate">Nothing here yet — this table fills up when the Best Practices Bootcamp epic kicks off. 🎓</div>
-      </div></div>
-    </div>
   </section>
 
   <!-- ============ BEST PRACTICES ============ -->
@@ -304,13 +278,12 @@
   </section>
 
   <!-- ============ PROJECT EPICS ============ -->
-  <section class="card" id="grand-tour">
-    <h2>🗺️ The Grand Tour</h2>
-    <p class="aka">project epics — the big legs of Otto's journey, loosely in driving order</p>
+  <section class="card" id="project-epics">
+    <h2>🗺️ Project Epics</h2>
+    <p class="aka">the big buckets of work, loosely in the order we plan to drive them — some run in parallel</p>
     <div class="namebox">
-      <strong>🏷️ Alternative names (revisit anytime):</strong>
-      Project Epics · Quest Log · The Road Atlas · The Saga Board · The Itinerary
-      — current pick is <em>The Grand Tour</em> (a road trip with stops, which is exactly what this is).
+      <strong>🏷️ Named (2026-09-03):</strong>
+      Settled on <em>Project Epics</em>. Retired with honors: The Grand Tour · Quest Log · The Road Atlas · The Saga Board · The Itinerary.
     </div>
 
     <p style="font-size:14px; color:var(--muted); margin-top:0;">Same thin-row construct as The Stacks, with two adaptations: <em>Date researched → Date added</em>, plus a <em>Status</em> column and a loose order number. Click rows to expand.</p>
@@ -321,7 +294,7 @@
         <summary><div class="rowline">
           <span>1</span>
           <span class="title">Best Practices Bootcamp</span>
-          <span class="status">🚧 Up next</span>
+          <span class="status">♻️ Ongoing (parallel)</span>
           <span class="origin">2026-09-02 — after ~6 months of AI-assisted building (demo projects, personal site, Hemlock, Mates), Mike wants to pause and study best practices deliberately instead of only accreting them.</span>
           <span class="who">Mike + HQ</span>
           <span class="doc"><span class="none">—</span></span>
@@ -461,6 +434,50 @@
 
     <div class="advice">
       <strong>💡 Claude's field suggestions for this table</strong> — the research-table construct ports over cleanly; the two columns already adapted are noted above. Candidates to add as the project matures (deliberately left out for now to keep rows thin): <strong>Priority</strong> (order number covers it today), <strong>Depends-on</strong> (epic prerequisites), <strong>Target window</strong> (rough timeframe, once one exists), and <strong>Tags</strong> for cross-cutting themes. Recommendation: add each only when its absence actually hurts.
+    </div>
+  </section>
+
+  <!-- ============ APPENDIX ============ -->
+  <section class="card" id="appendix">
+    <h2>📎 Appendix</h2>
+    <p class="aka">retired and archival sections live here — nothing is ever truly gone</p>
+
+    <div class="subsection" id="research-repository">
+      <h3>📚 The Research Repository</h3>
+      <p class="aka">formerly "The Stacks" — Otto's local research archive, filed and summarized</p>
+      <div class="namebox">
+        <strong>🏷️ Note (2026-09-03):</strong>
+        This section's ongoing home has moved to the <em>AI Learning</em> page — a separate project of Mike's. It remains here as the archive for Otto-specific research records.
+      </div>
+
+      <p style="font-size:14px; color:var(--muted); margin-top:0;">Rows are collapsed to stay thin — click any row to expand its summary.</p>
+      <div class="tablewrap"><div class="tbl cols-research">
+        <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
+
+        <details>
+          <summary><div class="rowline">
+            <span class="date">2026-09-02</span>
+            <span class="title">Project-level settings in Claude Code (CLAUDE.md &amp; friends)</span>
+            <span class="origin">Mike asked for the proper term for project-level rules/procedures and best practices for using them, ahead of instituting Otto's own project rules.</span>
+            <span class="who">HQ</span>
+            <span class="doc"><span class="none">—</span></span>
+          </div></summary>
+          <div class="expand">
+            <p>The feature is called <strong>project memory</strong> — a <code>CLAUDE.md</code> file at the project root, loaded automatically into every session in that directory (vs. the global <code>~/.claude/CLAUDE.md</code>, which applies everywhere). Alongside it: <code>.claude/settings.json</code> holds machine-enforced project settings (permissions, hooks), and project-scoped skills/agents live under <code>.claude/</code> too.</p>
+            <p>Full write-up lives in the <a href="#best-practices">Best Practices</a> section. Otto's own <code>CLAUDE.md</code> was created 2026-09-02 with the project's tone setting as its first entry.</p>
+          </div>
+        </details>
+      </div></div>
+
+      <!-- ---- AI BEST PRACTICES SUBSECTION ---- -->
+      <div class="subsection" id="ai-best-practices">
+        <h3>🤖 AI Best Practices</h3>
+        <p class="aka">findings from the Best Practices Bootcamp epic — same table shape, kept separate for now (may merge later)</p>
+        <div class="tablewrap"><div class="tbl cols-research">
+          <div class="tbl-head"><span>Date</span><span>Topic</span><span>Origin</span><span>Researcher</span><span>Doc</span></div>
+          <div class="emptystate">Nothing here yet — this table fills up as the Best Practices Bootcamp epic rolls along. 🎓</div>
+        </div></div>
+      </div>
     </div>
   </section>
 

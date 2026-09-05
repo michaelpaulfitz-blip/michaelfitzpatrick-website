@@ -103,6 +103,17 @@
   ul.ideas li { margin: 7px 0; }
   ul.ideas .tag { color: var(--muted); font-size: 13px; }
 
+  .idealist { margin: 6px 0 0; border-top: 1px solid var(--border); }
+  .idealist details { border-bottom: 1px solid var(--border); }
+  .idealist summary { cursor: pointer; list-style: none; padding: 8px 6px; font-size: 15px; }
+  .idealist summary::-webkit-details-marker { display: none; }
+  .idealist summary:hover { background: var(--row-hover); }
+  .idealist summary::before { content: "▸ "; color: var(--accent); }
+  .idealist details[open] > summary::before { content: "▾ "; }
+  .idealist .tag { color: var(--muted); font-size: 13px; }
+  .idealist .ideabody { padding: 2px 10px 14px 24px; font-size: 14.5px; max-width: 76ch; }
+  .idealist .ideabody p { margin: 6px 0; }
+
   /* ---- thin expandable table rows ---- */
   .tablewrap { overflow-x: auto; }
   .tbl { min-width: 760px; border-top: 1px solid var(--border); }
@@ -210,24 +221,76 @@
   <!-- ============ IDEA LIST / PARKING LOT ============ -->
   <section class="card" id="idea-pile">
     <h2>💡 The Idea Pile</h2>
-    <p class="aka">the idea list / parking lot — every idea lands here with a date and a name on it</p>
-    <ul class="ideas">
-      <li>Permanent home for Otto — new domain or subdomain, migrate off <code>/otto</code>. <span class="tag">[infra]</span></li>
-      <li>Name for the reminder / action-item module — needs alignment. <span class="tag">[naming]</span></li>
-      <li>Wake-up target: keep 6:00 or renegotiate to 6:30? <span class="tag">[habits]</span></li>
-      <li>Phone notifications strategy — PWA? Push? Email digest? <span class="tag">[research candidate]</span></li>
-      <li>Paper journal → photo → transcription pipeline for the journaling module. <span class="tag">[journaling]</span></li>
-      <li>Session naming convention for the Researcher/Owner column (this session = <strong>HQ</strong>). <span class="tag">[process]</span></li>
-      <li>Upgrade the Idea Pile into a table with Date + Recorded-by columns (Mike / Claude / Shared) — exact build instructions coming from Mike in a future exchange. <span class="tag">[2026-09-03 · Mike]</span></li>
-      <li>Voice-first capture as a P0 requirement for the action-item module — tap one button, talk, item recorded. Mike named it as an evaluation criterion; flagging it as a design cornerstone. <span class="tag">[2026-09-03 · Shared]</span></li>
-      <li>Monarch budget integration — no official API exists, but community MCP servers wrap Monarch's private GraphQL API; could let Claude/Otto answer "how's the budget?" and act on verbal commands. Unofficial = fragile; revisit when the module roadmap gets there. <span class="tag">[2026-09-04 · Shared]</span></li>
-      <li>Amazon charge reconciler — Amazon purchases hit Monarch as opaque "Amazon" charges days after ordering, split by shipment, with amounts that rarely match checkout. Flow: Mike tells Otto "FYI, ordered ~$X on Amazon today, it's for [category]" → a daily background job watches Monarch for matching charges (amount window + date window, handling split shipments) → auto-categorizes on match, asks in the Daily Briefing when unsure. <span class="tag">[2026-09-04 · Mike]</span></li>
-      <li>Amazon reconciler upgrade: parse Amazon order/shipment confirmation emails from Gmail for item-level detail — items + totals could auto-suggest the category (groceries vs. home improvement vs. discretionary) with no FYI from Mike needed. <span class="tag">[2026-09-04 · Claude]</span></li>
-      <li>Idea scoreboard — tally Glovebox entries by Mike / Claude / Shared and hold a quarterly awards ceremony (categories: Most Whimsical, Most Actually Shipped). <span class="tag">[2026-09-03 · Claude]</span></li>
-      <li>Ethos pills in the page header — tiny badges for the three themes (Practical · Whimsical · Learning Lab) so the project's spirit stays visible. <span class="tag">[2026-09-03 · Claude]</span></li>
-      <li>The Great Roundup — centralize action items scattered across ~a dozen Google Docs into a new Action Items section: dump raw, then organize and prune together. <span class="tag">[2026-09-03 · Mike]</span></li>
-      <li>Automate the Roundup — Claude fetches the docs via Drive access and does the dump itself, so nobody copy-pastes a dozen documents by hand. <span class="tag">[2026-09-03 · Claude]</span></li>
-    </ul>
+    <p class="aka">the idea list / parking lot — every idea lands here with a date and a name on it; click a row to expand its notes</p>
+    <div class="idealist">
+      <details>
+        <summary>Permanent home for Otto — new domain or subdomain, migrate off <code>/otto</code>. <span class="tag">[2026-09-02 · Mike · infra]</span></summary>
+        <div class="ideabody"><p>Otto currently squats at michaelfitzpatrick.me/otto, deployed with the personal site (Render, via the website repo). Someday: own domain or subdomain and own hosting — likely GCP, alongside the app itself.</p></div>
+      </details>
+      <details>
+        <summary>Name for the reminder / action-item module — needs alignment. <span class="tag">[2026-09-02 · Mike · naming]</span></summary>
+        <div class="ideabody"><p>The to-do module needs a real name before it ships. A naming brainstorm like the one that produced "Otto" (50 candidates, etymology deep-dive, one winner) would do nicely.</p></div>
+      </details>
+      <details>
+        <summary>Wake-up target: keep 6:00 or renegotiate to 6:30? <span class="tag">[2026-09-02 · Mike · habits]</span></summary>
+        <div class="ideabody"><p>Seed habit is 6:00 wake / 10:00 bed; Mike flagged possible renegotiation to 6:30. Decide before the habit tracker's seed data gets planted.</p></div>
+      </details>
+      <details>
+        <summary>Phone notifications strategy — PWA? Push? Email digest? <span class="tag">[2026-09-02 · Claude · research candidate]</span></summary>
+        <div class="ideabody"><p>How does Otto reach Mike's phone? Leading path: PWA install + web push. Fallbacks: wrapped APK via Capacitor if PWA notifications prove unreliable on Android (they can be), or an email digest. Research before the Daily Briefing module ships — reliable notifications are its whole job.</p></div>
+      </details>
+      <details>
+        <summary>Paper journal → photo → transcription pipeline for the journaling module. <span class="tag">[2026-09-02 · Mike · journaling]</span></summary>
+        <div class="ideabody"><p>Keep the pretty paper journal, photograph pages, and Claude transcribes them into a searchable digital record — analog charm plus digital archive. The entry-mode decision (stay paper vs. go digital) is deliberately deferred.</p></div>
+      </details>
+      <details>
+        <summary>Session naming convention for the Researcher/Owner column (this session = <strong>HQ</strong>). <span class="tag">[2026-09-02 · Claude · process]</span></summary>
+        <div class="ideabody"><p>Multiple parallel Claude sessions are planned; each identifies itself in the portal's Researcher/Owner columns. Founding session = <strong>HQ</strong>, internal session ID <code>0146d85d-4be0-481c-a5e8-bee15223681e</code> — findable in the desktop app's session list or resumable via <code>claude --resume</code>.</p></div>
+      </details>
+      <details>
+        <summary>Upgrade the Idea Pile into a table with Date + Recorded-by columns. <span class="tag">[2026-09-03 · Mike]</span></summary>
+        <div class="ideabody"><p>Columns will include date recorded and who recorded it (Mike / Claude / Shared). Mike will deliver exact build instructions in a future exchange — don't restructure before then. (The collapsible rows added 2026-09-04 are an interim step, not the table.)</p></div>
+      </details>
+      <details>
+        <summary>Voice-first capture as a P0 requirement for the action-item module. <span class="tag">[2026-09-03 · Shared]</span></summary>
+        <div class="ideabody"><p>Tap one button, talk, item recorded. Mike named it as an evaluation criterion; the foundational research then confirmed capture friction is the industry battleground (Todoist Ramble, iOS 26) and an ADHD dealbreaker — over ~3 seconds of friction and the thought is gone. Design cornerstone.</p></div>
+      </details>
+      <details>
+        <summary>Monarch budget integration — voice commands against the family budget. <span class="tag">[2026-09-04 · Shared]</span></summary>
+        <div class="ideabody"><p>Monarch has no official API, but community MCP servers (robcerda/monarch-mcp-server, whitebirchio/monarch-mcp, others) wrap its private GraphQL API — Claude could answer "how's the dining-out budget?" or act on verbal commands. Caveats: unofficial (could break any Tuesday, ToS gray area), credentials carry full account access, so scope read-mostly first and treat writes carefully. Slots in as another connector next to Gmail/Calendar when the roadmap gets there.</p></div>
+      </details>
+      <details>
+        <summary>Amazon charge reconciler — untangle the "Amazon purchases" black box in Monarch. <span class="tag">[2026-09-04 · Mike]</span></summary>
+        <div class="ideabody">
+          <p><strong>The problem:</strong> Amazon purchases land in the budget as opaque "Amazon" charges — some are Amazon Fresh groceries, some personal discretionary, some home-improvement projects — and they're miserable to match up. Root cause: <strong>Amazon charges per shipment when it ships, not per order at checkout.</strong> One order becomes several charges over days, tax is finalized per shipment, and gift-card balances get peeled off first — so amounts rarely match the checkout total and timing lags by 1–7+ days. (Amazon Fresh usually posts under its own descriptor.)</p>
+          <p><strong>The design (an "expectation ledger with reconciliation"):</strong> Mike fires a quick FYI — "ordered ~$85 on Amazon today, it's for the bathroom project" — which becomes a pending expectation. A daily background job pulls recent Monarch transactions (via a community Monarch MCP wrapper) and hunts for Amazon charges in a date window (order date + ~10 days) whose amounts sum to roughly the expected total. Confident match → auto-categorize silently.</p>
+          <p><strong>The hard part:</strong> split shipments make matching a fuzzy subset-sum problem, and two Amazon orders in the same week create ambiguity. The fix is not smarter math but a human-in-the-loop escape hatch: low-confidence matches surface in the Daily Briefing as a one-tap confirm ("I think $23.14 + $61.90 are your ~$85 bathroom order — yes?").</p>
+          <p><strong>Upgrade path (next entry):</strong> parse Amazon's order/shipment confirmation emails from Gmail for totals and item names — item detail can auto-suggest the category, demoting Mike's FYI from requirement to override.</p>
+          <p><strong>Dependencies / sequencing:</strong> needs the Monarch connection, scheduled background jobs, and the Daily Briefing — a second-wave feature once those foundations exist.</p>
+          <p class="tag">Logged 2026-09-04 from session HQ (session ID <code>0146d85d-4be0-481c-a5e8-bee15223681e</code>) — full discussion lives in that conversation.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Amazon reconciler upgrade: auto-categorize via Gmail order emails. <span class="tag">[2026-09-04 · Claude]</span></summary>
+        <div class="ideabody"><p>Parse Amazon order/shipment confirmation emails (Gmail access already exists) for order totals and item-level detail — "30 items from Amazon Fresh" reads as groceries, "DEWALT orbital sander" reads as definitely-not-groceries. Mike's voice FYI becomes the override channel for intent the items can't reveal. To verify at build time: Amazon has been stripping detail from some notification emails, so coverage may be partial — hybrid, not either/or. Full design notes under the main reconciler entry above.</p></div>
+      </details>
+      <details>
+        <summary>Idea scoreboard with quarterly awards ceremony. <span class="tag">[2026-09-03 · Claude]</span></summary>
+        <div class="ideabody"><p>Tally Idea Pile entries by attribution (Mike / Claude / Shared); quarterly awards for Most Whimsical and Most Actually Shipped. Zero stakes, maximum pageantry.</p></div>
+      </details>
+      <details>
+        <summary>Ethos pills in the page header. <span class="tag">[2026-09-03 · Claude]</span></summary>
+        <div class="ideabody"><p>Tiny badges for the three themes — Practical · Whimsical · Learning Lab — so the project's spirit stays visible on every visit.</p></div>
+      </details>
+      <details>
+        <summary>The Great Roundup — centralize action items from ~a dozen Google Docs. <span class="tag">[2026-09-03 · Mike]</span></summary>
+        <div class="ideabody"><p>Dump everything raw into the Action Items section, then organize and prune together (many entries are stale). Also seeded as an actual entry in Action Items.</p></div>
+      </details>
+      <details>
+        <summary>Automate the Roundup — Claude fetches and dumps the docs itself. <span class="tag">[2026-09-03 · Claude]</span></summary>
+        <div class="ideabody"><p>Claude has Drive access, so nobody should copy-paste a dozen documents by hand — say the word and the dump happens automatically.</p></div>
+      </details>
+    </div>
   </section>
 
   <!-- ============ BEST PRACTICES ============ -->

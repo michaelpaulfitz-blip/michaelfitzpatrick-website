@@ -182,7 +182,7 @@ const CONTENT = {
       {
         "id": "W02",
         "name": "UARC2 North Star metric, lost and reinstated",
-        "outcome": "Attribution MAPE ~8 vs ~32, 100% adoption six weeks after tech-complete",
+        "outcome": "Attribution MAPE ~8 vs ~32, 100% adoption by required users and 92% across the wider org",
         "detail": "UARC2 is a diagnostic, so there was no instock delta to point at, and I proposed a ground truth instead: ten random stockouts a week scored by both systems against a panel of tenured SMEs, measured as Stockout Driver Attribution MAPE. After one round of pushback from my director and manager I dropped it, and the months of adoption churn that followed ended only when I reinstated it with a one-pager written off a nationwide strawberry shortage, where UARC1 blamed five things equally for a vendor that simply had no strawberries."
       },
       {

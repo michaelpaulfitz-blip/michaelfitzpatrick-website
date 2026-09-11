@@ -6,69 +6,77 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Visibility Experience Map · Michael Fitzpatrick</title>
 <meta name="description" content="Visibility problems at Flexport mapped against delivered work. Prepared for a conversation with Flexport.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%2345dabe' d='M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z'/%3E%3C/svg%3E">
+<!-- Favicon: original drawing in the spirit of Flexport's tab icon (obsidian tile, quadrant discs
+     in indigo, perano and seafoam). Not their logo file. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2309101f'/%3E%3Cpath d='M16 4a12 12 0 0 1 12 12H16z' fill='%23566ae5'/%3E%3Cpath d='M28 16a12 12 0 0 1-12 12V16z' fill='%23a2acf2'/%3E%3Cpath d='M16 28A12 12 0 0 1 4 16h12z' fill='%2345dabe'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ═══ Flexport design language. Tokens read from their live CSS bundle
-   (see C:/dev/jobbot3000/demos/flexport/design-tokens.css for the evidence). ═══ */
+/* ═══ Flexport design language, 2026 product refresh. Tokens read from their live CSS bundle
+   (styles.b7ad8c407cd85ddcc216.css) and from product screenshots captured 2026-09-11.
+   Per-token evidence: C:/dev/jobbot3000/demos/flexport/design-tokens-2026.css ═══ */
 :root{
-  --midnight:#052439; --midnight-400:#1e3a4d; --midnight-600:#041d2e;
+  --obsidian:#09101f; --midnight:#052439; --midnight-400:#1e3a4d; --midnight-600:#041d2e;
   --midnight-700:#031622; --midnight-800:#020e17;
   --midnight-300:#506674; --midnight-200:#82929c; --midnight-100:#b4bdc4;
-  --seafoam:#45dabe; --seafoam-3:#7deed8; --seafoam-5:#319a86; --seafoam-6:#1d5a4f;
-  --teal:#015f74; --teal-1:#e4f1f4;
-  --indigo:#566ae5; --indigo-600:#4555b7; --indigo-1:#ebedfd;
+  --navy-900:#0e1319; --navy-600:#3a4551; --navy-400:#666e78; --navy-200:#92989f;
+  --indigo:#566ae5; --indigo-600:#4555b7; --indigo-700:#344089; --indigo-800:#222a5c;
+  --indigo-400:#7888ea; --indigo-300:#9aa6ef; --indigo-200:#bbc3f5; --indigo-100:#dde1fa;
+  --indigo-1:#ebedfd; --perano:#a2acf2; --royal:#144ccd;
   --electric:#2365ff; --electric-h:#1a52d9;
   --red:#d82f57; --red-1:#fce8ed; --coral:#fa5959;
   --orange:#f58039; --yellow:#ffa81d;
-  --white:#fff; --terrain-1:#fbf9f6; --terrain:#f4f2ef; --terrain-2:#e8e6e3;
-  --dawn:#f0f8f9; --grey-100:#e5e8ea; --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6;
-  --dgrey-1:#4d5563; --dgrey-2:#6b747e; --glass:#ffffff33;
+  --white:#fff; --page:#fbfbfe; --surface-2:#f8f9fd; --solitude:#ebf0f6;
+  --grey-100:#e5e8ea; --lgrey-1:#e9eef4; --lgrey-2:#b8c1cb; --lgrey-3:#9da7b6;
+  --dgrey-1:#4d5563; --dgrey-2:#6b747e; --ink:#0f2943; --glass:#ffffff33;
+  --line-dark:#1c2438;
+  --shadow-card:0 1px 2px #09101f14, 0 4px 14px #09101f1a;
+  --shadow-modal:0 0 .875rem 0 #00000033;
   --maxw:1240px; --rail:230px;
-  --r:.3125rem; --r-media:.6875rem; --r-lg:1.25rem; --r-pill:1.875rem;
+  --r:.3125rem; --r-md:.5rem; --r-lg:1.25rem; --r-pill:1.875rem;
   --head:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
   --body:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--terrain-1); color:var(--midnight); font-family:var(--body);
+body{background:var(--page); color:var(--ink); font-family:var(--body);
   font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,.eyebrow,.wordmark,.pillarnum{
   font-family:var(--head); font-variation-settings:'wdth' 112;
-  font-weight:500; letter-spacing:.01em; text-wrap:balance}
-a{color:var(--electric); text-decoration:none}
-a:hover{color:var(--electric-h)}
+  font-weight:500; letter-spacing:0; text-wrap:balance}
+a{color:var(--indigo); text-decoration:none}
+a:hover{color:var(--indigo-600)}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 2.25rem}
 @media(max-width:767px){.wrap{padding:0 1.125rem}}
 /* Wide screens: the fixed rail eats 230px on the left, so widen the content
    block rather than let it drift right of the optical centre on a shared screen. */
 @media(min-width:1600px){:root{--maxw:1400px}}
 button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit}
+:focus-visible{outline:none; box-shadow:0 0 0 .15625rem #737ec9}
 
 /* ═══ Nav: horizontal bar under 1024px, left rail at 1024px and up ═══ */
-header.nav{position:sticky; top:0; z-index:60; background:var(--midnight);
-  border-bottom:1px solid var(--midnight-400)}
+header.nav{position:sticky; top:0; z-index:60; background:var(--obsidian);
+  border-bottom:1px solid var(--line-dark)}
 .nav-inner{max-width:var(--maxw); margin:0 auto; padding:.875rem 2.25rem; display:flex;
   align-items:center; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
 .wordmark{font-weight:700; font-size:1rem; color:var(--white); display:flex;
   align-items:center; gap:.5rem; white-space:nowrap}
-.wordmark .mark{width:13px;height:13px;fill:var(--seafoam);flex:none}
+.wordmark .mark{width:13px;height:13px;fill:var(--indigo);flex:none}
 nav.links{display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center}
 nav.links a{color:var(--midnight-100); font-size:.8125rem;
   padding-bottom:.1875rem; border-bottom:2px solid transparent; transition:.15s}
-nav.links a:hover{color:var(--white); border-bottom-color:var(--seafoam)}
-nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
+nav.links a:hover{color:var(--white); border-bottom-color:var(--indigo-400)}
+nav.links a.active{color:var(--indigo-300); border-bottom-color:var(--indigo)}
 .nav-foot{display:flex; align-items:center}
 .navbtn{color:var(--midnight-100); font-size:.8125rem; padding-bottom:.1875rem;
   border-bottom:2px solid transparent; transition:.15s}
-.navbtn:hover{color:var(--white); border-bottom-color:var(--seafoam)}
+.navbtn:hover{color:var(--white); border-bottom-color:var(--indigo-400)}
 
 @media(min-width:1024px){
   body{padding-left:var(--rail)}
   header.nav{position:fixed; top:0; left:0; bottom:0; width:var(--rail);
-    border-bottom:none; border-right:1px solid var(--midnight-400);
+    border-bottom:none; border-right:1px solid var(--line-dark);
     overflow-y:auto; overscroll-behavior:contain}
   .nav-inner{max-width:none; margin:0; min-height:100%; padding:1.75rem 0 1.5rem;
     flex-direction:column; align-items:stretch; justify-content:flex-start;
@@ -79,12 +87,12 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
   nav.links{flex-direction:column; align-items:stretch; flex-wrap:nowrap; gap:.125rem}
   nav.links a{padding:.625rem 1.25rem; border-bottom:none;
     border-left:2px solid transparent; line-height:1.3}
-  nav.links a:hover{color:var(--white); border-left-color:var(--midnight-300)}
-  nav.links a.active{color:var(--seafoam); border-left-color:var(--seafoam)}
+  nav.links a:hover{color:var(--white); border-left-color:var(--indigo-700)}
+  nav.links a.active{color:var(--indigo-300); border-left-color:var(--indigo)}
   .nav-foot{margin-top:auto; padding:1.25rem 1.25rem 0;
-    border-top:1px solid var(--midnight-400)}
+    border-top:1px solid var(--line-dark)}
   .navbtn{display:block; width:100%; text-align:left; padding:0; border-bottom:none}
-  .navbtn:hover{color:var(--seafoam)}
+  .navbtn:hover{color:var(--indigo-300)}
 }
 
 /* ═══ Draft banner ═══ */
@@ -92,31 +100,33 @@ nav.links a.active{color:var(--seafoam); border-bottom-color:var(--seafoam)}
   font-weight:600; letter-spacing:.06em; text-transform:uppercase; text-align:center;
   padding:.4375rem 1rem}
 
-.navsub{display:block; font-size:.6875rem; color:var(--midnight-300);
+.navsub{display:block; font-size:.6875rem; color:var(--navy-400);
   letter-spacing:.04em; margin-top:.0625rem}
-nav.links a.active .navsub{color:var(--seafoam-5)}
+nav.links a.active .navsub{color:var(--indigo-400)}
 
 /* ═══ Bands ═══ */
 .band{padding:5rem 0; position:relative}
-.band-dark{background:var(--midnight); color:var(--white)}
-.band-light{background:var(--terrain-1)}
-.band-dawn{background:var(--dawn)}
+.band-dark{background:var(--obsidian); color:var(--white)}
+.band-light{background:var(--page)}
+.band-dawn{background:var(--surface-2)}
 @media(max-width:767px){.band{padding:3rem 0}}
 .eyebrow{font-size:.6875rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--seafoam); font-weight:700; margin-bottom:1.125rem; display:block}
-.band-light .eyebrow,.band-dawn .eyebrow{color:var(--seafoam-5)}
+  color:var(--indigo-300); font-weight:700; margin-bottom:1.125rem; display:block}
+.band-light .eyebrow,.band-dawn .eyebrow{color:var(--indigo-600)}
 .pillarnum{font-variation-settings:'wdth' 118; font-weight:700; font-size:.75rem;
-  letter-spacing:.16em; color:var(--seafoam-5); display:block; margin-bottom:.75rem}
-.band-dark .pillarnum{color:var(--seafoam)}
+  letter-spacing:.16em; color:var(--indigo-600); display:block; margin-bottom:.75rem}
+.band-dark .pillarnum,.refs .pillarnum{color:var(--indigo-300)}
 .sechead{max-width:64ch; margin-bottom:2.75rem}
 .sechead h2{font-size:clamp(1.75rem,.9rem+2.6vw,2.375rem); line-height:1.15; margin-bottom:.875rem}
-.band-dark .sechead h2{color:var(--white)}
+.band-dark .sechead h2,.refs .sechead h2{color:var(--white)}
 .sechead p{font-size:1.0625rem; color:var(--dgrey-1); line-height:1.55}
 .band-dark .sechead p{color:var(--midnight-100)}
 
-/* ═══ Hero ═══ */
-.hero{background:var(--midnight); color:var(--white); position:relative;
-  overflow:hidden; padding:2.25rem 0 2rem}
+/* ═══ Hero: midnight into obsidian, with the product gradient bleeding in from the left ═══ */
+.hero{background:linear-gradient(180deg,var(--midnight) 0%,var(--obsidian) 100%);
+  color:var(--white); position:relative; overflow:hidden; padding:2.25rem 0 2rem}
+.hero:before{content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(60% 120% at 0% 100%, #566ae566 0%, #144ccd33 45%, transparent 75%)}
 .hero .wrap{position:relative;z-index:2}
 .arrowfield{position:absolute; inset:0; pointer-events:none}
 .arrowfield svg{width:100%;height:100%;display:block}
@@ -126,23 +136,23 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
   max-width:82ch; margin-bottom:.875rem}
 .hero .lede strong{color:var(--white);font-weight:500}
 .hero .byline{font-size:.75rem; color:var(--midnight-200); padding-top:.625rem;
-  border-top:1px solid var(--midnight-400); max-width:82ch}
+  border-top:1px solid var(--line-dark); max-width:82ch}
 .scrollcue{display:inline-block; font-family:var(--head);
   font-variation-settings:'wdth' 112; font-weight:700; font-size:.9375rem;
   letter-spacing:.02em; color:var(--yellow); animation:cueBlink 1.5s ease-in-out infinite}
 @keyframes cueBlink{0%,100%{opacity:1}50%{opacity:.35}}
 @media(prefers-reduced-motion:reduce){.scrollcue{animation:none}}
 
-/* ═══ Buttons: inset ring, Flexport's signature ═══ */
+/* ═══ Buttons: indigo fill for primary, inset ring for secondary ═══ */
 .btn{display:inline-flex; align-items:center; gap:.5rem; font-size:.875rem;
   font-weight:500; padding:.6875rem 1.25rem; border-radius:var(--r); transition:.18s}
-.btn-primary{background:var(--electric); color:var(--white)}
-.btn-primary:hover{background:var(--electric-h)}
+.btn-primary{background:var(--indigo); color:var(--white)}
+.btn-primary:hover{background:var(--indigo-600)}
 .btn-ghost{background:transparent; color:var(--white);
-  box-shadow:0 0 0 .125rem var(--midnight-300) inset}
-.btn-ghost:hover{box-shadow:0 0 0 .125rem var(--seafoam) inset; color:var(--seafoam)}
+  box-shadow:0 0 0 .125rem var(--navy-600) inset}
+.btn-ghost:hover{box-shadow:0 0 0 .125rem var(--indigo-400) inset; color:var(--indigo-300)}
 
-/* ═══ Experience map board ═══ */
+/* ═══ Experience map board: white cards floating on obsidian, like Atlas ═══ */
 .board{position:relative; display:grid;
   grid-template-columns:minmax(0,1fr) clamp(130px,15vw,300px) minmax(0,1fr); gap:0;
   align-items:stretch; margin-top:1rem}
@@ -151,30 +161,31 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
   .board .edgelayer{display:none}}
 .boardcol{display:flex; flex-direction:column; gap:.625rem}
 .colhead{font-size:.6875rem; letter-spacing:.13em; text-transform:uppercase;
-  font-weight:700; color:var(--seafoam); margin-bottom:.375rem}
+  font-weight:700; color:var(--indigo-300); margin-bottom:.375rem}
 .edgelayer{position:relative}
 .edgelayer svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;
   pointer-events:none}
-.pcard,.wcard{border-radius:var(--r-media); padding:.9375rem 1rem; cursor:pointer;
-  transition:.18s; border:1px solid transparent}
-.pcard{background:var(--midnight-600); border-color:var(--midnight-400)}
-.wcard{background:var(--midnight-600); border-color:var(--midnight-400)}
-.pcard:hover,.wcard:hover{border-color:var(--midnight-300)}
-.pcard.on,.wcard.on{border-color:var(--seafoam); background:var(--midnight-400)}
+.pcard,.wcard{border-radius:var(--r-md); padding:.9375rem 1rem; cursor:pointer;
+  transition:.18s; border:1px solid transparent; color:var(--ink)}
+.pcard{background:var(--white); border-color:var(--grey-100); box-shadow:var(--shadow-card)}
+.wcard{background:var(--white); border-color:var(--grey-100); box-shadow:var(--shadow-card)}
+.pcard:hover,.wcard:hover{border-color:var(--indigo-200)}
+.pcard.on,.wcard.on{border-color:var(--indigo); background:var(--white);
+  box-shadow:var(--shadow-card),0 0 0 1px var(--indigo)}
 .pcard.off,.wcard.off{opacity:.28}
 .ctitle{font-family:var(--head); font-weight:600; font-size:.9375rem; line-height:1.3;
-  color:var(--white); margin-bottom:.375rem}
-.cmeta{font-size:.75rem; line-height:1.45; color:var(--midnight-200)}
+  color:var(--ink); margin-bottom:.375rem}
+.cmeta{font-size:.75rem; line-height:1.45; color:var(--dgrey-2)}
 .wcard .outcome{font-family:var(--head); font-variation-settings:'wdth' 115;
-  font-weight:600; font-size:.875rem; color:var(--seafoam); margin-bottom:.375rem;
+  font-weight:600; font-size:.875rem; color:var(--indigo-600); margin-bottom:.375rem;
   font-variant-numeric:lining-nums tabular-nums}
-.boardhint{font-size:.8125rem; color:var(--midnight-200); margin-top:1.5rem;
-  padding-top:1.25rem; border-top:1px solid var(--midnight-400)}
+.boardhint{font-size:.8125rem; color:var(--navy-200); margin-top:1.5rem;
+  padding-top:1.25rem; border-top:1px solid var(--line-dark)}
 
-/* ═══ Coach mark: unmissable prompt to actually click a problem ═══ */
+/* ═══ Coach mark: orange stays, it is their alert colour and the only warm thing on the board ═══ */
 .coach{position:absolute; z-index:40; width:246px; background:var(--orange);
-  color:#2a1403; border-radius:var(--r-media); padding:.875rem 1rem;
-  box-shadow:0 10px 30px rgba(5,36,57,.45); opacity:0; transform:translateY(6px);
+  color:#2a1403; border-radius:var(--r-md); padding:.875rem 1rem;
+  box-shadow:0 10px 30px rgba(9,16,31,.55); opacity:0; transform:translateY(6px);
   transition:opacity .28s, transform .28s; pointer-events:none}
 .coach.on{opacity:1; transform:none; pointer-events:auto}
 .coach:after{content:''; position:absolute; left:-9px; top:22px; width:0; height:0;
@@ -187,93 +198,93 @@ nav.links a.active .navsub{color:var(--seafoam-5)}
   line-height:1; color:#7a4a12; padding:.125rem .25rem}
 .coach .x:hover{color:#2a1403}
 .coach.pulse{animation:coachPulse 1.7s ease-in-out infinite}
-@keyframes coachPulse{0%,100%{box-shadow:0 10px 30px rgba(5,36,57,.45)}
-  50%{box-shadow:0 10px 30px rgba(5,36,57,.45),0 0 0 7px rgba(245,128,57,.24)}}
-.pcard.coachtarget{box-shadow:0 0 0 2px var(--orange) inset}
+@keyframes coachPulse{0%,100%{box-shadow:0 10px 30px rgba(9,16,31,.55)}
+  50%{box-shadow:0 10px 30px rgba(9,16,31,.55),0 0 0 7px rgba(245,128,57,.28)}}
+.pcard.coachtarget{box-shadow:var(--shadow-card),0 0 0 2px var(--orange)}
 @media(prefers-reduced-motion:reduce){.coach,.coach.pulse{animation:none;transition:none}}
 
-/* ═══ References ═══ */
-.refs{background:var(--midnight-700); color:var(--midnight-100)}
-details.refbox{border:1px solid var(--midnight-400); border-radius:var(--r-media);
-  background:var(--midnight-600); overflow:hidden}
+/* ═══ References: midnight band, white receipt card ═══ */
+.refs{background:var(--midnight); color:var(--midnight-100)}
+details.refbox{border:1px solid var(--grey-100); border-radius:var(--r-md);
+  background:var(--white); color:var(--ink); overflow:hidden; box-shadow:var(--shadow-card)}
 details.refbox summary{list-style:none; cursor:pointer; padding:1.25rem 1.5rem;
   display:flex; align-items:center; justify-content:space-between; gap:1rem}
 details.refbox summary::-webkit-details-marker{display:none}
 .refsum-l{display:flex;flex-direction:column;gap:.25rem}
-.refsum-l b{font-family:var(--head); font-weight:600; font-size:1rem; color:var(--white)}
-.refsum-l span{font-size:.8125rem; color:var(--midnight-200)}
-.refchev{color:var(--seafoam); font-size:.8125rem; font-weight:600; flex:none}
+.refsum-l b{font-family:var(--head); font-weight:600; font-size:1rem; color:var(--ink)}
+.refsum-l span{font-size:.8125rem; color:var(--dgrey-2)}
+.refchev{color:var(--indigo); font-size:.8125rem; font-weight:600; flex:none}
 details[open] .refchev .c-open{display:none}
 details:not([open]) .refchev .c-close{display:none}
-.refbody{padding:0 1.5rem 1.5rem; border-top:1px solid var(--midnight-400)}
+.refbody{padding:0 1.5rem 1.5rem; border-top:1px solid var(--grey-100); background:var(--surface-2)}
 .refgroup{margin-top:1.5rem}
 .refgroup h4{font-size:.6875rem; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--seafoam); font-weight:700; margin-bottom:.75rem}
+  color:var(--indigo-600); font-weight:700; margin-bottom:.75rem}
 ol.reflist,ul.reflist{list-style:none; display:grid; gap:.5rem}
 .reflist li{font-size:.8125rem; line-height:1.45; display:grid;
   grid-template-columns:2.25rem 1fr; gap:.5rem; align-items:start}
-.reflist .rn{color:var(--midnight-300); font-variant-numeric:tabular-nums; font-size:.75rem}
-.reflist a{color:var(--midnight-100); word-break:break-word}
-.reflist a:hover{color:var(--seafoam)}
-.reflist .rl{display:block; color:var(--white); font-weight:500; margin-bottom:.125rem}
+.reflist .rn{color:var(--lgrey-3); font-variant-numeric:tabular-nums; font-size:.75rem}
+.reflist a{color:var(--dgrey-1); word-break:break-word}
+.reflist a:hover{color:var(--indigo)}
+.reflist .rl{display:block; color:var(--ink); font-weight:500; margin-bottom:.125rem}
 
 /* ═══ Modals (the two opening notices) ═══ */
-.scrim{position:fixed; inset:0; background:#052439cc; backdrop-filter:blur(3px);
+.scrim{position:fixed; inset:0; background:#09101fcc; backdrop-filter:blur(3px);
   z-index:200; display:flex; align-items:center; justify-content:center; padding:1.5rem}
 .scrim[hidden]{display:none}
-.modal{background:var(--white); border-radius:var(--r-lg); max-width:600px; width:100%;
-  max-height:86vh; overflow-y:auto; padding:2rem}
+.modal{background:var(--white); border-radius:var(--r-md); max-width:600px; width:100%;
+  max-height:86vh; overflow-y:auto; padding:2rem; box-shadow:var(--shadow-modal)}
 .modal.tone-red{border-top:5px solid var(--coral)}
 .modal.tone-yellow{border-top:5px solid var(--yellow)}
 .modal .mtag{font-size:.625rem; letter-spacing:.13em; text-transform:uppercase;
   font-weight:700; margin-bottom:.75rem; display:block}
 .tone-red .mtag{color:var(--coral)}
 .tone-yellow .mtag{color:#b57d0a}
-.modal h3{font-size:1.3125rem; line-height:1.25; margin-bottom:.875rem}
+.modal h3{font-size:1.3125rem; line-height:1.25; margin-bottom:.875rem; color:var(--ink)}
 .modal p{font-size:.9375rem; line-height:1.6; color:var(--dgrey-1); margin-bottom:1.25rem}
 .modal .mact{display:flex; gap:.75rem; flex-wrap:wrap; align-items:center}
-.modal .mact .btn-primary{background:var(--midnight)}
-.modal .mact .btn-primary:hover{background:var(--midnight-800)}
+.modal .mact .btn-primary{background:var(--indigo)}
+.modal .mact .btn-primary:hover{background:var(--indigo-600)}
 .modal .mlink{font-size:.875rem; font-weight:500}
 
 /* ═══ TODO panel (draft only) ═══ */
 .todo{position:fixed; right:1.25rem; bottom:1.25rem; z-index:120; width:min(374px,calc(100vw - 2.5rem))}
 .todo-toggle{width:100%; background:var(--yellow); color:var(--midnight-800);
-  border-radius:var(--r-media); padding:.75rem 1rem; font-weight:700; font-size:.8125rem;
+  border-radius:var(--r-md); padding:.75rem 1rem; font-weight:700; font-size:.8125rem;
   display:flex; align-items:center; justify-content:space-between; gap:.75rem;
-  box-shadow:0 4px 18px #05243933}
-.todo-body{background:var(--midnight-800); border:1px solid var(--seafoam-6);
-  border-radius:var(--r-media); margin-bottom:.5rem; max-height:60vh; overflow-y:auto;
+  box-shadow:0 4px 18px #09101f33}
+.todo-body{background:var(--navy-900); border:1px solid var(--indigo-800);
+  border-radius:var(--r-md); margin-bottom:.5rem; max-height:60vh; overflow-y:auto;
   padding:1.125rem; display:none}
 .todo.open .todo-body{display:block}
 .todo-body h4{color:var(--yellow); font-size:.6875rem; letter-spacing:.12em;
   text-transform:uppercase; font-weight:700; margin-bottom:.875rem}
-.titem{border-top:1px solid var(--midnight-400); padding:.875rem 0}
+.titem{border-top:1px solid var(--line-dark); padding:.875rem 0}
 .titem:first-of-type{border-top:none;padding-top:0}
 .titem .tq{color:var(--white); font-size:.875rem; font-weight:600; line-height:1.35;
   margin-bottom:.4375rem; display:flex; gap:.5rem}
-.titem .tid{color:var(--seafoam); font-size:.6875rem; font-weight:700; flex:none; padding-top:.125rem}
+.titem .tid{color:var(--indigo-300); font-size:.6875rem; font-weight:700; flex:none; padding-top:.125rem}
 .titem .tw{color:var(--midnight-100); font-size:.78125rem; line-height:1.45; margin-bottom:.5rem}
 .titem .tp{color:var(--midnight-100); font-size:.78125rem; line-height:1.45;
-  background:var(--midnight-700); border-left:2px solid var(--seafoam); padding:.5rem .625rem;
+  background:var(--obsidian); border-left:2px solid var(--indigo); padding:.5rem .625rem;
   border-radius:0 var(--r) var(--r) 0}
-.titem .tp b{color:var(--seafoam); display:block; font-size:.625rem; letter-spacing:.1em;
+.titem .tp b{color:var(--indigo-300); display:block; font-size:.625rem; letter-spacing:.1em;
   text-transform:uppercase; margin-bottom:.25rem}
 
 /* ═══ Draft ID chips ═══ */
 .cid{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.5625rem;
-  letter-spacing:.04em; color:var(--lgrey-3); background:var(--terrain-2);
+  letter-spacing:.04em; color:var(--lgrey-3); background:var(--lgrey-1);
   padding:.0625rem .3125rem; border-radius:2px; margin-left:.375rem; font-weight:400}
-.band-dark .cid{background:var(--midnight-700); color:var(--midnight-300)}
+.reflist .cid{background:var(--indigo-1); color:var(--indigo-600)}
 body:not(.draft) .cid{display:none}
 body:not(.draft) .todo{display:none}
 body:not(.draft) .draftbar{display:none}
 
-footer{background:var(--midnight); color:var(--midnight-200); padding:2.25rem 0;
-  border-top:1px solid var(--midnight-400); font-size:.8125rem}
+footer{background:var(--obsidian); color:var(--navy-200); padding:2.25rem 0;
+  border-top:1px solid var(--line-dark); font-size:.8125rem}
 footer .wrap{display:flex; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
 footer a{color:var(--midnight-100)}
-footer a:hover{color:var(--seafoam)}
+footer a:hover{color:var(--indigo-300)}
 </style>
 </head>
 <body>
@@ -303,9 +314,9 @@ footer a:hover{color:var(--seafoam)}
       </pattern></defs>
       <rect width="100%" height="100%" fill="url(#arrows)"/>
       <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
-            fill="#45dabe" fill-opacity=".85" transform="translate(742,132)"/>
+            fill="#566ae5" fill-opacity=".9" transform="translate(742,132)"/>
       <path d="M14.36 0H0l11.11 12.19L0 24.39h14.36l10.84-12.2L14.36 0z"
-            fill="#45dabe" fill-opacity=".22" transform="translate(948,216)"/>
+            fill="#a2acf2" fill-opacity=".3" transform="translate(948,216)"/>
     </svg>
   </div>
   <div class="wrap">
@@ -373,7 +384,7 @@ footer a:hover{color:var(--seafoam)}
 </div>
 
 <script src="icons.js"></script>
-<script src="content.js?v=20260911113935"></script>
+<script src="content.js?v=20260911121508"></script>
 <script>
 (function(){
   "use strict";
@@ -446,7 +457,7 @@ footer a:hover{color:var(--seafoam)}
       var y1=a.top-lr.top+a.height/2, y2=b.top-lr.top+b.height/2, x2=lr.width;
       var idle = !active;
       var on = active && (active===e.problem || active===e.work);
-      var col = e.strength==="primary" ? "#45deae" : "#506674";
+      var col = e.strength==="primary" ? "#7888ea" : "#666e78";
       return '<path d="M0,'+y1+' C'+(x2*0.5)+','+y1+' '+(x2*0.5)+','+y2+' '+x2+','+y2+'" '
         + 'fill="none" stroke="'+col+'" stroke-width="'+(e.strength==="primary"?2:1.25)+'" '
         + 'opacity="'+(idle ? 0.10 : (on ? (e.strength==="primary"?0.9:0.5) : 0.05))+'"/>';

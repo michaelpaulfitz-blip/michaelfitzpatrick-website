@@ -103,7 +103,7 @@ const CONTENT = {
         "id": "R01",
         "title": "The client-facing tracking promise runs ahead of what physical execution can deliver",
         "fromJD": "Our team is responsible for defining the client-facing tracking experience based on real physical execution capabilities",
-        "why": "The most candid line in the posting. A client-facing ETA shown while there is no chassis, no terminal appointment before the last free day and an open customs hold is a promise nobody in ops is working toward, and the size of that gap is not a published number."
+        "why": "The most candid line in the posting. A client-facing ETA shown while there is no chassis, no terminal appointment before the last free day and an open customs hold is a promise nobody in ops is working toward, and the size of that gap is not a published number. On Control Tower freight that Flexport does not move it holds neither the house bill nor the customs entry, so the gap is structurally wider there."
       },
       {
         "id": "R02",
@@ -113,15 +113,15 @@ const CONTENT = {
       },
       {
         "id": "R03",
-        "title": "The same milestone arrives from the carrier 315, the terminal TOS, AIS inference and an ops keystroke, with different timestamps and no stored precedence",
+        "title": "Inside a platform that already calls itself the single source of truth, the same milestone arrives from the carrier 315, the terminal TOS, AIS inference and an ops keystroke, and which one wins per milestone is not a stored rule",
         "fromJD": false,
-        "why": "Most platforms resolve the conflict with latest-wins or carrier-wins and overwrite. Aggregators normalize the sources away entirely, which removes exactly the information a root cause needs. Sources: Vizion data-quality page, DCSA track-and-trace standard, FreightWaves on the terminal blind spot."
+        "why": "Flexport uses the phrase single source of truth for both Atlas and Booking Management. Most platforms resolve the conflict with latest-wins or carrier-wins and overwrite. Aggregators normalize the sources away entirely, which removes exactly the information a root cause needs. Sources: Vizion data-quality page, DCSA track-and-trace standard, FreightWaves on the terminal blind spot."
       },
       {
         "id": "R04",
         "title": "Past the terminal gate a truck move is a leg of a container, and the telemetry under it is rented from FourKites, project44, MacroPoint and 10-4",
         "fromJD": false,
-        "why": "The public data model has Shipment, Container, ContainerLeg, Milestone and Port, with no Load, Appointment, Driver or Yard object. Owning end-to-end tracking on the ground legs is a vendor decision before it is a product decision, and project44 spinning off LSP44 in July 2026 changed the math. [INFERENCE from the public API reference and integration evidence]"
+        "why": "The public data model has Shipment, Container, ContainerLeg, Milestone and Port, with no Load, Appointment, Driver or Yard object. Owning end-to-end tracking on the ground legs is a vendor decision before it is a product decision, and project44 spinning off LSP44 in July 2026 changed the math. The Platform page markets satellite-powered visibility on truck and rail, and the public integration evidence still points at vendors for the telemetry underneath. [INFERENCE from the public API reference and integration evidence]"
       },
       {
         "id": "R05",
@@ -137,9 +137,9 @@ const CONTENT = {
       },
       {
         "id": "R07",
-        "title": "There is no published ground truth for tracking accuracy, so a wrong ETA is an anecdote rather than a number leadership sees",
+        "title": "The only published plan-versus-actual score grades the carrier's departure, and nothing grades Flexport's own arrival promise to the client",
         "fromJD": false,
-        "why": "Flexport reports 75% on-time on Transpacific eastbound against its own prediction, and on-time against the date the client planned inventory around is a different number that costs the client money. Cargo iQ has scored air plan-versus-actual per milestone for two decades. Ocean has no equivalent."
+        "why": "The carrier scorecard in Booking Management publishes ETD-to-ATD variance by carrier and lane, which is a real plan-versus-actual number. It scores the carrier leaving. Flexport also reports 75% on-time on Transpacific eastbound against its own prediction. Neither scores arrival at port or door against the date the client planned inventory around, and that is the number that costs the client money. Cargo iQ has scored air per milestone for two decades."
       },
       {
         "id": "R08",
@@ -155,9 +155,9 @@ const CONTENT = {
       },
       {
         "id": "R10",
-        "title": "Atlas, the platform UI, the API, notifications and email are separate surfaces that do not yet compose into one tracking experience",
+        "title": "Booking Management, Order Management, Control Tower, Atlas, the platform UI with 600 typed exceptions, the API and EDI layer, notifications and email are separate surfaces that do not yet compose into one tracking experience",
         "fromJD": "You will define the vision for how multiple product surfaces work together to serve clients and operators across global logistics",
-        "why": "The posting says domain rather than feature twice, and the roadmap horizon is 2 to 3 years across multiple engineering teams with no dated commitment forcing it. The artifact leadership trusts does not yet exist in that form."
+        "why": "The solutions page for Visibility has no product of its own; it is stitched from six other products. The posting says domain rather than feature twice, and the roadmap horizon is 2 to 3 years across multiple engineering teams with no dated commitment forcing it. The artifact leadership trusts does not yet exist in that form."
       },
       {
         "id": "R11",

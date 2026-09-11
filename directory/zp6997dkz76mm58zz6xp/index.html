@@ -5,98 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<title>Site Directory — Michael Fitzpatrick</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌲%3C/text%3E%3C/svg%3E">
+<title>Site Directory | Michael Fitzpatrick</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232f6b3f' d='M12 2 6.5 10h3L5 16h5.5v5h3v-5H19l-4.5-6h3z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  /* Warm Naturalist — same tokens as index.html */
+  /* Hemlock infographic palette, 2026-09-11.
+     Lifted from the two Hemlock systems-diagram infographics. Field-guide feel:
+     paper ground, forest-green eyebrows, navy card titles and outlines, one tint
+     per card group. Red, orange and purple are reserved for one small element each. */
   :root{
-    --bone:#F0EEE6; --paper:#FAF9F4; --ink:#1F1E1B; --faded:#6E675C;
-    --clay:#C15F3C; --clay-deep:#A64E30; --moss:#5B7052; --brick:#9C3A2E;
-    --slate:#4A6070; --hairline:#DCD6C8;
-    --serif:Georgia,'Times New Roman',serif;
+    --paper:#f8f6f0;          /* page ground */
+    --paper-deep:#f2efe6;     /* slightly darker paper for separators and header wash */
+    --card:#ffffff;           /* card fill */
+    --ink:#1a1f2b;            /* headings, never pure black */
+    --ink-soft:#4b5160;       /* body copy */
+    --ink-faded:#7a8090;      /* meta, hints, captions */
+
+    --green:#2f6b3f;          /* primary accent: wordmark, eyebrows, tree glyphs */
+    --green-deep:#1f5a2e;     /* hover state for green */
+    --navy:#2b4c7e;           /* secondary accent: card titles, outlines, badges, arrows */
+    --navy-deep:#1e3a5f;      /* hover state for navy */
+    --slate:#5b6b82;          /* neutral outline, external pill */
+
+    --tint-blue:#eef3fb;      /* process cards */
+    --tint-lavender:#f3eefb;  /* AI / model cards */
+    --tint-tan:#f6efe3;       /* data / storage cards */
+    --tint-green:#eef6ee;     /* outputs / telemetry cards */
+
+    --purple:#7c4dbd;         /* AI / model accent (one small element) */
+    --brick:#b3261e;          /* alert, firewall (one element) */
+    --orange:#c8641e;         /* human / operator (one small element) */
+
+    --outline:1.5px solid var(--navy);
+    --radius:10px;
+    --hair:#d9dce4;           /* thin separators inside cards */
+
+    --display:'Archivo','Archivo Black','Helvetica Neue',Arial,sans-serif;
+    --body:'Inter','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     --maxw:1680px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
-  body{background:var(--bone); color:var(--ink); font-family:var(--serif);
-    font-variant-numeric:tabular-nums; font-size:16px; line-height:1.5;
-    -webkit-font-smoothing:antialiased}
-  a{color:var(--clay); text-decoration:none}
-  a:hover{color:var(--clay-deep); text-decoration:underline}
+  html{background:var(--paper)}
+  body{background:var(--paper); color:var(--ink-soft); font-family:var(--body);
+    font-variant-numeric:tabular-nums; font-size:15px; line-height:1.5;
+    -webkit-font-smoothing:antialiased; position:relative}
+  /* Faint paper grain. Kept very low so it reads as texture, not noise. */
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
+  header,main,footer{position:relative; z-index:1}
+  a{color:var(--navy); text-decoration:none; font-weight:500}
+  a:hover{color:var(--navy-deep); text-decoration:underline}
+  b{color:var(--ink); font-weight:600}
 
-  header.head{border-bottom:1px solid var(--hairline)}
+  header.head{border-bottom:1.5px solid var(--navy); background:var(--paper-deep)}
   .head-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px;
-    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap}
-  .wordmark{font-size:17px; font-weight:bold; letter-spacing:.2px}
-  .wordmark .dot{color:var(--clay)}
-  .headmeta{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--faded)}
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .wordmark{font-family:var(--display); font-weight:800; font-size:17px; letter-spacing:.2px; color:var(--green)}
+  .wordmark .dot{color:var(--navy)}
+  .headmeta{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--ink-faded); font-weight:500}
 
-  main{max-width:var(--maxw); margin:0 auto; padding:22px 24px 8px}
-  h1{font-size:26px; line-height:1.15; letter-spacing:-.4px; display:inline}
-  .h1line{margin-bottom:6px}
-  .h1line .counts{font-size:12px; letter-spacing:1.4px; text-transform:uppercase;
-    color:var(--faded); margin-left:14px; white-space:nowrap}
-  .h1line .counts b{color:var(--ink)}
-  .oneline{font-size:14px; color:var(--faded); margin-bottom:12px}
+  main{max-width:var(--maxw); margin:0 auto; padding:24px 24px 8px}
+  .h1line{margin-bottom:6px; display:flex; align-items:center; flex-wrap:wrap; gap:0 14px}
+  .tree{width:22px; height:22px; flex:0 0 auto; color:var(--green)}
+  .tree.l{margin-right:10px} .tree.r{margin-left:10px}
+  h1{font-family:var(--display); font-weight:800; font-size:28px; line-height:1.1;
+    letter-spacing:-.3px; color:var(--ink); display:inline}
+  .h1line .counts{font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase;
+    color:var(--ink-faded); white-space:nowrap; font-weight:500}
+  .h1line .counts b{color:var(--navy); font-weight:700}
+  .oneline{font-size:14.5px; color:var(--ink-faded); margin-bottom:14px; font-style:italic}
 
-  .warn{background:var(--paper); border:1px solid var(--hairline); border-left:3px solid var(--clay);
-    border-radius:5px; padding:9px 13px; margin-bottom:22px; font-size:13px; color:var(--faded)}
-  .warn b{color:var(--ink)}
+  /* The one alert element: brick-red band with a brick pattern. */
+  .warn{position:relative; background:var(--card); border:var(--outline); border-color:var(--brick);
+    border-radius:var(--radius); padding:10px 14px 10px 24px; margin-bottom:24px; font-size:13px;
+    color:var(--ink-soft); overflow:hidden}
+  .warn::before{content:""; position:absolute; left:0; top:0; bottom:0; width:12px;
+    background-color:var(--brick);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Crect width='12' height='12' fill='%23b3261e'/%3E%3Cpath d='M0 .5h12M0 6.5h12M3.5 0v6M9.5 6v6' stroke='%23edc9c5' stroke-width='1'/%3E%3C/svg%3E")}
+  .warn b{color:var(--brick); font-weight:700}
 
-  h2{font-size:15px; letter-spacing:1.8px; text-transform:uppercase; color:var(--faded);
-    font-weight:bold; margin:26px 0 8px}
+  /* Section eyebrows, forest green. */
+  h2{font-family:var(--display); font-size:13px; letter-spacing:1.8px; text-transform:uppercase;
+    color:var(--green); font-weight:800; margin:28px 0 8px; display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 10px}
   h2:first-of-type{margin-top:0}
-  h2 .hint{text-transform:none; letter-spacing:0; font-weight:normal; font-size:13px; margin-left:10px}
+  h2::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%;
+    background:var(--green); margin-right:2px; position:relative; top:-1px}
+  h2 .hint{font-family:var(--body); text-transform:none; letter-spacing:0; font-weight:400;
+    font-size:13px; color:var(--ink-faded); font-style:italic}
 
-  .tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:5px; background:var(--paper)}
+  /* Cards: white, navy outline, 10px radius. Each table gets one tint on its header row. */
+  .tablewrap{overflow-x:auto; border:var(--outline); border-radius:var(--radius); background:var(--card)}
   table{border-collapse:collapse; width:100%; table-layout:fixed}
-  th{font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--faded);
-    font-weight:bold; text-align:left; padding:7px 11px; border-bottom:1px solid var(--hairline);
-    white-space:nowrap; background:rgba(220,214,200,.28)}
-  td{padding:7px 11px; border-bottom:1px solid var(--hairline); vertical-align:top;
-    font-size:14px; color:var(--faded); line-height:1.45}
+  th{font-family:var(--display); font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--navy);
+    font-weight:800; text-align:left; padding:8px 11px; border-bottom:1.5px solid var(--navy);
+    white-space:nowrap}
+  #sop th{background:var(--tint-blue)}
+  #site th{background:var(--tint-green)}
+  td{padding:8px 11px; border-bottom:1px solid var(--hair); vertical-align:top;
+    font-size:13.5px; color:var(--ink-soft); line-height:1.45}
   tr:last-child td{border-bottom:none}
-  td .name{display:block; color:var(--ink); font-weight:bold; font-size:14.5px}
-  td.num{text-align:right; padding-right:8px; font-size:12px; white-space:nowrap}
-  td.co{color:var(--ink); font-weight:bold}
-  td.when{white-space:nowrap; font-size:12px; font-family:var(--mono)}
+  td .name{display:block; color:var(--navy); font-weight:700; font-size:14px; font-family:var(--display); letter-spacing:-.1px}
+  /* Numbered badges: round navy with a white numeral, drawn on the cell so the markup stays put. */
+  td.num{text-align:center; padding:6px 0; width:44px; font-size:10.5px; line-height:24px;
+    font-weight:700; color:#fff; white-space:nowrap; font-family:var(--display);
+    background:radial-gradient(circle 12px at 50% 18px, var(--navy) 98%, transparent 100%)}
+  td.co{color:var(--ink); font-weight:600}
+  td.when{white-space:nowrap; font-size:12px; font-family:var(--mono); color:var(--ink-faded)}
   code,.sha,.path{font-family:var(--mono); font-size:12.5px}
-  .sha{color:var(--ink); background:rgba(220,214,200,.42); padding:0 4px; border-radius:3px}
+  code{color:var(--purple); background:var(--tint-lavender); padding:0 4px; border-radius:3px}
+  .sha{color:var(--ink); background:var(--tint-tan); padding:0 4px; border-radius:3px}
   .path{overflow-wrap:anywhere}
-  .rec{display:block; margin-top:3px; font-family:var(--mono); font-size:11.5px; color:var(--ink);
-    background:rgba(220,214,200,.42); padding:2px 5px; border-radius:3px; overflow-wrap:anywhere}
+  .rec{display:block; margin-top:4px; font-family:var(--mono); font-size:11.5px; color:var(--ink);
+    background:var(--tint-tan); padding:3px 6px; border-radius:4px; overflow-wrap:anywhere;
+    border-left:2px solid var(--slate)}
 
   /* Site table columns */
-  #site th:nth-child(1),#site td:nth-child(1){width:34px}
+  #site th:nth-child(1),#site td:nth-child(1){width:44px}
   #site th:nth-child(2),#site td:nth-child(2){width:210px}
   #site th:nth-child(3),#site td:nth-child(3){width:88px}
   #site th:nth-child(4),#site td:nth-child(4){width:246px}
   #site th:nth-child(5),#site td:nth-child(5){width:86px}
   #site th:nth-child(7),#site td:nth-child(7){width:150px}
   /* SOP table columns */
-  #sop th:nth-child(1),#sop td:nth-child(1){width:34px}
+  #sop th:nth-child(1),#sop td:nth-child(1){width:44px}
   #sop th:nth-child(2),#sop td:nth-child(2){width:230px}
   #sop th:nth-child(3),#sop td:nth-child(3){width:84px}
   #sop th:nth-child(5),#sop td:nth-child(5){width:250px}
   #sop th:nth-child(6),#sop td:nth-child(6){width:168px}
 
-  .pill{display:inline-block; font-size:9.5px; letter-spacing:1.2px; text-transform:uppercase;
-    font-weight:bold; padding:2px 7px; border-radius:10px; border:1px solid var(--hairline); white-space:nowrap}
-  .pill.live{color:var(--moss); border-color:var(--moss)}
-  .pill.unlinked{color:var(--clay); border-color:var(--clay)}
+  .pill{display:inline-block; font-family:var(--display); font-size:9.5px; letter-spacing:1.2px; text-transform:uppercase;
+    font-weight:800; padding:2px 8px; border-radius:10px; border:1.5px solid var(--slate); color:var(--slate);
+    white-space:nowrap; background:var(--card); line-height:1.5}
+  .pill.live{color:var(--green); border-color:var(--green); background:var(--tint-green)}
+  .pill.unlinked{color:var(--orange); border-color:var(--orange)}
   .pill.removed{color:var(--brick); border-color:var(--brick)}
-  .pill.external,.pill.ref{color:var(--faded)}
-  .pill.sop{color:var(--slate); border-color:var(--slate)}
+  .pill.external{color:var(--slate); border-color:var(--slate)}
+  .pill.ref{color:var(--purple); border-color:var(--purple); background:var(--tint-lavender)}
+  .pill.sop{color:var(--navy); border-color:var(--navy); background:var(--tint-blue)}
 
-  .note{font-size:12.5px; color:var(--faded); font-style:italic; margin-top:9px}
-  .note code{background:rgba(220,214,200,.42); padding:0 4px; border-radius:3px; font-style:normal}
+  .note{font-size:12.5px; color:var(--ink-faded); font-style:italic; margin-top:9px}
+  .note code{font-style:normal}
 
-  footer{border-top:1px solid var(--hairline); margin-top:26px; padding:14px 24px 22px;
-    color:var(--faded); font-size:12px; text-align:center}
+  /* Legend strip, the field-guide key at the bottom. */
+  footer{border-top:1.5px solid var(--navy); margin-top:28px; padding:14px 24px 22px; background:var(--paper-deep)}
+  .legend{max-width:var(--maxw); margin:0 auto; display:flex; flex-wrap:wrap; align-items:center;
+    gap:8px 18px; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--ink-faded); font-weight:500}
+  .legend .key{font-family:var(--display); font-weight:800; color:var(--green); margin-right:4px}
+  .legend .item{display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
+  .legend .sw{display:inline-block; width:10px; height:10px; border-radius:50%; border:1.5px solid currentColor}
+  .legend .item.live{color:var(--green)} .legend .item.unlinked{color:var(--orange)}
+  .legend .item.removed{color:var(--brick)} .legend .item.external{color:var(--slate)}
+  .legend .item.sop{color:var(--navy)} .legend .item.ref{color:var(--purple)}
+  .legend .item.badge .sw{background:var(--navy); border-color:var(--navy)}
+  .legend .item.alert .sw{background:var(--brick); border-color:var(--brick); border-radius:2px}
+  .colophon{max-width:var(--maxw); margin:12px auto 0; padding-top:10px; border-top:1px solid var(--hair);
+    color:var(--ink-faded); font-size:12px; text-align:center}
+  .colophon .wm{font-family:var(--display); font-weight:800; color:var(--green)}
+  .colophon .wm .dot{color:var(--navy)}
 
   @media (max-width:760px){
     main{padding:16px 14px 8px} h1{font-size:22px}
-    .h1line .counts{display:block; margin:6px 0 0}
+    .h1line .counts{flex-basis:100%; white-space:normal; margin:6px 0 0}
+    .tree{width:18px; height:18px}
+    footer{padding:12px 14px 18px}
   }
 </style>
 </head>
@@ -112,7 +186,9 @@
 <main>
 
 <div class="h1line">
+  <svg class="tree l" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 6.5 10h3L5 16h5.5v5h3v-5H19l-4.5-6h3z"/></svg>
   <h1>Site Directory</h1>
+  <svg class="tree r" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 6.5 10h3L5 16h5.5v5h3v-5H19l-4.5-6h3z"/></svg>
   <span class="counts"><b>12</b> pages &middot; <b>2</b> linked &middot; <b>7</b> unlinked &middot; <b>2</b> removed &middot; <b>1</b> external &nbsp;|&nbsp; <b>4</b> SOPs</span>
 </div>
 <p class="oneline">Every page that has ever lived on michaelfitzpatrick.me, plus the job-hunt playbooks. Removed pages are recoverable from git; the command is in the row.</p>
@@ -233,7 +309,7 @@
       </tr>
       <tr>
         <td class="num">4</td>
-        <td><span class="name">Ground Freight v2 &mdash; The Trace</span>Staff PM, Trucking Tech</td>
+        <td><span class="name">Ground Freight v2: The Trace</span>Staff PM, Trucking Tech</td>
         <td class="co">Flexport</td>
         <td class="path"><a href="/flexport-trucking-tech-demo-v2/">/flexport-trucking-tech-demo-v2/</a></td>
         <td><span class="pill unlinked">Unlinked</span></td>
@@ -271,7 +347,7 @@ git show 90aec5f:agentic-sdlc/index.html   # July essay</span></td>
       </tr>
       <tr>
         <td class="num">8</td>
-        <td><span class="name">Agentic SDLC &mdash; reading view</span>Plain fallback</td>
+        <td><span class="name">Agentic SDLC: reading view</span>Plain fallback</td>
         <td class="co">Twitch</td>
         <td class="path"><a href="/agentic-sdlc/basic.html">/agentic-sdlc/basic.html</a></td>
         <td><span class="pill unlinked">Unlinked</span></td>
@@ -330,7 +406,20 @@ git show 90aec5f:agentic-sdlc/index.html   # July essay</span></td>
 
 </main>
 
-<footer>Michael Fitzpatrick<span style="color:var(--clay)">.</span> &middot; private index &middot; rebuilt 3 September 2026</footer>
+<footer>
+  <div class="legend">
+    <span class="key">Legend</span>
+    <span class="item live"><span class="sw"></span>Linked</span>
+    <span class="item unlinked"><span class="sw"></span>Unlinked</span>
+    <span class="item removed"><span class="sw"></span>Removed</span>
+    <span class="item external"><span class="sw"></span>External</span>
+    <span class="item sop"><span class="sw"></span>SOP</span>
+    <span class="item ref"><span class="sw"></span>Ref / Output</span>
+    <span class="item badge"><span class="sw"></span>Row number</span>
+    <span class="item alert"><span class="sw"></span>Exposure warning</span>
+  </div>
+  <div class="colophon"><span class="wm">Michael Fitzpatrick<span class="dot">.</span></span> &middot; private index &middot; rebuilt 3 September 2026</div>
+</footer>
 
 </body>
 </html>

@@ -32,7 +32,7 @@
    ========================================================================== */
 
 const DRAFT  = true;           // draft banner, TODO panel, visible content IDs
-const SHOW_TODOS = true;       // the floating "Open decisions" panel. Independent of DRAFT.
+const SHOW_TODOS = false;       // the floating "Open decisions" panel. Independent of DRAFT.
 
 const CONTENT = {
   "meta": {

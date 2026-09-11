@@ -31,13 +31,13 @@
    research-derived. The renderer does not display it; it is provenance.
    ========================================================================== */
 
-const DRAFT  = true;           // draft banner, TODO panel, visible content IDs
+const DRAFT  = false;           // draft banner, TODO panel, visible content IDs
 const SHOW_TODOS = false;       // the floating "Open decisions" panel. Independent of DRAFT.
 
 const CONTENT = {
   "meta": {
     "title": "Visibility at Flexport, and where my experience fits",
-    "subtitle": "[HM name], I put this together after my conversation with Phil so you can explore it at your own pace: the visibility problems as I understand them from the outside, and how the work I have actually done maps onto them. Some of it will be wrong, and I would like to hear which parts.",
+    "subtitle": "Eric, I put this together after my conversation with Phil so you can explore it at your own pace: the visibility problems as I understand them from the outside, and how the work I have actually done maps onto them. Some of it will be wrong, and I would like to hear which parts.",
     "preparedFor": "Flexport · Staff Product Manager, Visibility",
     "author": "Michael Fitzpatrick",
     "date": "September 2026"

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title></title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%231c49c4'/%3E%3Cpath d='M6 15.5h12' stroke='%23ffc60a' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M6 9.5h12' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+   Chewy "Chirp" design language.
+   Tokens read from Chewy's public design-token CDN (see demos/chewy/design-tokens.css).
+
+   ROOT SIZE DECISION: Chewy ships html{font-size:10px} and expresses everything in
+   rem against that. This page keeps a normal 16px root and converts instead, so
+   every Chewy rem below has been multiplied by 10 and re-expressed against 16px.
+   Their 0.8rem card radius is written here as 0.5rem (8px). Their 5.6rem pill is
+   3.5rem (56px). One convention, applied everywhere.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root{
+  /* Accent. Reserved for exactly one meaning: the trace. Outcomes, active card
+     borders, lit connectors, section eyebrows. Nothing else. */
+  --accent:#1c49c4; --accent-hover:#2661cf; --accent-pressed:#031759;
+  --accent-alt:#10389d; --accent-wash:#ebf1ff; --accent-tint:#e0ebff;
+
+  --navy:#002857; --navy-deep:#001a70; --navy-900:#010b37;
+  --blue-600:#1c4c87; --slate:#617c98; --blue-300:#79aee6; --blue-200:#b9d8f3;
+
+  /* Punctuation. One element per viewport, and on this page that element is the
+     hero cue. Never on a number. */
+  --yellow:#ffc60a; --yellow-text:#564801;
+
+  /* Warm creams, not grey off-whites. */
+  --white:#fff; --cream-50:#fdfdfc; --cream-100:#faf8f5;
+  --cream-200:#f6f2ea; --cream-300:#f2f0e8;
+  --grey-100:#ededed; --grey-200:#ccc; --grey-400:#949494;
+  --grey-500:#757575; --grey-700:#4c4c4c; --grey-800:#333;
+  --ink:#121212;                 /* text-primary, deliberately not pure black */
+
+  --success:#006b2b;
+
+  /* Outside the Chewy palette on purpose. The coach mark and the draft-mode
+     scaffolding both have to be impossible to mistake for Chewy chrome. */
+  --orange:#f58039; --orange-ink:#2a1403;
+
+  --r-sm:.25rem;  --r-card:.5rem;  --r-media:.625rem;
+  --r-lg:.75rem;  --r-xl:1.5rem;   --r-pill:3.5rem;
+
+  --maxw:1100px; --rail:212px;     /* their content max is 110rem = 1100px */
+  --head:'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --body:'Work Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+  --shadow-sm:0 0 .125rem 0 hsla(0,0%,0%,.04), 0 .5rem .5rem 0 hsla(0,0%,0%,.08);
+  --shadow-md:0 0 .125rem 0 hsla(0,0%,0%,.08), 0 .5rem .75rem 0 hsla(0,0%,0%,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream-100); color:var(--ink); font-family:var(--body);
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased}
+
+/* ZERO letter-spacing on headings. Chewy's --chirp-typography-ls-standard is 0em
+   and no negative tracking exists anywhere in their bundle. */
+h1,h2,h3,h4{font-family:var(--head); font-weight:600; letter-spacing:0; text-wrap:balance}
+/* The only sanctioned tracking is their "wide" 0.16em variant, on small caps-y labels. */
+.eyebrow,.colhead,.jd{letter-spacing:.16em}
+
+a{color:var(--navy); text-decoration:none}
+a:hover{color:var(--accent); text-decoration:underline}
+button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.5rem}
+@media(min-width:768px){.wrap{padding:0 2.25rem}}
+@media(min-width:1600px){:root{--maxw:1320px}}
+
+/* ═══ Nav. Horizontal sticky bar under 1024px, fixed left rail at 1024 and up. ═══ */
+header.nav{position:sticky; top:0; z-index:60; background:var(--white);
+  border-bottom:1px solid var(--grey-100)}
+.nav-inner{max-width:var(--maxw); margin:0 auto; padding:.875rem 1.5rem; display:flex;
+  align-items:center; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
+.wordmark{font-family:var(--head); font-weight:700; font-size:.9375rem; color:var(--navy);
+  display:flex; align-items:center; gap:.5rem; white-space:nowrap; letter-spacing:0}
+.wordmark .dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:none}
+nav.links{display:flex; gap:.375rem; flex-wrap:wrap; align-items:center}
+nav.links a{color:var(--grey-700); font-size:.8125rem; font-weight:500; transition:.15s;
+  padding:.4375rem .875rem; border-radius:var(--r-pill)}
+nav.links a:hover{color:var(--accent); background:var(--accent-wash); text-decoration:none}
+nav.links a.active{color:var(--white); background:var(--accent)}
+
+@media(min-width:1024px){
+  body{padding-left:var(--rail)}
+  header.nav{position:fixed; top:0; left:0; bottom:0; width:var(--rail);
+    border-bottom:none; border-right:1px solid var(--grey-100);
+    overflow-y:auto; overscroll-behavior:contain}
+  .nav-inner{max-width:none; margin:0; min-height:100%; padding:1.75rem 1rem 1.5rem;
+    flex-direction:column; align-items:stretch; justify-content:flex-start;
+    flex-wrap:nowrap; gap:2rem}
+  .wordmark{white-space:normal; align-items:flex-start; line-height:1.35; padding:0 .5rem}
+  .wordmark .dot{margin-top:.5rem}
+  nav.links{flex-direction:column; align-items:stretch; flex-wrap:nowrap; gap:.25rem}
+  nav.links a{padding:.5625rem .875rem; line-height:1.35}
+  .nav-foot{margin-top:auto; padding:.875rem .5rem 0; border-top:1px solid var(--grey-100);
+    font-size:.6875rem; color:var(--grey-400); line-height:1.5}
+}
+@media(max-width:1023px){.nav-foot{display:none}}
+
+/* ═══ Draft scaffolding. Orange, so it can never be read as Chewy chrome. ═══ */
+.draftbar{background:var(--orange); color:var(--orange-ink); font-size:.75rem;
+  font-weight:600; text-align:center; padding:.5rem 1rem; line-height:1.4}
+
+/* ═══ Bands ═══ */
+.band{padding:4rem 0}
+@media(max-width:767px){.band{padding:2.5rem 0}}
+.band-cream{background:var(--cream-200)}
+.band-white{background:var(--white)}
+.eyebrow{font-size:.6875rem; text-transform:uppercase; color:var(--accent);
+  font-weight:700; margin-bottom:.875rem; display:block; font-family:var(--head)}
+.sechead{max-width:60ch; margin-bottom:2.25rem}
+/* Banner line-height. Chewy runs 1.56 to 1.59 on display type. Deliberately loose. */
+.sechead h2{font-size:clamp(1.5rem,1rem+1.6vw,1.9375rem); line-height:1.56; color:var(--navy);
+  margin-bottom:.625rem}
+.sechead p{font-size:1.0625rem; color:var(--grey-700); line-height:1.6}
+
+/* ═══ Hero. Navy band, because yellow emphasis text on deep navy is Chewy's own
+       pattern and it is the only place the cue can live without shouting. ═══ */
+.hero{background:var(--navy); color:var(--white); padding:3rem 0 2.75rem}
+.hero h1{font-size:clamp(1.5rem,1rem+1.7vw,2rem); line-height:1.56; color:var(--white);
+  max-width:26ch; margin-bottom:1rem}
+.hero .note{font-size:1rem; line-height:1.6; color:var(--blue-200); max-width:74ch}
+.hero .role{font-size:.6875rem; text-transform:uppercase; letter-spacing:.16em;
+  color:var(--blue-300); font-weight:700; font-family:var(--head); display:block;
+  margin-bottom:.875rem}
+.cuewrap{margin-top:1.5rem}
+.scrollcue{display:inline-block; font-family:var(--head); font-weight:700; font-size:.9375rem;
+  letter-spacing:0; color:var(--yellow-text); background:var(--yellow);
+  border-radius:var(--r-pill); padding:.5rem 1.125rem;
+  animation:cueBlink 1.7s ease-in-out infinite}
+@keyframes cueBlink{0%,100%{opacity:1}50%{opacity:.45}}
+@media(prefers-reduced-motion:reduce){.scrollcue{animation:none}}
+
+/* ═══ Experience map board ═══ */
+/* Escapes the centred wrap. Horizontal room is what makes the connectors readable. */
+.fullbleed{padding:0 2.5rem}
+@media(max-width:767px){.fullbleed{padding:0 1.25rem}}
+.board{position:relative; display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(130px,15vw,300px) minmax(0,1fr);
+  gap:0; align-items:stretch; margin-top:1rem}
+/* align-items:stretch plus min-height:100% are both load-bearing. Without them the
+   gutter's only children are absolutely positioned, it collapses to zero height,
+   and no connector ever renders. */
+.edgelayer{position:relative; align-self:stretch; min-height:100%}
+.edgelayer svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;
+  pointer-events:none}
+@media(max-width:900px){
+  .board{grid-template-columns:1fr; gap:1.5rem}
+  .board .edgelayer{display:none}
+  .coach{display:none}
+}
+.boardcol{display:flex; flex-direction:column; gap:.625rem}
+.colhead{font-size:.6875rem; text-transform:uppercase; font-weight:700;
+  color:var(--grey-500); margin-bottom:.375rem; font-family:var(--head)}
+
+/* Cards separate with a 1px border, never a shadow. `box-shadow:none` is the most
+   frequent shadow declaration in Chewy's entire bundle. Shadow on hover only. */
+.pcard,.wcard{background:var(--white); border:1px solid var(--grey-100);
+  border-radius:var(--r-card); box-shadow:none; padding:.9375rem 1rem; cursor:pointer;
+  transition:border-color .18s, background .18s, box-shadow .18s, opacity .18s}
+.pcard:hover,.wcard:hover{border-color:var(--grey-200); box-shadow:var(--shadow-sm)}
+.pcard:focus-visible,.wcard:focus-visible{outline:none;
+  box-shadow:inset 0 0 .125rem .125rem var(--accent)}
+.pcard.on,.wcard.on{border-color:var(--accent); background:var(--accent-wash)}
+/* Opacity only. Never display:none, never visibility:hidden. Layout must not shift,
+   because a shift invalidates every connector coordinate already drawn. */
+.pcard.off,.wcard.off{opacity:.28}
+.ctitle{font-family:var(--head); font-weight:600; font-size:.9375rem; line-height:1.3;
+  color:var(--navy); margin-bottom:.375rem; letter-spacing:0}
+.cmeta{font-size:.8125rem; line-height:1.55; color:var(--grey-700)}
+.wcard .outcome{font-family:var(--head); font-weight:700; font-size:1rem;
+  color:var(--accent); line-height:1.3; margin-bottom:.25rem;
+  font-variant-numeric:lining-nums tabular-nums; letter-spacing:0}
+.jd{display:inline-flex; align-items:center; gap:.3125rem; font-size:.625rem;
+  text-transform:uppercase; font-weight:600; color:var(--grey-700);
+  background:var(--cream-300); border-radius:var(--r-pill); padding:.25rem .625rem;
+  margin-top:.5rem; font-family:var(--head)}
+.jd svg{width:11px; height:11px; flex:none}
+
+/* ═══ Coach mark. Orange is outside the Chewy palette on purpose. Its job is to be
+       impossible to ignore, and that is sanctioned by the spec. ═══ */
+.coach{position:absolute; z-index:40; width:246px; background:var(--orange);
+  color:var(--orange-ink); border-radius:var(--r-media); padding:.875rem 1rem;
+  box-shadow:0 10px 30px rgba(0,40,87,.35); opacity:0; transform:translateY(6px);
+  transition:opacity .28s, transform .28s; pointer-events:none}
+.coach.on{opacity:1; transform:none; pointer-events:auto}
+.coach:after{content:''; position:absolute; left:-9px; top:22px; width:0; height:0;
+  border-top:9px solid transparent; border-bottom:9px solid transparent;
+  border-right:9px solid var(--orange)}
+.coach b{display:block; font-family:var(--head); font-weight:700; font-size:.9375rem;
+  line-height:1.3; margin-bottom:.3125rem; letter-spacing:0; padding-right:1rem}
+.coach p{font-size:.8125rem; line-height:1.45; color:#4a2a08; margin:0}
+.coach .x{position:absolute; top:.4375rem; right:.5rem; color:#7a4a12; line-height:0;
+  padding:.25rem; border-radius:50%}
+.coach .x svg{width:14px; height:14px; display:block}
+.coach .x:hover{color:var(--orange-ink); background:#ffffff4d}
+.coach.pulse{animation:coachPulse 1.7s ease-in-out infinite}
+@keyframes coachPulse{0%,100%{box-shadow:0 10px 30px rgba(0,40,87,.35)}
+  50%{box-shadow:0 10px 30px rgba(0,40,87,.35),0 0 0 7px rgba(245,128,57,.26)}}
+.pcard.coachtarget{box-shadow:0 0 0 2px var(--orange) inset}
+@media(prefers-reduced-motion:reduce){.coach,.coach.pulse{animation:none;transition:none}}
+
+/* ═══ References ═══ */
+.refgroup{margin-top:1.75rem}
+.refgroup:first-child{margin-top:0}
+.refgroup h4{font-size:.6875rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin-bottom:.875rem; font-family:var(--head)}
+ol.reflist,ul.reflist{list-style:none; display:grid; gap:.75rem}
+.reflist li{font-size:.875rem; line-height:1.5; display:grid;
+  grid-template-columns:2rem 1fr; gap:.5rem; align-items:start}
+.reflist .rn{color:var(--grey-400); font-variant-numeric:tabular-nums; font-size:.75rem;
+  padding-top:.125rem}
+.reflist .rl{display:block; color:var(--navy); font-weight:600; margin-bottom:.125rem;
+  word-break:break-word}
+.reflist .rnote{display:block; color:var(--grey-700); font-size:.8125rem; line-height:1.5}
+ul.reflist{gap:.5rem}
+ul.reflist li{font-size:.8125rem}
+
+details.refbox{margin-top:2.25rem; border:1px solid var(--grey-100);
+  border-radius:var(--r-card); background:var(--cream-100); box-shadow:none;
+  overflow:hidden}
+details.refbox summary{list-style:none; cursor:pointer; padding:1.125rem 1.375rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem}
+details.refbox summary::-webkit-details-marker{display:none}
+details.refbox summary:hover{background:var(--cream-200)}
+.refsum-l{display:flex; flex-direction:column; gap:.125rem}
+.refsum-l b{font-family:var(--head); font-weight:600; font-size:.9375rem; color:var(--navy)}
+.refsum-l span{font-size:.8125rem; color:var(--grey-700)}
+.refchev{display:inline-flex; align-items:center; gap:.375rem; flex:none;
+  font-size:.8125rem; font-weight:600; color:var(--accent);
+  background:var(--white); border:1px solid var(--accent);
+  border-radius:var(--r-pill); padding:.375rem .875rem}
+.refchev svg{width:14px; height:14px}
+details[open] .refchev .c-open{display:none}
+details:not([open]) .refchev .c-close{display:none}
+.refbody{padding:.25rem 1.375rem 1.5rem; border-top:1px solid var(--grey-100)}
+
+/* ═══ TODO panel, draft only ═══ */
+.todo{position:fixed; right:1.25rem; bottom:1.25rem; z-index:120;
+  width:min(374px,calc(100vw - 2.5rem))}
+.todo-toggle{width:100%; background:var(--orange); color:var(--orange-ink);
+  border-radius:var(--r-pill); padding:.6875rem 1.25rem; font-weight:700; font-size:.8125rem;
+  display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+  box-shadow:var(--shadow-md); font-family:var(--head)}
+.todo-body{background:var(--white); border:1px solid var(--grey-100);
+  border-radius:var(--r-card); margin-bottom:.5rem; max-height:60vh; overflow-y:auto;
+  padding:1.125rem 1.25rem; display:none; box-shadow:var(--shadow-md)}
+.todo.open .todo-body{display:block}
+.todo-body h4{color:var(--grey-500); font-size:.6875rem; letter-spacing:.16em;
+  text-transform:uppercase; font-weight:700; margin-bottom:.875rem; font-family:var(--head)}
+.titem{border-top:1px solid var(--grey-100); padding:.75rem 0; display:flex; gap:.625rem}
+.titem:first-of-type{border-top:none; padding-top:0}
+.titem .tid{color:var(--accent); font-size:.6875rem; font-weight:700; flex:none;
+  padding-top:.1875rem; font-variant-numeric:tabular-nums}
+.titem .tx{color:var(--grey-700); font-size:.8125rem; line-height:1.5}
+
+/* ═══ Draft ID chips ═══ */
+.cid{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace; font-size:.5625rem;
+  letter-spacing:.04em; color:var(--grey-500); background:var(--cream-300);
+  padding:.0625rem .3125rem; border-radius:var(--r-sm); margin-left:.375rem; font-weight:400}
+body:not(.draft) .cid{display:none}
+body:not(.draft) .todo{display:none}
+body:not(.draft) .draftbar{display:none}
+
+footer{background:var(--navy); color:var(--blue-200); padding:2rem 0; font-size:.8125rem}
+footer .wrap{display:flex; justify-content:space-between; gap:1.25rem; flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="draftbar" id="draftBar"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <span class="wordmark"><i class="dot" aria-hidden="true"></i><span id="wordmark"></span></span>
+    <nav class="links" id="navLinks"></nav>
+    <div class="nav-foot" id="navFoot"></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="role" id="heroRole"></span>
+    <h1 id="heroTitle"></h1>
+    <p class="note" id="heroNote"></p>
+    <p class="cuewrap"><span class="scrollcue" id="heroCue"></span></p>
+  </div>
+</section>
+
+<section class="band band-cream" id="mapping">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow" id="mapEyebrow"></span>
+      <h2 id="mapH2"></h2>
+      <p id="mapDeck"></p>
+    </div>
+  </div>
+  <div class="fullbleed">
+    <div class="board" id="board">
+      <div class="boardcol" id="colProblems"><div class="colhead" id="headProblems"></div></div>
+      <div class="edgelayer" id="edgeLayer"><svg id="edgeSvg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+      <div class="boardcol" id="colWork"><div class="colhead" id="headWork"></div></div>
+      <div class="coach" id="coach" hidden>
+        <button class="x" id="coachX"></button>
+        <b id="coachTitle"></b>
+        <p id="coachBody"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-white" id="references">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow" id="refEyebrow"></span>
+      <h2 id="refH2"></h2>
+      <p id="refDeck"></p>
+    </div>
+    <div class="refgroup"><h4 id="refPrimaryHead"></h4><ol class="reflist" id="refPrimary"></ol></div>
+    <details class="refbox" id="refbox">
+      <summary>
+        <span class="refsum-l"><b id="refSumTitle"></b><span id="refCount"></span></span>
+        <span class="refchev"><span class="c-close" id="refOpen"></span><span class="c-open" id="refClose"></span></span>
+      </summary>
+      <div class="refbody" id="refBody"></div>
+    </details>
+  </div>
+</section>
+
+<footer><div class="wrap"><span id="footText"></span></div></footer>
+
+<div class="todo" id="todo">
+  <div class="todo-body" id="todoBody"></div>
+  <button class="todo-toggle" id="todoToggle"><span id="todoLabel"></span><span id="todoCount"></span></button>
+</div>
+
+<script src="icons.js"></script>
+<script src="content.js?v=20260914074952"></script>
+<script>
+(function(){
+  "use strict";
+  var C = window.CONTENT || CONTENT;
+  var isDraft = (typeof DRAFT !== "undefined") && DRAFT;
+  if(isDraft) document.body.classList.add("draft");
+
+  function esc(s){ return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function id(x){ return isDraft ? '<span class="cid">'+esc(x)+'</span>' : ''; }
+  function $(s){ return document.querySelector(s); }
+  function set(sel,txt){ var el=$(sel); if(el) el.textContent = txt==null?"":txt; }
+
+  var U  = C.ui || {};
+  var m  = C.meta || {};
+  var se = C.sections || {};
+
+  function icon(name,cls){
+    var ic = (typeof ICONS !== "undefined") && ICONS[name];
+    if(!ic) return "";
+    var attrs = ic.stroke
+      ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+      : 'fill="currentColor"';
+    return '<svg class="'+(cls||"")+'" viewBox="'+ic.viewBox+'" '+attrs+' aria-hidden="true">'
+      + ic.d.map(function(d){ return '<path d="'+d+'"/>'; }).join("") + '</svg>';
+  }
+
+  /* ---- Chrome ---- */
+  document.title = [m.company, m.role, m.owner].filter(Boolean).join(" · ");
+  set("#wordmark", m.owner);
+  set("#draftBar", U.draftBar);
+  set("#navFoot",  [m.company, m.role].filter(Boolean).join(" · "));
+  set("#footText", C.footer);
+
+  $("#navLinks").innerHTML = ["mapping","references"].map(function(k){
+    var s = se[k] || {};
+    return '<a href="#'+k+'" data-sec="'+k+'">'+esc(s.eyebrow||k)+'</a>';
+  }).join("");
+
+  /* ---- Hero ---- */
+  var h = C.hero || {};
+  set("#heroRole",  [m.company, m.role].filter(Boolean).join(" · "));
+  set("#heroTitle", h.title);
+  set("#heroNote",  h.note);
+  set("#heroCue",   h.cue);
+
+  /* ---- Section heads ---- */
+  ["mapping","references"].forEach(function(k){
+    var s = se[k] || {}, p = k === "mapping" ? "#map" : "#ref";
+    set(p+"Eyebrow", s.eyebrow); set(p+"H2", s.h2); set(p+"Deck", s.deck);
+  });
+
+  /* ---- Board ---- */
+  var mp = C.mapping||{}, problems = mp.problems||[], work = mp.work||[], edges = mp.edges||[];
+  set("#headProblems", (U.columns||{}).problems);
+  set("#headWork",     (U.columns||{}).work);
+
+  var jdBadge = '<span class="jd">'+icon("document")+esc(U.fromJD||"")+'</span>';
+  $("#colProblems").insertAdjacentHTML("beforeend", problems.map(function(p){
+    return '<div class="pcard" data-p="'+esc(p.id)+'" tabindex="0" role="button">'
+      + '<div class="ctitle">'+esc(p.title)+id(p.id)+'</div>'
+      + '<div class="cmeta">'+esc(p.why||"")+'</div>'
+      + (p.fromJD ? jdBadge : '') + '</div>';
+  }).join(""));
+  $("#colWork").insertAdjacentHTML("beforeend", work.map(function(w){
+    return '<div class="wcard" data-w="'+esc(w.id)+'" tabindex="0" role="button">'
+      + '<div class="outcome">'+esc(w.outcome||"")+'</div>'
+      + '<div class="ctitle">'+esc(w.name)+id(w.id)+'</div>'
+      + '<div class="cmeta">'+esc(w.detail||"")+'</div></div>';
+  }).join(""));
+
+  /* ---- Load-time data assertions. Orphans and dangling edges are content bugs. ---- */
+  (function assertData(){
+    var pIds={}, wIds={}, msgs=[];
+    problems.forEach(function(p){ if(pIds[p.id]) msgs.push("duplicate problem id "+p.id); pIds[p.id]=0; });
+    work.forEach(function(w){ if(wIds[w.id]) msgs.push("duplicate work id "+w.id); wIds[w.id]=0; });
+    edges.forEach(function(e){
+      if(!(e.problem in pIds)) msgs.push("edge references unknown problem "+e.problem);
+      else pIds[e.problem]++;
+      if(!(e.work in wIds)) msgs.push("edge references unknown work "+e.work);
+      else wIds[e.work]++;
+    });
+    Object.keys(pIds).forEach(function(k){ if(!pIds[k]) msgs.push("orphan problem "+k); });
+    Object.keys(wIds).forEach(function(k){ if(!wIds[k]) msgs.push("orphan work "+k); });
+    work.forEach(function(w){ if(!/\d/.test(String(w.outcome||""))) msgs.push("outcome has no digit: "+w.id); });
+    window.__MAP_ASSERT__ = msgs;
+    if(msgs.length && window.console) console.warn("content.js data problems:", msgs);
+  })();
+
+  /* ---- Connectors ---- */
+  var svg = $("#edgeSvg"), layer = $("#edgeLayer"), board = $("#board");
+  var active = null, hover = null;
+
+  function drawEdges(){
+    if(!svg || !layer) return;
+    if(!layer.offsetParent && layer.offsetWidth === 0){ svg.innerHTML=""; return; }
+    var lr = layer.getBoundingClientRect();
+    var w  = lr.width;
+    var hgt = lr.height || (board ? board.getBoundingClientRect().height : 0);
+    if(!hgt || !w){ svg.innerHTML=""; return; }
+    svg.setAttribute("viewBox","0 0 "+w+" "+hgt);
+    svg.setAttribute("preserveAspectRatio","none");
+    svg.style.height = hgt + "px";
+
+    var lit  = active || hover;
+    var idle = !lit;
+    var soft = !active && !!hover;          // unpinned hover preview, reduced strength
+    var out  = edges.map(function(e){
+      /* Scope to the card class. Connector paths would otherwise be matched by a
+         bare [data-p] query, which corrupts geometry on the next resize. */
+      var pe = document.querySelector('.pcard[data-p="'+e.problem+'"]');
+      var we = document.querySelector('.wcard[data-w="'+e.work+'"]');
+      if(!pe||!we) return "";
+      var a = pe.getBoundingClientRect(), b = we.getBoundingClientRect();
+      var x1 = 0,  y1 = a.top - lr.top + a.height/2;
+      var x2 = w,  y2 = b.top - lr.top + b.height/2;
+      var c  = w * 0.5;
+      var on = lit && (lit === e.problem || lit === e.work);
+      var op = idle ? 0.10 : (on ? (e.strength === "primary" ? 0.9 : 0.5) : 0.05);
+      if(soft && on) op = op * 0.55;
+      return '<path d="M'+x1+','+y1+' C'+(x1+c)+','+y1+' '+(x2-c)+','+y2+' '+x2+','+y2+'"'
+        + ' fill="none" stroke="'+(e.strength==="primary" ? "#1c49c4" : "#617c98")+'"'
+        + ' stroke-width="'+(e.strength==="primary" ? 2 : 1.25)+'"'
+        + ' opacity="'+op+'"/>';
+    }).join("");
+    svg.innerHTML = out;
+  }
+
+  function paint(){
+    var lit = active || hover, soft = !active && !!hover;
+    var linkedW = {}, linkedP = {};
+    if(lit){ edges.forEach(function(e){
+      if(e.problem === lit) linkedW[e.work] = 1;
+      if(e.work    === lit) linkedP[e.problem] = 1; }); }
+    /* classList.toggle(name, force) treats an undefined second argument as "no
+       argument given" and plain-toggles instead, so `hit` has to be a real
+       boolean. linkedP[i] is undefined for an unlinked card. */
+    document.querySelectorAll(".pcard").forEach(function(el){
+      var i = el.getAttribute("data-p"), hit = !!(lit && (i === lit || linkedP[i]));
+      el.classList.toggle("on",  hit);
+      el.classList.toggle("off", !!lit && !hit && !soft); });
+    document.querySelectorAll(".wcard").forEach(function(el){
+      var i = el.getAttribute("data-w"), hit = !!(lit && (i === lit || linkedW[i]));
+      el.classList.toggle("on",  hit);
+      el.classList.toggle("off", !!lit && !hit && !soft); });
+    drawEdges();
+  }
+
+  function setActive(val){
+    active = (active === val) ? null : val;
+    hover = null;
+    paint();
+  }
+  function clearActive(){ if(active === null && hover === null) return; active = null; hover = null; paint(); }
+
+  document.addEventListener("click", function(e){
+    var p = e.target.closest('.pcard[data-p]'), w = e.target.closest('.wcard[data-w]');
+    if(p)      setActive(p.getAttribute("data-p"));
+    else if(w) setActive(w.getAttribute("data-w"));
+    else if(e.target.closest("#mapping")) clearActive();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") clearActive();
+  });
+
+  /* Hover previews the same trace at reduced strength, and only while nothing is pinned. */
+  ["mouseover","mouseout"].forEach(function(ev){
+    document.addEventListener(ev, function(e){
+      if(active) return;
+      var card = e.target.closest('.pcard[data-p],.wcard[data-w]');
+      var next = (ev === "mouseover" && card)
+        ? (card.getAttribute("data-p") || card.getAttribute("data-w")) : null;
+      if(ev === "mouseout" && card && e.relatedTarget && card.contains(e.relatedTarget)) return;
+      if(next === hover) return;
+      hover = next; paint();
+    });
+  });
+
+  /* Arrow keys move within the focused column only. Index is tracked per column so
+     focus cannot teleport across the gutter. */
+  var colIdx = { p:0, w:0 };
+  document.addEventListener("keydown", function(e){
+    var card = e.target.closest && e.target.closest('.pcard[data-p],.wcard[data-w]');
+    if(!card) return;
+    var isP  = card.classList.contains("pcard");
+    var list = [].slice.call(document.querySelectorAll(isP ? ".pcard" : ".wcard"));
+    var i    = list.indexOf(card);
+    if(e.key === "ArrowDown" || e.key === "ArrowUp"){
+      e.preventDefault();
+      i = Math.max(0, Math.min(list.length-1, i + (e.key === "ArrowDown" ? 1 : -1)));
+      colIdx[isP ? "p" : "w"] = i;
+      list[i].focus();
+    } else if(e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      setActive(card.getAttribute(isP ? "data-p" : "data-w"));
+    }
+  });
+
+  /* ---- Coach mark ----------------------------------------------------------
+     1 unseen, 2 first appearance when the problems column comes into view,
+     3 one return after the coached card is clicked, then dead for the session. */
+  var coach = document.getElementById("coach");
+  if(coach && problems.length){
+    var coachState = 0, coachDead = false;
+    var COPY  = (U.coach || []);
+    var STEPS = [
+      { target: problems[0] && problems[0].id, copy: COPY[0] || {} },
+      { target: (problems[Math.min(3, problems.length-1)]||{}).id, copy: COPY[1] || {} }
+    ];
+    document.getElementById("coachX").innerHTML = icon("close");
+    document.getElementById("coachX").setAttribute("aria-label", U.coachDismiss || "");
+
+    function placeCoach(pid){
+      var card = document.querySelector('.pcard[data-p="'+pid+'"]');
+      if(!card || !board) return false;
+      var b = board.getBoundingClientRect(), c = card.getBoundingClientRect();
+      var col = document.getElementById("colProblems").getBoundingClientRect();
+      coach.style.left = Math.round(col.right - b.left + 18) + "px";
+      coach.style.top  = Math.round(c.top - b.top) + "px";
+      document.querySelectorAll(".pcard.coachtarget").forEach(function(el){ el.classList.remove("coachtarget"); });
+      card.classList.add("coachtarget");
+      return true;
+    }
+    function showCoach(i){
+      var st = STEPS[i]; if(!st || !st.target || coachDead) return;
+      coach.hidden = false;
+      document.getElementById("coachTitle").textContent = st.copy.title || "";
+      document.getElementById("coachBody").textContent  = st.copy.body  || "";
+      if(!placeCoach(st.target)){ coach.hidden = true; return; }
+      setTimeout(function(){ coach.classList.add("on","pulse"); }, 20);
+      coachState = i + 1;
+    }
+    function killCoach(){
+      if(coachDead) return;
+      coachDead = true; coachState = 3;
+      coach.classList.remove("on","pulse");
+      document.querySelectorAll(".pcard.coachtarget").forEach(function(el){ el.classList.remove("coachtarget"); });
+      setTimeout(function(){ coach.hidden = true; }, 300);
+    }
+    document.getElementById("coachX").addEventListener("click", function(e){
+      e.stopPropagation(); killCoach(); });
+
+    document.addEventListener("click", function(e){
+      if(coachDead) return;
+      if(!e.target.closest('.pcard[data-p],.wcard[data-w]')) return;
+      if(coachState === 1){
+        coach.classList.remove("on","pulse");
+        setTimeout(function(){ showCoach(1); }, 260);
+      } else if(coachState >= 2){ killCoach(); }
+    }, true);
+
+    ["keydown","wheel"].forEach(function(ev){
+      document.addEventListener(ev, function(){ if(coachState >= 2) killCoach(); }, {passive:true});
+    });
+
+    function coachInView(){
+      var col = document.getElementById("colProblems");
+      if(!col) return false;
+      var r = col.getBoundingClientRect();
+      return r.top < window.innerHeight * 0.6 && r.bottom > 0;
+    }
+    function maybeShowCoach(){
+      if(coachState !== 0 || coachDead) return;
+      if(!coachInView()) return;
+      coachState = -1;                       // claim it so no two triggers double-fire
+      setTimeout(function(){ coachState = 0; showCoach(0); }, 380);
+      window.removeEventListener("scroll", onCoachScroll);
+    }
+    window.__showCoach__ = maybeShowCoach;   // test hook for DOM assertion
+    function onCoachScroll(){ maybeShowCoach(); }
+
+    /* Three independent triggers. Some browsers fire no IntersectionObserver
+       callbacks, no scroll events and no rAF at all, so a single trigger can
+       silently never fire. Threshold stays at 0: a fraction of a very tall
+       element can require more visible area than the viewport is tall. */
+    window.addEventListener("scroll", onCoachScroll, {passive:true});
+    if(window.IntersectionObserver){
+      var col = document.getElementById("colProblems");
+      new IntersectionObserver(function(en){
+        if(en.some(function(x){ return x.isIntersecting; })) maybeShowCoach();
+      }, {threshold:0, rootMargin:"0px 0px -20% 0px"}).observe(col);
+    }
+    setTimeout(maybeShowCoach, 700);
+    var coachPoll = setInterval(function(){
+      if(coachState !== 0 || coachDead){ clearInterval(coachPoll); return; }
+      maybeShowCoach();
+    }, 400);
+    setTimeout(function(){ clearInterval(coachPoll); }, 90000);
+
+    window.addEventListener("resize", function(){
+      if(!coachDead && coachState >= 1 && coachState <= 2) placeCoach(STEPS[coachState-1].target);
+    });
+  }
+
+  /* ---- Redraw triggers. Layout settles a frame after paint and webfonts land
+          later still and change card heights. ---- */
+  var rt;
+  window.addEventListener("resize", function(){
+    clearTimeout(rt); rt = setTimeout(drawEdges, 120);
+  });
+  requestAnimationFrame(function(){ requestAnimationFrame(drawEdges); });
+  setTimeout(drawEdges, 80);
+  setTimeout(drawEdges, 300);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(drawEdges);
+  if(window.ResizeObserver) new ResizeObserver(drawEdges).observe(layer);
+  window.__drawEdges__ = drawEdges;          // test hook for DOM assertion
+
+  /* ---- References ---- */
+  var rf = C.references||{}, prim = rf.primary||[], sec = rf.secondary||[];
+  var RU = U.refs || {};
+  var secCount = sec.reduce(function(n,g){ return n + ((g.items||[]).length||0); }, 0);
+  set("#refPrimaryHead", RU.primaryHead);
+  set("#refSumTitle",    RU.summaryTitle);
+  set("#refCount", String(RU.summaryCount||"")
+      .replace("{p}", prim.length).replace("{s}", secCount));
+  $("#refOpen").innerHTML  = esc(RU.open||"")  + icon("chevronDown");
+  $("#refClose").innerHTML = esc(RU.close||"") + icon("chevronUp");
+
+  $("#refPrimary").innerHTML = prim.map(function(r,i){
+    return '<li><span class="rn">'+String(i+1).padStart(2,"0")+'</span><span>'
+      + '<a class="rl" href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.label)+'</a>'
+      + (r.note ? '<span class="rnote">'+esc(r.note)+'</span>' : '')
+      + '</span></li>'; }).join("");
+
+  $("#refBody").innerHTML = sec.map(function(g){
+    return '<div class="refgroup"><h4>'+esc(g.group)+'</h4><ul class="reflist">'
+      + (g.items||[]).map(function(r){
+          return '<li><span class="rn">&middot;</span><span>'
+            + '<a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.label||r.url)+'</a>'
+            + '</span></li>'; }).join("")
+      + '</ul></div>'; }).join("");
+
+  /* ---- Nav active state ---- */
+  var navLinks = [].slice.call(document.querySelectorAll("nav.links a[data-sec]"));
+  var navSecs  = navLinks.map(function(a){ return document.getElementById(a.getAttribute("data-sec")); })
+                         .filter(Boolean);
+  if(window.IntersectionObserver && navSecs.length){
+    var currentSec = null;
+    var navObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) currentSec = e.target.id; });
+      navLinks.forEach(function(a){
+        a.classList.toggle("active", a.getAttribute("data-sec") === currentSec); });
+    }, {rootMargin:"-30% 0px -60% 0px", threshold:0});
+    navSecs.forEach(function(s){ navObs.observe(s); });
+  }
+
+  /* ---- TODO panel, draft only ---- */
+  if(!isDraft){ var _t = $("#todo"); if(_t) _t.remove(); }
+  else {
+    var todos = (C.todos||[]).filter(function(t){ return t.status !== "done"; });
+    set("#todoLabel", U.todoToggle);
+    set("#todoCount", todos.length
+      ? String(U.todoCount||"").replace("{n}", todos.length)
+      : (U.todoNone||""));
+    $("#todoBody").innerHTML = '<h4>'+esc(U.todoTitle||"")+'</h4>' + (todos.length
+      ? todos.map(function(t){ return '<div class="titem">'
+          + '<span class="tid">'+esc(t.id)+'</span>'
+          + '<span class="tx">'+esc(t.text)+'</span></div>'; }).join("")
+      : '<div class="tx">'+esc(U.todoEmpty||"")+'</div>');
+    $("#todoToggle").addEventListener("click", function(){ $("#todo").classList.toggle("open"); });
+  }
+})();
+</script>
+</body>
+</html>

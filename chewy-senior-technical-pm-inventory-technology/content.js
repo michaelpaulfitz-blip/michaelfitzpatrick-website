@@ -2,7 +2,7 @@
    Single source of truth for every user-visible string on this page.
    index.html contains zero prose. Bump the ?v= cache-buster on every edit. */
 
-const DRAFT = true;   // flip to false before the URL is shared
+const DRAFT = false;  // shipped
 
 const CONTENT = {
 
@@ -62,10 +62,10 @@ const CONTENT = {
     problems: [
       {
         id: "R01",
-        title: "Under half of fulfillment volume runs through automation, against a target above 70%",
+        title: "Automated volume was under half at last disclosure, against a target above 70%",
         fromJD: false,
-        why: "Chewy's own disclosure put automated volume below 50% with a stated goal above 70%. " +
-             "A $600M term loan in June 2026 was raised explicitly to fund automation. [VERIFY current figure]"
+        why: "Chewy's FY2024 disclosure put automated volume below 50% with a stated goal above 70%. " +
+             "A $600M term loan in June 2026 was raised explicitly to fund automation."
       },
       {
         id: "R02",

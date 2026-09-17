@@ -250,7 +250,7 @@
 <section id="action-items">
 <!-- BUILD:action-items START -->
 <h2>Action items</h2>
-<p class="sub">13 open. Anything Mike asked for that could not or should not be finished in the exchange lands here with the reason, alongside Claude's suggested next steps. P0 is what to do next.</p>
+<p class="sub">14 open. Anything Mike asked for that could not or should not be finished in the exchange lands here with the reason, alongside Claude's suggested next steps. P0 is what to do next.</p>
 <div class="filters">
   <input type="search" id="ai-search" placeholder="Filter action items…" aria-label="Filter action items">
   <select id="ai-status" aria-label="Status"><option value="">All statuses</option><option>open</option><option>in-progress</option><option>blocked</option><option>done</option></select>
@@ -348,6 +348,13 @@
   <td>Claude</td>
   <td><span class="name">Focused passes on the three stub domains</span>CLAUDE.md management, plugins/IDEs/accessories, and cross-project specialists are registered as unresearched with pointers to the topics that partly cover them. Each needs one scoping pass, then a deep pass if Mike wants it.</td>
   <td class="when">2026-09-03</td>
+</tr><tr data-status="open" data-owner="Mike">
+  <td class="quant">A15</td>
+  <td><span class="pill idea">P3</span></td>
+  <td><span class="pill queued">open</span></td>
+  <td>Mike</td>
+  <td><span class="name">Pick a new name for the hub workspace, then rename it</span>Claude brainstormed 25 names on 2026-09-16. The rename itself cannot happen mid-session: the folder is the live working directory, and Claude Code keys memory and session history to the path (~/.claude/projects/C--dev-central-dev-management-and-improvements). Once Mike picks a name: close sessions, rename C:\dev\&lt;folder&gt;, rename the matching ~/.claude/projects folder so memory and sessions carry over, update the hub CLAUDE.md heading.</td>
+  <td class="when">2026-09-16</td>
 </tr><tr data-status="done" data-owner="Claude">
   <td class="quant">A3</td>
   <td><span class="pill done">P0</span></td>
@@ -617,8 +624,18 @@
   <td class="when">—</td>
   <td class="when">never</td>
   <td class="flags">not reviewed</td>
+</tr><tr data-depth="none" data-status="scoped">
+  <td><a href="#domain-home-automation"><span class="name">Home automation and whole-house temperature monitoring</span></a></td>
+  <td><span class="pill idea">scoped</span></td>
+  <td><span class="pill idea">none</span></td>
+  <td class="quant">&mdash;</td>
+  <td class="quant">1</td>
+  <td class="when">2026-09-16</td>
+  <td class="when">2026-09-16</td>
+  <td class="when">never</td>
+  <td class="flags">not reviewed</td>
 </tr></tbody></table></div>
-<details class="rule"><summary>How depth is computed (15 domains)</summary><ul class="bp"><li><strong>none:</strong> 0 sources on file</li><li><strong>small:</strong> 1 research pass OR fewer than 25 cited sources (a scoping pass always counts as small)</li><li><strong>medium:</strong> at least 25 cited sources from a deep pass, but only one pass, or unresolved open questions above 5</li><li><strong>large:</strong> 60+ cited sources, 2+ passes on different dates, and open questions resolved or triaged</li></ul><p class="meta">Depth measures how much evidence we collected, not how correct it is. Verification (right column) tracks whether Mike has reviewed it.</p></details>
+<details class="rule"><summary>How depth is computed (16 domains)</summary><ul class="bp"><li><strong>none:</strong> 0 sources on file</li><li><strong>small:</strong> 1 research pass OR fewer than 25 cited sources (a scoping pass always counts as small)</li><li><strong>medium:</strong> at least 25 cited sources from a deep pass, but only one pass, or unresolved open questions above 5</li><li><strong>large:</strong> 60+ cited sources, 2+ passes on different dates, and open questions resolved or triaged</li></ul><p class="meta">Depth measures how much evidence we collected, not how correct it is. Verification (right column) tracks whether Mike has reviewed it.</p></details>
 
 <article class="domain" id="domain-context-orchestration">
   <div class="topic-head"><h3>Context management, session splitting, and the orchestrator pattern</h3>
@@ -770,6 +787,16 @@
   <h4>Planned subtopics</h4><ul class='bp'><li>Custom subagents at user scope</li><li>Skills as portable procedures</li><li>Plugins as the packaging unit</li><li>System-prompt design for a specialist</li><li>Reviewer-style specialists (UX, security, a11y, perf)</li><li>Sharing and versioning across repos</li><li>Community specialist libraries</li></ul><p class='meta'>Partly covered already by learning-plan topics <a href="#topic-8">#8</a>, <a href="#topic-65">#65</a>, <a href="#topic-77">#77</a>.</p>
   
 </article>
+<article class="domain" id="domain-home-automation">
+  <div class="topic-head"><h3>Home automation and whole-house temperature monitoring</h3>
+    <div class="topic-meta"><span class="pill idea">depth: none</span><span class="pill idea">scoped</span></div></div>
+  <p>Home Assistant as a self-hosted smart-home hub: per-room temperature sensors, wall-mounted tablet dashboards, and building a custom interface with Claude Code. Raised 2026-09-16 as a maybe-project; not part of the AI-development learning plan proper.</p>
+  <p class="meta"><strong>Evidence:</strong> &mdash;. <strong>Passes:</strong> 1. <strong>Verified by Mike:</strong> not yet. <strong>Flags:</strong> not reviewed.<br><strong>Next level:</strong> A scoping pass (subtopics, keywords, starter resources) moves this to small.</p>
+  <div class="tablewrap small"><table class="log"><thead><tr><th>Date</th><th>Research performed</th><th>Agents</th><th>Searches</th><th>Output</th></tr></thead><tbody><tr><td class='when'>2026-09-16</td><td>Quick inline fact-check while answering Mike&#x27;s question (not a real research pass)</td><td class='quant'>0</td><td class='quant'>2</td><td>Confirmed Nest Temperature Sensors are not exposed by Google&#x27;s SDM API (unofficial nest_legacy custom integration exists); Zigbee sensors (SONOFF SNZB-02P, Aqara, ThirdReality) are the standard HA answer. 0 cited sources on file.</td></tr></tbody></table></div>
+  
+  <h4>Planned subtopics</h4><ul class='bp'><li>Nest Temperature Sensor compatibility (and why it is a dead end)</li><li>Zigbee / Thread / Matter room sensors</li><li>Home Assistant hardware (HA Green, Pi, mini PC) and radios</li><li>Wall tablet dashboards (Fully Kiosk, Lovelace, custom cards)</li><li>Custom front ends via the HA WebSocket/REST API</li><li>Alternatives: Hubitat, openHAB, Homey, SmartThings</li></ul>
+  
+</article>
 <!-- BUILD:directory END -->
 </section>
 
@@ -778,7 +805,7 @@
 <div class="banner" role="status">Work in progress &middot; drafted 9/3 &middot; needs review</div>
 <h2>Learning plan: building and maintaining multi-agent systems with Claude</h2>
 <p class="lede">A map of what to learn, in the order it was researched. Each topic gives the words to search for, what it is, why it matters here, the best practices found, and where to go read or watch.</p>
-<p class="sub">Assembled 2026-09-03 by 5 research agents working in parallel, then merged and de-duplicated: <strong>107 topics</strong>. Everything below is a first draft and has not been reviewed yet.</p>
+<p class="sub">Assembled 2026-09-16 by 5 research agents working in parallel, then merged and de-duplicated: <strong>107 topics</strong>. Everything below is a first draft and has not been reviewed yet.</p>
 <h3>The six seed topics this started from</h3>
 <ol class="seeds"><li><span class='tnum'>1</span>Context window management / splitting work across sessions</li><li><span class='tnum'>2</span>Inter-agent communication / passing plans and specs between sessions</li><li><span class='tnum'>3</span>The overseer / orchestrator conversation pattern</li><li><span class='tnum'>4</span>The continuous maintenance / custodian engineer</li><li><span class='tnum'>5</span>Structuring large inputs for the agent</li><li><span class='tnum'>6</span>Verbal dump, organize with one LLM, hand to the primary LLM</li></ol>
 <h3>Verdict on the three handoff mechanisms</h3><ul class="bp"><li><strong>copy paste:</strong> Works, but it is the lossy channel the literature calls the telephone game, and it bloats the orchestrator&#x27;s context with detail the orchestrator should not hold. Keep it only for the orchestrator&#x27;s short brief to a specialist. For the return trip, have the specialist write the spec to a versioned file (specs/&lt;feature&gt;.md with acceptance criteria, interfaces, non-goals, verification step) and hand the orchestrator a path plus a 5-10 line summary; the orchestrator @-references the file when it needs detail.</li><li><strong>shared md file:</strong> Right instinct (it is a blackboard), wrong shape. One file that every session appends to is last-writer-wins, goes stale, and nobody knows what is current. Upgrade to: per-session/per-task handoff files with a fixed status schema (goal, done, not-working, decisions, next), an append-only INDEX.md, written on SessionStart/PreCompact/end via hooks; or graduate to a real ledger (Claude Code Task tools inside a team, or Beads) where work is claimed and status is queryable.</li><li><strong>direct messages:</strong> The correct tool for time-sensitive short findings between hand-run sessions, and Anthropic built it for exactly Mike&#x27;s layout (cross-session messaging, v2.1.224+). It is plain text, capped, throttled, and treated as untrusted; it is not a spec transport. Use it for &#x27;X landed, rebase is safe&#x27;, &#x27;spec written at path Y&#x27;, decision requests, and notify_when_idle. Inside agent teams, be aware of the still-open silent-drop bugs and verify with the task list, not the message.</li><li><strong>recommended default:</strong> Artifact plus pointer. Specs and plans are files in the repo; each specialist owns distinct files (ideally its own worktree); status lives in a structured ledger (per-session handoff files with an index, or a task list); SendMessage carries only short notifications that point at those files; the orchestrator holds summaries and paths, never full specs; every handoff ends with an acceptance check (spec criteria, /goal, or a TaskCompleted/Stop hook) before the orchestrator relays it onward. Put this protocol in CLAUDE.md so every session starts knowing it.</li></ul><h3>Verdict on the dump-then-organize workflow</h3><p class="sub">Yes, it is a recognised pattern, under several names: &#x27;meta-prompting&#x27; (one LLM writing or refining a prompt for another), &#x27;prompt refinement&#x27;, and more generally &#x27;prompt chaining&#x27; (the output of one call becomes the input of the next). Anthropic itself ships two versions - the Console prompt generator / cookbook &#x27;metaprompt&#x27; notebook, and the Console prompt improver - and community Claude Code skills (&#x27;Prompt Refiner&#x27;, &#x27;Brain-Dump Capture&#x27;) do exactly the dump-then-organize step. Harper Reed&#x27;s brainstorm -&gt; spec -&gt; plan -&gt; execute workflow is the best-known practitioner version. Honest caveats: (1) with today&#x27;s Claude Code you don&#x27;t need a second model or a second app; the same Claude in plan mode, an interview skill, or a /brief skill can organize the dump inside the session with codebase context, which is usually better than a context-free organizer. (2) The organizer will smooth over ambiguities, so read its output and ask it to list &#x27;open questions&#x27; rather than guessing. (3) Anthropic&#x27;s stronger recommendation for larger features is the inverse: give a one-line brief and let Claude interview you with AskUserQuestion, then write SPEC.md and implement in a fresh session. Best of both: paste the raw dump, ask for a structured brief plus an interview on what&#x27;s missing, approve the spec, then execute. Maturity: emerging as a named workflow, established as a technique.</p>
@@ -3855,11 +3882,11 @@
 <section id="personas">
 <!-- BUILD:personas START -->
 <h2>Claude personas</h2>
-<p class="sub">Every CLAUDE.md that shapes how Claude behaves for Mike, from the global file down to each project. Contents are read from disk every time the page is rebuilt, so re-running the build is the refresh. Snapshot taken 2026-09-03.</p>
+<p class="sub">Every CLAUDE.md that shapes how Claude behaves for Mike, from the global file down to each project. Contents are read from disk every time the page is rebuilt, so re-running the build is the refresh. Snapshot taken 2026-09-16.</p>
 
 <article class="topic persona">
   <div class="topic-head"><h3>Global (every project)</h3><div class="topic-meta"><span class="pill done">on disk</span><span class="pill idea">All Claude Code sessions on this machine</span></div></div>
-  <p class="meta"><span class="path">C:\Users\Micha\.claude\CLAUDE.md</span><br>1110 bytes &middot; 18 lines &middot; last modified 2026-09-01</p>
+  <p class="meta"><span class="path">C:\Users\Micha\.claude\CLAUDE.md</span><br>1127 bytes &middot; 18 lines &middot; last modified 2026-09-16</p>
   <details><summary>Current content (18 lines)</summary><pre class='claudemd'># Response style (Mike&#x27;s preferences — apply in every session)
 
 - Keep a relatively casual, lighthearted tone with a good amount of humor woven in, while
@@ -3912,15 +3939,24 @@ website page (Growth and Best Practices) and are generated from JSON in `researc
 </article>
 <article class="topic persona">
   <div class="topic-head"><h3>Otto (life-management app)</h3><div class="topic-meta"><span class="pill done">on disk</span><span class="pill idea">Otto project</span></div></div>
-  <p class="meta"><span class="path">C:\dev\Otto\CLAUDE.md</span><br>1749 bytes &middot; 22 lines &middot; last modified 2026-09-02</p>
-  <details><summary>Current content (22 lines)</summary><pre class='claudemd'># Otto — Project Memory
+  <p class="meta"><span class="path">C:\dev\Otto\CLAUDE.md</span><br>2755 bytes &middot; 31 lines &middot; last modified 2026-09-04</p>
+  <details><summary>Current content (31 lines)</summary><pre class='claudemd'># Otto — Project Memory
 
 Otto is Mike&#x27;s personal life-management app: habit tracking, action items, daily briefings, journaling, and goals. Pre-code phase; we&#x27;re building the plan and portal first.
+
+## Ethos (the three themes)
+1. Practical — a reliable central tool for reminders, to-dos, and habit tracking.
+2. Whimsical — silly and fun on purpose; whimsy is a feature, not a bug.
+3. Learning lab — Otto is where Mike applies AI-development best practices he studies in a separate research thread (building and learning run in parallel).
 
 ## Tone &amp; vibe (project setting #1, set 2026-09-02)
 - Be casual, fun, jovial, joking, and optimistic — the engineer Mike would grab a beer with.
 - Tone never compromises quality: when doing research, architecture, code, or debugging, deliver rigorous, best-in-class work. Jokes go in the margins, not the load-bearing walls.
 - Mike has ADHD; celebrate momentum, keep things fun, help him stay on target when he&#x27;s supposed to be doing something else.
+
+## Continuous idea generation (project setting #2, set 2026-09-03)
+- On every message from Mike: consider what whimsical or practical ideas it sparks. Record the good ones in the Idea Pile with date + attribution (Mike / Claude / Shared).
+- The Idea Pile will later become a table (columns include date recorded and who recorded it). Mike will deliver exact build instructions in a future exchange — don&#x27;t restructure it before then.
 
 ## Project facts
 - Working dir: C:\dev\Otto (future app code). Not yet a git repo.
@@ -3930,44 +3966,32 @@ Otto is Mike&#x27;s personal life-management app: habit tracking, action items, 
 - Detailed project context (priorities, seed habits, naming decisions) lives in auto-memory — check MEMORY.md.
 
 ## Conventions
-- Session naming: sessions identify themselves in the portal&#x27;s Researcher/Owner columns; this founding session is &quot;HQ&quot;.
+- Session naming: sessions identify themselves in the portal&#x27;s Researcher/Owner columns; the founding session is &quot;HQ&quot; (session ID 0146d85d-4be0-481c-a5e8-bee15223681e).
 - Portal tables use thin collapsed rows (&lt;details&gt;) — preserve that pattern when adding records.
-- Section names are provisional and playful (The Glovebox, The Stacks, The Grand Tour); alternatives are tracked in yellow boxes on the page — don&#x27;t rename without Mike.
-- When Mike asks for research, always record the Origin (date + why) in The Stacks so nobody forgets why it happened.
+- Portal sections (names settled 2026-09-03): Action Items (project to-dos, temporary), Mike&#x27;s Action Items (home of the to-do module), The Idea Pile, Best Practices, Project Epics, Appendix. The Research Repository lives in the Appendix — its ongoing home moved to Mike&#x27;s separate &quot;AI Learning&quot; project; Otto&#x27;s copy is archival.
+- When Mike asks for research, always record the Origin (date + why) in the Research Repository so nobody forgets why it happened.
 </pre></details>
 </article>
 <article class="topic persona">
   <div class="topic-head"><h3>JobBot3000</h3><div class="topic-meta"><span class="pill done">on disk</span><span class="pill idea">jobbot3000 project</span></div></div>
-  <p class="meta"><span class="path">C:\dev\jobbot3000\CLAUDE.md</span><br>4034 bytes &middot; 69 lines &middot; last modified 2026-08-26</p>
-  <details><summary>Section headings only (7 headings, 69 lines total)</summary><pre class='claudemd'># JobBot3000 — Claude Code Context
+  <p class="meta"><span class="path">C:\dev\jobbot3000\CLAUDE.md</span><br>4921 bytes &middot; 83 lines &middot; last modified 2026-09-15</p>
+  <details><summary>Section headings only (8 headings, 83 lines total)</summary><pre class='claudemd'># JobBot3000 — Claude Code Context
 ## Who
 ## What this repo is
 ## Where the truth lives
+## Orchestration (multi-session workspace)
 ## Standing rules (Mike&#x27;s, not negotiable)
 ## Prose rules for anything he&#x27;ll send or present
 ## Roadmap status</pre></details><p class='meta'><strong>Full text held back:</strong> Contains job-search specifics; full text held until Mike confirms it is fine on an obscurity-only page.</p>
 </article>
 <article class="topic persona">
   <div class="topic-head"><h3>MATES (trading bot)</h3><div class="topic-meta"><span class="pill done">on disk</span><span class="pill idea">mates project</span></div></div>
-  <p class="meta"><span class="path">C:\dev\mates\CLAUDE.md</span><br>15203 bytes &middot; 252 lines &middot; last modified 2026-08-01</p>
-  <details><summary>Section headings only (19 headings, 252 lines total)</summary><pre class='claudemd'># MATES — Claude Code Context
-## What Is This Project
-## Project Directory
-## .env Configuration
-## Trading Logic Summary
-## Key Technical Decisions (Do Not Undo Without Discussion)
-## Current State (as of 06/10/26)
-### Redeploy commands (from project root)
-## Known Issues / Gotchas
-## Architecture Decision: Going Straight to GCP
-## Pending Work — Full Build Order
-### Phase 1 — Quick Wins (no architecture change, safe to build now)
-### Phase 2 — GCP Migration
-### Phase 3 — New Features (on GCP)
-### Phase 4 — Future / Backlog
-## Dashboard Structure (index.html)
-## Running the Bot
-## Files NOT to Touch During Active Tournaments
+  <p class="meta"><span class="path">C:\dev\mates\CLAUDE.md</span><br>6051 bytes &middot; 100 lines &middot; last modified 2026-09-10</p>
+  <details><summary>Section headings only (6 headings, 100 lines total)</summary><pre class='claudemd'># MATES / Hemlock — Claude Code Context
+## What This Project Is
+## Operational Essentials (GCP project: `mates-trading`)
+### Windows / environment gotchas
+## Golf Desk (MATES — dormant since the 8/17 Polymarket pivot)
 ## Style / Approach Preferences</pre></details><p class='meta'><strong>Full text held back:</strong> Describes a live trading account and internal dashboard URL; full text held until Mike confirms.</p>
 </article>
 <!-- BUILD:personas END -->
@@ -3982,7 +4006,7 @@ Otto is Mike&#x27;s personal life-management app: habit tracking, action items, 
   <select id="log-author" aria-label="Author"><option value="">Both</option><option>Mike</option><option>Claude</option></select>
   <span class="count" id="log-count"></span>
 </div>
-<div class="tablewrap"><table id="log-table" class="log"><thead><tr><th>Date</th><th>Who</th><th>Summary</th></tr></thead><tbody><tr data-author="Claude"><td class='when'>2026-09-03</td><td><span class='pill done'>Claude</span></td><td>Built the Domain and Topic Directory (15 domains, depth computed from evidence, verification tracked separately, flags for single-pass and budget-exhausted research), Action Items (14), Claude Personas (5 files, two shown as headings only pending Mike&#x27;s OK), and the Conversation Log. Ran UX/design and AI PM scoping agents (39 and 45 subtopics). Widened the page to 1760px. Added a hub-level CLAUDE.md so every exchange gets logged and every new topic gets registered before research.</td></tr><tr data-author="Mike"><td class='when'>2026-09-03</td><td><span class='pill queued'>Mike</span></td><td>Add a Domain and Topic Directory with depth and research-history stats and an overconfidence guard; register five new domains (UX/design, AI PM, CLAUDE.md management, plugins/accessories, cross-project specialists) and scope two of them with agents; add a Conversation Log, a Claude Personas section, an Action Items section at the top; widen the page.</td></tr><tr data-author="Claude"><td class='when'>2026-09-03</td><td><span class='pill done'>Claude</span></td><td>Ran six research agents plus a glossary pass. Published 107 topics, 46 who&#x27;s-who entries, and 196 glossary terms to the page behind the banner; created a Drive folder with an index-style Google Doc (full export too large to upload inline). Reported verdicts on all six seeds.</td></tr><tr data-author="Mike"><td class='when'>2026-09-03</td><td><span class='pill queued'>Mike</span></td><td>Learning plan request: six seed topics (context splitting, inter-agent comms, orchestrator pattern, custodian agent, structuring inputs, dump-then-organize), 50+ topics, who&#x27;s-who table, searchable glossary, Google Doc, and a flashing work-in-progress banner.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>hello, world</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Quick test: return hello, world.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Added the sticky rail with scroll-tracked highlighting and the empty Glossary section. Removed a requestAnimationFrame dependency after the preview pane starved it.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Add a left-side navigation rail with the current section highlighted, and an empty Glossary section on the page.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Added the five-term glossary to the global CLAUDE.md, keeping the three existing Response Style bullets untouched.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Mid-turn: add a Glossary section to the global CLAUDE.md with Message, Exchange, Turn, Session, Fork.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Built the private page, public stub, and nav link; registered it in the site Directory; pushed to Render. Seeded three memory notes. Flagged the encouragement dial as the first quick win.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Created the hub directory. Asked Claude to ramp up on two prior transcripts about global Claude Code improvements, build a private Growth and Best Practices page on the website (Directory-style stub plus secret slug), and hand over the link.</td></tr></tbody></table></div>
+<div class="tablewrap"><table id="log-table" class="log"><thead><tr><th>Date</th><th>Who</th><th>Summary</th></tr></thead><tbody><tr data-author="Claude"><td class='when'>2026-09-16</td><td><span class='pill done'>Claude</span></td><td>Suggested emoji sets for both themes (control-tower/helm style for command, junk-drawer/seedling style for misc) plus a recommended pairing.</td></tr><tr data-author="Mike"><td class='when'>2026-09-16</td><td><span class='pill queued'>Mike</span></td><td>Queued follow-up mid-turn: asked for good emojis to represent command-and-control and miscellaneous tasks.</td></tr><tr data-author="Claude"><td class='when'>2026-09-16</td><td><span class='pill done'>Claude</span></td><td>Registered a home-automation domain, then answered: Nest sensors are a dead end (not in Google&#x27;s SDM API; only an unofficial integration), cheap Zigbee sensors are the standard route, HA is the clear open-source default and is very buildable-on with Claude Code, with Hubitat/openHAB/Homey as alternatives. Gave 25 workspace names across different approaches and logged the actual rename as an action item since it cannot be done mid-session.</td></tr><tr data-author="Mike"><td class='when'>2026-09-16</td><td><span class='pill queued'>Mike</span></td><td>Asked whether Google Nest temperature sensors work with Home Assistant (goal: a sensor in every room plus wall tablets showing all temperatures), whether HA is the go-to open-source platform and can take a Claude Code-built interface, what the competitors are, whether this workspace can be renamed, and for 25 name ideas for it as both command center and maybe-project incubator.</td></tr><tr data-author="Claude"><td class='when'>2026-09-03</td><td><span class='pill done'>Claude</span></td><td>Built the Domain and Topic Directory (15 domains, depth computed from evidence, verification tracked separately, flags for single-pass and budget-exhausted research), Action Items (14), Claude Personas (5 files, two shown as headings only pending Mike&#x27;s OK), and the Conversation Log. Ran UX/design and AI PM scoping agents (39 and 45 subtopics). Widened the page to 1760px. Added a hub-level CLAUDE.md so every exchange gets logged and every new topic gets registered before research.</td></tr><tr data-author="Mike"><td class='when'>2026-09-03</td><td><span class='pill queued'>Mike</span></td><td>Add a Domain and Topic Directory with depth and research-history stats and an overconfidence guard; register five new domains (UX/design, AI PM, CLAUDE.md management, plugins/accessories, cross-project specialists) and scope two of them with agents; add a Conversation Log, a Claude Personas section, an Action Items section at the top; widen the page.</td></tr><tr data-author="Claude"><td class='when'>2026-09-03</td><td><span class='pill done'>Claude</span></td><td>Ran six research agents plus a glossary pass. Published 107 topics, 46 who&#x27;s-who entries, and 196 glossary terms to the page behind the banner; created a Drive folder with an index-style Google Doc (full export too large to upload inline). Reported verdicts on all six seeds.</td></tr><tr data-author="Mike"><td class='when'>2026-09-03</td><td><span class='pill queued'>Mike</span></td><td>Learning plan request: six seed topics (context splitting, inter-agent comms, orchestrator pattern, custodian agent, structuring inputs, dump-then-organize), 50+ topics, who&#x27;s-who table, searchable glossary, Google Doc, and a flashing work-in-progress banner.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>hello, world</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Quick test: return hello, world.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Added the sticky rail with scroll-tracked highlighting and the empty Glossary section. Removed a requestAnimationFrame dependency after the preview pane starved it.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Add a left-side navigation rail with the current section highlighted, and an empty Glossary section on the page.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Added the five-term glossary to the global CLAUDE.md, keeping the three existing Response Style bullets untouched.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Mid-turn: add a Glossary section to the global CLAUDE.md with Message, Exchange, Turn, Session, Fork.</td></tr><tr data-author="Claude"><td class='when'>2026-09-01</td><td><span class='pill done'>Claude</span></td><td>Built the private page, public stub, and nav link; registered it in the site Directory; pushed to Render. Seeded three memory notes. Flagged the encouragement dial as the first quick win.</td></tr><tr data-author="Mike"><td class='when'>2026-09-01</td><td><span class='pill queued'>Mike</span></td><td>Created the hub directory. Asked Claude to ramp up on two prior transcripts about global Claude Code improvements, build a private Growth and Best Practices page on the website (Directory-style stub plus secret slug), and hand over the link.</td></tr></tbody></table></div>
 <!-- BUILD:conversation-log END -->
 </section>
 

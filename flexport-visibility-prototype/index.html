@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SLOT:TITLE (replace the text inside <title>) -->
+<title>Prototype starter</title>
+<!--
+  PROTO STARTER. Single file, no external JS, Google Fonts only.
+
+  HOW TO FILL THIS IN (the only edits needed):
+    1. SLOT:TITLE       the <title> text above.
+    2. SLOT:DATA        the DATA object in the <script> at the bottom. Everything on screen is
+                        rendered from it: top bar, left rail, page header, state switcher, card list,
+                        detail panel, alert banner, timeline, toast.
+    3. SLOT:EXTRA-CSS   optional, only if an item's extraHtml needs a style not listed below.
+
+  DATA SHAPE
+    app:    { brand, area, user }
+    nav:    [ { label, active?, count? } ]
+    page:   { title, subtitle, chips: [ "text" ] }
+    states: [ { id, label, note?, toast?: { tone, title, body }, items: [ ITEM ] } ]   2 or 3 states
+    ITEM:   { id, title, sub, pill: { tone, label }, progress: [done, total],
+              meta: [ [label, value] ],                       up to 6 pairs
+              alert?: { tone, title, body, actions?: [ { label, primary?, toast } ] },
+              timeline: [ { label, planned, actual, source, state, note?,
+                            conflict?: [ { source, time } ] } ],
+              extraHtml?: "<div class='block'>...</div>" }    free-form, inserted under the timeline
+    tones:  ok | warn | risk | info | neutral
+    timeline state: done | current | late | missing | predicted
+
+  READY-MADE CLASSES FOR extraHtml
+    .block / .block-title          titled section
+    .mini-table                    compact table (th, td)
+    .band > .band-fill + .band-mark   horizontal range bar; set left/width in % inline
+    .band-labels                   flex row of labels under a band
+    .kv                            two-column label/value grid
+    .pill.ok|warn|risk|info|neutral
+    .btn / .btn.primary            buttons; add data-toast="message" to fire the toast on click
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#09101f; --midnight:#052439; --midnight-400:#1e3a4d; --line-dark:#1c2438;
+  --indigo:#566ae5; --indigo-600:#4555b7; --indigo-300:#9aa6ef; --indigo-100:#dde1fa; --indigo-1:#ebedfd;
+  --seafoam:#45dabe; --seafoam-600:#37ae98;
+  --red:#d82f57; --red-1:#fce8ed; --orange:#f58039; --orange-1:#fef0e6; --ok-1:#e6f8f4;
+  --white:#ffffff; --page:#fbfbfe; --surface-2:#f8f9fd; --line:#e5e8ea; --line-2:#e9eef4;
+  --ink:#0f2943; --body:#4d5563; --meta:#6b747e; --faint:#9da7b6;
+  --radius:5px; --radius-card:8px; --radius-pill:30px;
+  --shadow-card:0 1px 2px #09101f14, 0 4px 14px #09101f1a;
+  --shadow-modal:0 0 14px 0 #00000033;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-head:"Archivo","Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--page);color:var(--body);font:400 14px/1.45 var(--font-body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-head);font-stretch:112%;color:var(--ink);letter-spacing:0;margin:0}
+button{font:inherit;cursor:pointer}
+
+/* top bar */
+.topbar{height:52px;display:flex;align-items:center;gap:16px;padding:0 20px;color:#fff;
+  background:linear-gradient(90deg,#222a5c 0%,var(--midnight) 22%,var(--obsidian) 100%);border-bottom:1px solid var(--line-dark)}
+.brand{display:flex;align-items:center;gap:10px;font:700 15px var(--font-head);font-stretch:112%}
+.brand-mark{width:18px;height:18px;border-radius:3px;background:linear-gradient(135deg,var(--indigo) 0 50%,var(--seafoam) 50% 100%)}
+.area{font-size:13px;color:var(--indigo-300);padding-left:16px;border-left:1px solid var(--midnight-400)}
+.topbar .spacer{flex:1}
+.search{width:260px;height:32px;border-radius:var(--radius);border:1px solid var(--midnight-400);background:#ffffff14;color:#fff;padding:0 12px;font:inherit;font-size:13px}
+.search::placeholder{color:#b4bdc4}
+.user{width:30px;height:30px;border-radius:50%;background:var(--indigo);display:grid;place-items:center;font-weight:600;font-size:12px}
+
+/* shell */
+.shell{display:grid;grid-template-columns:208px 1fr;min-height:calc(100% - 52px)}
+.rail{background:var(--white);border-right:1px solid var(--line);padding:16px 10px}
+.rail a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;margin-bottom:2px;border-radius:var(--radius);color:var(--body);text-decoration:none;font-weight:500;font-size:13px}
+.rail a:hover{background:var(--surface-2)}
+.rail a.active{background:var(--indigo-1);color:var(--indigo-600)}
+.rail .count{font-size:11px;font-weight:600;background:var(--line-2);color:var(--meta);border-radius:var(--radius-pill);padding:1px 8px}
+.rail a.active .count{background:var(--indigo);color:#fff}
+.content{padding:22px 26px 60px;min-width:0}
+
+/* page header */
+.page-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;margin-bottom:16px}
+.page-head h1{font-size:22px;font-weight:700}
+.page-head p{margin:4px 0 0;color:var(--meta);font-size:13px}
+.page-head .spacer{flex:1}
+.seg{display:inline-flex;background:var(--line-2);border-radius:var(--radius);padding:3px}
+.seg button{border:0;background:transparent;color:var(--meta);font-weight:500;font-size:13px;padding:6px 14px;border-radius:4px}
+.seg button.on{background:var(--white);color:var(--ink);box-shadow:0 1px 2px #09101f26}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font-size:12px;font-weight:500;color:var(--body);background:var(--white);border:1px solid var(--line);border-radius:var(--radius-pill);padding:4px 12px}
+.state-note{font-size:12px;color:var(--meta);margin:0 0 14px;padding:8px 12px;background:var(--surface-2);border:1px dashed var(--line);border-radius:var(--radius)}
+
+/* list + detail */
+.split{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:18px;align-items:start}
+.list{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--white);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:14px 16px;border:2px solid transparent;text-align:left;width:100%;color:inherit}
+.card:hover{border-color:var(--indigo-100)}
+.card.sel{border-color:var(--indigo);background:linear-gradient(0deg,#f6f8fc,#fff)}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.card h3{font:600 14px var(--font-body);color:var(--ink)}
+.card .sub{font-size:12px;color:var(--meta);margin-top:2px}
+.prog{height:4px;border-radius:2px;background:var(--line-2);margin-top:12px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--indigo);border-radius:2px}
+.prog-label{font-size:11px;color:var(--faint);margin-top:5px}
+
+.pill{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:11px;font-weight:600;border-radius:var(--radius-pill);padding:3px 10px}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.ok{color:#1f7d6c;background:var(--ok-1)}
+.pill.warn{color:#b4530f;background:var(--orange-1)}
+.pill.risk{color:var(--red);background:var(--red-1)}
+.pill.info{color:var(--indigo-600);background:var(--indigo-1)}
+.pill.neutral{color:var(--meta);background:var(--line-2)}
+
+.detail{background:var(--white);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:20px 22px;min-width:0}
+.detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.detail-head h2{font-size:18px;font-weight:700}
+.detail-head .sub{color:var(--meta);font-size:13px;margin-top:3px}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px;padding:16px 0}
+.kv dt{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);font-weight:600}
+.kv dd{margin:3px 0 0;color:var(--ink);font-weight:500}
+dl{margin:0}
+
+/* alert banner */
+.alert{display:flex;gap:12px;border-radius:var(--radius-card);padding:12px 14px;margin:4px 0 16px;border:1px solid var(--line);border-left-width:4px}
+.alert.warn{background:var(--orange-1);border-color:#f9c9a5;border-left-color:var(--orange)}
+.alert.risk{background:var(--red-1);border-color:#f4b8c6;border-left-color:var(--red)}
+.alert.info{background:var(--indigo-1);border-color:var(--indigo-100);border-left-color:var(--indigo)}
+.alert.ok{background:var(--ok-1);border-color:#b5e9de;border-left-color:var(--seafoam-600)}
+.alert.neutral{background:var(--surface-2)}
+.alert strong{display:block;color:var(--ink);font-weight:600}
+.alert p{margin:3px 0 0;font-size:13px}
+.alert .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{height:32px;padding:0 14px;border-radius:var(--radius);border:0;background:var(--white);color:var(--indigo-600);font-weight:500;font-size:13px;box-shadow:0 0 0 2px var(--indigo-600) inset}
+.btn:hover{background:var(--indigo-1)}
+.btn.primary{background:var(--indigo);color:#fff;box-shadow:none}
+.btn.primary:hover{background:var(--indigo-600)}
+.btn:focus-visible,.card:focus-visible,.seg button:focus-visible{outline:0;box-shadow:0 0 0 2.5px #737ec9}
+
+/* blocks + timeline */
+.block{padding-top:16px;margin-top:4px;border-top:1px solid var(--line)}
+.block-title{font:600 12px var(--font-body);text-transform:uppercase;letter-spacing:.05em;color:var(--meta);margin-bottom:12px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:22px minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) auto;gap:10px;align-items:start;position:relative;padding-bottom:14px;font-size:13px}
+.tl li::before{content:"";position:absolute;left:7px;top:16px;bottom:-2px;width:2px;background:var(--line-2)}
+.tl li:last-child::before{display:none}
+.tl li.done::before{background:var(--indigo-100)}
+.dot{width:16px;height:16px;border-radius:50%;margin-top:1px;border:2px solid var(--faint);background:var(--white);position:relative;z-index:1}
+.done .dot{background:var(--indigo);border-color:var(--indigo)}
+.current .dot{border-color:var(--indigo);box-shadow:0 0 0 4px var(--indigo-1)}
+.late .dot{background:var(--orange);border-color:var(--orange)}
+.missing .dot{border-color:var(--red);border-style:dashed}
+.predicted .dot{border-style:dashed}
+.tl .label{color:var(--ink);font-weight:500}
+.tl .note{display:block;font-weight:400;font-size:12px;color:var(--meta);margin-top:2px}
+.tl .t small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
+.late .t.actual,.missing .t.actual{color:var(--red);font-weight:500}
+.predicted .label,.predicted .t{color:var(--meta)}
+.src{font-size:11px;font-weight:500;color:var(--meta);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:1px 7px;white-space:nowrap}
+.conflict{grid-column:2 / -1;display:flex;flex-wrap:wrap;gap:6px;margin-top:-2px}
+.conflict .src{background:var(--orange-1);border-color:#f9c9a5;color:#b4530f}
+
+.mini-table{width:100%;border-collapse:collapse;font-size:13px}
+.mini-table th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--meta);background:var(--surface-2);padding:8px 10px;font-weight:600}
+.mini-table td{padding:9px 10px;border-top:1px solid var(--line);color:var(--ink)}
+.band{position:relative;height:10px;border-radius:5px;background:var(--line-2);margin:8px 0 6px}
+.band-fill{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--indigo-300)}
+.band-mark{position:absolute;top:-4px;width:3px;height:18px;border-radius:2px;background:var(--ink)}
+.band-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--meta)}
+
+/* toast */
+.toast{position:fixed;right:24px;bottom:24px;max-width:340px;background:var(--obsidian);color:#fff;border-radius:var(--radius-card);box-shadow:var(--shadow-modal);padding:12px 16px 12px 14px;display:flex;gap:10px;border-left:4px solid var(--indigo);transform:translateY(20px);opacity:0;pointer-events:none;transition:all .25s ease}
+.toast.show{transform:none;opacity:1;pointer-events:auto}
+.toast.ok{border-left-color:var(--seafoam)} .toast.warn{border-left-color:var(--orange)} .toast.risk{border-left-color:var(--red)}
+.toast strong{display:block;font-size:13px}
+.toast span{font-size:12px;color:#b4bdc4}
+.toast button{margin-left:auto;background:none;border:0;color:#82929c;font-size:16px;line-height:1}
+.proto-tag{position:fixed;left:12px;bottom:10px;font-size:11px;color:#fff;background:var(--obsidian);padding:3px 8px;border-radius:999px;opacity:.85;z-index:5}
+.empty{padding:40px;text-align:center;color:var(--meta)}
+
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}.rail{display:none}
+  .split{grid-template-columns:1fr}.kv{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .search{display:none}
+}
+/* SLOT:EXTRA-CSS */
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="brand-mark"></span><span id="brand"></span></div>
+  <div class="area" id="area"></div>
+  <div class="spacer"></div>
+  <input class="search" type="search" placeholder="Search shipments, POs, containers" aria-label="Search">
+  <div class="user" id="user"></div>
+</header>
+
+<div class="shell">
+  <nav class="rail" id="rail" aria-label="Sections"></nav>
+  <main class="content">
+    <div class="page-head">
+      <div>
+        <h1 id="page-title"></h1>
+        <p id="page-sub"></p>
+      </div>
+      <div class="spacer"></div>
+      <div class="seg" id="seg" role="tablist" aria-label="Prototype state"></div>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p class="state-note" id="state-note" hidden></p>
+    <div class="split">
+      <section class="list" id="list" aria-label="Items"></section>
+      <section class="detail" id="detail" aria-live="polite"></section>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status">
+  <div><strong id="toast-title"></strong><span id="toast-body"></span></div>
+  <button type="button" id="toast-close" aria-label="Dismiss">x</button>
+</div>
+<div class="proto-tag">Prototype. Sample data only.</div>
+
+<script>
+/* SLOT:DATA-START  Replace this whole object. Keep the shape described at the top of the file. */
+const DATA = {
+  app:  { brand: "Prototype", area: "Shipment visibility", user: "LM" },
+  nav:  [
+    { label: "Shipments", active: true, count: 42 },
+    { label: "Exceptions", count: 3 },
+    { label: "Orders" },
+    { label: "Reports" }
+  ],
+  page: { title: "Shipments", subtitle: "Ocean and air shipments in transit", chips: ["In transit", "Transpacific eastbound", "Last 30 days"] },
+  states: [
+    {
+      id: "today", label: "Today", note: "State 1: current behavior.",
+      items: [
+        {
+          id: "FLEX-482913", title: "FLEX-482913  Yantian to Long Beach", sub: "3 containers  |  PO 77120, PO 77134",
+          pill: { tone: "warn", label: "At risk" }, progress: [6, 11],
+          meta: [["Mode", "Ocean FCL"], ["Carrier", "Sample Line"], ["Vessel", "MV Example 042E"], ["Planned ETA", "Oct 14"], ["Current ETA", "Oct 19"], ["Need-by date", "Oct 21"]],
+          alert: { tone: "warn", title: "1 of 3 containers missed the second-leg vessel", body: "No load event at Busan 18 hours after the planned window. Treated as a physical gap.",
+                   actions: [{ label: "Review options", primary: true, toast: "Options opened for FLEX-482913" }, { label: "Snooze 24h", toast: "Snoozed until tomorrow 09:00" }] },
+          timeline: [
+            { label: "Booking confirmed", planned: "Sep 02", actual: "Sep 02", source: "Booking", state: "done" },
+            { label: "Gate-in at origin terminal", planned: "Sep 10", actual: "Sep 10 14:20", source: "Terminal", state: "done" },
+            { label: "Loaded on vessel", planned: "Sep 12", actual: "Sep 12 03:05", source: "Carrier EDI 315", state: "done" },
+            { label: "Vessel departed Yantian", planned: "Sep 12", actual: "Sep 13 01:40", source: "AIS", state: "done",
+              conflict: [{ source: "AIS", time: "Sep 13 01:40" }, { source: "Carrier EDI 315", time: "Sep 13 09:30" }] },
+            { label: "Transshipment reload at Busan", planned: "Sep 20", actual: "No event", source: "Carrier EDI 315", state: "missing", note: "Window expired 18h ago. Next state also missing." },
+            { label: "Vessel arrival Long Beach", planned: "Oct 14", actual: "Predicted Oct 19", source: "Model", state: "predicted" },
+            { label: "Customs release", planned: "Oct 15", actual: "", source: "Customs", state: "predicted" },
+            { label: "Delivered", planned: "Oct 17", actual: "Predicted Oct 22", source: "Model", state: "predicted" }
+          ],
+          extraHtml: "<div class='block'><div class='block-title'>Containers</div><table class='mini-table'><tr><th>Container</th><th>Status</th><th>ETA</th></tr><tr><td>MSKU 100001 1</td><td><span class='pill ok'>On plan</span></td><td>Oct 14</td></tr><tr><td>MSKU 100002 7</td><td><span class='pill ok'>On plan</span></td><td>Oct 14</td></tr><tr><td>MSKU 100003 2</td><td><span class='pill risk'>Rolled</span></td><td>Oct 19</td></tr></table></div>"
+        },
+        {
+          id: "FLEX-482877", title: "FLEX-482877  Shanghai to Chicago", sub: "Air  |  PO 77098",
+          pill: { tone: "ok", label: "On plan" }, progress: [5, 7],
+          meta: [["Mode", "Air"], ["Carrier", "Sample Air"], ["Planned ETA", "Sep 24"], ["Current ETA", "Sep 24"]],
+          timeline: [
+            { label: "Received from shipper", planned: "Sep 21", actual: "Sep 21 08:10", source: "Airline", state: "done" },
+            { label: "Departed PVG", planned: "Sep 22", actual: "Sep 22 02:30", source: "Airline", state: "done" },
+            { label: "Arrived ORD", planned: "Sep 22", actual: "Sep 22 19:45", source: "Airline", state: "current" },
+            { label: "Delivered", planned: "Sep 24", actual: "", source: "Driver app", state: "predicted" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "proposed", label: "Proposed", note: "State 2: proposed behavior.",
+      toast: { tone: "ok", title: "Proposed state", body: "Replace with the change this prototype demonstrates." },
+      items: []
+    }
+  ]
+};
+/* SLOT:DATA-END */
+
+/* ---- Renderer. No edits needed below this line. ---- */
+var stateIdx = 0, selId = null, toastTimer = null;
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+function showToast(t){
+  if (!t) return;
+  var el = $("toast");
+  el.className = "toast show " + (t.tone || "");
+  $("toast-title").textContent = t.title || "";
+  $("toast-body").textContent = t.body || "";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 4200);
+}
+
+function renderChrome(){
+  $("brand").textContent = DATA.app.brand;
+  $("area").textContent = DATA.app.area;
+  $("user").textContent = DATA.app.user;
+  $("rail").innerHTML = DATA.nav.map(function(n){
+    return "<a href='#'" + (n.active ? " class='active'" : "") + "><span>" + esc(n.label) + "</span>" +
+      (n.count != null ? "<span class='count'>" + esc(n.count) + "</span>" : "") + "</a>";
+  }).join("");
+  $("page-title").textContent = DATA.page.title;
+  $("page-sub").textContent = DATA.page.subtitle;
+  $("chips").innerHTML = (DATA.page.chips || []).map(function(c){ return "<span class='chip'>" + esc(c) + "</span>"; }).join("");
+  $("seg").innerHTML = DATA.states.map(function(s, i){
+    return "<button type='button' role='tab' data-state='" + i + "'" + (i === stateIdx ? " class='on'" : "") + ">" + esc(s.label) + "</button>";
+  }).join("");
+}
+
+function renderList(){
+  var st = DATA.states[stateIdx];
+  var note = $("state-note");
+  note.hidden = !st.note; note.textContent = st.note || "";
+  if (!st.items.length){ $("list").innerHTML = "<div class='card empty'>No items in this state yet.</div>"; $("detail").innerHTML = "<div class='empty'>Nothing selected.</div>"; return; }
+  if (!st.items.some(function(it){ return it.id === selId; })) selId = st.items[0].id;
+  $("list").innerHTML = st.items.map(function(it){
+    var p = it.progress || [0, 1], pct = Math.round(100 * p[0] / p[1]);
+    return "<button type='button' class='card" + (it.id === selId ? " sel" : "") + "' data-id='" + esc(it.id) + "'>" +
+      "<div class='card-top'><div><h3>" + esc(it.title) + "</h3><div class='sub'>" + esc(it.sub) + "</div></div>" +
+      "<span class='pill " + esc(it.pill.tone) + "'>" + esc(it.pill.label) + "</span></div>" +
+      "<div class='prog'><i style='width:" + pct + "%'></i></div>" +
+      "<div class='prog-label'>" + p[0] + " of " + p[1] + " milestones</div></button>";
+  }).join("");
+  renderDetail();
+}
+
+function renderDetail(){
+  var st = DATA.states[stateIdx];
+  var it = st.items.filter(function(x){ return x.id === selId; })[0];
+  if (!it) return;
+  var html = "<div class='detail-head'><div><h2>" + esc(it.title) + "</h2><div class='sub'>" + esc(it.sub) + "</div></div>" +
+    "<span class='pill " + esc(it.pill.tone) + "'>" + esc(it.pill.label) + "</span></div>";
+  html += "<dl class='kv'>" + (it.meta || []).map(function(m){ return "<div><dt>" + esc(m[0]) + "</dt><dd>" + esc(m[1]) + "</dd></div>"; }).join("") + "</dl>";
+  if (it.alert){
+    html += "<div class='alert " + esc(it.alert.tone) + "'><div><strong>" + esc(it.alert.title) + "</strong><p>" + esc(it.alert.body) + "</p>" +
+      "<div class='actions'>" + (it.alert.actions || []).map(function(a){
+        return "<button type='button' class='btn" + (a.primary ? " primary" : "") + "' data-toast='" + esc(a.toast || a.label) + "'>" + esc(a.label) + "</button>";
+      }).join("") + "</div></div></div>";
+  }
+  html += "<div class='block'><div class='block-title'>Milestones</div><ol class='tl'>" + (it.timeline || []).map(function(m){
+    return "<li class='" + esc(m.state) + "'><span class='dot'></span>" +
+      "<span class='label'>" + esc(m.label) + (m.note ? "<span class='note'>" + esc(m.note) + "</span>" : "") + "</span>" +
+      "<span class='t'><small>Planned</small>" + esc(m.planned || "n/a") + "</span>" +
+      "<span class='t actual'><small>Actual</small>" + esc(m.actual || "Pending") + "</span>" +
+      "<span class='src'>" + esc(m.source) + "</span>" +
+      (m.conflict ? "<span class='conflict'>" + m.conflict.map(function(c){ return "<span class='src'>" + esc(c.source) + ": " + esc(c.time) + "</span>"; }).join("") + "</span>" : "") +
+      "</li>";
+  }).join("") + "</ol></div>";
+  html += it.extraHtml || "";
+  $("detail").innerHTML = html;
+}
+
+document.addEventListener("click", function(e){
+  var card = e.target.closest(".card[data-id]");
+  if (card){ selId = card.getAttribute("data-id"); renderList(); return; }
+  var seg = e.target.closest("[data-state]");
+  if (seg){ stateIdx = +seg.getAttribute("data-state"); renderChrome(); renderList(); showToast(DATA.states[stateIdx].toast); return; }
+  var t = e.target.closest("[data-toast]");
+  if (t){ showToast({ tone: "ok", title: t.getAttribute("data-toast"), body: "Prototype action. Nothing was sent." }); return; }
+  if (e.target.id === "toast-close") $("toast").classList.remove("show");
+});
+
+renderChrome();
+renderList();
+</script>
+</body>
+</html>

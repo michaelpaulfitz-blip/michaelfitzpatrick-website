@@ -192,7 +192,7 @@
   <div class="grp">Elsewhere</div>
   <a class="nl" href="/growth-and-best-practices/i9jezps3ityn3wj2t0ll/">Growth &amp; Best Practices &rarr;</a>
   <a class="nl" href="/otto">Otto HQ &rarr;</a>
-  <div class="foot">Last change detected<br><b><!--ts-->17 Sep 2026, 01:15<!--/ts--></b><br>noindex, nofollow<br><span class="wm">Michael Fitzpatrick<span class="dot">.</span></span></div>
+  <div class="foot">Last change detected<br><b><!--ts-->17 Sep 2026, 01:18<!--/ts--></b><br>noindex, nofollow<br><span class="wm">Michael Fitzpatrick<span class="dot">.</span></span></div>
 </nav>
 
 <main>
@@ -206,7 +206,7 @@
 <div class="warn">
   <b>Obscurity, not authentication.</b> No login, no IP check. Anyone with the link, or who gets it from browser history, a screen share, or a referrer header, reads this in full. No salary figures, no recruiter names, no interview feedback, no credentials. Workspaces default to headings-only and stats-only until Mike flips their flag.
 </div>
-<div class="tiles"><a class="tile" href="#workspaces"><span class="tilenum">9</span><span class="tilelabel">Workspaces</span></a><a class="tile" href="#skills"><span class="tilenum">14</span><span class="tilelabel">Skills</span></a><a class="tile" href="#actions"><span class="tilenum">18</span><span class="tilelabel">Open actions</span></a><a class="tile" href="#workspaces"><span class="tilenum">52</span><span class="tilelabel">Commits, 7d</span></a><a class="tile" href="#workspaces"><span class="tilenum">45</span><span class="tilelabel">Sessions, 7d</span></a><a class="tile" href="#workspaces"><span class="tilenum">4</span><span class="tilelabel">Dirty repos</span></a><a class="tile" href="#ideas"><span class="tilenum">60</span><span class="tilelabel">Ideas</span></a></div>
+<div class="tiles"><a class="tile" href="#workspaces"><span class="tilenum">9</span><span class="tilelabel">Workspaces</span></a><a class="tile" href="#skills"><span class="tilenum">14</span><span class="tilelabel">Skills</span></a><a class="tile" href="#actions"><span class="tilenum">18</span><span class="tilelabel">Open actions</span></a><a class="tile" href="#workspaces"><span class="tilenum">53</span><span class="tilelabel">Commits, 7d</span></a><a class="tile" href="#workspaces"><span class="tilenum">45</span><span class="tilelabel">Sessions, 7d</span></a><a class="tile" href="#workspaces"><span class="tilenum">4</span><span class="tilelabel">Dirty repos</span></a><a class="tile" href="#ideas"><span class="tilenum">60</span><span class="tilelabel">Ideas</span></a></div>
 </section>
 
 <section id="workspaces">
@@ -216,13 +216,20 @@
   <div class="cardhead"><span class="badge">G</span><div class="cardtitle"><span class="name">Global settings</span><span class="mono path">~/.claude</span></div><div class="pills"><span class="pill live">Applies everywhere</span></div></div>
   <div class="cardbody"><div class="col"><h3>What it is</h3><p>The user-level CLAUDE.md and skills that load in every workspace. Edit them from the hub so changes are deliberate.</p></div>
   <div class="col facts"><h3>Vitals</h3><ul><li><b>Global skills</b> <a href="#skills">3</a></li></ul></div></div>
-  <details class="doc"><summary>Global CLAUDE.md <span class="quiet">18 lines &middot; 175 words</span></summary><pre># Response style (Mike&#x27;s preferences — apply in every session)
+  <details class="doc"><summary>Global CLAUDE.md <span class="quiet">25 lines &middot; 280 words</span></summary><pre># Response style (Mike&#x27;s preferences — apply in every session)
 
 - Keep a relatively casual, lighthearted tone with a good amount of humor woven in, while
   still giving substantive, honest answers.
 - Keep responses concise and non-repetitive. Don&#x27;t restate the same point across multiple
   sections or meander.
-- When an answer is necessarily long, end it with a short **Bottom line** summarizing the key points.
+- **TL;DR postscript on every message.** Write the body at its normal depth, then end with a horizontal
+  rule and `**⚡ TL;DR:**` followed by the answer in ~40 words (or up to 3 short bullets). Conclusion
+  first, numbers over adjectives, and if anything needs me (a question, a decision, a command to run)
+  say so last, prefixed `→ You:`. Never thin out the body because the summary exists, and never let the
+  TL;DR read as a clean success when something failed or is unverified. Skip it when the whole reply is
+  under ~50 words or when `/ultra-concise` or `/direct` is on. Chat only: no postscript in documents,
+  code, or commit messages. (Replaces the old &quot;Bottom line&quot; footer; full spec in the
+  `ultra-concise-postscript` skill.)
 
 # Glossary (shared vocabulary — use these terms consistently)
 
@@ -238,10 +245,10 @@
 <article class="card ws" id="ws-central_dev_management_and_improvements">
   <div class="cardhead"><span class="badge">1</span><div class="cardtitle"><span class="name">The Bridge (hub)</span><span class="mono path">C:\dev\central_dev_management_and_improvements</span></div><div class="pills"><span class="pill external">No git</span><span class="pill live">Active</span></div></div>
   <div class="cardbody">
-    <div class="col"><h3>What it is</h3><p>Central command for every Claude Code project: global settings and skills, the AI-development learning plan, this page&#x27;s build scripts, and a landing pad for half-baked questions that might become projects.</p><h3>Recent changes</h3><p class="quiet">Not a git repo, so these are the most recently modified files.</p><ul class="changes"><li><span class="mono when">2026-09-17</span> <span class="mono">research/exchange-log.json</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">tools/build_bridge.py</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">CLAUDE.md</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">research/action-items.json</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">research/registry.json</span></li></ul></div>
+    <div class="col"><h3>What it is</h3><p>Central command for every Claude Code project: global settings and skills, the AI-development learning plan, this page&#x27;s build scripts, and a landing pad for half-baked questions that might become projects.</p><h3>Recent changes</h3><p class="quiet">Not a git repo, so these are the most recently modified files.</p><ul class="changes"><li><span class="mono when">2026-09-17</span> <span class="mono">research/exchange-log.json</span></li><li><span class="mono when">2026-09-17</span> <span class="mono">research/registry.json</span></li><li><span class="mono when">2026-09-17</span> <span class="mono">CLAUDE.md</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">tools/build_bridge.py</span></li><li><span class="mono when">2026-09-16</span> <span class="mono">research/action-items.json</span></li></ul></div>
     <div class="col facts"><h3>Vitals</h3><ul><li><b>Claude sessions</b> 6 total &middot; 6 in 7d &middot; last today</li><li><b>Memory files</b> 5</li></ul></div>
   </div>
-  <details class="doc"><summary>CLAUDE.md <span class="quiet">36 lines &middot; 368 words</span></summary><pre># The Bridge ⭐⭐ (hub; folder is still `central_dev_management_and_improvements` until action item A15)
+  <details class="doc"><summary>CLAUDE.md <span class="quiet">39 lines &middot; 424 words</span></summary><pre># The Bridge ⭐⭐ (hub; folder is still `central_dev_management_and_improvements` until action item A15)
 
 This directory is Mike&#x27;s hub for work that spans all his Claude Code projects: central command for global settings
 and skills, plus a landing pad for half-baked questions that might become projects. Deliverables live on two private
@@ -253,9 +260,12 @@ website pages, both generated from JSON in `research/`:
 
 ## Rules for every exchange in this directory
 
-- **Log the exchange.** Before finishing a response, append two rows to `research/exchange-log.json` (one for Mike&#x27;s
-  ask, one for Claude&#x27;s response), each a one- or two-sentence summary. Then rebuild and push the page. Never rewrite
-  earlier rows.
+- **Log substantive exchanges.** Before finishing a response, append two rows to `research/exchange-log.json` (one
+  for Mike&#x27;s ask, one for Claude&#x27;s response), each a one- or two-sentence summary. Then rebuild and push the page.
+  Never rewrite earlier rows. **Trivial exchanges skip all of this** (Mike&#x27;s call, 2026-09-17): mode and skill toggles,
+  acknowledgements, quick clarifying questions, and anything that changed no file and produced nothing worth finding
+  later. If in doubt, ask &quot;would Mike ever look this up?&quot; and skip when the answer is no. Do not push a page whose
+  content did not change.
 - **Directory first.** Any new topic or domain Mike mentions gets a row in `research/registry.json` before any
   research starts, with `status: unresearched` and an empty `research_log`. Research passes append a `research_log`
   entry with date, what was done, agent count, search count, and output. Depth is computed by the build script from
@@ -368,8 +378,8 @@ website pages, both generated from JSON in `research/`:
 <article class="card ws" id="ws-michaelfitzpatrick-website">
   <div class="cardhead"><span class="badge">8</span><div class="cardtitle"><span class="name">michaelfitzpatrick.me</span><span class="mono path">C:\dev\michaelfitzpatrick-website</span></div><div class="pills"><span class="pill sop">Git repo</span><span class="pill live">Active</span><span class="pill removed">1 uncommitted</span></div></div>
   <div class="cardbody">
-    <div class="col"><h3>What it is</h3><p>The static personal site plus its private pages: The Bridge, Growth and Best Practices, and Otto HQ. Push to master and Render deploys in a minute or two.</p><h3>Recent changes</h3><ul class="changes"><li><span class="mono when">2026-09-17</span> Log 2026-09-17 exchange; The Bridge picks up the ultra-concise-postscript skill</li><li><span class="mono when">2026-09-17</span> Growth page: log 2026-09-17 exchange</li><li><span class="mono when">2026-09-17</span> Growth page: log 2026-09-17 ultra-concise toggle</li><li><span class="mono when">2026-09-16</span> The Bridge: rename the private Site Directory into a command center at a new URL</li><li><span class="mono when">2026-09-16</span> Otto HQ: declare color-scheme light to prevent browser auto-darkening</li><li><span class="mono when">2026-09-16</span> Otto HQ: field-guide redesign per UI/UX research</li></ul></div>
-    <div class="col facts"><h3>Vitals</h3><ul><li><b>Branch</b> <span class="mono">master</span></li><li><b>Last commit</b> 2026-09-17 (today)</li><li><b>Commits</b> 18 in 7d &middot; 68 in 30d</li><li><b>Claude sessions</b> 0 total &middot; 0 in 7d &middot; last never</li><li><b>Memory files</b> 0</li></ul></div>
+    <div class="col"><h3>What it is</h3><p>The static personal site plus its private pages: The Bridge, Growth and Best Practices, and Otto HQ. Push to master and Render deploys in a minute or two.</p><h3>Recent changes</h3><ul class="changes"><li><span class="mono when">2026-09-17</span> Growth page: log 2026-09-17 keyboard fix exchange</li><li><span class="mono when">2026-09-17</span> Log 2026-09-17 exchange; The Bridge picks up the ultra-concise-postscript skill</li><li><span class="mono when">2026-09-17</span> Growth page: log 2026-09-17 exchange</li><li><span class="mono when">2026-09-17</span> Growth page: log 2026-09-17 ultra-concise toggle</li><li><span class="mono when">2026-09-16</span> The Bridge: rename the private Site Directory into a command center at a new URL</li><li><span class="mono when">2026-09-16</span> Otto HQ: declare color-scheme light to prevent browser auto-darkening</li></ul></div>
+    <div class="col facts"><h3>Vitals</h3><ul><li><b>Branch</b> <span class="mono">master</span></li><li><b>Last commit</b> 2026-09-17 (today)</li><li><b>Commits</b> 19 in 7d &middot; 69 in 30d</li><li><b>Claude sessions</b> 0 total &middot; 0 in 7d &middot; last never</li><li><b>Memory files</b> 0</li></ul></div>
   </div>
   <p class="quiet">No CLAUDE.md in this workspace.</p>
 </article>
@@ -434,7 +444,7 @@ conversation until `/direct off`:
   <div class="cardhead"><span class="badge">K2</span><div class="cardtitle"><span class="name">ultra-concise-postscript</span><code>/ultra-concise-postscript</code></div><div class="pills"><span class="pill sop">skill</span><span class="pill live">Global</span></div></div>
   <div class="cardbody">
     <div class="col"><p>Answer normally, then end every message with an ultra-concise TL;DR postscript. Use when Mike says ultra concise postscript, TL;DR at the end, summary at the bottom of every message, or invokes /ultra-concise-postscript. Unlike /ultra-concise, the body keeps its normal depth.</p></div>
-    <div class="col facts"><ul><li><b>Path</b> <span class="mono">~/.claude/skills/ultra-concise-postscript/SKILL.md</span></li><li><b>Size</b> 400 words &middot; 55 lines</li><li><b>Created</b> 2026-09-17 &middot; <b>Modified</b> 2026-09-17</li></ul></div>
+    <div class="col facts"><ul><li><b>Path</b> <span class="mono">~/.claude/skills/ultra-concise-postscript/SKILL.md</span></li><li><b>Size</b> 445 words &middot; 59 lines</li><li><b>Created</b> 2026-09-17 &middot; <b>Modified</b> 2026-09-17</li></ul></div>
   </div>
   <details class="doc"><summary>Full text</summary><pre>---
 name: ultra-concise-postscript
@@ -446,6 +456,10 @@ description: Answer normally, then end every message with an ultra-concise TL;DR
 `/ultra-concise` shrinks the whole answer. This leaves the answer alone and adds a scan-speed
 summary underneath it. Use it when Mike wants the full reasoning available but will usually
 read only the last three lines.
+
+**Status, 2026-09-17:** this behavior is now Mike&#x27;s default through his global `~/.claude/CLAUDE.md`.
+This file is the full spec. Invoke the skill to force the postscript on where a project&#x27;s rules or a
+concise mode would otherwise suppress it.
 
 **If the argument is `on` or empty:** one-line ack, then for the rest of the conversation until
 `/ultra-concise-postscript off`:
@@ -488,8 +502,8 @@ one clause of catch.
 **Artifacts are unaffected.** This governs chat messages only. Documents, specs, registers,
 code, and commit messages get no postscript.
 
-**If the argument is `off`:** one-line ack, return to normal style (the `**Bottom line**` rule
-comes back).
+**If the argument is `off`:** one-line ack, then no postscript for the rest of this conversation,
+even though the global default asks for one.
 </pre></details>
 </article>
 <article class="card skill">

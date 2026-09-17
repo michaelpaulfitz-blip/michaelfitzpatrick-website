@@ -188,9 +188,13 @@ dl{margin:0}
   .search{display:none}
 }
 /* SLOT:EXTRA-CSS */
+.site-alert{display:flex;align-items:center;gap:10px;padding:9px 20px;background:var(--indigo-1);border-bottom:1px solid var(--indigo-100);color:var(--ink);font-size:13px;font-weight:500}
+.site-alert::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--indigo)}
 </style>
 </head>
 <body>
+
+<div class="site-alert" role="alert">Hello World</div>
 
 <header class="topbar">
   <div class="brand"><span class="brand-mark"></span><span id="brand"></span></div>

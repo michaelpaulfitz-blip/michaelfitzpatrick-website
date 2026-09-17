@@ -4,9 +4,8 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="https://www.flexport.com/favicon.ico" sizes="32x32">
 <!-- SLOT:TITLE (replace the text inside <title>) -->
-<title>Prototype starter</title>
+<title>Exception Center prototype</title>
 <!--
   PROTO STARTER. Single file, no external JS, Google Fonts only.
 
@@ -189,13 +188,9 @@ dl{margin:0}
   .search{display:none}
 }
 /* SLOT:EXTRA-CSS */
-.site-alert{display:flex;align-items:center;gap:10px;padding:9px 20px;background:var(--indigo-1);border-bottom:1px solid var(--indigo-100);color:var(--ink);font-size:13px;font-weight:500}
-.site-alert::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--indigo)}
 </style>
 </head>
 <body>
-
-<div class="site-alert" role="alert">Hello World</div>
 
 <header class="topbar">
   <div class="brand"><span class="brand-mark"></span><span id="brand"></span></div>
@@ -232,60 +227,487 @@ dl{margin:0}
 <div class="proto-tag">Prototype. Sample data only.</div>
 
 <script>
-/* SLOT:DATA-START  Replace this whole object. Keep the shape described at the top of the file. */
+/* DATA */
 const DATA = {
-  app:  { brand: "Prototype", area: "Shipment visibility", user: "LM" },
-  nav:  [
-    { label: "Shipments", active: true, count: 42 },
-    { label: "Exceptions", count: 3 },
-    { label: "Orders" },
-    { label: "Reports" }
-  ],
-  page: { title: "Shipments", subtitle: "Ocean and air shipments in transit", chips: ["In transit", "Transpacific eastbound", "Last 30 days"] },
-  states: [
+ "app": {
+  "brand": "Prototype",
+  "area": "Exception Center",
+  "user": "LM"
+ },
+ "nav": [
+  {
+   "label": "Exceptions",
+   "active": true,
+   "count": 4
+  },
+  {
+   "label": "Shipments",
+   "count": 1240
+  },
+  {
+   "label": "Orders"
+  },
+  {
+   "label": "Trends"
+  },
+  {
+   "label": "Settings"
+  }
+ ],
+ "page": {
+  "title": "Exceptions that need you",
+  "subtitle": "Ranked by dollars at risk and time left. Signed in as Lena M., Acme Outdoor.",
+  "chips": [
+   "4 open",
+   "$18,450 at risk this week",
+   "2 waiting on you",
+   "Export to Excel"
+  ]
+ },
+ "states": [
+  {
+   "id": "proposed",
+   "label": "Proposed",
+   "note": "Detected from carrier, terminal and customs events within minutes. Every exception has an owner, a next step and a cost clock.",
+   "toast": {
+    "tone": "risk",
+    "title": "New exception, detected 6 min ago",
+    "body": "Customs hold on FLEX-482913. Your action needed: upload a corrected commercial invoice."
+   },
+   "items": [
     {
-      id: "today", label: "Today", note: "State 1: current behavior.",
-      items: [
-        {
-          id: "FLEX-482913", title: "FLEX-482913  Yantian to Long Beach", sub: "3 containers  |  PO 77120, PO 77134",
-          pill: { tone: "warn", label: "At risk" }, progress: [6, 11],
-          meta: [["Mode", "Ocean FCL"], ["Carrier", "Sample Line"], ["Vessel", "MV Example 042E"], ["Planned ETA", "Oct 14"], ["Current ETA", "Oct 19"], ["Need-by date", "Oct 21"]],
-          alert: { tone: "warn", title: "1 of 3 containers missed the second-leg vessel", body: "No load event at Busan 18 hours after the planned window. Treated as a physical gap.",
-                   actions: [{ label: "Review options", primary: true, toast: "Options opened for FLEX-482913" }, { label: "Snooze 24h", toast: "Snoozed until tomorrow 09:00" }] },
-          timeline: [
-            { label: "Booking confirmed", planned: "Sep 02", actual: "Sep 02", source: "Booking", state: "done" },
-            { label: "Gate-in at origin terminal", planned: "Sep 10", actual: "Sep 10 14:20", source: "Terminal", state: "done" },
-            { label: "Loaded on vessel", planned: "Sep 12", actual: "Sep 12 03:05", source: "Carrier EDI 315", state: "done" },
-            { label: "Vessel departed Yantian", planned: "Sep 12", actual: "Sep 13 01:40", source: "AIS", state: "done",
-              conflict: [{ source: "AIS", time: "Sep 13 01:40" }, { source: "Carrier EDI 315", time: "Sep 13 09:30" }] },
-            { label: "Transshipment reload at Busan", planned: "Sep 20", actual: "No event", source: "Carrier EDI 315", state: "missing", note: "Window expired 18h ago. Next state also missing." },
-            { label: "Vessel arrival Long Beach", planned: "Oct 14", actual: "Predicted Oct 19", source: "Model", state: "predicted" },
-            { label: "Customs release", planned: "Oct 15", actual: "", source: "Customs", state: "predicted" },
-            { label: "Delivered", planned: "Oct 17", actual: "Predicted Oct 22", source: "Model", state: "predicted" }
-          ],
-          extraHtml: "<div class='block'><div class='block-title'>Containers</div><table class='mini-table'><tr><th>Container</th><th>Status</th><th>ETA</th></tr><tr><td>MSKU 100001 1</td><td><span class='pill ok'>On plan</span></td><td>Oct 14</td></tr><tr><td>MSKU 100002 7</td><td><span class='pill ok'>On plan</span></td><td>Oct 14</td></tr><tr><td>MSKU 100003 2</td><td><span class='pill risk'>Rolled</span></td><td>Oct 19</td></tr></table></div>"
-        },
-        {
-          id: "FLEX-482877", title: "FLEX-482877  Shanghai to Chicago", sub: "Air  |  PO 77098",
-          pill: { tone: "ok", label: "On plan" }, progress: [5, 7],
-          meta: [["Mode", "Air"], ["Carrier", "Sample Air"], ["Planned ETA", "Sep 24"], ["Current ETA", "Sep 24"]],
-          timeline: [
-            { label: "Received from shipper", planned: "Sep 21", actual: "Sep 21 08:10", source: "Airline", state: "done" },
-            { label: "Departed PVG", planned: "Sep 22", actual: "Sep 22 02:30", source: "Airline", state: "done" },
-            { label: "Arrived ORD", planned: "Sep 22", actual: "Sep 22 19:45", source: "Airline", state: "current" },
-            { label: "Delivered", planned: "Sep 24", actual: "", source: "Driver app", state: "predicted" }
-          ]
-        }
+     "id": "EX-1041",
+     "title": "Customs hold: commercial invoice mismatch",
+     "sub": "FLEX-482913  |  Yantian to Long Beach  |  3 containers  |  PO 77120, PO 77134",
+     "pill": {
+      "tone": "risk",
+      "label": "P1  $6,300 at risk"
+     },
+     "progress": [
+      1,
+      4
+     ],
+     "meta": [
+      [
+       "Exception type",
+       "Customs documentation hold"
+      ],
+      [
+       "Detected",
+       "Sep 17 10:06, 6 min after event"
+      ],
+      [
+       "Source",
+       "Customs status, confirmed by broker feed"
+      ],
+      [
+       "Confidence",
+       "High, 2 sources agree"
+      ],
+      [
+       "Owner of next step",
+       "You (Acme Outdoor)"
+      ],
+      [
+       "Last free day",
+       "Sep 20, 3 days left"
       ]
+     ],
+     "alert": {
+      "tone": "risk",
+      "title": "Your action needed: upload a corrected commercial invoice",
+      "body": "Declared value on the invoice does not match the packing list for PO 77134. Containers cannot leave the terminal until customs releases. Demurrage starts Sep 21 at $450 per container per day.",
+      "actions": [
+       {
+        "label": "Upload corrected invoice",
+        "primary": true,
+        "toast": "Invoice uploaded. Broker notified, step 1 complete."
+       },
+       {
+        "label": "Ask ops a question",
+        "toast": "Message added to this exception thread"
+       },
+       {
+        "label": "Reassign",
+        "toast": "Reassigned to J. Ortiz"
+       }
+      ]
+     },
+     "timeline": [
+      {
+       "label": "Vessel arrived Long Beach",
+       "planned": "Sep 14",
+       "actual": "Sep 14 22:10",
+       "source": "AIS",
+       "state": "done"
+      },
+      {
+       "label": "Discharged at terminal",
+       "planned": "Sep 15",
+       "actual": "Sep 15 16:45",
+       "source": "Terminal",
+       "state": "done"
+      },
+      {
+       "label": "Customs release",
+       "planned": "Sep 16",
+       "actual": "HOLD placed Sep 17 10:00",
+       "source": "Customs",
+       "state": "late",
+       "note": "Exception opened automatically at 10:06."
+      },
+      {
+       "label": "Gate-out",
+       "planned": "Sep 17",
+       "actual": "Blocked by hold",
+       "source": "Terminal",
+       "state": "missing"
+      },
+      {
+       "label": "Delivered to DC",
+       "planned": "Sep 19",
+       "actual": "Predicted Sep 23",
+       "source": "Model",
+       "state": "predicted"
+      }
+     ],
+     "extraHtml": "<div class='block'><div class='block-title'>Cost of delay</div><div class='kv'><div>At risk today</div><div><b>$0</b></div><div>Accrues per day</div><div>$1,350 (3 containers)</div><div>Free time left</div><div>3 days</div><div>Exposure if unresolved 7 days</div><div>$6,300 demurrage + $2,100 storage</div></div><div class='band'><div class='band-fill' style='left:0;width:62%'></div><div class='band-mark' style='left:62%'></div></div><div class='band-labels'><span>Free time used</span><span>Last free day</span></div></div><div class='block'><div class='block-title'>Guided resolution</div><table class='mini-table'><tr><th>#</th><th>Next step</th><th>Owner</th><th>Due</th><th>Status</th></tr><tr><td>1</td><td>Upload corrected commercial invoice for PO 77134</td><td><span class='pill risk'>You</span></td><td>Today 17:00</td><td><span class='pill warn'>Open</span></td></tr><tr><td>2</td><td>Broker refiles entry with customs</td><td><span class='pill info'>Customs broker</span></td><td>Sep 18</td><td><span class='pill neutral'>Waiting on step 1</span></td></tr><tr><td>3</td><td>Customs review and release</td><td><span class='pill neutral'>CBP</span></td><td>Sep 18 to 19</td><td><span class='pill neutral'>Not started</span></td></tr><tr><td>4</td><td>Rebook drayage before last free day</td><td><span class='pill ok'>Flexport ops</span></td><td>Sep 19</td><td><span class='pill ok'>Pre-booked, pending release</span></td></tr></table></div><div class='block'><div class='block-title'>Activity: platform and email in one thread</div><table class='mini-table'><tr><th>When</th><th>Who</th><th>What</th></tr><tr><td>10:06</td><td>System</td><td>Exception opened from customs status. Priority P1: $6,300 exposure, 3 days of free time.</td></tr><tr><td>10:07</td><td>System</td><td>Playbook matched: documentation hold, value mismatch. Contract note applied: client files own invoices.</td></tr><tr><td>10:09</td><td>Flexport ops</td><td>Pre-booked a drayage slot for Sep 19 so release does not miss the last free day.</td></tr><tr><td>Email, Sep 12</td><td>Supplier</td><td>Summarized: supplier sent a revised invoice to your AP inbox. Private details removed.</td></tr></table></div>"
     },
     {
-      id: "proposed", label: "Proposed", note: "State 2: proposed behavior.",
-      toast: { tone: "ok", title: "Proposed state", body: "Replace with the change this prototype demonstrates." },
-      items: []
+     "id": "EX-1038",
+     "title": "Missed vessel: 1 of 3 containers rolled at Busan",
+     "sub": "FLEX-482990  |  Shanghai to Seattle  |  PO 77201 (SKU tent-4P, 1,200 units)",
+     "pill": {
+      "tone": "warn",
+      "label": "P2  $9,800 at risk"
+     },
+     "progress": [
+      2,
+      3
+     ],
+     "meta": [
+      [
+       "Exception type",
+       "Rolled at transshipment"
+      ],
+      [
+       "Detected",
+       "Sep 16 04:20, inferred"
+      ],
+      [
+       "Source",
+       "No load event 18 h after window, AIS shows vessel sailed"
+      ],
+      [
+       "Confidence",
+       "Medium, carrier has not confirmed"
+      ],
+      [
+       "Owner of next step",
+       "Flexport ops"
+      ],
+      [
+       "Need-by date",
+       "Sep 30, now at risk"
+      ]
+     ],
+     "alert": {
+      "tone": "warn",
+      "title": "No action needed from you yet. Decision likely by Sep 18.",
+      "body": "Flexport is rebooking the rolled container. If the next sailing misses your Sep 30 need-by date you will be asked to choose: wait, or air 400 units at about $9,800.",
+      "actions": [
+       {
+        "label": "See options",
+        "primary": true,
+        "toast": "Options: wait (ETA Oct 3) or partial air (ETA Sep 26, $9,800)"
+       },
+       {
+        "label": "Snooze until decision",
+        "toast": "Snoozed. You will be alerted if a decision is needed."
+       }
+      ]
+     },
+     "timeline": [
+      {
+       "label": "Vessel departed Shanghai",
+       "planned": "Sep 08",
+       "actual": "Sep 08 21:15",
+       "source": "Carrier EDI 315",
+       "state": "done"
+      },
+      {
+       "label": "Transshipment reload at Busan",
+       "planned": "Sep 15",
+       "actual": "No event",
+       "source": "Carrier EDI 315",
+       "state": "missing",
+       "note": "Treated as a physical gap: next state also missing and the vessel has sailed.",
+       "conflict": [
+        {
+         "source": "AIS",
+         "time": "Vessel sailed Sep 15 09:40"
+        },
+        {
+         "source": "Carrier EDI 315",
+         "time": "No load event"
+        }
+       ]
+      },
+      {
+       "label": "Arrival Seattle",
+       "planned": "Sep 27",
+       "actual": "Predicted Oct 03",
+       "source": "Model",
+       "state": "predicted"
+      }
+     ],
+     "extraHtml": "<div class='block'><div class='block-title'>Guided resolution</div><table class='mini-table'><tr><th>#</th><th>Next step</th><th>Owner</th><th>Due</th><th>Status</th></tr><tr><td>1</td><td>Confirm roll with carrier and rebook next sailing</td><td><span class='pill ok'>Flexport ops</span></td><td>Sep 17</td><td><span class='pill warn'>In progress</span></td></tr><tr><td>2</td><td>Choose wait or partial air if ETA passes need-by</td><td><span class='pill risk'>You</span></td><td>Sep 18</td><td><span class='pill neutral'>Not yet needed</span></td></tr><tr><td>3</td><td>Update PO 77201 promise date in your ERP</td><td><span class='pill info'>System</span></td><td>On decision</td><td><span class='pill neutral'>Automatic</span></td></tr></table></div>"
+    },
+    {
+     "id": "EX-1035",
+     "title": "Documentation error: ISF filed with wrong consignee",
+     "sub": "FLEX-483020  |  Ningbo to Savannah  |  1 container",
+     "pill": {
+      "tone": "warn",
+      "label": "P2  $2,350 at risk"
+     },
+     "progress": [
+      1,
+      3
+     ],
+     "meta": [
+      [
+       "Exception type",
+       "ISF data error"
+      ],
+      [
+       "Detected",
+       "Sep 17 08:40 at filing validation"
+      ],
+      [
+       "Owner of next step",
+       "You, then Flexport ops"
+      ],
+      [
+       "Penalty exposure",
+       "Up to $5,000 per filing, ILLUSTRATIVE"
+      ],
+      [
+       "Vessel departs",
+       "Sep 19"
+      ],
+      [
+       "Confidence",
+       "High"
+      ]
+     ],
+     "alert": {
+      "tone": "info",
+      "title": "Flexport is correcting the filing. Please confirm the consignee.",
+      "body": "One click to confirm the legal entity name so the amended ISF can be filed before sailing.",
+      "actions": [
+       {
+        "label": "Confirm consignee: Acme Outdoor LLC",
+        "primary": true,
+        "toast": "Confirmed. Amended ISF queued for filing."
+       }
+      ]
+     },
+     "timeline": [
+      {
+       "label": "ISF filed",
+       "planned": "Sep 16",
+       "actual": "Sep 16 14:00",
+       "source": "Customs",
+       "state": "done"
+      },
+      {
+       "label": "Validation failed",
+       "planned": "",
+       "actual": "Sep 17 08:40",
+       "source": "System",
+       "state": "late"
+      },
+      {
+       "label": "Amended ISF accepted",
+       "planned": "Sep 18",
+       "actual": "",
+       "source": "Customs",
+       "state": "predicted"
+      }
+     ],
+     "extraHtml": "<div class='block'><div class='block-title'>Guided resolution</div><table class='mini-table'><tr><th>#</th><th>Next step</th><th>Owner</th><th>Due</th><th>Status</th></tr><tr><td>1</td><td>Confirm consignee legal name</td><td><span class='pill risk'>You</span></td><td>Today</td><td><span class='pill warn'>Open</span></td></tr><tr><td>2</td><td>File amended ISF</td><td><span class='pill ok'>Flexport ops</span></td><td>Sep 18</td><td><span class='pill neutral'>Waiting on step 1</span></td></tr><tr><td>3</td><td>Customs acceptance</td><td><span class='pill neutral'>CBP</span></td><td>Sep 18</td><td><span class='pill neutral'>Not started</span></td></tr></table></div>"
+    },
+    {
+     "id": "EX-1029",
+     "title": "Watching: carrier feed silent on FLEX-483102",
+     "sub": "Qingdao to Oakland  |  2 containers",
+     "pill": {
+      "tone": "neutral",
+      "label": "P3  Watching"
+     },
+     "progress": [
+      0,
+      2
+     ],
+     "meta": [
+      [
+       "Exception type",
+       "Data gap, not yet a physical problem"
+      ],
+      [
+       "Detected",
+       "Sep 17 06:00"
+      ],
+      [
+       "Why you see it",
+       "Terminal event present, carrier event missing"
+      ],
+      [
+       "Owner of next step",
+       "System"
+      ],
+      [
+       "Confidence",
+       "Low"
+      ],
+      [
+       "Cost at risk",
+       "$0 today"
+      ]
+     ],
+     "alert": {
+      "tone": "info",
+      "title": "No action needed. We are telling you what we do not know.",
+      "body": "The terminal shows the boxes loaded and the carrier feed is silent. Treated as a data gap. It escalates on its own if the next milestone is also missed."
+     },
+     "timeline": [
+      {
+       "label": "Gate-in Qingdao",
+       "planned": "Sep 15",
+       "actual": "Sep 15 11:30",
+       "source": "Terminal",
+       "state": "done"
+      },
+      {
+       "label": "Loaded on vessel",
+       "planned": "Sep 16",
+       "actual": "Sep 16 20:10",
+       "source": "Terminal",
+       "state": "current",
+       "conflict": [
+        {
+         "source": "Terminal",
+         "time": "Sep 16 20:10"
+        },
+        {
+         "source": "Carrier EDI 315",
+         "time": "No event"
+        }
+       ]
+      },
+      {
+       "label": "Vessel departed",
+       "planned": "Sep 17",
+       "actual": "",
+       "source": "AIS",
+       "state": "predicted"
+      }
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "today",
+   "label": "Today",
+   "note": "Current behavior: the client learns about the same customs hold from an email thread, 26 hours after the event.",
+   "items": [
+    {
+     "id": "EMAIL-1",
+     "title": "RE: RE: FW: FLEX-482913 customs??",
+     "sub": "Email thread  |  11 replies  |  5 people",
+     "pill": {
+      "tone": "neutral",
+      "label": "Unranked"
+     },
+     "progress": [
+      0,
+      1
+     ],
+     "meta": [
+      [
+       "Event time",
+       "Sep 15 07:12"
+      ],
+      [
+       "Client first told",
+       "Sep 16 09:30"
+      ],
+      [
+       "Detection to client",
+       "26 h"
+      ],
+      [
+       "Owner",
+       "Unclear"
+      ],
+      [
+       "Cost so far",
+       "Unknown"
+      ],
+      [
+       "Next step",
+       "Buried in reply 7"
+      ]
+     ],
+     "alert": {
+      "tone": "warn",
+      "title": "No single status, no owner, no cost",
+      "body": "Ops confirmed the hold by phone before emailing. Free time kept running while the thread grew."
+     },
+     "timeline": [
+      {
+       "label": "Customs places documentation hold",
+       "planned": "",
+       "actual": "Sep 15 07:12",
+       "source": "Customs",
+       "state": "late"
+      },
+      {
+       "label": "Ops associate notices hold",
+       "planned": "",
+       "actual": "Sep 15 15:40",
+       "source": "Ops",
+       "state": "late"
+      },
+      {
+       "label": "Ops confirms with broker by phone",
+       "planned": "",
+       "actual": "Sep 16 08:55",
+       "source": "Ops",
+       "state": "late"
+      },
+      {
+       "label": "Client emailed",
+       "planned": "",
+       "actual": "Sep 16 09:30",
+       "source": "Email",
+       "state": "late"
+      },
+      {
+       "label": "Client asks what to do",
+       "planned": "",
+       "actual": "Sep 16 11:02",
+       "source": "Email",
+       "state": "current"
+      }
+     ]
+    }
+   ]
+  }
+ ]
 };
-/* SLOT:DATA-END */
+/* END DATA */
 
 /* ---- Renderer. No edits needed below this line. ---- */
 var stateIdx = 0, selId = null, toastTimer = null;

@@ -2,7 +2,7 @@
    Single source of truth for every user-visible string on this page.
    index.html contains zero prose. Bump the ?v= cache-buster on every edit. */
 
-const DRAFT = true;  // flip to false before the URL is shared
+const DRAFT = false;  // shipped 2026-09-21
 
 const CONTENT = {
 
@@ -15,8 +15,7 @@ const CONTENT = {
 
   hero: {
     title: "Catalog attribute problems, and where my experience fits",
-    note:  "Brittany, thanks for the conversation about the Catalog role. I built this afterwards " +
-           "so you can explore the fit yourself. The left column is what I think the attributes " +
+    note:  "Brittany, I built this so you can explore the fit for the Catalog role yourself. The left column is what I think the attributes " +
            "charter is actually pointed at, from your docs, your engineering posts, and the job " +
            "description. The right column is work I have shipped, including the item data layer " +
            "I owned at Amazon Fresh, which is your prioritization problem with different nouns.",

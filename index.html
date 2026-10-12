@@ -51,6 +51,13 @@
   nav.links a:hover{color:var(--ink)}
   nav.links a.active{color:var(--ink); border-bottom-color:var(--clay)}
   .tree-ico{fill:var(--clay); vertical-align:-1px; margin-right:5px}
+  /* Personal projects group: set apart from the public links by a hairline + small label */
+  nav.links{align-items:baseline}
+  .nav-personal{display:inline-flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+    border-left:1px solid var(--hairline); padding-left:20px; margin-left:2px}
+  .nav-personal .nav-label{font-size:10px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--clay); font-weight:bold; white-space:nowrap}
+  nav.links .nav-personal a{font-size:13px; font-style:italic}
 
   /* ── Section shell ── */
   section{max-width:var(--maxw); margin:0 auto; padding:78px 28px; scroll-margin-top:70px}
@@ -135,6 +142,10 @@
     section{padding:56px 22px}
     nav.links{gap:16px}
     nav.links a{font-size:13px}
+    .nav-personal{display:flex; width:100%; border-left:none; padding-left:0; margin-left:0;
+      border-top:1px solid var(--hairline); padding-top:8px; gap:6px 14px}
+    nav.links .nav-personal a{font-size:12.5px}
+    .nav-personal .nav-label{width:100%}
   }
 </style>
 </head>
@@ -150,8 +161,13 @@
       <a href="#about">About Me</a>
       <a href="#board">Personal Board of Directors</a>
       <a href="#contact">Contact</a>
-      <a href="/the-bridge">The Bridge</a>
-      <a href="/growth-and-best-practices">Growth and Best Practices</a>
+      <span class="nav-personal" role="group" aria-label="Personal projects">
+        <span class="nav-label" aria-hidden="true">Workbench</span>
+        <a href="/the-bridge">The Bridge</a>
+        <a href="/growth-and-best-practices">Growth and Best Practices</a>
+        <a href="/home-projects">Home Projects</a>
+        <a href="/video_game_projects">Video Game Projects</a>
+      </span>
     </nav>
   </div>
 </header>

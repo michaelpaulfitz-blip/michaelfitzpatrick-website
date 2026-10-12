@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Home Projects</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Palette + type borrowed from the MATES backtest/workbench page */
+  :root{
+    --bg:#f8f6f0; --card:#ffffff; --ink:#1a1f2b; --muted:#4b5160; --faint:#7a8090; --faint2:#9aa1b0;
+    --line:#d9dce4; --line-soft:#f2efe6; --tint:#f2efe6; --head:#eef3fb; --accent:#2b4c7e; --accent-ink:#1e3a5f;
+    --green:#2f6b3f; --green-bg:#eef6ee; --green-line:#b9d2bd; --red:#b3261e; --gold:#d9a521;
+    --carla:#a8466a; --pip-off:#dfe2e8; --shadow:0 6px 20px rgba(0,0,0,.16); --input:#ffffff;
+    --sans:'Inter','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; --display:'Archivo',var(--sans);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14171d; --card:#1b1f27; --ink:#e6e8ee; --muted:#b3b8c4; --faint:#8a90a0; --faint2:#6f7686;
+      --line:#2f3542; --line-soft:#242934; --tint:#232833; --head:#202737; --accent:#86a7da; --accent-ink:#b9cdee;
+      --green:#7fbf8e; --green-bg:#1d2b22; --green-line:#2f4a37; --red:#e57b72; --gold:#e0b44a;
+      --carla:#e08aa9; --pip-off:#363c4a; --shadow:0 8px 24px rgba(0,0,0,.5); --input:#161a21;
+      color-scheme:dark;
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:14px; min-height:100vh; -webkit-font-smoothing:antialiased}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  button{font-family:inherit; color:inherit}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
+
+  /* ── Top bar ── */
+  .topnav{position:sticky; top:0; z-index:100; display:flex; align-items:baseline; gap:20px;
+    background:var(--bg); border-bottom:1px solid var(--line); padding:16px 28px 13px}
+  .wordmark{font-family:var(--display); font-size:19px; font-weight:800; letter-spacing:3px; color:var(--ink); text-transform:uppercase}
+  .wordmark span{color:var(--accent)}
+  .topnav .crumb{font-size:13px; color:var(--muted)}
+  .topnav .badge{margin-left:auto; align-self:center; padding:3px 9px; border-radius:3px; font-size:10px; font-weight:bold;
+    letter-spacing:1.5px; background:var(--tint); color:var(--accent)}
+  .menu-btn{display:none; align-self:center; border:1px solid var(--line); background:var(--card); border-radius:4px;
+    padding:4px 10px; font-size:12px; cursor:pointer}
+
+  /* ── Layout + left section nav ── */
+  .layout{display:flex; align-items:flex-start; gap:28px; max-width:1560px; margin:0 auto; padding:0 20px}
+  .sectionnav{position:sticky; top:58px; flex:0 0 184px; width:184px; padding:26px 0 20px;
+    max-height:calc(100vh - 58px); overflow-y:auto; scrollbar-width:thin}
+  .sn-home{display:block; font-size:12px; color:var(--muted); padding:0 12px 16px}
+  .sn-home:hover{color:var(--ink); text-decoration:none}
+  .sn-label{font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--faint); padding:0 10px 8px}
+  .sn-section{font-size:11px; font-weight:bold; color:var(--accent); padding:10px 12px 3px; letter-spacing:.3px}
+  .sn-item{display:block; padding:7px 12px; font-size:12.5px; color:var(--muted); border-left:2px solid var(--line)}
+  .sn-item:hover{color:var(--ink); background:var(--tint); text-decoration:none}
+  .sn-item.active{color:var(--ink); border-left-color:var(--accent); font-weight:bold}
+  .sn-item .sn-count{color:var(--faint2); font-weight:normal; font-size:11px; margin-left:4px}
+  .scrim{display:none}
+  .container{flex:1 1 auto; min-width:0; padding:22px 0 70px}
+  .container::after{content:''; display:block; height:40vh} /* lets the last sections scroll to the top for the scrollspy */
+  h1{font-family:var(--display); font-weight:800; font-size:25px; letter-spacing:.2px}
+  .sub{font-size:13.5px; color:var(--muted); margin-top:6px; line-height:1.55; max-width:880px}
+
+  /* ── Cards ── */
+  .card{background:var(--card); border:1.5px solid var(--accent); border-radius:10px; padding:20px 22px; margin-top:20px; scroll-margin-top:72px}
+  .card > h2{font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px; padding-bottom:9px;
+    border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:10px}
+  .card > h2 .h-hint{margin-left:auto; font-size:11.5px; color:var(--faint); text-transform:none; letter-spacing:0; font-weight:normal}
+  .card p{line-height:1.6; color:var(--muted); margin-bottom:9px; max-width:880px}
+  .card p:last-child{margin-bottom:0}
+  .card b{color:var(--ink)}
+  .caveat{font-size:12px; color:var(--faint); line-height:1.6; margin-top:8px}
+  .pill{display:inline-block; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px; vertical-align:2px; background:var(--green-bg); color:var(--green); border:1px solid var(--green-line)}
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:14px 0 4px}
+  .fact{border:1px solid var(--line); border-radius:6px; padding:10px 12px; background:var(--bg)}
+  .fact .k{font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--faint)}
+  .fact .v{font-family:var(--display); font-size:19px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums}
+  .fact .v.sm{font-family:var(--sans); font-size:13px; font-weight:600; line-height:1.4}
+
+  /* ── Toolbar ── */
+  .tbl-controls{display:flex; gap:8px; align-items:center; margin-bottom:10px; flex-wrap:wrap}
+  .search{font-family:var(--sans); font-size:13px; padding:5px 10px; width:260px; max-width:100%;
+    border:1px solid var(--line); border-radius:4px; background:var(--input); color:var(--ink)}
+  .btn{font-family:var(--sans); font-size:12px; padding:5px 11px; border:1px solid var(--line); border-radius:4px;
+    background:var(--head); color:var(--accent-ink); cursor:pointer; white-space:nowrap}
+  .btn:hover{background:var(--tint)}
+  .btn:disabled{opacity:.5; cursor:default}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .seg{display:inline-flex; border:1px solid var(--line); border-radius:5px; overflow:hidden}
+  .seg button{border:0; background:var(--card); padding:5px 12px; font-size:12px; cursor:pointer; color:var(--muted)}
+  .seg button + button{border-left:1px solid var(--line)}
+  .seg button[aria-pressed="true"]{background:var(--accent); color:var(--card); font-weight:600}
+  .spacer{flex:1}
+  .rowcount{font-size:12px; color:var(--faint); font-variant-numeric:tabular-nums}
+  .rowcount b{color:var(--ink)}
+  .mfilters{display:none}
+
+  /* ── Data table ── */
+  .tbl-scroll{overflow:auto; border:1px solid var(--line); border-radius:6px; max-height:calc(100vh - 150px); background:var(--card)}
+  table.dt{border-collapse:separate; border-spacing:0; width:100%; font-size:12.5px}
+  table.dt th{position:sticky; top:0; z-index:3; background:var(--head); text-align:left; white-space:nowrap;
+    font-size:10.5px; letter-spacing:.4px; text-transform:uppercase; color:var(--muted); font-weight:normal;
+    padding:7px 9px; border-bottom:1px solid var(--line)}
+  table.dt thead tr.grp th{z-index:4; text-align:left; font-weight:bold; color:var(--accent); letter-spacing:1.3px; font-size:10px;
+    padding:5px 9px; border-bottom:1px solid var(--line)}
+  table.dt thead tr.grp th.g{border-left:1px solid var(--line); border-right:1px solid var(--line)}
+  table.dt thead tr.cols th{top:var(--grp-h,0px)}
+  table.dt th.sorted{color:var(--ink)}
+  table.dt th.filtered{color:var(--ink); box-shadow:inset 0 -2px 0 var(--accent)}
+  .thwrap{display:inline-flex; align-items:center; gap:4px}
+  .thsort{border:0; background:none; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; cursor:pointer; padding:0}
+  .thsort:hover{color:var(--ink)}
+  .thsort .arrow{color:var(--accent); font-size:9px; margin-left:2px}
+  .fbtn{cursor:pointer; color:var(--faint); font-size:10px; line-height:1; padding:2px 4px; border:1px solid var(--line);
+    border-radius:3px; background:var(--card)}
+  .fbtn:hover{color:var(--ink); background:var(--tint)}
+  .fbtn.fon{color:var(--card); background:var(--accent); border-color:var(--accent)}
+  table.dt td{padding:8px 9px; border-bottom:1px solid var(--line-soft); vertical-align:top; background:var(--card); line-height:1.45}
+  table.dt tbody tr:hover td{background:var(--head)}
+  /* sticky # + name columns */
+  table.dt .c-idx{position:sticky; left:0; z-index:2; width:38px; min-width:38px; text-align:right; color:var(--faint); font-variant-numeric:tabular-nums}
+  table.dt .c-name{position:sticky; left:38px; z-index:2; min-width:170px; max-width:220px; border-right:1px solid var(--line)}
+  table.dt th.c-idx, table.dt th.c-name{z-index:5}
+  .nm{font-weight:700; color:var(--ink); font-size:13px}
+  .bot{font-style:italic; color:var(--muted); font-size:12px; margin-top:1px}
+  .heart{color:var(--carla); font-size:11px; margin-left:4px; cursor:help; font-style:normal}
+  .c-desc{min-width:300px; max-width:440px}
+  body.expanded .c-desc{min-width:280px; max-width:340px}
+  .c-long{min-width:220px; max-width:300px; color:var(--muted)}
+  .c-mid{min-width:120px; max-width:180px}
+  .c-num{white-space:nowrap}
+  .eco-note{font-size:11.5px; color:var(--muted); margin-top:3px; min-width:180px}
+  .tag{display:inline-block; font-size:10px; letter-spacing:.4px; text-transform:uppercase; padding:1px 6px; border-radius:3px;
+    border:1px solid var(--line); color:var(--muted); background:var(--head); white-space:nowrap}
+  .tag.yes{background:var(--green-bg); border-color:var(--green-line); color:var(--green)}
+  .tag.warn{color:var(--red)}
+  .muted{color:var(--faint2)}
+  .chip{display:inline-block; font-size:11.5px; padding:1px 7px; border-radius:10px; background:var(--tint); color:var(--ink); white-space:nowrap}
+
+  /* pips (1-5 scales) */
+  .pips{display:inline-flex; align-items:center; gap:2px; cursor:help}
+  .pips i{width:7px; height:7px; border-radius:50%; background:var(--pip-off); display:inline-block}
+  .pips i.on{background:var(--accent)}
+  .pips b{font-weight:600; font-size:11.5px; margin-left:5px; font-variant-numeric:tabular-nums; color:var(--ink)}
+
+  /* thumbnails */
+  .thumbs{display:flex; gap:5px}
+  .thumb{position:relative; width:64px; height:48px; border-radius:4px; overflow:hidden; border:1px solid var(--line);
+    background:var(--tint); cursor:zoom-in; padding:0; flex:0 0 auto}
+  .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+  .thumb .season{position:absolute; left:0; right:0; bottom:0; font-size:9px; letter-spacing:.5px; text-transform:uppercase;
+    background:rgba(20,23,29,.62); color:#fff; padding:1px 3px; text-align:center}
+  .thumb.broken{cursor:default}
+  .thumb.broken::after{content:'no image'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-size:9px; color:var(--faint)}
+  .noimg{font-size:11px; color:var(--faint2); font-style:italic}
+
+  /* editable likes + notes */
+  .like{display:inline-flex; gap:1px; align-items:center}
+  .like button{border:0; background:none; cursor:pointer; padding:1px; font-size:15px; line-height:1; color:var(--pip-off)}
+  .like button.on{color:var(--gold)}
+  .like.carla button.on{color:var(--carla)}
+  .like.mike button.on{color:var(--accent)}
+  .like button:hover{transform:none; filter:brightness(.9)}
+  .like .lv{font-size:11px; color:var(--faint); margin-left:4px; min-width:8px; font-variant-numeric:tabular-nums}
+  .pnotes{width:220px; min-height:54px; resize:vertical; font-family:var(--sans); font-size:12px; line-height:1.4;
+    border:1px solid var(--line); border-radius:4px; padding:5px 7px; background:var(--input); color:var(--ink)}
+  .saved{font-size:10.5px; color:var(--green); opacity:0; transition:opacity .4s; height:14px; display:block}
+  .saved.show{opacity:1}
+  .links a{display:block; font-size:12px; white-space:nowrap}
+  .photo-credit{font-size:11.5px; color:var(--faint); margin-top:8px}
+  .empty{padding:28px; text-align:center; color:var(--faint)}
+
+  /* filter menu */
+  .fmenu{position:fixed; z-index:300; background:var(--card); border:1px solid var(--line); border-radius:6px;
+    box-shadow:var(--shadow); padding:8px; width:260px; font-size:12px; color:var(--ink)}
+  .fmenu .fhead{font-size:10px; letter-spacing:1.3px; text-transform:uppercase; color:var(--faint); margin:0 2px 6px}
+  .fmenu .fsort{display:flex; gap:4px; margin-bottom:7px}
+  .fmenu .fsort .btn{flex:1; padding:3px 6px}
+  .fmenu .fsearch{width:100%; padding:5px 8px; border:1px solid var(--line); border-radius:4px; font-family:var(--sans);
+    font-size:12px; margin-bottom:6px; background:var(--input); color:var(--ink)}
+  .fmenu .factions{font-size:11px; margin-bottom:6px; color:var(--faint); display:flex; gap:6px; align-items:center}
+  .fmenu .factions button{border:0; background:none; color:var(--accent); cursor:pointer; font-size:11px; padding:0}
+  .fmenu .flist{max-height:240px; overflow-y:auto; border-top:1px solid var(--line-soft); padding-top:4px}
+  .fmenu .flist label{display:flex; align-items:center; gap:6px; padding:3px; cursor:pointer; border-radius:3px}
+  .fmenu .flist label:hover{background:var(--tint)}
+  .fmenu .flist label span{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .fmenu .flist label em{color:var(--faint); font-style:normal; font-size:10.5px}
+  .fmenu .fnote{font-size:11px; color:var(--faint); margin-top:4px}
+  @media (max-width:700px){ .fmenu{width:min(320px, calc(100vw - 16px))} .fmenu .flist{max-height:45vh} .fmenu .flist label{padding:6px 4px} }
+
+  /* designs gallery */
+  .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px}
+  .design{border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--bg); cursor:zoom-in; padding:0; text-align:left}
+  .design img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--tint); border-bottom:1px solid var(--line)}
+  .design .dmeta{padding:9px 11px}
+  .design .dt{font-weight:700; font-size:13px}
+  .design .dd{font-size:11.5px; color:var(--faint); margin-top:1px}
+  .design:hover{border-color:var(--accent)}
+
+  /* sync */
+  .src-list{margin:10px 0 0; padding-left:20px; line-height:1.6}
+  .src-list li{margin-bottom:6px}
+  .sync-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:12px 0 6px}
+  .sync-status{font-size:12px; color:var(--faint)}
+
+  /* lightbox */
+  .lb{position:fixed; inset:0; z-index:500; background:rgba(12,14,18,.88); display:none; align-items:center; justify-content:center; padding:24px}
+  .lb.open{display:flex}
+  .lb figure{max-width:min(1100px,100%); max-height:100%; display:flex; flex-direction:column; align-items:center}
+  .lb img{max-width:100%; max-height:calc(100vh - 160px); object-fit:contain; border-radius:4px; background:#222}
+  .lb figcaption{color:#e8e8ea; font-size:13px; margin-top:10px; text-align:center; line-height:1.5; max-width:820px}
+  .lb figcaption .lb-title{font-weight:700}
+  .lb figcaption .lb-season{display:inline-block; font-size:10px; letter-spacing:1px; text-transform:uppercase; border:1px solid #888;
+    border-radius:3px; padding:0 5px; margin-left:6px; vertical-align:1px}
+  .lb figcaption .lb-credit{font-size:11.5px; color:#b8bac2}
+  .lb figcaption a{color:#a9c4ef}
+  .lb-err{color:#e8e8ea; padding:60px 30px; border:1px dashed #666; border-radius:6px; display:none}
+  .lb button.lb-ctl{position:absolute; border:1px solid #555; background:rgba(30,32,38,.8); color:#fff; border-radius:50%;
+    width:42px; height:42px; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center}
+  .lb .lb-close{top:16px; right:16px}
+  .lb .lb-prev{left:16px; top:50%; transform:translateY(-50%)}
+  .lb .lb-next{right:16px; top:50%; transform:translateY(-50%)}
+  .lb .lb-count{position:absolute; top:24px; left:24px; color:#b8bac2; font-size:12px}
+
+  /* ── Responsive ── */
+  @media (max-width:860px){
+    .topnav{padding:12px 14px 10px; gap:12px}
+    .topnav .crumb, .topnav .badge{display:none}
+    .menu-btn{display:inline-block; margin-left:auto}
+    .layout{padding:0 12px; display:block}
+    .sectionnav{position:fixed; top:0; left:0; bottom:0; z-index:250; width:250px; max-height:none; background:var(--card);
+      border-right:1px solid var(--line); transform:translateX(-102%); transition:transform .2s; padding-top:20px; box-shadow:var(--shadow)}
+    body.nav-open .sectionnav{transform:none}
+    body.nav-open .scrim{display:block; position:fixed; inset:0; z-index:240; background:rgba(0,0,0,.35)}
+    .card{padding:16px 14px}
+    .facts{grid-template-columns:1fr 1fr}
+    .card > h2 .h-hint{display:none}
+    .tbl-scroll{max-height:none}
+    .lb{padding:10px}
+    .lb .lb-prev, .lb .lb-next{top:auto; bottom:14px; transform:none}
+  }
+  /* Phone + collapsed mode: rows become cards */
+  @media (max-width:700px){
+    body:not(.expanded) .tbl-scroll{border:0; overflow:visible; background:transparent}
+    body:not(.expanded) table.dt, body:not(.expanded) table.dt tbody{display:block}
+    body:not(.expanded) table.dt thead{display:none}
+    body:not(.expanded) table.dt tr{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-bottom:10px; background:var(--card)}
+    body:not(.expanded) table.dt td{display:block; border:0; padding:3px 0; position:static; max-width:none; min-width:0; background:transparent!important}
+    body:not(.expanded) table.dt td.c-idx{display:none}
+    body:not(.expanded) table.dt td.c-name{border:0}
+    body:not(.expanded) table.dt td[data-label]::before{content:attr(data-label); display:block; font-size:9.5px; letter-spacing:1px;
+      text-transform:uppercase; color:var(--faint)}
+    body:not(.expanded) table.dt td.c-cat, body:not(.expanded) table.dt td.c-sub{display:inline-block; margin-right:14px}
+    body:not(.expanded) .thumb{width:84px; height:62px}
+    body:not(.expanded) .mfilters{display:flex; gap:6px; overflow-x:auto; padding-bottom:4px; margin-bottom:8px}
+    .search{width:100%}
+    body.expanded table.dt .c-name{min-width:120px; max-width:140px}
+    body.expanded table.dt .c-idx{width:30px; min-width:30px}
+    body.expanded table.dt .c-name{left:30px}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sectionnav{transition:none} }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Site">
+  <div class="wordmark">Home Projects<span>.</span></div>
+  <span class="crumb">Mike &amp; Carla &middot; Seattle</span>
+  <span class="badge">DISCOVERY</span>
+  <button class="menu-btn" id="menuBtn" aria-controls="sectionnav" aria-expanded="false">&#9776; Sections</button>
+</nav>
+<div class="scrim" id="scrim"></div>
+
+<div class="layout">
+  <aside class="sectionnav" id="sectionnav" aria-label="On this page">
+    <a class="sn-home" href="/">&larr; michaelfitzpatrick.me</a>
+    <div class="sn-label">On this page</div>
+    <div id="snList"></div>
+  </aside>
+
+  <main class="container">
+    <h1>Home Projects</h1>
+    <p class="sub">A working board for projects around the house. First up: the backyard &mdash; what to plant, where it goes, and what we each think of it.</p>
+
+    <!-- OVERVIEW -->
+    <section class="card" id="overview" aria-labelledby="h-overview">
+      <h2 id="h-overview">Backyard Landscape <span class="pill">In progress</span></h2>
+      <p>A backyard landscape for <b>Mike &amp; Carla</b>, aiming for a relaxed <b>Pacific Northwest</b> look: a cluster of trees in the southwest corner and along the fences, a curving shrub line by the patio, and a lawn in the middle.</p>
+      <div class="facts">
+        <div class="fact"><div class="k">Status</div><div class="v sm">Discovery &rarr; planning placement &amp; selecting trees</div></div>
+        <div class="fact"><div class="k">Climate</div><div class="v sm">Seattle &middot; USDA zone 8b/9a</div></div>
+        <div class="fact"><div class="k">Exposure</div><div class="v sm">South-facing yard, lots of sun</div></div>
+        <div class="fact"><div class="k">Plants in library</div><div class="v" id="factPlants">0</div></div>
+        <div class="fact"><div class="k">Rated so far</div><div class="v" id="factRated">0</div></div>
+      </div>
+    </section>
+
+    <!-- PLANTS -->
+    <section class="card" id="plants" aria-labelledby="h-plants">
+      <h2 id="h-plants">Plant &amp; Tree Library <span class="h-hint">Click a header to sort &middot; &#9662; to filter</span></h2>
+      <div class="tbl-controls">
+        <input class="search" id="gsearch" type="search" placeholder="Search all plants&hellip;" aria-label="Search all plants">
+        <div class="seg" role="group" aria-label="Table detail">
+          <button type="button" id="modeCollapsed" aria-pressed="true">Collapsed</button>
+          <button type="button" id="modeExpanded" aria-pressed="false">Expanded</button>
+        </div>
+        <button type="button" class="btn" id="clearFilters" disabled>Clear all filters</button>
+        <span class="spacer"></span>
+        <span class="rowcount" id="rowcount" aria-live="polite"></span>
+        <button type="button" class="btn" data-action="export">Export notes</button>
+        <button type="button" class="btn" data-action="import">Import notes</button>
+      </div>
+      <div class="mfilters" id="mfilters" aria-label="Filters"></div>
+      <div class="tbl-scroll" id="tblScroll">
+        <table class="dt" id="plantTable" aria-describedby="rowcount">
+          <thead id="thead"></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <p class="photo-credit">Photos: Wikimedia Commons, credits in viewer. Expanded mode shows growing conditions, character, scores, and the editable Carla / Mike columns.</p>
+    </section>
+
+    <!-- DESIGNS -->
+    <section class="card" id="designs" aria-labelledby="h-designs">
+      <h2 id="h-designs">Backyard Designs <span class="h-hint">Click to open full size</span></h2>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="card" id="sources" aria-labelledby="h-sources">
+      <h2 id="h-sources">Where These Came From</h2>
+      <p>The library was built from Pacific Northwest catalogs and references. Claudette wrote the descriptions and notes; the 1–5 scores for cost, availability, popularity and rarity are educated estimates for Seattle-area nurseries, not quotes.</p>
+      <ul class="src-list">
+        <li><a href="https://www.greatplantpicks.org/" target="_blank" rel="noopener">Great Plant Picks</a>: a juried list of plants proven in maritime Northwest gardens, run by the Elisabeth C. Miller Botanical Garden in Seattle. This was the main source for the catalog picks.</li>
+        <li><a href="https://green2.kingcounty.gov/gonative/" target="_blank" rel="noopener">King County Native Plant Guide</a>: which plants are truly local natives, and how they behave here.</li>
+        <li><a href="https://landscapeplants.oregonstate.edu/" target="_blank" rel="noopener">Oregon State Landscape Plants</a> and <a href="https://plants.ces.ncsu.edu/" target="_blank" rel="noopener">NC State Extension Plant Toolbox</a>: size, growing conditions and care details.</li>
+        <li><a href="https://xeraplants.com/" target="_blank" rel="noopener">Xera Plants</a> (Portland) and <a href="https://www.burntridgenursery.com/" target="_blank" rel="noopener">Burnt Ridge Nursery</a> (Onalaska, WA): Northwest nursery catalogs, used for drought-tolerant picks and fruit trees.</li>
+        <li><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>: every photo is freely licensed. Click any photo to see its photographer and license.</li>
+      </ul>
+    </section>
+
+    <!-- NOTES SYNC -->
+    <section class="card" id="notes-sync" aria-labelledby="h-sync">
+      <h2 id="h-sync">Notes &amp; Sync</h2>
+      <p>Edits save in this browser. To share between Mike's and Carla's devices, export and import, or hand the export to Claude to bake into the site.</p>
+      <p>Likes and notes you add in the table are kept on this device only (there is no server). <b>Export notes</b> downloads a small JSON file; <b>Import notes</b> merges one back in, keeping whichever edit is newer for each plant. Notes that Claude bakes into the site show up for everyone.</p>
+      <div class="sync-row">
+        <button type="button" class="btn primary" data-action="export">Export notes</button>
+        <button type="button" class="btn" data-action="import">Import notes</button>
+        <span class="sync-status" id="syncStatus" aria-live="polite"></span>
+      </div>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+    </section>
+  </main>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <span class="lb-count" id="lbCount"></span>
+  <button type="button" class="lb-ctl lb-close" id="lbClose" aria-label="Close viewer">&times;</button>
+  <button type="button" class="lb-ctl lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <button type="button" class="lb-ctl lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <div class="lb-err" id="lbErr">This image couldn't be loaded.</div>
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<script src="plants.js"></script>
+<script src="people-notes.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ───────────── Config: sections + designs (add entries here) ───────────── */
+var SECTIONS = [
+  { id:'overview',   label:'Overview',              group:'Backyard' },
+  { id:'plants',     label:'Plant & Tree Library',  group:'Backyard', count:function(){ return PLANTS.length; } },
+  { id:'designs',    label:'Backyard Designs',      group:'Backyard', count:function(){ return DESIGNS.length; } },
+  { id:'sources',    label:'Where These Came From', group:'Housekeeping' },
+  { id:'notes-sync', label:'Notes & Sync',          group:'Housekeeping' }
+];
+var DESIGNS = [
+  { src:'designs/backyard-2026-10-11-first-draft.webp', title:'First Draft', date:'10/11/26',
+    note:'Hand sketch: tree cluster SW, shrubs along the patio, lawn in the middle.' }
+];
+
+var PLANTS = Array.isArray(window.PLANTS) ? window.PLANTS : [];
+var BASELINE = (window.PEOPLE_NOTES && typeof window.PEOPLE_NOTES === 'object') ? window.PEOPLE_NOTES : {};
+var LS_PREFIX = 'homeProjects.plants.v1.';
+var LS_MODE = 'homeProjects.mode.v1';
+
+/* ───────────── helpers ───────────── */
+function esc(v){ return String(v == null ? '' : v).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function $(id){ return document.getElementById(id); }
+function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+function lsSet(k,v){ try { localStorage.setItem(k,v); return true; } catch(e){ return false; } }
+function num(v){ var n = Number(v); return (v === null || v === '' || v === undefined || isNaN(n)) ? null : n; }
+function yn(v){ return v === true ? 'Yes' : v === false ? 'No' : (v == null || v === '' ? '' : String(v)); }
+function safeUrl(u){ u = String(u || ''); return /^(https?:)?\/\//i.test(u) || /^[\w./-]+$/.test(u) ? u : ''; }
+function thumbUrl(u){ // ask Wikimedia for a 250px thumb instead of the full ~960px image
+  return /\/thumb\/.+\/\d+px-[^/]+$/.test(u) ? u.replace(/\/\d+px-([^/]+)$/, '/250px-$1') : u;
+}
+
+/* ───────────── people notes: baseline + local overlay ───────────── */
+function localNote(id){ try { var s = lsGet(LS_PREFIX + id); return s ? JSON.parse(s) : null; } catch(e){ return null; } }
+function t(n){ var x = n && n.updated ? Date.parse(n.updated) : 0; return isNaN(x) ? 0 : x; }
+function getNote(id){
+  var b = BASELINE[id] || null, l = localNote(id);
+  var n = (!l) ? b : (!b) ? l : (t(l) >= t(b) ? l : b);
+  return { carlaLike: num(n && n.carlaLike), mikeLike: num(n && n.mikeLike), peopleNotes: (n && n.peopleNotes) || '', updated: (n && n.updated) || '' };
+}
+function setNote(id, patch){
+  var n = getNote(id);
+  for (var k in patch) n[k] = patch[k];
+  n.updated = new Date().toISOString();
+  NOTES[id] = n;
+  return lsSet(LS_PREFIX + id, JSON.stringify(n));
+}
+function hasNote(n){ return !!(n && (n.carlaLike || n.mikeLike || (n.peopleNotes && n.peopleNotes.trim()))); }
+var NOTES = {};
+function loadNotes(){ NOTES = {}; PLANTS.forEach(function(p){ NOTES[p.id] = getNote(p.id); }); }
+
+/* ───────────── column model ───────────── */
+var SCALE_TIPS = {
+  rarity:'Rarity / uniqueness: 1 = everywhere, 5 = most unique',
+  popularity:"Popularity: 1 = rarely planted in Seattle yards, 5 = in everyone's yard",
+  cost:'Average cost: 1 = cheapest, 5 = priciest',
+  availability:'Availability in Seattle nurseries: 1 = hard to find, 5 = easiest to find',
+  ecoScore:'Ecosystem benefit: 1 = little, 5 = most beneficial',
+  maintenance:'Maintenance: 1 = set-and-forget, 5 = needy',
+  carlaLike:"Carla's rating: 1-5 (click again to clear)",
+  mikeLike:"Mike's rating: 1-5 (click again to clear)"
+};
+function pips(v, tip){
+  v = num(v);
+  if (v == null) return '<span class="muted">&ndash;</span>';
+  var h = '<span class="pips" title="' + esc(tip) + '" aria-label="' + esc(v + ' of 5. ' + tip) + '">';
+  for (var i = 1; i <= 5; i++) h += '<i' + (i <= v ? ' class="on"' : '') + '></i>';
+  return h + '<b>' + esc(v) + '</b></span>';
+}
+function scaleCol(key, label, group){
+  return { key:key, label:label, group:group, type:'scale', cls:'c-num', tip:SCALE_TIPS[key],
+    val:function(p){ return num(p[key]); }, render:function(p){ return pips(p[key], SCALE_TIPS[key]); } };
+}
+function textCol(key, label, group, cls){
+  return { key:key, label:label, group:group, type:'list', cls:cls || 'c-mid', val:function(p){ return p[key] == null ? '' : String(p[key]); },
+    render:function(p){ return p[key] ? esc(p[key]) : '<span class="muted">&ndash;</span>'; } };
+}
+function boolCol(key, label){
+  return { key:key, label:label, type:'list', cls:'c-num', val:function(p){ return yn(p[key]); },
+    render:function(p){ var v = yn(p[key]); return v ? '<span class="tag' + (v === 'Yes' ? ' yes' : '') + '">' + esc(v) + '</span>' : '<span class="muted">&ndash;</span>'; } };
+}
+function likeCol(key, label, who){
+  return { key:key, label:label, group:'Your Take', type:'scale', cls:'c-num', tip:SCALE_TIPS[key], editable:true,
+    val:function(p){ return NOTES[p.id] ? NOTES[p.id][key] : null; },
+    render:function(p){
+      var v = NOTES[p.id] ? NOTES[p.id][key] : null, h = '<span class="like ' + who + '" role="group" aria-label="' + esc(label + ' for ' + p.name) + '">';
+      for (var i = 1; i <= 5; i++) h += '<button type="button" class="' + (v && i <= v ? 'on' : '') + '" data-like="' + key + '" data-v="' + i + '" aria-label="' + esc(label + ': ' + i + ' of 5') + '" aria-pressed="' + (v === i) + '">&#9733;</button>';
+      return h + '<span class="lv">' + (v || '') + '</span></span>';
+    } };
+}
+
+var COLUMNS = [
+  { key:'_idx', label:'#', type:'none', cls:'c-idx', collapsed:true, val:function(p){ return p._i; }, sortNum:true, render:function(p){ return p._i; } },
+  { key:'name', label:'Name', type:'text', cls:'c-name', collapsed:true,
+    val:function(p){ return (p.name || '') + ' ' + (p.botanical || ''); }, sortVal:function(p){ return (p.name || '').toLowerCase(); },
+    render:function(p){ return '<div class="nm">' + esc(p.name) + '<span class="heart-slot">' + heart(p.id) + '</span></div><div class="bot">' + esc(p.botanical) + '</div>'; } },
+  textCol('category', 'Category', null, 'c-cat'),
+  textCol('subcategory', 'Subcategory', null, 'c-sub'),
+  { key:'images', label:'Images', type:'list', cls:'c-img', val:function(p){ return (p.images && p.images.length) ? 'Has photos' : 'No photos'; }, render:renderThumbs, nosort:true },
+  { key:'description', label:'Description', type:'text', cls:'c-desc', val:function(p){ return p.description || ''; }, render:function(p){ return esc(p.description); } },
+  boolCol('nwNative', 'NW Native'),
+  boolCol('nwCoded', 'NW Coded'),
+  scaleCol('rarity', 'Rarity', 'Scores'),
+  scaleCol('popularity', 'Popularity', 'Scores'),
+  scaleCol('cost', 'Avg Cost', 'Scores'),
+  scaleCol('availability', 'Availability', 'Scores'),
+  { key:'ecoScore', label:'Ecosystem Benefit', group:'Scores', type:'scale', cls:'c-long', tip:SCALE_TIPS.ecoScore, val:function(p){ return num(p.ecoScore); },
+    render:function(p){ return pips(p.ecoScore, SCALE_TIPS.ecoScore) + (p.ecoNote ? '<div class="eco-note">' + esc(p.ecoNote) + '</div>' : ''); } },
+  textCol('sun', 'Sun', 'Growing Conditions'),
+  textCol('water', 'Water', 'Growing Conditions'),
+  textCol('soil', 'Soil', 'Growing Conditions'),
+  textCol('zones', 'Hardiness Zones', 'Growing Conditions'),
+  textCol('matureSize', 'Mature Size', 'Growing Conditions'),
+  textCol('growthRate', 'Growth Rate', 'Growing Conditions'),
+  textCol('bloom', 'Bloom', 'Character'),
+  textCol('seasonalInterest', 'Seasonal Interest', 'Character'),
+  scaleCol('maintenance', 'Maintenance', 'Character'),
+  textCol('deerResistant', 'Deer Resistance', 'Character'),
+  { key:'petSafe', label:'Pet Safe', group:'Character', type:'list', cls:'c-num', val:function(p){ return p.petSafe || ''; },
+    render:function(p){ var v = p.petSafe || ''; return v ? '<span class="tag' + (v === 'Yes' ? ' yes' : v === 'No' ? ' warn' : '') + '">' + esc(v) + '</span>' : '<span class="muted">&ndash;</span>'; } },
+  { key:'yardFit', label:'Yard Fit', type:'text', cls:'c-long', val:function(p){ return p.yardFit || ''; }, render:function(p){ return esc(p.yardFit); } },
+  { key:'links', label:'Links', type:'list', cls:'c-mid', nosort:true,
+    val:function(p){ return (Array.isArray(p.links) && p.links.length) ? 'Has links' : 'No links'; },
+    render:function(p){
+      var ls = Array.isArray(p.links) ? p.links.filter(function(l){ return l && safeUrl(l.url); }) : [];
+      if (!ls.length) return '<span class="muted">&ndash;</span>';
+      return '<span class="links">' + ls.map(function(l){ return '<a href="' + esc(safeUrl(l.url)) + '" target="_blank" rel="noopener">' + esc(l.label || 'Link') + ' &#8599;</a>'; }).join('') + '</span>';
+    } },
+  likeCol('carlaLike', 'Carla Like', 'carla'),
+  likeCol('mikeLike', 'Mike Like', 'mike'),
+  { key:'peopleNotes', label:'People Notes', group:'Your Take', type:'text', cls:'c-long', editable:true,
+    val:function(p){ return NOTES[p.id] ? NOTES[p.id].peopleNotes : ''; },
+    render:function(p){ return '<textarea class="pnotes" data-notes="1" aria-label="' + esc('People notes for ' + p.name) + '" placeholder="Carla / Mike notes&hellip;">' + esc(NOTES[p.id] ? NOTES[p.id].peopleNotes : '') + '</textarea><span class="saved" aria-live="polite"></span>'; } },
+  { key:'claudetteNotes', label:'Claudette Notes', type:'text', cls:'c-long', val:function(p){ return p.claudetteNotes || ''; }, render:function(p){ return esc(p.claudetteNotes); } }
+];
+var COLMAP = {}; COLUMNS.forEach(function(c){ COLMAP[c.key] = c; });
+['category','subcategory'].forEach(function(k){ COLMAP[k].collapsed = true; });
+COLMAP.images.collapsed = true; COLMAP.description.collapsed = true;
+// default sort direction for scale columns: high first
+function heart(id){
+  var n = NOTES[id]; if (!hasNote(n)) return '';
+  var bits = []; if (n.carlaLike) bits.push('Carla ' + n.carlaLike + '/5'); if (n.mikeLike) bits.push('Mike ' + n.mikeLike + '/5'); if (n.peopleNotes && n.peopleNotes.trim()) bits.push('has notes');
+  return '<i class="heart" title="' + esc(bits.join(' · ')) + '" aria-label="' + esc('Rated: ' + bits.join(', ')) + '">&#9829;</i>';
+}
+
+/* ───────────── state ───────────── */
+var state = { mode: lsGet(LS_MODE) === 'expanded' ? 'expanded' : 'collapsed', q:'', sort:{ key:'_idx', dir:1 }, filters:{} };
+PLANTS.forEach(function(p, i){ p._i = i + 1; if (!p.id) p.id = 'plant-' + (i + 1); });
+
+function visibleCols(){ return COLUMNS.filter(function(c){ return state.mode === 'expanded' || c.collapsed; }); }
+function strVal(c, p){ var v = c.val(p); return v == null ? '' : String(v); }
+function filterKeyVal(c, p){ var v = c.val(p); return (v == null || v === '') ? '(blank)' : String(v); }
+
+function passes(p, exceptKey){
+  if (state.q){
+    var hay = [p.name, p.botanical, p.category, p.subcategory, p.description, p.yardFit, p.claudetteNotes, p.bloom, p.seasonalInterest, p.ecoNote, p.sun, p.soil, NOTES[p.id] && NOTES[p.id].peopleNotes].join(' ').toLowerCase();
+    var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) < 0) return false;
+  }
+  for (var k in state.filters){
+    if (k === exceptKey) continue;
+    var f = state.filters[k], c = COLMAP[k];
+    if (f.set && !f.set.has(filterKeyVal(c, p))) return false;
+    if (f.text && strVal(c, p).toLowerCase().indexOf(f.text.toLowerCase()) < 0) return false;
+  }
+  return true;
+}
+function isActive(k){ var f = state.filters[k]; return !!(f && (f.set || f.text)); }
+function anyActive(){ for (var k in state.filters) if (isActive(k)) return true; return !!state.q; }
+
+function sortedRows(){
+  var rows = PLANTS.filter(function(p){ return passes(p); });
+  var c = COLMAP[state.sort.key], dir = state.sort.dir;
+  if (!c) return rows;
+  var numeric = c.type === 'scale' || c.sortNum;
+  rows.sort(function(a, b){
+    var va = c.sortVal ? c.sortVal(a) : c.val(a), vb = c.sortVal ? c.sortVal(b) : c.val(b);
+    if (numeric){ va = num(va); vb = num(vb); if (va == null && vb == null) return a._i - b._i; if (va == null) return 1; if (vb == null) return -1; return (va - vb) * dir || a._i - b._i; }
+    va = String(va == null ? '' : va).toLowerCase(); vb = String(vb == null ? '' : vb).toLowerCase();
+    if (!va && vb) return 1; if (va && !vb) return -1;
+    return (va < vb ? -1 : va > vb ? 1 : 0) * dir || a._i - b._i;
+  });
+  return rows;
+}
+
+/* ───────────── rendering ───────────── */
+function renderThumbs(p){
+  var imgs = Array.isArray(p.images) ? p.images.filter(function(im){ return im && safeUrl(im.url); }).slice(0, 3) : [];
+  if (!imgs.length) return '<span class="noimg">No photos yet</span>';
+  return '<div class="thumbs">' + imgs.map(function(im, i){
+    return '<button type="button" class="thumb" data-img="' + i + '" aria-label="' + esc('View photo ' + (i + 1) + ' of ' + p.name + (im.season ? ', ' + im.season : '')) + '">' +
+      '<img loading="lazy" decoding="async" src="' + esc(thumbUrl(safeUrl(im.url))) + '" data-full="' + esc(safeUrl(im.url)) + '" alt="" onerror="window.__thumbErr(this)">' +
+      (im.season ? '<span class="season">' + esc(im.season) + '</span>' : '') + '</button>';
+  }).join('') + '</div>';
+}
+window.__thumbErr = function(img){
+  var full = img.getAttribute('data-full');
+  if (full && img.src !== full && !img.dataset.retried){ img.dataset.retried = '1'; img.src = full; return; }
+  img.style.display = 'none'; img.parentNode.classList.add('broken');
+};
+
+function renderHead(){
+  var cols = visibleCols(), h = '';
+  if (state.mode === 'expanded'){
+    h += '<tr class="grp">';
+    for (var i = 0; i < cols.length; ){
+      var g = cols[i].group, span = 1;
+      while (i + span < cols.length && g && cols[i + span].group === g) span++;
+      var cls = cols[i].key === '_idx' ? ' class="c-idx"' : cols[i].key === 'name' ? ' class="c-name"' : (g ? ' class="g"' : '');
+      h += '<th colspan="' + span + '"' + cls + '>' + (g ? esc(g) : '') + '</th>';
+      i += span;
+    }
+    h += '</tr>';
+  }
+  h += '<tr class="cols">' + cols.map(function(c){
+    var sorted = state.sort.key === c.key, active = isActive(c.key);
+    var aria = sorted ? (state.sort.dir > 0 ? 'ascending' : 'descending') : 'none';
+    var inner = c.nosort ? '<span>' + esc(c.label) + '</span>' :
+      '<button type="button" class="thsort" data-sort="' + c.key + '" title="Sort by ' + esc(c.label) + (c.tip ? ' (' + esc(c.tip) + ')' : '') + '">' + esc(c.label) +
+      (sorted ? '<span class="arrow">' + (state.sort.dir > 0 ? '&#9650;' : '&#9660;') + '</span>' : '') + '</button>';
+    var fb = c.type === 'none' ? '' : '<button type="button" class="fbtn' + (active ? ' fon' : '') + '" data-filter="' + c.key + '" aria-haspopup="dialog" aria-label="' + esc('Filter ' + c.label + (active ? ' (active)' : '')) + '">&#9662;</button>';
+    return '<th scope="col" class="' + (c.cls || '') + (sorted ? ' sorted' : '') + (active ? ' filtered' : '') + '" aria-sort="' + aria + '"><span class="thwrap">' + inner + fb + '</span></th>';
+  }).join('') + '</tr>';
+  $('thead').innerHTML = h;
+  var g = $('thead').querySelector('tr.grp');
+  $('plantTable').style.setProperty('--grp-h', g ? g.getBoundingClientRect().height + 'px' : '0px');
+  // mobile filter chips (card mode)
+  $('mfilters').innerHTML = cols.filter(function(c){ return c.type !== 'none'; }).map(function(c){
+    return '<button type="button" class="btn fbtn-m' + (isActive(c.key) ? ' primary' : '') + '" data-filter="' + c.key + '" aria-haspopup="dialog">' + esc(c.label) + ' &#9662;</button>';
+  }).join('');
+}
+
+function renderBody(){
+  var cols = visibleCols(), rows = sortedRows();
+  if (!rows.length){
+    $('tbody').innerHTML = '<tr><td class="empty" colspan="' + cols.length + '">' + (PLANTS.length ? 'No plants match these filters.' : 'No plant data loaded yet.') + '</td></tr>';
+  } else {
+    var out = new Array(rows.length);
+    for (var r = 0; r < rows.length; r++){
+      var p = rows[r], tds = '';
+      for (var j = 0; j < cols.length; j++){
+        var c = cols[j];
+        tds += '<td class="' + (c.cls || '') + '"' + (c.key === 'name' || c.key === '_idx' ? '' : ' data-label="' + esc(c.label) + '"') + '>' + c.render(p) + '</td>';
+      }
+      out[r] = '<tr data-id="' + esc(p.id) + '">' + tds + '</tr>';
+    }
+    $('tbody').innerHTML = out.join('');
+  }
+  $('rowcount').innerHTML = 'Showing <b>' + rows.length + '</b> of <b>' + PLANTS.length + '</b> plants';
+  $('clearFilters').disabled = !anyActive();
+}
+function render(){ renderHead(); renderBody(); }
+
+function setMode(m){
+  state.mode = m; lsSet(LS_MODE, m);
+  document.body.classList.toggle('expanded', m === 'expanded');
+  $('modeCollapsed').setAttribute('aria-pressed', m === 'collapsed');
+  $('modeExpanded').setAttribute('aria-pressed', m === 'expanded');
+  render();
+}
+
+/* ───────────── filter menu (Excel-style) ───────────── */
+var menu = null, menuBtn = null;
+function closeMenu(){ if (menu){ menu.remove(); menu = null; if (menuBtn && document.body.contains(menuBtn)) menuBtn.focus(); menuBtn = null; } }
+function openMenu(btn, key){
+  if (menu && menuBtn === btn){ closeMenu(); return; }
+  closeMenu();
+  var c = COLMAP[key]; menuBtn = btn;
+  menu = document.createElement('div'); menu.className = 'fmenu'; menu.setAttribute('role', 'dialog'); menu.setAttribute('aria-label', 'Filter ' + c.label);
+  var h = '<div class="fhead">' + esc(c.label) + '</div>';
+  if (!c.nosort) h += '<div class="fsort"><button type="button" class="btn" data-fs="1">Sort ' + (c.type === 'scale' ? '1&rarr;5' : 'A&rarr;Z') + '</button><button type="button" class="btn" data-fs="-1">Sort ' + (c.type === 'scale' ? '5&rarr;1' : 'Z&rarr;A') + '</button></div>';
+  if (c.type === 'text'){
+    var f = state.filters[key] || {};
+    h += '<input class="fsearch" type="search" placeholder="Contains&hellip;" aria-label="' + esc(c.label + ' contains') + '" value="' + esc(f.text || '') + '">';
+    h += '<div class="factions"><button type="button" data-fa="clear">Clear</button></div><div class="fnote">Shows rows whose ' + esc(c.label.toLowerCase()) + ' contains this text.</div>';
+    menu.innerHTML = h;
+    var inp = menu.querySelector('.fsearch');
+    inp.addEventListener('input', function(){ var v = inp.value.trim(); if (v) state.filters[key] = { text:v }; else delete state.filters[key]; renderBody(); syncHeadState(); });
+  } else {
+    // distinct values among rows passing all OTHER filters (cross-filtered, like Excel)
+    var counts = {}; PLANTS.forEach(function(p){ if (passes(p, key)){ var v = filterKeyVal(c, p); counts[v] = (counts[v] || 0) + 1; } });
+    var cur = state.filters[key] && state.filters[key].set;
+    if (cur) cur.forEach(function(v){ if (!(v in counts)) counts[v] = 0; });
+    var vals = Object.keys(counts).sort(function(a, b){
+      if (a === '(blank)') return 1; if (b === '(blank)') return -1;
+      if (c.type === 'scale') return Number(a) - Number(b);
+      return a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0;
+    });
+    h += '<input class="fsearch" type="search" placeholder="Search values&hellip;" aria-label="' + esc('Search ' + c.label + ' values') + '">';
+    h += '<div class="factions"><button type="button" data-fa="all">Select all</button>&middot;<button type="button" data-fa="none">Clear</button></div><div class="flist" role="group" aria-label="' + esc(c.label + ' values') + '">';
+    h += vals.map(function(v){
+      var on = !cur || cur.has(v), lbl = c.type === 'scale' && v !== '(blank)' ? v + ' ' + '●'.repeat(Number(v)) : v;
+      return '<label><input type="checkbox" value="' + esc(v) + '"' + (on ? ' checked' : '') + '><span title="' + esc(v) + '">' + esc(lbl) + '</span><em>' + counts[v] + '</em></label>';
+    }).join('') + '</div>';
+    if (c.tip) h += '<div class="fnote">' + esc(c.tip) + '</div>';
+    menu.innerHTML = h;
+    var search = menu.querySelector('.fsearch'), boxes = [].slice.call(menu.querySelectorAll('.flist input'));
+    function apply(){
+      var checked = boxes.filter(function(b){ return b.checked; }).map(function(b){ return b.value; });
+      if (checked.length === boxes.length) delete state.filters[key]; else state.filters[key] = { set:new Set(checked) };
+      renderBody(); syncHeadState();
+    }
+    search.addEventListener('input', function(){
+      var q = search.value.toLowerCase();
+      boxes.forEach(function(b){ b.parentNode.style.display = b.value.toLowerCase().indexOf(q) >= 0 ? '' : 'none'; });
+    });
+    menu.querySelector('.flist').addEventListener('change', apply);
+    menu.querySelector('[data-fa="all"]').onclick = function(){
+      var q = search.value.toLowerCase(); // Excel: with a search term, "select all" keeps only the matches
+      boxes.forEach(function(b){ b.checked = !q || b.value.toLowerCase().indexOf(q) >= 0; }); apply();
+    };
+    menu.querySelector('[data-fa="none"]').onclick = function(){ boxes.forEach(function(b){ b.checked = false; }); apply(); };
+  }
+  var clr = menu.querySelector('[data-fa="clear"]');
+  if (clr) clr.onclick = function(){ delete state.filters[key]; menu.querySelector('.fsearch').value = ''; renderBody(); syncHeadState(); };
+  [].forEach.call(menu.querySelectorAll('[data-fs]'), function(b){ b.onclick = function(){ state.sort = { key:key, dir:Number(b.getAttribute('data-fs')) }; closeMenu(); render(); }; });
+  document.body.appendChild(menu);
+  positionMenu();
+  // On phones, don't auto-focus (it would pop the keyboard over the list)
+  if (!narrow()) menu.querySelector('.fsearch').focus(); else { var first = menu.querySelector('button, input[type=checkbox]'); if (first) first.focus({ preventScroll:true }); }
+  menu.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ e.stopPropagation(); closeMenu(); } });
+}
+// update header indicators without rebuilding the header (keeps the open menu anchored)
+function syncHeadState(){
+  [].forEach.call(document.querySelectorAll('[data-filter]'), function(b){
+    var k = b.getAttribute('data-filter'), on = isActive(k);
+    if (b.classList.contains('fbtn')){ b.classList.toggle('fon', on); b.setAttribute('aria-label', 'Filter ' + COLMAP[k].label + (on ? ' (active)' : '')); var th = b.closest('th'); if (th) th.classList.toggle('filtered', on); }
+    else b.classList.toggle('primary', on);
+  });
+}
+document.addEventListener('click', function(e){ if (menu && !menu.contains(e.target) && !e.target.closest('[data-filter]')) closeMenu(); });
+function narrow(){ return window.innerWidth <= 700; }
+// Keep the menu anchored to its button while the page scrolls or the phone keyboard resizes the viewport
+function positionMenu(){
+  if (!menu || !menuBtn) return;
+  var mw = menu.offsetWidth, mh = menu.offsetHeight, vh = window.innerHeight, vw = window.innerWidth;
+  if (narrow()){ menu.style.left = Math.max(8, (vw - mw) / 2) + 'px'; menu.style.top = '64px'; return; }
+  var r = menuBtn.getBoundingClientRect();
+  var left = Math.min(Math.max(8, r.right - mw), vw - mw - 8), top = r.bottom + 4;
+  if (top + mh > vh - 8) top = Math.max(8, r.top - mh - 4);
+  menu.style.left = left + 'px'; menu.style.top = top + 'px';
+}
+document.addEventListener('scroll', function(e){ if (menu && !(e.target instanceof Node && menu.contains(e.target))) positionMenu(); }, true);
+window.addEventListener('resize', positionMenu);
+
+/* ───────────── table events (delegated) ───────────── */
+$('plantTable').addEventListener('click', function(e){
+  var t = e.target.closest('button'); if (!t) return;
+  if (t.hasAttribute('data-sort')){
+    var k = t.getAttribute('data-sort'), c = COLMAP[k];
+    if (state.sort.key === k) state.sort.dir = -state.sort.dir; else state.sort = { key:k, dir: c.type === 'scale' ? -1 : 1 };
+    render(); return;
+  }
+  if (t.hasAttribute('data-filter')){ e.stopPropagation(); openMenu(t, t.getAttribute('data-filter')); return; }
+  var tr = t.closest('tr[data-id]'); if (!tr) return;
+  var id = tr.getAttribute('data-id'), p = PLANTS.filter(function(x){ return x.id === id; })[0];
+  if (t.hasAttribute('data-img')){
+    if (t.classList.contains('broken')) return;
+    var items = (p.images || []).filter(function(im){ return im && safeUrl(im.url); }).slice(0, 3).map(function(im){
+      return { src:safeUrl(im.url), title:p.name + (p.botanical ? ' (' + p.botanical + ')' : ''), caption:im.caption, season:im.season, credit:im.credit, license:im.license, source:im.source };
+    });
+    openLightbox(items, Number(t.getAttribute('data-img')), t); return;
+  }
+  if (t.hasAttribute('data-like')){
+    var key = t.getAttribute('data-like'), v = Number(t.getAttribute('data-v'));
+    var next = NOTES[id][key] === v ? null : v; // click the current value again to clear
+    setNote(id, (function(o){ o[key] = next; return o; })({}));
+    var td = t.closest('td'); td.innerHTML = COLMAP[key].render(p);
+    var nb = td.querySelector('[data-v="' + v + '"]'); if (nb) nb.focus();
+    refreshHeart(tr, p); updateStats();
+  }
+});
+$('mfilters').addEventListener('click', function(e){ var b = e.target.closest('[data-filter]'); if (b){ e.stopPropagation(); openMenu(b, b.getAttribute('data-filter')); } });
+var noteTimers = {};
+$('plantTable').addEventListener('input', function(e){
+  var ta = e.target; if (!ta.hasAttribute || !ta.hasAttribute('data-notes')) return;
+  var tr = ta.closest('tr[data-id]'), id = tr.getAttribute('data-id');
+  NOTES[id].peopleNotes = ta.value;
+  clearTimeout(noteTimers[id]);
+  noteTimers[id] = setTimeout(function(){
+    var ok = setNote(id, { peopleNotes: ta.value });
+    var s = ta.parentNode.querySelector('.saved');
+    if (s){ s.textContent = ok ? 'Saved' : 'Could not save (storage blocked)'; s.classList.add('show'); clearTimeout(s._t); s._t = setTimeout(function(){ s.classList.remove('show'); }, 1400); }
+    refreshHeart(tr, PLANTS.filter(function(x){ return x.id === id; })[0]); updateStats();
+  }, 350);
+});
+function refreshHeart(tr, p){ var slot = tr.querySelector('.heart-slot'); if (slot) slot.innerHTML = heart(p.id); }
+
+$('gsearch').addEventListener('input', function(){ state.q = this.value.trim(); renderBody(); });
+$('clearFilters').addEventListener('click', function(){ state.filters = {}; state.q = ''; $('gsearch').value = ''; render(); });
+$('modeCollapsed').addEventListener('click', function(){ setMode('collapsed'); });
+$('modeExpanded').addEventListener('click', function(){ setMode('expanded'); });
+
+/* ───────────── lightbox ───────────── */
+var lb = { items:[], i:0, opener:null };
+function openLightbox(items, i, opener){
+  if (!items.length) return;
+  lb.items = items; lb.i = i || 0; lb.opener = opener || document.activeElement;
+  $('lb').hidden = false; $('lb').classList.add('open'); document.body.style.overflow = 'hidden';
+  showLb(); $('lbClose').focus();
+}
+function closeLightbox(){
+  $('lb').classList.remove('open'); $('lb').hidden = true; document.body.style.overflow = ''; $('lbImg').removeAttribute('src');
+  if (lb.opener && lb.opener.focus) lb.opener.focus();
+}
+function showLb(){
+  var it = lb.items[lb.i], img = $('lbImg'), multi = lb.items.length > 1;
+  $('lbErr').style.display = 'none'; img.style.display = '';
+  img.onerror = function(){ img.style.display = 'none'; $('lbErr').style.display = 'block'; };
+  img.src = it.src; img.alt = (it.title || '') + (it.caption ? ': ' + it.caption : '');
+  var cap = '<div><span class="lb-title">' + esc(it.title) + '</span>' + (it.season ? '<span class="lb-season">' + esc(it.season) + '</span>' : '') + '</div>';
+  if (it.caption) cap += '<div>' + esc(it.caption) + '</div>';
+  var credit = [];
+  if (it.credit) credit.push('Photo: ' + esc(it.credit));
+  if (it.license) credit.push(esc(it.license));
+  if (it.source && safeUrl(it.source)) credit.push('<a href="' + esc(safeUrl(it.source)) + '" target="_blank" rel="noopener">Source &#8599;</a>');
+  if (credit.length) cap += '<div class="lb-credit">' + credit.join(' &middot; ') + '</div>';
+  $('lbCap').innerHTML = cap;
+  $('lbCount').textContent = multi ? (lb.i + 1) + ' / ' + lb.items.length : '';
+  $('lbPrev').style.display = $('lbNext').style.display = multi ? '' : 'none';
+}
+function step(d){ lb.i = (lb.i + d + lb.items.length) % lb.items.length; showLb(); }
+$('lbPrev').onclick = function(){ step(-1); };
+$('lbNext').onclick = function(){ step(1); };
+$('lbClose').onclick = closeLightbox;
+$('lb').addEventListener('click', function(e){ if (e.target === this) closeLightbox(); });
+document.addEventListener('keydown', function(e){
+  if ($('lb').hidden){ if (e.key === 'Escape'){ if (menu) closeMenu(); else if (document.body.classList.contains('nav-open')) toggleNav(false); } return; }
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') step(-1);
+  else if (e.key === 'ArrowRight') step(1);
+  else if (e.key === 'Tab'){ // keep focus inside the dialog
+    var f = [].filter.call($('lb').querySelectorAll('button, a[href]'), function(el){ return el.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+
+/* ───────────── designs gallery ───────────── */
+function renderDesigns(){
+  $('gallery').innerHTML = DESIGNS.map(function(d, i){
+    return '<button type="button" class="design" data-design="' + i + '" aria-label="' + esc('Open ' + d.title + ', ' + d.date) + '">' +
+      '<img loading="lazy" src="' + esc(d.src) + '" alt="' + esc(d.title) + '">' +
+      '<div class="dmeta"><div class="dt">' + esc(d.title) + '</div><div class="dd">' + esc(d.date) + (d.note ? ' &middot; ' + esc(d.note) : '') + '</div></div></button>';
+  }).join('') || '<p class="caveat">No designs yet.</p>';
+}
+$('gallery').addEventListener('click', function(e){
+  var b = e.target.closest('[data-design]'); if (!b) return;
+  openLightbox(DESIGNS.map(function(d){ return { src:d.src, title:d.title, caption:d.note, season:d.date }; }), Number(b.getAttribute('data-design')), b);
+});
+
+/* ───────────── export / import ───────────── */
+function exportNotes(){
+  var out = {};
+  PLANTS.forEach(function(p){ var n = NOTES[p.id]; if (hasNote(n)) out[p.id] = { carlaLike:n.carlaLike, mikeLike:n.mikeLike, peopleNotes:n.peopleNotes, updated:n.updated }; });
+  // keep notes for ids not in the current dataset (e.g. plants removed from the library)
+  for (var id in BASELINE) if (!(id in out) && !COLMAP_HAS(id) && hasNote(BASELINE[id])) out[id] = BASELINE[id];
+  var blob = new Blob([JSON.stringify({ type:'home-projects-people-notes', version:1, exported:new Date().toISOString(), notes:out }, null, 2)], { type:'application/json' });
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  var d = new Date(); a.download = 'home-projects-notes-' + d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0') + '.json';
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  $('syncStatus').textContent = 'Exported notes for ' + Object.keys(out).length + ' plant(s).';
+}
+function COLMAP_HAS(id){ return PLANTS.some(function(p){ return p.id === id; }); }
+function importNotes(file){
+  var r = new FileReader();
+  r.onload = function(){
+    try {
+      var data = JSON.parse(r.result), notes = data && data.notes ? data.notes : data, n = 0, skipped = 0;
+      if (!notes || typeof notes !== 'object' || Array.isArray(notes)) throw new Error('bad');
+      for (var id in notes){
+        var inc = notes[id]; if (!inc || typeof inc !== 'object'){ skipped++; continue; }
+        var cur = getNote(id);
+        if (!cur.updated || t(inc) > t(cur)){
+          lsSet(LS_PREFIX + id, JSON.stringify({ carlaLike:num(inc.carlaLike), mikeLike:num(inc.mikeLike), peopleNotes:String(inc.peopleNotes || ''), updated:inc.updated || new Date().toISOString() }));
+          n++;
+        } else skipped++;
+      }
+      loadNotes(); render(); updateStats();
+      $('syncStatus').textContent = 'Imported ' + n + ' plant note(s)' + (skipped ? '; kept ' + skipped + ' newer local one(s)' : '') + '.';
+    } catch(err){ $('syncStatus').textContent = "That file doesn't look like a notes export."; }
+  };
+  r.readAsText(file);
+}
+[].forEach.call(document.querySelectorAll('[data-action]'), function(b){
+  b.addEventListener('click', function(){
+    if (b.getAttribute('data-action') === 'export') exportNotes();
+    else { $('importFile').value = ''; $('importFile').click(); }
+  });
+});
+$('importFile').addEventListener('change', function(){ if (this.files[0]){ importNotes(this.files[0]); if (location.hash !== '#notes-sync') document.getElementById('notes-sync').scrollIntoView(); } });
+
+function updateStats(){
+  var rated = PLANTS.filter(function(p){ return hasNote(NOTES[p.id]); }).length;
+  $('factPlants').textContent = PLANTS.length; $('factRated').textContent = rated;
+  var local = 0; PLANTS.forEach(function(p){ if (lsGet(LS_PREFIX + p.id)) local++; });
+  if (!$('syncStatus')._user) $('syncStatus').textContent = local + ' plant(s) edited in this browser · ' + Object.keys(BASELINE).length + ' in the shared baseline.';
+}
+
+/* ───────────── section nav + scrollspy ───────────── */
+function renderNav(){
+  var h = '', g = null;
+  SECTIONS.forEach(function(s){
+    if (s.group !== g){ g = s.group; if (g) h += '<div class="sn-section">' + esc(g) + '</div>'; }
+    h += '<a href="#' + s.id + '" class="sn-item" data-sec="' + s.id + '">' + esc(s.label) + (s.count ? '<span class="sn-count">' + s.count() + '</span>' : '') + '</a>';
+  });
+  $('snList').innerHTML = h;
+}
+function spy(){
+  var cur = SECTIONS[0].id, atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+  SECTIONS.forEach(function(s){ var el = $(s.id); if (el && el.getBoundingClientRect().top <= 110) cur = s.id; });
+  if (atBottom) cur = SECTIONS[SECTIONS.length - 1].id;
+  [].forEach.call(document.querySelectorAll('.sn-item'), function(a){
+    var on = a.getAttribute('data-sec') === cur; a.classList.toggle('active', on);
+    if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+  });
+}
+var spyPending = false;
+window.addEventListener('scroll', function(){ if (spyPending) return; spyPending = true; setTimeout(function(){ spyPending = false; spy(); }, 60); }, { passive:true });
+function toggleNav(open){
+  document.body.classList.toggle('nav-open', open);
+  $('menuBtn').setAttribute('aria-expanded', open);
+  if (open){ var a = document.querySelector('.sn-item.active') || document.querySelector('.sn-item'); if (a) a.focus(); }
+}
+$('menuBtn').addEventListener('click', function(){ toggleNav(!document.body.classList.contains('nav-open')); });
+$('scrim').addEventListener('click', function(){ toggleNav(false); });
+$('sectionnav').addEventListener('click', function(e){ if (e.target.closest('a')) toggleNav(false); });
+
+/* ───────────── boot ───────────── */
+loadNotes();
+renderNav();
+renderDesigns();
+setMode(state.mode);
+updateStats();
+spy();
+})();
+</script>
+</body>
+</html>

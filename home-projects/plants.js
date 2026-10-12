@@ -1,5 +1,4 @@
-// Plant & Tree Library data. Generated from research files; edit freely.
-// Schema: see home-projects page source / plant-schema notes.
+// Plant & Tree Library data (schema v2). Generated from research files; edit freely.
 window.PLANTS = [
  {
   "id": "western-red-cedar",
@@ -63,6 +62,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Low",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Canopy",
+  "heightFt": [
+   50,
+   70
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "Low fit — only plausible in the SW corner, and it will shade a big chunk of the lawn and neighbors",
   "claudetteNotes": "Iconic, but a real giant for a residential lot, and Seattle cedars have been dying back in our hotter, drier summers, so it needs deep summer watering for years. If you want the look, consider a smaller cultivar like 'Can-can' or 'Whipcord' (a quirky shrub form), or a shore pine for evergreen structure. Deer love to browse young ones."
  },
@@ -128,6 +162,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Canopy",
+  "heightFt": [
+   70,
+   100
+  ],
+  "spreadFt": [
+   20,
+   30
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "Very low fit — too big for any spot in this yard; would shade the lawn and the veggie bed and loom over the house",
   "claudetteNotes": "Douglas fir hits 100+ ft and drops limbs, cones and needles; only plant one if you truly want a giant and have the space (you don't really, here). For a native evergreen with the same feel at a sane size, choose shore pine instead."
  },
@@ -193,6 +262,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   35
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Great fit — SW corner cluster or west fence as the evergreen anchor; doesn't get huge",
   "claudetteNotes": "The best native evergreen size-wise for this lot. Pick a nursery tree with a nice irregular form, or ask for a dwarf like 'Spaan's Dwarf' if you want a smaller accent. Pair 2–3 in the SW corner with vine maple in front for a classic Puget Sound look."
  },
@@ -254,6 +358,35 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Patio-side focal point or the medium-tree slot in front of the SW cluster; keep off the hottest south wall",
   "claudetteNotes": "Everyone has one because they're great. For a tree-sized one try 'Bloodgood' (red), 'Osakazuki' (best fall red) or 'Sango-kaku' (coral winter bark). Give it afternoon shade or steady summer water to prevent leaf scorch."
  },
@@ -315,6 +448,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   20
+  ],
+  "spreadFt": [
+   5,
+   6
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "West fence/side-yard strip where width is tight; also a structural accent near the house",
   "claudetteNotes": "Choose the cultivar carefully: 'Gracilis' for a slender small tree, 'Nana Gracilis' for a big shrub, 'Crippsii' for golden color. It hates soggy soil and heavy pruning, so plant it high and let it grow slowly into its shape."
  },
@@ -376,6 +544,39 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   20,
+   30
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "",
   "yardFit": "Beside the patio's south edge or at the front of the SW cluster where you can walk under it",
   "claudetteNotes": "One of the best small trees for Seattle; 'Emerald Pagoda' has bigger flowers and leaves, 'Pink Chimes' is pink. It drops seeds and can self-sow a little, so it's not for right over a pond or pristine paving. Prune up the lower limbs so the bells hang at eye level."
  },
@@ -437,6 +638,32 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Canopy",
+  "heightFt": [
+   40,
+   60
+  ],
+  "spreadFt": [
+   25,
+   40
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    4,
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "Large-tree slot along the south fence; avoid the SE corner if you don't want the veggie bed shaded",
   "claudetteNotes": "The fall 'cotton candy' smell is a genuine party trick. It wilts and drops leaves in drought, so it needs summer water for years. For a smaller option, 'Morioka Weeping' or 'Rotfuchs' (purple, narrow) fit tighter spots."
  },
@@ -498,6 +725,42 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Medium-tree slot in the SW cluster or near the patio where you see the bark every day",
   "claudetteNotes": "Buy it small-to-medium and plant it once: stewartias resent being moved. Mulch and water steadily the first few summers, and give it a bit of afternoon shade from the hottest sun."
  },
@@ -563,6 +826,40 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   40
+  ],
+  "spreadFt": [
+   15,
+   30
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "red"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "",
   "yardFit": "Excellent for the south fence or SE corner (upright 'Vanessa' casts a narrower shadow on the veggie bed)",
   "claudetteNotes": "One of the best do-everything trees for Seattle: tough, drought tolerant, clean, four-season. The species gets wide; choose 'Vanessa' or 'Persian Spire' for a narrower, more upright tree."
  },
@@ -624,6 +921,37 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Near the patio or lawn edge where low southern winter sun backlights the bark from the house",
   "claudetteNotes": "Since the yard opens to the south, you'll be looking at it with the winter sun behind it from the house, which is exactly how this tree shines. It's slow and pricey for its size, so buy the biggest one the budget allows, and limb it up a bit to show the trunk."
  },
@@ -689,6 +1017,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   25
+  ],
+  "spreadFt": [
+   10,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "red",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "",
   "yardFit": "Understory in front of the SW corner conifers or along the west fence",
   "claudetteNotes": "Plant it as a multi-trunk clump and let it sprawl a bit; it looks best natural, not pruned into a lollipop. More sun gives better fall color but needs more summer water. 'Pacific Fire' has red winter twigs."
  },
@@ -750,6 +1113,42 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   30
+  ],
+  "spreadFt": [
+   15,
+   30
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Aug–Sep",
   "yardFit": "Medium-tree slot along the south fence or as a smaller SE-corner tree (won't swamp the veggie bed)",
   "claudetteNotes": "The reliable dogwood for Seattle. Fruit drops in late summer, so don't plant it right over the patio. Try 'Satomi' (pink), 'Wolf Eyes' (variegated), or the kousa × Pacific hybrid 'Venus' for giant flowers."
  },
@@ -815,6 +1214,36 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "Medium-tree spot at the edge of the SW cluster with conifers behind",
   "claudetteNotes": "Pure Pacific dogwood is gorgeous but often dies in gardens (anthracnose, summer irrigation and root disturbance); 'Eddie's White Wonder' is the more forgiving way to get the look. It still gets some anthracnose in wet springs, so if you want bulletproof, choose kousa or 'Venus'. Avoid lawn sprinklers hitting the trunk."
  },
@@ -876,6 +1305,51 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    10,
+    11,
+    12
+   ],
+   "foliage": [],
+   "fruit": [
+    10,
+    11,
+    12
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Oct–Dec",
   "yardFit": "South fence evergreen screen or multi-trunk SE-corner tree; loves the sunny, dry spots",
   "claudetteNotes": "This is the madrone look without the madrone heartbreak. The fruit is edible but mealy, and it drops, so keep it off the patio. For a bigger, more madrone-like tree, look for the hybrid Arbutus 'Marina'."
  },
@@ -941,6 +1415,42 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    6,
+    7
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "Jun–Jul",
   "yardFit": "Front of the SW cluster, or near the SE raised bed as an edible-garden companion that won't cast heavy shade",
   "claudetteNotes": "A hybrid of eastern North American natives, so not PNW-native; if you want the local species, western serviceberry (A. alnifolia) is shrubbier. Expect to share the berries with robins and cedar waxwings, which is half the fun. Watch for occasional rust and fire blight."
  },
@@ -1006,6 +1516,35 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   35
+  ],
+  "spreadFt": [
+   15,
+   25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    7,
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Naturalistic SW corner cluster or along the west fence, under or beside conifers",
   "claudetteNotes": "An unusual, wildlife-first pick; you'll mostly find it at native plant sales (e.g. King Conservation District) rather than big-box nurseries. The bark is a powerful laxative (historically the source of cascara sagrada), so treat it as mildly toxic for pets. Not a showstopper, but a quietly handsome, very low-care tree."
  },
@@ -1071,6 +1610,32 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Canopy",
+  "heightFt": [
+   40,
+   90
+  ],
+  "spreadFt": [
+   30,
+   60
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Sunny SW corner as a legacy tree; don't put it in the SE corner unless you're OK shading the veggie bed in 20+ years",
   "claudetteNotes": "A legacy tree for the long game: it grows slowly, so you'll enjoy a small tree for years before it's large. Acorns and leaves are toxic to dogs (ASPCA), and it hates summer irrigation over its roots once established, so keep it out of the watered lawn. Buy a small one from a native nursery; they establish better than big ones."
  },
@@ -1132,6 +1697,38 @@ window.PLANTS = [
   "maintenance": 4,
   "deerResistant": "Low",
   "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   8,
+   12
+  ],
+  "spreadFt": [
+   8,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Aug–Oct",
   "yardFit": "Sunny SE area by the raised bed as an edible corner, or espaliered on the south-facing fence",
   "claudetteNotes": "Pick disease-resistant varieties for Seattle like 'Liberty', 'Akane', 'William's Pride' or 'Chehalis'. You'll need two compatible varieties for pollination (or a neighbor's tree) and to bag fruit against apple maggot and codling moth. Seeds, stems and leaves are listed as toxic by the ASPCA, so pick up dropped fruit if the dog is a scavenger."
  },
@@ -1197,6 +1794,35 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   25
+  ],
+  "spreadFt": [
+   10,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Spreading",
+  "harvest": "Aug–Sep",
   "yardFit": "Hottest spot: against a south-facing fence or wall, or the SE corner near the veggie bed",
   "claudetteNotes": "Plant it where it bakes; heat against a wall makes the difference here. Don't hack it back in winter, since the fruit forms on last year's wood and you'd prune off the crop. The milky sap irritates skin and figs are listed as toxic for dogs and cats by the ASPCA."
  },
@@ -1258,6 +1884,35 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    10,
+    11,
+    12
+   ],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Rounded",
+  "harvest": "Oct–Nov",
   "yardFit": "Sunny south fence or SE corner (its open canopy casts lighter shade than most)",
   "claudetteNotes": "Seattle summers are marginal for ripening, so choose early non-astringent varieties like 'Ichi Ki Kei Jiro' or 'Izu' over 'Fuyu', and give it your hottest spot. The ornamental value (fruit on bare winter branches) is reason enough to grow it. Seeds can cause intestinal blockage in dogs, so pick up drops."
  },
@@ -1323,6 +1978,37 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   10
+  ],
+  "spreadFt": [
+   5,
+   8
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink",
+   "red"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Back row of the east-side shrub curve, where it can be seen from the patio in March",
   "claudetteNotes": "Get 'King Edward VII' (deep red, more compact) or 'Pokey's Pink'; 'White Icicle' if you want white. It gets leggy and flowers poorly in deep shade, so give it at least half a day of sun. The leaves have a currant-y smell some people find a bit catty up close — enjoy it from a few feet away."
  },
@@ -1330,8 +2016,8 @@ window.PLANTS = [
   "id": "evergreen-huckleberry",
   "name": "Evergreen Huckleberry",
   "botanical": "Vaccinium ovatum",
-  "category": "Shrub",
-  "subcategory": "Berry/Fruit",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Evergreen_huckleberry_6610.jpg/960px-Evergreen_huckleberry_6610.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -1388,6 +2074,55 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   8
+  ],
+  "spreadFt": [
+   4,
+   6
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    4,
+    5
+   ],
+   "fruit": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "Aug–Oct",
   "yardFit": "Shady end of the east curve or under the west-fence trees; can be clipped as a low screen",
   "claudetteNotes": "It's slow — buy a 2-gallon or larger and be patient for two years. In more sun it stays compact and fruits more but needs summer water; in shade it gets taller and looser. One of my favorite 'looks expensive, is native' shrubs."
  },
@@ -1453,6 +2188,55 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   6
+  ],
+  "spreadFt": [
+   3,
+   5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "fruit": [
+    7,
+    8,
+    9
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "Jul–Aug",
   "yardFit": "East curve or west strip — keep the prickly leaves back from patio edges and paths",
   "claudetteNotes": "The leaves are spiny, so it's a terrible choice right where people brush past. 'Compactum' or 'Orange Flame' stay lower; for deep shade use its cousin low Oregon grape (Mahonia nervosa) as a groundcover. Cut the tallest stems to the ground every few years to keep it full."
  },
@@ -1518,6 +2302,50 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   2,
+   6
+  ],
+  "spreadFt": [
+   4,
+   6
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Aug–Sep",
   "yardFit": "Understory beneath the SW/west-fence tree cluster; shady parts of the west strip",
   "claudetteNotes": "Sulks for a year or two, then can run enthusiastically by rhizomes in good soil — give it room or edge it. In hot full sun the leaves yellow and scorch, so keep it away from the south wall. Buy nursery-grown; wild-dug salal transplants poorly."
  },
@@ -1583,6 +2411,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   12
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    7,
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Back of the east curve near the shed, as a fast screen or wildlife hedgerow",
   "claudetteNotes": "This is a screen plant, not a foundation shrub — it will hit 10 ft. If you want the ninebark look smaller and in purple, the eastern P. opulifolius cultivars ('Little Devil', 'Diabolo') are the garden-friendly route. Remove a few of the oldest stems every couple of years to keep it fresh."
  },
@@ -1648,6 +2511,45 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   10
+  ],
+  "spreadFt": [
+   8,
+   12
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "",
   "yardFit": "Low or damp spot on the east curve, or anywhere the winter stems can be seen from the house",
   "claudetteNotes": "Only young wood is bright red, so cut a third of the oldest stems to the ground every late winter. The species spreads by layering; for a tidier patio-edge version use 'Kelseyi' (2–3 ft) or 'Arctic Fire' (3–4 ft). Needs summer water in Seattle's dry season."
  },
@@ -1705,6 +2607,33 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   10
+  ],
+  "spreadFt": [
+   4,
+   8
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "East curve close to the patio, so the June fragrance drifts over the seating",
   "claudetteNotes": "Ten glorious days, then a green blob — tuck it behind evergreens or mix it into the curve rather than making it a focal point. Prune right after bloom (it flowers on last year's wood). Idaho's state flower, and the native one smells better than many hybrid mock oranges."
  },
@@ -1770,6 +2699,40 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   15
+  ],
+  "spreadFt": [
+   4,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "cream"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Fountain",
+  "harvest": "",
   "yardFit": "West fence or the edge of the SW tree cluster, as a tall, airy, no-water screen",
   "claudetteNotes": "Big and loose — not for the patio edge. Some people love the tan winter plumes; if you don't, shear them off after bloom. Fantastic for the driest unirrigated corner of the yard."
  },
@@ -1827,6 +2790,45 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   10,
+   20
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [
+    10,
+    11,
+    12
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Evergreen screen along the west fence or behind the shed in the NE corner",
   "claudetteNotes": "The native answer to 'we need a privacy hedge' — swap it in for laurel or arborvitae. A hard freeze in the low teens can brown it, but it resprouts. Unpruned it gets tree-sized, so plan to shear once or twice a year if space is tight."
  },
@@ -1892,6 +2894,51 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   3,
+   5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    5,
+    6,
+    7
+   ],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Coarse",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Patio's south edge or a shadier stretch of the house-wall row",
   "claudetteNotes": "Rhododendron lace bug loves hot full sun, so avoid the baked south wall unless something shades it in the afternoon. Good picks: 'Ken Janeck', 'Mist Maiden', 'Yaku Princess', 'Percy Wiseman' (peach-pink). Toxic to dogs and cats (grayanotoxins) — skip it if you have a plant-chewing pet."
  },
@@ -1957,6 +3004,51 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   10
+  ],
+  "spreadFt": [
+   3,
+   6
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    2,
+    3,
+    4
+   ],
+   "foliage": [
+    4,
+    5
+   ],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Patio-edge border or the east curve where it gets afternoon shade",
   "claudetteNotes": "Like rhodos, it gets lace bug in hot sun — not the south house wall. 'Katsura' (wine-red new growth, compact), 'Mountain Fire', and dwarf 'Cavatine' or 'Little Heath' are the best bets. All parts are toxic to pets (grayanotoxins)."
  },
@@ -2022,6 +3114,47 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   5
+  ],
+  "spreadFt": [
+   3,
+   5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    12,
+    1,
+    2
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Shady spot near the back door or the west side of the patio — put it where you walk in January",
   "claudetteNotes": "Scorches and yellows in hot sun, so not for the south-facing house row. S. ruscifolia (red berries) is similar; S. hookeriana var. humilis is an 18-inch groundcover version. The berries aren't for eating, so 'Caution' with pets."
  },
@@ -2079,6 +3212,50 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   10
+  ],
+  "spreadFt": [
+   5,
+   7
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    10,
+    11,
+    12,
+    1
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink",
+   "red"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "House-wall row (low 'Shishi Gashira') or espaliered on the sunny south wall",
   "claudetteNotes": "One of the few evergreens here that likes the hot south wall. 'Shishi Gashira' stays ~3 ft and is perfect for the house row; 'Setsugekka' (white) and 'Yuletide' (red) are taller. ASPCA lists camellia as non-toxic to pets."
  },
@@ -2144,6 +3321,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Low",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   8
+  ],
+  "spreadFt": [
+   4,
+   8
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "East curve as a mid-layer, or dwarf forms at the patio's south edge",
   "claudetteNotes": "Blooms on old wood, so never prune it in late winter or spring. 'Ruby Slippers' (3–4 ft, pinker), 'Sikes Dwarf', and 'Gatsby Gal' fit smaller spots. Hydrangeas are toxic to pets per ASPCA."
  },
@@ -2209,6 +3421,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   4,
+   6
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow",
+   "cream"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Focal point at the patio edge or a corner of the east curve visible from the house in winter",
   "claudetteNotes": "My 'unusual pick': hard to find at big-box stores, so look at specialty nurseries. It hates soggy winter clay, so improve drainage, and a cold snap in the low teens can blast the buds. 'Snow Cream' is the classic; 'Red Dragon' has orange-red flowers. It's in the daphne family, so treat it as 'Caution' around pets."
  },
@@ -2274,6 +3521,39 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   10,
+   15
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    1,
+    2,
+    3
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "yellow",
+   "orange",
+   "red"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "",
   "yardFit": "Corner of the east curve where low winter sun backlights it from the patio",
   "claudetteNotes": "Plants are grafted, so snip off suckers from below the graft. 'Arnold Promise' (yellow, most fragrant), 'Jelena' (copper), 'Diane' (red, least fragrant). It grows wide eventually, so give it 10+ ft and enjoy it as a near-small-tree."
  },
@@ -2281,8 +3561,8 @@ window.PLANTS = [
   "id": "highbush-blueberry",
   "name": "Highbush Blueberry",
   "botanical": "Vaccinium corymbosum",
-  "category": "Shrub",
-  "subcategory": "Berry/Fruit",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Vaccinium_corymbosum_Bluecrop_0zz.jpg/960px-Vaccinium_corymbosum_Bluecrop_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -2339,6 +3619,44 @@ window.PLANTS = [
   "maintenance": 3,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   4,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Jul–Aug",
   "yardFit": "Sunny patio south edge or near the SE raised veg bed",
   "claudetteNotes": "Mix ripening times: 'Duke' (early), 'Bluecrop' (mid), 'Chandler' (late, huge berries); 'Top Hat' if you want a dwarf for the house row. Mulch with bark or sawdust, feed with acid fertilizer, and net in July or the robins win."
  },
@@ -2404,6 +3722,53 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   3,
+   5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Shady edge of the patio or the west strip — not the sunny south house wall",
   "claudetteNotes": "It turns yellow and sad in sun, so shade only. Berries need a male nearby: pair a female with 'Rubella' (male, best winter buds), or buy self-fertile S. japonica ssp. reevesiana. All parts are toxic, so not for curious pets."
  },
@@ -2469,6 +3834,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Fountain",
+  "harvest": "",
   "yardFit": "Backbone of the shade layer under the SW tree cluster and along the shady west fence.",
   "claudetteNotes": "Cut last year's tatty fronds to the ground in late Feb/March before the fiddleheads rise and it looks brand new. Plant in odd-numbered drifts rather than a single row; it needs a year of summer water to establish, then basically none."
  },
@@ -2534,6 +3934,41 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Front edge of the shade beds under the SW trees, or tucked along a path where you see it up close.",
   "claudetteNotes": "Needs more consistent moisture than sword fern and sulks in hot afternoon sun, so keep it deep in the shade and mulch it with leaf litter. Plant in groups of 3-5 so it reads as a patch rather than a lost little rosette."
  },
@@ -2599,6 +4034,28 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2.5
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Shadiest, moistest spot under the SW tree cluster, ideally near a path or seat.",
   "claudetteNotes": "It's deciduous, so mark where it is or you'll dig into it in March. It hates drying out and wind, so give it summer water and a sheltered spot; don't plant it until the trees are big enough to cast real shade."
  },
@@ -2660,6 +4117,37 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "gold",
+  "texture": "Fine",
+  "form": "Fountain",
+  "harvest": "",
   "yardFit": "Edge of the bed where the shade cluster meets the lawn, or spilling over the house-wall strip on the west (shady) end.",
   "claudetteNotes": "Gold forms scorch in afternoon sun and go lime-green in deep shade; morning sun is the sweet spot. It's slow, so buy bigger pots than you think and plant in sweeps of 5+; cut it back in late winter."
  },
@@ -2713,6 +4201,39 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   4,
+   5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Vertical accent in the sunny pollinator bed near the raised veggie bed, or a screening row along the sunny south fence.",
   "claudetteNotes": "One of the few grasses that's happy in our heavy clay. Cut to 6 inches in late Feb. If you want a native alternative, Pacific reed grass (Calamagrostis nutkaensis) is looser and shade-tolerant but harder to find."
  },
@@ -2778,6 +4299,32 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Any low, soggy spot or downspout outlet; a natural pick if they add a rain garden.",
   "claudetteNotes": "Leaves have sharp edges, so keep it off pathways. It spreads by rhizomes in wet soil, so use it where you want a mass, not in a tidy border; for a well-behaved garden sedge look at Carex 'Ice Dance' or Carex testacea instead."
  },
@@ -2843,6 +4390,60 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   1
+  ],
+  "spreadFt": [
+   3,
+   6
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4,
+    5
+   ],
+   "foliage": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "fruit": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
   "yardFit": "Sunny, dry edge of the south patio or a bermed/slope area near the south fence.",
   "claudetteNotes": "Our clay is its enemy: it rots in heavy wet soil, so plant it high on a berm or in amended gritty soil. It's slow to knit together the first two years, so mulch and weed diligently; 'Massachusetts' and 'Vancouver Jade' are reliable cultivars."
  },
@@ -2908,6 +4509,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   0.83
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "",
   "yardFit": "Living mulch under the SW tree cluster between ferns.",
   "claudetteNotes": "Not a culinary ginger: it contains aristolochic acid, so don't let anyone (including pets) eat it. Slugs love it in spring, so bait or hand-pick the first year; once it carpets, it smothers weeds nicely."
  },
@@ -2973,6 +4609,46 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   0.67
+  ],
+  "spreadFt": [
+   1,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5,
+    6
+   ],
+   "foliage": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "fruit": [
+    6,
+    7
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "Jun–Jul",
   "yardFit": "Sunny groundcover along the hot patio edge or between stepping stones near the veggie bed.",
   "claudetteNotes": "It runs, so edge it or let it fill a space you're happy to give it. Berries are small and sparse compared to garden strawberries; treat them as a bonus. Plant 18 in apart and it covers in about two seasons."
  },
@@ -2981,7 +4657,7 @@ window.PLANTS = [
   "name": "Orange Honeysuckle",
   "botanical": "Lonicera ciliosa",
   "category": "Vine",
-  "subcategory": "Deciduous",
+  "subcategory": "Flowering",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Orange_Trumpet_Honeysuckle_%28Lonicera_ciliosa%29_-_Flickr_-_brewbooks.jpg/960px-Orange_Trumpet_Honeysuckle_%28Lonicera_ciliosa%29_-_Flickr_-_brewbooks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -3038,6 +4714,37 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   10,
+   20
+  ],
+  "spreadFt": [
+   3,
+   6
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "orange"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "",
   "yardFit": "On the fence near the shed or trained up a trellis by the veggie bed for hummingbirds.",
   "claudetteNotes": "Unscented (it's for hummingbirds, not people) and can get aphids or powdery mildew in hot dry spots, so give it cool roots and afternoon shade. Look for it at native plant sales (WNPS, King Conservation District) since regular nurseries rarely stock it."
  },
@@ -3099,6 +4806,38 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   8,
+   12
+  ],
+  "spreadFt": [
+   2,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "",
   "yardFit": "Trellis on the sunny house wall or the east fence near the shrub curve.",
   "claudetteNotes": "'Heads in the sun, feet in the shade': mulch heavily or plant a low perennial over its roots. It's group 3, so cut everything back to about 12 in each late February; that's the whole pruning routine. Toxic to pets if chewed."
  },
@@ -3164,6 +4903,34 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   0.5,
+   0.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "blue",
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Drifts at the sunny edges of the lawn or in a bed near the veggie bed to bring bees in early.",
   "claudetteNotes": "Plant bulbs in October (now!) 4 in deep in groups of 15+; it loves our wet-winter clay. Foliage looks scruffy as it dies down in June, so tuck it among later perennials. Bulbs are edible, but never forage wild 'camas': white death camas looks similar and is deadly."
  },
@@ -3225,6 +4992,36 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   0.5,
+   1
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Popping up through the salvia and lavender at the hot patio edge or beside the veggie bed.",
   "claudetteNotes": "Toxic to dogs and cats (all alliums are), so skip it if the pets are diggers. Leaves yellow while it blooms, so plant behind something bushy. Unlike crocosmia 'Lucifer', which spreads aggressively here, this one stays put; plant bulbs in fall at 6 in deep."
  },
@@ -3290,6 +5087,35 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Spreading carpet under the SW tree cluster between ferns.",
   "claudetteNotes": "It goes summer-dormant if it dries out, so water in July-Aug if you want foliage through fall. It spreads by rhizomes; welcome in a woodland bed but it will wander. Toxic if pets chew it."
  },
@@ -3351,6 +5177,40 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    2,
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink",
+   "purple"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Coarse",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Front of the shade bed under the trees, or near the patio door where the winter flowers get seen.",
   "claudetteNotes": "All parts are toxic to pets and people (and the sap can irritate skin), so wear gloves. Snip off last year's leaves in January so the flowers show and leaf-spot disease doesn't spread. Buy in bloom in Feb-Mar to pick colors; the Winter Jewels and Wedding Party strains are excellent."
  },
@@ -3412,6 +5272,51 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   2
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "purple",
+   "lavender"
+  ],
+  "foliageColor": "silver",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "Jun–Jul",
   "yardFit": "Hot south edge of the patio and along the sunny house wall: the warmest spots in the yard.",
   "claudetteNotes": "Lavender dies in our clay from wet winter feet, not cold, so plant it on a mound or in amended gritty soil, never in a low spot. Shear by a third right after bloom but never into bare wood. 'Hidcote' and 'Munstead' stay compact; ASPCA lists it as mildly toxic to pets."
  },
@@ -3473,6 +5378,40 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    10,
+    11,
+    12,
+    1
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Sunny pollinator strip near the raised veggie bed, where it pulls bees past the vegetables.",
   "claudetteNotes": "Stick to the straight species or sturdy cultivars like 'Magnus' and 'White Swan'; the fancy doubles and orange hybrids often die in their second wet Seattle winter. Slugs eat young shoots in spring, so watch them in April."
  },
@@ -3538,6 +5477,34 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    8,
+    9,
+    10
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "lavender"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Sunny bed near the veggie bed or along the east shrub curve to extend pollinator season into October.",
   "claudetteNotes": "It spreads by rhizomes and can flop, so give it neighbors to lean on or pinch it back by half in early June. Mostly found at native plant sales; if you can't find it, 'Raydon's Favorite' aster is a well-behaved garden substitute."
  },
@@ -3603,6 +5570,50 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1.25,
+   1.5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "burgundy",
+  "texture": "Coarse",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Repeating accent in the 5-plant row along the house wall's shadier stretch, or edging the shade beds.",
   "claudetteNotes": "Root weevils and heaving crowns are its two downfalls here: replant deeper when the woody crown pops up (every 3-4 years). Avoid the flashiest neon hybrids, which tend to fade fast; 'Palace Purple' and native-heavy hybrids are tougher."
  },
@@ -3664,6 +5675,37 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   2
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple",
+   "blue"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Front of the hot patio-edge bed and alongside the veggie bed to keep pollinators around all summer.",
   "claudetteNotes": "Shear it by half after the first flush and it reblooms in August. 'Caradonna' (dark stems, very upright) and 'May Night' are the best performers; it handles our clay better than lavender does."
  },
@@ -3725,6 +5767,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   25
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "A slow evergreen accent in the SW corner tree cluster, or framing the patio from the west.",
   "claudetteNotes": "Buy the biggest one you can afford, because it really is slow (6 inches a year). Give it afternoon relief from hot reflected sun and steady water the first few summers. Inner needles brown and drop in fall, which is normal and not a sign of trouble."
  },
@@ -3778,6 +5855,44 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   25
+  ],
+  "spreadFt": [
+   20,
+   25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9,
+    10
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "A showpiece medium tree for the SE corner or the south fence line, visible from the patio.",
   "claudetteNotes": "This is the upgrade if the tree list's Kousa or Eddie's White Wonder appeals, so pick one and don't plant all three. Water deeply in its first three summers and keep the mower and string trimmer off the trunk. The fruit is sparse compared with a straight Kousa."
  },
@@ -3839,6 +5954,40 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Near the patio or in the west tree cluster, where you can walk under it and smell it.",
   "claudetteNotes": "If the tree list ends up with Japanese snowbell, this is the alternative, not an addition. The flowers hang partly under the big leaves, so plant it uphill or near a path where you look up into it. It is a specialty-nursery tree, so call around in spring."
  },
@@ -3892,6 +6041,40 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   20,
+   25
+  ],
+  "spreadFt": [
+   12,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8
+   ],
+   "foliage": [
+    9,
+    10,
+    11
+   ],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Pyramidal",
+  "harvest": "",
   "yardFit": "A narrow, upright tree for the west fence strip or south fence line, with fall color you can see from the house.",
   "claudetteNotes": "Its fall color is best in full sun, so don't tuck it in shade. It hates compacted soil and root disruption, so plant it small and leave it alone. It flowers in July when little else does, and the bees will love it."
  },
@@ -3953,6 +6136,33 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   20
+  ],
+  "spreadFt": [
+   12,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "A sunny small tree near the SE corner or the patio's south edge, where it can be seen in bloom.",
   "claudetteNotes": "It leafs out late, so don't panic in April. It's slow when young, so a 6–8 ft balled tree is worth paying for. It's a good pick if you want something that lives on summer neglect."
  },
@@ -4018,6 +6228,34 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   15,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Pyramidal",
+  "harvest": "Sep–Oct",
   "yardFit": "A fruit pair near the raised vegetable bed in the SE, or along the south fence.",
   "claudetteNotes": "You need two genetically different trees, or you'll get flowers but no fruit. Seattle's cool summers mean mid-to-late October ripening, so choose early varieties like 'Sunflower', 'Allegheny', or 'Mango'. Young trees need a little shade for the first year or two."
  },
@@ -4079,6 +6317,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Canopy",
+  "heightFt": [
+   40,
+   60
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Columnar",
+  "harvest": "",
   "yardFit": "The columnar option for the narrow west strip or as a screen along the south fence.",
   "claudetteNotes": "This is the best tall, skinny evergreen for a tight spot, and much more drought-proof than western red cedar. It will still eventually reach 50 ft, so keep it 10+ ft from the house and fences. It takes summer drought far better than the native cedars."
  },
@@ -4144,6 +6417,47 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   7
+  ],
+  "spreadFt": [
+   5,
+   7
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5,
+    10
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "In the curving shrub line between the patio and east fence, close enough to smell from the patio.",
   "claudetteNotes": "It's not a Great Plant Pick, mostly because hard freezes (low teens) can burn it. Give it shelter from icy east winds and good drainage. 'Sundance' is a neon-gold form that is brighter in sun and can scorch."
  },
@@ -4205,6 +6519,60 @@ window.PLANTS = [
   "maintenance": 3,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   4
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "variegated",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "By the patio steps or in the planting strip along the house wall, where you'll walk past it in February.",
   "claudetteNotes": "Daphnes are famous for sudden death, which is almost always caused by soggy roots or someone digging nearby. Plant it high, mulch lightly, and don't move it. It's toxic to pets and people, so keep it away from a dog that chews. It's worth every bit of fuss for the smell."
  },
@@ -4266,6 +6634,42 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   10,
+   12
+  ],
+  "spreadFt": [
+   12,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Spreading",
+  "harvest": "",
   "yardFit": "A big anchor shrub at the north end of the patio-to-east-fence shrub line, or in front of the SW trees.",
   "claudetteNotes": "Give it room. It wants to be 12 ft wide, and pruning ruins the layered look. 'Summer Snowflake' is a smaller, longer-blooming option if space is tight. Water it in hot spells or the leaves crisp."
  },
@@ -4331,6 +6735,46 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   10
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Evergreen backbone in the patio-to-east-fence shrub line, or screening the shed in the NE corner.",
   "claudetteNotes": "This is one of the most underused good shrubs in Seattle. Prune right after flowering, because it blooms on old wood. It's slow, so buy a 5-gallon if you want impact."
  },
@@ -4392,6 +6836,40 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   8
+  ],
+  "spreadFt": [
+   4,
+   6
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "cream",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "A narrow, upright shrub for the west strip or the planting strip along the house's west wall.",
   "claudetteNotes": "It's vase-shaped and narrow, so it's good where a rhody would be too wide. It needs acidic soil and summer water, like a blueberry. The fall color rivals a Japanese maple."
  },
@@ -4453,6 +6931,36 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   6
+  ],
+  "spreadFt": [
+   4,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Small shrubs along the patio's south edge, or mid-height in the curving east shrub line.",
   "claudetteNotes": "Fall color is best in sun and lean soil. Plant three together for a glowing drift in October. It's very low-fuss once established."
  },
@@ -4518,6 +7026,46 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Low",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   8,
+   10
+  ],
+  "spreadFt": [
+   10,
+   12
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "blue"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "A quick evergreen screen along the sunny south fence, or a blue backdrop to the vegetable bed.",
   "claudetteNotes": "Never water it in summer once it's established, because irrigation shortens its life. Expect 10 to 15 years, not forever. Prune lightly right after bloom and never cut into bare wood. Deer will browse it."
  },
@@ -4583,6 +7131,64 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   8
+  ],
+  "spreadFt": [
+   6,
+   8
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "red",
+   "orange"
+  ],
+  "foliageColor": "silver",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Against the hot south wall of the house, or a sunny spot where you'll watch hummingbirds from indoors.",
   "claudetteNotes": "This is my wildcard: it doesn't look classic PNW, but it's very PNW-gardener. Don't fertilize it (phosphorus kills Proteaceae) and don't amend the soil. It's hardy to about 10°F, which covers most Seattle winters."
  },
@@ -4590,8 +7196,8 @@ window.PLANTS = [
   "id": "rosemary-arp",
   "name": "Rosemary 'Arp'",
   "botanical": "Salvia rosmarinus (Rosmarinus officinalis) 'Arp'",
-  "category": "Shrub",
-  "subcategory": "Evergreen",
+  "category": "Herb",
+  "subcategory": "Woody Herb",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Rosmarinus_officinalis_flowers_01.jpg/960px-Rosmarinus_officinalis_flowers_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -4644,6 +7250,47 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   5
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    2,
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "blue"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "Year-round",
   "yardFit": "By the raised vegetable bed or patio, close enough to snip while cooking.",
   "claudetteNotes": "Rosemary dies of wet feet more than cold, so plant on a mound or in gravelly soil. 'Arp' is lankier and grayer than 'Tuscan Blue'. Trim lightly after bloom to keep it dense."
  },
@@ -4705,6 +7352,42 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   4,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "magenta"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Sep–Oct",
   "yardFit": "A sunny informal hedge along the south fence, or near the vegetable bed as an edible.",
   "claudetteNotes": "It's the rose for people who don't want to spray roses. It suckers into a thicket over time, so give it a contained spot. Don't deadhead late in the season if you want hips. It's very thorny, so keep it off the paths."
  },
@@ -4766,6 +7449,34 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   3,
+   4
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    8,
+    9,
+    10
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "",
   "yardFit": "Along the house wall west of the patio, or in front of the east shrub line.",
   "claudetteNotes": "It's slow the first year and then spreads aggressively by roots, so plant it where a colony is welcome, not in a tidy border. Don't plant it next to the lawn edge. It's toxic if eaten."
  },
@@ -4827,6 +7538,36 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white",
+   "pink",
+   "red"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Along the house-wall planting strip (the row of 5 small plants), mixed with ferns.",
   "claudetteNotes": "Water it in dry spells or it goes crispy. Cut it back after the first flush for a second round. 'Claret' and 'Roma' are the best named forms, and it self-sows gently."
  },
@@ -4888,6 +7629,41 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "magenta",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Groundcover under the SW corner and west fence trees, where lawn won't grow.",
   "claudetteNotes": "It's my top pick for dry shade under trees. 'Bevan's Variety' is deep magenta and 'Album' is white. If you want the long-blooming purple 'Rozanne' instead, that is a sun plant and not a substitute."
  },
@@ -4957,6 +7733,50 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.17,
+   0.33
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "silver",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
   "yardFit": "Edging the patio, between stepping stones, or in a gravel pocket near the south wall.",
   "claudetteNotes": "It needs drainage above all, because rosettes rot in heavy clay. It looks best tumbling over a rock. It's cheap, so buy several 4-inch pots."
  },
@@ -5018,6 +7838,61 @@ window.PLANTS = [
   "maintenance": 2,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   3,
+   4
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4,
+    5
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "green",
+   "yellow"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
   "yardFit": "Hot, dry bed against the south house wall or near the patio edge.",
   "claudetteNotes": "The milky sap irritates skin and eyes, so wear gloves and eye protection when you cut spent stems at the base after flowering. It self-sows, so pull extras young. Keep it away from where kids or pets play."
  },
@@ -5087,6 +7962,34 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.33
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple",
+   "lavender"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Small plants along the patio's south edge, or a drift at the lawn edge with camas.",
   "claudetteNotes": "Plant it in fall or early spring and then leave it alone, because it resents being moved. Don't summer-water it once it's established. It's toxic if eaten, as are all irises."
  },
@@ -5152,6 +8055,35 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   3
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "red",
+   "yellow"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Tucked between shrubs in the east shrub line or along the house wall, where hummingbirds can be watched.",
   "claudetteNotes": "It's not a Great Plant Pick but it's a King County native staple. Plants last 2 to 3 years, so let a few seedheads ripen. Leaf miners scribble on the leaves, which is ugly but harmless, so just cut the foliage back."
  },
@@ -5221,6 +8153,33 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "cream"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "A filler in the shady back of the SW tree cluster, or behind ferns along the west fence.",
   "claudetteNotes": "Male plants have fluffier plumes, and females set seed. It's big, so give it a 4-ft circle. The dwarf 'Misty Lace' or A. aethusifolius are for small spaces."
  },
@@ -5286,6 +8245,33 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
   "yardFit": "Native carpet under the SW and west-fence trees, mixed with sword ferns.",
   "claudetteNotes": "It's a more native, wilder-looking alternative to epimedium. It goes dormant in deep drought, which is fine. It's a specialty-nursery and native-plant-sale item, so look at the spring sales."
  },
@@ -5347,6 +8333,42 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   1,
+   1.33
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [
+    4,
+    5,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "",
   "yardFit": "Under the tree cluster and along the shady side of the shed.",
   "claudetteNotes": "Shear off the old leaves in late February so the flowers and new leaves show. It's slow for a year or two, then fills in solidly. You can go collector-crazy here, because Great Plant Picks lists dozens of epimediums."
  },
@@ -5408,6 +8430,36 @@ window.PLANTS = [
   "maintenance": 3,
   "deerResistant": "Moderate",
   "petSafe": "Yes",
+  "edible": true,
+  "layer": "Climber",
+  "heightFt": [
+   12,
+   20
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "Sep–Oct",
   "yardFit": "A pergola over part of the patio, or a sturdy trellis on the shed or by the vegetable bed.",
   "claudetteNotes": "Self-fertile, but adding a male arguta boosts the crop. Build the support first: a 4x4-post arbor, not a flimsy trellis. Prune twice a year. Cats can go wild for the stems, like catnip, so protect young plants."
  },
@@ -5416,7 +8468,7 @@ window.PLANTS = [
   "name": "White Fawn Lily",
   "botanical": "Erythronium oregonum",
   "category": "Bulb",
-  "subcategory": "Flowering",
+  "subcategory": "Native Bulb",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Erythronium_oregonum%2C_Bellhouse_Provincial_Park.jpg/960px-Erythronium_oregonum%2C_Bellhouse_Provincial_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -5469,6 +8521,38 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Low",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.67,
+   1
+  ],
+  "spreadFt": [
+   0.5,
+   0.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [
+    3,
+    4,
+    5
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "cream",
+   "white"
+  ],
+  "foliageColor": "variegated",
+  "texture": "Medium",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Naturalized under the deciduous trees in the SW corner and along the paths.",
   "claudetteNotes": "Buy nursery-propagated bulbs only, never wild-dug. Plant in fall, 4 to 5 inches deep, and never let the bulbs dry out in a bag. 'Pagoda' is a vigorous yellow hybrid if you want faster spread."
  },
@@ -5477,7 +8561,7 @@ window.PLANTS = [
   "name": "Common Snowdrop",
   "botanical": "Galanthus nivalis",
   "category": "Bulb",
-  "subcategory": "Flowering",
+  "subcategory": "Flowering Bulb",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Galanthus_nivalis_close-up_aka.jpg/960px-Galanthus_nivalis_close-up_aka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -5530,6 +8614,34 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "High",
   "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.33,
+   0.5
+  ],
+  "spreadFt": [
+   0.25,
+   0.25
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    1,
+    2,
+    3
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Under the deciduous trees and in front of the house-wall planting strip, visible from windows in January.",
   "claudetteNotes": "They establish best when moved 'in the green' (just after bloom) rather than as dry fall bulbs. Plant 25+ to start, and they'll multiply. Toxic if eaten."
  },
@@ -5538,7 +8650,7 @@ window.PLANTS = [
   "name": "Tommasini Crocus",
   "botanical": "Crocus tommasinianus",
   "category": "Bulb",
-  "subcategory": "Flowering",
+  "subcategory": "Flowering Bulb",
   "images": [
    {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Boerenkrokus_%28Crocus_tommasinianus%29_28-02-2023_%28d.j.b.%29.jpg/960px-Boerenkrokus_%28Crocus_tommasinianus%29_28-02-2023_%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -5591,7 +8703,7289 @@ window.PLANTS = [
   "maintenance": 1,
   "deerResistant": "Moderate",
   "petSafe": "Caution",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.25,
+   0.33
+  ],
+  "spreadFt": [
+   0.1,
+   0.2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "lavender",
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
   "yardFit": "Scattered through the central lawn's edges and under the deciduous trees.",
   "claudetteNotes": "In lawn, wait until the foliage yellows (about mid-April) before the first mow. Plant 100 in October, since they're cheap and the effect builds every year. 'Ruby Giant' and 'Barr's Purple' are deeper colors."
+ },
+ {
+  "id": "shuksan-strawberry",
+  "name": "Strawberry 'Shuksan' (June-bearing)",
+  "botanical": "Fragaria × ananassa 'Shuksan'",
+  "category": "Berry",
+  "subcategory": "Strawberry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Bloem_van_een_tuinaardbei_%28Fragaria_%C3%97ananassa%29%2C_026-04-2026._%28d.j.b.%29_02.jpg/960px-Bloem_van_een_tuinaardbei_%28Fragaria_%C3%97ananassa%29%2C_026-04-2026._%28d.j.b.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Strawberry flower (species)",
+    "credit": "Dominicus Johannes Bergsma.",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bloem_van_een_tuinaardbei_(Fragaria_%C3%97ananassa),_026-04-2026._(d.j.b.)_02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Strawberry_plants_with_ripe_and_unripe_fruit_growing_in_a_garden.jpg/960px-Strawberry_plants_with_ripe_and_unripe_fruit_growing_in_a_garden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripening berries on the plant (species)",
+    "credit": "Shixart1985",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Strawberry_plants_with_ripe_and_unripe_fruit_growing_in_a_garden.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg/960px-Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "A ripe garden strawberry (species)",
+    "credit": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Garden_strawberry_(Fragaria_%C3%97_ananassa)_single2.jpg"
+   }
+  ],
+  "description": "A June-bearing strawberry bred by WSU in Puyallup, so it was made for western Washington. It sets one big, concentrated crop of large, glossy, deep-red berries in mid-June that are great fresh and excellent for jam and freezing. It's notably winter-hardy and tolerates our heavy, wet soils better than most. Pair with alpine strawberries or a day-neutral variety to stretch the season.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 3,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "OSU Extension: Strawberry Cultivars for W. OR & WA",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1618-strawberry-cultivars-western-oregon-washington"
+   },
+   {
+    "label": "OSU Extension: Growing Strawberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Spring flowers feed honeybees and small native bees; fruit draws birds whether you like it or not.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained, slightly acidic; raised beds ideal",
+  "zones": "5–9",
+  "matureSize": "6–10 in H × 12–18 in W (spreads by runners)",
+  "growthRate": "Fast",
+  "bloom": "Apr–May, white",
+  "seasonalInterest": "Spring flowers, June fruit, leaves often redden in fall",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   0.8
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    6
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "Mid–late Jun",
+  "yardFit": "Raised vegetable bed by the SE corner, or as an edible groundcover along the sunny patio edge; net or cage the fruit, since birds (and slugs) find ripe berries first",
+  "claudetteNotes": "The classic PNW pick: one glorious three-week jam window in June. 'Hood' (OSU) is the other local legend, with even better flavor but a shorter season and softer fruit. Pinch off first-year flowers, replace the bed every 3–4 years, and never plant where tomatoes or potatoes grew recently (verticillium wilt)."
+ },
+ {
+  "id": "albion-strawberry",
+  "name": "Strawberry 'Albion' (Day-neutral)",
+  "botanical": "Fragaria × ananassa 'Albion'",
+  "category": "Berry",
+  "subcategory": "Strawberry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Starr_080704-9090_Fragaria_x_ananassa.jpg/960px-Starr_080704-9090_Fragaria_x_ananassa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe berry on the plant (species)",
+    "credit": "Forest & Kim Starr",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr_080704-9090_Fragaria_x_ananassa.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Fragaria_x_ananassa_%282274774126%29.jpg/960px-Fragaria_x_ananassa_%282274774126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Flowers and fruit together, as day-neutrals do (species)",
+    "credit": "Dinesh Valke from Thane, India",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fragaria_x_ananassa_(2274774126).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Starr_070313-5669_Fragaria_x_ananassa.jpg/960px-Starr_070313-5669_Fragaria_x_ananassa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Strawberries in a mulched row (species)",
+    "credit": "Forest & Kim Starr",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr_070313-5669_Fragaria_x_ananassa.jpg"
+   }
+  ],
+  "description": "A day-neutral strawberry that keeps flowering and fruiting from June until the fall rains shut it down. The berries are large, firm, conical, and very sweet, one of the best-tasting day-neutrals. Perfect for snacking all summer rather than one big jam batch, and happy in containers or hanging baskets. A natural partner to a June-bearer like 'Shuksan'.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 4,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Raintree Nursery: Albion Strawberry",
+    "url": "https://raintreenursery.com/products/albion-strawberry-bndl-of-25"
+   },
+   {
+    "label": "OSU Extension: Strawberry Cultivars for W. OR & WA",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1618-strawberry-cultivars-western-oregon-washington"
+   },
+   {
+    "label": "OSU Extension: Growing Strawberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Long flowering season gives bees a small but steady nectar source all summer.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained, slightly acidic",
+  "zones": "4–9",
+  "matureSize": "8–12 in H × 12–18 in W",
+  "growthRate": "Fast",
+  "bloom": "May–Sep, white",
+  "seasonalInterest": "Flowers and fruit all summer",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.6,
+   1
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "Jun–Oct",
+  "yardFit": "Raised vegetable bed by the SE corner, or as an edible groundcover along the sunny patio edge; net or cage the fruit, since birds (and slugs) find ripe berries first; also great in pots on the patio",
+  "claudetteNotes": "Day-neutrals hate summer drought, so keep them evenly watered (a drip line in the raised bed is perfect). 'Seascape' is the softer, more forgiving alternative. They make few runners, so they stay tidy, but they wear out in 2–3 years; plan to replant."
+ },
+ {
+  "id": "alpine-strawberry",
+  "name": "Alpine Strawberry",
+  "botanical": "Fragaria vesca (alpine selections, e.g. 'Rügen', 'Yellow Wonder')",
+  "category": "Berry",
+  "subcategory": "Strawberry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Fragaria_vesca_-_metsmaasikas.jpg/960px-Fragaria_vesca_-_metsmaasikas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Flowers and tiny berries together",
+    "credit": "Ivar Leidus",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_-_metsmaasikas.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Fragaria_vesca_fruit_-_Keila.jpg/960px-Fragaria_vesca_fruit_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "A ripe woodland strawberry",
+    "credit": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_fruit_-_Keila.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Fragaria_vesca_LC0389.jpg/960px-Fragaria_vesca_LC0389.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Plant habit in light shade",
+    "credit": "Jörg Hempel",
+    "license": "CC BY-SA 3.0 de",
+    "source": "https://commons.wikimedia.org/wiki/File:Fragaria_vesca_LC0389.jpg"
+   }
+  ],
+  "description": "A dainty, clumping strawberry with thumbnail-sized berries that taste like strawberry concentrate with a hint of pineapple. Unlike garden strawberries it makes few or no runners, tolerates part shade, and fruits from June to frost. Lovely as a front-of-border edging or tucked among herbs. Woodland strawberry (the wild form) is native here.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 1,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Rügen Alpine Strawberry",
+    "url": "https://raintreenursery.com/products/rugen-alpine-strawberry"
+   },
+   {
+    "label": "King County Native Plant Guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=70"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Small flowers all summer for tiny native bees and hoverflies; berries feed birds and chipmunks.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Humusy, moist, well-drained",
+  "zones": "4–9",
+  "matureSize": "6–10 in H × 8–12 in W",
+  "growthRate": "Moderate",
+  "bloom": "May–Sep, small white",
+  "seasonalInterest": "Neat clumps with flowers and fruit all summer",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   0.8
+  ],
+  "spreadFt": [
+   0.7,
+   1
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "Jun–Oct (a handful at a time)",
+  "yardFit": "Edging the house-wall planting strip or the raised bed; tolerates the part shade where garden strawberries sulk. The yellow/white-fruited kinds are mostly ignored by birds",
+  "claudetteNotes": "Grow the yellow or white forms ('Yellow Wonder', 'Pineapple Crush') and the birds mostly leave them alone, so you skip the netting entirely. Don't expect a bowlful; these are a graze-while-you-water fruit. They gently self-seed, which is a feature."
+ },
+ {
+  "id": "cascade-delight-raspberry",
+  "name": "Raspberry 'Cascade Delight' (Summer)",
+  "botanical": "Rubus idaeus 'Cascade Delight'",
+  "category": "Berry",
+  "subcategory": "Cane Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Rubus_idaeus_-_fruit.jpg/960px-Rubus_idaeus_-_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe raspberry (species)",
+    "credit": "Bartosz Cuber",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_-_fruit.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Raspberry-flower-2.jpg/960px-Raspberry-flower-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Raspberry flowers with a bee (species)",
+    "credit": "Johan",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Raspberry-flower-2.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Raspberry_Canes_at_Bake_Farm_-_geograph.org.uk_-_899194.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Raspberry canes trained in a row (species)",
+    "credit": "Trish Steel",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Canes_at_Bake_Farm_-_geograph.org.uk_-_899194.jpg"
+   }
+  ],
+  "description": "A summer-bearing (floricane) raspberry from WSU Puyallup with large, firm, bright-red berries and excellent flavor. Its claim to fame is strong resistance to root rot, the disease that kills most raspberries in heavy, wet western Washington soils. Bears one big crop in July on last year's canes. 'Tulameen' is the gourmet alternative if your drainage is excellent.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "OSU Extension: Raspberry Cultivars for the PNW",
+    "url": "https://extension.oregonstate.edu/catalog/pub/pnw-655-raspberry-cultivars-pacific-northwest"
+   },
+   {
+    "label": "OSU Extension: Growing Raspberries",
+    "url": "https://extension.oregonstate.edu/catalog/ec-1306-growing-raspberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Raspberry flowers are a bee magnet in late spring; fallen fruit feeds birds.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, rich; raise the row on heavy soil",
+  "zones": "5–9",
+  "matureSize": "5–6 ft H × 2–3 ft row width",
+  "growthRate": "Fast",
+  "bloom": "May–Jun, small white",
+  "seasonalInterest": "July fruit; upright canes",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   6
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Late Jun–Jul",
+  "yardFit": "Trellised along the sunny east or south fence, kept clear of the big trees' shade; throw bird netting over it as the fruit colors",
+  "claudetteNotes": "If you only grow one summer raspberry in a Seattle clay yard, this is it. Prune out fruited canes right after harvest and keep 4–6 strong new canes per foot of row. Raspberries spread by suckers, so mow or edge around the row to keep them in bounds."
+ },
+ {
+  "id": "heritage-raspberry",
+  "name": "Raspberry 'Heritage' (Fall-bearing)",
+  "botanical": "Rubus idaeus 'Heritage'",
+  "category": "Berry",
+  "subcategory": "Cane Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/116828_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg/960px-116828_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Picking raspberries off the canes (species)",
+    "credit": "ליזי שאנן",
+    "license": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:116828_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/116824_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg/960px-116824_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "A day's raspberry harvest (species)",
+    "credit": "ליזי שאנן",
+    "license": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:116824_moshav_avnei_eitan_-_raspberry_picking_PikiWiki_Israel.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2010-05-24_Himbeerbl%C3%BCte_02.jpg/960px-2010-05-24_Himbeerbl%C3%BCte_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Raspberry flower cluster (species)",
+    "credit": "Wo st 01 (There are 682 Pictures in my Category) See also Toolserver",
+    "license": "CC BY-SA 3.0 de",
+    "source": "https://commons.wikimedia.org/wiki/File:2010-05-24_Himbeerbl%C3%BCte_02.jpg"
+   }
+  ],
+  "description": "The classic fall-bearing (primocane) raspberry: it fruits on this year's canes from late August until frost. Medium, firm, tasty red berries on sturdy, nearly self-supporting canes. The easiest raspberry to prune: just mow everything to the ground in late winter. 'Caroline' is a similar choice with bigger, more flavorful berries.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Raintree Nursery: Heritage Raspberry",
+    "url": "https://raintreenursery.com/products/heritage-red-raspberry"
+   },
+   {
+    "label": "OSU Extension: Raspberry Cultivars for the PNW",
+    "url": "https://extension.oregonstate.edu/catalog/pub/pnw-655-raspberry-cultivars-pacific-northwest"
+   },
+   {
+    "label": "OSU Extension: Growing Raspberries",
+    "url": "https://extension.oregonstate.edu/catalog/ec-1306-growing-raspberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Late-summer flowers help bees when much else has finished blooming.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, rich",
+  "zones": "4–9",
+  "matureSize": "4–6 ft H × 2–3 ft row width",
+  "growthRate": "Fast",
+  "bloom": "Jul–Aug, small white",
+  "seasonalInterest": "Late-summer to fall fruit",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Late Aug–Oct",
+  "yardFit": "Trellised along the sunny east or south fence, kept clear of the big trees' shade; throw bird netting over it as the fruit colors; it extends the berry season well past the summer types",
+  "claudetteNotes": "Cut all canes to the ground every February and you're done pruning; no trellis gymnastics needed. In a cool, wet September some late berries will mold, so pick often. Grow it with a summer type and you get raspberries from July to October."
+ },
+ {
+  "id": "anne-golden-raspberry",
+  "name": "Golden Raspberry 'Anne'",
+  "botanical": "Rubus idaeus 'Anne'",
+  "category": "Berry",
+  "subcategory": "Cane Berry",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Yellow_raspberry_-_geograph.org.uk_-_1416977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Yellow raspberries on the cane (species)",
+    "credit": "Pauline Eccles",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yellow_raspberry_-_geograph.org.uk_-_1416977.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Golden_yellow_raspberries%2C_2009.jpg/960px-Golden_yellow_raspberries%2C_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Golden raspberries, picked (species)",
+    "credit": "Quinn Dombrowski",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_yellow_raspberries,_2009.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Yellow_Raspberries_%28Rubus_idaeus%29_-_geograph.org.uk_-_7548745.jpg/960px-Yellow_Raspberries_%28Rubus_idaeus%29_-_geograph.org.uk_-_7548745.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe yellow raspberries (species)",
+    "credit": "Anne Burgess",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yellow_Raspberries_(Rubus_idaeus)_-_geograph.org.uk_-_7548745.jpg"
+   }
+  ],
+  "description": "A fall-bearing golden raspberry with pale apricot-yellow berries that taste sweet and mild, with a hint of honey and less tartness than red types. Birds often overlook yellow fruit, and the color looks fantastic mixed with red raspberries in a bowl. Like 'Heritage', it fruits on new canes from late summer until frost.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Anne Golden Raspberry",
+    "url": "https://raintreenursery.com/products/anne-golden-raspberry"
+   },
+   {
+    "label": "OSU Extension: Raspberry Cultivars for the PNW",
+    "url": "https://extension.oregonstate.edu/catalog/pub/pnw-655-raspberry-cultivars-pacific-northwest"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Late-summer flowers for bees; fruit for birds that do find it.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, rich",
+  "zones": "4–9",
+  "matureSize": "4–5 ft H × 2–3 ft row width",
+  "growthRate": "Fast",
+  "bloom": "Jul–Aug, small white",
+  "seasonalInterest": "Unusual golden fruit late summer to fall",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   5
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Late Aug–Oct",
+  "yardFit": "Trellised along the sunny east or south fence, kept clear of the big trees' shade; throw bird netting over it as the fruit colors (birds are less interested in yellow fruit, but not totally)",
+  "claudetteNotes": "The 'wow' raspberry for guests; fresh golden raspberries are almost never sold in stores because they bruise easily. 'Anne' is a little less vigorous than red types, so give it your best-drained spot. Prune it like 'Heritage' (mow down in late winter)."
+ },
+ {
+  "id": "pink-lemonade-blueberry",
+  "name": "Blueberry 'Pink Lemonade'",
+  "botanical": "Vaccinium 'Pink Lemonade' (V. ashei × corymbosum hybrid)",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Vaccinium_ashei_%27Homebell%271.jpg/960px-Vaccinium_ashei_%27Homebell%271.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Bell flowers of a rabbiteye blueberry (a parent species)",
+    "credit": "KENPEI",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_ashei_%27Homebell%271.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Vaccinium_virgatum_%27Brightwell%27_at_Tsukuba_Botanical_Garden_01.jpg/960px-Vaccinium_virgatum_%27Brightwell%27_at_Tsukuba_Botanical_Garden_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Rabbiteye blueberry ripening through pink to blue (related type)",
+    "credit": "小石川人晃",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_virgatum_%27Brightwell%27_at_Tsukuba_Botanical_Garden_01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/2025-10-27_12_04_33_Blueberry_bush_leaves_changing_color_in_autumn_along_the_shore_of_an_unnamed_pond_adjacent_to_the_Delaware_and_Bound_Brook_%28Reading%29_Railroad_in_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Blueberry fall color (species)",
+    "credit": "Famartin",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2025-10-27_12_04_33_Blueberry_bush_leaves_changing_color_in_autumn_along_the_shore_of_an_unnamed_pond_adjacent_to_the_Delaware_and_Bound_Brook_(Reading)_Railroad_in_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+   }
+  ],
+  "description": "A USDA-bred blueberry whose fruit ripens to bright pink instead of blue, with a sweet, mild flavor. It's as much an ornamental as a fruit bush: pink-tinged spring bells, pink summer berries, and fiery orange-red fall color with reddish winter twigs. Late-ripening, so it extends the blueberry season into September.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 3,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Pink Lemonade Blueberry",
+    "url": "https://raintreenursery.com/products/pink-lemonade-blueberry-gal-pot"
+   },
+   {
+    "label": "OSU Extension: Growing Blueberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1304-growing-blueberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Blueberry flowers are a favorite of bumblebees and mason bees in spring.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Acidic (pH 4.5–5.5), moist, well-drained, high organic matter",
+  "zones": "5–8",
+  "matureSize": "4–5 ft H × 4–5 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Apr–May, white to pale pink bells",
+  "seasonalInterest": "Spring bells, pink summer fruit, brilliant fall color, red winter twigs",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   5
+  ],
+  "spreadFt": [
+   4,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Aug–Sep",
+  "yardFit": "Small shrubs at the hot south patio edge: ornamental enough to sit out front, and the reflected heat helps sweeten the fruit. Plan on netting in summer",
+  "claudetteNotes": "Plant at least two different blueberries (e.g. this plus the existing highbush) for much bigger crops; cross-pollination makes larger, more numerous berries. Wait until the berries are fully pink and soft before picking or they're tart. Mulch with sawdust or bark and feed with an acid fertilizer; our soils are often not acidic enough."
+ },
+ {
+  "id": "sunshine-blue-blueberry",
+  "name": "Blueberry 'Sunshine Blue' (Compact)",
+  "botanical": "Vaccinium corymbosum 'Sunshine Blue' (southern highbush)",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Vaccinium_corymbosum%2C_blueberry_flower%2C_Howard_County%2C_MD%2C_Helen_Lowe_Metzman_2017-07-25-21.44_%2839408499551%29.jpg/960px-Vaccinium_corymbosum%2C_blueberry_flower%2C_Howard_County%2C_MD%2C_Helen_Lowe_Metzman_2017-07-25-21.44_%2839408499551%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Blueberry flowers (species)",
+    "credit": "USGS Bee Inventory and Monitoring Lab from Beltsville, Maryland, USA",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_corymbosum,_blueberry_flower,_Howard_County,_MD,_Helen_Lowe_Metzman_2017-07-25-21.44_(39408499551).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Blueberry_Chandler.jpg/960px-Blueberry_Chandler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Highbush blueberries ripening on the bush (species)",
+    "credit": "Blueberry Glade",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Blueberry_Chandler.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Vaccinium_Corymbosum_northern_highbush_blueberry_Massachusetts_hardiness_zone_6b.jpg/960px-Vaccinium_Corymbosum_northern_highbush_blueberry_Massachusetts_hardiness_zone_6b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Highbush blueberry fall color (species)",
+    "credit": "EgorovaSvetlana",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_Corymbosum_northern_highbush_blueberry_Massachusetts_hardiness_zone_6b.jpg"
+   }
+  ],
+  "description": "A compact, semi-evergreen blueberry that stays about 3–4 ft tall, making it one of the best for containers and tight spots. Hot-pink buds open to pale pink flowers, followed by a long run of sweet medium berries, and the blue-green leaves turn burgundy in fall with some hanging on in mild winters. It's more tolerant of less-than-perfectly-acidic soil than most blueberries.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Sunshine Blue Blueberry",
+    "url": "https://raintreenursery.com/products/sunshine-blueberry-1"
+   },
+   {
+    "label": "OSU Extension: Growing Blueberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1304-growing-blueberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Spring bells for bumblebees and mason bees; berries for birds you don't net out.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Acidic, moist, well-drained; great in a large pot of acid mix",
+  "zones": "6–10",
+  "matureSize": "3–4 ft H × 3–4 ft W",
+  "growthRate": "Slow",
+  "bloom": "Mar–Apr, pink buds opening pale pink",
+  "seasonalInterest": "Pink spring flowers, summer fruit, burgundy fall leaves, semi-evergreen in mild winters",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   4
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [
+    10,
+    11,
+    12
+   ],
+   "fruit": [
+    7,
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Rounded",
+  "harvest": "Jul–Sep",
+  "yardFit": "Patio-edge container or the front of the south patio shrub row; a compact pot makes netting and acid-soil care easy",
+  "claudetteNotes": "Self-fertile, but it still crops better with another blueberry nearby, so it pairs nicely with 'Pink Lemonade' and the existing highbush (planting 2+ varieties is the rule). Use a 20+ gallon pot with azalea/rhododendron mix and never let it dry out. 'Top Hat' (2 ft) and the half-high 'Northsky' are even smaller options."
+ },
+ {
+  "id": "triple-crown-blackberry",
+  "name": "Thornless Blackberry 'Triple Crown'",
+  "botanical": "Rubus 'Triple Crown' (semi-erect thornless blackberry)",
+  "category": "Berry",
+  "subcategory": "Cane Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/%27Chester%27_blackberry_4.jpg/960px-%27Chester%27_blackberry_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Thornless 'Chester' blackberry, a close cousin, fruiting",
+    "credit": "Nadiatalent",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%27Chester%27_blackberry_4.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_%28Rubus_plicatus%29_03.jpg/960px-Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_%28Rubus_plicatus%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Thornless blackberry ripening from red to black (related cultivar)",
+    "credit": "Caroline Léna Becker",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_(Rubus_plicatus)_03.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_%28Rubus_plicatus%29_02.jpg/960px-Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_%28Rubus_plicatus%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Thornless blackberry flowers (related cultivar)",
+    "credit": "Caroline Léna Becker",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ronce_%C2%AB_g%C3%A9ante_Lochness_%C2%BB_(Rubus_plicatus)_02.jpg"
+   }
+  ],
+  "description": "A USDA thornless semi-erect blackberry with very large, glossy, sweet berries and big yields. It's named for its 'triple crown' of flavor, productivity, and vigor, and has no thorns to shred your forearms at picking time. It ripens over a long window in August into September, and the canes are tough enough for our winters.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Triple Crown Thornless Blackberry",
+    "url": "https://raintreenursery.com/products/triple-crown-thornless-blackberry"
+   },
+   {
+    "label": "OSU Extension: Growing Blackberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1303-growing-blackberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Flowers feed bees in early summer; dropped fruit feeds birds and insects.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, fertile",
+  "zones": "5–9",
+  "matureSize": "5–7 ft H (canes to 10–15 ft long) × 3–4 ft W",
+  "growthRate": "Fast",
+  "bloom": "May–Jun, white to pale pink",
+  "seasonalInterest": "Summer flowers and big glossy fruit",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   7
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Aug–Sep",
+  "yardFit": "Trellised along the sunny east or south fence, kept clear of the big trees' shade; throw bird netting over it as the fruit colors; give it 6–8 ft of fence and a two-wire trellis",
+  "claudetteNotes": "Only plant thornless, named blackberries. NEVER Himalayan or evergreen blackberry: both are listed invasive weeds in WA that swallow yards and greenbelts (and seed-carrying birds spread them). 'Chester' is the hardier, later alternative; 'Black Diamond' is the OSU thornless trailing type if you want something lower and sprawling."
+ },
+ {
+  "id": "tayberry",
+  "name": "Tayberry",
+  "botanical": "Rubus fruticosus × R. idaeus 'Tayberry'",
+  "category": "Berry",
+  "subcategory": "Cane Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Tayberry_%28Rubus_sp%29_fruit.jpg/960px-Tayberry_%28Rubus_sp%29_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe tayberry",
+    "credit": "Albarubescens",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tayberry_(Rubus_sp)_fruit.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Tayberry.jpg/960px-Tayberry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Tayberry fruiting on the cane",
+    "credit": "Jean-Luc Toilet",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tayberry.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Tayberry_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "Tayberry flower",
+    "credit": "Axelander",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tayberry_flower.jpg"
+   }
+  ],
+  "description": "A Scottish blackberry-raspberry cross with long, deep-red, conical berries that taste like an intense, aromatic raspberry with blackberry depth. It ripens in early July, filling the gap between June strawberries and August blackberries, and makes outstanding jam. A cooler-summer fruit that does beautifully in the PNW, where it's a cult favorite alongside marionberry and loganberry.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 2,
+  "availability": 2,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Tayberry",
+    "url": "https://raintreenursery.com/products/tayberry"
+   },
+   {
+    "label": "OSU Extension: Growing Blackberries",
+    "url": "https://extension.oregonstate.edu/catalog/pub/ec-1303-growing-blackberries-your-home-garden"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Bee-friendly flowers in late spring.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, fertile",
+  "zones": "5–9",
+  "matureSize": "5–6 ft H (canes 6–8 ft long) × 3–4 ft W",
+  "growthRate": "Fast",
+  "bloom": "May–Jun, white",
+  "seasonalInterest": "Unusual long red fruit in early summer",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   6
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Early–late Jul",
+  "yardFit": "Trellised along the sunny east or south fence, kept clear of the big trees' shade; throw bird netting over it as the fruit colors; trailing canes need to be tied along wires",
+  "claudetteNotes": "The standard tayberry is thorny; look for thornless 'Buckingham' if you can find it, or grow thornless loganberry (Raintree carries it) for a similar flavor. Marionberry is the Oregon legend but it's thorny and needs a lot of fence. Pick only when the berries pull off easily and are deep red, or they taste sour."
+ },
+ {
+  "id": "honeyberry",
+  "name": "Honeyberry (Haskap)",
+  "botanical": "Lonicera caerulea (var. edulis / kamtschatica cultivars)",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Lonicera_caerulea_Fruit.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "Ripe honeyberries",
+    "credit": "Morigen",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_caerulea_Fruit.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Lonicera_caerulea_flowers.JPG/960px-Lonicera_caerulea_flowers.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Paired pale-yellow flowers",
+    "credit": "WildBoar",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_caerulea_flowers.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Lonicera_caerulea_ssp._altaica.jpg/960px-Lonicera_caerulea_ssp._altaica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Bush laden with fruit",
+    "credit": "Oleg Kosterin",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_caerulea_ssp._altaica.jpg"
+   }
+  ],
+  "description": "An edible honeysuckle from Siberia and Japan with elongated, dusty-blue berries that taste like a blend of blueberry, raspberry, and black currant. It is the very first fruit of the year, ripening in late May before strawberries. Extremely cold-hardy, unfussy about soil pH, and pest-free, it's a great low-effort alternative to blueberries.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 2,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Raintree Nursery: Honeyberries",
+    "url": "https://raintreenursery.com/collections/honeyberries"
+   },
+   {
+    "label": "Raintree Nursery: Blue Velvet Honeyberry",
+    "url": "https://raintreenursery.com/products/blue-velvet-honeyberry"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Flowers in February–March, one of the earliest bee foods of the year.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average, moist, well-drained; not fussy about pH",
+  "zones": "2–9",
+  "matureSize": "4–6 ft H × 4–5 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Feb–Mar, pale yellow",
+  "seasonalInterest": "Very early flowers, earliest fruit of the year",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   4,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [],
+   "fruit": [
+    5,
+    6
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "yellow",
+   "cream"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Late May–Jun",
+  "yardFit": "East-side shrub curve or along the east fence; it tolerates a little afternoon shade. Net it in May: birds love the early fruit when little else is ripe",
+  "claudetteNotes": "You need two compatible varieties that bloom together (e.g. 'Blue Velvet' with 'Blue Pacific', or ask the nursery); a single plant will barely fruit. Pick for sweetness when the inside is purple through, not green. Most honeysuckles aren't recommended for pets to snack on, so keep dropped fruit picked up."
+ },
+ {
+  "id": "red-currant",
+  "name": "Red Currant",
+  "botanical": "Ribes rubrum (e.g. 'Rovada', 'Jonkheer van Tets')",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Rode_bessen_%28Ribes_rubrum%29.jpg/960px-Rode_bessen_%28Ribes_rubrum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Strings of red currants on the bush",
+    "credit": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rode_bessen_(Ribes_rubrum).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Ribes_rubrum%2C_Armenia_%282%29.jpg/960px-Ribes_rubrum%2C_Armenia_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Translucent ripe currants up close",
+    "credit": "Beko",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribes_rubrum,_Armenia_(2).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Redcurrant_%28Ribes_rubrum%29_II.jpg/960px-Redcurrant_%28Ribes_rubrum%29_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Heavy summer crop",
+    "credit": "Abdossamad Talebpour",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Redcurrant_(Ribes_rubrum)_II.jpg"
+   }
+  ],
+  "description": "A tidy, thornless shrub that hangs with glowing strings of translucent red berries in early July, almost like jewelry. The fruit is tart, perfect for jelly, sauces, and sprinkling on yogurt. Currants love our cool summers, tolerate some shade, and are among the easiest fruits to grow in the PNW.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Rovada Red Currant",
+    "url": "https://raintreenursery.com/products/rovada-red-currant"
+   },
+   {
+    "label": "Raintree Nursery: Currants",
+    "url": "https://raintreenursery.com/collections/currants"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Early-spring flowers for bees; berries for birds.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist, rich, well-drained",
+  "zones": "3–8",
+  "matureSize": "3–5 ft H × 3–4 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Apr, small greenish-yellow",
+  "seasonalInterest": "Ornamental strings of red fruit in summer",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   5
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    6,
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "green"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Late Jun–Jul",
+  "yardFit": "Shrub curve on the east side of the patio, or along the house wall; happy with morning sun and afternoon shade. Net or the robins strip it",
+  "claudetteNotes": "'Rovada' has the longest strings and is easy to pick. Black currants (try 'Titania' or 'Ben Sarek') are the vitamin-C, jam-and-cassis cousins, with a stronger, musky flavor. Watch for imported currantworm in spring; it can strip leaves fast but handpicking or spinosad handles it."
+ },
+ {
+  "id": "gooseberry",
+  "name": "Gooseberry",
+  "botanical": "Ribes uva-crispa (e.g. 'Hinnomaki Red', 'Pixwell')",
+  "category": "Berry",
+  "subcategory": "Bush Berry",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Stachelbeere_%28Ribes_uva-crispa%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Ripe red gooseberries (species)",
+    "credit": "Darkone",
+    "license": "CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Stachelbeere_(Ribes_uva-crispa).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Ribes_uva-crispa_2008.JPG/960px-Ribes_uva-crispa_2008.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Green gooseberry ripening",
+    "credit": "Alina Zienowicz Ala z",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribes_uva-crispa_2008.JPG"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Pick_your_own_gooseberries_-_geograph.org.uk_-_201486.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Gooseberry bushes in fruit",
+    "credit": "Lis Burke",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pick_your_own_gooseberries_-_geograph.org.uk_-_201486.jpg"
+   }
+  ],
+  "description": "A compact, spiny shrub with grape-sized berries that go from tart green (pie and chutney) to sweet red or yellow when fully ripe. It thrives in cool PNW summers and part shade where many fruits fail. Mildew-resistant modern varieties like 'Hinnomaki Red' are easy and productive for decades.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Raintree Nursery: Hinnomaki Red Gooseberry",
+    "url": "https://raintreenursery.com/products/hinnomaki-red-gooseberry"
+   },
+   {
+    "label": "Raintree Nursery: Gooseberries",
+    "url": "https://raintreenursery.com/collections/gooseberries"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Early flowers are visited by bees; dense spiny branches shelter small birds.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist, rich, well-drained",
+  "zones": "3–8",
+  "matureSize": "3–5 ft H × 3–5 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Apr, small greenish-purple",
+  "seasonalInterest": "Translucent striped fruit in summer",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   3,
+   5
+  ],
+  "spreadFt": [
+   3,
+   5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    6,
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "green"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Jul",
+  "yardFit": "Shrub curve between the patio and east fence, away from paths (it's spiny); tolerates part shade",
+  "claudetteNotes": "'Hinnomaki Red' is the best all-rounder for flavor and mildew resistance; 'Pixwell' has fewer thorns and is super hardy but blander. Prune to an open vase so you can reach in without getting stabbed. Same currantworm watch as currants."
+ },
+ {
+  "id": "thimbleberry",
+  "name": "Thimbleberry",
+  "botanical": "Rubus parviflorus",
+  "category": "Berry",
+  "subcategory": "Other Small Fruit",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Thimbleberry%2C_fruit_of_Rubus_parviflorus_var._parviflorus.jpg/960px-Thimbleberry%2C_fruit_of_Rubus_parviflorus_var._parviflorus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Soft ripe thimbleberries",
+    "credit": "Fernsebner",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thimbleberry,_fruit_of_Rubus_parviflorus_var._parviflorus.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Rubus_parviflorus_2017-05-23_0877.jpg/960px-Rubus_parviflorus_2017-05-23_0877.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Large white flower",
+    "credit": "Salicyna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rubus_parviflorus_2017-05-23_0877.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Rubus_parviflorus_RF.jpg/960px-Rubus_parviflorus_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Big maple-like leaves with flowers",
+    "credit": "Robert Flogaus-Faust",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rubus_parviflorus_RF.jpg"
+   }
+  ],
+  "description": "A thornless native bramble with huge, soft, maple-like leaves, big white roselike flowers, and flat, cup-shaped red berries. The fruit is delicate and velvety with a tangy, intense raspberry flavor; it's too soft to ship, so you'll only ever taste it straight from the plant. Great for a woodland edge with sword fern, salal, and red-flowering currant.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County Native Plant Guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=38"
+   },
+   {
+    "label": "Raintree Nursery: Thimbleberry",
+    "url": "https://raintreenursery.com/products/thimbleberry"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Flowers feed many native bees; berries feed birds and small mammals; leafy thickets give cover.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average, moist; adaptable",
+  "zones": "3–9",
+  "matureSize": "4–6 ft H × 4–6 ft W (spreads)",
+  "growthRate": "Fast",
+  "bloom": "May–Jul, white",
+  "seasonalInterest": "Bold leaves, white flowers, red fruit, yellow fall color",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   4,
+   6
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Spreading",
+  "harvest": "Jul–Aug",
+  "yardFit": "Under the SW tree cluster or the west fence edge, where its spreading habit is welcome; native-garden look",
+  "claudetteNotes": "It spreads by rhizomes to form a patch, so give it room or plan to pull runners. Salmonberry (Rubus spectabilis) is the other native bramble, with magenta flowers for hummingbirds, but it's prickly, rampant, and its fruit is watery; I'd skip it in a yard this size. No netting needed; share with the birds."
+ },
+ {
+  "id": "red-huckleberry",
+  "name": "Red Huckleberry",
+  "botanical": "Vaccinium parvifolium",
+  "category": "Berry",
+  "subcategory": "Other Small Fruit",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Vaccinium_parvifolium_0324.JPG/960px-Vaccinium_parvifolium_0324.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Translucent red berries",
+    "credit": "Walter Siegmund",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_parvifolium_0324.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Vaccinium_parvifolium.jpg/960px-Vaccinium_parvifolium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Airy native shrub in the forest",
+    "credit": "Meggar at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_parvifolium.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Vaccinium_parvifolium_03171.JPG/960px-Vaccinium_parvifolium_03171.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "New leaves with a red blush",
+    "credit": "Walter Siegmund",
+    "license": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_parvifolium_03171.JPG"
+   }
+  ],
+  "description": "An airy, graceful native huckleberry with bright green angular stems and small leaves, studded with translucent coral-red berries in summer. The tart berries are delicious fresh, in pancakes, or in jam, and were a staple food for Coast Salish peoples. In the wild it famously grows out of old cedar stumps and nurse logs.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 3,
+  "availability": 2,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County Native Plant Guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=31"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Berries are prime food for thrushes, grouse, and chipmunks; flowers feed native bees.",
+  "sun": "Part shade",
+  "water": "Moderate",
+  "soil": "Acidic, very organic, woody; loves rotting wood",
+  "zones": "5–9",
+  "matureSize": "4–10 ft H × 3–6 ft W",
+  "growthRate": "Slow",
+  "bloom": "Apr–May, tiny greenish-pink",
+  "seasonalInterest": "Red summer berries, bright green stems in winter",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   10
+  ],
+  "spreadFt": [
+   3,
+   6
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "green"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "Jul–Aug",
+  "yardFit": "Under the SW tree cluster or in the shade of the west fence; plant into a buried log or stump if you have one",
+  "claudetteNotes": "Slow and a bit fussy to establish; buy a gallon-plus pot and plant into soil heavily amended with rotted wood and bark. It's a forest-edge plant, so keep it out of the hot south yard. Birds will get much of the crop, and that's part of the point."
+ },
+ {
+  "id": "blue-elderberry",
+  "name": "Blue Elderberry",
+  "botanical": "Sambucus cerulea (S. nigra ssp. cerulea)",
+  "category": "Berry",
+  "subcategory": "Other Small Fruit",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Sambucus_cerulea_kz10.jpg/960px-Sambucus_cerulea_kz10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Dusty-blue berry clusters",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sambucus_cerulea_kz10.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Sambucus_cerulea_kz12.jpg/960px-Sambucus_cerulea_kz12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Creamy flat-topped flower clusters",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sambucus_cerulea_kz12.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Sambucus_cerulea_kz11.jpg/960px-Sambucus_cerulea_kz11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Large shrub with fruit",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sambucus_cerulea_kz11.jpg"
+   }
+  ],
+  "description": "A large native shrub or small tree with flat plates of creamy flowers in early summer followed by heavy clusters of powder-blue berries. Cooked, the berries make excellent syrup, jam, and pie, and the flowers make elderflower cordial. Fast, drought tolerant once established, and a top wildlife plant.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County Native Plant Guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=79"
+   },
+   {
+    "label": "Raintree Nursery: Blue Elderberry",
+    "url": "https://raintreenursery.com/products/blue-elderberry"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Flowers are a pollinator buffet; berries feed dozens of bird species.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Adaptable, well-drained",
+  "zones": "3–9",
+  "matureSize": "10–20 ft H × 8–15 ft W",
+  "growthRate": "Fast",
+  "bloom": "May–Jul, creamy white flat clusters",
+  "seasonalInterest": "Big flower plates, blue fruit clusters",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   20
+  ],
+  "spreadFt": [
+   8,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "cream",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "Flowers Jun; berries Aug–Sep",
+  "yardFit": "Back corner along the south or west fence among the larger trees, where it can get big; doubles as a wildlife screen",
+  "claudetteNotes": "Eat berries cooked only: raw berries, leaves, stems, and unripe fruit contain compounds that cause nausea, and they're a pet caution too. Don't confuse it with our native red elderberry (S. racemosa), whose berries shouldn't be eaten. It gets big; prune hard in winter to keep it shrub-sized."
+ },
+ {
+  "id": "canadice-grape",
+  "name": "Seedless Grape 'Canadice'",
+  "botanical": "Vitis 'Canadice' (American hybrid)",
+  "category": "Vine",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Canadice_%2813%29.JPG/960px-Canadice_%2813%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "'Canadice' clusters ripening on the vine",
+    "credit": "Biberbaer",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canadice_(13).JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Canadice_%2814%29.JPG/960px-Canadice_%2814%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Ripe 'Canadice' with autumn leaves",
+    "credit": "Biberbaer",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canadice_(14).JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Canadice_%283%29.jpg/960px-Canadice_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "'Canadice' vines trained on a pergola",
+    "credit": "Biberbaer",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canadice_(3).jpg"
+   }
+  ],
+  "description": "An early-ripening, seedless red table grape from New York that reliably ripens in Seattle's cool summers. Clusters of small pinkish-red grapes taste sweet and spicy with a light labrusca 'grapey' note. Vigorous and cold-hardy, it can shade a pergola or cover a sunny fence, with yellow fall leaves as a bonus. 'Interlaken' is the green seedless alternative.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Canadice Seedless Grape",
+    "url": "https://raintreenursery.com/products/canadice-seedless-grape"
+   },
+   {
+    "label": "Raintree Nursery: Interlaken Seedless Grape",
+    "url": "https://raintreenursery.com/products/interlaken-seedless-grape"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Fruit feeds birds and wasps in fall; tiny flowers have modest bee value.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Well-drained, moderately fertile",
+  "zones": "5–9",
+  "matureSize": "8–20 ft vine (trained)",
+  "growthRate": "Fast",
+  "bloom": "Jun, tiny greenish (not showy)",
+  "seasonalInterest": "Hanging red clusters late summer, yellow fall leaves, twisty winter trunk",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Climber",
+  "heightFt": [
+   8,
+   20
+  ],
+  "spreadFt": [
+   6,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Climbing",
+  "harvest": "Late Aug–Sep",
+  "yardFit": "Over a pergola on the south patio or along the hottest, sunniest stretch of the south fence; maximum heat is the key to sweet grapes here",
+  "claudetteNotes": "Grapes are toxic to dogs (kidney failure), so pick up dropped fruit if you have or visit with dogs. Prune hard every winter back to a few buds per spur or you'll get leaves instead of grapes. Thin leaves around the clusters in August for better ripening and less powdery mildew; bag clusters if wasps and birds show up."
+ },
+ {
+  "id": "orcas-pear",
+  "name": "European Pear 'Orcas'",
+  "botanical": "Pyrus communis 'Orcas'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Pyrus_communis_flowers_2019_G1.jpg/960px-Pyrus_communis_flowers_2019_G1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "White spring blossom (species photo)",
+    "credit": "George Chernilevsky",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Pyrus_communis_flowers_2019_G1.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Conference_pear.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Pears ripening on the branch (species photo)",
+    "credit": "Glysiak",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Conference_pear.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Espalier_pear_tree_and_daffodils_in_Felbrigg_Hall%27s_walled_garden_-_geograph.org.uk_-_6973021.jpg/960px-Espalier_pear_tree_and_daffodils_in_Felbrigg_Hall%27s_walled_garden_-_geograph.org.uk_-_6973021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Espaliered pear on a wall, a great small-yard option",
+    "credit": "Mike Parker",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Espalier_pear_tree_and_daffodils_in_Felbrigg_Hall%27s_walled_garden_-_geograph.org.uk_-_6973021.jpg"
+   }
+  ],
+  "description": "A big, buttery yellow pear with a red blush, found as a chance seedling on Orcas Island, WA, and now a Puget Sound favorite. Its claim to fame is excellent resistance to pear scab, the disease that spots and cracks pears in our wet springs. The tree is vigorous and spreading, crops heavily every year, and colors up nicely in fall. Underplant with chives, yarrow, and Douglas aster to bring in pollinators and beneficial insects.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Orcas pear",
+    "url": "https://raintreenursery.com/products/orcas-e-pear-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   },
+   {
+    "label": "Seattle Tree Fruit Society",
+    "url": "https://www.seattletreefruitsociety.com/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Early-spring blossoms feed mason bees and bumblebees; windfalls feed birds.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained loam; tolerates heavier soil better than most fruit",
+  "zones": "5–9",
+  "matureSize": "12–18 ft H × 10–15 ft W (semi-dwarf OHxF 87); 8–10 ft as an espalier",
+  "growthRate": "Moderate",
+  "bloom": "Apr, white",
+  "seasonalInterest": "Spring blossom, late-summer fruit, yellow-red fall color",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   12,
+   18
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Late Aug–Sep (pick firm, ripen indoors)",
+  "yardFit": "A medium tree in the SW corner cluster, or espaliered along the sunny south fence to save space",
+  "claudetteNotes": "Pears are the easiest tree fruit in Seattle: they shrug off our cool summers and 'Orcas' laughs at scab. It needs a pollination partner that blooms at the same time, such as 'Rescue' (another WA pick), 'Bosc' or 'Seckel', or a neighbor's pear within a block or so. Pick European pears when they're full-size but still hard, then ripen them on the counter; left on the tree they go mealy and brown at the core. Squirrels will sample some, but pears get less bird damage than cherries."
+ },
+ {
+  "id": "shinseiki-asian-pear",
+  "name": "Asian Pear 'Shinseiki'",
+  "botanical": "Pyrus pyrifolia 'Shinseiki'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Pyrus_pyrifolia_%28flower%29.jpg/960px-Pyrus_pyrifolia_%28flower%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Asian pear in bloom (species photo)",
+    "credit": "Alpsdake",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pyrus_pyrifolia_(flower).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Pyrus_pyrifolia_fruit_on_tree_PS_2z_LR.jpg/960px-Pyrus_pyrifolia_fruit_on_tree_PS_2z_LR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe russeted Asian pears on the tree (species photo)",
+    "credit": "PumpkinSky",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pyrus_pyrifolia_fruit_on_tree_PS_2z_LR.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Nashi_pear_tree_in_bloom.jpg/960px-Nashi_pear_tree_in_bloom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Whole tree in blossom",
+    "credit": "Prazak (Wikimedia Commons uploader)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nashi_pear_tree_in_bloom.jpg"
+   }
+  ],
+  "description": "An Asian pear with round, yellow, crisp, juicy fruit that you can eat right off the tree. No counter-ripening is needed, unlike European pears. It's one of the most reliable Asian pears west of the Cascades, bears young and heavily, and turns a lovely orange-red in fall. Pair with a second Asian pear such as 'Chojuro' or 'Hosui', or with a European pear, and underplant with clover and alliums.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Shinseiki Asian pear",
+    "url": "https://raintreenursery.com/products/shinseiki-a-pear-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Masses of early white blossom are good forage for early bees.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, fertile",
+  "zones": "5–9",
+  "matureSize": "10–15 ft H × 8–12 ft W (semi-dwarf OHxF 87)",
+  "growthRate": "Moderate",
+  "bloom": "Late Mar–Apr, white",
+  "seasonalInterest": "Blossom, crisp late-summer fruit, orange-red fall color",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   15
+  ],
+  "spreadFt": [
+   8,
+   12
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Mid Aug–early Sep (ripens on the tree)",
+  "yardFit": "Along the south fence, where it's easy to reach for thinning, netting and picking",
+  "claudetteNotes": "Shinseiki is called self-fertile, but crops are bigger with a partner that blooms at the same time ('Chojuro', 'Hosui', or an early European pear). The big secret with Asian pears is thinning: in June, cut back to one fruit per cluster, or you'll get lots of golf balls. It blooms early, so a cold, rainy late March can mean a light year. Birds and yellowjackets love ripe fruit, and some people bag each fruit in a mesh bag."
+ },
+ {
+  "id": "italian-prune-plum",
+  "name": "Italian Prune Plum",
+  "botanical": "Prunus domestica 'Italian'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Prunus_domestica_italica_flowers.jpg/960px-Prunus_domestica_italica_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Italian prune plum blossom",
+    "credit": "Mark Stimson",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prunus_domestica_italica_flowers.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Reife_Zwetschge_am_Baum.JPG/960px-Reife_Zwetschge_am_Baum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe prune plums on the tree (European plum, species photo)",
+    "credit": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reife_Zwetschge_am_Baum.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Prunus_domestica_subsp._italica_%E2%80%99Ontario%27.jpg/960px-Prunus_domestica_subsp._italica_%E2%80%99Ontario%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Prunus domestica subsp. italica tree form",
+    "credit": "Stromosad",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prunus_domestica_subsp._italica_%E2%80%99Ontario%27.jpg"
+   }
+  ],
+  "description": "The classic old-Seattle backyard plum: an oval, dusky blue European plum with sweet, firm, freestone flesh that's perfect fresh, dried, or in a German plum cake. It's self-fertile, long-lived and dependable west of the Cascades, which is why so many 1940s yards still have one. Late-summer fruit follows a froth of white April blossom. Companions: comfrey, borage and calendula underneath.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 2,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Raintree Nursery: Italian prune plum",
+    "url": "https://raintreenursery.com/products/italian-prune-plum-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "April blossom feeds bees; dropped fruit feeds birds and wildlife (and wasps).",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained; dislikes waterlogged winter soil",
+  "zones": "5–9",
+  "matureSize": "12–16 ft H × 10–14 ft W (semi-dwarf Krymsk 1 or Marianna); 18–20 ft on seedling rootstock",
+  "growthRate": "Moderate",
+  "bloom": "Apr, white",
+  "seasonalInterest": "White spring blossom, blue late-summer fruit",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   12,
+   16
+  ],
+  "spreadFt": [
+   10,
+   14
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Late Aug–mid Sep",
+  "yardFit": "SW corner cluster or along the west fence, away from the patio so fruit drop doesn't stain it",
+  "claudetteNotes": "It's self-fertile, so one tree is enough, but it can take 4–6 years to start bearing. In a rainy spring, brown rot can mummify fruit, so clear out the mummies and thin crowded fruit for airflow. Expect heavy crops in some years and light ones in others. Plum pits, leaves and stems are toxic to dogs and cats, so pick up windfalls if your pets roam the yard. Squirrels and jays take their share, and wasps love the drops."
+ },
+ {
+  "id": "methley-plum",
+  "name": "Japanese Plum 'Methley'",
+  "botanical": "Prunus salicina 'Methley'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/%E6%9D%8E%E8%8A%B1_Prunus_salicina_-%E9%A6%99%E6%B8%AF%E8%A5%BF%E8%B2%A2%E7%8D%85%E5%AD%90%E6%9C%83%E8%87%AA%E7%84%B6%E6%95%99%E8%82%B2%E4%B8%AD%E5%BF%83_Saikung%2C_Hong_Kong-_%289227094795%29.jpg/960px-%E6%9D%8E%E8%8A%B1_Prunus_salicina_-%E9%A6%99%E6%B8%AF%E8%A5%BF%E8%B2%A2%E7%8D%85%E5%AD%90%E6%9C%83%E8%87%AA%E7%84%B6%E6%95%99%E8%82%B2%E4%B8%AD%E5%BF%83_Saikung%2C_Hong_Kong-_%289227094795%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Japanese plum blossom (species photo)",
+    "credit": "阿橋 HQ",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E6%9D%8E%E8%8A%B1_Prunus_salicina_-%E9%A6%99%E6%B8%AF%E8%A5%BF%E8%B2%A2%E7%8D%85%E5%AD%90%E6%9C%83%E8%87%AA%E7%84%B6%E6%95%99%E8%82%B2%E4%B8%AD%E5%BF%83_Saikung,_Hong_Kong-_(9227094795).jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/W_sumomo4061.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Japanese plum ripening on the branch (species photo)",
+    "credit": "kusabana.fc2web.com, uploaded by Zeimusu",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:W_sumomo4061.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Starr_080302-3152_Prunus_salicina.jpg/960px-Starr_080302-3152_Prunus_salicina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Early white flowers on bare wood",
+    "credit": "Forest & Kim Starr",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr_080302-3152_Prunus_salicina.jpg"
+   }
+  ],
+  "description": "The first tree fruit of summer: in July, 'Methley' sags with sweet, juicy, red-purple plums with ruby flesh, weeks before anything else is ripe. It's self-fertile, starts bearing young, and is one of the easiest fruit trees for Puget Sound gardens. Bare branches cover with white blossom in March. Grow it with early bulbs and lungwort for the bees.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Methley plum",
+    "url": "https://raintreenursery.com/products/methley-a-plum-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "March bloom is an important early meal for queen bumblebees and mason bees.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained",
+  "zones": "5–9",
+  "matureSize": "10–15 ft H × 10–12 ft W (semi-dwarf Krymsk 1 or St. Julian A)",
+  "growthRate": "Fast",
+  "bloom": "Mar, white",
+  "seasonalInterest": "Very early white blossom, July fruit",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   15
+  ],
+  "spreadFt": [
+   10,
+   12
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3
+   ],
+   "foliage": [],
+   "fruit": [
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "Early–mid Jul (ripens over about 10 days)",
+  "yardFit": "South fence, or a smaller tree near the SE corner if kept pruned to 10–12 ft so it doesn't shade the raised bed",
+  "claudetteNotes": "Because it blooms in March, a cold or soggy week at bloom can mean a light crop, and that's the main Seattle risk. 'Beauty' is a similar early red plum, and either one also pollinates other Japanese plums. Prune in summer, not winter, to reduce bacterial canker and silver leaf, which spread in our wet winters. The fruit doesn't keep, so plan on jam. Birds and squirrels will be at the front of the line in July."
+ },
+ {
+  "id": "lapins-cherry",
+  "name": "Sweet Cherry 'Lapins'",
+  "botanical": "Prunus avium 'Lapins'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg/960px-Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Sweet cherry in full bloom (species photo)",
+    "credit": "Benjamin Gimmel, BenHur",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Prunus_avium_fruit.jpg/960px-Prunus_avium_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe sweet cherries on the tree (species photo)",
+    "credit": "MPF",
+    "license": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Prunus_avium_fruit.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Cherries%21_%2835453676451%29.jpg/960px-Cherries%21_%2835453676451%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "A starling in the cherries: the bird reality",
+    "credit": "hedera.baltica from Wrocław, Poland",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cherries!_(35453676451).jpg"
+   }
+  ],
+  "description": "A self-fertile, dark-red sweet cherry, like a Bing that doesn't need a partner, bred in British Columbia to resist rain-cracking. That's a real asset in a Seattle June. On dwarfing Gisela 5 rootstock it stays small enough to net. The tree is gorgeous in April bloom. Underplant with low herbs and bee plants, and leave room around it for netting.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 2,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Raintree Nursery: Lapins cherry",
+    "url": "https://raintreenursery.com/products/lapins-cherry-dwarf"
+   },
+   {
+    "label": "WSU Mount Vernon cherry variety trials (PDF)",
+    "url": "https://s3.wp.wsu.edu/uploads/sites/2109/2014/12/CherryVarieties2012-2.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Spring blossom for bees; birds (robins, starlings, cedar waxwings) are enthusiastic consumers.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Deep, well-drained; avoid wet clay",
+  "zones": "5–9",
+  "matureSize": "10–14 ft H × 8–12 ft W (dwarf Gisela 5); 25+ ft on standard rootstock",
+  "growthRate": "Fast",
+  "bloom": "Apr, white",
+  "seasonalInterest": "Spring blossom, summer fruit, glossy bark",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   14
+  ],
+  "spreadFt": [
+   8,
+   12
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "Mid–late Jul",
+  "yardFit": "Somewhere you can easily drape a net, such as the south fence or near the patio; insist on Gisela 5 rootstock",
+  "claudetteNotes": "Let's be honest about the birds: an unnetted cherry in Seattle feeds the robins, waxwings and starlings, and you get the leftovers. That's why the dwarf rootstock matters, since a 12-ft tree can be netted and a 30-ft one can't. The other pests are cherry fruit fly and, more and more, spotted wing drosophila, which lays eggs in ripening fruit. Pick promptly and keep it clean, or use fine mesh. Bacterial canker likes wet springs, so prune in dry summer weather."
+ },
+ {
+  "id": "montmorency-sour-cherry",
+  "name": "Sour Cherry 'Montmorency'",
+  "botanical": "Prunus cerasus 'Montmorency'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Prunus_cerasus_LC0133.jpg/960px-Prunus_cerasus_LC0133.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Sour cherry blossom (species photo)",
+    "credit": "Jörg Hempel",
+    "license": "CC BY-SA 2.0 de",
+    "source": "https://commons.wikimedia.org/wiki/File:Prunus_cerasus_LC0133.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Montmorency_cherries_%283648681426%29.jpg/960px-Montmorency_cherries_%283648681426%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Montmorency cherries ripe on the branch",
+    "credit": "Martha Dol.",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Montmorency_cherries_(3648681426).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/EvansCherry2.JPG/960px-EvansCherry2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "A compact sour cherry ('Evans') loaded with fruit",
+    "credit": "Montanabw",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:EvansCherry2.JPG"
+   }
+  ],
+  "description": "The classic bright-red pie cherry, self-fertile and far less fussy than sweet cherries in our climate. It's tart, but it makes the best cherry pie, jam and dried cherries you'll ever have, and it's tasty fresh once fully ripe. The trees are small and tidy, especially on Gisela rootstock, and pretty in white April bloom. For an even smaller tree, 'North Star' is a natural dwarf that stays 8–10 ft.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Montmorency cherry",
+    "url": "https://raintreenursery.com/products/montmorency-cherry-dwarf"
+   },
+   {
+    "label": "WSU Mount Vernon cherry variety trials (PDF)",
+    "url": "https://s3.wp.wsu.edu/uploads/sites/2109/2014/12/CherryVarieties2012-2.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Bee-friendly spring blossom; birds take the fruit if you don't.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained",
+  "zones": "4–9",
+  "matureSize": "8–12 ft H × 8–10 ft W (Gisela 3 or 5); 'North Star' 8–10 ft",
+  "growthRate": "Moderate",
+  "bloom": "Apr, white",
+  "seasonalInterest": "White blossom, glossy red summer fruit",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   8,
+   12
+  ],
+  "spreadFt": [
+   8,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    7
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Jul (when fully red and soft)",
+  "yardFit": "Small enough for the SE corner near the raised bed with little shading (choose 'North Star'), or along the south fence",
+  "claudetteNotes": "Sour cherries are the better bet for Seattle: they're more tolerant of rain and disease than sweet cherries and small enough to net. Birds still find them, but a net over an 8-ft tree is a 10-minute job. Watch for spotted wing drosophila in July. Pick everything promptly and don't leave fruit hanging. Pits and leaves are toxic to pets."
+ },
+ {
+  "id": "frost-peach",
+  "name": "Peach 'Frost'",
+  "botanical": "Prunus persica 'Frost'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/PrunusPersica4.jpg/960px-PrunusPersica4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Pink peach blossom (species photo)",
+    "credit": "Fanghong",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PrunusPersica4.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Starr-140614-4525-Prunus_persica_var_persica-Flordaprince_fruit_younger_tree_fruiting_later-Hawea_Pl_Olinda-Maui_%2825149945641%29.jpg/960px-Starr-140614-4525-Prunus_persica_var_persica-Flordaprince_fruit_younger_tree_fruiting_later-Hawea_Pl_Olinda-Maui_%2825149945641%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe peach on the tree (species photo)",
+    "credit": "Forest and Kim Starr",
+    "license": "CC BY 3.0 us",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr-140614-4525-Prunus_persica_var_persica-Flordaprince_fruit_younger_tree_fruiting_later-Hawea_Pl_Olinda-Maui_(25149945641).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Taphrina_deformans_105925634.jpg/960px-Taphrina_deformans_105925634.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Peach leaf curl, the disease 'Frost' is bred to resist",
+    "credit": "Daniel Das",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taphrina_deformans_105925634.jpg"
+   }
+  ],
+  "description": "A yellow, semi-freestone peach that was found and tested at WSU Mount Vernon because it holds up to peach leaf curl, the disease that wrecks most peaches in our wet springs. The rosy-pink, nearly double blossom is a real spring show. Treat it as a fun, partly ornamental tree: in a warm summer you'll eat sun-warm peaches, and in a cool one they'll be fewer and less sweet. 'Avalon Pride', found in Issaquah, is the other good choice.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Frost peach",
+    "url": "https://raintreenursery.com/products/frost-peach-tree-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Early pink blossom feeds bees in March.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Sharply drained; hates wet feet",
+  "zones": "5–9",
+  "matureSize": "10–14 ft H × 10–14 ft W (St. Julian A or Krymsk 1); 8 ft as a wall fan",
+  "growthRate": "Fast",
+  "bloom": "Mar–early Apr, rosy pink",
+  "seasonalInterest": "Showy pink blossom, August fruit",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   10,
+   14
+  ],
+  "spreadFt": [
+   10,
+   14
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [
+    8
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Vase",
+  "harvest": "Mid–late Aug",
+  "yardFit": "Fan-trained against the hot south-facing house wall west of the patio, where the eave keeps rain off the leaves",
+  "claudetteNotes": "Let's be candid: peaches are marginal in Seattle. Our summers are short on heat, and leaf curl spreads in rainy springs. 'Frost' resists leaf curl but isn't immune, so in bad years still apply a dormant copper or lime-sulfur spray around leaf drop and again before bud break. A trick that works well is to grow it under an overhang or plastic rain cover from Jan–Apr, because dry leaves don't curl. Expect a good crop maybe 3 years out of 5, and squirrels know exactly when they're ripe."
+ },
+ {
+  "id": "liberty-apple-espalier",
+  "name": "Apple 'Liberty' (Scab-Resistant, Espalier)",
+  "botanical": "Malus domestica 'Liberty'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Jablo%C5%88_Liberty.jpg/960px-Jablo%C5%88_Liberty.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "'Liberty' apple tree",
+    "credit": "Mardoko",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jablo%C5%88_Liberty.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Malus_domestica_%27Cox%27s_Self_Fertile%27_at_Myddelton_House%2C_Enfield%2C_London%2C_England.jpg/960px-Malus_domestica_%27Cox%27s_Self_Fertile%27_at_Myddelton_House%2C_Enfield%2C_London%2C_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Espaliered apple on a wall (other variety): a small-yard option",
+    "credit": "Acabashi",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Malus_domestica_%27Cox%27s_Self_Fertile%27_at_Myddelton_House,_Enfield,_London,_England.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B0_%D0%9B%D0%B8%D0%B1%D0%B5%D1%80%D1%82%D0%B8.jpg/960px-%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B0_%D0%9B%D0%B8%D0%B1%D0%B5%D1%80%D1%82%D0%B8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "'Liberty' apples, whole and cut",
+    "credit": "Shuhrataxmedov",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B0_%D0%9B%D0%B8%D0%B1%D0%B5%D1%80%D1%82%D0%B8.jpg"
+   }
+  ],
+  "description": "The scab-resistant apple: 'Liberty' was bred for near-immunity to apple scab and good mildew resistance, the two diseases that ruin most apples in a wet Seattle spring. It bears glossy dark-red, crisp, tangy fruit in early October. Trained flat as an espalier on a wall or fence, it becomes a living sculpture that takes almost no ground space. Grow herbs and nasturtiums at its feet.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Raintree Nursery: Liberty apple",
+    "url": "https://raintreenursery.com/products/liberty-apple-dwarf"
+   },
+   {
+    "label": "Raintree Nursery: columnar apple option",
+    "url": "https://raintreenursery.com/products/scarlet-sentinel-columnar-apple-semi-dwarf"
+   },
+   {
+    "label": "WSU Fruit Handbook for Western Washington (PDF)",
+    "url": "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2109/2019/12/fruit_handbook_western_wa.pdf"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Blossoms are a key mid-spring food source for mason bees and bumblebees.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, fertile",
+  "zones": "4–9",
+  "matureSize": "6–8 ft H × 8–12 ft W as an espalier (M26 or MM106); 10–12 ft freestanding on dwarf",
+  "growthRate": "Moderate",
+  "bloom": "Late Apr–May, pink-white",
+  "seasonalInterest": "Blossom, red fall fruit, sculptural winter espalier framework",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   6,
+   10
+  ],
+  "spreadFt": [
+   6,
+   12
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Late Sep–Oct",
+  "yardFit": "Espalier along the sunny south fence or the house wall's planting strip; complements the existing dwarf apple as its scab-proof partner",
+  "claudetteNotes": "Liberty is partly self-fertile, but it crops much better with another apple or crabapple blooming nearby, and the library's dwarf apple can be its partner if the bloom times overlap. Columnar apples (like 'Scarlet Sentinel') are another option for small yards, but they're generally less disease-resistant than Liberty. Even scab-proof apples get codling moth and apple maggot, so bag the fruitlets in June with nylon footies. Espalier needs 2 summer pruning sessions a year. A pre-trained tree saves you 3 years of work."
+ },
+ {
+  "id": "fruiting-quince",
+  "name": "Fruiting Quince",
+  "botanical": "Cydonia oblonga",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Blooming_quince_%28Cydonia_oblonga%29.jpg/960px-Blooming_quince_%28Cydonia_oblonga%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Big pink-white quince blossoms",
+    "credit": "Ввласенко",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Blooming_quince_(Cydonia_oblonga).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Cydonia_oblonga_%28Quince%29%2C_Skala_Kalloni%2C_Lesbos%2C_Greece.jpg/960px-Cydonia_oblonga_%28Quince%29%2C_Skala_Kalloni%2C_Lesbos%2C_Greece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Golden quinces on the tree",
+    "credit": "Bj.schoenmakers",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cydonia_oblonga_(Quince),_Skala_Kalloni,_Lesbos,_Greece.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kutina_na_drevesu_-_Cydonia_oblonga_-_Quince_on_tree.JPG/960px-Kutina_na_drevesu_-_Cydonia_oblonga_-_Quince_on_tree.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Tree loaded with fruit",
+    "credit": "Jonson22",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kutina_na_drevesu_-_Cydonia_oblonga_-_Quince_on_tree.JPG"
+   }
+  ],
+  "description": "An ancient fruit tree with big, saucer-shaped, blush-pink May flowers and fuzzy golden fruit in fall that perfumes a whole room. The fruit is too hard to eat raw but turns rosy and fragrant when cooked into membrillo, jelly, or poached quince. It's naturally small and gnarled with real character, and it's self-fertile. It's a Great Plant Pick for maritime gardens, and different from the shrubby flowering quince.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/479"
+   },
+   {
+    "label": "Raintree Nursery: Pineapple quince",
+    "url": "https://raintreenursery.com/products/pineapple-quince"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Large open flowers are easy pickings for bumblebees and honeybees in May.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Most soils, including heavier and damp ones",
+  "zones": "5–9",
+  "matureSize": "12–18 ft H × 10–15 ft W",
+  "growthRate": "Moderate",
+  "bloom": "May, pale pink",
+  "seasonalInterest": "Big pink-white flowers, golden fragrant fall fruit, yellow fall color, gnarled winter form",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   12,
+   18
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    10,
+    11
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Oct–Nov (when fruit turns gold and fragrant)",
+  "yardFit": "A characterful specimen in the SW corner cluster, or in the lawn's corner where its gnarled shape can be seen in winter",
+  "claudetteNotes": "It blooms late, so frost rarely takes the crop, and you need only one tree. In wet Seattle springs, quince leaf blight can spot the leaves and drop them early, so clean up fallen leaves each fall and give it good airflow. Good varieties include 'Pineapple', 'Aromatnaya' (which you can almost eat raw), and 'Smyrna'. Squirrels mostly ignore the rock-hard fruit, which is a rare win."
+ },
+ {
+  "id": "medlar",
+  "name": "Medlar",
+  "botanical": "Mespilus germanica",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Medlar_%28Mespilus_germanica%29_flower%2C_Ayrshire.jpg/960px-Medlar_%28Mespilus_germanica%29_flower%2C_Ayrshire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Large single white flower",
+    "credit": "Rosser1954",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Medlar_(Mespilus_germanica)_flower,_Ayrshire.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Medlar_pomes_and_leaves.jpg/960px-Medlar_pomes_and_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Medlar fruit among the leaves",
+    "credit": "Solipsist (Wikimedia Commons uploader)",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Medlar_pomes_and_leaves.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Mespilus_germanica_-_Medlar_fruit_and_leaves_in_the_Vale_View._Barrmill_Park._North_Ayrshire.jpg/960px-Mespilus_germanica_-_Medlar_fruit_and_leaves_in_the_Vale_View._Barrmill_Park._North_Ayrshire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Fruit hanging against yellow fall foliage",
+    "credit": "Rosser1954",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mespilus_germanica_-_Medlar_fruit_and_leaves_in_the_Vale_View._Barrmill_Park._North_Ayrshire.jpg"
+   }
+  ],
+  "description": "A medieval-garden curiosity that thrives in Seattle: a small, crooked, spreading tree with large single white flowers in May, felted leaves that turn russet and gold, and odd brown fruit. You pick the fruit after frost and let it 'blet' (soften) indoors until it tastes like spiced apple butter. It's self-fertile, nearly pest-free, and a Great Plant Pick. It's a conversation starter that earns its spot year-round.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 3,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/992"
+   },
+   {
+    "label": "Raintree Nursery: Breda Giant medlar",
+    "url": "https://raintreenursery.com/products/breda-giant-medlar-ofxh87"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Late-spring flowers feed bees; leftover fruit feeds overwintering birds.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Most well-drained soils",
+  "zones": "5–9",
+  "matureSize": "8–15 ft H × 8–15 ft W",
+  "growthRate": "Slow",
+  "bloom": "May, white",
+  "seasonalInterest": "Large white flowers, russet-gold fall color, crooked winter silhouette",
+  "maintenance": 1,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   8,
+   15
+  ],
+  "spreadFt": [
+   8,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    10,
+    11
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Spreading",
+  "harvest": "Late Oct–Nov after frost (then blet indoors 2–3 weeks)",
+  "yardFit": "A small sculptural tree for the SW corner or near the patio; it won't drop messy fruit, since you pick it hard",
+  "claudetteNotes": "Honestly one of the best fruit trees for a low-effort Seattle garden: there's no spraying, scab isn't an issue, it handles our wet springs, and it tolerates a bit of shade. Squirrels and birds usually leave the hard fruit alone until it bletts. The fruit is an acquired taste, so try some first (the Seattle Tree Fruit Society fall show is a good place). 'Breda Giant' and 'Nottingham' are good varieties."
+ },
+ {
+  "id": "pacific-crabapple",
+  "name": "Pacific Crabapple",
+  "botanical": "Malus fusca",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Malusfusca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "White blossom clusters",
+    "credit": "Gordon Leppig & Andrea J. Pickart",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Malusfusca.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Malus_fusca_kz4.jpg/960px-Malus_fusca_kz4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Small oval crabapples",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Malus_fusca_kz4.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Malus_fusca_%28Raf.%29_C.K.Schneid._cultivated_at_Royal_Botanic_Gardens%2C_Kew.jpg/960px-Malus_fusca_%28Raf.%29_C.K.Schneid._cultivated_at_Royal_Botanic_Gardens%2C_Kew.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Whole tree form (arboretum specimen)",
+    "credit": "Metacladistics",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Malus_fusca_(Raf.)_C.K.Schneid._cultivated_at_Royal_Botanic_Gardens,_Kew.jpg"
+   }
+  ],
+  "description": "Our only native apple: a scrappy, often thicket-forming small tree of PNW wetland edges, with fragrant white-pink blossom clusters in spring, small oblong crabapples in fall, and orange-red fall color. Coast Salish peoples harvested the tart fruit and stored it for winter. It's naturally scab-resistant and tolerates wet soil that would drown a regular apple. Pair with red-osier dogwood, Pacific ninebark and slough sedge in a wildlife corner.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "King County Native Plant Guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=9"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Host plant for native moths and butterflies; blossoms feed native bees and fruit feeds birds and wildlife into winter.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist to wet; tolerates poorly drained clay",
+  "zones": "5–9",
+  "matureSize": "15–25 ft H × 12–20 ft W (can sucker into a thicket)",
+  "growthRate": "Moderate",
+  "bloom": "Apr–May, white to pinkish, fragrant",
+  "seasonalInterest": "Fragrant blossom, small fall fruit, orange-red fall color",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   12,
+   20
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white",
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Sep–Oct (tart; best after a frost, for jelly)",
+  "yardFit": "Along the west fence or the wild edge of the SW corner cluster, especially if any spot stays soggy in winter",
+  "claudetteNotes": "This is the ecology pick, not the harvest pick. The fruit is pea-to-marble size and very tart, and birds get most of it, which is the point. It can also help pollinate apples that bloom at the same time. It suckers, so pull shoots or let it form a hedgerow. Look for it at native plant sales (King Conservation District, WNPS) rather than regular garden centers."
+ },
+ {
+  "id": "cornelian-cherry",
+  "name": "Cornelian Cherry",
+  "botanical": "Cornus mas",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Cornus_mas_kz04.jpg/960px-Cornus_mas_kz04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Yellow flower clusters on bare twigs, Feb–Mar",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_mas_kz04.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Cornus_mas_in_Bl%C3%BCte_Hegerberg_01.JPG/960px-Cornus_mas_in_Bl%C3%BCte_Hegerberg_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Small trees in full late-winter bloom",
+    "credit": "Uoaei1",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_mas_in_Bl%C3%BCte_Hegerberg_01.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Cornus_mas_A.jpg/960px-Cornus_mas_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Ripe red 'cherries' in late summer",
+    "credit": "Wouter Hagens",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_mas_A.jpg"
+   }
+  ],
+  "description": "A dogwood, not a cherry, and one of the best small trees for winter interest: in February and March, bare branches fill with clouds of tiny yellow flowers when almost nothing else is blooming. Glossy red, olive-shaped fruits follow in late summer. They're tart-sweet when fully ripe and wonderful in jam or syrup. It's tough, disease-free, and a Great Plant Pick, with flaky tan bark in winter. Underplant with hellebores, snowdrops and sweet box for a late-winter scene.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 3,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/419"
+   },
+   {
+    "label": "Raintree Nursery: Pioneer Cornelian cherry",
+    "url": "https://raintreenursery.com/products/pioneer%E2%84%A2-cornus-mas"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "One of the earliest pollen and nectar sources for bees in Feb–Mar; birds relish the fruit.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Adaptable; any reasonably drained soil",
+  "zones": "4–8",
+  "matureSize": "15–20 ft H × 12–18 ft W (10–15 ft in 10 years)",
+  "growthRate": "Slow",
+  "bloom": "Feb–Mar, yellow",
+  "seasonalInterest": "Late-winter yellow bloom, red summer fruit, purplish fall color, flaking bark",
+  "maintenance": 1,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   20
+  ],
+  "spreadFt": [
+   12,
+   18
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "Late Aug–Sep (when fruit is dark red and drops at a shake)",
+  "yardFit": "Where it's visible from the house in late winter, at the patio end of the east shrub line or the front of the SW corner cluster; it can be multi-stemmed",
+  "claudetteNotes": "A favorite of mine for Seattle: no pests, no spraying, and it flowers when the yard needs it most. You'll get some fruit from one tree, but more with two (for fruit, pick named varieties like 'Pioneer', 'Elegant' or 'Red Star'). Pick only fully ripe, soft fruit, because under-ripe ones are astringent. Robins and squirrels will compete, but it usually makes enough for both."
+ },
+ {
+  "id": "jefferson-hazelnut",
+  "name": "Hazelnut 'Jefferson'",
+  "botanical": "Corylus avellana 'Jefferson'",
+  "category": "Tree",
+  "subcategory": "Nut-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Corylus_avellana_male_and_female_flowers_3.jpg/960px-Corylus_avellana_male_and_female_flowers_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Male catkins and tiny red female flowers (species photo)",
+    "credit": "Nefronus",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Corylus_avellana_male_and_female_flowers_3.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Corylus_avellana_-_Hazelnut_01.jpg/960px-Corylus_avellana_-_Hazelnut_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Hazelnuts forming in their husks (species photo)",
+    "credit": "Zeynel Cebeci",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Corylus_avellana_-_Hazelnut_01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Filbert_orchard_-_Hillsboro%2C_Oregon.JPG/960px-Filbert_orchard_-_Hillsboro%2C_Oregon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "A filbert orchard in Hillsboro, Oregon",
+    "credit": "M.O. Stevens",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Filbert_orchard_-_Hillsboro,_Oregon.JPG"
+   }
+  ],
+  "description": "The Pacific Northwest's signature nut crop: Oregon and Washington grow nearly all US hazelnuts (filberts). 'Jefferson' is an Oregon State University release that resists Eastern Filbert Blight, the fungal disease that has killed many old Barcelona trees here. It bears big, well-filled nuts. Dangling yellow catkins light up January and February. Grow as a small multi-stem tree or a productive hedgerow with serviceberry and oceanspray.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Burnt Ridge Nursery: Jefferson hazelnut",
+    "url": "https://www.burntridgenursery.com/JEFFERSON-HAZELNUT-Corylus-avellana/productinfo/NSHAJEF/"
+   },
+   {
+    "label": "Seattle Tree Fruit Society",
+    "url": "https://www.seattletreefruitsociety.com/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Winter catkins give bees very early pollen; nuts feed jays, squirrels and chipmunks.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Well-drained loam",
+  "zones": "4–8",
+  "matureSize": "12–18 ft H × 12–18 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Jan–Feb, yellow catkins (tiny red female flowers)",
+  "seasonalInterest": "Winter catkins, summer nut husks, yellow fall color",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   12,
+   18
+  ],
+  "spreadFt": [
+   12,
+   18
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    1,
+    2
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [
+    9
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "Sep–early Oct (gather fallen nuts quickly)",
+  "yardFit": "As a screening hedgerow along the west fence, or 2 trees in the SW corner cluster; keep away from the raised bed",
+  "claudetteNotes": "Hazelnuts can't pollinate themselves, so 'Jefferson' needs a compatible partner such as 'Yamhill', 'York', 'Theta' or 'Eta' within about 50 ft. All are blight-resistant too. Here's the hard truth for Seattle: Steller's jays and eastern gray squirrels will strip a tree in September, often before nuts drop. Gather daily, or treat it as a wildlife tree that sometimes shares. Pull root suckers yearly to keep a tree shape."
+ },
+ {
+  "id": "arbequina-olive",
+  "name": "Olive 'Arbequina' (Experimental)",
+  "botanical": "Olea europaea 'Arbequina'",
+  "category": "Tree",
+  "subcategory": "Fruit-bearing",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Flors_arbequina_2487.JPG/960px-Flors_arbequina_2487.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "'Arbequina' flowers",
+    "credit": "Victor M. Vicente Selvas",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Flors_arbequina_2487.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Oliva_arbequina_en_Veruela.jpg/960px-Oliva_arbequina_en_Veruela.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "'Arbequina' olives ripening",
+    "credit": "Willtron",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oliva_arbequina_en_Veruela.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Olivera_arbequina_en_Veruela.jpg/960px-Olivera_arbequina_en_Veruela.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "'Arbequina' tree habit",
+    "credit": "Willtron",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Olivera_arbequina_en_Veruela.jpg"
+   }
+  ],
+  "description": "A small, silvery evergreen olive from Catalonia, and the most cold-tolerant, self-fertile fruiting olive commonly sold. In Seattle it's a beautiful foliage tree first and a fruit tree second: cream flowers in early summer and small olives that ripen to near-black only after a long, hot summer. Frame it as an experiment, and pair it with rosemary, lavender and sedums for a Mediterranean pocket.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 3,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Raintree Nursery: Arbequina olive",
+    "url": "https://raintreenursery.com/products/arbequina-olive"
+   }
+  ],
+  "ecoScore": 1,
+  "ecoNote": "Wind-pollinated with little wildlife value here; mostly ornamental.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Sharply drained, gravelly; no winter wet",
+  "zones": "8–10",
+  "matureSize": "8–15 ft H × 6–12 ft W in Seattle (smaller in a pot)",
+  "growthRate": "Slow",
+  "bloom": "Jun, small cream",
+  "seasonalInterest": "Year-round silver-gray foliage, occasional late-fall olives",
+  "maintenance": 3,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Understory Tree",
+  "heightFt": [
+   8,
+   15
+  ],
+  "spreadFt": [
+   6,
+   12
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    6
+   ],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [
+    11,
+    12
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "cream"
+  ],
+  "foliageColor": "silver",
+  "texture": "Fine",
+  "form": "Rounded",
+  "harvest": "Nov–Dec, only after hot summers (olives must be cured before eating)",
+  "yardFit": "Only in the hottest, best-drained spot, against the south house wall west of the patio, or in a big pot on the patio",
+  "claudetteNotes": "Treat this as a marginal experiment. Seattle can hit the upper teens °F every few winters, as in late Dec 2021, and wet, cold soil is what really kills olives. Young trees can die back hard, so wrap them in frost cloth during cold snaps for the first few winters. Fruit set is hit-or-miss after our cool summers, and you'll get a usable crop maybe one year in three. Raw olives are inedibly bitter until brine-cured. If you love the look but want certainty, the native Pacific wax myrtle or strawberry tree fill a similar role."
+ },
+ {
+  "id": "common-thyme",
+  "name": "Common Thyme",
+  "botanical": "Thymus vulgaris",
+  "category": "Herb",
+  "subcategory": "Woody Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Thymus_vulgaris_Paludi_02.jpg/960px-Thymus_vulgaris_Paludi_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Low mound in bloom",
+    "credit": "Syrio",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_vulgaris_Paludi_02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Thymus_vulgaris_4zz.jpg/960px-Thymus_vulgaris_4zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Fine evergreen foliage",
+    "credit": "Photo by David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_vulgaris_4zz.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Thymus_vulgaris_in_garden_%282003%29_4.jpg/960px-Thymus_vulgaris_in_garden_%282003%29_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Compact shrubby habit",
+    "credit": "Tangopaso",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_vulgaris_in_garden_(2003)_4.jpg"
+   }
+  ],
+  "description": "The classic kitchen thyme: a low, twiggy evergreen mound of tiny gray-green leaves that you can snip from all year. In early summer it fuzzes over with pale lilac flowers that bees mob. It loves the same hot, lean, well-drained spots as lavender and rosemary, so it pairs naturally with them, plus oregano and sage in a Mediterranean herb edge.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/thymus-vulgaris/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Early-summer flowers are a strong nectar source for honeybees and small native bees.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Lean, sharply drained; hates wet winter clay",
+  "zones": "5–9",
+  "matureSize": "6–12 in H × 12–18 in W",
+  "growthRate": "Moderate",
+  "bloom": "May–Jun, small pale lilac to white",
+  "seasonalInterest": "Evergreen gray-green mound all year, early-summer bloom",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.5,
+   1
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "lavender",
+   "white"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "Year-round (best Apr–Oct)",
+  "yardFit": "Hot south-facing patio edge, tucked between pavers or along the kitchen path where you brush past it",
+  "claudetteNotes": "Drainage is everything: Seattle winters kill more thyme than cold ever does, so raise it on a gravel-amended mound or let it spill over a wall edge. Shear lightly after flowering to keep it from getting woody and bare in the middle, and replace plants every 4–5 years. 'English' and 'French' strains are the best for cooking; lemon thyme (T. × citriodorus) is a great second plant."
+ },
+ {
+  "id": "purple-sage",
+  "name": "Purple Sage",
+  "botanical": "Salvia officinalis 'Purpurascens'",
+  "category": "Herb",
+  "subcategory": "Woody Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Salvia_officinalis_Purpurascens_2021-09-02_0595.jpg/960px-Salvia_officinalis_Purpurascens_2021-09-02_0595.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "'Purpurascens' mound",
+    "credit": "Salicyna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis_Purpurascens_2021-09-02_0595.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Salvia_Purpurascens.jpg/960px-Salvia_Purpurascens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Purple new growth",
+    "credit": "Helichrysum Italicum",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salvia_Purpurascens.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Salvia_officinalis_Tricolor_2017-10-02_6977.jpg/960px-Salvia_officinalis_Tricolor_2017-10-02_6977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "'Tricolor' variegated leaves",
+    "credit": "Salicyna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis_Tricolor_2017-10-02_6977.jpg"
+   }
+  ],
+  "description": "Culinary sage with dusky purple-gray leaves that hold up through most Seattle winters. It's as good in the kitchen as the plain green kind and looks better in a border, where its velvety texture contrasts with fine-leaved herbs. The tricolor form ('Tricolor', cream, pink and purple) is a showier but slightly less hardy alternative. Pair with thyme, golden oregano, and lavender.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/salvia-officinalis/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Blue-violet early-summer flowers feed bumblebees; aromatic leaves shrug off most pests.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Well-drained, average to lean",
+  "zones": "6–9",
+  "matureSize": "1.5–2 ft H × 2–2.5 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Jun, lavender-blue spikes (sparse on purple forms)",
+  "seasonalInterest": "Purple new growth in spring, soft purple-gray foliage most of the year",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   2
+  ],
+  "spreadFt": [
+   2,
+   2.5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    6
+   ],
+   "foliage": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "lavender",
+   "blue"
+  ],
+  "foliageColor": "burgundy",
+  "texture": "Medium",
+  "form": "Mounding",
+  "harvest": "Year-round (best Apr–Oct)",
+  "yardFit": "Hot south-facing patio edge or the sunny end of the raised bed, near the kitchen door",
+  "claudetteNotes": "Cut it back by about a third in April, never hard into old bare wood, or it may not resprout. Expect it to get leggy after 4–5 years; just replace it, cuttings root easily. If you want 'Tricolor', put it against the warm house wall, since it's the least hardy of the sages."
+ },
+ {
+  "id": "greek-oregano",
+  "name": "Greek Oregano",
+  "botanical": "Origanum vulgare subsp. hirtum",
+  "category": "Herb",
+  "subcategory": "Leafy Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Origanum_vulgare_subsp._hirtum_kz01.jpg/960px-Origanum_vulgare_subsp._hirtum_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Greek oregano clump",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Origanum_vulgare_subsp._hirtum_kz01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Origanum_vulgare_hirtum_0zz.jpg/960px-Origanum_vulgare_hirtum_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Fuzzy gray-green leaves",
+    "credit": "Photo by David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Origanum_vulgare_hirtum_0zz.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/-2019-08-05_Bee_on_the_flower_of_Oregano_%28Origanum_vulgare%29%2C_Trimingham.JPG/960px--2019-08-05_Bee_on_the_flower_of_Oregano_%28Origanum_vulgare%29%2C_Trimingham.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "White flowers with bumblebee",
+    "credit": "Kolforn",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:-2019-08-05_Bee_on_the_flower_of_Oregano_(Origanum_vulgare),_Trimingham.JPG"
+   }
+  ],
+  "description": "The pungent, peppery oregano that cooks actually want, unlike the mild common oregano that often gets sold under the same name. It forms a low, fuzzy gray-green mat that sends up white flower sprays in midsummer, which are a bee and butterfly magnet. It's a natural partner for thyme, sage, and chives in a sunny herb strip.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/origanum-vulgare-subsp-hirtum/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Midsummer flowers are among the most bee- and butterfly-visited of any herb.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Well-drained, lean to average",
+  "zones": "5–9",
+  "matureSize": "1–2 ft H × 1.5 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Jul–Aug, small white clusters",
+  "seasonalInterest": "Low gray-green mat spring to fall, summer flowers",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "May–Oct (best just before bloom)",
+  "yardFit": "Along the kitchen/patio path or at the front edge of the raised bed",
+  "claudetteNotes": "Taste a leaf before you buy: true Greek oregano should be sharp enough to numb your tongue a little. If you start from seed, some seedlings will taste bland, so buy plants or take cuttings from a good one. Shear the flower stems after bloom to keep it tidy. ASPCA lists oregano as mildly toxic to pets (stomach upset), so don't plant it where the dog grazes."
+ },
+ {
+  "id": "chives",
+  "name": "Chives",
+  "botanical": "Allium schoenoprasum",
+  "category": "Herb",
+  "subcategory": "Leafy Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Allium_schoenoprasum_kz02.jpg/960px-Allium_schoenoprasum_kz02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Mass of pom-pom blooms",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Allium_schoenoprasum_kz02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Allium_schoenoprasum_Szczypiorek_2019-05-17_03.jpg/960px-Allium_schoenoprasum_Szczypiorek_2019-05-17_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Buds and grassy stems",
+    "credit": "Agnieszka Kwiecień, Nova",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Allium_schoenoprasum_Szczypiorek_2019-05-17_03.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Bumble_Bee_on_Chives_%287315818928%29.jpg/960px-Bumble_Bee_on_Chives_%287315818928%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Bumblebee on a chive flower",
+    "credit": "Amanda Slater from Coventry, West Midlands, UK",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bumble_Bee_on_Chives_(7315818928).jpg"
+   }
+  ],
+  "description": "Tidy clumps of hollow, grassy leaves that come up in March and keep coming until frost. In May and June they're covered in lavender pom-pom flowers that are edible and swarming with bumblebees. Chives are about the easiest perennial herb there is, and they make a neat edging plant along a bed or path. Pair them with roses, strawberries, and sage.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/allium-schoenoprasum/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "A pollinator magnet in late spring; bumblebees and mason bees work the flowers hard.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average, well-drained",
+  "zones": "3–9",
+  "matureSize": "12–18 in H × 12 in W",
+  "growthRate": "Moderate",
+  "bloom": "May–Jun, lavender pom-poms",
+  "seasonalInterest": "Fresh green spears from March, spring bloom",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   0.75,
+   1
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "lavender",
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "Mar–Oct",
+  "yardFit": "Edging the raised bed or lining the kitchen/patio path",
+  "claudetteNotes": "Shear the whole clump to 2 inches after the first bloom and you'll get fresh, tender leaves and often a second flush. They self-sow mildly; deadhead if you don't want seedlings in the bed. All alliums are toxic to dogs and cats, so keep them out of any spot the pets chew on. Garlic chives (A. tuberosum) are a white, late-summer-blooming companion."
+ },
+ {
+  "id": "bay-laurel",
+  "name": "Bay Laurel",
+  "botanical": "Laurus nobilis",
+  "category": "Herb",
+  "subcategory": "Woody Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Laurus_nobilis_g1.jpg/960px-Laurus_nobilis_g1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Clipped evergreen form",
+    "credit": "Giancarlodessi",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_g1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Laurus_nobilis_%285%29.JPG/960px-Laurus_nobilis_%285%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Glossy aromatic leaves",
+    "credit": "Marija Gajić",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_(5).JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Laurus_nobilis_flowers.jpg/960px-Laurus_nobilis_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Small yellow spring flowers",
+    "credit": "Júlio Reis (Tintazul)",
+    "license": "CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_flowers.jpg"
+   }
+  ],
+  "description": "The source of kitchen bay leaves, and also a handsome glossy evergreen that takes clipping into a cone, ball, or standard. In Seattle it's at the edge of its hardiness: fine most winters, but a hard Arctic outbreak can scorch or knock it back. Grown in a big pot or against a warm south wall, it gives a formal, Mediterranean evergreen accent year-round. Pair it with rosemary, lavender, and Greek oregano.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 2,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/890"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/laurus-nobilis/"
+   },
+   {
+    "label": "Oregon State Univ. Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/laurus-nobilis"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Small spring flowers feed some early bees; dense evergreen cover shelters small birds.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Well-drained; potting mix in containers",
+  "zones": "8–10",
+  "matureSize": "4–8 ft H in a pot (clipped); 12–25 ft H × 8–15 ft W in the ground",
+  "growthRate": "Slow",
+  "bloom": "Mar–Apr, small yellow-green, not showy",
+  "seasonalInterest": "Glossy evergreen form all year; clips into topiary",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   15
+  ],
+  "spreadFt": [
+   3,
+   10
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Pyramidal",
+  "harvest": "Year-round",
+  "yardFit": "Large container on the hot south patio, or in the ground against the sheltered south house wall",
+  "claudetteNotes": "Container is the safest bet: you can roll it into the garage during an Arctic blast, and a pot keeps it a usable size. In the ground it's a sheltered-wall plant only; protect it from cold east wind. Watch for scale insects (sticky leaves, sooty mold). ASPCA lists bay as toxic to pets, though the leaves are tough enough that most don't eat them."
+ },
+ {
+  "id": "spearmint",
+  "name": "Spearmint",
+  "botanical": "Mentha spicata",
+  "category": "Herb",
+  "subcategory": "Leafy Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Starr-080608-7435-Mentha_spicata-leaves-Water_plant_Sand_Island-Midway_Atoll_%2841264499822%29.jpg/960px-Starr-080608-7435-Mentha_spicata-leaves-Water_plant_Sand_Island-Midway_Atoll_%2841264499822%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Lush spearmint leaves",
+    "credit": "Forest and Kim Starr",
+    "license": "CC BY 3.0 us",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr-080608-7435-Mentha_spicata-leaves-Water_plant_Sand_Island-Midway_Atoll_(41264499822).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Mentha_spicata_15-p.bot-mentha.spic-10.jpg/960px-Mentha_spicata_15-p.bot-mentha.spic-10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Flowering patch (it spreads)",
+    "credit": "Ayotte, Gilles, 1948-",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mentha_spicata_15-p.bot-mentha.spic-10.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mentha_spicata%2C_2021-07-05%2C_Beechview%2C_01.jpg/960px-Mentha_spicata%2C_2021-07-05%2C_Beechview%2C_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Flower spike",
+    "credit": "Cbaile19",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mentha_spicata,_2021-07-05,_Beechview,_01.jpg"
+   }
+  ],
+  "description": "The mint for mojitos, tea, and tabbouleh: bright green, crinkled leaves with a sweet, clean flavor, and lavender flower spikes in late summer that bees and wasps love. It is nearly impossible to kill, which is exactly the problem. Grow it in a container; it spreads aggressively by runners and will overrun beds and lawn. A pot of spearmint next to a pot of bay and one of lemon thyme makes a great patio herb group.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/mentha-spicata/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Late-summer flowers draw honeybees, small wasps, and hoverflies.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist, average; potting mix in a container",
+  "zones": "4–9",
+  "matureSize": "1–2 ft H; spreads indefinitely in the ground",
+  "growthRate": "Fast",
+  "bloom": "Jul–Sep, pale lavender spikes",
+  "seasonalInterest": "Lush green leaves spring through fall, late-summer bloom",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8,
+    9
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "lavender"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "Apr–Oct",
+  "yardFit": "In a pot on the patio or by the kitchen door, never in the ground beds",
+  "claudetteNotes": "Grow in a container; it spreads aggressively. Don't sink the pot into a bed, either: runners escape over the rim and out the drainage holes, so keep it on pavement. Mint is a borderline-invasive plant in moist PNW sites, and the ASPCA lists it as toxic to dogs and cats. Cut it back hard in midsummer for a fresh flush of tender leaves."
+ },
+ {
+  "id": "bronze-fennel",
+  "name": "Bronze Fennel",
+  "botanical": "Foeniculum vulgare 'Purpureum'",
+  "category": "Herb",
+  "subcategory": "Leafy Herb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Foeniculum_vulgare_%22Purpureum%22.jpg/960px-Foeniculum_vulgare_%22Purpureum%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Bronze fennel plant",
+    "credit": "Martinevans123",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_%22Purpureum%22.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Foeniculum_vulgare_kz06.jpg/960px-Foeniculum_vulgare_kz06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Yellow flower umbels",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_kz06.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Foeniculum_vulgare_Purpureum_2zz.jpg/960px-Foeniculum_vulgare_Purpureum_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Seed heads",
+    "credit": "Photo by David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_Purpureum_2zz.jpg"
+   }
+  ],
+  "description": "A tall, airy herb with feathery smoky-bronze foliage that looks like a cloud next to bolder plants, then flat yellow flower umbels in late summer. Leaves and seeds have a sweet anise flavor for fish, salads, and baking. It is also a host plant for the native anise swallowtail butterfly. Pair it with purple coneflower, ornamental grasses, and orange or yellow daylilies.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/foeniculum-vulgare/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Host plant for anise swallowtail caterpillars; flowers feed hoverflies, parasitic wasps, and bees.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Well-drained, average",
+  "zones": "4–9",
+  "matureSize": "4–6 ft H × 2–3 ft W",
+  "growthRate": "Fast",
+  "bloom": "Jul–Sep, flat yellow umbels",
+  "seasonalInterest": "Bronze feathery foliage spring to fall, summer flowers, seed heads",
+  "maintenance": 3,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   4,
+   6
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8,
+    9
+   ],
+   "foliage": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "burgundy",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "Leaves Apr–Sep; seeds Sep–Oct",
+  "yardFit": "Back of the herb area by the raised bed, where its height won't block the patio view",
+  "claudetteNotes": "It self-sows freely, and wild fennel is a real weed problem along parts of the West Coast, so cut the seed heads before they ripen and drop (or harvest them for the kitchen). It also has a deep taproot that resents moving. Keep it away from dill so they don't cross and muddy the flavor. If caterpillars appear, leave them: they're swallowtails."
+ },
+ {
+  "id": "rhubarb",
+  "name": "Rhubarb",
+  "botanical": "Rheum × hybridum (R. rhabarbarum)",
+  "category": "Herb",
+  "subcategory": "Perennial Vegetable",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Rheum_rhabarbarum.2006-04-27.uellue.jpg/960px-Rheum_rhabarbarum.2006-04-27.uellue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Harvested red stalks",
+    "credit": "Dieter Weber (User:Uellue)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rheum_rhabarbarum.2006-04-27.uellue.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Rheum_rhabarbarum_15-p.bot-rheum.rhap-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "Big-leaved clump",
+    "credit": "Ayotte, Gilles, 1948-",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rheum_rhabarbarum_15-p.bot-rheum.rhap-11.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Rheum_rhabarbarum_%2834165728511%29.jpg/960px-Rheum_rhabarbarum_%2834165728511%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Cream flower plume",
+    "credit": "Luc.T from Buggenhout, België",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rheum_rhabarbarum_(34165728511).jpg"
+   }
+  ],
+  "description": "A long-lived perennial vegetable with huge, crinkled leaves on thick red or green stalks that are cooked for pies, crisps, and jam. It is one of the first things to harvest in spring and comes back for 15+ years. The big tropical-looking leaves give real drama to an edible bed. Pair with chives, strawberries, and comfrey or nasturtiums.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/rheum-rhabarbarum/"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Its cream flower plumes feed bees if you let one bolt, but it is mostly a food plant.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Rich, moist, well-drained; heavy feeder",
+  "zones": "3–8",
+  "matureSize": "2–3 ft H (5 ft in flower) × 3–4 ft W",
+  "growthRate": "Moderate",
+  "bloom": "May–Jun, cream plume (usually removed)",
+  "seasonalInterest": "Bold leaves and red stalks spring through summer",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    4,
+    5,
+    6
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "cream"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Mounding",
+  "harvest": "Apr–Jun (stalks only)",
+  "yardFit": "Corner of the raised bed or a dedicated spot right beside it, where it can stay put for years",
+  "claudetteNotes": "Don't harvest the first year, take a light picking the second, then harvest freely for about 8 weeks each spring. Pull stalks with a twist rather than cutting, and snap off flower stalks as soon as they show. The leaves are toxic to people and pets (oxalates), so compost them and keep the dog away. 'Crimson Red' and 'Victoria' are reliable here."
+ },
+ {
+  "id": "globe-artichoke",
+  "name": "Globe Artichoke",
+  "botanical": "Cynara cardunculus var. scolymus (C. scolymus)",
+  "category": "Herb",
+  "subcategory": "Perennial Vegetable",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Cynara_scolymus_-_at_Royal_Botanic_Gardens%2C_Kew_2024_032.jpg/960px-Cynara_scolymus_-_at_Royal_Botanic_Gardens%2C_Kew_2024_032.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Silver cut-leaf foliage",
+    "credit": "Photograph by Mike Peel (www.mikepeel.net).",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cynara_scolymus_-_at_Royal_Botanic_Gardens,_Kew_2024_032.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cynara_scolymus_in_Jardin_botanique_de_la_Charme_01.jpg/960px-Cynara_scolymus_in_Jardin_botanique_de_la_Charme_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Buds opening to violet thistles",
+    "credit": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cynara_scolymus_in_Jardin_botanique_de_la_Charme_01.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Globe_Artichoke_%28Cynara_cardunculus%29_-_geograph.org.uk_-_478257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Edible bud",
+    "credit": "Trish Steel",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Globe_Artichoke_(Cynara_cardunculus)_-_geograph.org.uk_-_478257.jpg"
+   }
+  ],
+  "description": "A dramatic silver architectural plant with deeply cut, arching leaves up to 3 ft long. In early summer it sends up stems of edible buds, and any you don't eat open into huge violet thistle flowers that bumblebees roll around in. It reads as a bold sculptural plant first and a vegetable second. Pair with bronze fennel, lavender, and ornamental grasses.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/cynara-cardunculus/"
+   },
+   {
+    "label": "Great Plant Picks (cardoon, same species)",
+    "url": "https://www.greatplantpicks.org/search/plant-details/480"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Open flowers are bumblebee magnets; seed heads feed goldfinches.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Deep, rich, very well-drained",
+  "zones": "7–10",
+  "matureSize": "3–5 ft H × 3–4 ft W",
+  "growthRate": "Fast",
+  "bloom": "Jul–Sep, large violet-blue thistle heads",
+  "seasonalInterest": "Silver foliage spring to fall, summer flowers",
+  "maintenance": 3,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": true,
+  "layer": "Herbaceous",
+  "heightFt": [
+   3,
+   5
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8,
+    9
+   ],
+   "foliage": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "fruit": [
+    9,
+    10
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple",
+   "blue"
+  ],
+  "foliageColor": "silver",
+  "texture": "Coarse",
+  "form": "Fountain",
+  "harvest": "Jun–Aug (buds, from year two)",
+  "yardFit": "Hot south-facing patio edge or the end of the raised bed as a silver focal point",
+  "claudetteNotes": "Wet winter crowns are the killer, not cold, so plant it in raised or very well-drained soil and mulch the crown with straw in November. Buy a perennial type like 'Green Globe' or 'Violetto' rather than annual-bred 'Imperial Star'. Harvest buds when tight and fist-sized; leave a couple to flower for the bees and the show. Not on the ASPCA toxic list, but the spiny bracts are rough on curious mouths."
+ },
+ {
+  "id": "winter-heath",
+  "name": "Winter Heath 'Kramer's Red'",
+  "botanical": "Erica × darleyensis 'Kramer's Rote'",
+  "category": "Groundcover",
+  "subcategory": "Evergreen",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Erica_darleyensis_a1.jpg/960px-Erica_darleyensis_a1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Solid winter bloom",
+    "credit": "Jerzy Opioła",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Erica_darleyensis_a1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Erica_darleyensis_Silberschmelze02.jpg/960px-Erica_darleyensis_Silberschmelze02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "White form 'Silberschmelze'",
+    "credit": "Meneerke bloem",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Erica_darleyensis_Silberschmelze02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Erica_darleyensis_en_hiver_%283%29.JPG/960px-Erica_darleyensis_en_hiver_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Blooming through snow",
+    "credit": "Père Igor",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Erica_darleyensis_en_hiver_(3).JPG"
+   }
+  ],
+  "description": "A low, needle-leaved evergreen that is solid magenta from roughly December into April, when almost nothing else is blooming. Unlike most heathers, this hybrid tolerates ordinary garden soil and isn't fussy about lime. It's one of the best plants for winter color at ground level and a lifeline for early bees and wintering Anna's hummingbirds. Pair with snowdrops, hellebores, dwarf conifers, and red-twig dogwood.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/583"
+   },
+   {
+    "label": "Oregon State Univ. Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/erica-darleyensis"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Winter-long nectar for bumblebee queens, honeybees on warm days, and Anna's hummingbirds.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Well-drained, acidic to neutral; avoids heavy wet clay",
+  "zones": "5–8",
+  "matureSize": "12–18 in H × 2–3 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Dec–Apr, magenta-red",
+  "seasonalInterest": "Winter-long bloom, bronze-tinted evergreen foliage",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "foliage": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "magenta"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
+  "yardFit": "Drifts at the patio's south edge or the sunny front of the east shrub curve, visible from the kitchen windows",
+  "claudetteNotes": "Shear lightly right after bloom (April) to keep it dense; never cut into bare brown wood. Plant in groups of 3–5 for a carpet. 'Silberschmelze' (white) and 'Darley Dale' (pale pink) are also Great Plant Picks if you want to mix colors. It doesn't love deep shade or soggy spots."
+ },
+ {
+  "id": "hardy-cyclamen",
+  "name": "Hardy Cyclamen",
+  "botanical": "Cyclamen coum",
+  "category": "Bulb",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Cyclamen_coum_%28d.j.b.%29_03.jpg/960px-Cyclamen_coum_%28d.j.b.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Carpet of winter flowers",
+    "credit": "Dominicus Johannes Bergsma",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cyclamen_coum_(d.j.b.)_03.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Cyclaam_coum_blad.JPG/960px-Cyclaam_coum_blad.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Marbled rounded leaf",
+    "credit": "Dominicus Johannes Bergsma",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cyclaam_coum_blad.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cyclamen_coum_in_melting_snow.jpg/960px-Cyclamen_coum_in_melting_snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Blooming in melting snow",
+    "credit": "Meneerke bloem",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cyclamen_coum_in_melting_snow.jpg"
+   }
+  ],
+  "description": "A tiny tuberous perennial with rounded, often silver-marbled leaves and stubby magenta, pink, or white flowers from January into March. It naturalizes under trees and shrubs, slowly building into a carpet that is in leaf right through winter and dormant in summer. Its fall-blooming cousin C. hederifolium covers September–October, so plant both. Pair with snowdrops, hellebores, sword fern, and winter-blooming shrubs.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/477"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Early flowers give some forage to bees on mild winter days; ants spread the seeds.",
+  "sun": "Part–full shade",
+  "water": "Low",
+  "soil": "Humusy, well-drained; dry in summer is fine",
+  "zones": "5–9",
+  "matureSize": "3–4 in H × 4–6 in W",
+  "growthRate": "Slow",
+  "bloom": "Jan–Mar, magenta, pink, or white",
+  "seasonalInterest": "Marbled leaves Nov–Apr, midwinter bloom",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.25,
+   0.33
+  ],
+  "spreadFt": [
+   0.33,
+   0.5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    1,
+    2,
+    3
+   ],
+   "foliage": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "magenta",
+   "pink",
+   "white"
+  ],
+  "foliageColor": "variegated",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "Under the SW-corner tree cluster and along the shady base of the west fence, near the path so you see it",
+  "claudetteNotes": "Buy potted, growing plants rather than dry tubers, which often fail. Plant the tuber just at the soil surface, not deep, and leave the seedlings alone: a colony takes a few years to get going. The tubers are toxic to pets (ASPCA), so skip spots where the dog digs. Add C. hederifolium nearby for a fall flower season too."
+ },
+ {
+  "id": "mahonia-charity",
+  "name": "Mahonia 'Charity'",
+  "botanical": "Mahonia × media 'Charity' (Berberis × media)",
+  "category": "Shrub",
+  "subcategory": "Evergreen",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Mahonia_x_media_-_Flickr_-_peganum.jpg/960px-Mahonia_x_media_-_Flickr_-_peganum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Yellow winter flower spikes",
+    "credit": "peganum from Small Dole, England",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahonia_x_media_-_Flickr_-_peganum.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Mahonia_%C3%97_media_%27Charity%27_kz02.jpg/960px-Mahonia_%C3%97_media_%27Charity%27_kz02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Tall evergreen form",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahonia_%C3%97_media_%27Charity%27_kz02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Mahonia_media_Charity_2017-05-23_1310.jpg/960px-Mahonia_media_Charity_2017-05-23_1310.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Blue-gray berries",
+    "credit": "Salicyna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahonia_media_Charity_2017-05-23_1310.jpg"
+   }
+  ],
+  "description": "A bold, upright evergreen with whorls of long, spiny leaflets and, from November into January, spraying candelabras of lightly scented yellow flowers. It's a winter fuel stop for Anna's hummingbirds, which stay in Seattle all year. It's distinct from our native tall Oregon grape: about twice the size, more architectural, and blooms in the dark months instead of March. Pair with sword fern, sweet box, hellebores, and winter heath.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/977"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/mahonia-x-media/"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Nov–Jan nectar for overwintering Anna's hummingbirds and early bees; blue berries for birds.",
+  "sun": "Part shade",
+  "water": "Low",
+  "soil": "Humusy, well-drained",
+  "zones": "7–9",
+  "matureSize": "8–12 ft H × 5–8 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Nov–Jan, upright yellow spikes",
+  "seasonalInterest": "Winter flowers, evergreen architectural foliage, spring berries",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   8,
+   12
+  ],
+  "spreadFt": [
+   5,
+   8
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    11,
+    12,
+    1
+   ],
+   "foliage": [],
+   "fruit": [
+    2,
+    3,
+    4
+   ],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "Back of the east shrub curve or by the shed in the NE corner, in view of the kitchen for winter hummingbird-watching",
+  "claudetteNotes": "Cut one or two of the oldest stems to the ground every few years after flowering so it doesn't become a bare-legged pole. The leaves are prickly, so keep it back from paths. 'Arthur Menzies' (bred in the Washington Park Arboretum) and 'Winter Sun' are also great. Not on the ASPCA toxic list."
+ },
+ {
+  "id": "coral-bark-maple",
+  "name": "Coral Bark Maple 'Sango-kaku'",
+  "botanical": "Acer palmatum 'Sango-kaku'",
+  "category": "Tree",
+  "subcategory": "Deciduous",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Coral_Bark_Maple_garden_show.jpg/960px-Coral_Bark_Maple_garden_show.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Coral-red bare twigs",
+    "credit": "Jkelly",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Coral_Bark_Maple_garden_show.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Acer_palmatum_Sango_kaku_7zz.jpg/960px-Acer_palmatum_Sango_kaku_7zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Fresh green leaves on red stems",
+    "credit": "Photo by David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Sango_kaku_7zz.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Acer_palmatum_Sango-kaku_0zz.jpg/960px-Acer_palmatum_Sango-kaku_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Gold-apricot fall color",
+    "credit": "Photo by David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Sango-kaku_0zz.jpg"
+   }
+  ],
+  "description": "A Japanese maple grown for its winter bark: once the leaves drop, the young stems glow coral-red, brightest in the coldest weather. Spring leaves come out chartreuse with red edges, turn soft green in summer, and finish butter-yellow to apricot in fall, so it has a show in every season. It's a vase-shaped small tree that suits a PNW garden perfectly. Pair with dark evergreens (sword fern, salal, conifers) behind it so the red stems pop.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 4,
+  "availability": 4,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Oregon State Univ. Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/acer-palmatum-sango-kaku"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Small spring flowers feed some bees, and the twiggy crown gives birds perching cover.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist, well-drained, slightly acidic",
+  "zones": "5–9",
+  "matureSize": "15–25 ft H × 12–18 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Apr, tiny red, not showy",
+  "seasonalInterest": "Coral-red winter stems, chartreuse spring leaves, gold-apricot fall color",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Understory Tree",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   12,
+   18
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    4,
+    5,
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Vase",
+  "harvest": "",
+  "yardFit": "Medium tree in the SW-corner cluster or the SE corner near the raised bed, placed where low winter sun backlights the stems",
+  "claudetteNotes": "The color is on the young wood, so it's brightest on a vigorous, well-lit tree; deep shade dulls it. Give it shelter from hot afternoon reflected heat, which can scorch the leaf edges. Light structural pruning in winter keeps young twigs coming. 'Bihou' is a smaller, coral-orange alternative if space gets tight."
+ },
+ {
+  "id": "viburnum-dawn",
+  "name": "Viburnum 'Dawn'",
+  "botanical": "Viburnum × bodnantense 'Dawn'",
+  "category": "Shrub",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Viburnum_x_bodnantense_%27Dawn%27_%28Caprifoliaceae%29_%28tree%29.jpg/960px-Viburnum_x_bodnantense_%27Dawn%27_%28Caprifoliaceae%29_%28tree%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Bare shrub in bloom",
+    "credit": "Magnus Manske",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Viburnum_x_bodnantense_%27Dawn%27_(Caprifoliaceae)_(tree).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/2007-03-27Viburnum_x_bodnantense02.jpg/960px-2007-03-27Viburnum_x_bodnantense02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Fragrant pink clusters",
+    "credit": "Wildfeuer",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2007-03-27Viburnum_x_bodnantense02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Viburnum_x_bodnantense_%27Dawn%27_plant.jpg/960px-Viburnum_x_bodnantense_%27Dawn%27_plant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Leafy summer shrub",
+    "credit": "Averater",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Viburnum_x_bodnantense_%27Dawn%27_plant.jpg"
+   }
+  ],
+  "description": "A tall, upright deciduous shrub that blooms on bare branches through the winter, with clusters of rosy-pink buds opening to pale pink, intensely sweet-scented flowers. It flowers in waves from November to March, pausing in hard freezes and starting again in the next mild spell. In summer it's a plain green background shrub with burgundy fall color. Pair with sweet box and winter daphne for a fragrant winter walk, and evergreen shrubs to fill in around it.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/1625"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/viburnum-x-bodnantense/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Winter flowers feed bumblebee queens and honeybees on mild days.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average, moist, well-drained",
+  "zones": "5–8",
+  "matureSize": "8–10 ft H × 5–7 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Nov–Mar, pink, very fragrant",
+  "seasonalInterest": "Fragrant winter bloom on bare stems, burgundy fall color",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   8,
+   10
+  ],
+  "spreadFt": [
+   5,
+   7
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "East shrub curve near the patio, or by the path to the shed, so you smell it on winter walks",
+  "claudetteNotes": "Plant it where you walk past in winter: the fragrance is the whole point. Thin a few of the oldest stems at the base right after bloom to keep it from getting congested. It looks pretty ordinary in summer, so mix it into the back of a border, not as a standalone specimen. 'Charles Lamont' is a pinker, slightly more compact sibling."
+ },
+ {
+  "id": "winter-iris",
+  "name": "Winter Iris",
+  "botanical": "Iris unguicularis",
+  "category": "Perennial",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Iris_unguicularis_-_Algerian_iris_05.jpg/960px-Iris_unguicularis_-_Algerian_iris_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Lavender winter blooms",
+    "credit": "Zeynel Cebeci",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_unguicularis_-_Algerian_iris_05.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Iris_unguicularis_170208.jpg/960px-Iris_unguicularis_170208.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Flower close-up",
+    "credit": "Vassil",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_unguicularis_170208.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Iris-unguicularis-ssp.-cretensis-Sitia-Crete-2.jpg/960px-Iris-unguicularis-ssp.-cretensis-Sitia-Crete-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Grassy evergreen clump",
+    "credit": "Petro Stelte",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris-unguicularis-ssp.-cretensis-Sitia-Crete-2.jpg"
+   }
+  ],
+  "description": "An evergreen, grassy-leaved iris that produces delicate lavender flowers with yellow throats from November to March, often on the darkest days. The scented flowers nestle down in the foliage and are great for cutting as buds. It thrives on neglect in the hot, dry, poor soil at the foot of a sunny wall, where little else is happy. Pair with Cape Blanco stonecrop, lavender, and rosemary.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 4,
+  "cost": 2,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/iris-unguicularis/"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Gives a little winter forage for early bees on mild sunny days.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Poor, dry, sharply drained",
+  "zones": "7–9",
+  "matureSize": "12–18 in H × 18–24 in W",
+  "growthRate": "Slow",
+  "bloom": "Nov–Mar, lavender with yellow and white throat",
+  "seasonalInterest": "Winter bloom, evergreen grassy clump",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "lavender",
+   "purple"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "The hot planting strip along the south house wall west of the patio, a perfect match for its needs",
+  "claudetteNotes": "Don't feed or water it: rich soil gives lots of leaves and few flowers. Trim the foliage back by about half in early fall so the winter flowers aren't hidden, and bait for slugs, which love the blooms. It sulks for a year after planting before flowering well. Iris is toxic to pets (ASPCA). Look for it at plant sales or specialty nurseries; 'Walter Butt' and 'Mary Barnard' are good forms."
+ },
+ {
+  "id": "silk-tassel",
+  "name": "Silk Tassel",
+  "botanical": "Garrya elliptica",
+  "category": "Shrub",
+  "subcategory": "Evergreen",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Torpoint%2C_Antony_House_and_Garden%2C_Silk_tassel_bush_%27Garrya_elliptica%27_-_geograph.org.uk_-_7875009.jpg/960px-Torpoint%2C_Antony_House_and_Garden%2C_Silk_tassel_bush_%27Garrya_elliptica%27_-_geograph.org.uk_-_7875009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Long silvery catkins",
+    "credit": "Michael Garlick",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Torpoint,_Antony_House_and_Garden,_Silk_tassel_bush_%27Garrya_elliptica%27_-_geograph.org.uk_-_7875009.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Catkins_at_Christmas_%281%29%2C_off_Outwood_Lane%2C_Horsforth_-_geograph.org.uk_-_1632707.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Winter",
+    "caption": "Catkins at Christmas",
+    "credit": "RichTea",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Catkins_at_Christmas_(1),_off_Outwood_Lane,_Horsforth_-_geograph.org.uk_-_1632707.jpg"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coast_Silk_Tassel_%28Garrya_elliptica%29%2C_Sonoma_Coast_State_Park%2C_California_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Any",
+    "caption": "Evergreen shrub form",
+    "credit": "arlenedevitt",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Coast_Silk_Tassel_(Garrya_elliptica),_Sonoma_Coast_State_Park,_California_3.jpg"
+   }
+  ],
+  "description": "An evergreen West Coast native shrub with wavy-edged, leathery gray-green leaves. From December to February, male plants drip with silvery-green catkins 6–12 inches long that sway in the wind, a striking winter sight. It's drought tolerant once established and good as a screen or espalier on a wall. Pair with Pacific wax myrtle, red-flowering currant, and Oregon grape for a native-leaning winter screen.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 3,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/675"
+   },
+   {
+    "label": "Oregon State Univ. Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/garrya-elliptica"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/garrya-elliptica/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Evergreen cover and nesting habitat for birds; female plants bear berries birds eat.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Well-drained, average to poor",
+  "zones": "8–10",
+  "matureSize": "10–15 ft H × 8–12 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Dec–Feb, long silvery-green catkins",
+  "seasonalInterest": "Hanging winter catkins, evergreen foliage all year",
+  "maintenance": 1,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   10,
+   15
+  ],
+  "spreadFt": [
+   8,
+   12
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    12,
+    1,
+    2
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "green",
+   "cream"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Medium",
+  "form": "Rounded",
+  "harvest": "",
+  "yardFit": "Screen along the west fence or the south fence, where the catkins catch low winter light",
+  "claudetteNotes": "Buy a named male clone ('James Roof' has the longest catkins) so you're sure to get tassels. It's native from the southern Oregon coast into California, so it wants good drainage and a little shelter from icy east winds in Seattle; it may brown in a hard freeze but recovers. It hates being moved, so plant it small and leave it. Prune lightly right after the catkins fade."
+ },
+ {
+  "id": "winter-jasmine",
+  "name": "Winter Jasmine",
+  "botanical": "Jasminum nudiflorum",
+  "category": "Shrub",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Jasminum_nudiflorum_shrub.jpg/960px-Jasminum_nudiflorum_shrub.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Cascading winter bloom",
+    "credit": "NoJin",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jasminum_nudiflorum_shrub.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Jasminum_nudiflorum_HD.JPG/960px-Jasminum_nudiflorum_HD.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Bright yellow flowers",
+    "credit": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jasminum_nudiflorum_HD.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Jasminum_nudiflorum_jd_plt_feuille.jpg/960px-Jasminum_nudiflorum_jd_plt_feuille.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Summer leaves",
+    "credit": "Pancrat",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jasminum_nudiflorum_jd_plt_feuille.jpg"
+   }
+  ],
+  "description": "A sprawling shrub with arching, bright green stems that stay green all winter and light up with butter-yellow flowers from December to March. It's not fragrant, but it's one of the most reliable winter bloomers there is and looks great cascading over a wall or bank. Trained up a trellis it acts like a climber. Pair with winter heath, hellebores, and evergreen groundcovers.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 1,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/861"
+   },
+   {
+    "label": "Oregon State Univ. Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/jasminum-nudiflorum"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/jasminum-nudiflorum/"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Winter flowers give a bit of forage to bees on warm days; dense stems shelter small birds.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Any well-drained soil",
+  "zones": "6–10",
+  "matureSize": "4–8 ft H × 6–10 ft W (taller on a trellis)",
+  "growthRate": "Fast",
+  "bloom": "Dec–Mar, bright yellow, unscented",
+  "seasonalInterest": "Winter bloom on green stems; green twigs all winter",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   8
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Fountain",
+  "harvest": "",
+  "yardFit": "Spilling over the edge of the raised bed or trained on the shed wall, where it brightens the NE corner",
+  "claudetteNotes": "Prune right after flowering, cutting the flowered stems back to strong buds; otherwise it builds into a tangled heap. Stems root where they touch the ground, which is handy on a bank but means it creeps unless you snip them. Not to be confused with the fragrant summer jasmines. True jasmine is not on the ASPCA toxic list."
+ },
+ {
+  "id": "lady-fern",
+  "name": "Lady Fern",
+  "botanical": "Athyrium filix-femina",
+  "category": "Fern",
+  "subcategory": "Deciduous",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Athyrium_filix-femina_kz01.jpg/960px-Athyrium_filix-femina_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Lush mature clump",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Athyrium_filix-femina_kz01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Athyrium_filix-femina_kz03.jpg/960px-Athyrium_filix-femina_kz03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Wide lacy colony at the woodland edge",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Athyrium_filix-femina_kz03.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Lady_fern_at_Myrstigen_trail_1.jpg/960px-Lady_fern_at_Myrstigen_trail_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Fresh fronds lit by sun",
+    "credit": "W.carter",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lady_fern_at_Myrstigen_trail_1.jpg"
+   }
+  ],
+  "description": "A big, soft, lacy native fern that pushes up a vase of bright green fronds every spring and dies back to the ground in fall. It grows fast and gives a lush, airy contrast to the stiffer, darker sword fern. Happiest where the soil stays damp; pair it with sword fern, salal, wild ginger, bleeding heart and vine maple.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=22"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/athyrium-filix-femina/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Dense summer cover for frogs, salamanders and ground birds; native foliage for fern-feeding insects.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Moist, humus-rich; tolerates wet clay",
+  "zones": "4–9",
+  "matureSize": "2–4 ft H × 2–3 ft W",
+  "growthRate": "Fast",
+  "bloom": "None",
+  "seasonalInterest": "Fresh fiddleheads in spring; lacy summer fronds",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   2,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    4,
+    5
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Vase",
+  "harvest": "",
+  "yardFit": "Moist shady pockets under the planned SW tree cluster, especially toward any low, damp spot.",
+  "claudetteNotes": "Give it summer water or it goes brown and ratty by August; in a damp spot it's carefree. Fronds are brittle, so keep it out of the dog's racetrack. Cut the dead fronds down in late winter."
+ },
+ {
+  "id": "licorice-fern",
+  "name": "Licorice Fern",
+  "botanical": "Polypodium glycyrrhiza",
+  "category": "Fern",
+  "subcategory": "Evergreen (winter-green)",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Licorice_fern_and_moss_growing_on_maple_tree._%2898f46fcdfb4d4b039bee97e508cb38c8%29.JPG/960px-Licorice_fern_and_moss_growing_on_maple_tree._%2898f46fcdfb4d4b039bee97e508cb38c8%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Green in winter on a mossy maple limb",
+    "credit": "Steve Redman (MORA)",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Licorice_fern_and_moss_growing_on_maple_tree._(98f46fcdfb4d4b039bee97e508cb38c8).JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Polypodium_glycyrrhiza_on_mossy_tree.jpg/960px-Polypodium_glycyrrhiza_on_mossy_tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Fronds sprouting from a moss-covered trunk",
+    "credit": "Russetburbank",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Polypodium_glycyrrhiza_on_mossy_tree.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Polypodium_glycyrrhiza.jpg/960px-Polypodium_glycyrrhiza.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Colonizing a mossy bank",
+    "credit": "J Brew",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Polypodium_glycyrrhiza.jpg"
+   }
+  ],
+  "description": "A small native fern that grows on mossy bigleaf maple limbs, logs, stumps and rocks rather than in soil. It runs the opposite schedule from most plants: fronds appear with the fall rains, stay green all winter, and wither in the dry summer. The rhizomes taste faintly of licorice, hence the name. A charming 'living moss log' feature alongside sword fern and moss.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/2000"
+   },
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=109"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Polypodium_glycyrrhiza"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Adds green cover and moisture-holding texture to mossy logs and stumps that shelter insects and amphibians.",
+  "sun": "Part–full shade",
+  "water": "Low",
+  "soil": "Mossy logs, stumps, rock or very well-drained humus",
+  "zones": "6–9",
+  "matureSize": "0.5–1.5 ft H × 1–2 ft W (colony)",
+  "growthRate": "Slow",
+  "bloom": "None",
+  "seasonalInterest": "Green all winter on mossy wood; summer dormant",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   1.5
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Spreading",
+  "harvest": "",
+  "yardFit": "On a mossy nurse log or stump set among the shady SW tree cluster, or later on a mature tree trunk there.",
+  "claudetteNotes": "Don't panic when it vanishes in July; it's dormant, not dead. Easiest start: lay a moss-covered log or stump in shade and tuck rhizome pieces into the moss in fall. Never dig it from the wild; buy nursery-grown."
+ },
+ {
+  "id": "autumn-fern",
+  "name": "Autumn Fern",
+  "botanical": "Dryopteris erythrosora",
+  "category": "Fern",
+  "subcategory": "Evergreen",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Dryopteris_erythrosora_kz01.jpg/960px-Dryopteris_erythrosora_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Glossy mature clump",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dryopteris_erythrosora_kz01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Dryopteris_erythrosora_%27Brilliance%27_Photo_by_Katherine_Wagner-Reiss_MD_01.jpg/960px-Dryopteris_erythrosora_%27Brilliance%27_Photo_by_Katherine_Wagner-Reiss_MD_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Coppery new fronds ('Brilliance')",
+    "credit": "KATHERINE WAGNER-REISS",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dryopteris_erythrosora_%27Brilliance%27_Photo_by_Katherine_Wagner-Reiss_MD_01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Autumn_fern_%28Dryopteris_erythrosora%29_%2817041268651%29.jpg/960px-Autumn_fern_%28Dryopteris_erythrosora%29_%2817041268651%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Reddish fiddlehead unfurling",
+    "credit": "harum.koh from Kobe city, Japan",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Autumn_fern_(Dryopteris_erythrosora)_(17041268651).jpg"
+   }
+  ],
+  "description": "An evergreen fern from Japan and China whose new fronds unfurl coppery-red or bronze before turning glossy green. It sends up new growth through the season, so the copper keeps coming back, and it holds up well in winter. Tidy and well behaved; combine with hellebores, Japanese forest grass, sword fern and epimedium.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/542"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/dryopteris-erythrosora/"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Evergreen cover for ground-dwelling insects and shelter for small creatures over winter.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Humus-rich, well-drained, slightly acidic",
+  "zones": "5–9",
+  "matureSize": "1.5–2.5 ft H × 1.5–2 ft W",
+  "growthRate": "Moderate",
+  "bloom": "None",
+  "seasonalInterest": "Coppery new fronds in spring and early summer; evergreen in winter",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Caution",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   2.5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    4,
+    5,
+    6
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Vase",
+  "harvest": "",
+  "yardFit": "Front edge of the shade bed under the SW tree cluster, where its copper growth lights up the darker natives.",
+  "claudetteNotes": "'Brilliance' has the brightest orange new growth. Trim off the old fronds in early spring so the coppery flush shows. Some Dryopteris contain compounds that are toxic if eaten in quantity, so treat it as 'don't let pets chew it'."
+ },
+ {
+  "id": "japanese-painted-fern",
+  "name": "Japanese Painted Fern",
+  "botanical": "Athyrium niponicum 'Pictum'",
+  "category": "Fern",
+  "subcategory": "Deciduous",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Athyrium_niponicum_pictum_silver_falls.jpg/960px-Athyrium_niponicum_pictum_silver_falls.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Silver fronds with wine-red stems",
+    "credit": "Ruff tuff cream puff",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Athyrium_niponicum_pictum_silver_falls.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Athyrium_niponicum_pictum_1.jpg/960px-Athyrium_niponicum_pictum_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Single plant showing its arching form",
+    "credit": "Stan Shebs",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Athyrium_niponicum_pictum_1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_2900px.jpg/960px-Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_2900px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Close-up of the painted frond pattern",
+    "credit": "Photo (c)2006 Derek Ramsey (Ram-Man)",
+    "license": "CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_2900px.jpg"
+   }
+  ],
+  "description": "A low, spreading fern with silvery fronds brushed with green and wine-red stems; it looks hand-painted. It brightens dark corners better than almost anything and is a classic partner for hostas, coral bells, hellebores and Japanese forest grass. Dies back in winter and returns reliably in spring.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/204"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/athyrium-niponicum/"
+   }
+  ],
+  "ecoScore": 1,
+  "ecoNote": "Mostly ornamental; modest leaf-litter cover for ground insects.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Moist, humus-rich, well-drained",
+  "zones": "4–9",
+  "matureSize": "1–1.5 ft H × 1.5–2 ft W",
+  "growthRate": "Moderate",
+  "bloom": "None",
+  "seasonalInterest": "Silver and burgundy foliage spring through fall",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   1.5
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [],
+  "foliageColor": "silver",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
+  "yardFit": "Shady front-of-border spots under the SW tree cluster, or as a bright accent near the patio's shady side.",
+  "claudetteNotes": "Best color in bright shade; deep shade dulls it and afternoon sun scorches it. 'Silver Falls' and 'Ghost' (a hybrid) are the showiest silvers; 'Burgundy Lace' leans purple. Plant in groups of three or more; one alone looks lost."
+ },
+ {
+  "id": "blue-fescue-elijah-blue",
+  "name": "Blue Fescue 'Elijah Blue'",
+  "botanical": "Festuca glauca 'Elijah Blue'",
+  "category": "Grass",
+  "subcategory": "Ornamental Grass",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Elijah_Blue_Fescue_%283712203176%29.jpg/960px-Elijah_Blue_Fescue_%283712203176%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Powder-blue tuft of 'Elijah Blue'",
+    "credit": "daryl_mitchell from Saskatoon, Saskatchewan, Canada",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Elijah_Blue_Fescue_(3712203176).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Festuca_cinerea_001.JPG/960px-Festuca_cinerea_001.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Blue mounds as a group planting",
+    "credit": "H. Zell",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Festuca_cinerea_001.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Tuft_of_blue_fescue_in_Tuntorp_1.jpg/960px-Tuft_of_blue_fescue_in_Tuntorp_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Summer flower stems above the tuft",
+    "credit": "W.carter",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tuft_of_blue_fescue_in_Tuntorp_1.jpg"
+   }
+  ],
+  "description": "A tidy little hedgehog of powder-blue needles, about a foot tall, that keeps its color all year. It's one of the bluest grasses available and makes a crisp edge or a repeating accent in sunny, gravelly spots. Looks great with stonecrop, lavender, kinnikinnick and burgundy coral bells.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/645"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/festuca-glauca/"
+   }
+  ],
+  "ecoScore": 1,
+  "ecoNote": "Mostly ornamental; seed heads are of minor use to birds.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Lean, sharply drained; hates wet winter clay",
+  "zones": "4–8",
+  "matureSize": "0.8–1 ft H × 1 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Jun–Jul, small blue-green panicles that fade to tan (not very showy)",
+  "seasonalInterest": "Blue foliage year-round",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.7,
+   1
+  ],
+  "spreadFt": [
+   0.8,
+   1
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Mounding",
+  "harvest": "",
+  "yardFit": "Sunny patio edge or front of the hot border along the south-facing house wall, planted in a drift.",
+  "claudetteNotes": "Short-lived: expect 3–5 years before it browns out in the middle; just divide or replace. Snip off the flower stems after bloom for the cleanest blue. Want a native? Roemer's fescue (Festuca roemeri) is the Puget prairie cousin, a bit grayer and looser."
+ },
+ {
+  "id": "orange-new-zealand-sedge",
+  "name": "Orange New Zealand Sedge",
+  "botanical": "Carex testacea",
+  "category": "Grass",
+  "subcategory": "Sedge",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Carex_testacea_kz1.jpg/960px-Carex_testacea_kz1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Coppery-orange color in cool weather",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carex_testacea_kz1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/New_Zealand_sedge_Carex_testacea_%2816750107068%29.jpg/960px-New_Zealand_sedge_Carex_testacea_%2816750107068%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Olive-green summer foliage",
+    "credit": "UC Davis Arboretum and Public Garden",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:New_Zealand_sedge_Carex_testacea_(16750107068).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Carex_testacea_-_Savill_Garden_-_Windsor_Great_Park%2C_England_-_DSC06022.jpg/960px-Carex_testacea_-_Savill_Garden_-_Windsor_Great_Park%2C_England_-_DSC06022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Drift of tufts in a gravel garden",
+    "credit": "Daderot",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carex_testacea_-_Savill_Garden_-_Windsor_Great_Park,_England_-_DSC06022.jpg"
+   }
+  ],
+  "description": "A fine-textured evergreen sedge that forms a fountain of olive-green blades that turn orange-copper in cool weather and in full sun. The color peaks in fall and winter, just when most of the garden goes quiet. Glows next to blue fescue, black mondo grass, silver plants and dark evergreens.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/292"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Carex_testacea"
+   }
+  ],
+  "ecoScore": 1,
+  "ecoNote": "Mostly ornamental; evergreen tufts give winter cover for small insects.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average to moist, well-drained",
+  "zones": "7–10",
+  "matureSize": "1–2 ft H × 1.5–2 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Not showy",
+  "seasonalInterest": "Orange-copper foliage fall through early spring",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "gold",
+  "texture": "Fine",
+  "form": "Fountain",
+  "harvest": "",
+  "yardFit": "Sunny patio edge or among the small shrubs at the patio's south edge, where its winter orange is seen from the house.",
+  "claudetteNotes": "More sun means more orange; in shade it stays olive. Don't shear it like a grass; comb out dead blades with gloved fingers in spring. It self-seeds a little; pull extras or move them."
+ },
+ {
+  "id": "pheasants-tail-grass",
+  "name": "Pheasant's-tail Grass",
+  "botanical": "Anemanthele lessoniana (syn. Stipa arundinacea)",
+  "category": "Grass",
+  "subcategory": "Ornamental Grass",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Anemanthele_lessoniana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Fall",
+    "caption": "Orange-gold fall and winter tones",
+    "credit": "Photo by Flickr user hortulus; heavily cropped by Hesperian, so don't blame hortulus for the poor framing, okay?",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Anemanthele_lessoniana.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Anemanthele_lessoniana_kz1.jpg/960px-Anemanthele_lessoniana_kz1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Green-and-gold fountain in summer",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Anemanthele_lessoniana_kz1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Agrostis_lessoniana_in_Dunedin_Botanic_Garden_02.jpg/960px-Agrostis_lessoniana_in_Dunedin_Botanic_Garden_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Winter",
+    "caption": "Bronzed streaky foliage",
+    "credit": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Agrostis_lessoniana_in_Dunedin_Botanic_Garden_02.jpg"
+   }
+  ],
+  "description": "An evergreen New Zealand grass that makes a loose, arching fountain of fine leaves streaked green, gold and orange, coloring up most in fall and winter. Airy sprays of tiny flowers float above it in summer. It has more movement than most clumpers; good with sedums, rosemary, ceanothus and bronze sedges.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/143"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Anemanthele"
+   }
+  ],
+  "ecoScore": 1,
+  "ecoNote": "Seed heads offer a little food for small birds; otherwise mainly ornamental.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Average, well-drained",
+  "zones": "7–10",
+  "matureSize": "2–3 ft H × 3–4 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Jul–Aug, airy tan-pink sprays (more texture than color)",
+  "seasonalInterest": "Orange-streaked foliage fall–winter; summer seed sprays",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   3,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "fruit": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "gold",
+  "texture": "Fine",
+  "form": "Fountain",
+  "harvest": "",
+  "yardFit": "Sunny border near the patio edge, where it can arch over paving and catch low winter light.",
+  "claudetteNotes": "It self-seeds; not a listed invasive in WA, but pull seedlings each spring so it doesn't wander. Groom out dead leaves by hand rather than cutting it to the ground. Plant in spring so it settles before winter wet."
+ },
+ {
+  "id": "tufted-hairgrass",
+  "name": "Tufted Hairgrass",
+  "botanical": "Deschampsia cespitosa",
+  "category": "Grass",
+  "subcategory": "Ornamental Grass",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Deschampsia_caespitosa_Goldtau_kz2.jpg/960px-Deschampsia_caespitosa_Goldtau_kz2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Golden airy flower clouds ('Goldtau')",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Deschampsia_caespitosa_Goldtau_kz2.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Deschampsia_cespitosa_-_Berlin_Botanical_Garden_-_IMG_8573.JPG/960px-Deschampsia_cespitosa_-_Berlin_Botanical_Garden_-_IMG_8573.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Fresh green spring mounds",
+    "credit": "Daderot",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Deschampsia_cespitosa_-_Berlin_Botanical_Garden_-_IMG_8573.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Deschampsia_cespitosa_%27Goldtau%27%2C_Longwood_Gardens_01.jpg/960px-Deschampsia_cespitosa_%27Goldtau%27%2C_Longwood_Gardens_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Fine-textured foliage tuft",
+    "credit": "Shuvaev",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Deschampsia_cespitosa_%27Goldtau%27,_Longwood_Gardens_01.jpg"
+   }
+  ],
+  "description": "A native bunchgrass with a low, fine mound of dark green leaves and, in early summer, a cloud of shimmering flower heads that turn gold as they ripen. It takes seasonal wet and clay that kill many ornamental grasses, so it bridges the sunny border and the soggy spots. Pairs well with camas, Douglas aster, Oregon iris and coneflowers.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=146"
+   },
+   {
+    "label": "NC State Extension Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/deschampsia-cespitosa/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Seeds feed finches and sparrows; native host grass for skipper butterflies.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist to wet; tolerates clay and winter saturation",
+  "zones": "4–9",
+  "matureSize": "1–2 ft H foliage (2–3 ft in flower) × 1–2 ft W",
+  "growthRate": "Fast",
+  "bloom": "Jun–Jul, silvery to golden airy panicles",
+  "seasonalInterest": "Shimmering flower clouds in summer; tan seed heads into winter",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   3
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "structure": [
+    11,
+    12
+   ]
+  },
+  "flowerColors": [
+   "cream",
+   "yellow"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "Sunny patio-edge drift, or the outer rim of a low spot or rain garden in the open lawn area.",
+  "claudetteNotes": "Cut it back in late winter. It self-seeds modestly; easy to edit. 'Goldtau' is the tidy cultivar; the straight native species suits a meadow or rain-garden look. Mostly evergreen in mild Seattle winters but can look tired by February."
+ },
+ {
+  "id": "douglas-spirea",
+  "name": "Douglas Spirea (Hardhack)",
+  "botanical": "Spiraea douglasii",
+  "category": "Shrub",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Spiraea_douglasii1UME.JPG/960px-Spiraea_douglasii1UME.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Fuzzy pink flower spires",
+    "credit": "Epibase",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Spiraea_douglasii1UME.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Spiraea_douglasii_in_the_morning.jpg/960px-Spiraea_douglasii_in_the_morning.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Blooming thicket in a wet meadow",
+    "credit": "UpdateNerd",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Spiraea_douglasii_in_the_morning.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Spiraea_douglasii_at_Five_Mile_Lake_Park.jpg/960px-Spiraea_douglasii_at_Five_Mile_Lake_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "In bloom at a King County lake park",
+    "credit": "Ron Clausen",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Spiraea_douglasii_at_Five_Mile_Lake_Park.jpg"
+   }
+  ],
+  "description": "A native thicket-forming shrub of Puget Sound wetlands, with fuzzy pink flower spires all summer that hum with bees and butterflies. It thrives in soggy ground that drowns most shrubs and is a standard pick for Seattle rain gardens. Combine with red-osier dogwood, slough sedge, twinberry and Pacific ninebark.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=96"
+   },
+   {
+    "label": "OSU Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/spiraea-douglasii"
+   },
+   {
+    "label": "WSU Extension rain garden resources",
+    "url": "https://extension.wsu.edu/raingarden/homeowner-resources/"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Long summer nectar for native bees and butterflies; dense thickets shelter nesting birds.",
+  "sun": "Full–part sun",
+  "water": "High",
+  "soil": "Wet to moist; tolerates standing water in winter and clay",
+  "zones": "5–9",
+  "matureSize": "4–7 ft H × 4–6+ ft W (spreads)",
+  "growthRate": "Fast",
+  "bloom": "Jun–Aug, fuzzy pink spires",
+  "seasonalInterest": "Summer flowers; rusty seed spires into winter",
+  "maintenance": 3,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   4,
+   7
+  ],
+  "spreadFt": [
+   4,
+   8
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1
+   ]
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "Bottom of a rain garden or a soggy low spot fed by a downspout, away from the lawn edge it would invade.",
+  "claudetteNotes": "It suckers hard; give it a contained wet corner or edge it with a root barrier. Cut a third of the oldest stems to the ground each winter to keep it bloomy and lower. A RainWise rain garden (Seattle/King County rebate program) is the ideal home for it; check eligibility before building."
+ },
+ {
+  "id": "black-twinberry",
+  "name": "Black Twinberry",
+  "botanical": "Lonicera involucrata",
+  "category": "Shrub",
+  "subcategory": "Deciduous",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Lonicera_involucrata_6504.JPG/960px-Lonicera_involucrata_6504.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Yellow tubular flowers in pairs",
+    "credit": "Walter Siegmund (talk)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_involucrata_6504.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Lonicera_involucrata_fruit1.jpg/960px-Lonicera_involucrata_fruit1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Paired black berries in red bracts",
+    "credit": "JerryFriedman",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_involucrata_fruit1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Lonicera_involucrata_RF.jpg/960px-Lonicera_involucrata_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Fruiting branch along a riverbank",
+    "credit": "Robert Flogaus-Faust",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonicera_involucrata_RF.jpg"
+   }
+  ],
+  "description": "A native shrubby honeysuckle with paired yellow tubular flowers in spring, followed by glossy black berries cupped in bright red bracts that look like little bow ties. Hummingbirds love the flowers and birds take the fruit. It thrives in moist to wet ground and tolerates part shade; pair with red-osier dogwood, slough sedge and Douglas spirea.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=108"
+   },
+   {
+    "label": "OSU Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/lonicera-involucrata"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Lonicera_involucrata"
+   }
+  ],
+  "ecoScore": 5,
+  "ecoNote": "Early nectar for hummingbirds and bumblebees; berries for thrushes and other songbirds.",
+  "sun": "Full–part sun",
+  "water": "High",
+  "soil": "Moist to wet; tolerates seasonal flooding",
+  "zones": "4–9",
+  "matureSize": "5–8 ft H × 5–8 ft W",
+  "growthRate": "Fast",
+  "bloom": "Apr–Jun, paired yellow tubes",
+  "seasonalInterest": "Spring flowers; black berries in red bracts in summer",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "Caution",
+  "edible": false,
+  "layer": "Shrub",
+  "heightFt": [
+   5,
+   8
+  ],
+  "spreadFt": [
+   5,
+   8
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [
+    7,
+    8
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "yellow"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "Low, soggy spot or downspout-fed rain garden near the west fence, where it can blend into the tree cluster.",
+  "claudetteNotes": "The berries are bitter and not for eating; treat them as a pet/kid caution. Prune lightly after flowering if it gets leggy. A great RainWise-eligible rain garden shrub for the wettest zone or the shadier side of the basin."
+ },
+ {
+  "id": "spreading-rush",
+  "name": "Spreading Rush 'Elk Blue'",
+  "botanical": "Juncus patens 'Elk Blue'",
+  "category": "Grass",
+  "subcategory": "Rush",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Juncus_patens_%28spreading_rush%29_one-year_after_planting_%287237614342%29.jpg/960px-Juncus_patens_%28spreading_rush%29_one-year_after_planting_%287237614342%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Upright blue-gray clump, one year after planting",
+    "credit": "oliveoligarchy from California, United States",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Juncus_patens_(spreading_rush)_one-year_after_planting_(7237614342).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Juncus_patens_-_Regional_Parks_Botanic_Garden%2C_Berkeley%2C_CA_-_DSC04582.JPG/960px-Juncus_patens_-_Regional_Parks_Botanic_Garden%2C_Berkeley%2C_CA_-_DSC04582.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Mature clump in a native garden",
+    "credit": "Daderot",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Juncus_patens_-_Regional_Parks_Botanic_Garden,_Berkeley,_CA_-_DSC04582.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Juncuspatens.JPG/960px-Juncuspatens.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Golden-brown seed clusters",
+    "credit": "Stickpen",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Juncuspatens.JPG"
+   }
+  ],
+  "description": "An evergreen West Coast rush that forms a tight, upright clump of blue-gray stems, like a fountain of knitting needles. It shrugs off winter saturation and summer drought, which is exactly what a Seattle rain garden asks of a plant. Strong vertical contrast to round shrubs; good with sedges, Douglas spirea, camas and blue flag iris.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "WSU Extension rain garden resources",
+    "url": "https://extension.wsu.edu/raingarden/homeowner-resources/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Juncus_patens"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Clumps shelter beetles and spiders and give cover to ground birds; helps filter runoff in rain gardens.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Wet to dry; clay tolerant",
+  "zones": "7–10",
+  "matureSize": "1.5–2 ft H × 1.5–2 ft W",
+  "growthRate": "Moderate",
+  "bloom": "Not showy",
+  "seasonalInterest": "Evergreen blue-gray vertical clumps year-round",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1.5,
+   2
+  ],
+  "spreadFt": [
+   1.5,
+   2
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [],
+   "foliage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "flowerColors": [],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "Bottom or side slopes of a downspout-fed rain garden, or a soggy low spot along sunny lawn edges.",
+  "claudetteNotes": "Native to the Oregon and California coast; for a strictly local Washington native, dagger-leaf rush (Juncus ensifolius) or Pacific rush (J. effusus var. pacificus) fill the same role. Cut out brown stems in spring; never shear it to a stub. A RainWise rain garden staple."
+ },
+ {
+  "id": "western-blue-flag",
+  "name": "Western Blue Flag Iris",
+  "botanical": "Iris missouriensis",
+  "category": "Perennial",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Iris_missouriensis_blue_flag_flower.jpg/960px-Iris_missouriensis_blue_flag_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Veined lavender-blue flower",
+    "credit": "Dcrjsr",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_missouriensis_blue_flag_flower.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Iris_missouriensis_9423.JPG/960px-Iris_missouriensis_9423.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Clump in bloom in a damp meadow",
+    "credit": "Walter Siegmund (talk)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_missouriensis_9423.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Iris_missouriensis_blue_flag_plant.jpg/960px-Iris_missouriensis_blue_flag_plant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Single flowering stem and foliage",
+    "credit": "Dcrjsr",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_missouriensis_blue_flag_plant.jpg"
+   }
+  ],
+  "description": "A native iris of wet meadows and prairies with lavender-blue, dark-veined flowers in late spring above slim grassy leaves. It loves being soaked in winter and spring and dry in summer, the classic Seattle rain-garden pattern. Lovely with camas, tufted hairgrass, Oregon iris and spreading rush.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 2,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Iris_missouriensis"
+   },
+   {
+    "label": "WSU Extension rain garden resources",
+    "url": "https://extension.wsu.edu/raingarden/homeowner-resources/"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Spring flowers feed bumblebees and other native bees.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Wet in winter/spring, dry in summer; tolerates clay",
+  "zones": "3–9",
+  "matureSize": "1–2 ft H × 1–1.5 ft W (slowly spreads)",
+  "growthRate": "Moderate",
+  "bloom": "May–Jun, lavender-blue with dark veins",
+  "seasonalInterest": "Late-spring flowers; grassy foliage",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   1,
+   2
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "lavender",
+   "blue"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "Sunny side slopes of a downspout rain garden, or a low spot that dries out by July.",
+  "claudetteNotes": "Mostly an east-of-the-Cascades plant, with scattered native populations around Puget Sound, so look at native-plant sales rather than big-box stores. Rhizomes are toxic to pets. Don't fertilize or summer-water it; it rots if pampered."
+ },
+ {
+  "id": "creeping-thyme-groundcover",
+  "name": "Creeping Thyme (groundcover)",
+  "botanical": "Thymus serpyllum (and T. praecox forms)",
+  "category": "Groundcover",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Thymus_serpyllum_kz02.jpg/960px-Thymus_serpyllum_kz02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Pink carpet of summer flowers",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_serpyllum_kz02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Thymus_praecox_at_Lac_de_Mines_d%27Or_%281%29.jpg/960px-Thymus_praecox_at_Lac_de_Mines_d%27Or_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Purple mat in bloom on a rocky slope",
+    "credit": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_praecox_at_Lac_de_Mines_d%27Or_(1).jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Thymus_serpyllum_kz04.jpg/960px-Thymus_serpyllum_kz04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Low mat before peak bloom in a botanic garden",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thymus_serpyllum_kz04.jpg"
+   }
+  ],
+  "description": "A tight, ankle-high mat of tiny aromatic leaves that disappears under pink, magenta or white flowers in early summer. It is the classic plant for the cracks between pavers: it takes light foot traffic, releases a lemony-herbal scent when stepped on, and bees mob it. Pair with Cape Blanco stonecrop, woolly thyme and low sedums in sunny, gritty spots.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 4,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/thymus-serpyllum/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Thymus_serpyllum"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Summer flowers are a magnet for honeybees, bumblebees and small native bees.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Lean, gritty, sharply drained",
+  "zones": "4–9",
+  "matureSize": "2–4 in H × 12–18 in W",
+  "growthRate": "Moderate",
+  "bloom": "Jun–Jul, pink/magenta/white",
+  "seasonalInterest": "Summer flower carpet; evergreen mat most winters",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.15,
+   0.35
+  ],
+  "spreadFt": [
+   1,
+   1.5
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "magenta",
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "Between the patio pavers and along the sunny south edge of the patio, where reflected heat and good drainage keep it happy.",
+  "claudetteNotes": "Plant into sand or gravel joints, not clay; wet winter soil is what kills it here. Named forms like 'Elfin', 'Pink Chintz' and 'Coccineus' stay tight; shear lightly after bloom. Fine for light foot traffic, not for a soccer pitch."
+ },
+ {
+  "id": "microclover-eco-lawn",
+  "name": "Microclover (eco-lawn clover)",
+  "botanical": "Trifolium repens var. (microclover types such as 'Pipolina', 'Pirouette')",
+  "category": "Groundcover",
+  "subcategory": "Lawn Alternative",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/2026-05-23_15_13_33_A_lawn_dominated_by_White_Clover_along_Perry_Drive_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg/960px-2026-05-23_15_13_33_A_lawn_dominated_by_White_Clover_along_Perry_Drive_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Clover-rich lawn in flower",
+    "credit": "Famartin",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2026-05-23_15_13_33_A_lawn_dominated_by_White_Clover_along_Perry_Drive_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Trifolium_March_2008-1.jpg/960px-Trifolium_March_2008-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "White flower head up close",
+    "credit": "Alvesgaspar",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trifolium_March_2008-1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/White_clover_%28Trifolium_repens%29_in_a_backyard_lawn_%2814442094141%29.jpg/960px-White_clover_%28Trifolium_repens%29_in_a_backyard_lawn_%2814442094141%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Clover mixed into a backyard lawn",
+    "credit": "NY State IPM Program at Cornell University",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:White_clover_(Trifolium_repens)_in_a_backyard_lawn_(14442094141).jpg"
+   }
+  ],
+  "description": "A small-leaved selection of Dutch white clover bred to blend into turf. Overseeded into a grass lawn at 5-10% by weight, it fixes its own nitrogen (so the lawn needs little or no fertilizer), stays green deeper into a dry Seattle summer, and shrugs off dog spots. It flowers less than regular white clover, though you will still see some white heads in summer.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/trifolium-repens/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Trifolium_repens"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Fixes nitrogen and gives honeybees and bumblebees summer forage that a grass-only lawn lacks.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Average; tolerates clay and low fertility",
+  "zones": "3–10",
+  "matureSize": "3–6 in H (mown) × spreading",
+  "growthRate": "Fast",
+  "bloom": "Jun–Aug, small white heads (fewer than regular clover)",
+  "seasonalInterest": "Stays green into summer drought; fine texture in turf",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.25,
+   0.5
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "Overseed the central lawn with it for a greener, lower-input eco-lawn; not needed in the beds.",
+  "claudetteNotes": "Overseed in September or April into dethatched or aerated lawn. Mow higher (3 in) and skip broadleaf weed killers, which wipe out clover. If bees near bare feet worry you, mow just before the weekend or pick the lowest-flowering type. Petsafe is 'Caution' because large amounts can upset a grazing pet's stomach."
+ },
+ {
+  "id": "sweet-woodruff",
+  "name": "Sweet Woodruff",
+  "botanical": "Galium odoratum",
+  "category": "Groundcover",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Galium_odoratum%2C_2024-04-29%2C_Trillium_Trail%2C_01.jpg/960px-Galium_odoratum%2C_2024-04-29%2C_Trillium_Trail%2C_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Spring carpet in bloom",
+    "credit": "Cbaile19",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Galium_odoratum,_2024-04-29,_Trillium_Trail,_01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Galium_odoratum_kz09.jpg/960px-Galium_odoratum_kz09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Spreading drift under trees",
+    "credit": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Galium_odoratum_kz09.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Galium_odoratum_Flower.JPG/960px-Galium_odoratum_Flower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Starry white flowers",
+    "credit": "Björn Traeger",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Galium_odoratum_Flower.JPG"
+   }
+  ],
+  "description": "Whorls of bright green, star-shaped leaves topped by clouds of tiny white flowers in April and May, making a fresh carpet in dry-ish shade where little else will cover. The dried leaves smell of fresh hay and vanilla (it is the traditional flavoring for German May wine). Lovely with hellebores, bleeding heart, ferns and epimedium under deciduous trees.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/galium-odoratum/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Galium_odoratum"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Spring flowers feed small bees and flies; dense cover shelters ground beetles.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Humus-rich, moist to average",
+  "zones": "4–8",
+  "matureSize": "6–12 in H × spreads indefinitely",
+  "growthRate": "Fast",
+  "bloom": "Apr–May, starry white",
+  "seasonalInterest": "Spring bloom; fresh green carpet spring to fall",
+  "maintenance": 2,
+  "deerResistant": "High",
+  "petSafe": "Caution",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.5,
+   1
+  ],
+  "spreadFt": [
+   1.5,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Fine",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "Fills in under the SW tree cluster and along the shady west fence, between ferns and shrubs.",
+  "claudetteNotes": "It spreads by runners and will happily wander into the lawn and through small perennials, so give it a zone it is allowed to own, edged by a path or the lawn mower. It browns and thins in hot sun or bone-dry summer soil. Contains coumarin, hence 'Caution' for pets that like to chew."
+ },
+ {
+  "id": "redwood-sorrel",
+  "name": "Redwood Sorrel",
+  "botanical": "Oxalis oregana",
+  "category": "Groundcover",
+  "subcategory": "Foliage",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Oxalis_oregana_--_VanDusen_Botanical_Garden_--_Vancouver%2C_BC.jpg/960px-Oxalis_oregana_--_VanDusen_Botanical_Garden_--_Vancouver%2C_BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Any",
+    "caption": "Dense shamrock-leaf carpet",
+    "credit": "James Steakley",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oxalis_oregana_--_VanDusen_Botanical_Garden_--_Vancouver,_BC.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Oxalis_oregana_1.jpg/960px-Oxalis_oregana_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Pink-white flowers among the leaves",
+    "credit": "Franz Xaver",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oxalis_oregana_1.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Redwood_Sorrel_%28Oxalis_oregana%29%2C_closeup_of_flower.jpg/960px-Redwood_Sorrel_%28Oxalis_oregana%29%2C_closeup_of_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Single flower up close",
+    "credit": "Kollibri1969",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Redwood_Sorrel_(Oxalis_oregana),_closeup_of_flower.jpg"
+   }
+  ],
+  "description": "A lush carpet of big, velvety shamrock leaves with pale pink-to-white flowers in spring, native to coastal redwood and Sitka spruce forests from Washington to California. It looks instantly like the forest floor on the Olympic Peninsula and fills deep shade under conifers where lawn gives up. Pair with sword fern, deer fern, wild ginger, vanilla leaf and salal.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=76"
+   },
+   {
+    "label": "OSU Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/oxalis-oregana"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Oxalis_oregana"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Native forest-floor cover that shelters amphibians, beetles and other soil life.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Moist, humus-rich, acidic",
+  "zones": "7–9",
+  "matureSize": "4–10 in H × spreads indefinitely",
+  "growthRate": "Fast",
+  "bloom": "Mar–Jun, pale pink/white",
+  "seasonalInterest": "Lush foliage spring–fall; leaves fold down in bright sun",
+  "maintenance": 1,
+  "deerResistant": "Moderate",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.3,
+   0.8
+  ],
+  "spreadFt": [
+   2,
+   4
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    4,
+    5,
+    6
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "Deep shade under the large trees in the SW corner and along the south fence, once the canopy closes in.",
+  "claudetteNotes": "It spreads fast by rhizomes in moist shade, so keep it away from small treasures (it will smother trilliums) and give it a defined patch. It is evergreen in mild winters but can look tired after a hard freeze. Contains oxalates: fine to look at, not for pets to graze."
+ },
+ {
+  "id": "bunchberry",
+  "name": "Bunchberry",
+  "botanical": "Cornus unalaschkensis / C. canadensis",
+  "category": "Groundcover",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Cornus_canadensis_Dere%C5%84_kanadyjski_2009_03.jpg/960px-Cornus_canadensis_Dere%C5%84_kanadyjski_2009_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Carpet of white bracts in late spring",
+    "credit": "Agnieszka Kwiecień, Nova",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_canadensis_Dere%C5%84_kanadyjski_2009_03.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Cornus_canadensis_4.jpg/960px-Cornus_canadensis_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Clusters of red berries",
+    "credit": "Neelix at English Wikipedia",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_canadensis_4.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Cornus_canadensis_%28Dwarf_Dogwood%2C_Bunchberry%2C_Canadian_Dwarf_Cornel%29.jpg/960px-Cornus_canadensis_%28Dwarf_Dogwood%2C_Bunchberry%2C_Canadian_Dwarf_Cornel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Burgundy fall foliage with berries",
+    "credit": "Arthur Chapman",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cornus_canadensis_(Dwarf_Dogwood,_Bunchberry,_Canadian_Dwarf_Cornel).jpg"
+   }
+  ],
+  "description": "A tiny dogwood only a few inches tall: whorls of veined leaves, each topped in late spring by a white four-bracted 'flower' just like a miniature Pacific dogwood. Clusters of glossy red berries follow in late summer, and the leaves often blush burgundy in fall. It is a native of cool, mossy conifer forests and looks magical next to sword fern, deer fern, wild ginger and twinflower.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 3,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "King County native plant guide",
+    "url": "https://green2.kingcounty.gov/gonative/Plant.aspx?Act=view&PlantID=52"
+   },
+   {
+    "label": "OSU Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/cornus-canadensis"
+   },
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/cornus-canadensis/"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Berries feed thrushes, grouse and other birds; flowers serve native bees and flies.",
+  "sun": "Part–full shade",
+  "water": "Moderate",
+  "soil": "Cool, moist, acidic, rich in rotting wood and humus",
+  "zones": "2–7",
+  "matureSize": "3–8 in H × 1–2 ft W (slowly spreading)",
+  "growthRate": "Slow",
+  "bloom": "May–Jun, white bracts",
+  "seasonalInterest": "Dogwood-like spring bracts, red summer berries, burgundy fall leaves",
+  "maintenance": 3,
+  "deerResistant": "Moderate",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Groundcover",
+  "heightFt": [
+   0.25,
+   0.7
+  ],
+  "spreadFt": [
+   1,
+   2
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    5,
+    6
+   ],
+   "foliage": [
+    10
+   ],
+   "fruit": [
+    8,
+    9
+   ],
+   "structure": []
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Mat",
+  "harvest": "",
+  "yardFit": "A special-occasion patch in the coolest, shadiest pocket of the SW tree cluster, ideally near a rotting log or stump.",
+  "claudetteNotes": "Gorgeous but fussy in lowland Seattle gardens: it hates heat, dry summers and alkaline or compacted soil. Plant into a mulch of rotted wood and conifer needles, water through its first two summers, and accept that some spots just won't take. Buy at native plant sales rather than settling for an expensive single pot."
+ },
+ {
+  "id": "new-dawn-climbing-rose",
+  "name": "Climbing Rose 'New Dawn'",
+  "botanical": "Rosa 'New Dawn'",
+  "category": "Vine",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/New_Dawn_Kletterrose.jpg/960px-New_Dawn_Kletterrose.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Mature plant smothered in blush flowers",
+    "credit": "Nockel12",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:New_Dawn_Kletterrose.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Rose_New_Dawn_20070601_2.jpg/960px-Rose_New_Dawn_20070601_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Trained up a pillar in a rose garden",
+    "credit": "Georges Seguin (Okki)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rose_New_Dawn_20070601_2.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Rosa_%E2%80%9CNew_Dawn%E2%80%9D._01.jpg/960px-Rosa_%E2%80%9CNew_Dawn%E2%80%9D._01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Blush-pink bloom up close",
+    "credit": "Oksana Matiyeva",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rosa_%E2%80%9CNew_Dawn%E2%80%9D._01.jpg"
+   }
+  ],
+  "description": "A tough, glossy-leaved climber with clusters of shell-pink, softly fragrant blooms from June until frost. It is one of the most disease-resistant climbing roses for a wet climate, which matters in Seattle where blackspot ruins fussier roses. Train it on a fence, arch or shed wall; pair with clematis 'Jackmanii' scrambling through it, catmint and lavender at its feet.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 1,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/rosa-new-dawn/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Rosa_%27New_Dawn%27"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Semi-double flowers are open enough for bees to reach some pollen.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained",
+  "zones": "5–9",
+  "matureSize": "12–20 ft H × 8–10 ft W",
+  "growthRate": "Fast",
+  "bloom": "Jun–Oct (repeat), blush pink, fragrant",
+  "seasonalInterest": "Long summer bloom; glossy foliage",
+  "maintenance": 3,
+  "deerResistant": "Low",
+  "petSafe": "Yes",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   12,
+   20
+  ],
+  "spreadFt": [
+   8,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "",
+  "yardFit": "The sunny south-facing side of the NE shed, or a sunny stretch of the east fence on wires.",
+  "claudetteNotes": "Tie canes out horizontally along wires and it will flower along their whole length instead of only at the top. It is thorny, so keep it a step back from the patio and paths. Prune lightly in late winter, removing a few of the oldest canes; it forgives neglect better than most roses."
+ },
+ {
+  "id": "climbing-hydrangea",
+  "name": "Climbing Hydrangea",
+  "botanical": "Hydrangea anomala subsp. petiolaris",
+  "category": "Vine",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Hydrangea_petiolaris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Summer",
+    "caption": "Lacecap flowers covering a wall",
+    "credit": "Sten at da.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hydrangea_petiolaris.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Hydrangea_petiolaris%2C_climbing_hydrangea_at_Myddelton_House_garden%2C_Enfield%2C_London%2C_England.jpg/960px-Hydrangea_petiolaris%2C_climbing_hydrangea_at_Myddelton_House_garden%2C_Enfield%2C_London%2C_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Clothing a brick garden wall and arch",
+    "credit": "Acabashi",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hydrangea_petiolaris,_climbing_hydrangea_at_Myddelton_House_garden,_Enfield,_London,_England.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Hydrangea_anomala_pet_fall_color.JPG/960px-Hydrangea_anomala_pet_fall_color.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Fall",
+    "caption": "Butter-yellow fall color on a house wall",
+    "credit": "User:SB_Johnny",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hydrangea_anomala_pet_fall_color.JPG"
+   }
+  ],
+  "description": "A self-clinging woody climber that covers a wall or fence with glossy heart-shaped leaves and big white lacecap flowers in early summer. Over time it builds a woody framework with peeling cinnamon bark that is handsome in winter, and the leaves turn butter-yellow in fall. One of the few flowering climbers that is happy on a shady north- or east-facing wall.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/789"
+   },
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/hydrangea-petiolaris/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Hydrangea_petiolaris"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Lacecap flowers feed bees and hoverflies; mature vines give nesting cover to birds.",
+  "sun": "Part shade",
+  "water": "Moderate",
+  "soil": "Rich, moist, well-drained",
+  "zones": "4–8",
+  "matureSize": "20–40 ft H × 5–10 ft W (on a support)",
+  "growthRate": "Slow",
+  "bloom": "Jun–Jul, white lacecaps",
+  "seasonalInterest": "Summer flowers, yellow fall color, peeling winter bark",
+  "maintenance": 2,
+  "deerResistant": "Moderate",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   20,
+   40
+  ],
+  "spreadFt": [
+   5,
+   10
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [
+    10,
+    11
+   ],
+   "fruit": [],
+   "structure": [
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "",
+  "yardFit": "The shady north or west face of the NE shed, or a shaded section of the west fence.",
+  "claudetteNotes": "Classic 'sleeps, creeps, then leaps' plant: expect little for 2-3 years. Its aerial roots grip hard and can damage painted siding, so give it masonry, a sturdy fence, or a freestanding panel set a few inches off the shed wall. Needs a sturdy support; a mature plant is very heavy."
+ },
+ {
+  "id": "evergreen-clematis",
+  "name": "Evergreen Clematis",
+  "botanical": "Clematis armandii",
+  "category": "Vine",
+  "subcategory": "Evergreen",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Ranunculales_-_Clematis_armandii_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "Evergreen screen in bloom on a wall",
+    "credit": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ranunculales_-_Clematis_armandii_4.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Clematis_armandii_-_Flickr_-_peganum.jpg/960px-Clematis_armandii_-_Flickr_-_peganum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Fragrant white flower clusters with long leaves",
+    "credit": "peganum (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Clematis_armandii_-_Flickr_-_peganum.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%28MHNT%29_Clematis_armandii_-_flower.jpg/960px-%28MHNT%29_Clematis_armandii_-_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Single flower",
+    "credit": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:(MHNT)_Clematis_armandii_-_flower.jpg"
+   }
+  ],
+  "description": "A vigorous evergreen climber with long, leathery, dark leaves and masses of white, vanilla-almond-scented flowers in March, when the rest of the garden is still waking up. It makes a year-round screen on a fence or trellis, which is rare among Seattle-hardy vines. Pair with sarcococca and winter daphne for a run of late-winter fragrance.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 3,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/383"
+   },
+   {
+    "label": "OSU Landscape Plants",
+    "url": "https://landscapeplants.oregonstate.edu/plants/clematis-armandii"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Clematis_armandii"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "Early spring flowers are a welcome nectar source for queen bumblebees.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained; cool, shaded roots",
+  "zones": "7–9",
+  "matureSize": "15–25 ft H × 6–10 ft W",
+  "growthRate": "Fast",
+  "bloom": "Mar–Apr, white, very fragrant",
+  "seasonalInterest": "Evergreen screen year-round; fragrant early spring bloom",
+  "maintenance": 3,
+  "deerResistant": "Moderate",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   15,
+   25
+  ],
+  "spreadFt": [
+   6,
+   10
+  ],
+  "evergreen": true,
+  "interest": {
+   "bloom": [
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "flowerColors": [
+   "white"
+  ],
+  "foliageColor": "dark green",
+  "texture": "Coarse",
+  "form": "Climbing",
+  "harvest": "",
+  "yardFit": "A sheltered, sunny run of fence near the patio (for the scent), or as an evergreen screen on the NE shed.",
+  "claudetteNotes": "Prune right after flowering to keep it in bounds; left alone it builds a mat of dead leaves inside and gets top-heavy. Leaves can brown in a hard freeze or cold east wind, so pick a sheltered spot. Give it a strong trellis or wires; it outgrows a flimsy fan trellis in two years."
+ },
+ {
+  "id": "clematis-montana",
+  "name": "Anemone Clematis",
+  "botanical": "Clematis montana (e.g. 'Elizabeth', var. rubens)",
+  "category": "Vine",
+  "subcategory": "Flowering",
+  "images": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Clematis_montana_-_London_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "season": "Spring",
+    "caption": "Vine smothered in pale pink flowers",
+    "credit": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Clematis_montana_-_London_3.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Clematis_montana_var._wilsonii_02.jpg/960px-Clematis_montana_var._wilsonii_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "White form trained up a post",
+    "credit": "Wilrooij",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Clematis_montana_var._wilsonii_02.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Clematis_montana_Rubens_508957761.jpg/960px-Clematis_montana_Rubens_508957761.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Pink 'Rubens' flowers up close",
+    "credit": "John Haslam",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Clematis_montana_Rubens_508957761.jpg"
+   }
+  ],
+  "description": "In May this deciduous clematis vanishes under thousands of four-petaled pink or white flowers, often vanilla-scented in cultivars like 'Elizabeth'. It is one of the fastest ways to cover a shed, fence or old tree and turns a plain structure into the spring highlight of the yard. Grows well with climbing roses, which take over the show in June.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 2,
+  "cost": 2,
+  "availability": 4,
+  "popularity": 3,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/386"
+   },
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/clematis-montana/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Clematis_montana"
+   }
+  ],
+  "ecoScore": 3,
+  "ecoNote": "A big flush of spring flowers for bumblebees and hoverflies.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained; shaded roots",
+  "zones": "6–9",
+  "matureSize": "20–30 ft H × 10–15 ft W",
+  "growthRate": "Fast",
+  "bloom": "Apr–May, pink or white, often fragrant",
+  "seasonalInterest": "Spectacular spring flower curtain",
+  "maintenance": 3,
+  "deerResistant": "Moderate",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Climber",
+  "heightFt": [
+   20,
+   30
+  ],
+  "spreadFt": [
+   10,
+   15
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4,
+    5
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "pink",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Climbing",
+  "harvest": "",
+  "yardFit": "Made for the NE shed: let it climb a trellis or wires up the walls and onto the roof edge.",
+  "claudetteNotes": "Very vigorous: it can swallow a small shed and pull down gutters, so give it a real support and room. It flowers on last year's wood (pruning group 1), so trim only right after bloom. 'Elizabeth' (pale pink, fragrant) is the Great Plant Picks choice."
+ },
+ {
+  "id": "daffodil",
+  "name": "Daffodil",
+  "botanical": "Narcissus (e.g. 'February Gold', 'Thalia')",
+  "category": "Bulb",
+  "subcategory": "Flowering Bulb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Narcissus_February_Gold01.jpg/960px-Narcissus_February_Gold01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "'February Gold' naturalized in grass",
+    "credit": "Meneerke bloem",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Narcissus_February_Gold01.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Narcissus_Thalia_0zz.jpg/960px-Narcissus_Thalia_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "White 'Thalia' in bloom",
+    "credit": "David J. Stang",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Narcissus_Thalia_0zz.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/February_Gold.JPG/960px-February_Gold.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "'February Gold' clump",
+    "credit": "Cillas",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:February_Gold.JPG"
+   }
+  ],
+  "description": "The dependable herald of a Seattle spring: trumpets of yellow, white or bicolor from February to April that come back and multiply for decades. Deer, squirrels and voles leave them alone, which makes them the most foolproof bulb for naturalizing. Small-cupped and early types such as 'February Gold' and white 'Thalia' look natural in drifts under trees and along lawn edges.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 1,
+  "cost": 1,
+  "availability": 5,
+  "popularity": 5,
+  "links": [
+   {
+    "label": "Great Plant Picks: 'February Gold'",
+    "url": "https://www.greatplantpicks.org/search/plant-details/1028"
+   },
+   {
+    "label": "Great Plant Picks: 'Thalia'",
+    "url": "https://www.greatplantpicks.org/search/plant-details/1034"
+   },
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/narcissus/"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Early flowers give some forage to the first bumblebee queens of the year.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Well-drained; any average soil",
+  "zones": "3–9",
+  "matureSize": "6–18 in H × 3–6 in W (clumps widen)",
+  "growthRate": "Moderate",
+  "bloom": "Feb–Apr, yellow/white",
+  "seasonalInterest": "Late-winter to spring bloom",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.5,
+   1.5
+  ],
+  "spreadFt": [
+   0.25,
+   0.5
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    2,
+    3,
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "yellow",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "Drifts under the deciduous trees in the SW cluster and along the edges of the central lawn.",
+  "claudetteNotes": "Plant in October, 6 in deep, in loose drifts of 25+ instead of rows. The leaves must stay up about 6 weeks after bloom to recharge the bulbs, so in the lawn edge, delay mowing that strip until late May. Mix early, mid and late cultivars to stretch the show from February to April."
+ },
+ {
+  "id": "lady-tulip",
+  "name": "Lady Tulip",
+  "botanical": "Tulipa clusiana (incl. 'Lady Jane', var. chrysantha)",
+  "category": "Bulb",
+  "subcategory": "Species Bulb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Tulip_Tulipa_clusiana_%27Lady_Jane%27_Rock_Ledge_Plant_1730px.jpg/960px-Tulip_Tulipa_clusiana_%27Lady_Jane%27_Rock_Ledge_Plant_1730px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "'Lady Jane' clump in a rock garden",
+    "credit": "Derek Ramsey (Ram-Man)",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tulip_Tulipa_clusiana_%27Lady_Jane%27_Rock_Ledge_Plant_1730px.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Tulipa_Clusiana_Peppermintstick.jpg/960px-Tulipa_Clusiana_Peppermintstick.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Red-and-white candy-striped bud",
+    "credit": "Pear Blossom",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tulipa_Clusiana_Peppermintstick.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Tulipa_clusiana_var._chrysantha_Tulipan_Kluzjusza_odm._z%C5%82ocista_2023-04-23_01.jpg/960px-Tulipa_clusiana_var._chrysantha_Tulipan_Kluzjusza_odm._z%C5%82ocista_2023-04-23_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Yellow var. chrysantha in bloom",
+    "credit": "Agnieszka Kwiecień, Nova",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tulipa_clusiana_var._chrysantha_Tulipan_Kluzjusza_odm._z%C5%82ocista_2023-04-23_01.jpg"
+   }
+  ],
+  "description": "A slender species tulip with candy-striped red-and-white or red-and-yellow buds that open into starry, sun-loving flowers in April. Unlike big hybrid tulips that fade after a year or two, it comes back and slowly spreads where summers are dry and soil drains well, which suits Seattle's summer drought. Pair with lavender, thyme, stonecrops and other dry-garden plants.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "Great Plant Picks",
+    "url": "https://www.greatplantpicks.org/search/plant-details/1589"
+   },
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/tulipa-clusiana/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Tulipa_clusiana"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Open flowers give a little pollen to early solitary bees.",
+  "sun": "Full sun",
+  "water": "Low",
+  "soil": "Gritty, sharply drained, dry in summer",
+  "zones": "3–8",
+  "matureSize": "8–14 in H × 3–4 in W",
+  "growthRate": "Moderate",
+  "bloom": "Apr, red-and-white or red-and-yellow",
+  "seasonalInterest": "Striped buds and starry spring flowers",
+  "maintenance": 1,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.7,
+   1.2
+  ],
+  "spreadFt": [
+   0.25,
+   0.35
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "red",
+   "white",
+   "yellow"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "The hot, well-drained patio border and the sunny strip along the house wall, mixed with lavender and thyme.",
+  "claudetteNotes": "Drainage is everything: in wet clay it rots, so add grit or plant in a raised edge. Flowers open fully only in sun and close on cloudy days. Deer and squirrels like tulips, so keep them close to the house; Tulipa sylvestris (yellow, fragrant) is a good, more shade-tolerant sister."
+ },
+ {
+  "id": "dahlia",
+  "name": "Dahlia",
+  "botanical": "Dahlia (garden hybrids)",
+  "category": "Bulb",
+  "subcategory": "Tuber",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Dahlia_Border_-_geograph.org.uk_-_7860515.jpg/960px-Dahlia_Border_-_geograph.org.uk_-_7860515.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Dahlias filling a long summer border",
+    "credit": "Anne Burgess",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dahlia_Border_-_geograph.org.uk_-_7860515.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Dahlia_%27Bishop_of_Auckland.JPG/960px-Dahlia_%27Bishop_of_Auckland.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Dark-leaved 'Bishop' type single",
+    "credit": "Dominicus Johannes Bergsma",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dahlia_%27Bishop_of_Auckland.JPG"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Lullingstone_Castle_Lawn_Borders%2C_Dahlia_1_-_geograph.org.uk_-_6588189.jpg/960px-Lullingstone_Castle_Lawn_Borders%2C_Dahlia_1_-_geograph.org.uk_-_6588189.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Spiky cactus-flowered type in a border",
+    "credit": "Michael Garlick",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lullingstone_Castle_Lawn_Borders,_Dahlia_1_-_geograph.org.uk_-_6588189.jpg"
+   }
+  ],
+  "description": "Seattle's late-summer favorite: from tiny pompons to dinner-plate blooms in every color but blue, flowering nonstop from July until the first frost. They are the backbone of a cutting garden and pick up the slack when spring shrubs are done. Single and collarette types (like the dark-leaved 'Bishop' series) are best for bees; pair with ornamental grasses, salvia and coneflowers.",
+  "nwNative": false,
+  "nwCoded": false,
+  "rarity": 1,
+  "cost": 2,
+  "availability": 5,
+  "popularity": 5,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/dahlia/"
+   },
+   {
+    "label": "Swan Island Dahlias (Canby, OR)",
+    "url": "https://www.dahlias.com/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Dahlia"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Single and open-centered types feed bees and butterflies late in the season; doubles offer little.",
+  "sun": "Full sun",
+  "water": "Moderate",
+  "soil": "Rich, well-drained",
+  "zones": "8–11 (lift or mulch in Seattle)",
+  "matureSize": "1–5 ft H × 1–3 ft W",
+  "growthRate": "Fast",
+  "bloom": "Jul–Oct, every color but blue",
+  "seasonalInterest": "Huge late-summer to fall flower show; great cut flowers",
+  "maintenance": 4,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   5
+  ],
+  "spreadFt": [
+   1,
+   3
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "red",
+   "orange",
+   "yellow",
+   "pink",
+   "magenta",
+   "purple",
+   "white"
+  ],
+  "foliageColor": "green",
+  "texture": "Coarse",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "The sunny patio border, or a cutting row next to the raised vegetable bed in the SE corner.",
+  "claudetteNotes": "Plant tubers in late April or May once soil warms. In well-drained soil many Seattle gardeners leave them in the ground under 4-6 in of mulch; in heavy or wet clay, lift after the first frost and store cool and dry. Slugs eat new shoots, and tall types need staking before they flop."
+ },
+ {
+  "id": "columbia-lily",
+  "name": "Columbia Lily (Tiger Lily)",
+  "botanical": "Lilium columbianum",
+  "category": "Bulb",
+  "subcategory": "Native Bulb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Lilium_columbianum_2.jpg/960px-Lilium_columbianum_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Spotted orange flower",
+    "credit": "pfly",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lilium_columbianum_2.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Lilium_columbianum_inflorescence.jpg/960px-Lilium_columbianum_inflorescence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Stem with many nodding flowers",
+    "credit": "Dcrjsr",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lilium_columbianum_inflorescence.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Lilium_columbianum_9527.JPG/960px-Lilium_columbianum_9527.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Summer",
+    "caption": "Nodding bloom among ferns",
+    "credit": "Walter Siegmund",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lilium_columbianum_9527.JPG"
+   }
+  ],
+  "description": "Our native tiger lily: graceful stems carrying nodding, spotted orange flowers with swept-back petals in early summer. It grows wild in meadows and open woods across western Washington and gives a garden an instant wildflower feel without looking fussy. Pair with sword fern, Oregon iris, red-flowering currant and native grasses at a woodland edge.",
+  "nwNative": true,
+  "nwCoded": true,
+  "rarity": 4,
+  "cost": 3,
+  "availability": 2,
+  "popularity": 1,
+  "links": [
+   {
+    "label": "Burke Herbarium image collection",
+    "url": "https://burkeherbarium.org/imagecollection/taxon.php?Taxon=Lilium%20columbianum"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Lilium_columbianum"
+   }
+  ],
+  "ecoScore": 4,
+  "ecoNote": "Flowers attract hummingbirds and swallowtail butterflies.",
+  "sun": "Full–part sun",
+  "water": "Low",
+  "soil": "Well-drained, humus-rich",
+  "zones": "5–9",
+  "matureSize": "2–4 ft H × 6–12 in W",
+  "growthRate": "Slow",
+  "bloom": "Jun–Jul, spotted orange",
+  "seasonalInterest": "Nodding summer flowers",
+  "maintenance": 2,
+  "deerResistant": "Low",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   2,
+   4
+  ],
+  "spreadFt": [
+   0.5,
+   1
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    6,
+    7
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "orange"
+  ],
+  "foliageColor": "green",
+  "texture": "Medium",
+  "form": "Upright",
+  "harvest": "",
+  "yardFit": "The bright edge of the SW tree cluster, poking up through ferns and low shrubs.",
+  "claudetteNotes": "All lilies are deadly to cats (even pollen), so skip it if a cat roams the yard. Watch for the red lily leaf beetle, now established in the Seattle area: hand-pick the bright red adults and their grubby larvae in spring. Buy nursery-propagated bulbs at native plant sales; never dig from the wild. Expect a few years from seed-grown plants to flowering size."
+ },
+ {
+  "id": "snakes-head-fritillary",
+  "name": "Snake's Head Fritillary",
+  "botanical": "Fritillaria meleagris",
+  "category": "Bulb",
+  "subcategory": "Flowering Bulb",
+  "images": [
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Fritillaria_meleagris_RF.jpg/960px-Fritillaria_meleagris_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Checkered purple bell",
+    "credit": "Robert Flogaus-Faust",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_RF.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Fritillaria_meleagris_in_the_meadow_-_Flickr_-_peganum.jpg/960px-Fritillaria_meleagris_in_the_meadow_-_Flickr_-_peganum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "Naturalized in grass, purple and white forms",
+    "credit": "peganum (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_in_the_meadow_-_Flickr_-_peganum.jpg"
+   },
+   {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Kievitsbloem_%28Fritillaria_meleagris%29_03.JPG/960px-Kievitsbloem_%28Fritillaria_meleagris%29_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "season": "Spring",
+    "caption": "White form",
+    "credit": "Dominicus Johannes Bergsma",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kievitsbloem_(Fritillaria_meleagris)_03.JPG"
+   }
+  ],
+  "description": "Nodding bells checkered in purple and white like a chessboard, held on wiry stems in April. It is a meadow plant that actually likes moist soil, so it suits Seattle's wet springs and damp lawn edges better than most bulbs. Mix the purple and white forms with camas, daffodils and fawn lilies for a spring meadow effect.",
+  "nwNative": false,
+  "nwCoded": true,
+  "rarity": 3,
+  "cost": 2,
+  "availability": 3,
+  "popularity": 2,
+  "links": [
+   {
+    "label": "NC State Plant Toolbox",
+    "url": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/"
+   },
+   {
+    "label": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Fritillaria_meleagris"
+   }
+  ],
+  "ecoScore": 2,
+  "ecoNote": "Spring bells are visited by early bumblebees.",
+  "sun": "Full–part sun",
+  "water": "Moderate",
+  "soil": "Moist but not waterlogged, humus-rich",
+  "zones": "3–8",
+  "matureSize": "8–15 in H × 3–4 in W",
+  "growthRate": "Moderate",
+  "bloom": "Apr, checkered purple or white",
+  "seasonalInterest": "Unusual checkered spring bells",
+  "maintenance": 1,
+  "deerResistant": "High",
+  "petSafe": "No",
+  "edible": false,
+  "layer": "Herbaceous",
+  "heightFt": [
+   0.7,
+   1.25
+  ],
+  "spreadFt": [
+   0.25,
+   0.35
+  ],
+  "evergreen": false,
+  "interest": {
+   "bloom": [
+    4
+   ],
+   "foliage": [],
+   "fruit": [],
+   "structure": []
+  },
+  "flowerColors": [
+   "purple",
+   "white"
+  ],
+  "foliageColor": "blue-green",
+  "texture": "Fine",
+  "form": "Clumping",
+  "harvest": "",
+  "yardFit": "Naturalized along the moist edges of the central lawn and under the deciduous trees, beside the camas.",
+  "claudetteNotes": "Plant the small bulbs in fall as soon as you get them; they dry out fast. Like the daffodils, let the lawn-edge strip go unmown until the leaves yellow in late May. The lily leaf beetle attacks fritillaries too, so check them in spring."
  }
 ];

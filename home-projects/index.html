@@ -233,8 +233,86 @@
   .lb .lb-next{right:16px; top:50%; transform:translateY(-50%)}
   .lb .lb-count{position:absolute; top:24px; left:24px; color:#b8bac2; font-size:12px}
 
+  /* ── Garden Vignettes ── */
+  .nv-btn{font-size:12px; color:var(--accent-ink); white-space:nowrap}
+  .card > h2 .vg-regen{margin-left:auto; align-self:center; text-transform:none; letter-spacing:0; font-size:12.5px; font-weight:600; padding:6px 13px}
+  .card p.vg-sub{margin:-4px 0 12px; font-size:13.5px}
+  .vg-explain{border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:12px 14px; margin-bottom:16px}
+  .vg-explain-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .vg-explain-head h3{font-family:var(--display); font-size:15px; font-weight:700}
+  .vg-explain-head .btn{margin-left:auto}
+  .vg-principles{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; margin-top:12px}
+  .vg-principles[hidden], .vg-saved[hidden], .vg-hint[hidden], .vg-banner[hidden], .caveat[hidden]{display:none}
+  .vg-pr{border:1px solid var(--line); border-radius:6px; padding:10px 12px; background:var(--card)}
+  .vg-pr .t{font-weight:700; font-size:13px; display:flex; gap:7px; align-items:baseline; color:var(--ink)}
+  .vg-pr .t span{font-size:15px}
+  .card .vg-pr p{font-size:12.5px; line-height:1.5; margin:5px 0 0}
+  .vg-saved{margin-bottom:18px; padding-bottom:16px; border-bottom:1px solid var(--line)}
+  .vg-h3{font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent); font-weight:bold; margin:2px 0 10px}
+  .vg-banner{border:1px solid var(--green-line); background:var(--green-bg); color:var(--green); border-radius:6px; padding:9px 12px; font-size:13px; line-height:1.5; margin-bottom:10px}
+  .vg-hint{border:1px dashed var(--accent); border-radius:6px; padding:6px 12px; font-size:12.5px; color:var(--accent-ink); background:var(--head);
+    margin-bottom:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .vg-bar{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px}
+  .vg-status{font-size:12px; color:var(--faint)}
+  .vg-status b{color:var(--ink); font-weight:600}
+  .vg-pet{font-size:12.5px; display:inline-flex; gap:6px; align-items:center; cursor:pointer; color:var(--muted)}
+  .vg-chips{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+  .vg-chips button{font-size:12px; padding:4px 11px; border-radius:14px; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer;
+    display:inline-flex; align-items:center; gap:5px}
+  .vg-chips button i, .vg-badge i{display:inline-block; width:8px; height:8px; border-radius:50%}
+  .vg-chips button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--card); font-weight:600}
+  .vg-chips em{font-style:normal; opacity:.65}
+  .vg-legend{display:flex; gap:6px 14px; flex-wrap:wrap; font-size:11.5px; color:var(--faint); margin-bottom:12px}
+  .vg-legend i{display:inline-block; width:10px; height:10px; border-radius:2px; vertical-align:-1px; margin-right:4px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  .vg-legend i.bl{background:linear-gradient(90deg,#e68fb4 0 33%,#e6c229 33% 66%,#7c4fa8 66%)}
+  .vg-gapsw, .vg-m.empty .vg-segs{background:repeating-linear-gradient(45deg, transparent 0 3px, var(--line) 3px 5px)!important; box-shadow:inset 0 0 0 1px var(--line)!important}
+  .vg-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+  .vg-card{border:1px solid var(--line); border-radius:8px; background:var(--bg); overflow:hidden; display:flex; flex-direction:column; min-width:0}
+  .vg-card:hover{border-color:var(--accent)}
+  .vg-collage{display:grid; gap:2px; height:190px; background:var(--line); grid-template-columns:2fr 1fr}
+  .vg-collage.n1{grid-template-columns:1fr}
+  .vg-collage.n3{grid-template-rows:1fr 1fr}
+  .vg-collage.n4{grid-template-rows:1fr 1fr 1fr}
+  .vg-collage .thumb{width:auto; height:auto; min-height:0; border:0; border-radius:0}
+  .vg-collage .big{grid-row:1 / -1}
+  .vg-collage.vg-noimg{display:flex; align-items:center; justify-content:center; height:70px; background:var(--tint); color:var(--faint2); font-size:12px; font-style:italic}
+  .vg-tname{position:absolute; left:0; right:0; bottom:0; font-size:10px; background:rgba(20,23,29,.62); color:#fff; padding:2px 5px; text-align:left;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .vg-body{padding:11px 13px 13px; display:flex; flex-direction:column; gap:9px; flex:1}
+  .vg-meta{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .vg-badge{display:inline-flex; align-items:center; gap:5px; font-size:10px; letter-spacing:.6px; text-transform:uppercase; padding:2px 7px; border-radius:3px;
+    border:1px solid var(--line); background:var(--card); color:var(--muted); font-weight:600}
+  .vg-starter{font-size:10.5px; color:var(--faint); font-style:italic}
+  .vg-title{font-family:var(--display); font-weight:700; font-size:15px; line-height:1.3; color:var(--ink)}
+  .vg-plants{list-style:none; font-size:12.5px; line-height:1.4}
+  .vg-plants li{display:flex; gap:8px; align-items:baseline; padding:3px 0; border-bottom:1px solid var(--line-soft)}
+  .vg-plants li:last-child{border-bottom:0}
+  .vg-role{flex:0 0 112px; font-size:9.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--faint)}
+  .vg-pn{min-width:0}
+  .vg-plants a{font-weight:600}
+  .vg-strip{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:2px}
+  .vg-m{border:0; background:none; padding:0; cursor:pointer; display:flex; flex-direction:column; gap:2px; min-width:0}
+  .vg-segs{display:flex; flex-direction:column; gap:1px; height:30px; border-radius:3px; overflow:hidden; background:var(--tint)}
+  .vg-segs i{flex:1; display:block; min-height:2px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+  .vg-ml{font-size:10px; color:var(--faint); text-align:center; line-height:1}
+  .vg-m.empty .vg-ml{color:var(--red); font-weight:700}
+  .vg-m.sel .vg-segs{outline:2px solid var(--accent); outline-offset:1px}
+  .vg-minfo{font-size:11.5px; color:var(--faint); line-height:1.4; margin-top:-3px}
+  .vg-why{font-size:12.5px; line-height:1.5; color:var(--muted)}
+  .vg-chiprow{display:flex; gap:5px; flex-wrap:wrap}
+  .vg-chiprow .chip{font-size:11px; cursor:help}
+  .vg-chiprow .chip.yes{background:var(--green-bg); color:var(--green)}
+  .vg-chiprow .chip.warn{color:var(--red)}
+  .vg-foot{display:flex; gap:8px; align-items:center; margin-top:auto; padding-top:2px}
+  table.dt tr.vg-hl td{animation:vgflash 2.8s ease-out}
+  @keyframes vgflash{0%,45%{background:var(--green-bg)} 100%{background:var(--card)}}
+  @media (max-width:1250px){ .vg-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .vg-grid{grid-template-columns:1fr} .vg-role{flex-basis:96px} }
+
   /* ── Responsive ── */
   @media (max-width:860px){
+    .nv-btn{margin-left:auto}
+    #themeBtn{margin-left:0}
     .topnav{padding:12px 14px 10px; gap:12px}
     .topnav .crumb, .topnav .badge{display:none}
     .theme-btn{margin-left:auto}
@@ -270,7 +348,8 @@
     body.expanded table.dt .c-idx{width:30px; min-width:30px}
     body.expanded table.dt .c-name{left:30px}
   }
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sectionnav{transition:none} }
+  @media (max-width:520px){ .nv-btn .nv-txt{display:none} }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sectionnav{transition:none} table.dt tr.vg-hl td{animation:none; background:var(--green-bg)} }
 </style>
 </head>
 <body>
@@ -279,6 +358,7 @@
   <div class="wordmark">Home Projects<span>.</span></div>
   <span class="crumb">Mike &amp; Carla &middot; Seattle</span>
   <span class="badge">DISCOVERY</span>
+  <button type="button" class="theme-btn nv-btn" id="vgTopBtn" title="Generate new garden vignettes" aria-label="Generate new garden vignettes">&#8635;<span class="nv-txt"> New vignettes</span></button>
   <button type="button" class="theme-btn" id="themeBtn" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
   <button class="menu-btn" id="menuBtn" aria-controls="sectionnav" aria-expanded="false">&#9776; Sections</button>
 </nav>
@@ -331,6 +411,49 @@
         </table>
       </div>
       <p class="photo-credit">Photos: Wikimedia Commons, credits in viewer. Expanded mode shows growing conditions, character, scores, and the editable Carla / Mike columns.</p>
+    </section>
+
+    <!-- GARDEN VIGNETTES -->
+    <section class="card" id="vignettes" aria-labelledby="h-vignettes">
+      <h2 id="h-vignettes">Garden Vignettes <button type="button" class="btn primary vg-regen" id="vgRegen">&#8635; Regenerate</button></h2>
+      <p class="vg-sub">Plant combinations built around what you've rated.</p>
+      <div class="vg-explain">
+        <div class="vg-explain-head">
+          <h3>How designers combine plants</h3>
+          <button type="button" class="btn" id="vgPrToggle" aria-expanded="true" aria-controls="vgPrinciples">Hide the principles</button>
+        </div>
+        <div class="vg-principles" id="vgPrinciples">
+          <div class="vg-pr"><div class="t"><span>&#127793;</span>Right plant, right place</div><p>Match each plant to the sun, water and soil it will actually get. A beautiful combination of plants that hate the spot will still fail, so this filter comes first.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#127794;</span>Layering</div><p>Stack plants by height: canopy tree, smaller understory tree, shrubs, perennials and ferns, then groundcover, with vines climbing between. It gives the eye somewhere to travel and copies how a PNW forest edge is built.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#128197;</span>Four-season interest</div><p>Plan a relay: spring and summer flowers, fall leaf color, then winter structure from evergreens, bark, berries and seed heads. Something should look good every month, not just in May.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#127912;</span>Color strategy</div><p>Neighboring colors (blue, purple, pink) feel calm; opposites (purple with yellow, blue with orange) pop. Repeating one color across several plants ties a bed together, and green foliage is the backbone that makes flowers read.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#127811;</span>Texture &amp; form contrast</div><p>Put fine, feathery leaves next to big, bold ones so both stand out, and mix shapes: something upright, something mounding, something that spills. Container growers call it "thriller, filler, spiller".</p></div>
+          <div class="vg-pr"><div class="t"><span>&#128257;</span>Repetition &amp; drifts</div><p>Plant in groups of 3, 5 or 7 instead of one of everything, and repeat the same plant in a few spots. Repetition creates rhythm and looks intentional; odd numbers look natural.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#128207;</span>Scale &amp; spacing</div><p>Space plants for the size they'll reach in 5&ndash;10 years, not the size in the pot. A young bed looks sparse; fill the gaps with mulch or annuals rather than crowding.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#129309;</span>Plant communities &amp; guilds</div><p>Some plants naturally grow together, like Douglas-fir, salal, Oregon grape and sword fern. An edible guild works the same way: a fruit tree with berry shrubs, herbs and an edible groundcover beneath.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#128029;</span>Ecological function</div><p>Keep something in flower from early spring into fall so pollinators always have food, and add berries, seeds and dense shrubs for birds. Natives usually do this best.</p></div>
+          <div class="vg-pr"><div class="t"><span>&#129508;</span>Maintenance matching</div><p>Group plants that want the same care: thirsty with thirsty, drought-tolerant with drought-tolerant. It saves water and keeps one plant from being loved to death next to another.</p></div>
+        </div>
+      </div>
+      <div class="vg-saved" id="vgSaved" hidden></div>
+      <div class="vg-banner" id="vgBanner" role="status" hidden></div>
+      <div class="vg-hint" id="vgHint" role="status" hidden>Ratings changed &mdash; <button type="button" class="btn" id="vgHintBtn">&#8635; Regenerate</button> to include them.</div>
+      <div class="vg-bar">
+        <span class="vg-status" id="vgStatus" aria-live="polite"></span>
+        <span class="spacer"></span>
+        <label class="vg-pet"><input type="checkbox" id="vgPet"> Pet-safe only</label>
+      </div>
+      <div class="vg-chips" id="vgChips" role="group" aria-label="Show one recipe type"></div>
+      <div class="vg-legend" aria-hidden="true">
+        <span><i class="bl"></i>Flowers (in their color)</span>
+        <span><i style="background:#d2602a"></i>Leaf color</span>
+        <span><i style="background:#6d2a6f"></i>Fruit &amp; berries</span>
+        <span><i style="background:#2e5e3b"></i>Winter structure / evergreen</span>
+        <span><i class="vg-gapsw"></i>Gap month</span>
+      </div>
+      <div class="vg-grid" id="vgGrid"></div>
+      <p class="caveat" id="vgCaveat" hidden>Some season details are estimated from the plants' bloom and seasonal-interest notes until fuller data is added.</p>
+      <p class="caveat">Cards reshuffle automatically every 6 hours, or whenever you hit Regenerate. Changing a rating won't reshuffle them until you do.</p>
     </section>
 
     <!-- DESIGNS -->
@@ -407,7 +530,8 @@
 var SECTIONS = [
   { id:'overview',   label:'Overview',              group:'Backyard' },
   { id:'plants',     label:'Plant & Tree Library',  group:'Backyard', count:function(){ return PLANTS.length; } },
-  { id:'designs',    label:'Backyard Designs',      group:'Backyard', count:function(){ return DESIGNS.length; } },
+  { id:'vignettes',  label:'Garden Vignettes',      group:'Backyard' },
+  { id:'designs',    label:'Backyard Designs',     group:'Backyard', count:function(){ return DESIGNS.length; } },
   { id:'sources',    label:'Where These Came From', group:'Housekeeping' },
   { id:'notes-sync', label:'Notes & Sync',          group:'Housekeeping' }
 ];
@@ -452,6 +576,154 @@ function hasNote(n){ return !!(n && (n.carlaLike || n.mikeLike || (n.peopleNotes
 var NOTES = {};
 function loadNotes(){ NOTES = {}; PLANTS.forEach(function(p){ NOTES[p.id] = getNote(p.id); }); }
 
+/* ───────────── plant v2 adapter (real v2 fields when present; rough derivation from v1 text otherwise) ───────────── */
+var V2 = {};
+var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var MON_PAT = 'jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?';
+var MON_RX = new RegExp('\\b(' + MON_PAT + ')\\b(?:\\s*(?:[\\u2013\\u2014-]|to|through)\\s*(?:early |mid-?|late )?(' + MON_PAT + ')\\b)?', 'gi');
+var SEAS = { spring:[3,4,5], summer:[6,7,8], fall:[9,10,11], autumn:[9,10,11], winter:[12,1,2] };
+var SUN_PTS = ['Full sun', 'Mostly sun', 'Part shade', 'Mostly shade', 'Full shade'];
+var WATER_LBL = { '0':'Low', '0.5':'Low–moderate', '1':'Moderate', '1.5':'Moderate–high', '2':'High' };
+var LAYERS = ['Canopy', 'Understory Tree', 'Shrub', 'Herbaceous', 'Groundcover', 'Climber'];
+var TEXTURES = ['Fine', 'Medium', 'Coarse'];
+
+function monIdx(s){ return 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(String(s).slice(0, 3).toLowerCase()) / 3 + 1; }
+function mspan(a, b){ var out = [], m = a; for (var i = 0; i < 12; i++){ out.push(m); if (m === b) break; m = m % 12 + 1; } return out; }
+function addM(arr, ms){ for (var i = 0; i < ms.length; i++) if (arr.indexOf(ms[i]) < 0) arr.push(ms[i]); return arr; }
+function hasM(ms, m){ return ms.indexOf(m) >= 0; }
+function monthsIn(text){
+  var out = [], m; MON_RX.lastIndex = 0;
+  while ((m = MON_RX.exec(String(text || '')))) addM(out, m[2] ? mspan(monIdx(m[1]), monIdx(m[2])) : [monIdx(m[1])]);
+  return out;
+}
+function seasonMonths(text){
+  var t = String(text || '').toLowerCase(), out = [];
+  t = t.replace(/(spring|summer|fall|autumn|winter)\s*(?:through|to|into|[–-])\s*(spring|summer|fall|autumn|winter)/g, function(_, a, b){ addM(out, mspan(SEAS[a][0], SEAS[b][2])); return ' '; });
+  [[/into winter/g,[10,11,12,1]], [/late[- ]winter/g,[2,3]], [/mid-?winter/g,[1]], [/early[- ]spring/g,[3]], [/late[- ]spring/g,[5]],
+   [/early[- ]summer/g,[6]], [/late[- ]summer/g,[8,9]], [/early[- ]fall/g,[9]]].forEach(function(s){
+    t = t.replace(s[0], function(){ addM(out, s[1]); return ' '; });
+  });
+  for (var k in SEAS) if (new RegExp('\\b' + k + '\\b').test(t)) addM(out, SEAS[k]);
+  return out;
+}
+function monthsOrSeasons(text){ var m = monthsIn(text); return m.length ? m : seasonMonths(text); }
+function fmtMonths(ms){
+  ms = ms || []; if (!ms.length) return ''; if (ms.length >= 12) return 'Year-round';
+  var runs = [];
+  for (var m = 1; m <= 12; m++){
+    if (!hasM(ms, m) || hasM(ms, m === 1 ? 12 : m - 1)) continue;
+    var e = m; while (hasM(ms, e % 12 + 1)) e = e % 12 + 1;
+    runs.push(e === m ? MON[m - 1] : MON[m - 1] + '–' + MON[e - 1]);
+  }
+  return runs.join(', ');
+}
+function parseSize(s, cat){
+  s = String(s || '');
+  var NUM = '(\\d+(?:\\.\\d+)?)\\s*(?:[\\u2013-]\\s*(\\d+(?:\\.\\d+)?))?\\+?\\s*(ft|in)\\b';
+  function rng(m){ var u = m[3] === 'in' ? 1 / 12 : 1; return [Math.round(Number(m[1]) * u * 10) / 10, Math.round(Number(m[2] || m[1]) * u * 10) / 10]; }
+  var h = new RegExp(NUM).exec(s), w = new RegExp(NUM + '\\s*W').exec(s) || new RegExp('spreads?\\s*(?:freely\\s*)?' + NUM).exec(s);
+  var H = h ? rng(h) : (cat === 'Tree' ? [15, 25] : cat === 'Shrub' ? [3, 6] : [1, 2]);
+  var W = w ? rng(w) : (cat === 'Vine' ? [3, 6] : cat === 'Groundcover' ? [2, 4] : H.slice());
+  return { h:H, w:W };
+}
+function sunRange(s){
+  s = String(s || '').toLowerCase().replace(/[–—]/g, '-');
+  if (/part-full shade|part to full shade|part.*full shade/.test(s)) return [2, 4];
+  if (/full shade/.test(s)) return [3, 4];
+  if (/full-part sun|full sun to part|full.*part/.test(s)) return [0, 2];
+  if (/full sun/.test(s)) return [0, 1];
+  if (/part shade|part sun|partial/.test(s)) return [1, 3];
+  if (/shade/.test(s)) return [2, 4];
+  return [0, 2];
+}
+function waterVal(s){
+  s = String(s || '').toLowerCase();
+  if (/low.*moderate/.test(s)) return 0.5;
+  if (/moderate.*high/.test(s)) return 1.5;
+  if (/high|wet/.test(s)) return 2;
+  if (/low|dry|drought/.test(s)) return 0;
+  return 1;
+}
+var COLOR_WORDS = [[/white/,'white'], [/cream/,'cream'], [/yellow|golden/,'yellow'], [/orange/,'orange'], [/\bred\b|claret|maroon|rusty|scarlet|crimson/,'red'],
+  [/pink|\brose\b/,'pink'], [/magenta/,'magenta'], [/purple|violet|plum/,'purple'], [/lavender/,'lavender'], [/\bblue/,'blue'], [/green|chartreuse/,'green']];
+var HERB_NAME = /rosemary|thyme|oregano|chives?\b|lovage|sorrel|culinary sage|\bmint\b|\bbasil|parsley|tarragon/i;
+var EDIBLE_NAME = /strawberr|blueberr|huckleberr|raspberr|blackberr|currant|gooseberr|honeyberr|salal|grape|kiwi|\bfig\b|apple|\bpear\b|\bplum\b|cherry|persimmon|pawpaw|hazelnut|filbert|walnut|chestnut|serviceberr|rhubarb/i;
+function isHerbP(p){ return p.category === 'Herb' || /\bherb\b/i.test((p.seasonalInterest || '') + ' ' + (p.subcategory || '')) || HERB_NAME.test(p.name || ''); }
+
+function deriveV2(p){
+  var cat = p.category || '', sub = p.subcategory || '', si = String(p.seasonalInterest || ''), bl = String(p.bloom || ''), nm = String(p.name || '');
+  var d = {}, sz = parseSize(p.matureSize, cat);
+  d.heightFt = sz.h; d.spreadFt = sz.w;
+  d.evergreen = /evergreen|conifer/i.test(sub) || (/evergreen/i.test(si) && !/semi-evergreen/i.test(si));
+  var mid = (sz.h[0] + sz.h[1]) / 2;
+  d.layer = cat === 'Tree' ? (mid > 30 ? 'Canopy' : 'Understory Tree') : cat === 'Vine' ? 'Climber' : cat === 'Groundcover' ? 'Groundcover' :
+    cat === 'Shrub' ? 'Shrub' : cat === 'Berry' ? (/strawberr/i.test(sub + ' ' + nm) ? 'Groundcover' : 'Shrub') : 'Herbaceous';
+  var herb = isHerbP(p);
+  d.edible = cat === 'Berry' || cat === 'Herb' || /fruit|nut-bearing|berry/i.test(sub) || /\bedible\b/i.test(si) || herb ||
+    (EDIBLE_NAME.test(nm) && !/flowering|ornamental/i.test(nm));
+  // months of interest
+  var bloom = /^\s*(none|not showy)|not showy|hidden/i.test(bl) ? [] : monthsIn(bl);
+  var foliage = [], fruit = [], structure = d.evergreen ? [11, 12, 1, 2, 3] : [], siBloom = [], harvest = [];
+  si.split(/[,;+]|\band\b/i).forEach(function(cl){
+    var c = cl.toLowerCase().trim(); if (!c || /dies back|dormant/.test(c)) return;
+    var ms = monthsOrSeasons(c);
+    if (/berr|fruit|hips|acorn|seed ?head|seed capsule|plume/.test(c)){
+      var fm = (monthsIn(c).length || ms.length >= 4) ? ms : /seed|plume/.test(c) ? [9, 10, 11, 12] : /winter/.test(c) ? [10, 11, 12, 1] : ms.length ? ms : [8, 9, 10];
+      addM(fruit, fm); if (/edible|berr|fruit/.test(c)) addM(harvest, fm);
+      if (/winter/.test(c)) addM(structure, [12, 1, 2]);
+    } else if (/\b(bark|stems|twigs|branch|branches|buds|silhouette|tracery|sculptural|spire)\b/.test(c)){
+      addM(structure, [12, 1, 2]);
+    } else if (/\b(fall|autumn)\b/.test(c) && /colou?r|foliage|leaves|tint|red|orange|yellow|gold|copper|burgundy|scarlet/.test(c)){
+      addM(foliage, [10, 11]);
+    } else if (/purple|burgundy|bronze|silver|gold|variegat|blue-gray|blue-green|lime|red spring|new growth|chartreuse|copper|tawny|blush/.test(c) &&
+               /leaf|leaves|foliage|growth|rosette|blush|green/.test(c)){
+      addM(foliage, /all year|year-round|evergreen/.test(c) ? mspan(1, 12) : ms.length ? ms : [4, 5]);
+    } else if (/flower|bloom|blossom|bells|bracts|fragran/.test(c)){
+      addM(siBloom, ms);
+    }
+  });
+  if (!bloom.length && !/^\s*(none|not showy)/i.test(bl)) bloom = siBloom;
+  if (d.edible && !fruit.length && !herb) addM(fruit, /strawberr/i.test(nm) ? [6, 7] : [8, 9]);
+  d.interest = { bloom:bloom, foliage:foliage, fruit:fruit, structure:structure };
+  var colors = [], blo = bl.toLowerCase();
+  if (bloom.length) COLOR_WORDS.forEach(function(cw){ if (cw[0].test(blo) && colors.indexOf(cw[1]) < 0) colors.push(cw[1]); });
+  d.flowerColors = colors;
+  var s2 = (si + ' ' + sub).toLowerCase();
+  d.foliageColor = /purple foliage|burgundy|purple leaves/.test(s2) ? 'burgundy' : /silver(y)? (evergreen|foliage|leaves|rosette)|blue-gray|evergreen silver/.test(s2) ? 'silver' :
+    /variegat/.test(s2) ? 'variegated' : /gold or green|gold foliage|golden/.test(s2) ? 'gold' : /blue-green/.test(s2) ? 'blue-green' : /conifer/.test(s2) ? 'dark green' : 'green';
+  d.texture = (cat === 'Fern' || cat === 'Grass' || /conifer/i.test(sub) || /lacy|feathery|fine|needle|grassy/i.test(si)) ? 'Fine' :
+    /bold|big|tropical|large|coarse|huge|giant/i.test(si) ? 'Coarse' : 'Medium';
+  var bs = (bl + ' ' + si).toLowerCase();
+  d.form = cat === 'Vine' ? 'Climbing' : (cat === 'Grass' || cat === 'Fern') ? 'Fountain' : d.layer === 'Groundcover' ? 'Mat' :
+    /columnar/.test(bs) ? 'Columnar' : /weeping/.test(bs) ? 'Weeping' : /vase/.test(bs) ? 'Vase' :
+    cat === 'Tree' ? (/conifer/i.test(sub) ? 'Pyramidal' : 'Spreading') : (cat === 'Shrub' || cat === 'Berry') ? 'Rounded' :
+    (cat === 'Bulb' || /spike|plume|upright/.test(bs)) ? 'Upright' : 'Mounding';
+  d.harvest = !d.edible ? '' : harvest.length ? fmtMonths(harvest) : herb ? (d.evergreen ? 'Year-round' : 'Apr–Oct') : fmtMonths(fruit);
+  return d;
+}
+function cleanMonths(a){ return Array.isArray(a) ? a.map(Number).filter(function(m){ return m >= 1 && m <= 12 && m % 1 === 0; }) : null; }
+function pair(a){ return Array.isArray(a) && a.length && !isNaN(Number(a[0])) ? [Number(a[0]), Number(a.length > 1 ? a[1] : a[0])] : null; }
+// The plant with every v2 field filled: real data wins, derived values fill the gaps
+function vx(p){
+  if (V2[p.id]) return V2[p.id];
+  var d = deriveV2(p), x = {}, pi = (p.interest && typeof p.interest === 'object') ? p.interest : null;
+  x.edible = typeof p.edible === 'boolean' ? p.edible : d.edible;
+  x.evergreen = typeof p.evergreen === 'boolean' ? p.evergreen : d.evergreen;
+  x.layer = LAYERS.indexOf(p.layer) >= 0 ? p.layer : d.layer;
+  x.heightFt = pair(p.heightFt) || d.heightFt; x.spreadFt = pair(p.spreadFt) || d.spreadFt;
+  x.flowerColors = Array.isArray(p.flowerColors) ? p.flowerColors.map(function(c){ return String(c).toLowerCase(); }) : d.flowerColors;
+  x.foliageColor = p.foliageColor ? String(p.foliageColor).toLowerCase() : d.foliageColor;
+  x.texture = TEXTURES.indexOf(p.texture) >= 0 ? p.texture : d.texture;
+  x.form = p.form || d.form;
+  x.harvest = typeof p.harvest === 'string' ? p.harvest : d.harvest;
+  x.interest = {};
+  ['bloom', 'foliage', 'fruit', 'structure'].forEach(function(k){ x.interest[k] = (pi && cleanMonths(pi[k])) || d.interest[k]; });
+  x.derived = !pi;
+  x.sun = sunRange(p.sun); x.water = waterVal(p.water);
+  x.months = []; ['bloom', 'foliage', 'fruit', 'structure'].forEach(function(k){ addM(x.months, x.interest[k]); });
+  return (V2[p.id] = x);
+}
+
 /* ───────────── column model ───────────── */
 var SCALE_TIPS = {
   rarity:'Rarity / uniqueness: 1 = everywhere, 5 = most unique',
@@ -478,9 +750,10 @@ function textCol(key, label, group, cls){
   return { key:key, label:label, group:group, type:'list', cls:cls || 'c-mid', val:function(p){ return p[key] == null ? '' : String(p[key]); },
     render:function(p){ return p[key] ? esc(p[key]) : '<span class="muted">&ndash;</span>'; } };
 }
-function boolCol(key, label){
-  return { key:key, label:label, type:'list', cls:'c-num', val:function(p){ return yn(p[key]); },
-    render:function(p){ var v = yn(p[key]); return v ? '<span class="tag' + (v === 'Yes' ? ' yes' : '') + '">' + esc(v) + '</span>' : '<span class="muted">&ndash;</span>'; } };
+function boolCol(key, label, get){
+  get = get || function(p){ return p[key]; };
+  return { key:key, label:label, type:'list', cls:'c-num', val:function(p){ return yn(get(p)); },
+    render:function(p){ var v = yn(get(p)); return v ? '<span class="tag' + (v === 'Yes' ? ' yes' : '') + '">' + esc(v) + '</span>' : '<span class="muted">&ndash;</span>'; } };
 }
 function likeCol(key, label, who){
   return { key:key, label:label, group:'Your Take', type:'scale', cls:'c-num', tip:SCALE_TIPS[key], editable:true,
@@ -503,6 +776,7 @@ var COLUMNS = [
   { key:'description', label:'Description', type:'text', cls:'c-desc', val:function(p){ return p.description || ''; }, render:function(p){ return esc(p.description); } },
   boolCol('nwNative', 'NW Native'),
   boolCol('nwCoded', 'NW Coded'),
+  boolCol('edible', 'Edible', function(p){ return vx(p).edible; }),
   scaleCol('rarity', 'Rarity', 'Scores'),
   scaleCol('popularity', 'Popularity', 'Scores'),
   scaleCol('cost', 'Avg Cost', 'Scores'),
@@ -517,6 +791,8 @@ var COLUMNS = [
   textCol('growthRate', 'Growth Rate', 'Growing Conditions'),
   textCol('bloom', 'Bloom', 'Character'),
   textCol('seasonalInterest', 'Seasonal Interest', 'Character'),
+  { key:'harvest', label:'Harvest', group:'Character', type:'list', cls:'c-mid', val:function(p){ return vx(p).harvest || ''; },
+    render:function(p){ var v = vx(p).harvest; return v ? esc(v) : '<span class="muted">&ndash;</span>'; } },
   scaleCol('maintenance', 'Maintenance', 'Character'),
   textCol('deerResistant', 'Deer Resistance', 'Character'),
   { key:'petSafe', label:'Pet Safe', group:'Character', type:'list', cls:'c-num', val:function(p){ return p.petSafe || ''; },
@@ -860,7 +1136,7 @@ function exportNotes(){
   PLANTS.forEach(function(p){ var n = NOTES[p.id]; if (hasNote(n)) out[p.id] = { carlaLike:n.carlaLike, mikeLike:n.mikeLike, peopleNotes:n.peopleNotes, updated:n.updated }; });
   // keep notes for ids not in the current dataset (e.g. plants removed from the library)
   for (var id in BASELINE) if (!(id in out) && !COLMAP_HAS(id) && hasNote(BASELINE[id])) out[id] = BASELINE[id];
-  var blob = new Blob([JSON.stringify({ type:'home-projects-people-notes', version:1, exported:new Date().toISOString(), notes:out }, null, 2)], { type:'application/json' });
+  var blob = new Blob([JSON.stringify({ type:'home-projects-people-notes', version:1, exported:new Date().toISOString(), notes:out, vignettes:vgSavedList() }, null, 2)], { type:'application/json' });
   var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
   var d = new Date(); a.download = 'home-projects-notes-' + d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0') + '.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
@@ -881,8 +1157,9 @@ function importNotes(file){
           n++;
         } else skipped++;
       }
-      loadNotes(); render(); updateStats();
-      $('syncStatus').textContent = 'Imported ' + n + ' plant note(s)' + (skipped ? '; kept ' + skipped + ' newer local one(s)' : '') + '.';
+      var nv = data && Array.isArray(data.vignettes) ? vgMergeSaved(data.vignettes) : 0;
+      loadNotes(); render(); updateStats(); vgRenderSaved();
+      $('syncStatus').textContent = 'Imported ' + n + ' plant note(s)' + (skipped ? '; kept ' + skipped + ' newer local one(s)' : '') + (nv ? '; added ' + nv + ' saved vignette(s)' : '') + '.';
     } catch(err){ $('syncStatus').textContent = "That file doesn't look like a notes export."; }
   };
   r.readAsText(file);
@@ -900,6 +1177,607 @@ function updateStats(){
   $('factPlants').textContent = PLANTS.length; $('factRated').textContent = rated;
   var local = 0; PLANTS.forEach(function(p){ if (lsGet(LS_PREFIX + p.id)) local++; });
   if (!$('syncStatus')._user) $('syncStatus').textContent = local + ' plant(s) edited in this browser · ' + Object.keys(BASELINE).length + ' in the shared baseline.';
+  vgRatingsCheck(); // show the "ratings changed" hint; cards only rebuild on Regenerate
+}
+
+/* ───────────── Garden Vignettes: recommendation engine ───────────── */
+var VG_WIN_MS = 6 * 3600 * 1000;
+var LS_VG_REGEN = 'homeProjects.vignettes.regen.v1', LS_VG_SAVED = 'homeProjects.vignettes.saved.v1',
+    LS_VG_PR = 'homeProjects.vignettes.principles.v1', LS_VG_PET = 'homeProjects.vignettes.petSafe.v1';
+var VG = { all:[], mix:[], byKey:{}, filter:'all', snap:null, win:null, regen:0, pet:false, starter:true, generatedAt:null };
+var WINTER = [11, 12, 1, 2];
+var FCOL = { white:'#f3efe4', cream:'#eedfb0', yellow:'#e6c229', orange:'#e8862a', red:'#c8352d', pink:'#e68fb4', magenta:'#c0388b',
+  purple:'#7c4fa8', lavender:'#a892d8', blue:'#4a78c9', green:'#9bbb59' };
+var KCOL = { foliage:'#d2602a', fruit:'#6d2a6f', structure:'#2e5e3b' };
+var KWORD = { bloom:'flowers', foliage:'leaf color', fruit:'fruit/berries', structure:'winter structure' };
+
+var imul = Math.imul || function(a, b){ var al = a & 0xffff, bl = b & 0xffff; return (al * bl + ((((a >>> 16) & 0xffff) * bl + al * ((b >>> 16) & 0xffff)) << 16 >>> 0)) | 0; };
+function mulberry32(a){ return function(){ a = (a + 0x6D2B79F5) | 0; var t = imul(a ^ (a >>> 15), 1 | a); t = (t + imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function vgWindow(){ return Math.floor(Date.now() / VG_WIN_MS); }
+function vgSeed(){ return ((VG.win % 1000003) * 7919 + VG.regen * 104729 + 17) % 4294967296; }
+function byId(id){ for (var i = 0; i < PLANTS.length; i++) if (PLANTS[i].id === id) return PLANTS[i]; return null; }
+function listJoin(a){ return a.length <= 1 ? (a[0] || '') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
+function cap(s){ s = String(s || ''); return s.charAt(0).toUpperCase() + s.slice(1); }
+function isTreeX(x){ return x.layer === 'Canopy' || x.layer === 'Understory Tree'; }
+function seasonOf(ms){
+  var c = { winter:0, spring:0, summer:0, fall:0 };
+  ms.forEach(function(m){ c[m === 12 || m <= 2 ? 'winter' : m <= 5 ? 'spring' : m <= 8 ? 'summer' : 'fall']++; });
+  var best = 'spring'; for (var k in c) if (c[k] > c[best]) best = k; return best;
+}
+
+// Effective ratings come from the page's own getNote() (baseline + local overlay)
+function ratingsSnapshot(){
+  var map = {}, sig = [];
+  PLANTS.forEach(function(p){
+    var n = getNote(p.id), vals = [n.carlaLike, n.mikeLike].filter(function(v){ return v != null && v > 0; });
+    if (!vals.length) return;
+    var sum = 0; vals.forEach(function(v){ sum += v; });
+    map[p.id] = { avg:sum / vals.length, min:Math.min.apply(null, vals) };
+    sig.push(p.id + ':' + n.carlaLike + ':' + n.mikeLike);
+  });
+  return { map:map, sig:sig.join('|') };
+}
+
+/* card building */
+function newCard(rid, anchor){
+  var c = { recipe:rid, anchor:anchor.id, members:[], ids:{}, sun:[0, 4], wMin:9, wMax:-9, canopy:0, trees:0, minUnderHi:9 };
+  addMember(c, anchor, 'Anchor'); return c;
+}
+function addMember(c, p, role, extra){
+  var x = vx(p); c.members.push({ p:p, x:x, role:role, extra:extra || null }); c.ids[p.id] = 1;
+  c.sun = [Math.max(c.sun[0], x.sun[0]), Math.min(c.sun[1], x.sun[1])];
+  c.wMin = Math.min(c.wMin, x.water); c.wMax = Math.max(c.wMax, x.water);
+  if (x.layer === 'Canopy') c.canopy++;
+  if (isTreeX(x)) c.trees++; else if (x.layer !== 'Climber') c.minUnderHi = Math.min(c.minUnderHi, x.sun[1]);
+}
+function compatible(c, p, ctx, o){
+  if (c.ids[p.id]) return false;
+  var r = ctx.snap.map[p.id]; if (r && r.min <= 2) return false;           // either person rated it 1-2
+  if (ctx.pet && p.petSafe !== 'Yes') return false;
+  var x = vx(p);
+  if (Math.max(c.sun[0], x.sun[0]) > Math.min(c.sun[1], x.sun[1])) return false;   // sun ranges must overlap
+  if (Math.max(c.wMax, x.water) - Math.min(c.wMin, x.water) > 1) return false;     // water: same or adjacent
+  if (x.layer === 'Canopy' && c.canopy) return false;                               // one big canopy tree per vignette
+  if (isTreeX(x) && c.trees >= 2) return false;
+  if (o && o.shadeUnder){                                                           // things under a tree get shade
+    if (isTreeX(x)){ if (c.minUnderHi < 2) return false; }
+    else if (c.trees && x.layer !== 'Climber' && x.sun[1] < 2) return false;
+  }
+  return true;
+}
+function prefScore(p, ctx){
+  var r = ctx.snap.map[p.id], s = 0;
+  if (r) s += (r.avg - 3) * 0.9 + (r.avg >= 4 ? 0.5 : 0);
+  s += (num(p.ecoScore) || 3) * 0.12;
+  s -= (ctx.used[p.id] || 0) * 0.45;            // spread companions around across cards
+  return s;
+}
+function pick(c, ctx, o){
+  var best = null, bestS = -1e9;
+  for (var i = 0; i < PLANTS.length; i++){
+    var p = PLANTS[i], x = vx(p);
+    if (o.filter && !o.filter(p, x)) continue;
+    if (!compatible(c, p, ctx, o)) continue;
+    var g = o.gain ? o.gain(p, x) : 0;
+    if (o.minGain != null && g < o.minGain) continue;
+    var s = g * (o.gainW == null ? 1 : o.gainW) + prefScore(p, ctx) + ctx.rng() * 0.9;
+    if (s > bestS){ bestS = s; best = p; }
+  }
+  return best;
+}
+function coverCounts(c, kinds){
+  var cnt = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+  c.members.forEach(function(m){ monthsOfX(m.x, kinds).forEach(function(mm){ cnt[mm]++; }); });
+  return cnt;
+}
+function monthsOfX(x, kinds){ if (!kinds) return x.months; var out = []; kinds.forEach(function(k){ addM(out, x.interest[k] || []); }); return out; }
+function gapsOf(cnt, months){ return (months || mspan(1, 12)).filter(function(m){ return !cnt[m]; }); }
+function layerRole(p, x){
+  return x.layer === 'Canopy' ? 'Canopy' : x.layer === 'Understory Tree' ? 'Understory tree' : x.layer === 'Shrub' ? 'Shrub layer' :
+    x.layer === 'Groundcover' ? 'Groundcover' : x.layer === 'Climber' ? 'Climber' :
+    p.category === 'Fern' ? 'Fern layer' : p.category === 'Grass' ? 'Grass layer' : p.category === 'Bulb' ? 'Bulb layer' : 'Perennial layer';
+}
+function seasonRole(x, ms){
+  function has(k, set){ return (x.interest[k] || []).some(function(m){ return hasM(ms, m) && (!set || hasM(set, m)); }); }
+  if (ms.some(function(m){ return hasM([12, 1, 2], m); })) return has('bloom', [11, 12, 1, 2]) ? 'Winter bloom' : has('fruit', WINTER) ? 'Winter berries' : 'Winter interest';
+  if ((x.interest.foliage || []).length <= 4 && has('foliage', [9, 10, 11])) return 'Fall color';
+  if (has('bloom', [3, 4, 5])) return 'Spring bloom';
+  if (has('bloom', [6, 7, 8])) return 'Summer bloom';
+  if (has('bloom', [9, 10, 11])) return 'Fall bloom';
+  if (has('fruit')) return 'Berries & fruit';
+  return 'Supporting';
+}
+function interestPhrases(x){
+  var I = x.interest, out = [];
+  if (I.bloom.length) out.push(seasonOf(I.bloom) + ' flowers');
+  if (I.foliage.length) out.push(I.foliage.length <= 4 && I.foliage.every(function(m){ return m >= 9 && m <= 11; }) ? 'fall color' : 'colorful leaves');
+  if (I.fruit.length) out.push(x.edible ? 'fruit' : 'berries or seed heads');
+  if (I.structure.length) out.push(x.evergreen ? 'evergreen structure' : 'winter structure');
+  return out;
+}
+function vs(ms, one, many){ return ms.length > 1 ? many : one; }
+function inMonths(ms){ return ms.length >= 12 ? 'year-round' : 'in ' + fmtMonths(ms); }
+var ROLE_VERB = { 'Winter bloom':'flowers in winter', 'Winter berries':'adds winter berries', 'Winter interest':'holds the winter structure', 'Fall color':'brings fall color',
+  'Spring bloom':'adds spring flowers', 'Summer bloom':'carries the summer bloom', 'Fall bloom':'flowers into fall', 'Berries & fruit':'adds fruit', 'Supporting':'thickens the planting' };
+function names(ms){ return listJoin(ms.map(function(m){ return m.p.name; })); }
+function grow(c, ctx, o){ // generic greedy fill
+  for (var k = 0; k < o.max; k++){
+    if (o.stop && k >= (o.min || 3) && o.stop(c)) break;
+    var p = pick(c, ctx, o); if (!p) break;
+    addMember(c, p, o.role(p, vx(p), c));
+  }
+  return c.members.length - 1 >= (o.min || 3);
+}
+
+var RECIPES = [
+  { id:'four-season', label:'Four-Season Bed', dot:'#2f6b3f',
+    anchorOk:function(p, x){ return x.months.length >= 2 && x.layer !== 'Climber'; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), cnt = coverCounts(c), SHOW = ['bloom', 'foliage', 'fruit'], cs = coverCounts(c, SHOW);
+      for (var k = 0; k < 5; k++){
+        if (k >= 3 && !gapsOf(cnt).length) break;
+        var p = pick(c, ctx, { filter:function(p, x){ return x.layer !== 'Canopy' && x.layer !== 'Climber'; }, gainW:0.55, minGain:0.6,
+          gain:function(p, x){ // showy interest (flowers, leaf color, fruit) in thin months counts most; bare structure fills true gaps
+            var g = 0; monthsOfX(x, SHOW).forEach(function(m){ g += (hasM(WINTER, m) ? 2 : 1) / (1 + cs[m]); });
+            x.interest.structure.forEach(function(m){ if (!cnt[m]) g += 1; }); return g; } });
+        if (!p) break;
+        var x = vx(p), filled = x.months.filter(function(m){ return !cnt[m]; });
+        var sm = monthsOfX(x, SHOW).length ? monthsOfX(x, SHOW) : x.months;
+        var lo = Math.min.apply(null, sm.map(function(m){ return cs[m]; })), thin = sm.filter(function(m){ return cs[m] === lo; });
+        addMember(c, p, seasonRole(x, filled.length ? filled : thin), filled);
+        x.months.forEach(function(m){ cnt[m]++; }); monthsOfX(x, SHOW).forEach(function(m){ cs[m]++; });
+      }
+      if (c.members.length < 4) return null;
+      var gaps = gapsOf(cnt);
+      c.coverage = (12 - gaps.length) / 12 * 0.6 + (12 - gapsOf(cs).length) / 12 * 0.4;
+      c.title = 'Four-Season Bed around ' + a.name;
+      var bits = [a.name + ' carries ' + listJoin(interestPhrases(vx(a)).slice(0, 2))];
+      c.members.slice(1, 4).forEach(function(m){ bits.push(m.p.name + ' ' + (ROLE_VERB[m.role] || 'fills in')); });
+      c.why = bits.join('; ') + '. ' + (gaps.length ? 'Only ' + fmtMonths(gaps) + ' stays quiet.' : 'Something is worth a look every month of the year.');
+      return c;
+    } },
+  { id:'layered', label:'Canopy to Carpet', dot:'#2b4c7e',
+    anchorOk:function(p, x){ return isTreeX(x); },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), ax = vx(a), cnt = coverCounts(c);
+      c.members[0].role = 'Anchor · ' + (ax.layer === 'Canopy' ? 'canopy' : 'understory tree');
+      var slots = (ax.layer === 'Canopy' ? [['Understory Tree']] : []).concat([['Shrub'], ['Herbaceous'], ['Groundcover'], ax.layer === 'Canopy' ? null : ['Herbaceous', 'Climber']]);
+      slots.forEach(function(sl){
+        if (!sl) return;
+        var p = pick(c, ctx, { shadeUnder:true, filter:function(p, x){ return sl.indexOf(x.layer) >= 0; }, gainW:0.4,
+          gain:function(p, x){ var g = p.category === 'Fern' ? 0.8 : 0; x.months.forEach(function(m){ if (!cnt[m]) g += 0.25; }); return g; } });
+        if (p){ addMember(c, p, layerRole(p, vx(p))); vx(p).months.forEach(function(m){ cnt[m]++; }); }
+      });
+      var lay = {}; c.members.forEach(function(m){ lay[m.x.layer] = 1; });
+      if (c.members.length < 4 || !(lay.Herbaceous || lay.Groundcover)) return null;
+      c.coverage = Object.keys(lay).length / 5;
+      c.title = 'Canopy to Carpet under ' + a.name;
+      var by = function(L){ return c.members.slice(1).filter(function(m){ return L.indexOf(m.x.layer) >= 0; }); };
+      var bits = [a.name + ' forms the ' + (ax.layer === 'Canopy' ? 'canopy' : 'top layer')];
+      if (by(['Understory Tree']).length) bits.push(names(by(['Understory Tree'])) + vs(by(['Understory Tree']), ' adds', ' add') + ' a smaller tree beneath');
+      if (by(['Shrub']).length) bits.push(names(by(['Shrub'])) + vs(by(['Shrub']), ' fills', ' fill') + ' the shrub layer');
+      if (by(['Herbaceous', 'Groundcover']).length) bits.push(names(by(['Herbaceous', 'Groundcover'])) + vs(by(['Herbaceous', 'Groundcover']), ' carpets', ' carpet') + ' the part-shade floor');
+      c.why = bits.join('; ') + '. Stacked like this, it reads as a pocket of PNW forest edge.';
+      return c;
+    } },
+  { id:'pollinator', label:'Pollinator Relay', dot:'#d9a521',
+    anchorOk:function(p, x){ return x.interest.bloom.some(function(m){ return m >= 3 && m <= 10; }) && (num(p.ecoScore) || 0) >= 3; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), season = mspan(3, 10), cnt = coverCounts(c, ['bloom']);
+      var ok = grow(c, ctx, { max:5, min:3, gainW:0.7, minGain:0.6,
+        filter:function(p, x){ return x.interest.bloom.length > 0 && x.layer !== 'Canopy'; },
+        gain:function(p, x){ var g = 0; x.interest.bloom.forEach(function(m){ if (hasM(season, m)) g += 1.2 / (1 + cnt[m]); }); return g + (num(p.ecoScore) || 3) * 0.3; },
+        stop:function(){ return !gapsOf(cnt, season).length; },
+        role:function(p, x){ x.interest.bloom.forEach(function(m){ cnt[m]++; }); var st = firstBloom(x); return st <= 4 ? 'Early bloom' : st <= 6 ? 'Midseason bloom' : 'Late bloom'; } });
+      if (!ok) return null;
+      var gaps = gapsOf(cnt, season), eco = 0;
+      c.members.forEach(function(m){ eco += num(m.p.ecoScore) || 3; });
+      c.coverage = (8 - gaps.length) / 8;
+      c.title = 'Pollinator Relay with ' + a.name;
+      var ord = c.members.slice().sort(function(m1, m2){ return firstBloom(m1.x) - firstBloom(m2.x); }), f = ord[0], l = ord[ord.length - 1];
+      c.why = f.p.name + ' opens the season in ' + MON[firstBloom(f.x) - 1] + ', ' + names(ord.slice(1, -1)) + vs(ord.slice(1, -1), ' carries', ' carry') + ' the middle, and ' + l.p.name +
+        ' is still flowering in ' + MON[lastBloom(l.x) - 1] + (gaps.length ? ' (thin in ' + fmtMonths(gaps) + ')' : '') +
+        '. Average ecosystem benefit: ' + (Math.round(eco / c.members.length * 10) / 10) + '/5.';
+      return c;
+    } },
+  { id:'edible', label:'Edible Guild', dot:'#b3261e',
+    anchorOk:function(p, x){ return x.edible && (isTreeX(x) || x.layer === 'Shrub') && !isHerbP(p); },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), ax = vx(a);
+      var slots = [
+        isTreeX(ax) ? null : { role:'Fruit tree', f:function(p, x){ return x.edible && x.layer === 'Understory Tree'; } },
+        { role:'Berry layer', f:function(p, x){ return x.edible && x.layer === 'Shrub' && !isHerbP(p); } },
+        { role:'Herb', f:function(p){ return isHerbP(p); } },
+        { role:'Edible groundcover', f:function(p, x){ return x.edible && x.layer === 'Groundcover'; } },
+        { role:'Pollinator support', f:function(p, x){ return !x.edible && x.interest.bloom.length && (num(p.ecoScore) || 0) >= 4 && x.layer !== 'Canopy'; } },
+        { role:'Berry layer', f:function(p, x){ return x.edible && (x.layer === 'Shrub' || x.layer === 'Climber') && !isHerbP(p); } }
+      ];
+      slots.forEach(function(s){
+        if (!s || c.members.length >= 6) return;
+        var p = pick(c, ctx, { filter:s.f, gain:function(p){ return (num(p.ecoScore) || 3) * 0.1; } });
+        if (p) addMember(c, p, s.role);
+      });
+      var ed = c.members.filter(function(m){ return m.x.edible; });
+      if (c.members.length < 4 || ed.length < 3) return null;
+      c.coverage = ed.length / c.members.length;
+      c.title = 'Edible Guild around ' + a.name;
+      var by = function(r){ return c.members.filter(function(m){ return m.role === r; }); }, bits = [a.name + ' is the fruiting centerpiece'], hv = [];
+      ed.forEach(function(m){ addM(hv, m.x.interest.fruit); });
+      if (by('Fruit tree').length) bits.push(names(by('Fruit tree')) + ' adds a second fruit tree');
+      if (by('Berry layer').length) bits.push(names(by('Berry layer')) + vs(by('Berry layer'), ' adds', ' add') + ' a berry harvest');
+      if (by('Herb').length) bits.push(names(by('Herb')) + vs(by('Herb'), ' brings', ' bring') + ' kitchen herbs');
+      if (by('Edible groundcover').length) bits.push(names(by('Edible groundcover')) + vs(by('Edible groundcover'), ' covers the soil and is edible too', ' cover the soil and are edible too'));
+      if (by('Pollinator support').length) bits.push(names(by('Pollinator support')) + vs(by('Pollinator support'), ' pulls', ' pull') + ' in pollinators');
+      c.why = bits.join('; ') + '.' + (hv.length ? ' Something to pick ' + inMonths(hv) + '.' : '');
+      return c;
+    } },
+  { id:'texture', label:'Texture Contrast', dot:'#7a8090',
+    anchorOk:function(p, x){ return x.layer !== 'Canopy' && x.layer !== 'Climber'; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), at = TEXTURES.indexOf(vx(a).texture);
+      function fr(x){ return /upright|vase|columnar|pyramidal|fountain/i.test(x.form) ? 'Thriller' : /mat|spreading|weeping|climbing/i.test(x.form) ? 'Spiller' : 'Filler'; }
+      function have(k, v){ return c.members.some(function(m){ return (k === 'tex' ? m.x.texture : fr(m.x)) === v; }); }
+      var ok = grow(c, ctx, { max:4, min:3, gainW:1, minGain:0.8,
+        filter:function(p, x){ return x.layer !== 'Canopy' && x.layer !== 'Climber' && !isTreeX(x); },
+        gain:function(p, x){ var d = Math.abs(TEXTURES.indexOf(x.texture) - at); return (d === 2 ? 1.6 : d === 1 ? 0.4 : 0) + (have('tex', x.texture) ? 0 : 0.8) + (have('form', fr(x)) ? 0 : 1.2); },
+        role:function(p, x){ return fr(x) + ' · ' + x.texture.toLowerCase(); } });
+      if (!ok) return null;
+      c.members[0].role = 'Anchor · ' + fr(vx(a)).toLowerCase();
+      var tex = {}, frm = {}; c.members.forEach(function(m){ tex[m.x.texture] = 1; frm[fr(m.x)] = 1; });
+      if (Object.keys(tex).length < 2) return null;
+      c.coverage = (Object.keys(tex).length / 3 + Object.keys(frm).length / 3) / 2;
+      c.title = 'Texture Contrast around ' + a.name;
+      var co = c.members.filter(function(m){ return m.x.texture === 'Coarse'; }), fi = c.members.filter(function(m){ return m.x.texture === 'Fine'; }), bits = [];
+      if (co.length && fi.length) bits.push('The bold leaves of ' + names(co) + ' play off the fine texture of ' + names(fi) + ', so each reads more clearly');
+      else bits.push((fi.length ? 'Fine-textured ' + names(fi) : 'Coarse ' + names(co)) + ' contrasts with the medium leaves around ' + (fi.length + co.length > 1 ? 'them' : 'it'));
+      ['Thriller', 'Filler', 'Spiller'].forEach(function(r){
+        var ms = c.members.filter(function(m){ return fr(m.x) === r; });
+        if (ms.length) bits.push(names(ms) + (r === 'Thriller' ? ' rise' + (ms.length > 1 ? ' as thrillers' : 's as the thriller') : r === 'Filler' ? ' fill' + (ms.length > 1 ? '' : 's') + ' the middle' : ' spill' + (ms.length > 1 ? '' : 's') + ' over the edge'));
+      });
+      c.why = bits.join('; ') + '.';
+      return c;
+    } },
+  { id:'color', label:'Color Echo', dot:'#a8466a',
+    anchorOk:function(p, x){ return x.flowerColors.length > 0 || /burgundy|silver|gold|variegated/.test(x.foliageColor); },
+    build:function(a, ctx){
+      var ax = vx(a), fc = ax.flowerColors.filter(function(k){ return k !== 'white' && k !== 'green'; });
+      var key = fc[0] || (ax.foliageColor === 'burgundy' ? 'pink' : ax.foliageColor === 'silver' ? 'blue' : ax.foliageColor === 'gold' ? 'yellow' : ax.flowerColors[0] || 'white');
+      var FAM = { purple:['purple','lavender','magenta'], lavender:['lavender','purple','blue'], pink:['pink','magenta'], magenta:['magenta','pink','purple'],
+        blue:['blue','lavender'], yellow:['yellow','cream'], cream:['cream','yellow','white'], white:['white','cream'], orange:['orange','red','yellow'], red:['red','orange'], green:['green'] };
+      var FOL = { burgundy:['pink','magenta','red','purple'], silver:['blue','lavender','purple','white'], gold:['yellow','orange','cream'], variegated:['white','cream','yellow'] };
+      var COMP = { purple:['yellow','cream','orange'], lavender:['yellow','cream'], blue:['orange','yellow'], yellow:['purple','lavender','blue'], cream:['purple','blue'],
+        orange:['blue','purple'], pink:['green'], magenta:['green','yellow'], red:['green'], white:['blue','purple'], green:['purple','magenta'] };
+      var fam = FAM[key] || [key];
+      function echo(x){ return x.flowerColors.some(function(k){ return fam.indexOf(k) >= 0; }) ? 'flower' : (FOL[x.foliageColor] || []).indexOf(key) >= 0 ? 'foliage' : ''; }
+      function comp(x){ for (var i = 0; i < x.flowerColors.length; i++) if ((COMP[key] || []).indexOf(x.flowerColors[i]) >= 0) return x.flowerColors[i]; return ''; }
+      var c = newCard(this.id, a), nComp = 0, nEcho = 0, backbone = false;
+      var ok = grow(c, ctx, { max:4, min:3, gainW:1, minGain:0.9,
+        filter:function(p, x){ return x.layer !== 'Canopy'; },
+        gain:function(p, x){ return echo(x) ? (nEcho < 2 ? 2 : 0.6) : comp(x) ? (nComp ? 0.3 : 1.4) : (!backbone && x.evergreen && !x.flowerColors.length) ? 1.1 : 0; },
+        role:function(p, x){
+          var e = echo(x), k = comp(x);
+          if (e){ nEcho++; return e === 'flower' ? 'Echoes ' + key : 'Foliage echo'; }
+          if (k){ nComp++; return 'Contrast: ' + k; }
+          backbone = true; return 'Green backbone';
+        } });
+      if (!ok) return null;
+      var echoes = c.members.slice(1).filter(function(m){ return /^Echo|^Foliage/.test(m.role); });
+      if (!echoes.length) return null;
+      c.coverage = (echoes.length + 1) / c.members.length;
+      c.title = cap(key) + ' Echo around ' + a.name;
+      var cmp = c.members.filter(function(m){ return /^Contrast/.test(m.role); }), bb = c.members.filter(function(m){ return m.role === 'Green backbone'; });
+      c.why = cap(key) + ' repeats through ' + names([c.members[0]].concat(echoes)) + ', so the eye travels across the bed' +
+        (cmp.length ? '; ' + names(cmp) + ' add' + (cmp.length > 1 ? '' : 's') + ' a complementary ' + listJoin(cmp.map(function(m){ return m.role.replace('Contrast: ', ''); })) + ' pop' : '') +
+        (bb.length ? '; ' + names(bb) + ' keep' + (bb.length > 1 ? '' : 's') + ' it grounded in green' : '') + '.';
+      return c;
+    } },
+  { id:'woodland', label:'PNW Woodland', dot:'#5b7d3a',
+    anchorOk:function(p, x){ return p.nwNative === true && x.layer !== 'Climber'; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), lay = {}; lay[vx(a).layer] = 1;
+      var ok = grow(c, ctx, { max:4, min:3, gainW:1, shadeUnder:true,
+        filter:function(p){ return p.nwNative === true || p.nwCoded === true; },
+        gain:function(p, x){ return (p.nwNative ? 1.5 : 0.2) + (lay[x.layer] ? 0 : 1); },
+        role:function(p, x){ lay[x.layer] = 1; return layerRole(p, x); } });
+      if (!ok) return null;
+      var nat = c.members.filter(function(m){ return m.p.nwNative === true; }), non = c.members.filter(function(m){ return m.p.nwNative !== true; });
+      c.coverage = nat.length / c.members.length;
+      c.title = 'PNW Woodland with ' + a.name;
+      c.why = (non.length ? names(nat) + ' are Pacific Northwest natives' : 'All ' + c.members.length + ' are Pacific Northwest natives') +
+        ' that grow together in local woods, so they share conditions and feed native insects and birds' +
+        (non.length ? '; ' + names(non) + ' ' + (non.length > 1 ? 'aren\'t' : 'isn\'t') + ' native but suit the look' : '') + '.';
+      return c;
+    } },
+  { id:'patio', label:'Hot Patio Edge', dot:'#e8862a',
+    anchorOk:function(p, x){ return x.sun[0] === 0 && x.water <= 0.5 && x.layer !== 'Canopy'; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), lay = {}, cnt = coverCounts(c, ['bloom']); lay[vx(a).layer] = 1;
+      var ok = grow(c, ctx, { max:4, min:3, gainW:1,
+        filter:function(p, x){ return x.sun[0] === 0 && x.water <= 0.5 && x.layer !== 'Canopy' && !(isTreeX(x) && c.trees); },
+        gain:function(p, x){ var g = lay[x.layer] ? 0 : 0.8; x.interest.bloom.forEach(function(m){ if (!cnt[m]) g += 0.2; }); return g; },
+        role:function(p, x){ lay[x.layer] = 1; x.interest.bloom.forEach(function(m){ cnt[m]++; }); return layerRole(p, x); } });
+      if (!ok) return null;
+      var bl = []; c.members.forEach(function(m){ addM(bl, m.x.interest.bloom); });
+      var ev = c.members.filter(function(m){ return m.x.evergreen; });
+      c.coverage = 0.8 + (ev.length ? 0.1 : 0) + (bl.length >= 6 ? 0.1 : 0);
+      c.title = 'Hot Patio Edge with ' + a.name;
+      c.why = 'Every plant here takes full sun and gets by on little summer water once established, which suits the hot south-facing patio' +
+        (bl.length ? '. Flowers ' + inMonths(bl) : '') + (ev.length ? (bl.length ? ', and ' : '. ') + names(ev) + ' stay' + (ev.length > 1 ? '' : 's') + ' green all winter' : '') + '.';
+      return c;
+    } },
+  { id:'shade', label:'Shade Garden', dot:'#3d6f6a',
+    anchorOk:function(p, x){ return x.sun[1] >= 3 && x.layer !== 'Canopy'; },
+    build:function(a, ctx){
+      var c = newCard(this.id, a), lay = {}, cnt = coverCounts(c); lay[vx(a).layer] = 1;
+      var ok = grow(c, ctx, { max:4, min:3, gainW:1, shadeUnder:true,
+        filter:function(p, x){ return x.sun[1] >= 3 && x.layer !== 'Canopy'; },
+        gain:function(p, x){ var g = lay[x.layer] ? 0 : 0.8; x.months.forEach(function(m){ if (!cnt[m]) g += hasM(WINTER, m) ? 0.3 : 0.15; }); return g; },
+        role:function(p, x){ lay[x.layer] = 1; x.months.forEach(function(m){ cnt[m]++; }); return layerRole(p, x); } });
+      if (!ok) return null;
+      var ev = c.members.filter(function(m){ return m.x.evergreen; }), fl = c.members.filter(function(m){ return m.x.interest.bloom.length; });
+      c.coverage = (12 - gapsOf(cnt).length) / 12;
+      c.title = 'Shade Garden with ' + a.name;
+      c.why = 'All of these handle part to full shade' + (fl.length ? '; ' + names(fl.slice(0, 3)) + ' bring' + (fl.length > 1 ? '' : 's') + ' flowers to a dim corner' : '') +
+        (ev.length ? '; ' + names(ev.slice(0, 3)) + ' keep' + (ev.length > 1 ? '' : 's') + ' it green through winter' : '') + '.';
+      return c;
+    } }
+];
+var RECIPE = {}; RECIPES.forEach(function(r){ RECIPE[r.id] = r; });
+function firstBloom(x){ var b = x.interest.bloom.filter(function(m){ return m >= 3 && m <= 10; }); return b.length ? Math.min.apply(null, b) : 13; }
+function lastBloom(x){ var b = x.interest.bloom.filter(function(m){ return m >= 3 && m <= 10; }); return b.length ? Math.max.apply(null, b) : 1; }
+function cardKey(c){ return c.recipe + ':' + c.members.map(function(m){ return m.p.id; }).join(','); }
+function scoreCard(c, ctx){
+  var comp = c.members.slice(1), pr = 0, eco = 0, ar = ctx.snap.map[c.anchor];
+  comp.forEach(function(m){ var r = ctx.snap.map[m.p.id]; pr += r ? r.avg - 3 : 0; eco += num(m.p.ecoScore) || 3; });
+  c.score = (c.coverage || 0) * 3 + pr / comp.length + (ar ? (ar.avg - 3) * 0.5 : 0) + eco / comp.length * 0.2 + ctx.rng() * 0.5;
+}
+function weightedOrder(list, wfn, rng){ // Efraimidis-Spirakis weighted shuffle
+  return list.map(function(p){ return { p:p, k:Math.pow(rng(), 1 / Math.max(0.01, wfn(p))) }; })
+    .sort(function(a, b){ return b.k - a.k; }).map(function(o){ return o.p; });
+}
+
+function vgGenerate(){
+  V2 = {};
+  var snap = VG.snap, ctx = { snap:snap, pet:VG.pet, used:{}, rng:mulberry32(vgSeed()) };
+  var okPlant = function(p){ var r = snap.map[p.id]; return !(r && r.min <= 2) && (!VG.pet || p.petSafe === 'Yes'); };
+  var rated = PLANTS.filter(function(p){ var r = snap.map[p.id]; return r && r.avg >= 3 && okPlant(p); });
+  VG.starter = !rated.length;
+  var ratedOrder = weightedOrder(rated, function(p){ return snap.map[p.id].avg >= 4 ? 3 : 1.2; }, ctx.rng);
+  var starterOrder = weightedOrder(PLANTS.filter(okPlant), function(p){ return Math.pow(num(p.popularity) || 2, 1.6) + (p.nwCoded ? 2.5 : 0) + (p.nwNative ? 1 : 0); }, ctx.rng);
+  var all = [], seen = {}, anchorUse = {};
+  RECIPES.forEach(function(r){
+    var made = 0;
+    function run(order, starter, limit){
+      for (var pass = 0; pass < 2 && made < limit; pass++){
+        for (var i = 0; i < order.length && made < limit; i++){
+          var a = order[i];
+          if (pass === 0 ? anchorUse[a.id] : !anchorUse[a.id]) continue;   // fresh anchors first, then reuse
+          if (!r.anchorOk(a, vx(a))) continue;
+          var best = null;
+          for (var t = 0; t < 2; t++){ var c = r.build(a, ctx); if (c){ scoreCard(c, ctx); if (!best || c.score > best.score) best = c; } }
+          if (!best) continue;
+          best.key = cardKey(best);
+          var sig = r.id + '|' + best.members.map(function(m){ return m.p.id; }).sort().join(',');
+          if (seen[sig]) continue; seen[sig] = 1;
+          best.starter = starter; all.push(best); made++;
+          anchorUse[a.id] = (anchorUse[a.id] || 0) + 1;
+          best.members.forEach(function(m, j){ if (j) ctx.used[m.p.id] = (ctx.used[m.p.id] || 0) + 1; });
+        }
+      }
+    }
+    run(ratedOrder, false, 3);
+    if (!made) run(starterOrder, true, VG.starter ? 3 : 1);
+  });
+  // the ~8-card mix: round-robin over recipe types, favorites first, varied anchors
+  var mix = [], usedA = {};
+  function round(pred, fresh){
+    RECIPES.forEach(function(r){
+      if (mix.length >= 8) return;
+      var cand = all.filter(function(c){ return c.recipe === r.id && mix.indexOf(c) < 0 && pred(c) && (!fresh || !usedA[c.anchor]); })
+        .sort(function(a, b){ return b.score - a.score; });
+      if (cand.length){ mix.push(cand[0]); usedA[cand[0].anchor] = 1; }
+    });
+  }
+  round(function(c){ return !c.starter; }, true);
+  round(function(){ return true; }, true);
+  for (var g = 0; g < 4 && mix.length < 8; g++) round(function(){ return true; }, false);
+  VG.all = all; VG.mix = mix; VG.byKey = {};
+  all.forEach(function(c){ VG.byKey[c.key] = c; });
+  VG.generatedAt = new Date(Date.now());
+}
+
+/* saved vignettes */
+function vgSavedList(){ try { var a = JSON.parse(lsGet(LS_VG_SAVED) || '[]'); return Array.isArray(a) ? a : []; } catch(e){ return []; } }
+function vgSetSaved(a){ lsSet(LS_VG_SAVED, JSON.stringify(a)); }
+function vgCleanSaved(v){
+  if (!v || typeof v !== 'object' || !Array.isArray(v.members) || !v.key) return null;
+  return { key:String(v.key), recipe:String(v.recipe || ''), title:String(v.title || ''), why:String(v.why || ''), saved:String(v.saved || ''),
+    members:v.members.filter(function(m){ return m && m.id; }).map(function(m){ return { id:String(m.id), role:String(m.role || '') }; }) };
+}
+function vgMergeSaved(list){
+  var cur = vgSavedList(), keys = {}, n = 0;
+  cur.forEach(function(v){ keys[v.key] = 1; });
+  (list || []).forEach(function(v){ v = vgCleanSaved(v); if (v && !keys[v.key]){ cur.push(v); keys[v.key] = 1; n++; } });
+  vgSetSaved(cur); return n;
+}
+function savedToCard(v){
+  var ms = v.members.map(function(m){ var p = byId(m.id); return p ? { p:p, x:vx(p), role:m.role } : null; }).filter(Boolean);
+  return ms.length ? { key:v.key, recipe:v.recipe, title:v.title, why:v.why, members:ms, saved:true } : null;
+}
+
+/* rendering */
+function vgStats(ms){
+  var sun = [0, 4], wMin = 9, wMax = -9, hMin = 1e9, hMax = 0, pet = { Yes:[], No:[], other:[] };
+  ms.forEach(function(m){
+    var x = m.x; sun = [Math.max(sun[0], x.sun[0]), Math.min(sun[1], x.sun[1])];
+    wMin = Math.min(wMin, x.water); wMax = Math.max(wMax, x.water);
+    hMin = Math.min(hMin, x.heightFt[0]); hMax = Math.max(hMax, x.heightFt[1]);
+    (m.p.petSafe === 'Yes' ? pet.Yes : m.p.petSafe === 'No' ? pet.No : pet.other).push(m.p.name);
+  });
+  return { sun:sun, wMin:wMin, wMax:wMax, hMin:hMin, hMax:hMax, pet:pet };
+}
+function ftLbl(v){ return v < 1 ? Math.round(v * 12) + ' in' : (Math.round(v * 10) / 10) + ' ft'; }
+function vgChips(ms){
+  var s = vgStats(ms), h = [];
+  var sunTxt = s.sun[0] > s.sun[1] ? 'Mixed sun' : s.sun[0] === s.sun[1] ? SUN_PTS[s.sun[0]] : SUN_PTS[s.sun[0]] + ' to ' + SUN_PTS[s.sun[1]].toLowerCase();
+  h.push('<span class="chip" title="Light every plant here can take">&#9728; ' + esc(sunTxt) + '</span>');
+  var wl = function(v){ return WATER_LBL[String(v)] || 'Moderate'; };
+  h.push('<span class="chip" title="Summer water needs">&#128167; ' + esc(s.wMin === s.wMax ? wl(s.wMin) + ' water' : wl(s.wMin) + ' to ' + wl(s.wMax).toLowerCase() + ' water') + '</span>');
+  h.push('<span class="chip" title="Mature height range across the planting">&#8597; ' + esc(ftLbl(s.hMin) + '–' + ftLbl(s.hMax)) + '</span>');
+  if (!s.pet.No.length && !s.pet.other.length) h.push('<span class="chip yes" title="Every plant is marked pet-safe">&#128062; Pet-safe</span>');
+  else if (s.pet.No.length) h.push('<span class="chip warn" title="' + esc('Not pet-safe: ' + s.pet.No.join(', ') + (s.pet.other.length ? '. Caution: ' + s.pet.other.join(', ') : '')) + '">&#128062; Not pet-safe</span>');
+  else h.push('<span class="chip" title="' + esc('Pet caution: ' + s.pet.other.join(', ')) + '">&#128062; Pet caution</span>');
+  return h.join('');
+}
+function vgStrip(ms){
+  var h = '', empty = [];
+  for (var m = 1; m <= 12; m++){
+    var segs = '', tips = [];
+    ms.forEach(function(mem){
+      var I = mem.x.interest, kinds = ['bloom', 'fruit', 'foliage', 'structure'].filter(function(k){ return hasM(I[k] || [], m); });
+      if (!kinds.length) return;
+      var col = kinds[0] === 'bloom' ? (FCOL[mem.x.flowerColors[0]] || '#e3a3c4') : KCOL[kinds[0]];
+      segs += '<i style="background:' + col + '"></i>';
+      tips.push(mem.p.name + ' (' + kinds.map(function(k){ return k === 'structure' && mem.x.evergreen ? 'evergreen' : KWORD[k]; }).join(', ') + ')');
+    });
+    if (!tips.length) empty.push(m);
+    var tip = MON[m - 1] + ': ' + (tips.length ? tips.join('; ') : 'nothing of note (a gap)');
+    h += '<button type="button" class="vg-m' + (tips.length ? '' : ' empty') + '" data-tip="' + esc(tip) + '" title="' + esc(tip) + '" aria-label="' + esc(tip) + '">' +
+      '<span class="vg-segs">' + segs + '</span><span class="vg-ml">' + MON[m - 1].charAt(0) + '</span></button>';
+  }
+  var sum = empty.length ? 'Interest in ' + (12 - empty.length) + ' of 12 months; gap: ' + fmtMonths(empty) + '.' : 'Interest in all 12 months.';
+  return '<div class="vg-strip" role="group" aria-label="Month-by-month interest">' + h + '</div><div class="vg-minfo" data-sum="' + esc(sum + ' Tap a month for details.') + '">' + esc(sum + ' Tap a month for details.') + '</div>';
+}
+function vgRatedHeart(id){
+  var n = NOTES[id]; if (!n || !(n.carlaLike || n.mikeLike)) return '';
+  var bits = []; if (n.carlaLike) bits.push('Carla ' + n.carlaLike + '/5'); if (n.mikeLike) bits.push('Mike ' + n.mikeLike + '/5');
+  return '<i class="heart" title="' + esc(bits.join(' · ')) + '" aria-label="' + esc('Rated: ' + bits.join(', ')) + '">&#9829;</i>';
+}
+function vgFirstImg(p){ var a = Array.isArray(p.images) ? p.images.filter(function(im){ return im && safeUrl(im.url); }) : []; return a[0] || null; }
+function vgCardHTML(c, savedMode){
+  var r = RECIPE[c.recipe] || { label:'Vignette', dot:'#7a8090' };
+  var tiles = c.members.filter(function(m){ return vgFirstImg(m.p); }).slice(0, 4);
+  var col = tiles.length ? '<div class="vg-collage n' + tiles.length + '">' + tiles.map(function(m, i){
+    var u = safeUrl(vgFirstImg(m.p).url), src = i === 0 ? u.replace(/\/\d+px-([^/]+)$/, '/500px-$1') : thumbUrl(u);
+    if (i === 0 && !/\/thumb\/.+\/\d+px-[^/]+$/.test(u)) src = u;
+    return '<button type="button" class="thumb vg-tile' + (i === 0 ? ' big' : '') + '" data-vgimg="' + esc(m.p.id) + '" aria-label="' + esc('View photos of ' + m.p.name) + '">' +
+      '<img loading="lazy" decoding="async" src="' + esc(src) + '" data-full="' + esc(u) + '" alt="" onerror="window.__thumbErr(this)"><span class="vg-tname">' + esc(m.p.name) + '</span></button>';
+  }).join('') + '</div>' : '<div class="vg-collage vg-noimg">No photos yet</div>';
+  var list = '<ul class="vg-plants">' + c.members.map(function(m){
+    return '<li><span class="vg-role">' + esc(m.role) + '</span><span class="vg-pn"><a href="#plants" data-jump="' + esc(m.p.id) + '" title="' + esc('Show ' + m.p.name + ' in the library') + '">' + esc(m.p.name) + '</a>' + vgRatedHeart(m.p.id) + '</span></li>';
+  }).join('') + '</ul>';
+  var isSaved = vgSavedList().some(function(v){ return v.key === c.key; });
+  var foot = savedMode ? '<button type="button" class="btn" data-vgremove="' + esc(c.key) + '">&times; Remove</button>' :
+    '<button type="button" class="btn vg-save" data-vgsave="' + esc(c.key) + '"' + (isSaved ? ' disabled' : '') + '>' + (isSaved ? '&#9733; Saved' : '&#9733; Save this vignette') + '</button>';
+  return '<article class="vg-card">' + col + '<div class="vg-body">' +
+    '<div class="vg-meta"><span class="vg-badge"><i style="background:' + r.dot + '"></i>' + esc(r.label) + '</span>' +
+      (c.starter && !VG.starter && !savedMode ? '<span class="vg-starter" title="None of your rated plants fit this recipe yet">starter idea</span>' : '') + '</div>' +
+    '<h3 class="vg-title">' + esc(c.title) + '</h3>' + list + vgStrip(c.members) +
+    '<div class="vg-why"><b>Why it works:</b> ' + esc(c.why) + '</div>' +
+    '<div class="vg-chiprow">' + vgChips(c.members) + '</div>' +
+    '<div class="vg-foot">' + foot + '</div></div></article>';
+}
+function vgRenderSaved(){
+  var cards = vgSavedList().map(savedToCard).filter(Boolean);
+  $('vgSaved').hidden = !cards.length;
+  $('vgSaved').innerHTML = cards.length ? '<div class="vg-h3">Saved vignettes <span class="muted">(' + cards.length + ')</span></div><div class="vg-grid">' + cards.map(function(c){ return vgCardHTML(c, true); }).join('') + '</div>' : '';
+}
+function vgFmtLeft(){
+  var ms = Math.max(0, (VG.win + 1) * VG_WIN_MS - Date.now()), mins = Math.ceil(ms / 60000), h = Math.floor(mins / 60), m = mins % 60;
+  return (h ? h + 'h ' : '') + m + 'm';
+}
+function vgStatus(){
+  var t = VG.generatedAt ? VG.generatedAt.toLocaleTimeString([], { hour:'numeric', minute:'2-digit' }) : '';
+  $('vgStatus').innerHTML = 'Last generated: <b>' + esc(t) + '</b> &middot; Next automatic refresh in <b>' + esc(vgFmtLeft()) + '</b>';
+}
+function vgRender(){
+  var hasAny = !!VG.snap.sig;
+  $('vgBanner').hidden = !VG.starter;
+  $('vgBanner').textContent = !hasAny ? "No ratings yet, so these are starter ideas. Rate plants in the library and these will rebuild around your favorites." :
+    "None of your ratings are 3 or higher yet, so these are starter ideas. Rate a few favorites in the library and these will rebuild around them.";
+  var counts = {}; VG.all.forEach(function(c){ counts[c.recipe] = (counts[c.recipe] || 0) + 1; });
+  if (VG.filter !== 'all' && !counts[VG.filter]) VG.filter = 'all';
+  $('vgChips').innerHTML = '<button type="button" data-vgf="all" aria-pressed="' + (VG.filter === 'all') + '">Mixed <em>' + VG.mix.length + '</em></button>' +
+    RECIPES.filter(function(r){ return counts[r.id]; }).map(function(r){
+      return '<button type="button" data-vgf="' + r.id + '" aria-pressed="' + (VG.filter === r.id) + '"><i style="background:' + r.dot + '"></i>' + esc(r.label) + ' <em>' + counts[r.id] + '</em></button>';
+    }).join('');
+  var show = VG.filter === 'all' ? VG.mix : VG.all.filter(function(c){ return c.recipe === VG.filter; }).sort(function(a, b){ return b.score - a.score; });
+  $('vgGrid').innerHTML = show.length ? show.map(function(c){ return vgCardHTML(c, false); }).join('') :
+    '<p class="empty">No combinations fit right now' + (VG.pet ? ' with the pet-safe filter on' : '') + '.</p>';
+  $('vgCaveat').hidden = !PLANTS.some(function(p){ return vx(p).derived; });
+  vgRenderSaved(); vgStatus(); vgRatingsCheck();
+}
+function vgRun(){ // snapshot ratings + current window, then generate and render
+  VG.snap = ratingsSnapshot(); VG.win = vgWindow(); VG.regen = Number(lsGet(LS_VG_REGEN)) || 0;
+  vgGenerate(); vgRender();
+}
+function vgRegenerate(scroll){
+  lsSet(LS_VG_REGEN, String((Number(lsGet(LS_VG_REGEN)) || 0) + 1));
+  vgRun();
+  if (scroll) $('vignettes').scrollIntoView();
+}
+function vgRatingsCheck(){ if (VG.snap && $('vgHint')) $('vgHint').hidden = ratingsSnapshot().sig === VG.snap.sig; }
+function vgTick(){ if (!VG.snap) return; if (vgWindow() !== VG.win) vgRun(); else vgStatus(); }
+function vgJump(id){
+  var p = byId(id); if (!p) return;
+  var sel = 'tr[data-id="' + id + '"]', row = $('tbody').querySelector(sel);
+  if (!row){ state.filters = {}; state.q = p.name; $('gsearch').value = p.name; render(); row = $('tbody').querySelector(sel); }
+  if (!row) return;
+  row.scrollIntoView({ block:'center' });
+  row.classList.remove('vg-hl'); void row.offsetWidth; row.classList.add('vg-hl');
+  clearTimeout(vgJump._t); vgJump._t = setTimeout(function(){ row.classList.remove('vg-hl'); }, 2800);
+}
+function vgPrSync(show){
+  $('vgPrinciples').hidden = !show;
+  $('vgPrToggle').setAttribute('aria-expanded', show);
+  $('vgPrToggle').textContent = show ? 'Hide the principles' : 'Show the principles';
+}
+function vgInit(){
+  VG.pet = lsGet(LS_VG_PET) === '1'; $('vgPet').checked = VG.pet;
+  vgPrSync(lsGet(LS_VG_PR) !== 'hidden');
+  $('vgPrToggle').addEventListener('click', function(){ var show = $('vgPrinciples').hidden; lsSet(LS_VG_PR, show ? 'shown' : 'hidden'); vgPrSync(show); });
+  $('vgRegen').addEventListener('click', function(){ vgRegenerate(false); });
+  $('vgHintBtn').addEventListener('click', function(){ vgRegenerate(false); });
+  $('vgTopBtn').addEventListener('click', function(){ vgRegenerate(true); });
+  $('vgPet').addEventListener('change', function(){ VG.pet = this.checked; lsSet(LS_VG_PET, VG.pet ? '1' : '0'); vgGenerate(); vgRender(); });
+  $('vignettes').addEventListener('click', function(e){
+    var b = e.target.closest('[data-vgf],[data-vgimg],[data-jump],[data-vgsave],[data-vgremove],.vg-m'); if (!b) return;
+    if (b.hasAttribute('data-vgf')){ VG.filter = b.getAttribute('data-vgf'); vgRender(); return; }
+    if (b.hasAttribute('data-jump')){ e.preventDefault(); vgJump(b.getAttribute('data-jump')); return; }
+    if (b.hasAttribute('data-vgimg')){
+      if (b.classList.contains('broken')) return;
+      var p = byId(b.getAttribute('data-vgimg')); if (!p) return;
+      var items = (p.images || []).filter(function(im){ return im && safeUrl(im.url); }).slice(0, 3).map(function(im){
+        return { src:safeUrl(im.url), title:p.name + (p.botanical ? ' (' + p.botanical + ')' : ''), caption:im.caption, season:im.season, credit:im.credit, license:im.license, source:im.source };
+      });
+      openLightbox(items, 0, b); return;
+    }
+    if (b.hasAttribute('data-vgsave')){
+      var c = VG.byKey[b.getAttribute('data-vgsave')]; if (!c) return;
+      var list = vgSavedList();
+      if (!list.some(function(v){ return v.key === c.key; })){
+        list.unshift({ key:c.key, recipe:c.recipe, title:c.title, why:c.why, saved:new Date().toISOString(), members:c.members.map(function(m){ return { id:m.p.id, role:m.role }; }) });
+        vgSetSaved(list);
+      }
+      b.disabled = true; b.innerHTML = '&#9733; Saved'; vgRenderSaved(); return;
+    }
+    if (b.hasAttribute('data-vgremove')){
+      var k = b.getAttribute('data-vgremove');
+      vgSetSaved(vgSavedList().filter(function(v){ return v.key !== k; }));
+      vgRenderSaved();
+      [].forEach.call($('vgGrid').querySelectorAll('[data-vgsave]'), function(sb){ if (sb.getAttribute('data-vgsave') === k){ sb.disabled = false; sb.innerHTML = '&#9733; Save this vignette'; } });
+      return;
+    }
+    if (b.classList.contains('vg-m')){
+      var card = b.closest('.vg-card'), info = card.querySelector('.vg-minfo'), was = b.classList.contains('sel');
+      [].forEach.call(card.querySelectorAll('.vg-m.sel'), function(x){ x.classList.remove('sel'); });
+      if (was) info.textContent = info.getAttribute('data-sum');
+      else { b.classList.add('sel'); info.textContent = b.getAttribute('data-tip'); }
+    }
+  });
+  vgRun();
+  setInterval(vgTick, 60000);
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) vgTick(); });
 }
 
 /* ───────────── section nav + scrollspy ───────────── */
@@ -937,6 +1815,7 @@ renderNav();
 renderDesigns();
 setMode(state.mode);
 updateStats();
+vgInit();
 spy();
 })();
 </script>

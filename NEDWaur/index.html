@@ -182,7 +182,7 @@
   <main class="container">
     <h1>NEDWaur <span class="pill pill-wip">In design</span></h1>
     <p class="sub">The project portal for the NED's LAN-party game: a forest brawler with a Warlock lava arena at its heart.
-      Updated 2026-10-19 · 145 ideas logged.</p>
+      Updated 2026-10-20 · 145 ideas logged.</p>
 
 <section class="card" id="concept">
 <h2>The concept</h2>
@@ -191,7 +191,7 @@
 
 <section class="card" id="status">
 <h2>Status at a glance</h2>
-<div class="kpis"><div class="kpi"><div class="k">Phase</div><div class="v">Prototype</div><div class="n">v0.1: walk around a forest (10/19)</div></div><div class="kpi"><div class="k">Engine</div><div class="v">Unity 6.6</div><div class="n">URP; Mirror networking next</div></div><div class="kpi"><div class="k">Characters</div><div class="v">14</div><div class="n">10 from Mike, 4 from the character workshop</div></div><div class="kpi"><div class="k">Players</div><div class="v">~15</div><div class="n">One LAN, no internet needed</div></div></div>
+<div class="kpis"><div class="kpi"><div class="k">Phase</div><div class="v">Prototype</div><div class="n">v0.2: LAN multiplayer, shove (10/20)</div></div><div class="kpi"><div class="k">Engine</div><div class="v">Unity 6.6</div><div class="n">URP + Mirror (host-authoritative)</div></div><div class="kpi"><div class="k">Characters</div><div class="v">14</div><div class="n">10 from Mike, 4 from the character workshop</div></div><div class="kpi"><div class="k">Players</div><div class="v">~15</div><div class="n">One LAN, no internet needed</div></div></div>
 </section>
 
 <section class="card" id="principles">
@@ -578,8 +578,9 @@
 <div class="tbl-scroll"><table class="dt"><thead><tr><th>#</th><th>Milestone</th><th>What it covers</th><th>Status</th></tr></thead><tbody>
 <tr><td class="num">0</td><td><b>Research</b></td><td>Warlock dossier, MOBA/Deadlock, fun mechanics, character workshop, engine re-check: all done 10/15</td><td><span class="tag done">Done</span></td></tr>
 <tr><td class="num">1</td><td><b>Design pass</b></td><td>Lock design principles, the character shortlist, core loop and economy</td><td><span class="tag ">To do</span></td></tr>
-<tr><td class="num">2</td><td><b>Engine and netcode spike</b></td><td>Done: Unity 6.6 URP project, headless builds, custom fixed-tick sim. Next: Mirror (host mode), then the 600-unit / 15-bot stress test</td><td><span class="tag doing">In progress</span></td></tr>
+<tr><td class="num">2</td><td><b>Engine and netcode spike</b></td><td>Done: Unity 6.6 URP project, headless builds, custom fixed-tick sim, Mirror LAN multiplayer (v0.2). Next: two-PC test, then the 600-unit / 15-bot stress test</td><td><span class="tag doing">In progress</span></td></tr>
 <tr><td class="num">2a</td><td><b>v0.1 walkable forest</b></td><td>Windows .exe: one warlock walking a seeded low-poly forest, tree collision, knockback test key</td><td><span class="tag done">Done</span></td></tr>
+<tr><td class="num">2b</td><td><b>v0.2 LAN multiplayer</b></td><td>Host or join (LAN discovery or IP), colored wizards with name tags, bumping, Space shove with knockback</td><td><span class="tag done">Done</span></td></tr>
 <tr><td class="num">3</td><td><b>Arena prototype (proposed first build)</b></td><td>The Warlock arena alone: movement, Fireball, knockback, lava, shrink. Smallest playable thing to test at a LAN</td><td><span class="tag ">To do</span></td></tr>
 <tr><td class="num">4</td><td><b>Forest prototype</b></td><td>Map, mobs, XP, arena triggers, return to forest</td><td><span class="tag ">To do</span></td></tr>
 <tr><td class="num">5</td><td><b>First characters</b></td><td>Two or three concepts built out end to end</td><td><span class="tag ">To do</span></td></tr>
@@ -602,9 +603,11 @@
 <tr><td>Confirm arena-first build order</td><td>Mike</td><td><span class="tag ">To do</span></td><td>Claude recommends building the Warlock arena first</td></tr>
 <tr><td>Run the engine stress test (600 dummy units, 15 bots)</td><td>Claude</td><td><span class="tag ">To do</span></td><td>From the tech doc; pass = host tick under 8 ms, under 150 KB/s per client</td></tr>
 <tr><td>v0.1 playable build: character walking in a forest</td><td>Claude</td><td><span class="tag done">Done</span></td><td><code>NEDWaur/Builds/Windows/NEDWaur.exe</code> (rebuild: <code>ProjectSetup.CI</code>) · tree crowns fade when they hide the player</td></tr>
-<tr><td>Add Mirror networking (host mode) to the sim</td><td>Claude</td><td><span class="tag ">To do</span></td><td>Needs Mike's OK to download Mirror from GitHub / Asset Store</td></tr>
+<tr><td>Add Mirror networking (host + clients over LAN)</td><td>Claude</td><td><span class="tag done">Done</span></td><td>Mirror 96.11.3; host-authoritative, batched snapshots; LAN discovery + join by IP; tested with 2 instances on one PC (10/20)</td></tr>
 <tr><td>Feature clip pipeline</td><td>Claude</td><td><span class="tag done">Done</span></td><td><code>tools/make-clip.ps1</code> → <code>docs/clips/*.mp4</code>; first clip: v0.1-forest-knockback</td></tr>
 <tr><td>Turn on NVIDIA Instant Replay (Alt+Z → Instant Replay on; Alt+F10 saves the last 30 s)</td><td>Mike</td><td><span class="tag ">To do</span></td><td>One-time setup for capturing live moments</td></tr>
+<tr><td>Two-PC LAN test (PC hosts, new laptop joins)</td><td>Mike</td><td><span class="tag ">To do</span></td><td>Thursday 10/22 if the laptop is set up. Checklist: <code>docs/lan-test-checklist.md</code></td></tr>
+<tr><td>Stress test: 600 dummy units + 15 bot clients</td><td>Claude</td><td><span class="tag ">To do</span></td><td>From the tech research; pass = host tick under 8 ms, under 150 KB/s per client</td></tr>
 </tbody></table></div>
 </section>
 
@@ -623,6 +626,7 @@
 <tr><td class="num">2026-10-19</td><td>URP render pipeline</td><td>Runs well on mixed clan PCs; HDRP is overkill</td></tr>
 <tr><td class="num">2026-10-19</td><td>Git LFS for binary assets</td><td>Keeps the repo small; painful to add after the fact</td></tr>
 <tr><td class="num">2026-10-19</td><td>Clips: two lanes. Claude makes scripted feature clips (tools/make-clip.ps1); Mike captures live moments with NVIDIA Instant Replay. No built-in video recorder; build a replay system later instead</td><td>Scripted clips are repeatable and free; NVIDIA&#x27;s encoder beats anything we&#x27;d build; a sim replay system powers highlight reels and re-renders</td></tr>
+<tr><td class="num">2026-10-20</td><td>Networking: Mirror low-level messages, no NetworkManager or per-unit network objects</td><td>Host runs the sim and broadcasts one batched snapshot per tick; scales to many units per the tech research</td></tr>
 </tbody></table></div>
 </section>
 

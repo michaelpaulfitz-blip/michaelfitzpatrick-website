@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light">
+<title>Baby Planning | Michael Fitzpatrick</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E%F0%9F%8D%BC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Same field-guide palette as The Bridge. Content is hand-maintained by Claude from the
+     home-and-personal-projects repo (baby-planning.md is the source of truth). */
+  :root{
+    color-scheme:light;
+    --paper:#f8f6f0; --paper-deep:#f2efe6; --card:#ffffff;
+    --ink:#1a1f2b; --ink-soft:#4b5160; --ink-faded:#7a8090;
+    --green:#2f6b3f; --navy:#2b4c7e; --navy-deep:#1e3a5f;
+    --tint-blue:#eef3fb; --tint-tan:#f6efe3; --tint-green:#eef6ee;
+    --brick:#b3261e; --orange:#c8641e;
+    --hair:#d9dce4; --radius:10px;
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Inter','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{background:var(--paper); scroll-behavior:smooth}
+  body{background:var(--paper); color:var(--ink-soft); font-family:var(--body); font-size:15px;
+    line-height:1.55; -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums}
+  a{color:var(--navy); font-weight:500; text-decoration:none}
+  a:hover{color:var(--navy-deep); text-decoration:underline}
+  b{color:var(--ink); font-weight:600}
+  .wrap{max-width:1040px; margin:0 auto; padding:28px 24px 56px}
+
+  header.top{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:18px;
+    padding-bottom:20px; border-bottom:1.5px solid var(--navy); margin-bottom:26px}
+  .eyebrow{font-family:var(--display); font-size:11px; letter-spacing:1.8px; text-transform:uppercase;
+    color:var(--green); font-weight:800}
+  h1{font-family:var(--display); font-weight:800; font-size:34px; color:var(--ink); letter-spacing:-.4px; line-height:1.1; margin:4px 0 6px}
+  .lede{max-width:560px}
+  .countdown{display:flex; gap:10px}
+  .stat{background:var(--card); border:1.5px solid var(--navy); border-radius:var(--radius); padding:10px 14px; min-width:104px}
+  .stat .n{font-family:var(--display); font-weight:800; font-size:24px; color:var(--ink); line-height:1.1}
+  .stat .l{font-size:11px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-faded)}
+
+  nav.jump{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px}
+  nav.jump a{font-size:13px; padding:5px 12px; border:1.5px solid var(--hair); border-radius:999px; background:var(--card)}
+  nav.jump a:hover{border-color:var(--navy); text-decoration:none}
+
+  section{margin-bottom:38px}
+  h2{font-family:var(--display); font-weight:800; font-size:21px; color:var(--ink); margin-bottom:4px}
+  .sub{color:var(--ink-faded); font-size:13.5px; margin-bottom:14px}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:14px}
+  .card{background:var(--card); border:1.5px solid var(--navy); border-radius:var(--radius); padding:16px 18px;
+    display:flex; flex-direction:column; gap:8px}
+  .card.t-blue{background:var(--tint-blue)} .card.t-tan{background:var(--tint-tan)} .card.t-green{background:var(--tint-green)}
+  .card h3{font-family:var(--display); font-weight:700; font-size:16px; color:var(--navy)}
+  .card .kind{font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faded)}
+  .card ul{padding-left:18px} .card li{margin:2px 0}
+  .card .open{margin-top:auto; padding-top:6px; font-size:14px}
+
+  table{width:100%; border-collapse:collapse; background:var(--card); border:1.5px solid var(--navy); border-radius:var(--radius); overflow:hidden; font-size:14px}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--hair); vertical-align:top}
+  th{font-family:var(--display); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-faded); background:var(--paper-deep)}
+  tr:last-child td{border-bottom:none}
+  .tablewrap{overflow-x:auto}
+  .pill{display:inline-block; font-size:11.5px; font-weight:600; padding:1px 8px; border-radius:999px; white-space:nowrap; border:1px solid currentColor}
+  .p-both{color:var(--navy)} .p-carla{color:var(--green)} .p-mike{color:var(--orange)}
+  .due{white-space:nowrap}
+  .late{color:var(--brick); font-weight:600}
+
+  .notes{display:flex; flex-direction:column; gap:14px}
+  details.week{background:var(--card); border:1.5px solid var(--navy); border-radius:var(--radius)}
+  details.week summary{cursor:pointer; list-style:none; padding:14px 18px; display:flex; justify-content:space-between; gap:12px; align-items:baseline}
+  details.week summary::-webkit-details-marker{display:none}
+  details.week summary .d{font-family:var(--display); font-weight:700; color:var(--ink); font-size:16px}
+  details.week summary .m{font-size:12.5px; color:var(--ink-faded)}
+  details.week .body{padding:0 18px 16px; border-top:1px solid var(--hair)}
+  details.week h4{font-family:var(--display); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--green); margin:14px 0 4px}
+  details.week ul{padding-left:18px} details.week li{margin:3px 0}
+  .empty{border:1.5px dashed var(--hair); border-radius:var(--radius); padding:16px 18px; color:var(--ink-faded); background:var(--paper-deep)}
+  .note{font-size:12.5px; color:var(--ink-faded); font-style:italic}
+
+  footer{border-top:1px solid var(--hair); padding-top:14px; font-size:12px; color:var(--ink-faded)}
+  @media (max-width:600px){
+    .wrap{padding:20px 16px 44px}
+    h1{font-size:27px}
+    .countdown{width:100%} .stat{flex:1; min-width:0; padding:8px 10px} .stat .n{font-size:19px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div>
+    <div class="eyebrow">Mike &amp; Carla · Private workspace</div>
+    <h1>Baby Planning</h1>
+    <p class="lede">Home base for our weekly touch base: the three working docs, what's open, and a running record of each week's notes.</p>
+  </div>
+  <div class="countdown" aria-label="Pregnancy progress">
+    <div class="stat"><div class="n" id="wk">–</div><div class="l">Weeks along</div></div>
+    <div class="stat"><div class="n" id="left">–</div><div class="l">Days to go</div></div>
+    <div class="stat"><div class="n">Mar 15</div><div class="l">Due date*</div></div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#resources">Resources</a>
+  <a href="#open">Open items</a>
+  <a href="#notes">Weekly notes</a>
+</nav>
+
+<section id="resources">
+  <h2>Resources</h2>
+  <p class="sub">The live docs. They stay the source of truth; this page links to them and summarizes. Snapshot as of Oct 25, 2026.</p>
+  <div class="grid">
+    <div class="card t-blue">
+      <div class="kind">Google Sheet</div>
+      <h3>Baby Prep Action Plan</h3>
+      <ul>
+        <li>~45 action items, Oct 2026 to Feb 2027, each with a do-by date, pregnancy week, owner and status</li>
+        <li>9 in progress, 1 done (Carla's dental cleaning), the rest not started</li>
+        <li>Due date in the sheet is still a placeholder (Mar 15, 2027)</li>
+      </ul>
+      <a class="open" href="https://docs.google.com/spreadsheets/d/1z8MsttkVzc5ZZeJkWSv6Jd1nAcxcB28Rm06MQVHMToY/edit" target="_blank" rel="noopener">Open the tracker →</a>
+    </div>
+    <div class="card t-tan">
+      <div class="kind">Google Sheet</div>
+      <h3>Baby Shopping List</h3>
+      <ul>
+        <li>Newborn to 6 months, rated 1–5 by importance, with rough mid-range prices</li>
+        <li>Estimated total <b>$4,579</b>; must-haves only <b>$1,008</b></li>
+        <li>Nothing bought yet. Items over $100 are being split between us</li>
+      </ul>
+      <a class="open" href="https://docs.google.com/spreadsheets/d/10lrt9ayp6rKq8qQTRFVK_WAodfX6L-96LhE0sGvoauw/edit" target="_blank" rel="noopener">Open the shopping list →</a>
+    </div>
+    <div class="card t-green">
+      <div class="kind">Google Doc</div>
+      <h3>Baby Working Sheet</h3>
+      <ul>
+        <li>Our scratchpad: Resources, Action Items and Archive sections (mostly empty so far)</li>
+        <li>Parked: find the old AI chat about baby books; look up what the LH ovulation strip actually signals</li>
+      </ul>
+      <a class="open" href="https://docs.google.com/document/d/1i2VZ1BaDK_ORj233yZ5bmadURJN8cQ3pKzCva-nNMIE/edit" target="_blank" rel="noopener">Open the working doc →</a>
+    </div>
+  </div>
+</section>
+
+<section id="open">
+  <h2>Open items</h2>
+  <p class="sub">In-progress and due-this-month rows from the tracker, Oct 25 snapshot. Check the tracker for the live status.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Item</th><th>Owner</th><th>Do by</th><th>Where it stands</th></tr></thead>
+    <tbody>
+      <tr><td><b>Review and align on shopping list</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Split the $100+ items by owner; each of us brings prepped options next meeting</td></tr>
+      <tr><td><b>Set up the baby registry</b></td><td><span class="pill p-carla">Carla</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Exploring one store vs. a shared list across stores</td></tr>
+      <tr><td><b>Infant CPR and safety course</b></td><td><span class="pill p-mike">Mike</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Mike mapping which classes we need, how they overlap, and a few options</td></tr>
+      <tr><td><b>Anatomy scan</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-30">Oct 30</td><td>In progress</td></tr>
+      <tr><td><b>Flu shots</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>Mike to get his within ~3 weeks of 10/17</td></tr>
+      <tr><td><b>Research parental leave (both jobs)</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>In progress</td></tr>
+      <tr><td><b>Childcare options / daycare waitlists</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>Both researching options, then comparing notes</td></tr>
+      <tr><td><b>Care schedule split + grandparent help</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>2–3 weeks of research; Carla has a head start</td></tr>
+      <tr><td><b>Review maternity coverage</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>Not started</td></tr>
+      <tr><td><b>Start a baby budget</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>Not started</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>Weekly notes</h2>
+  <p class="sub">One entry per touch base, newest first: decisions, who took what, and anything to revisit.</p>
+  <div class="notes">
+    <div class="empty">Next touch base: notes go here. Send them to Claude after the meeting (raw is fine) and they'll be logged.</div>
+
+    <details class="week">
+      <summary><span class="d">Oct 17, 2026</span><span class="m">Reconstructed from the tracker's notes column</span></summary>
+      <div class="body">
+        <h4>Who took what</h4>
+        <ul>
+          <li><b>Both:</b> split shopping-list items over $100 by owner; come back with prepped options</li>
+          <li><b>Both:</b> research childcare options, then compare</li>
+          <li><b>Both:</b> 2–3 weeks to research and plan the care-schedule split and grandparent help</li>
+          <li><b>Carla:</b> explore registry options (one store vs. a shared multi-store list)</li>
+          <li><b>Mike:</b> research all the classes we need, how they overlap, and prepare options</li>
+          <li><b>Mike:</b> get a flu shot in the next 3 weeks</li>
+        </ul>
+        <p class="note">Pieced together after the fact; add anything missing at the next touch base.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>*Placeholder due date until the OB confirms it. Private page, not linked publicly. Last updated Oct 25, 2026.</footer>
+</div>
+
+<script>
+  // Placeholder due date; change here (and in the tracker) once the OB confirms it.
+  var DUE = new Date(2027, 2, 15);
+  var DAY = 864e5, today = new Date(); today.setHours(0,0,0,0);
+  var daysLeft = Math.round((DUE - today) / DAY);
+  var along = 280 - daysLeft;
+  document.getElementById('wk').textContent = along >= 0 ? Math.floor(along / 7) + 'w ' + (along % 7) + 'd' : '–';
+  document.getElementById('left').textContent = daysLeft > 0 ? daysLeft : 0;
+  document.querySelectorAll('[data-due]').forEach(function(td){
+    var p = td.getAttribute('data-due').split('-');
+    if (new Date(+p[0], p[1] - 1, +p[2]) < today) td.classList.add('late');
+  });
+</script>
+</body>
+</html>

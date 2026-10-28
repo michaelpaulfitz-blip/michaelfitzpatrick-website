@@ -238,7 +238,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 <dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
 
 <script>
-const V = '20261028c';
+const V = '20261028d';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';
@@ -476,14 +476,22 @@ function renderReader(R){
   const cs = R.cost_summary?.per_model || {};
   const byc = R.metrics?.by_class || {};
   const models = R.models || Object.keys(cs);
+  const M = R.metrics || {};
+  const frac = o => o && o.denominator ? `${o.numerator} of ${o.denominator}` : 'n/a';
+  const vsl = M.agreement_with_listing?.verdict_vs_listing || {};
+  const rr = M.review_routing || {};
   $('#readerBox').innerHTML = `<div class="grid g4">
-      <div class="card stat"><div class="n">${R.metrics?.n ?? (R.products||[]).length}</div><div class="l">products read</div></div>
-      <div class="card stat"><div class="n">${pct(R.metrics?.agreement_sonnet_haiku)}</div><div class="l">model-to-model agreement</div></div>
-      <div class="card stat"><div class="n">${pct(R.metrics?.agreement_with_listing)}</div><div class="l">agreement with the listing</div></div>
+      <div class="card stat"><div class="n">${M.n ?? (R.products||[]).length}</div><div class="l">products read by both models</div></div>
+      <div class="card stat"><div class="n">${frac(M.agreement_sonnet_haiku?.verdict)}</div><div class="l">same verdict, Sonnet and Haiku</div></div>
+      ${Object.entries(vsl).map(([m,o]) => `<div class="card stat"><div class="n">${frac(o)}</div><div class="l">${esc(m)} verdict matches the listing</div></div>`).join('')}
       ${Object.entries(byc).map(([k,v]) => `<div class="card stat"><div class="n">${v}</div><div class="l">${esc(k.replace(/_/g,' '))}</div></div>`).join('')}
     </div>
+    ${M.ground_truth_note ? `<div class="banner" style="margin-top:1rem">${esc(M.ground_truth_note)}</div>` : ''}
     ${(R.findings||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Findings</div><ul style="padding-left:1.1rem">${R.findings.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
-    ${Object.keys(cs).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Cost</div><table><thead><tr><th>Model</th><th>Calls</th><th>Input tokens</th><th>Output tokens</th><th>Est. USD</th></tr></thead><tbody>${Object.entries(cs).map(([m,c]) => `<tr><td>${esc(m)}</td><td>${c.calls??''}</td><td>${c.input_tokens??''}</td><td>${c.output_tokens??''}</td><td>${c.est_usd!=null?(+c.est_usd).toFixed(4):'[VERIFY]'}</td></tr>`).join('')}</tbody></table></div>` : ''}
+    ${Object.keys(cs).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Cost</div><table><thead><tr><th>Model</th><th>Calls</th><th>Avg input tokens</th><th>Avg output tokens</th><th>Per product</th><th>Per million SKUs</th><th>This run</th></tr></thead><tbody>${Object.entries(cs).map(([m,c]) => `<tr><td>${esc(m)}</td><td>${c.calls??''}</td><td>${c.avg_input_tokens??''}</td><td>${c.avg_output_tokens??''}</td><td>$${c.usd_per_product!=null?(+c.usd_per_product).toFixed(4):'?'}</td><td>$${c.usd_per_million_skus!=null?Math.round(c.usd_per_million_skus).toLocaleString():'?'}</td><td>$${c.est_usd!=null?(+c.est_usd).toFixed(2):'?'}</td></tr>`).join('')}
+      ${rr.cascade_usd_per_million_skus ? `<tr><td>Haiku first, Sonnet on anything uncertain</td><td colspan="3">${frac(rr.escalated_to_sonnet)} escalated; missed ${frac(rr.sonnet_flags_missed_by_cascade)} Sonnet flags</td><td>$${(+rr.cascade_usd_per_product).toFixed(4)}</td><td>$${Math.round(rr.cascade_usd_per_million_skus).toLocaleString()}</td><td></td></tr>` : ''}
+      </tbody></table><p class="muted" style="margin-top:.5rem">${esc(R.cost_summary?.pricing_source || '')} Prices [VERIFY].</p>
+      ${rr.human_review_rule ? `<p class="muted">Human review rule: ${esc(rr.human_review_rule)} That routes ${frac(rr.human_review)} to a person.</p>` : ''}</div>` : ''}
     <div class="controls" style="margin-top:1.25rem" id="rCtl"><button class="chip on" data-c="">All</button>${Object.keys(byc).map(k => `<button class="chip" data-c="${esc(k)}">${esc(k.replace(/_/g,' '))}</button>`).join('')}</div>
     <div id="rList"></div>
     <p class="muted" style="margin-top:1rem">Package photos from Open Food Facts contributors, licensed CC BY-SA. Each card links to its source.</p>`;

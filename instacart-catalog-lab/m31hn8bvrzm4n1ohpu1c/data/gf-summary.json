@@ -1,0 +1,1335 @@
+{
+ "generated": "2026-10-28T23:32:25+00:00",
+ "products": 402,
+ "gold_candidates": 150,
+ "counts_by_state": {
+  "Verified": 41,
+  "Claimed": 129,
+  "Conflict": 81,
+  "Not gluten-free": 120,
+  "Unknown": 31
+ },
+ "counts_by_category": {
+  "Beer and malt beverages": {
+   "total": 12,
+   "Verified": 0,
+   "Claimed": 0,
+   "Conflict": 0,
+   "Not gluten-free": 10,
+   "Unknown": 2
+  },
+  "Bread": {
+   "total": 33,
+   "Verified": 3,
+   "Claimed": 8,
+   "Conflict": 6,
+   "Not gluten-free": 15,
+   "Unknown": 1
+  },
+  "Breakfast cereals": {
+   "total": 43,
+   "Verified": 0,
+   "Claimed": 21,
+   "Conflict": 3,
+   "Not gluten-free": 13,
+   "Unknown": 6
+  },
+  "Candy": {
+   "total": 30,
+   "Verified": 3,
+   "Claimed": 10,
+   "Conflict": 6,
+   "Not gluten-free": 1,
+   "Unknown": 10
+  },
+  "Cookies": {
+   "total": 26,
+   "Verified": 3,
+   "Claimed": 8,
+   "Conflict": 3,
+   "Not gluten-free": 10,
+   "Unknown": 2
+  },
+  "Crackers": {
+   "total": 17,
+   "Verified": 7,
+   "Claimed": 4,
+   "Conflict": 0,
+   "Not gluten-free": 6,
+   "Unknown": 0
+  },
+  "Flour and baking mixes": {
+   "total": 26,
+   "Verified": 6,
+   "Claimed": 6,
+   "Conflict": 2,
+   "Not gluten-free": 12,
+   "Unknown": 0
+  },
+  "Frozen meals": {
+   "total": 24,
+   "Verified": 3,
+   "Claimed": 9,
+   "Conflict": 0,
+   "Not gluten-free": 12,
+   "Unknown": 0
+  },
+  "Granola and oats": {
+   "total": 16,
+   "Verified": 0,
+   "Claimed": 7,
+   "Conflict": 1,
+   "Not gluten-free": 4,
+   "Unknown": 4
+  },
+  "Other (conflict sweep)": {
+   "total": 76,
+   "Verified": 2,
+   "Claimed": 19,
+   "Conflict": 54,
+   "Not gluten-free": 1,
+   "Unknown": 0
+  },
+  "Pasta": {
+   "total": 23,
+   "Verified": 8,
+   "Claimed": 4,
+   "Conflict": 2,
+   "Not gluten-free": 9,
+   "Unknown": 0
+  },
+  "Snack bars": {
+   "total": 27,
+   "Verified": 2,
+   "Claimed": 14,
+   "Conflict": 1,
+   "Not gluten-free": 6,
+   "Unknown": 4
+  },
+  "Soups": {
+   "total": 25,
+   "Verified": 0,
+   "Claimed": 11,
+   "Conflict": 2,
+   "Not gluten-free": 10,
+   "Unknown": 2
+  },
+  "Soy sauce and marinades": {
+   "total": 24,
+   "Verified": 4,
+   "Claimed": 8,
+   "Conflict": 1,
+   "Not gluten-free": 11,
+   "Unknown": 0
+  }
+ },
+ "counts_by_stratum": {
+  "c_claim_with_gluten_ingredient": 79,
+  "a_gf_labeled": 135,
+  "d_oats": 106,
+  "c_off_tag_false_alarm": 21,
+  "b_not_gf_labeled": 139
+ },
+ "source_coverage": {
+  "off_ingredient_text": 402,
+  "fdc_matched": 279,
+  "fdc_with_ingredients": 279,
+  "fdc_not_queried": 82,
+  "gfco_listed": 44,
+  "gfco_not_listed": 358,
+  "kroger_found": 0,
+  "label_photo_read": 40,
+  "two_or_more_ingredient_sources": 292
+ },
+ "top_conflicts": [
+  {
+   "gtin14": "00856088003163",
+   "upc_original": "0856088003163",
+   "name": "Classic Bircher Apple Cinnamon Almond Muesli Cereal",
+   "brand": "Seven Sundays",
+   "category": "Granola and oats",
+   "confidence_gf": 0.3543,
+   "reasons": [
+    "GFCO's Product Finder lists this UPC as certified; Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names barley",
+    "GFCO's Product Finder lists this UPC as certified; Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names rye"
+   ],
+   "gluten_hits": [
+    {
+     "term": "barley",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "rye",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "oats",
+     "kind": "conditional",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0856088003163"
+  },
+  {
+   "gtin14": "00041390010408",
+   "upc_original": "0041390010408",
+   "name": "Less Sodium Teriyaki Marinade & Sauce",
+   "brand": "Kikkoman",
+   "category": "Soy sauce and marinades",
+   "confidence_gf": 0.525,
+   "reasons": [
+    "GFCO's Product Finder lists this UPC as certified, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0041390010408"
+  },
+  {
+   "gtin14": "00893190002639",
+   "upc_original": "0893190002639",
+   "name": "Egg white omelets to-go",
+   "brand": "Crepe Team",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.1301,
+   "reasons": [
+    "Open Food Facts reports a gluten-free certification mark, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts reports a gluten-free certification mark, yet the ingredient list in Open Food Facts names durum",
+    "Open Food Facts reports a gluten-free certification mark, yet the ingredient list in Open Food Facts names barley"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "durum",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "barley",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0893190002639"
+  },
+  {
+   "gtin14": "00853237003845",
+   "upc_original": "0853237003845",
+   "name": "Ready-To-Eat Meal Pad Thai",
+   "brand": "Miracle Noodle",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.937,
+   "reasons": [
+    "GFCO's Product Finder lists this UPC as certified; Open Food Facts says it is gluten-free, yet Open Food Facts lists 'soy sauce' with no gluten-free qualifier (soy sauce is usually brewed with wheat)"
+   ],
+   "gluten_hits": [
+    {
+     "term": "soy sauce",
+     "kind": "implied",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0853237003845"
+  },
+  {
+   "gtin14": "00035742229112",
+   "upc_original": "0035742229112",
+   "name": "Cream Of Mushroom Soup",
+   "brand": "Health Valley Organic",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.5987,
+   "reasons": [
+    "Open Food Facts reports a gluten-free certification mark, yet Open Food Facts lists 'flour' with no gluten-free qualifier (US labeling treats plain flour as wheat flour)",
+    "Ingredient lists disagree: gluten found in Open Food Facts (dated 2025-02-23), none in USDA FoodData Central (dated 2021-10-28); the label may have been reformulated"
+   ],
+   "gluten_hits": [
+    {
+     "term": "flour",
+     "kind": "implied",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0035742229112"
+  },
+  {
+   "gtin14": "00047495112900",
+   "upc_original": "0047495112900",
+   "name": "Fig Bar Blueberry",
+   "brand": "Nature's Bakery",
+   "category": "Cookies",
+   "confidence_gf": 0.0055,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names wheat",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in label photo reader says it contains wheat",
+    "The label photo reader found no gluten-free claim on the package"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "oats",
+     "kind": "conditional",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "label_photo"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0047495112900"
+  },
+  {
+   "gtin14": "00031146262571",
+   "upc_original": "0031146262571",
+   "name": "Bowl Noodles Spicy Chicken Flavour",
+   "brand": "Nongshim",
+   "category": "Soups",
+   "confidence_gf": 0.0134,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in USDA FoodData Central and label photo reader names gluten",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in label photo reader says it contains wheat",
+    "The label photo reader found no gluten-free claim on the package"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "gluten",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "label_photo"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0031146262571"
+  },
+  {
+   "gtin14": "00014100079477",
+   "upc_original": "0014100079477",
+   "name": "Mint Chocolate Milano Cookies",
+   "brand": "Pepperidge Farm",
+   "category": "Cookies",
+   "confidence_gf": 0.0082,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names wheat",
+    "Open Food Facts says it is gluten-free, yet Open Food Facts, USDA FoodData Central and label photo reader lists 'flour' with no gluten-free qualifier (US labeling treats plain flour as wheat flour)",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts, USDA FoodData Central and label photo reader says it contains wheat",
+    "The label photo reader found no gluten-free claim on the package"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "flour",
+     "kind": "implied",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0014100079477"
+  },
+  {
+   "gtin14": "00042272001996",
+   "upc_original": "0042272001996",
+   "name": "Pizza Margherita",
+   "brand": "Amy's",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0266,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts, USDA FoodData Central and label photo reader names wheat",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in label photo reader says it contains wheat",
+    "The label photo reader found no gluten-free claim on the package"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "label_photo",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "label_photo"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0042272001996"
+  },
+  {
+   "gtin14": "00029000078628",
+   "upc_original": "0029000078628",
+   "name": "Trail mix Nuts & Chocolate",
+   "brand": "PLANTERS",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0163,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat",
+    "Ingredient lists disagree: gluten found in Open Food Facts (dated 2026-06-08), none in USDA FoodData Central (dated 2023-11-16); the label may have been reformulated"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0029000078628"
+  },
+  {
+   "gtin14": "00028400046060",
+   "upc_original": "0028400046060",
+   "name": "Tiny Twists Original Pretzels",
+   "brand": "Rold Gold",
+   "category": "Cookies",
+   "confidence_gf": 0.01,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names malt",
+    "Open Food Facts says it is gluten-free, yet Open Food Facts and USDA FoodData Central lists 'flour' with no gluten-free qualifier (US labeling treats plain flour as wheat flour)",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in USDA FoodData Central says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "malt",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "flour",
+     "kind": "implied",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "fdc"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0028400046060"
+  },
+  {
+   "gtin14": "00194346001699",
+   "upc_original": "0194346001699",
+   "name": "Tailgate Beef Meatballs",
+   "brand": "",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0266,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet Open Food Facts and USDA FoodData Central lists 'bread crumbs' with no gluten-free qualifier (usually wheat based)",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "bread crumbs",
+     "kind": "implied",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0194346001699"
+  },
+  {
+   "gtin14": "00194346002917",
+   "upc_original": "0194346002917",
+   "name": "3 cheese kale bake",
+   "brand": "Great Value",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.018,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names panko",
+    "Open Food Facts says it is gluten-free, yet Open Food Facts and USDA FoodData Central lists 'bread crumbs' with no gluten-free qualifier (usually wheat based)",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "panko",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "bread crumbs",
+     "kind": "implied",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0194346002917"
+  },
+  {
+   "gtin14": "00850005872085",
+   "upc_original": "0850005872085",
+   "name": "Choc Chip Cookie Dough",
+   "brand": "Van Leeuwen",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.01,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "oats",
+     "kind": "conditional",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0850005872085"
+  },
+  {
+   "gtin14": "00831011102427",
+   "upc_original": "0831011102427",
+   "name": "Organic Country Bread",
+   "brand": "Deland Bakery",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.018,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names gluten",
+    "Open Food Facts says it is gluten-free, yet Open Food Facts lists 'flour' with no gluten-free qualifier (US labeling treats plain flour as wheat flour)",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "gluten",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "flour",
+     "kind": "implied",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0831011102427"
+  },
+  {
+   "gtin14": "00077958765107",
+   "upc_original": "0077958765107",
+   "name": "New England Clam chowder",
+   "brand": "Legal Sea Foods",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0148,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts says it is gluten-free, yet the allergen statement in Open Food Facts says it contains wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "wheat",
+     "kind": "contains statement",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0077958765107"
+  },
+  {
+   "gtin14": "00021908455532",
+   "upc_original": "0021908455532",
+   "name": "Fruitful O's Cereal",
+   "brand": "Cascadian Farm",
+   "category": "Breakfast cereals",
+   "confidence_gf": 0.0163,
+   "reasons": [
+    "Open Food Facts and USDA FoodData Central say it is gluten-free, yet the ingredient list in Open Food Facts names wheat starch",
+    "Ingredient lists disagree: gluten found in Open Food Facts (dated 2026-03-04), none in USDA FoodData Central (dated 2026-01-22); the label may have been reformulated"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat starch",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "oats",
+     "kind": "conditional",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0021908455532"
+  },
+  {
+   "gtin14": "00024094070077",
+   "upc_original": "0024094070077",
+   "name": "Linguine No. 7",
+   "brand": "De Cecco",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0323,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names semolina",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names durum"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "semolina",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "durum",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0024094070077"
+  },
+  {
+   "gtin14": "00013562001729",
+   "upc_original": "0013562001729",
+   "name": "Mini Pizza Bagels Three Cheese",
+   "brand": "Annie's",
+   "category": "Bread",
+   "confidence_gf": 0.0266,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names gluten"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "gluten",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0013562001729"
+  },
+  {
+   "gtin14": "00041220031085",
+   "upc_original": "0041220031085",
+   "name": "Honey Wheat Enriched Bread",
+   "brand": "H-E-B",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0219,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names barley",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names malt",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names gluten"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "barley",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "malt",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "gluten",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0041220031085"
+  },
+  {
+   "gtin14": "00078742297217",
+   "upc_original": "0078742297217",
+   "name": "Teriyaki Beef Jerky",
+   "brand": "Great Value",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0431,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names wheat",
+    "Ingredient lists disagree: gluten found in Open Food Facts (dated 2026-05-22), none in USDA FoodData Central (dated 2023-04-27); the label may have been reformulated"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0078742297217"
+  },
+  {
+   "gtin14": "00070641066307",
+   "upc_original": "0070641066307",
+   "name": "Yuzu Ponzu Premium Soy Dressing With Yuzu Citrus",
+   "brand": "Marukan",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0691,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0070641066307"
+  },
+  {
+   "gtin14": "00047495013047",
+   "upc_original": "0047495013047",
+   "name": "Raspberry Fig Bars",
+   "brand": "Nature's Bakery",
+   "category": "Snack bars",
+   "confidence_gf": 0.0198,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "oats",
+     "kind": "conditional",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0047495013047"
+  },
+  {
+   "gtin14": "00747479300155",
+   "upc_original": "0747479300155",
+   "name": "RIGATONI BOLOGNESE",
+   "brand": "RAO'S",
+   "category": "Other (conflict sweep)",
+   "confidence_gf": 0.0474,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names semolina",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts names durum"
+   ],
+   "gluten_hits": [
+    {
+     "term": "semolina",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    },
+    {
+     "term": "durum",
+     "kind": "explicit",
+     "sources": [
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0747479300155"
+  },
+  {
+   "gtin14": "00078858510170",
+   "upc_original": "0078858510170",
+   "name": "Simply Better Tortillas",
+   "brand": "La Tortilla Factory",
+   "category": "Bread",
+   "confidence_gf": 0.0266,
+   "reasons": [
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names wheat",
+    "Open Food Facts says it is gluten-free, yet the ingredient list in Open Food Facts and USDA FoodData Central names gluten"
+   ],
+   "gluten_hits": [
+    {
+     "term": "wheat",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    },
+    {
+     "term": "gluten",
+     "kind": "explicit",
+     "sources": [
+      "fdc",
+      "off"
+     ]
+    }
+   ],
+   "off_url": "https://world.openfoodfacts.org/product/0078858510170"
+  }
+ ],
+ "metrics_vs_prelabels": {
+  "label": "PROVISIONAL: measured against model pre-labels from claude-haiku-5-5 (3-vote majority). Rerun after hand labeling before quoting any of these numbers.",
+  "positive_class": "gluten-free = yes",
+  "labeled_yes_no": 124,
+  "excluded_uncertain": 26,
+  "state_rule": {
+   "rule": "predict gluten-free when state is Verified or Claimed",
+   "tp": 45,
+   "fp": 1,
+   "fn": 7,
+   "tn": 71,
+   "n": 124,
+   "precision": 0.9783,
+   "recall": 0.8654,
+   "f1": 0.9184
+  },
+  "state_rule_verified_only": {
+   "rule": "predict gluten-free only when state is Verified",
+   "tp": 18,
+   "fp": 0,
+   "fn": 34,
+   "tn": 72,
+   "n": 124,
+   "precision": 1.0,
+   "recall": 0.3462,
+   "f1": 0.5143
+  },
+  "confidence_threshold_curve": [
+   {
+    "threshold": 0.05,
+    "tp": 52,
+    "fp": 17,
+    "fn": 0,
+    "tn": 55,
+    "n": 124,
+    "precision": 0.7536,
+    "recall": 1.0,
+    "f1": 0.8595
+   },
+   {
+    "threshold": 0.1,
+    "tp": 52,
+    "fp": 5,
+    "fn": 0,
+    "tn": 67,
+    "n": 124,
+    "precision": 0.9123,
+    "recall": 1.0,
+    "f1": 0.9541
+   },
+   {
+    "threshold": 0.15,
+    "tp": 52,
+    "fp": 4,
+    "fn": 0,
+    "tn": 68,
+    "n": 124,
+    "precision": 0.9286,
+    "recall": 1.0,
+    "f1": 0.963
+   },
+   {
+    "threshold": 0.2,
+    "tp": 52,
+    "fp": 3,
+    "fn": 0,
+    "tn": 69,
+    "n": 124,
+    "precision": 0.9455,
+    "recall": 1.0,
+    "f1": 0.972
+   },
+   {
+    "threshold": 0.25,
+    "tp": 52,
+    "fp": 3,
+    "fn": 0,
+    "tn": 69,
+    "n": 124,
+    "precision": 0.9455,
+    "recall": 1.0,
+    "f1": 0.972
+   },
+   {
+    "threshold": 0.3,
+    "tp": 52,
+    "fp": 3,
+    "fn": 0,
+    "tn": 69,
+    "n": 124,
+    "precision": 0.9455,
+    "recall": 1.0,
+    "f1": 0.972
+   },
+   {
+    "threshold": 0.35,
+    "tp": 52,
+    "fp": 3,
+    "fn": 0,
+    "tn": 69,
+    "n": 124,
+    "precision": 0.9455,
+    "recall": 1.0,
+    "f1": 0.972
+   },
+   {
+    "threshold": 0.4,
+    "tp": 52,
+    "fp": 2,
+    "fn": 0,
+    "tn": 70,
+    "n": 124,
+    "precision": 0.963,
+    "recall": 1.0,
+    "f1": 0.9811
+   },
+   {
+    "threshold": 0.45,
+    "tp": 52,
+    "fp": 2,
+    "fn": 0,
+    "tn": 70,
+    "n": 124,
+    "precision": 0.963,
+    "recall": 1.0,
+    "f1": 0.9811
+   },
+   {
+    "threshold": 0.5,
+    "tp": 52,
+    "fp": 2,
+    "fn": 0,
+    "tn": 70,
+    "n": 124,
+    "precision": 0.963,
+    "recall": 1.0,
+    "f1": 0.9811
+   },
+   {
+    "threshold": 0.55,
+    "tp": 51,
+    "fp": 1,
+    "fn": 1,
+    "tn": 71,
+    "n": 124,
+    "precision": 0.9808,
+    "recall": 0.9808,
+    "f1": 0.9808
+   },
+   {
+    "threshold": 0.6,
+    "tp": 51,
+    "fp": 1,
+    "fn": 1,
+    "tn": 71,
+    "n": 124,
+    "precision": 0.9808,
+    "recall": 0.9808,
+    "f1": 0.9808
+   },
+   {
+    "threshold": 0.65,
+    "tp": 51,
+    "fp": 1,
+    "fn": 1,
+    "tn": 71,
+    "n": 124,
+    "precision": 0.9808,
+    "recall": 0.9808,
+    "f1": 0.9808
+   },
+   {
+    "threshold": 0.7,
+    "tp": 50,
+    "fp": 0,
+    "fn": 2,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.9615,
+    "f1": 0.9804
+   },
+   {
+    "threshold": 0.75,
+    "tp": 50,
+    "fp": 0,
+    "fn": 2,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.9615,
+    "f1": 0.9804
+   },
+   {
+    "threshold": 0.8,
+    "tp": 45,
+    "fp": 0,
+    "fn": 7,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.8654,
+    "f1": 0.9278
+   },
+   {
+    "threshold": 0.85,
+    "tp": 44,
+    "fp": 0,
+    "fn": 8,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.8462,
+    "f1": 0.9167
+   },
+   {
+    "threshold": 0.9,
+    "tp": 39,
+    "fp": 0,
+    "fn": 13,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571
+   },
+   {
+    "threshold": 0.95,
+    "tp": 26,
+    "fp": 0,
+    "fn": 26,
+    "tn": 72,
+    "n": 124,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6667
+   }
+  ],
+  "state_by_prelabel": {
+   "Claimed | no": 1,
+   "Claimed | uncertain": 12,
+   "Claimed | yes": 27,
+   "Conflict | no": 40,
+   "Not gluten-free | no": 30,
+   "Not gluten-free | uncertain": 1,
+   "Unknown | no": 1,
+   "Unknown | uncertain": 10,
+   "Unknown | yes": 7,
+   "Verified | uncertain": 3,
+   "Verified | yes": 18
+  }
+ },
+ "conflict_sweep": {
+  "query": "countries_tags:\"en:united-states\" AND labels_tags:\"en:no-gluten\" AND (allergens_tags:\"en:gluten\" OR ingredients_tags:(\"en:wheat\" OR \"en:barley\" OR \"en:rye\" OR \"en:malt\" OR \"en:barley-malt\" OR \"en:malt-extract\" OR \"en:barley-malt-extract\" OR \"en:spelt\" OR \"en:durum-wheat\" OR \"en:durum-wheat-semolina\" OR \"en:semolina\" OR \"en:wheat-flour\" OR \"en:wheat-starch\" OR \"en:triticale\" OR \"en:soy-sauce\" OR \"en:brewer-s-yeast\" OR \"en:malt-vinegar\" OR \"en:barley-malt-syrup\" OR \"en:gluten\" OR \"en:wheat-gluten\" OR \"en:barley-flour\" OR \"en:rye-flour\" OR \"en:malted-barley-flour\"))",
+  "off_hits": 588,
+  "us_barcode_hits": 520,
+  "us_gf_labeled_total": 35876,
+  "outcomes": {
+   "genuine conflict": 80,
+   "skipped: allergen tag only": 253,
+   "no gluten ingredient after negation handling": 186,
+   "skipped: non-US barcode": 68,
+   "read: no English ingredient text": 1
+  },
+  "checked_with_text": 266,
+  "genuine_conflict": 80,
+  "barley_or_malt": 21,
+  "wheat_family": 64,
+  "rye": 3,
+  "implied_only": 3,
+  "tag_flagged_but_clean": 186,
+  "allergen_tag_only": 253,
+  "allergen_tag_only_with_oat_tag": 196
+ },
+ "killer_stats": [
+  {
+   "text": "Open Food Facts tags 35,876 US products gluten-free. Of the 266 that also carry a gluten-grain ingredient tag and have English ingredient text, 80 still list wheat, barley, rye, malt, or another gluten source once the actual ingredient text is read and qualifiers like 'gluten-free oats' are handled.",
+   "numerator": 80,
+   "denominator": 266,
+   "frame": "OFF conflict sweep: US/Canada barcodes, gluten-free tag, gluten-grain ingredient tag, English ingredient text. A floor for the whole catalog, since untagged products were out of reach."
+  },
+  {
+   "text": "21 of those 80 conflicting products contain barley or malt, which the FDA allergen 'Contains' statement does not have to mention because barley is not one of the nine major allergens.",
+   "numerator": 21,
+   "denominator": 80,
+   "frame": "same sweep"
+  },
+  {
+   "text": "Another 253 US products tagged gluten-free carry a gluten allergen tag in Open Food Facts with no gluten-grain ingredient tag; 196 of those 253 contain oats, so a filter built on the allergen tag alone would hide products that are probably fine.",
+   "numerator": 196,
+   "denominator": 253,
+   "frame": "OFF conflict sweep, allergen-tag-only rows (classified from tags; ingredient text was not read)"
+  },
+  {
+   "text": "Only 42 of 249 products in this sample with a gluten-free claim could be matched by UPC to GFCO's certified product list; GFCO was the only registry checked, so the rest have no registry confirmation in this pipeline yet.",
+   "numerator": 42,
+   "denominator": 249,
+   "frame": "sample universe (stratified, enriched for conflicts)"
+  },
+  {
+   "text": "47 of 57 gluten-free-claimed products that contain oats never say the oats are gluten-free in the ingredient text.",
+   "numerator": 47,
+   "denominator": 57,
+   "frame": "sample universe (stratified, enriched for conflicts)"
+  }
+ ],
+ "confidence_weights": {
+  "prior_high_risk": -0.6,
+  "prior_mid_risk": -0.3,
+  "prior_low_risk": 0.2,
+  "registry_cert": 3.0,
+  "registry_name_match": 0.0,
+  "pack_cert": 1.5,
+  "claim_first": 1.4,
+  "claim_extra": 0.3,
+  "claim_extra_cap": 0.6,
+  "explicit_hit": -4.0,
+  "explicit_extra": -0.4,
+  "explicit_extra_cap": -1.2,
+  "implied_hit": -2.0,
+  "contains_stmt": -3.0,
+  "contains_stmt_extra": -1.0,
+  "oats_unqualified": -1.0,
+  "oats_qualified": -0.2,
+  "conditional_other": -0.3,
+  "may_contain": -0.6,
+  "off_allergen_only": -0.4,
+  "clean_text": 0.8,
+  "clean_text_second": 0.3,
+  "source_disagree": -0.5,
+  "missing_text_shrink": 0.5,
+  "stale_shrink": 0.85
+ }
+}

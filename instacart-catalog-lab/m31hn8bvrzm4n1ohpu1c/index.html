@@ -238,7 +238,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 <dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
 
 <script>
-const V = '20261028d';
+const V = '20261028e';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';
@@ -251,7 +251,7 @@ function statusCards(D){
   const c = [
     ['Pain points', D.pain ? D.pain.painpoints.length + ' found' : 'pending', D.pain ? D.pain.painpoints.filter(p => nPeople(p) > 1).length + ' raised by more than one person' : 'Transcript crawler running'],
     ['Products scored', D.gf ? D.gf.products.length : 'pending', D.gf ? Object.entries(countBy(D.gf.products, p => p.state)).map(([k,v]) => k + ' ' + v).join(', ') : 'Pipeline agent running'],
-    ['Photos read', D.reader ? (D.reader.products||[]).length : 'pending', D.reader ? (D.reader.models||[]).join(' and ') : 'Reader agent running'],
+    ['Photos read', D.reader ? (D.reader.products||[]).length : 'pending', D.reader ? (D.reader.models||[]).map(m => String(m.id||m).replace('claude-','').replace(/-5-5$/,' 5.5')).join(' and ') : 'Reader agent running'],
     ['Diagrams', D.diag ? D.diag.diagrams.length + ' versions' : 'pending', D.diag ? 'Two subjects' : 'Diagram agent running'],
   ];
   $('#statusCards').innerHTML = c.map(([l,n,s]) => `<div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff"><div style="font-size:1.5rem;font-weight:700">${esc(n)}</div><div style="font-weight:600">${esc(l)}</div><div style="font-size:.75rem;color:#c7e8d8">${esc(s)}</div></div>`).join('');
@@ -336,7 +336,9 @@ function renderLab(G, S){
   const srcLine = Object.entries(ss).map(([k,v]) => `<span class="pill ${/ok|done|live|complete/i.test(JSON.stringify(v)) ? 'g' : /block|skip|pending|prohib/i.test(JSON.stringify(v)) ? 'a' : ''}">${esc(k)}: ${esc(typeof v === 'object' ? (v.status || (v.matched != null ? v.matched + ' matched of ' + v.queried : JSON.stringify(v))) : v)}</span>`).join('');
   $('#labStats').innerHTML = `<div class="grid g4">${Object.entries(st).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `<div class="card stat"><div class="n">${v}</div><div class="l"><span class="pill ${stateClass(k)}">${esc(k)}</span></div></div>`).join('')}</div>
     <div class="card" style="margin-top:1rem"><div class="muted" style="margin-bottom:.35rem">Source status</div>${srcLine || '<span class="muted">Not reported.</span>'}</div>
-    ${S && (S.killer_stats||S.killer||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Lines you could say</div><ul style="padding-left:1.1rem">${(S.killer_stats||S.killer).map(k => `<li>${esc(typeof k === 'string' ? k : (k.sentence || k.text || JSON.stringify(k)))}</li>`).join('')}</ul></div>` : ''}`;
+    ${S && (S.killer_stats||S.killer||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Lines you could say</div><ul style="padding-left:1.1rem">${(S.killer_stats||S.killer).map(k => `<li style="margin-bottom:.4rem">${esc(typeof k === 'string' ? k : (k.sentence || k.text || JSON.stringify(k)))}${k.frame ? `<div class="muted">${k.numerator != null ? k.numerator + ' of ' + k.denominator + '. ' : ''}${esc(k.frame)}</div>` : ''}</li>`).join('')}</ul><p class="muted">Counts from a sample enriched for conflicts. Hand-check before quoting.</p></div>` : ''}
+    ${S && (S.top_conflicts||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Hand-check these first</div><p class="muted" style="margin-bottom:.4rem">The strongest conflicts, ranked by the pipeline. Click one for its evidence.</p><ol style="padding-left:1.25rem">${S.top_conflicts.slice(0,10).map(t => `<li style="margin-bottom:.35rem"><a href="#" data-top="${esc(t.gtin14)}"><b>${esc(t.brand || 'Unbranded')}</b> ${esc(t.name)}</a><div class="muted">${esc((t.reasons||[])[0]||'')}</div></li>`).join('')}</ol></div>` : ''}`;
+  $('#labStats').querySelectorAll('[data-top]').forEach(a => a.onclick = e => { e.preventDefault(); openProduct(a.dataset.top); });
   drawSlider(); drawConflicts(); drawLabeler(); drawBrowse();
 }
 function prAt(t, T){
@@ -406,11 +408,17 @@ function drawConflicts(){
 }
 const GLUTEN_RE = /\b(wheat|barley|rye|malt\w*|spelt|semolina|durum|farro|kamut|khorasan|einkorn|emmer|bulgur|couscous|seitan|triticale|brewer'?s yeast|oats?)\b/gi;
 const hl = s => esc(s).replace(GLUTEN_RE, m => `<mark>${m}</mark>`);
+const SRC_NAME = { off:'Open Food Facts', fdc:'USDA FoodData Central', gfco:'GFCO Product Finder', kroger:'Kroger API', label_photo:'Label photo reader' };
+const srcName = s => SRC_NAME[s] || s;
+const evUseful = e => e.status === 'ok' || e.status === 'listed';
+const hitTerms = hs => [...new Set((hs||[]).map(h => typeof h === 'string' ? h : (h.kind === 'conditional' ? h.term + ' (check)' : h.term)))];
 function evidenceHtml(p){
-  return (p.evidence||[]).map(e => `<div class="ev"><b>${esc(e.source)}</b> ${e.claim_gf===true?'<span class="pill g">claims gluten-free</span>':e.claim_gf===false?'<span class="pill">no claim</span>':''}${e.certified===true?`<span class="pill k">certified${e.certifier?': '+esc(e.certifier):''}</span>`:''}${(e.gluten_hits||[]).length?`<span class="pill r">${e.gluten_hits.map(esc).join(', ')}</span>`:''}
+  const ev = p.evidence||[], use = ev.filter(evUseful), rest = ev.filter(e => !evUseful(e));
+  return (use.map(e =>`<div class="ev"><b>${esc(srcName(e.source))}</b> ${e.claim_gf===true?'<span class="pill g">claims gluten-free</span>':e.claim_gf===false?'<span class="pill">no claim</span>':''}${e.certified===true?`<span class="pill k">certified${e.certifier?': '+esc(e.certifier):''}</span>`:''}${hitTerms(e.gluten_hits).length?`<span class="pill r">${hitTerms(e.gluten_hits).map(esc).join(', ')}</span>`:''}
     ${e.ingredients_excerpt ? `<div style="margin-top:.25rem">${hl(e.ingredients_excerpt)}</div>` : ''}
     ${e.contains_statement ? `<div class="muted">Contains: ${esc(e.contains_statement)}</div>` : ''}${e.may_contain ? `<div class="muted">May contain: ${esc(Array.isArray(e.may_contain)?e.may_contain.join(', '):e.may_contain)}</div>` : ''}
-    ${e.url ? `<div class="muted"><a href="${esc(e.url)}" target="_blank" rel="noopener">source</a>${e.fetched_at ? ' fetched ' + esc(e.fetched_at) : ''}</div>` : ''}${e.status ? `<div class="muted">${esc(e.status)}</div>` : ''}</div>`).join('') || '<div class="muted">No evidence records.</div>';
+    ${e.url ? `<div class="muted"><a href="${esc(e.url)}" target="_blank" rel="noopener">source</a>${e.fetched_at ? ' fetched ' + esc(e.fetched_at.slice(0,10)) : ''}</div>` : ''}</div>`).join('') || '<div class="muted">No evidence records.</div>')
+    + (rest.length ? `<div class="muted" style="margin-top:.4rem">No data from: ${rest.map(e => esc(srcName(e.source)) + ' (' + esc(String(e.status||'').replace(/_/g,' ')) + ')').join(', ')}</div>` : '');
 }
 function openProduct(g){
   const p = GF.products.find(x => x.gtin14 === g); if(!p) return;
@@ -418,6 +426,7 @@ function openProduct(g){
     <div><h3 style="color:var(--kale)">${esc(p.name)}</h3><div class="muted">${esc(p.brand)} · UPC ${esc(p.upc_original||p.gtin14)} · ${esc(p.category||'')}</div>
     <div style="margin:.5rem 0"><span class="pill ${stateClass(p.state)}">${esc(p.state)}</span> <span class="pill">confidence ${p.confidence_gf!=null?p.confidence_gf.toFixed(2):'n/a'}</span>${p.off_url?` <a class="muted" href="${esc(p.off_url)}" target="_blank" rel="noopener">Open Food Facts</a>`:''}</div>
     ${(p.conflict_reasons||[]).length?`<div class="banner">${p.conflict_reasons.map(esc).join('<br>')}</div>`:''}
+    ${(p.flags||[]).length?`<div class="muted" style="margin:.4rem 0">Flags: ${p.flags.map(esc).join('; ')}</div>`:''}
     ${p.prelabel?`<div class="ev"><b>Model pre-label (not gold)</b>: ${esc(p.prelabel.gluten_free)}. ${esc(p.prelabel.reasoning||'')}</div>`:''}
     ${evidenceHtml(p)}</div></div>`;
   $('#dlg').showModal();
@@ -461,7 +470,7 @@ function drawBrowse(){
     const q = browseState.q.toLowerCase();
     const list = GF.products.filter(p => (!browseState.state || p.state === browseState.state) && (!q || JSON.stringify([p.name,p.brand,p.upc_original,p.gtin14,(p.evidence||[]).map(e=>e.ingredients_excerpt)]).toLowerCase().includes(q)));
     $('#bN').textContent = list.length + ' products';
-    $('#browse').innerHTML = `<div class="tablewrap"><table><thead><tr><th></th><th>Product</th><th>Brand</th><th>Category</th><th>State</th><th>Score</th><th>Sources</th></tr></thead><tbody>${list.slice(0,400).map(p => `<tr class="click" data-g="${esc(p.gtin14)}"><td>${p.image_front?`<img class="thumb" loading="lazy" src="${esc(p.image_front)}" alt="">`:''}</td><td>${esc(p.name)}</td><td>${esc(p.brand)}</td><td>${esc(p.category||'')}</td><td><span class="pill ${stateClass(p.state)}">${esc(p.state)}</span></td><td>${p.confidence_gf!=null?p.confidence_gf.toFixed(2):''}</td><td>${(p.evidence||[]).map(e => esc(e.source)).join(', ')}</td></tr>`).join('')}</tbody></table></div>${list.length>400?'<p class="muted">Showing the first 400. Search to narrow.</p>':''}`;
+    $('#browse').innerHTML = `<div class="tablewrap"><table><thead><tr><th></th><th>Product</th><th>Brand</th><th>Category</th><th>State</th><th>Score</th><th>Sources</th></tr></thead><tbody>${list.slice(0,400).map(p => `<tr class="click" data-g="${esc(p.gtin14)}"><td>${p.image_front?`<img class="thumb" loading="lazy" src="${esc(p.image_front)}" alt="">`:''}</td><td>${esc(p.name)}</td><td>${esc(p.brand)}</td><td>${esc(p.category||'')}</td><td><span class="pill ${stateClass(p.state)}">${esc(p.state)}</span></td><td>${p.confidence_gf!=null?p.confidence_gf.toFixed(2):''}</td><td>${(p.evidence||[]).filter(evUseful).map(e => esc(e.source === 'label_photo' ? 'photo' : e.source.toUpperCase())).join(', ')}</td></tr>`).join('')}</tbody></table></div>${list.length>400?'<p class="muted">Showing the first 400. Search to narrow.</p>':''}`;
     $('#browse').querySelectorAll('tr.click').forEach(r => r.onclick = () => openProduct(r.dataset.g));
   };
   $('#bQ').oninput = e => { browseState.q = e.target.value; draw(); };

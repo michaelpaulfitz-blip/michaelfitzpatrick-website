@@ -1,0 +1,22 @@
+{
+  "generated": "2026-10-28",
+  "decisions": [
+    {"one_way": true, "title": "Published on your public site under an unlisted, random path", "detail": "The page lives at /instacart-catalog-lab/m31hn8bvrzm4n1ohpu1c/ with noindex, nofollow, and the folder root shows a placeholder. It carries interviewer names and verbatim quotes because you asked for sources. Anyone with the URL can read it, and git history keeps every version even if we later remove the data. Same pattern as the private directory and baby planning pages.", "question": "Comfortable with named quotes at this path, or should I move the quotes behind initials until the interviewer-facing version?"},
+    {"one_way": false, "title": "Instacart look and the same left rail as the experience map", "detail": "Copied the IDS tokens and the rail pattern from the September experience map so the later interviewer-facing version needs a content pass and no redesign."},
+    {"one_way": false, "title": "Gluten-free only, for now", "detail": "The lab scores one attribute deeply. The pipeline is written so other families (dairy-free, Big 9 allergens) slot in as new detectors and certifier sources."},
+    {"one_way": false, "title": "No scraping of Instacart", "detail": "The lab uses Open Food Facts, USDA FoodData Central, the GFCO product finder, and the Kroger API. Kroger is an Instacart retail partner, so the same finding lands on partner data without touching Instacart's site."},
+    {"one_way": false, "title": "Model pre-labels stand in for gold until you label", "detail": "Claude Haiku pre-labels the gold candidates so the precision and recall slider works today. The page says so in an amber banner and switches to your labels once you have done 20."},
+    {"one_way": true, "title": "Spent a small amount of your Anthropic API credit", "detail": "Pre-labels use Claude Haiku. The photo reader runs Claude Sonnet and Claude Haiku on every product to show the cost and accuracy trade-off. Token counts and estimated cost appear in the reader section."},
+    {"one_way": false, "title": "Ad campaign and revenue projections held", "detail": "Not built in this pass. Pain points that touch acquisition or retention carry demonstration ideas, so the ads story has a place to land if you want it."}
+  ],
+  "questions": [
+    {"one_way": false, "title": "Kroger developer account", "detail": "The Kroger client is written but needs a free developer app at developer.kroger.com. Creating accounts is yours to do. Put KROGER_CLIENT_ID and KROGER_CLIENT_SECRET in jobbot3000/.env and rerun the pipeline."},
+    {"one_way": false, "title": "USDA FoodData Central key", "detail": "The pipeline runs on the shared DEMO_KEY, which allows roughly 50 lookups a day. A free data.gov key lifts that. Signing up is yours to do; put it in .env as FDC_API_KEY."},
+    {"one_way": false, "title": "Who labels the gold set", "detail": "You, in the labeling panel, about 150 products. A second labeler, such as the celiac friend you quoted in the jam, would let us report inter-rater agreement, which is the honest way to say how good a gold set is."}
+  ],
+  "blocked": [
+    "Kroger API credentials (your developer account).",
+    "A free data.gov API key for USDA FoodData Central at full volume.",
+    "Your gold labels."
+  ]
+}

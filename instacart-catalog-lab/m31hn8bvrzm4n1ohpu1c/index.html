@@ -176,7 +176,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 
 <section class="band white" id="pain"><div class="wrap">
   <div class="sechead"><span class="eyebrow">Workstream 1</span><h2>Pain points from the loop</h2>
-  <p>Every pain an Instacart person raised or confirmed. Multi-source pains sort first because they are the strongest signal. Each one carries real-world solutions and a few ways you could demonstrate a fix, tagged by whether they fit the gluten-free demo.</p></div>
+  <p>Every pain an Instacart person raised or confirmed. Pains raised by more than one person sort first because they are the strongest signal. Each one carries real-world solutions and a few ways you could demonstrate a fix, tagged by whether they fit the gluten-free demo.</p></div>
   <div id="painStats" class="grid g4" style="margin-bottom:1.25rem"></div>
   <div class="controls" id="painControls"></div>
   <div id="painList"><div class="pending">Pending. The transcript crawler is still reading.</div></div>
@@ -238,7 +238,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 <dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
 
 <script>
-const V = '20261028a';
+const V = '20261028b';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';
@@ -249,13 +249,14 @@ function setStatus(key, ok, txt){ const el = document.querySelector(`[data-st="$
 /* ── Status cards ── */
 function statusCards(D){
   const c = [
-    ['Pain points', D.pain ? D.pain.painpoints.length + ' found' : 'pending', D.pain ? D.pain.painpoints.filter(p => (p.sources||[]).length > 1 || p.confirmed_by_count > 1).length + ' raised by more than one person' : 'Transcript crawler running'],
+    ['Pain points', D.pain ? D.pain.painpoints.length + ' found' : 'pending', D.pain ? D.pain.painpoints.filter(p => nPeople(p) > 1).length + ' raised by more than one person' : 'Transcript crawler running'],
     ['Products scored', D.gf ? D.gf.products.length : 'pending', D.gf ? Object.entries(countBy(D.gf.products, p => p.state)).map(([k,v]) => k + ' ' + v).join(', ') : 'Pipeline agent running'],
     ['Photos read', D.reader ? (D.reader.products||[]).length : 'pending', D.reader ? (D.reader.models||[]).join(' and ') : 'Reader agent running'],
     ['Diagrams', D.diag ? D.diag.diagrams.length + ' versions' : 'pending', D.diag ? 'Two subjects' : 'Diagram agent running'],
   ];
   $('#statusCards').innerHTML = c.map(([l,n,s]) => `<div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff"><div style="font-size:1.5rem;font-weight:700">${esc(n)}</div><div style="font-weight:600">${esc(l)}</div><div style="font-size:.75rem;color:#c7e8d8">${esc(s)}</div></div>`).join('');
 }
+const nPeople = p => p.confirmed_by_count ?? new Set((p.sources||[]).map(s => s.person).filter(x => x && x !== 'mike')).size;
 function countBy(a, f){ const o = {}; for(const x of a){ const k = f(x) ?? 'unknown'; o[k] = (o[k]||0) + 1; } return o; }
 
 /* ── Pain points ── */
@@ -264,17 +265,17 @@ function renderPain(P){
   if(!P){ return; }
   setStatus('pain', true, P.painpoints.length);
   const people = Object.fromEntries((P.people||[]).map(p => [p.id, p]));
-  const multi = P.painpoints.filter(p => (p.sources||[]).length > 1);
+  const multi = P.painpoints.filter(p => nPeople(p) > 1);
   const persons = countBy(P.painpoints.flatMap(p => [...new Set((p.sources||[]).map(s => s.person))]), x => x);
   $('#painStats').innerHTML = [
     [P.painpoints.length, 'pain points from interviews'],
-    [multi.length, 'raised by two or more sources'],
+    [multi.length, 'raised by two or more people'],
     [Object.keys(persons).length, 'people quoted'],
     [(P.research_only||[]).length, 'more from public research'],
   ].map(([n,l]) => `<div class="card stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
   const themes = P.themes || [...new Set(P.painpoints.map(p => p.theme))];
   $('#painControls').innerHTML = `<input type="search" id="painQ" placeholder="Search pain points and quotes">
-    <button class="chip ${painState.multi?'on':''}" data-multi="1">Multi-source only</button>
+    <button class="chip ${painState.multi?'on':''}" data-multi="1">Raised by 2+ people</button>
     <select id="painPerson"><option value="">Everyone</option>${Object.keys(persons).map(id => `<option value="${esc(id)}" ${painState.person===id?'selected':''}>${esc(people[id]?.name || id)} (${persons[id]})</option>`).join('')}</select>
     <span style="flex-basis:100%;height:0"></span>
     <button class="chip ${!painState.theme?'on':''}" data-theme="">All themes</button>
@@ -294,7 +295,7 @@ function painCard(p, people, research){
     <div class="pid">${esc(p.id)}</div>
     <div><h3>${esc(p.title)}</h3><div class="sum">${esc(p.summary)}</div>
       <div style="margin-top:.4rem"><span class="pill b">${esc(p.theme||'')}</span>${who.map(w => `<span class="pill ${research?'':'g'}">${esc(w)}</span>`).join('')}</div></div>
-    <div class="cnt">${srcs.length > 1 ? `<span class="pill k">${srcs.length} sources</span>` : `<span class="pill">1 source</span>`}</div>
+    <div class="cnt">${research ? `<span class="pill">research</span>` : nPeople(p) > 1 ? `<span class="pill k">${nPeople(p)} people</span>` : `<span class="pill">${nPeople(p)} ${nPeople(p)===1?'person':'people'}</span>`}<div class="muted">${srcs.length} quote${srcs.length===1?'':'s'}</div></div>
   </summary><div class="body">
     ${p.why_it_matters ? `<div><h4>Why it matters</h4><div style="font-size:.875rem">${esc(p.why_it_matters)}</div></div>` : ''}
     <div><h4>What they said</h4>${srcs.map(s => `<div class="quote">"${esc(s.quote)}"<div class="who">${esc(s.person ? (people[s.person]?.name || s.person) : s.doc)}${s.interview ? ', ' + esc(s.interview) : ''}${s.date ? ', ' + esc(s.date) : ''}</div>${s.context ? `<div class="ctx">${esc(s.context)}</div>` : ''}</div>`).join('')}</div>
@@ -307,7 +308,7 @@ function drawPainList(P, people){
   const q = painState.q;
   const list = P.painpoints.filter(p =>
     (!painState.theme || p.theme === painState.theme) &&
-    (!painState.multi || (p.sources||[]).length > 1) &&
+    (!painState.multi || nPeople(p) > 1) &&
     (!painState.person || (p.sources||[]).some(s => s.person === painState.person)) &&
     (!q || JSON.stringify(p).toLowerCase().includes(q)));
   $('#painList').innerHTML = list.length ? list.map(p => painCard(p, people)).join('') : '<div class="pending">No pain points match.</div>';

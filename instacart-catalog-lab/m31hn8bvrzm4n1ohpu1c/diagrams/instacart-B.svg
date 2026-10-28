@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1200 1106.93" font-family='"Open Sans", Helvetica, Arial, sans-serif' role="img" aria-labelledby="icB-t icB-d"><title id="icB-t">Instacart catalog current state, matrix</title><desc id="icB-d">One row per data family, one column per stage, with the owning team at the right.</desc><defs><marker id="icB-ah" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0.8 L9,5 L0,9.2 z" fill="#003d29"/></marker></defs><rect width="1200" height="1106.93" fill="#ffffff"/>
+<path d="M40.0,106.0 L178.0,106.0 L190.0,128.0 L178.0,150.0 L40.0,150.0 Z" fill="#56595e" stroke="#ffffff" stroke-width="2"/>
+<path d="M190.0,106.0 L390.0,106.0 L402.0,128.0 L390.0,150.0 L190.0,150.0 L202.0,128.0 Z" fill="#003d29" stroke="#ffffff" stroke-width="2"/>
+<path d="M402.0,106.0 L560.0,106.0 L572.0,128.0 L560.0,150.0 L402.0,150.0 L414.0,128.0 Z" fill="#003d29" stroke="#ffffff" stroke-width="2"/>
+<path d="M572.0,106.0 L782.0,106.0 L794.0,128.0 L782.0,150.0 L572.0,150.0 L584.0,128.0 Z" fill="#003d29" stroke="#ffffff" stroke-width="2"/>
+<path d="M794.0,106.0 L978.0,106.0 L990.0,128.0 L978.0,150.0 L794.0,150.0 L806.0,128.0 Z" fill="#003d29" stroke="#ffffff" stroke-width="2"/>
+<path d="M990.0,106.0 L1148.0,106.0 L1160.0,128.0 L1148.0,150.0 L990.0,150.0 L1002.0,128.0 Z" fill="#56595e" stroke="#ffffff" stroke-width="2"/>
+<rect x="40.0" y="158.0" width="150.0" height="104.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="158.0" width="212.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="158.0" width="170.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="158.0" width="222.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="158.0" width="196.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="158.0" width="170.0" height="104.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="159.0" width="148.0" height="102.0" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="407.0" y="204.0" width="160.0" height="43.0" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="40.0" y="262.0" width="150.0" height="87.6" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="262.0" width="212.0" height="87.6" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="262.0" width="170.0" height="87.6" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="262.0" width="222.0" height="87.6" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="262.0" width="196.0" height="87.6" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="262.0" width="170.0" height="87.6" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="263.0" width="148.0" height="85.6" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="40.0" y="349.6" width="150.0" height="137.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="349.6" width="212.0" height="137.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="349.6" width="170.0" height="137.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="349.6" width="222.0" height="137.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="349.6" width="196.0" height="137.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="349.6" width="170.0" height="137.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="350.6" width="148.0" height="135.0" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="195.0" y="412.1" width="202.0" height="59.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="40.0" y="486.6" width="150.0" height="104.2" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="486.6" width="212.0" height="104.2" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="486.6" width="170.0" height="104.2" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="486.6" width="222.0" height="104.2" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="486.6" width="196.0" height="104.2" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="486.6" width="170.0" height="104.2" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="487.6" width="148.0" height="102.2" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="40.0" y="590.8" width="150.0" height="104.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="590.8" width="212.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="590.8" width="170.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="590.8" width="222.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="590.8" width="196.0" height="104.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="590.8" width="170.0" height="104.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="591.8" width="148.0" height="102.0" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="577.0" y="636.8" width="212.0" height="43.0" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="799.0" y="597.8" width="186.0" height="59.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="40.0" y="694.8" width="150.0" height="88.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="694.8" width="212.0" height="88.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="694.8" width="170.0" height="88.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="694.8" width="222.0" height="88.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="694.8" width="196.0" height="88.0" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="694.8" width="170.0" height="88.0" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="695.8" width="148.0" height="86.0" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="577.0" y="701.8" width="212.0" height="59.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="995.0" y="701.8" width="160.0" height="26.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="40.0" y="782.8" width="150.0" height="87.9" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="782.8" width="212.0" height="87.9" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="782.8" width="170.0" height="87.9" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="782.8" width="222.0" height="87.9" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="782.8" width="196.0" height="87.9" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="782.8" width="170.0" height="87.9" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="783.8" width="148.0" height="85.9" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="40.0" y="870.7" width="150.0" height="71.5" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="870.7" width="212.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="870.7" width="170.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="870.7" width="222.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="870.7" width="196.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="870.7" width="170.0" height="71.5" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="871.7" width="148.0" height="69.5" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="995.0" y="877.7" width="160.0" height="26.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="40.0" y="942.2" width="150.0" height="71.5" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="190.0" y="942.2" width="212.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="402.0" y="942.2" width="170.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="572.0" y="942.2" width="222.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="794.0" y="942.2" width="196.0" height="71.5" rx="0" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="990.0" y="942.2" width="170.0" height="71.5" rx="0" fill="#f7f5f0" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="41.0" y="943.2" width="148.0" height="69.5" rx="8" fill="none" stroke="none" stroke-width="1"/>
+<rect x="995.0" y="949.2" width="160.0" height="26.5" rx="5" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="104.8" y="1028.7" width="26.0" height="16.0" rx="4" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="24.0" y="38.0" font-size="22" font-weight="700" fill="#003d29" text-anchor="start">Instacart catalog today: every data family, every stage</text>
+<text x="24.0" y="62.0" font-size="13" fill="#56595e" text-anchor="start">Read across a row to follow one kind of data from where it comes from to who uses it. Letters in brackets say who confirmed it. Anything unconfirmed sits in a dashed chip marked</text>
+<text x="24.0" y="79.9" font-size="13" fill="#56595e" text-anchor="start">[VERIFY].</text>
+<text x="50.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Data family</text>
+<circle cx="219.0" cy="128.0" r="9" fill="#ffffff"/>
+<text x="219.0" y="132.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">1</text>
+<text x="234.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Comes from</text>
+<circle cx="431.0" cy="128.0" r="9" fill="#ffffff"/>
+<text x="431.0" y="132.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">2</text>
+<text x="446.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Gets in by</text>
+<circle cx="601.0" cy="128.0" r="9" fill="#ffffff"/>
+<text x="601.0" y="132.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">3</text>
+<text x="616.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Resolved or generated by</text>
+<circle cx="823.0" cy="128.0" r="9" fill="#ffffff"/>
+<text x="823.0" y="132.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">4</text>
+<text x="838.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Used by</text>
+<text x="1010.0" y="132.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="start">Owner</text>
+<text x="50.0" y="179.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Product identity</text>
+<text x="50.0" y="198.7" font-size="12" fill="#343538" text-anchor="start">name, brand, size,</text>
+<text x="50.0" y="215.2" font-size="12" fill="#343538" text-anchor="start">UPC or PLU</text>
+<text x="199.0" y="178.5" font-size="12" fill="#242529" text-anchor="start">Retailer files and Catalog API;</text>
+<text x="199.0" y="195.0" font-size="12" fill="#242529" text-anchor="start">CSPs; Instacart&#x27;s curated</text>
+<text x="199.0" y="211.5" font-size="12" fill="#242529" text-anchor="start">Universal Catalog (D)</text>
+<text x="411.0" y="178.5" font-size="12" fill="#242529" text-anchor="start">Retailer file and API</text>
+<text x="411.0" y="195.0" font-size="12" fill="#242529" text-anchor="start">ingest.</text>
+<text x="414.0" y="218.5" font-size="12" fill="#56595e" text-anchor="start">Stream or batch path</text>
+<text x="414.0" y="235.0" font-size="12" fill="#56595e" text-anchor="start">[VERIFY which]</text>
+<text x="581.0" y="178.5" font-size="12" fill="#242529" text-anchor="start">Matched to one product, then a</text>
+<text x="581.0" y="195.0" font-size="12" fill="#242529" text-anchor="start">meta-catalog across retailers; four</text>
+<text x="581.0" y="211.5" font-size="12" fill="#242529" text-anchor="start">precedence methods (D, E)</text>
+<text x="803.0" y="178.5" font-size="12" fill="#242529" text-anchor="start">Every surface; Ads maps</text>
+<text x="803.0" y="195.0" font-size="12" fill="#242529" text-anchor="start">products to brands (D)</text>
+<text x="999.0" y="178.5" font-size="12" fill="#242529" text-anchor="start">Products team (T)</text>
+<text x="50.0" y="283.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Store price and</text>
+<text x="50.0" y="300.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">availability</text>
+<text x="50.0" y="318.9" font-size="12" fill="#343538" text-anchor="start">per store, changes</text>
+<text x="50.0" y="335.5" font-size="12" fill="#343538" text-anchor="start">daily</text>
+<text x="199.0" y="282.5" font-size="12" fill="#242529" text-anchor="start">Retailer files and Item API (D)</text>
+<text x="411.0" y="282.5" font-size="12" fill="#242529" text-anchor="start">Updated with every</text>
+<text x="411.0" y="299.0" font-size="12" fill="#242529" text-anchor="start">inventory file (D)</text>
+<text x="581.0" y="282.5" font-size="12" fill="#242529" text-anchor="start">Retailer value wins; anomaly</text>
+<text x="581.0" y="299.0" font-size="12" fill="#242529" text-anchor="start">checks were a past project (S)</text>
+<text x="803.0" y="282.5" font-size="12" fill="#242529" text-anchor="start">Search, Caper carts, pricing</text>
+<text x="803.0" y="299.0" font-size="12" fill="#242529" text-anchor="start">teams downstream (S, D)</text>
+<text x="999.0" y="282.5" font-size="12" fill="#242529" text-anchor="start">Item and offer team,</text>
+<text x="999.0" y="299.0" font-size="12" fill="#242529" text-anchor="start">Tarang&#x27;s peer (T)</text>
+<text x="50.0" y="371.5" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Brand content</text>
+<text x="50.0" y="390.3" font-size="12" fill="#343538" text-anchor="start">nutrition, ingredients,</text>
+<text x="50.0" y="406.8" font-size="12" fill="#343538" text-anchor="start">warnings</text>
+<text x="199.0" y="370.1" font-size="12" fill="#242529" text-anchor="start">CSPs: Syndigo, Salsify,</text>
+<text x="199.0" y="386.6" font-size="12" fill="#242529" text-anchor="start">1WorldSync, IX-One, Nielsen</text>
+<text x="199.0" y="403.1" font-size="12" fill="#242529" text-anchor="start">Brandbank; brand edits (D).</text>
+<text x="202.0" y="426.6" font-size="12" fill="#56595e" text-anchor="start">Label data vendor, for</text>
+<text x="202.0" y="443.1" font-size="12" fill="#56595e" text-anchor="start">example Label Insight</text>
+<text x="202.0" y="459.6" font-size="12" fill="#56595e" text-anchor="start">[VERIFY]</text>
+<text x="411.0" y="370.1" font-size="12" fill="#242529" text-anchor="start">CSP feeds keyed by</text>
+<text x="411.0" y="386.6" font-size="12" fill="#242529" text-anchor="start">GTIN (D)</text>
+<text x="581.0" y="370.1" font-size="12" fill="#242529" text-anchor="start">CSP values override the retailer</text>
+<text x="581.0" y="386.6" font-size="12" fill="#242529" text-anchor="start">file, except where a retailer</text>
+<text x="581.0" y="403.1" font-size="12" fill="#242529" text-anchor="start">contract says otherwise (D, P)</text>
+<text x="803.0" y="370.1" font-size="12" fill="#242529" text-anchor="start">PDP, Smart Shop, Catalog</text>
+<text x="803.0" y="386.6" font-size="12" fill="#242529" text-anchor="start">Engine (D, E)</text>
+<text x="999.0" y="370.1" font-size="12" fill="#242529" text-anchor="start">Products team; ops owns</text>
+<text x="999.0" y="386.6" font-size="12" fill="#242529" text-anchor="start">the CSP relationships (P)</text>
+<text x="50.0" y="508.5" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Dietary and health</text>
+<text x="50.0" y="524.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">tags</text>
+<text x="50.0" y="543.5" font-size="12" fill="#343538" text-anchor="start">gluten-free,</text>
+<text x="50.0" y="560.1" font-size="12" fill="#343538" text-anchor="start">sesame-free, 30</text>
+<text x="50.0" y="576.6" font-size="12" fill="#343538" text-anchor="start">Health Tags</text>
+<text x="199.0" y="507.1" font-size="12" fill="#242529" text-anchor="start">Generated by Instacart: no</text>
+<text x="199.0" y="523.6" font-size="12" fill="#242529" text-anchor="start">ground truth to ingest. Inputs are</text>
+<text x="199.0" y="540.1" font-size="12" fill="#242529" text-anchor="start">images, third-party data, retailer</text>
+<text x="199.0" y="556.6" font-size="12" fill="#242529" text-anchor="start">booleans (T)</text>
+<text x="411.0" y="507.1" font-size="12" fill="#242529" text-anchor="start">Not ingested; produced</text>
+<text x="411.0" y="523.6" font-size="12" fill="#242529" text-anchor="start">offline by pipelines (T)</text>
+<text x="581.0" y="507.1" font-size="12" fill="#242529" text-anchor="start">Enrichment pipelines with LLM</text>
+<text x="581.0" y="523.6" font-size="12" fill="#242529" text-anchor="start">prompts, LLM-as-judge and BPO</text>
+<text x="581.0" y="540.1" font-size="12" fill="#242529" text-anchor="start">labels where unsure (T)</text>
+<text x="803.0" y="507.1" font-size="12" fill="#242529" text-anchor="start">Filters, badges, Smart Shop,</text>
+<text x="803.0" y="523.6" font-size="12" fill="#242529" text-anchor="start">Clementine, agents (P, E)</text>
+<text x="999.0" y="507.1" font-size="12" fill="#242529" text-anchor="start">Catalog ops builds them</text>
+<text x="999.0" y="523.6" font-size="12" fill="#242529" text-anchor="start">on the GenCon platform</text>
+<text x="999.0" y="540.1" font-size="12" fill="#242529" text-anchor="start">(T, P)</text>
+<text x="50.0" y="612.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Confidence on</text>
+<text x="50.0" y="628.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">generated values</text>
+<text x="50.0" y="647.7" font-size="12" fill="#343538" text-anchor="start">how sure each value</text>
+<text x="50.0" y="664.3" font-size="12" fill="#343538" text-anchor="start">is</text>
+<text x="199.0" y="611.3" font-size="12" fill="#242529" text-anchor="start">Model self-verification score per</text>
+<text x="199.0" y="627.8" font-size="12" fill="#242529" text-anchor="start">extracted value (E)</text>
+<text x="411.0" y="611.3" font-size="12" fill="#242529" text-anchor="start">Computed when the</text>
+<text x="411.0" y="627.8" font-size="12" fill="#242529" text-anchor="start">value is extracted (E)</text>
+<text x="581.0" y="611.3" font-size="12" fill="#242529" text-anchor="start">Low confidence routed to human</text>
+<text x="581.0" y="627.8" font-size="12" fill="#242529" text-anchor="start">review (E).</text>
+<text x="584.0" y="651.3" font-size="12" fill="#56595e" text-anchor="start">Shared confidence model from</text>
+<text x="584.0" y="667.8" font-size="12" fill="#56595e" text-anchor="start">partner ML [VERIFY]</text>
+<text x="806.0" y="612.3" font-size="12" fill="#56595e" text-anchor="start">Whether the score reaches</text>
+<text x="806.0" y="628.8" font-size="12" fill="#56595e" text-anchor="start">downstream teams</text>
+<text x="806.0" y="645.3" font-size="12" fill="#56595e" text-anchor="start">[VERIFY]</text>
+<text x="999.0" y="611.3" font-size="12" fill="#242529" text-anchor="start">Partner ML team (P)</text>
+<text x="50.0" y="716.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Allergens</text>
+<text x="50.0" y="735.4" font-size="12" fill="#343538" text-anchor="start">free text today</text>
+<text x="199.0" y="715.3" font-size="12" fill="#242529" text-anchor="start">Retailer free text; CSPs;</text>
+<text x="199.0" y="731.8" font-size="12" fill="#242529" text-anchor="start">packaging read by vision models</text>
+<text x="199.0" y="748.3" font-size="12" fill="#242529" text-anchor="start">(D, E)</text>
+<text x="411.0" y="715.3" font-size="12" fill="#242529" text-anchor="start">Comma-separated</text>
+<text x="411.0" y="731.8" font-size="12" fill="#242529" text-anchor="start">allergens and free-text</text>
+<text x="411.0" y="748.3" font-size="12" fill="#242529" text-anchor="start">warnings in the inventory</text>
+<text x="411.0" y="764.8" font-size="12" fill="#242529" text-anchor="start">file (D)</text>
+<text x="584.0" y="716.3" font-size="12" fill="#56595e" text-anchor="start">Per-family precedence for</text>
+<text x="584.0" y="732.8" font-size="12" fill="#56595e" text-anchor="start">allergens is not published</text>
+<text x="584.0" y="749.3" font-size="12" fill="#56595e" text-anchor="start">[VERIFY]</text>
+<text x="803.0" y="715.3" font-size="12" fill="#242529" text-anchor="start">PDP; Clementine&#x27;s nut-free</text>
+<text x="803.0" y="731.8" font-size="12" fill="#242529" text-anchor="start">preference (E). Called a trust</text>
+<text x="803.0" y="748.3" font-size="12" fill="#242529" text-anchor="start">buster (T)</text>
+<text x="1002.0" y="716.3" font-size="12" fill="#56595e" text-anchor="start">Owner [VERIFY]</text>
+<text x="50.0" y="804.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Taxonomy</text>
+<text x="50.0" y="823.4" font-size="12" fill="#343538" text-anchor="start">departments,</text>
+<text x="50.0" y="840.0" font-size="12" fill="#343538" text-anchor="start">categories, browse</text>
+<text x="50.0" y="856.6" font-size="12" fill="#343538" text-anchor="start">nodes</text>
+<text x="199.0" y="803.3" font-size="12" fill="#242529" text-anchor="start">Instacart, plus the retailer&#x27;s</text>
+<text x="199.0" y="819.8" font-size="12" fill="#242529" text-anchor="start">department (D)</text>
+<text x="411.0" y="803.3" font-size="12" fill="#242529" text-anchor="start">Built offline (T)</text>
+<text x="581.0" y="803.3" font-size="12" fill="#242529" text-anchor="start">Core taxonomy by GenCon;</text>
+<text x="581.0" y="819.8" font-size="12" fill="#242529" text-anchor="start">semantic IDs for search and ads</text>
+<text x="581.0" y="836.3" font-size="12" fill="#242529" text-anchor="start">(T, E)</text>
+<text x="803.0" y="803.3" font-size="12" fill="#242529" text-anchor="start">Browse, search, ads retrieval</text>
+<text x="803.0" y="819.8" font-size="12" fill="#242529" text-anchor="start">(E)</text>
+<text x="999.0" y="803.3" font-size="12" fill="#242529" text-anchor="start">GenCon, with a</text>
+<text x="999.0" y="819.8" font-size="12" fill="#242529" text-anchor="start">three-person taxonomy</text>
+<text x="999.0" y="836.3" font-size="12" fill="#242529" text-anchor="start">team (T, P)</text>
+<text x="50.0" y="892.6" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Regulatory flags</text>
+<text x="50.0" y="911.4" font-size="12" fill="#343538" text-anchor="start">alcohol, SNAP</text>
+<text x="50.0" y="927.9" font-size="12" fill="#343538" text-anchor="start">eligibility, Prop 65</text>
+<text x="199.0" y="891.2" font-size="12" fill="#242529" text-anchor="start">Retailer, CSPs, internal audits</text>
+<text x="199.0" y="907.7" font-size="12" fill="#242529" text-anchor="start">(D)</text>
+<text x="411.0" y="891.2" font-size="12" fill="#242529" text-anchor="start">Retailer file fields (D)</text>
+<text x="581.0" y="891.2" font-size="12" fill="#242529" text-anchor="start">Alcohol resolves to the most</text>
+<text x="581.0" y="907.7" font-size="12" fill="#242529" text-anchor="start">restrictive value (D)</text>
+<text x="803.0" y="891.2" font-size="12" fill="#242529" text-anchor="start">Checkout and ID checks; a</text>
+<text x="803.0" y="907.7" font-size="12" fill="#242529" text-anchor="start">wrong alcohol flag can mean</text>
+<text x="803.0" y="924.2" font-size="12" fill="#242529" text-anchor="start">a state fine (T)</text>
+<text x="1002.0" y="892.2" font-size="12" fill="#56595e" text-anchor="start">Owner [VERIFY]</text>
+<text x="50.0" y="964.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Images</text>
+<text x="50.0" y="982.9" font-size="12" fill="#343538" text-anchor="start">product photos</text>
+<text x="199.0" y="962.7" font-size="12" fill="#242529" text-anchor="start">Retailer, CSPs, brand library;</text>
+<text x="199.0" y="979.2" font-size="12" fill="#242529" text-anchor="start">Instacart also generates images</text>
+<text x="199.0" y="995.7" font-size="12" fill="#242529" text-anchor="start">(D, E)</text>
+<text x="411.0" y="962.7" font-size="12" fill="#242529" text-anchor="start">Image fields in retailer</text>
+<text x="411.0" y="979.2" font-size="12" fill="#242529" text-anchor="start">files and CSP feeds (D)</text>
+<text x="581.0" y="962.7" font-size="12" fill="#242529" text-anchor="start">Newest image received wins (D)</text>
+<text x="803.0" y="962.7" font-size="12" fill="#242529" text-anchor="start">PDP and ads; an input to tag</text>
+<text x="803.0" y="979.2" font-size="12" fill="#242529" text-anchor="start">pipelines (T, D)</text>
+<text x="1002.0" y="963.7" font-size="12" fill="#56595e" text-anchor="start">Owner [VERIFY]</text>
+<text x="40.0" y="1041.7" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Legend</text>
+<text x="138.8" y="1041.7" font-size="12" fill="#343538" text-anchor="start">unconfirmed claim [VERIFY]</text>
+<text x="40.0" y="1067.7" font-size="12" fill="#56595e" text-anchor="start">T = Tarang Mittal 10-26. P = Peggy Men 10-23. B = Brittany Drager 10-22 and 10-26. S = Sonali Parthasarathy 10-22. D = docs.instacart.com. E = Instacart engineering or company posts</text>
+<text x="40.0" y="1084.3" font-size="12" fill="#56595e" text-anchor="start">(PARSE, Maple, Semantic IDs, Smart Shop, Catalog Engine).</text>
+</svg>

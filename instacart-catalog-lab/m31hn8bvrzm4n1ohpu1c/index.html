@@ -238,7 +238,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 <dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
 
 <script>
-const V = '20261028b';
+const V = '20261028c';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';

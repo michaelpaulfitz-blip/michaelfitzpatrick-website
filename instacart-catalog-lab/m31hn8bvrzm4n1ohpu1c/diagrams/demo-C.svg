@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1200 966" font-family='"Open Sans", Helvetica, Arial, sans-serif' role="img" aria-labelledby="demoC-t demoC-d"><title id="demoC-t">Gluten-free evidence engine, overview and zoom</title><desc id="demoC-d">A seven-step spine across the top; below each step a bracketed panel lists everything inside it.</desc><defs><marker id="demoC-ah" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0.8 L9,5 L0,9.2 z" fill="#003d29"/></marker></defs><rect width="1200" height="966" fill="#ffffff"/>
+<rect x="20.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M28,194 L28,186 L162,186 L162,194 M95.0,186 L95.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M166.0,132.0 L188.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="184.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M192,194 L192,186 L326,186 L326,194 M259.0,186 L259.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M330.0,132.0 L352.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="348.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M356,194 L356,186 L490,186 L490,194 M423.0,186 L423.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M494.0,132.0 L516.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="512.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M520,194 L520,186 L654,186 L654,194 M587.0,186 L587.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M658.0,132.0 L680.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="676.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M684,194 L684,186 L818,186 L818,194 M751.0,186 L751.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M822.0,132.0 L844.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="840.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M848,194 L848,186 L982,186 L982,194 M915.0,186 L915.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<path d="M986.0,132.0 L1008.0,132.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="1004.0" y="196.0" width="150.0" height="528.0" rx="8" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M1012,194 L1012,186 L1146,186 L1146,194 M1079.0,186 L1079.0,164" fill="none" stroke="#8f939b" stroke-width="1.5"/>
+<rect x="16.0" y="758.0" width="1168.0" height="150.0" rx="10" fill="#faf1e5" stroke="none" stroke-width="1"/>
+<path d="M228.0,842.0 L262.0,842.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<path d="M462.0,842.0 L496.0,842.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<path d="M696.0,842.0 L730.0,842.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<path d="M930.0,842.0 L964.0,842.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<path d="M1079.0,800.0 L1079.0,658.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<rect x="24.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="188.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="352.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="516.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="680.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="844.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="1008.0" y="100.0" width="142.0" height="64.0" rx="8" fill="#f6fdf6" stroke="#003d29" stroke-width="1"/>
+<rect x="24.0" y="204.0" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="24.0" y="308.9" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="24.0" y="413.8" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="24.0" y="518.6" width="142.0" height="97.8" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="24.0" y="624.5" width="142.0" height="80.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="188.0" y="204.0" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="188.0" y="308.9" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="188.0" y="413.8" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="188.0" y="518.6" width="142.0" height="97.8" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="188.0" y="624.5" width="142.0" height="80.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="352.0" y="204.0" width="142.0" height="64.7" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="352.0" y="276.7" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="352.0" y="332.9" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="352.0" y="389.0" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="204.0" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="258.2" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="312.3" width="142.0" height="64.7" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="383.0" width="142.0" height="64.7" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="453.8" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="516.0" y="507.9" width="142.0" height="48.2" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="680.0" y="204.0" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="680.0" y="308.9" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="680.0" y="398.2" width="142.0" height="97.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="844.0" y="204.0" width="142.0" height="26.6" rx="8" fill="#faf1e5" stroke="#faf1e5" stroke-width="1"/>
+<rect x="844.0" y="236.6" width="142.0" height="26.6" rx="8" fill="#faf1e5" stroke="#faf1e5" stroke-width="1"/>
+<rect x="844.0" y="269.2" width="142.0" height="26.6" rx="8" fill="#faf1e5" stroke="#faf1e5" stroke-width="1"/>
+<rect x="844.0" y="301.8" width="142.0" height="26.6" rx="8" fill="#faf1e5" stroke="#faf1e5" stroke-width="1"/>
+<rect x="844.0" y="334.4" width="142.0" height="26.6" rx="8" fill="#faf1e5" stroke="#faf1e5" stroke-width="1"/>
+<rect x="1008.0" y="204.0" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="1008.0" y="293.3" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="1008.0" y="382.6" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="1008.0" y="471.8" width="142.0" height="96.9" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="1008.0" y="576.7" width="142.0" height="81.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="28.0" y="800.0" width="200.0" height="84.0" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="262.0" y="800.0" width="200.0" height="84.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="496.0" y="800.0" width="200.0" height="84.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="730.0" y="800.0" width="200.0" height="84.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="964.0" y="800.0" width="200.0" height="84.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="322.9" y="931.0" width="26.0" height="16.0" rx="4" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="566.7" y="931.0" width="26.0" height="16.0" rx="4" fill="#faf1e5" stroke="none" stroke-width="1"/>
+<text x="24.0" y="38.0" font-size="22" font-weight="700" fill="#003d29" text-anchor="start">Gluten-free evidence engine: seven steps, then the detail</text>
+<text x="24.0" y="62.0" font-size="13" fill="#56595e" text-anchor="start">Read the top row first: one arrow per step. Each bracket opens that step into its parts. Nothing inside a panel connects sideways, so there are no crossing lines.</text>
+<text x="34.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Sources</text>
+<text x="34.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Five evidence feeds</text>
+<circle cx="207.0" cy="117.7" r="11" fill="#108910"/>
+<text x="207.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="222.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Fetch</text>
+<text x="198.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Pull and cache raw</text>
+<circle cx="371.0" cy="117.7" r="11" fill="#108910"/>
+<text x="371.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="386.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Normalize</text>
+<text x="362.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">One GTIN-14 key</text>
+<circle cx="535.0" cy="117.7" r="11" fill="#108910"/>
+<text x="535.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="550.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Evidence</text>
+<text x="526.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Row per source</text>
+<circle cx="699.0" cy="117.7" r="11" fill="#108910"/>
+<text x="699.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="714.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Detect</text>
+<text x="690.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Find gluten terms</text>
+<circle cx="863.0" cy="117.7" r="11" fill="#108910"/>
+<text x="863.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="878.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">State</text>
+<text x="854.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Five states + score</text>
+<circle cx="1027.0" cy="117.7" r="11" fill="#108910"/>
+<text x="1027.0" y="122.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="1042.0" y="122.3" font-size="13" font-weight="700" fill="#003d29" text-anchor="start">Use</text>
+<text x="1018.0" y="141.3" font-size="12" fill="#343538" text-anchor="start">Five outputs</text>
+<text x="32.0" y="223.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Open Food Facts</text>
+<text x="32.0" y="239.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">API</text>
+<text x="32.0" y="257.6" font-size="12" fill="#343538" text-anchor="start">Labels, ingredients,</text>
+<text x="32.0" y="274.2" font-size="12" fill="#343538" text-anchor="start">allergens, traces,</text>
+<text x="32.0" y="290.7" font-size="12" fill="#343538" text-anchor="start">images</text>
+<text x="32.0" y="328.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">USDA FoodData</text>
+<text x="32.0" y="343.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Central</text>
+<text x="32.0" y="362.5" font-size="12" fill="#343538" text-anchor="start">Branded foods API:</text>
+<text x="32.0" y="379.0" font-size="12" fill="#343538" text-anchor="start">ingredient statement</text>
+<text x="32.0" y="395.6" font-size="12" fill="#343538" text-anchor="start">by GTIN</text>
+<text x="32.0" y="433.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">GFCO certified</text>
+<text x="32.0" y="448.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">finder</text>
+<text x="32.0" y="467.4" font-size="12" fill="#343538" text-anchor="start">Certifier website;</text>
+<text x="32.0" y="483.9" font-size="12" fill="#343538" text-anchor="start">polite scrape or</text>
+<text x="32.0" y="500.5" font-size="12" fill="#343538" text-anchor="start">spot-check</text>
+<text x="32.0" y="538.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Kroger product API</text>
+<text x="32.0" y="556.6" font-size="12" fill="#343538" text-anchor="start">OAuth,</text>
+<text x="32.0" y="573.2" font-size="12" fill="#343538" text-anchor="start">product.compact.</text>
+<text x="32.0" y="589.8" font-size="12" fill="#343538" text-anchor="start">Blocked until Mike</text>
+<text x="32.0" y="606.3" font-size="12" fill="#343538" text-anchor="start">registers</text>
+<text x="32.0" y="643.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Claude vision label</text>
+<text x="32.0" y="659.5" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">reader</text>
+<text x="32.0" y="678.1" font-size="12" fill="#343538" text-anchor="start">Front and ingredient</text>
+<text x="32.0" y="694.6" font-size="12" fill="#343538" text-anchor="start">panel photos</text>
+<text x="196.0" y="223.4" font-size="12" fill="#343538" text-anchor="start">Product JSON and</text>
+<text x="196.0" y="240.0" font-size="12" fill="#343538" text-anchor="start">image URLs; raw</text>
+<text x="196.0" y="256.5" font-size="12" fill="#343538" text-anchor="start">response cached</text>
+<text x="196.0" y="328.3" font-size="12" fill="#343538" text-anchor="start">Branded record</text>
+<text x="196.0" y="344.8" font-size="12" fill="#343538" text-anchor="start">looked up by GTIN;</text>
+<text x="196.0" y="361.4" font-size="12" fill="#343538" text-anchor="start">cached</text>
+<text x="196.0" y="433.2" font-size="12" fill="#343538" text-anchor="start">Rate-limited page</text>
+<text x="196.0" y="449.7" font-size="12" fill="#343538" text-anchor="start">fetch or manual</text>
+<text x="196.0" y="466.3" font-size="12" fill="#343538" text-anchor="start">check; cached</text>
+<text x="196.0" y="538.0" font-size="12" fill="#343538" text-anchor="start">Token, then</text>
+<text x="196.0" y="554.6" font-size="12" fill="#343538" text-anchor="start">product.compact by</text>
+<text x="196.0" y="571.2" font-size="12" fill="#343538" text-anchor="start">UPC (waiting on</text>
+<text x="196.0" y="587.7" font-size="12" fill="#343538" text-anchor="start">keys)</text>
+<text x="196.0" y="643.9" font-size="12" fill="#343538" text-anchor="start">Photo in; claim and</text>
+<text x="196.0" y="660.4" font-size="12" fill="#343538" text-anchor="start">ingredient text out as</text>
+<text x="196.0" y="677.0" font-size="12" fill="#343538" text-anchor="start">JSON</text>
+<text x="360.0" y="223.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Read the code</text>
+<text x="360.0" y="242.0" font-size="12" fill="#343538" text-anchor="start">UPC-A, UPC-E or</text>
+<text x="360.0" y="258.6" font-size="12" fill="#343538" text-anchor="start">EAN-13</text>
+<text x="360.0" y="296.1" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Pad to 14 digits</text>
+<text x="360.0" y="314.7" font-size="12" fill="#343538" text-anchor="start">Leading zeros added</text>
+<text x="360.0" y="352.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Check digit</text>
+<text x="360.0" y="370.9" font-size="12" fill="#343538" text-anchor="start">Reject codes that fail</text>
+<text x="360.0" y="408.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Merge</text>
+<text x="360.0" y="427.0" font-size="12" fill="#343538" text-anchor="start">Rows that share a</text>
+<text x="360.0" y="443.6" font-size="12" fill="#343538" text-anchor="start">key become one</text>
+<text x="360.0" y="460.2" font-size="12" fill="#343538" text-anchor="start">product</text>
+<text x="524.0" y="223.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">source</text>
+<text x="524.0" y="242.0" font-size="12" fill="#343538" text-anchor="start">Which feed said it</text>
+<text x="524.0" y="277.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">fetched_at</text>
+<text x="524.0" y="296.2" font-size="12" fill="#343538" text-anchor="start">When we looked</text>
+<text x="524.0" y="331.7" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">claim</text>
+<text x="524.0" y="350.3" font-size="12" fill="#343538" text-anchor="start">Label words, e.g.</text>
+<text x="524.0" y="366.9" font-size="12" fill="#343538" text-anchor="start">gluten-free</text>
+<text x="524.0" y="402.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">certified</text>
+<text x="524.0" y="421.0" font-size="12" fill="#343538" text-anchor="start">Certifier listing, yes</text>
+<text x="524.0" y="437.6" font-size="12" fill="#343538" text-anchor="start">or no</text>
+<text x="524.0" y="473.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">ingredients</text>
+<text x="524.0" y="491.8" font-size="12" fill="#343538" text-anchor="start">Statement text</text>
+<text x="524.0" y="527.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">hits</text>
+<text x="524.0" y="545.9" font-size="12" fill="#343538" text-anchor="start">Gluten terms found</text>
+<text x="688.0" y="223.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Gluten ingredient</text>
+<text x="688.0" y="239.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">detector</text>
+<text x="688.0" y="257.6" font-size="12" fill="#343538" text-anchor="start">Wheat, barley, rye,</text>
+<text x="688.0" y="274.2" font-size="12" fill="#343538" text-anchor="start">malt, brewer&#x27;s yeast,</text>
+<text x="688.0" y="290.7" font-size="12" fill="#343538" text-anchor="start">uncertified oats</text>
+<text x="688.0" y="328.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Rules</text>
+<text x="688.0" y="346.9" font-size="12" fill="#343538" text-anchor="start">Weigh certification,</text>
+<text x="688.0" y="363.4" font-size="12" fill="#343538" text-anchor="start">claims and hits</text>
+<text x="688.0" y="380.0" font-size="12" fill="#343538" text-anchor="start">across sources</text>
+<text x="688.0" y="417.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Example</text>
+<text x="688.0" y="436.2" font-size="12" fill="#343538" text-anchor="start">Certified plus a</text>
+<text x="688.0" y="452.7" font-size="12" fill="#343538" text-anchor="start">gluten-free claim and</text>
+<text x="688.0" y="469.3" font-size="12" fill="#343538" text-anchor="start">no hits points to</text>
+<text x="688.0" y="485.8" font-size="12" fill="#343538" text-anchor="start">Verified</text>
+<text x="851.0" y="222.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Verified</text>
+<text x="851.0" y="255.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Claimed</text>
+<text x="851.0" y="287.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Conflict</text>
+<text x="851.0" y="320.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Not gluten-free</text>
+<text x="851.0" y="352.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Unknown</text>
+<text x="848.0" y="383.0" font-size="12" fill="#343538" text-anchor="start">Plus a confidence</text>
+<text x="848.0" y="399.6" font-size="12" fill="#343538" text-anchor="start">score from 0 to 1, so</text>
+<text x="848.0" y="416.2" font-size="12" fill="#343538" text-anchor="start">any threshold can be</text>
+<text x="848.0" y="432.8" font-size="12" fill="#343538" text-anchor="start">chosen later</text>
+<text x="1016.0" y="223.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Product browser</text>
+<text x="1016.0" y="242.0" font-size="12" fill="#343538" text-anchor="start">State, score and</text>
+<text x="1016.0" y="258.6" font-size="12" fill="#343538" text-anchor="start">evidence rows for</text>
+<text x="1016.0" y="275.1" font-size="12" fill="#343538" text-anchor="start">every product</text>
+<text x="1016.0" y="312.7" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Conflict queue</text>
+<text x="1016.0" y="331.3" font-size="12" fill="#343538" text-anchor="start">Products where</text>
+<text x="1016.0" y="347.8" font-size="12" fill="#343538" text-anchor="start">sources disagree,</text>
+<text x="1016.0" y="364.4" font-size="12" fill="#343538" text-anchor="start">worst first</text>
+<text x="1016.0" y="402.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Killer stats</text>
+<text x="1016.0" y="420.6" font-size="12" fill="#343538" text-anchor="start">Headline numbers,</text>
+<text x="1016.0" y="437.1" font-size="12" fill="#343538" text-anchor="start">e.g. share of claims</text>
+<text x="1016.0" y="453.7" font-size="12" fill="#343538" text-anchor="start">with no certification</text>
+<text x="1016.0" y="491.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Gold-set labeling</text>
+<text x="1016.0" y="506.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">tool</text>
+<text x="1016.0" y="525.4" font-size="12" fill="#343538" text-anchor="start">Mike labels products;</text>
+<text x="1016.0" y="542.0" font-size="12" fill="#343538" text-anchor="start">writes to the gold set</text>
+<text x="1016.0" y="558.6" font-size="12" fill="#343538" text-anchor="start">below</text>
+<text x="1016.0" y="596.1" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Threshold slider</text>
+<text x="1016.0" y="614.7" font-size="12" fill="#343538" text-anchor="start">Precision and recall</text>
+<text x="1016.0" y="631.3" font-size="12" fill="#343538" text-anchor="start">by threshold; badge</text>
+<text x="1016.0" y="647.8" font-size="12" fill="#343538" text-anchor="start">and filter points</text>
+<text x="28.0" y="784.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">EVALUATION LOOP: HOW THE THRESHOLDS ARE CHOSEN</text>
+<text x="38.0" y="821.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Claude Haiku pre-labels</text>
+<text x="38.0" y="840.6" font-size="12" fill="#343538" text-anchor="start">Stand in until Mike labels</text>
+<text x="272.0" y="821.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Gold set</text>
+<text x="272.0" y="840.6" font-size="12" fill="#343538" text-anchor="start">Hand labels from the labeling</text>
+<text x="272.0" y="857.2" font-size="12" fill="#343538" text-anchor="start">tool</text>
+<text x="506.0" y="821.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Score against labels</text>
+<text x="506.0" y="840.6" font-size="12" fill="#343538" text-anchor="start">Compare each state and</text>
+<text x="506.0" y="857.2" font-size="12" fill="#343538" text-anchor="start">score with its label</text>
+<text x="740.0" y="821.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Precision and recall</text>
+<text x="740.0" y="840.6" font-size="12" fill="#343538" text-anchor="start">Measured at every threshold</text>
+<text x="974.0" y="821.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Two operating points</text>
+<text x="974.0" y="840.6" font-size="12" fill="#343538" text-anchor="start">Badge: precision first. Filter:</text>
+<text x="974.0" y="857.2" font-size="12" fill="#343538" text-anchor="start">recall first.</text>
+<text x="1087.0" y="784.0" font-size="12" fill="#56595e" text-anchor="start">sets the slider</text>
+<text x="24.0" y="944.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Legend</text>
+<circle cx="98.8" cy="940.0" r="10" fill="#108910"/>
+<text x="98.8" y="944.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="112.8" y="944.0" font-size="12" fill="#343538" text-anchor="start">step order</text>
+<path d="M194.4,939.0 L224.4,939.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoC-ah)"/>
+<text x="232.4" y="944.0" font-size="12" fill="#343538" text-anchor="start">data moves</text>
+<text x="356.9" y="944.0" font-size="12" fill="#343538" text-anchor="start">not live yet (blocked or stand-in)</text>
+<text x="600.7" y="944.0" font-size="12" fill="#343538" text-anchor="start">evaluation loop</text>
+</svg>

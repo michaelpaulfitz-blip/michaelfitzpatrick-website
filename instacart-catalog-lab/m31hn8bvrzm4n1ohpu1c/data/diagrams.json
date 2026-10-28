@@ -1,0 +1,90 @@
+{
+  "generated": "2026-10-28T21:12:31+00:00",
+  "diagrams": [
+    {
+      "id": "demo-A",
+      "subject": "demo",
+      "file": "diagrams/demo-A.svg",
+      "title": "Evidence engine: lanes, source to state",
+      "strategy": "Six left-to-right lanes where each source lines up with its own fetch row, single arrows between stages, one bus fanning out to the outputs, and the evaluation loop in a band underneath.",
+      "best_for": "A full architecture view on one screen when every box needs to stay visible.",
+      "self_critique": "Steps 4 and 5 share one lane, so the numbers sit on the boxes in that lane. The bus implies every output receives every state, which is looser than reality (only Conflict feeds the conflict queue). The gold set is linked to the labeling tool by a text reference, which a skimmer can miss.",
+      "iterations": 4
+    },
+    {
+      "id": "demo-B",
+      "subject": "demo",
+      "file": "diagrams/demo-B.svg",
+      "title": "Evidence engine: matrix",
+      "strategy": "A table with one row per source and one column per stage under chevron headers, no arrows at all; the State and Use columns span every row to show where sources merge.",
+      "best_for": "Answering what each source contributes at each step, or spotting a gap for one source.",
+      "self_critique": "Detector and rules collapse into one column, so the decision mechanics appear only as words. The evaluation loop is a sentence in a row, and a reader cannot see that the labeling tool writes back into the gold set.",
+      "iterations": 3
+    },
+    {
+      "id": "demo-C",
+      "subject": "demo",
+      "file": "diagrams/demo-C.svg",
+      "title": "Evidence engine: overview and zoom",
+      "strategy": "A seven-box spine with one arrow per step, a bracket under each step opening into a panel of its parts with no arrows inside panels, and a separate evaluation spine below.",
+      "best_for": "Talking through the system step by step in an interview, top row first and detail on demand.",
+      "self_critique": "Panels list parts without showing how they relate inside a step, so the detector to rules handoff is implied by order alone. The Sources and Fetch panels are row-aligned but nothing tells the reader that alignment is meaningful.",
+      "iterations": 3
+    },
+    {
+      "id": "demo-D",
+      "subject": "demo",
+      "file": "diagrams/demo-D.svg",
+      "title": "Evidence engine: follow one product",
+      "strategy": "Stages run top to bottom in one column with single arrows, and an illustrative oat granola rides alongside each stage showing its actual evidence rows, state and score.",
+      "best_for": "Explaining why the engine exists to someone non-technical, including the Conflict counterfactual.",
+      "self_critique": "The example is illustrative and must be presented that way; a reader may take the 0.96 score as real. Fetch and Normalize get the same visual weight as the decision even though they are plumbing, and the page is the longest of the four.",
+      "iterations": 3
+    },
+    {
+      "id": "instacart-A",
+      "subject": "instacart",
+      "file": "diagrams/instacart-A.svg",
+      "title": "Instacart catalog today: lanes",
+      "strategy": "Six left-to-right lanes with a fan-in bus from eight sources, containers that hold each stage's parts with no internal arrows, one straight main path, and a separate corridor for store-level price and availability.",
+      "best_for": "A single-screen picture of how product data reaches shoppers and agents, in the same visual grammar as the demo.",
+      "self_critique": "The consumer bus implies every consumer gets both the product record and price and availability. Containers hide relationships inside a stage, such as pipelines running on the platform and calling partner ML. Ownership appears only as lane subtitles.",
+      "iterations": 4
+    },
+    {
+      "id": "instacart-B",
+      "subject": "instacart",
+      "file": "diagrams/instacart-B.svg",
+      "title": "Instacart catalog today: matrix by data family",
+      "strategy": "Rows are nine data families and columns are stages plus owner, with no arrows; each claim carries a letter for who confirmed it, and only the unconfirmed clause sits in a dashed chip.",
+      "best_for": "Interview prep and defending each claim, since every cell carries its source.",
+      "self_critique": "It does not show the system as a pipeline, so a reader never sees that dietary tags depend on the resolved product record. Owner is unknown for three families, which leaves the right column thin where it matters most (allergens).",
+      "iterations": 4
+    },
+    {
+      "id": "instacart-C",
+      "subject": "instacart",
+      "file": "diagrams/instacart-C.svg",
+      "title": "Instacart catalog today: overview and zoom",
+      "strategy": "A seven-box spine with owners under each step, bracketed detail panels with no internal arrows, and a strip of six pains from the interviews at the bottom.",
+      "best_for": "A slide or whiteboard walkthrough where the top row is said aloud and the panels are pointed at.",
+      "self_critique": "The item and offer branch sits inside the Identify panel, so its separate route to consumers is lost. The Sources panel is twice as long as the others, which makes the page bottom-heavy on the left.",
+      "iterations": 3
+    },
+    {
+      "id": "instacart-D",
+      "subject": "instacart",
+      "file": "diagrams/instacart-D.svg",
+      "title": "Instacart catalog today: ownership swimlanes",
+      "strategy": "One horizontal band per team with stages as columns, sources aligned to the band they feed, consumers on one bus at right, vertical arrows only for cross-team handoffs, and grey lines for runs-on and calls.",
+      "best_for": "Discussing who owns what, and where this role sits on the GenCon side, with Tarang, Peggy or a platform leader.",
+      "self_critique": "The canonical record box is stretched tall to receive two handoffs, leaving empty space. Placing ingest in the Products band is itself unconfirmed, and the page is long enough to need a scroll.",
+      "iterations": 3
+    }
+  ],
+  "recommendation": {
+    "demo": "demo-A",
+    "instacart": "instacart-A",
+    "why": "Both A versions keep every box and solve the arrow problem the same way: straight row-aligned feeds, one arrow between stages, and a bus wherever many lines would otherwise fan in or out, so no line crosses another. Using the same grammar for the demo and for Instacart lets the two be read side by side, with D (follow one product, and ownership swimlanes) held as the second view for a walkthrough or an org conversation."
+  }
+}

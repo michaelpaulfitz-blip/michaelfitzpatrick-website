@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1200 1468.09" font-family='"Open Sans", Helvetica, Arial, sans-serif' role="img" aria-labelledby="icD-t icD-d"><title id="icD-t">Instacart catalog current state, ownership swimlanes</title><desc id="icD-d">One horizontal band per team; sources on the left feed the band that uses them; consumers on the right share one bus.</desc><defs><marker id="icD-ah" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0.8 L9,5 L0,9.2 z" fill="#003d29"/></marker></defs><rect width="1200" height="1468.09" fill="#ffffff"/>
+<rect x="214.0" y="1053.6" width="776.0" height="125.6" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="214.0" y="841.0" width="776.0" height="198.6" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="214.0" y="668.0" width="776.0" height="159.0" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="214.0" y="243.4" width="776.0" height="410.6" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="214.0" y="120.0" width="776.0" height="109.4" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M382.0,303.4 L406.0,303.4" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M490.0,390.1 L490.0,402.1" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M574.0,428.1 L818.0,428.1" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M696.0,815.0 L696.0,873.0" fill="none" stroke="#72767e" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M696.0,1027.6 L696.0,1085.6" fill="none" stroke="#72767e" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M574.0,470.0 L576.0,470.0 Q578.0,470.0 578.0,472.0 L578.0,720.0 Q578.0,726.0 584.0,726.0 L598.0,726.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M794.0,748.0 L795.0,748.0 Q796.0,748.0 796.0,747.0 L796.0,522.1 Q796.0,516.1 802.0,516.1 L818.0,516.1" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M192.0,184.7 L226.0,184.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M192.0,303.4 L206.0,303.4" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M192.0,381.3 L206.0,381.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M192.0,484.7 L206.0,484.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M206.0,303.4 L206.0,484.7" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M206.0,303.4 L226.0,303.4" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M192.0,731.3 L206.0,731.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M192.0,802.0 L206.0,802.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M206.0,731.3 L206.0,802.0" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M206.0,802.0 L598.0,802.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,165.3 L1006.0,566.1" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1006.0,165.3 L1022.0,165.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,198.9 L1022.0,198.9" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,240.3 L1022.0,240.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,281.7 L1022.0,281.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,315.3 L1022.0,315.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,348.9 L1022.0,348.9" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,382.5 L1022.0,382.5" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,416.1 L1022.0,416.1" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,449.7 L1022.0,449.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,483.3 L1022.0,483.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,524.7 L1022.0,524.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M1006.0,566.1 L1022.0,566.1" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<path d="M978.0,303.4 L1006.0,303.4" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M382.0,184.7 L1006.0,184.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="16.0" y="1209.3" width="1168.0" height="163.6" rx="10" fill="#faf1e5" stroke="none" stroke-width="1"/>
+<rect x="226.0" y="152.0" width="156.0" height="65.4" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="226.0" y="275.4" width="156.0" height="98.5" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="226.0" y="385.9" width="156.0" height="81.9" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="406.0" y="275.4" width="168.0" height="114.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="406.0" y="402.1" width="168.0" height="81.9" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="818.0" y="275.4" width="160.0" height="256.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="818.0" y="544.1" width="160.0" height="97.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="226.0" y="700.0" width="156.0" height="80.3" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="598.0" y="700.0" width="196.0" height="115.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="818.0" y="700.0" width="160.0" height="114.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="406.0" y="873.0" width="168.0" height="65.4" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="598.0" y="873.0" width="196.0" height="81.9" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="598.0" y="964.9" width="196.0" height="62.7" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="598.0" y="1085.6" width="196.0" height="81.6" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="24.0" y="152.0" width="168.0" height="173.4" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="24.0" y="333.4" width="168.0" height="95.8" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="24.0" y="437.2" width="168.0" height="94.9" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="24.0" y="700.0" width="168.0" height="62.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="24.0" y="770.7" width="168.0" height="62.7" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="1022.0" y="152.0" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="185.6" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="219.2" width="154.0" height="42.2" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="268.4" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="302.0" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="335.6" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="369.2" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="402.8" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="436.4" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="470.0" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="503.6" width="154.0" height="42.2" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="1022.0" y="552.8" width="154.0" height="26.6" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="28.0" y="1249.3" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="413.3" y="1249.3" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="798.7" y="1249.3" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="28.0" y="1310.1" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="413.3" y="1310.1" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="798.7" y="1310.1" width="373.3" height="50.8" rx="8" fill="#ffffff" stroke="#c7c8cd" stroke-width="1"/>
+<rect x="473.1" y="1389.9" width="26.0" height="16.0" rx="4" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="24.0" y="38.0" font-size="22" font-weight="700" fill="#003d29" text-anchor="start">Instacart catalog today: who owns which step</text>
+<text x="24.0" y="62.0" font-size="13" fill="#56595e" text-anchor="start">One band per team. Data moves left to right; a vertical arrow is a handoff between teams. Grey lines with no arrowhead mean runs on or calls. Dashed boxes are unconfirmed and</text>
+<text x="24.0" y="79.9" font-size="13" fill="#56595e" text-anchor="start">marked [VERIFY].</text>
+<text x="24.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">SOURCES</text>
+<text x="226.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">INGEST</text>
+<text x="406.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">IDENTIFY + RESOLVE</text>
+<text x="598.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">GENERATE ATTRIBUTES</text>
+<text x="818.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">PUBLISH</text>
+<circle cx="1032.0" cy="100.0" r="11" fill="#108910"/>
+<text x="1032.0" y="104.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="1050.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">CONSUMERS</text>
+<text x="226.0" y="140.0" font-size="12.5" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">ITEM AND OFFER TEAM</text>
+<text x="396.0" y="140.0" font-size="12" fill="#56595e" text-anchor="start">Tarang&#x27;s peer</text>
+<text x="234.0" y="171.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Item and offer</text>
+<text x="234.0" y="190.7" font-size="12" fill="#343538" text-anchor="start">Price and availability</text>
+<text x="234.0" y="207.2" font-size="12" fill="#343538" text-anchor="start">per store</text>
+<text x="226.0" y="263.4" font-size="12.5" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">PRODUCTS TEAM</text>
+<text x="355.9" y="263.4" font-size="12" fill="#56595e" text-anchor="start">Tarang Mittal&#x27;s org</text>
+<circle cx="243.0" cy="290.7" r="11" fill="#108910"/>
+<text x="243.0" y="295.1" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="258.0" y="295.2" font-size="12.5" font-weight="700" fill="#56595e" text-anchor="start">Ingest</text>
+<text x="234.0" y="314.0" font-size="12" fill="#343538" text-anchor="start">Stream and batch</text>
+<text x="234.0" y="330.6" font-size="12" fill="#343538" text-anchor="start">paths, being merged</text>
+<text x="234.0" y="347.1" font-size="12" fill="#343538" text-anchor="start">(Sonali). Owner not</text>
+<text x="234.0" y="363.7" font-size="12" fill="#343538" text-anchor="start">confirmed [VERIFY]</text>
+<text x="234.0" y="405.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Seller-side tools</text>
+<text x="234.0" y="424.5" font-size="12" fill="#343538" text-anchor="start">Where retailers and</text>
+<text x="234.0" y="441.1" font-size="12" fill="#343538" text-anchor="start">brands edit the catalog</text>
+<text x="234.0" y="457.6" font-size="12" fill="#343538" text-anchor="start">(Tarang)</text>
+<circle cx="423.0" cy="290.7" r="11" fill="#108910"/>
+<text x="423.0" y="295.1" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="438.0" y="295.2" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Identity and</text>
+<text x="438.0" y="311.5" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">matching</text>
+<text x="414.0" y="330.3" font-size="12" fill="#343538" text-anchor="start">UPC or PLU lookup</text>
+<text x="414.0" y="346.8" font-size="12" fill="#343538" text-anchor="start">codes to one product;</text>
+<text x="414.0" y="363.4" font-size="12" fill="#343538" text-anchor="start">meta-catalog across</text>
+<text x="414.0" y="379.9" font-size="12" fill="#343538" text-anchor="start">retailers</text>
+<circle cx="423.0" cy="417.5" r="11" fill="#108910"/>
+<text x="423.0" y="421.8" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="438.0" y="422.0" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Source precedence</text>
+<text x="414.0" y="440.8" font-size="12" fill="#343538" text-anchor="start">Four methods; rules by</text>
+<text x="414.0" y="457.3" font-size="12" fill="#343538" text-anchor="start">attribute and by retailer</text>
+<text x="414.0" y="473.9" font-size="12" fill="#343538" text-anchor="start">contract</text>
+<circle cx="835.0" cy="290.7" r="11" fill="#108910"/>
+<text x="835.0" y="295.1" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="850.0" y="295.2" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Canonical record</text>
+<text x="850.0" y="311.5" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">plus attributes</text>
+<text x="826.0" y="330.3" font-size="12" fill="#343538" text-anchor="start">Instacart&#x27;s equivalent of</text>
+<text x="826.0" y="346.8" font-size="12" fill="#343538" text-anchor="start">an ASIN</text>
+<text x="826.0" y="563.5" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Catalog interfaces</text>
+<text x="826.0" y="582.1" font-size="12" fill="#343538" text-anchor="start">Tables, views and LLM</text>
+<text x="826.0" y="598.7" font-size="12" fill="#343538" text-anchor="start">context; content rights</text>
+<text x="826.0" y="615.2" font-size="12" fill="#343538" text-anchor="start">decide which channel</text>
+<text x="826.0" y="631.8" font-size="12" fill="#343538" text-anchor="start">may use what</text>
+<text x="226.0" y="688.0" font-size="12.5" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">CATALOG OPS</text>
+<text x="336.9" y="688.0" font-size="12" fill="#56595e" text-anchor="start">Peggy Men, reports to Tarang</text>
+<text x="234.0" y="719.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Third-party</text>
+<text x="234.0" y="735.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">relationships</text>
+<text x="234.0" y="753.6" font-size="12" fill="#343538" text-anchor="start">CSPs and data vendors</text>
+<text x="234.0" y="770.1" font-size="12" fill="#343538" text-anchor="start">(Peggy)</text>
+<circle cx="615.0" cy="715.3" r="11" fill="#108910"/>
+<text x="615.0" y="719.6" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="630.0" y="719.8" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Enrichment pipelines</text>
+<text x="606.0" y="738.6" font-size="12" fill="#343538" text-anchor="start">Hundreds, in SQL and</text>
+<text x="606.0" y="755.2" font-size="12" fill="#343538" text-anchor="start">prompts: gluten-free,</text>
+<text x="606.0" y="771.7" font-size="12" fill="#343538" text-anchor="start">sesame-free, Health Tags.</text>
+<text x="606.0" y="788.3" font-size="12" fill="#343538" text-anchor="start">LLM-as-judge; BPO labels</text>
+<text x="606.0" y="804.8" font-size="12" fill="#343538" text-anchor="start">where unsure</text>
+<text x="826.0" y="719.8" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Triage and</text>
+<text x="826.0" y="736.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">diagnostics</text>
+<text x="826.0" y="754.9" font-size="12" fill="#343538" text-anchor="start">First to look when a</text>
+<text x="826.0" y="771.4" font-size="12" fill="#343538" text-anchor="start">product shows up</text>
+<text x="826.0" y="788.0" font-size="12" fill="#343538" text-anchor="start">wrong; which source</text>
+<text x="826.0" y="804.5" font-size="12" fill="#343538" text-anchor="start">won</text>
+<text x="226.0" y="861.0" font-size="12.5" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">GENCON</text>
+<text x="296.2" y="861.0" font-size="12" fill="#56595e" text-anchor="start">Tarang&#x27;s platform team</text>
+<text x="414.0" y="892.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Taxonomy</text>
+<text x="414.0" y="911.6" font-size="12" fill="#343538" text-anchor="start">Browse nodes and</text>
+<text x="414.0" y="928.2" font-size="12" fill="#343538" text-anchor="start">categories</text>
+<text x="606.0" y="892.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Pipeline platform</text>
+<text x="606.0" y="911.6" font-size="12" fill="#343538" text-anchor="start">Self-serve LLM tooling grown</text>
+<text x="606.0" y="928.2" font-size="12" fill="#343538" text-anchor="start">out of PARSE: pick inputs, test</text>
+<text x="606.0" y="944.8" font-size="12" fill="#343538" text-anchor="start">models, publish</text>
+<text x="605.0" y="983.3" font-size="12" font-weight="700" fill="#56595e" text-anchor="start">Model runtime</text>
+<text x="605.0" y="1001.9" font-size="12" fill="#343538" text-anchor="start">e.g. Maple batch LLM service</text>
+<text x="605.0" y="1018.5" font-size="12" fill="#343538" text-anchor="start">[VERIFY]</text>
+<text x="226.0" y="1073.6" font-size="12.5" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">PARTNER ML TEAM</text>
+<text x="369.1" y="1073.6" font-size="12" fill="#56595e" text-anchor="start">Confidence and models</text>
+<text x="606.0" y="1105.5" font-size="12.5" font-weight="700" fill="#56595e" text-anchor="start">Shared confidence model,</text>
+<text x="606.0" y="1121.8" font-size="12.5" font-weight="700" fill="#56595e" text-anchor="start">fine-tuned models</text>
+<text x="606.0" y="1140.5" font-size="12" fill="#343538" text-anchor="start">Described as next steps; live</text>
+<text x="606.0" y="1157.1" font-size="12" fill="#343538" text-anchor="start">status unconfirmed [VERIFY]</text>
+<text x="704.0" y="848.0" font-size="12" fill="#56595e" text-anchor="start">runs on</text>
+<text x="704.0" y="1060.6" font-size="12" fill="#56595e" text-anchor="start">calls</text>
+<text x="572.0" y="720.0" font-size="12" fill="#56595e" text-anchor="end">products to enrich</text>
+<text x="828.0" y="432.1" font-size="12" fill="#343538" text-anchor="start">base fields from the</text>
+<text x="828.0" y="448.1" font-size="12" fill="#343538" text-anchor="start">winning source</text>
+<text x="828.0" y="504.1" font-size="12" fill="#343538" text-anchor="start">generated tags from</text>
+<text x="828.0" y="520.1" font-size="12" fill="#343538" text-anchor="start">the pipelines</text>
+<path d="M826.0,460.1 L970.0,460.1" fill="none" stroke="#e8e9eb" stroke-width="1" stroke-linejoin="round"/>
+<text x="31.0" y="170.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Retailer files and</text>
+<text x="31.0" y="186.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Catalog API</text>
+<text x="31.0" y="204.6" font-size="12" fill="#343538" text-anchor="start">Products, items, price,</text>
+<text x="31.0" y="221.2" font-size="12" fill="#343538" text-anchor="start">availability, claims,</text>
+<text x="31.0" y="237.7" font-size="12" fill="#343538" text-anchor="start">allergens. Feeds both</text>
+<text x="31.0" y="254.3" font-size="12" fill="#343538" text-anchor="start">bands to the right.</text>
+<text x="31.0" y="351.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">CSPs and brand edits</text>
+<text x="31.0" y="370.4" font-size="12" fill="#343538" text-anchor="start">Syndigo, Salsify,</text>
+<text x="31.0" y="386.9" font-size="12" fill="#343538" text-anchor="start">1WorldSync, IX-One,</text>
+<text x="31.0" y="403.5" font-size="12" fill="#343538" text-anchor="start">Nielsen Brandbank;</text>
+<text x="31.0" y="420.1" font-size="12" fill="#343538" text-anchor="start">Product Library</text>
+<text x="31.0" y="455.6" font-size="12" font-weight="700" fill="#56595e" text-anchor="start">Retailer-side</text>
+<text x="31.0" y="471.2" font-size="12" font-weight="700" fill="#56595e" text-anchor="start">syndication</text>
+<text x="31.0" y="489.8" font-size="12" fill="#343538" text-anchor="start">e.g. Kroger Item API via</text>
+<text x="31.0" y="506.4" font-size="12" fill="#343538" text-anchor="start">Syndigo; path into</text>
+<text x="31.0" y="522.9" font-size="12" fill="#343538" text-anchor="start">Instacart [VERIFY]</text>
+<text x="31.0" y="718.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Product images</text>
+<text x="31.0" y="737.0" font-size="12" fill="#343538" text-anchor="start">Retailer, CSP and brand</text>
+<text x="31.0" y="753.5" font-size="12" fill="#343538" text-anchor="start">photos</text>
+<text x="31.0" y="789.1" font-size="12" font-weight="700" fill="#56595e" text-anchor="start">Label data vendor</text>
+<text x="31.0" y="807.7" font-size="12" fill="#343538" text-anchor="start">e.g. Label Insight</text>
+<text x="31.0" y="824.2" font-size="12" fill="#343538" text-anchor="start">[VERIFY]</text>
+<text x="216.0" y="796.0" font-size="12" fill="#56595e" text-anchor="start">pipeline inputs</text>
+<text x="1029.0" y="170.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Search and browse</text>
+<text x="1029.0" y="204.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Replacements</text>
+<text x="1029.0" y="237.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Item card and PDP</text>
+<text x="1029.0" y="253.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">badges</text>
+<text x="1029.0" y="286.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Smart Shop</text>
+<text x="1029.0" y="320.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Ads</text>
+<text x="1029.0" y="354.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Clementine</text>
+<text x="1029.0" y="387.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Third-party agents</text>
+<text x="1029.0" y="421.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Caper carts</text>
+<text x="1029.0" y="454.8" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Storefront Pro</text>
+<text x="1029.0" y="488.4" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Catalog Engine</text>
+<text x="1029.0" y="522.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Retailer and brand</text>
+<text x="1029.0" y="537.6" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">tools</text>
+<text x="1029.0" y="571.2" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Pricing teams</text>
+<text x="692.0" y="177.7" font-size="12" fill="#56595e" text-anchor="middle">price and availability</text>
+<text x="28.0" y="1235.3" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">WHAT HURTS TODAY, PER THE INTERVIEWS (PARAPHRASED)</text>
+<text x="37.0" y="1270.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">No single list of attribute definitions</text>
+<text x="37.0" y="1288.9" font-size="12" fill="#343538" text-anchor="start">Definitions moved around as teams shipped fast (Brittany)</text>
+<text x="422.3" y="1270.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Attribute model built for PDP badges</text>
+<text x="422.3" y="1288.9" font-size="12" fill="#343538" text-anchor="start">Agentic shopping needs attributes to mean more (Brittany)</text>
+<text x="807.7" y="1270.1" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Precedence is hard to explain</text>
+<text x="807.7" y="1288.9" font-size="12" fill="#343538" text-anchor="start">It differs by attribute and by retailer contract (Peggy)</text>
+<text x="37.0" y="1331.0" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">No semantic layer for downstream teams</text>
+<text x="37.0" y="1349.7" font-size="12" fill="#343538" text-anchor="start">They cannot tell a field&#x27;s quality or freshness (Peggy)</text>
+<text x="422.3" y="1331.0" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Stream and batch are being merged</text>
+<text x="422.3" y="1349.7" font-size="12" fill="#343538" text-anchor="start">Latency, plus ten years of legacy code (Sonali)</text>
+<text x="807.7" y="1331.0" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Generated data multiplies defects</text>
+<text x="807.7" y="1349.7" font-size="12" fill="#343538" text-anchor="start">Allergen and compliance tags are trust busters (Tarang)</text>
+<text x="24.0" y="1402.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Legend</text>
+<circle cx="98.8" cy="1398.9" r="10" fill="#108910"/>
+<text x="98.8" y="1403.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="112.8" y="1402.9" font-size="12" fill="#343538" text-anchor="start">main path</text>
+<path d="M193.1,1397.9 L223.1,1397.9" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<text x="231.1" y="1402.9" font-size="12" fill="#343538" text-anchor="start">data moves</text>
+<path d="M321.5,1390.9 L321.5,1404.9" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M321.5,1397.9 L343.5,1397.9" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#icD-ah)"/>
+<text x="351.5" y="1402.9" font-size="12" fill="#343538" text-anchor="start">many join or split</text>
+<text x="507.1" y="1402.9" font-size="12" fill="#343538" text-anchor="start">unconfirmed [VERIFY]</text>
+<path d="M836.0,1397.9 L866.0,1397.9" fill="none" stroke="#72767e" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="874.0" y="1402.9" font-size="12" fill="#343538" text-anchor="start">runs on or calls</text>
+<text x="24.0" y="1428.9" font-size="12" fill="#56595e" text-anchor="start">Confirmed by: Tarang Mittal (Director of Engineering, Catalog Content) 10-26; Peggy Men (Catalog Ops) 10-23; Brittany Drager (GPM, Catalog) 10-22 and 10-26; Sonali Parthasarathy (former</text>
+<text x="24.0" y="1445.5" font-size="12" fill="#56595e" text-anchor="start">catalog SDM) 10-22; docs.instacart.com; Instacart engineering posts (PARSE, Maple, Semantic IDs); Instacart job postings. Dashed boxes are not confirmed by any of these.</text>
+</svg>

@@ -1,0 +1,1829 @@
+{
+ "generated": "2026-10-28",
+ "people": [],
+ "themes": [
+  "Attribute definitions and governance",
+  "Data model and architecture",
+  "Source arbitration and explainability",
+  "Quality, measurement, and ground truth",
+  "Enrichment pipelines and cost",
+  "Compliance and legal risk",
+  "Retailer and cross-retailer data",
+  "Customer experience and dietary trust",
+  "Org, planning, and process"
+ ],
+ "painpoints": [
+  {
+   "id": "P01",
+   "title": "Ten-year-old catalog architecture and an open rebuild question",
+   "theme": "Data model and architecture",
+   "summary": "The catalog was built about ten years ago by reverse-engineering retailer point-of-sale data, back when grocers had no e-commerce catalogs to send. That origin still shapes the structure, and people across catalog describe being stuck with legacy systems nobody wants to touch. Whether to rebuild from first principles or extend what exists is still open, and leadership expects product, engineering, and ops to bring a proposal together.",
+   "why_it_matters": "The legacy code is tied directly to repeat incidents. 2027 planning centers on whether the current framework can scale, and a wrong call either way costs a year.",
+   "sources": [],
+   "confirmed_by_count": 3,
+   "related": [
+    "P29",
+    "P14",
+    "P09",
+    "P12",
+    "P30"
+   ],
+   "solutions": [
+    {
+     "name": "Stress-test the current model against named use cases",
+     "description": "Write the hardest upcoming consumer use cases (agentic queries, allergen filters, household profiles, international) as executable test cases and score the current schema and pipelines against each. The rebuild decision becomes a gap list with a cost per gap.",
+     "precedent": "Architecture fitness functions from Building Evolutionary Architectures (Ford, Parsons, Kua)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Strangler-fig migration by attribute family",
+     "description": "Stand up a new attribute store beside the old one and move one family at a time, starting with allergens or health tags, with dual writes and a diff monitor until parity. The old path retires family by family with no big-bang cutover.",
+     "precedent": "Martin Fowler's Strangler Fig pattern; Shopify's componentization of its Rails monolith (Shopify engineering blog, 2019)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Rebuild as a product knowledge graph with per-value provenance",
+     "description": "Model the catalog as canonical products, offers, and attribute assertions, where every assertion carries source, time, confidence, and rights. Retailer POS rows become one evidence source feeding the graph.",
+     "precedent": "Amazon Product Graph and AutoKnow (KDD 2020); DoorDash product knowledge graph built with LLMs (DoorDash engineering blog)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 3
+  },
+  {
+   "id": "P02",
+   "title": "Attribute demand is outgrowing the generation process",
+   "theme": "Enrichment pipelines and cost",
+   "summary": "Every downstream team wants more attributes: search, replacements, health, meals, and now agents. The way catalog comes up with and generates new attributes probably has to be completely rethought, from product definition through pipeline structure to running at scale with a quality bar. Today's process is time-consuming and prone to human error.",
+   "why_it_matters": "Supporting health and meals is non-optional, so attribute generation sits on the critical path of company bets. If throughput stays manual, catalog becomes the bottleneck for Clementine and every partner agent.",
+   "sources": [],
+   "confirmed_by_count": 3,
+   "related": [
+    "P03",
+    "P09",
+    "P20",
+    "P18"
+   ],
+   "solutions": [
+    {
+     "name": "Standard attribute spec at intake",
+     "description": "Every new attribute starts as a one-page spec: definition, consuming surfaces, precision and recall targets, sources, refresh cadence, and rights. Specs are triaged weekly so the queue and its value are visible.",
+     "precedent": "Amazon Selling Partner API product type definitions (JSON Schema per product type); Akeneo PIM attribute families",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Template library of pipeline archetypes",
+     "description": "Most attributes fit a handful of patterns: claim extraction from label text, numeric extraction from nutrition panels, derived scores, and certification lookups. Ship each as a reusable template so a new attribute is mostly configuration plus a golden set.",
+     "precedent": "Instacart PARSE (public tech blog, 2025) already lets non-engineers define attributes in a UI; dbt packages as a reuse model",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Goal-to-pipeline agent",
+     "description": "An agent takes a plain-language attribute goal, drafts the definition, proposes sources, drafts a golden set for human review, assembles the pipeline from templates, and reports measured precision and recall before anything publishes. Humans approve at two gates.",
+     "precedent": "Instacart's open Engineering Manager, Catalog posting describes autonomous pipeline construction from plain-language goals; DSPy prompt optimization (Stanford)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 3
+  },
+  {
+   "id": "P03",
+   "title": "Each enrichment pipeline is assembled by hand",
+   "theme": "Enrichment pipelines and cost",
+   "summary": "Catalog operations builds hundreds of enrichment pipelines. For each one the team gathers inputs, picks a model, designs audit steps, maybe uses LLM-as-judge, and sends uncertain items to a BPO for labeling. Engineering sees the need for the right tooling and platform underneath, and ops sees investing in that tooling as how the team builds faster.",
+   "why_it_matters": "With hundreds of pipelines each carrying its own design choices, quality and cost vary by whoever built it. Tooling is the multiplier on a nine-person ops team.",
+   "sources": [],
+   "confirmed_by_count": 3,
+   "related": [
+    "P02",
+    "P10",
+    "P18",
+    "P14"
+   ],
+   "solutions": [
+    {
+     "name": "Pipeline scaffold with built-in evaluation gates",
+     "description": "Every pipeline gets the same skeleton: input contract, model step, golden-set eval, judge step, human-review routing, and a publish gate that blocks output below the agreed precision. Builders fill in only what differs.",
+     "precedent": "Write-Audit-Publish pattern (popularized by Netflix with Apache Iceberg); Great Expectations checkpoints",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shared model router",
+     "description": "A central router picks the cheapest model that meets each attribute's measured quality bar and escalates hard cases to larger models or humans. Pipelines declare targets and the router decides.",
+     "precedent": "FrugalGPT model cascades (Stanford, 2023); PARSE's published cascade result of 70 percent lower cost on simple attributes",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Self-optimizing pipelines",
+     "description": "Pipelines tune their own prompts and thresholds against the golden set on a schedule, and a human approves any change that moves metrics.",
+     "precedent": "DSPy (Stanford); Amazon catalog's self-learning generative AI on Bedrock (AWS ML blog); Instacart's Agentic ML post on an agent revising extraction instructions",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 3
+  },
+  {
+   "id": "P04",
+   "title": "Deciding fast which source is accurate",
+   "theme": "Source arbitration and explainability",
+   "summary": "Catalog data arrives from content service providers, retailer feeds, point of sale, and in-store shoppers, all at different quality levels. Making fast decisions on what is accurate at a given point in time is a core catalog challenge, and the hard case is picking the right source when allergens need 99.5 percent precision. Detecting and fixing issues at scale across these inputs is about half of catalog operations' job.",
+   "why_it_matters": "Arbitration is where a wrong allergen value gets chosen over a right one, so it sets the precision ceiling for every downstream surface.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P07",
+    "P05",
+    "P06",
+    "P32"
+   ],
+   "solutions": [
+    {
+     "name": "Source hierarchy per attribute family",
+     "description": "Write explicit precedence per family: certification wins for medical diet claims, the current label wins for allergens, CSP wins for nutrition, retailer wins for price. Conflicts route to review and are never silently resolved.",
+     "precedent": "Instacart public docs name four prioritization methods and resolve alcohol conflicts to the most restrictive value",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Freshness-aware arbitration",
+     "description": "Weight evidence by age and by reformulation signals such as label photo dates and UPC changes. A two-year-old certification loses to a new label photo that contradicts it.",
+     "precedent": "GS1 GDSN effective dates and change indicators; Open Food Facts photo timestamps",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Learned source reliability",
+     "description": "Estimate each source's accuracy per attribute family and category from audited samples, then combine evidence probabilistically. Sources that drift get down-weighted automatically.",
+     "precedent": "Dawid-Skene annotator reliability model; Google's Knowledge-Based Trust truth discovery (Dong et al., VLDB 2015)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P05",
+   "title": "Allergen and medical diet tags need near-perfect precision",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "The bar is 99 percent precision and recall for new attribute data, and 99.5 percent precision for allergens. Catalog cannot get tree-nut-free wrong. These are health claims where a miss can put someone in the hospital.",
+   "why_it_matters": "One wrong allergen badge is a safety event and a legal exposure, and it teaches the most loyal segment to distrust every badge.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P06",
+    "P22",
+    "P04",
+    "P20"
+   ],
+   "solutions": [
+    {
+     "name": "Tiered claim statuses",
+     "description": "Publish Verified only above the bar and show Claimed (a source asserts it and nobody has independently confirmed it) as a separate, clearly worded tier. Recall rises through the Claimed tier without spending Verified precision.",
+     "precedent": "Amazon Climate Pledge Friendly uses third-party certifications as the badge basis",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Certification-backed verification",
+     "description": "For medical claims, require a matched certification or a current label read before Verified.",
+     "precedent": "GFCO certified product directory",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Calibrated abstention",
+     "description": "Calibrate model confidence on the gold set and abstain below threshold, routing to humans. Conformal prediction gives a guaranteed error rate on what does publish.",
+     "precedent": "Conformal prediction (Angelopoulos and Bates tutorial, 2021); selective classification",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P06",
+   "title": "No ground truth for generated health tags",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Instacart generates its own health tags such as gluten-free and sesame-free, and there is no ground truth data to ingest for them. Deciding where to source data for a new attribute like GLP-1, internal or external, is the same problem in a new form.",
+   "why_it_matters": "Without ground truth the 99.5 percent precision target cannot be measured, and any LLM-as-judge setup ends up grading against itself.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P05",
+    "P04",
+    "P20",
+    "P11"
+   ],
+   "solutions": [
+    {
+     "name": "Hand-labeled golden set per attribute",
+     "description": "Build a stratified gold set per attribute from label photos read by trained reviewers with double labeling and adjudication, and report inter-rater agreement.",
+     "precedent": "Cohen's kappa; my UARC2 expert-panel ground truth at Amazon Fresh",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "External evidence as partial ground truth",
+     "description": "Use certification registries and public datasets as evidence for subsets: GFCO certified products, USDA FoodData Central branded ingredients, Open Food Facts labels.",
+     "precedent": "USDA FoodData Central Branded Foods (built with GS1 US, 1WorldSync, Label Insight, and NielsenIQ)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Active learning loop",
+     "description": "Route the items where models disagree most to human labelers so each label buys the most precision, and grow the gold set where it matters.",
+     "precedent": "Uncertainty-sampling active learning; Snorkel weak supervision; Label Studio",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P07",
+   "title": "Nobody can easily explain why an attribute value won",
+   "theme": "Source arbitration and explainability",
+   "summary": "When an attribute ends up with a given value, tracing why is hard. Precedence is not linear across attributes or retailers, some retailers have contractual terms that promote their data, and Marketplace and Storefront Pro can differ for the same retailer. Internal tools now diagnose a product down to the source level, but documentation varies.",
+   "why_it_matters": "Explainability is the cost inside every escalation and every retailer question. Product and ops both described it as a real pain point.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P04",
+    "P15",
+    "P31",
+    "P24"
+   ],
+   "solutions": [
+    {
+     "name": "Value lineage panel",
+     "description": "For any product, retailer, and channel, show every candidate value with its source, timestamp, and the rule that picked the winner. Ops already has part of this; extend it to rule versions and contractual overrides.",
+     "precedent": "Reltio MDM crosswalks showing contributing sources per attribute; Informatica MDM survivorship rules",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Precedence rules as versioned configuration",
+     "description": "Move source-priority logic out of code into a declarative rules table keyed by attribute family, retailer, and channel, with change history and tests. Explaining a value becomes reading a rule.",
+     "precedent": "Open Policy Agent policy-as-code; Instacart's public docs already state per-attribute rules such as most-restrictive-wins for alcohol",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Natural-language explanation service",
+     "description": "An LLM reads lineage and the rule log and writes a cited plain-English explanation for ops, retailers, or downstream teams. The same service answers what would change if a retailer sent a different field.",
+     "precedent": "My Frida natural-language layer over the UARC2 diagnostics stack at Amazon Fresh (80 percent faster investigation)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P08",
+   "title": "Downstream teams cannot tell what an attribute means or whether to trust it",
+   "theme": "Attribute definitions and governance",
+   "summary": "Catalog has rich data, but teams outside catalog see many fields with no built-in guidance on meaning, quality, freshness, or intended use. A better semantic layer came up as the most exciting opportunity for 2027. There is also a suspicion that some downstream teams use attributes incorrectly because they do not know how they are supposed to.",
+   "why_it_matters": "Misused attributes produce customer-facing errors that look like catalog defects. A semantic layer also speeds the use, test, and feedback loop ops wants with downstream teams.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P24",
+    "P16",
+    "P25",
+    "P09"
+   ],
+   "solutions": [
+    {
+     "name": "Data product card per attribute",
+     "description": "Each attribute ships with a card: meaning, measured precision and recall, coverage, freshness, approved and disallowed uses, and an owner. Cards sit next to the tables downstream teams already query.",
+     "precedent": "Model Cards (Mitchell et al., 2019); Datasheets for Datasets (Gebru et al., 2018)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Usage telemetry with risk flags",
+     "description": "Log which teams read which attributes for which surface, and flag risky patterns such as an unverified attribute driving a hard filter.",
+     "precedent": "OpenLineage and Marquez lineage capture; Snowflake ACCESS_HISTORY",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Semantic layer that returns quality with the value",
+     "description": "Downstream reads go through an interface that returns each value with confidence, verification status, and freshness, and refuses disallowed uses. Teams stop reading raw tables.",
+     "precedent": "dbt Semantic Layer (MetricFlow); Open Data Contract Standard (Bitol)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P09",
+   "title": "Attributes were modeled as product page badges, and agents need something else",
+   "theme": "Data model and architecture",
+   "summary": "Historically, any attribute catalog created became a badge on the product detail page. Agentic shopping through Clementine and partners such as OpenAI needs attributes that mean something different, and the team is just starting to learn those data needs. AI will force a rethink of the underlying data structure, and agentic shopping leads directly to more data needs.",
+   "why_it_matters": "Instacart's CTO has said the same catalog powers every surface. If an attribute only makes sense as a badge, agents will misuse it or skip it.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P01",
+    "P08",
+    "P02"
+   ],
+   "solutions": [
+    {
+     "name": "Separate assertion from presentation",
+     "description": "Store each attribute as a typed assertion with evidence and confidence, and derive badges, filters, and agent facts as views over it. The product page stops dictating the schema.",
+     "precedent": "Schema.org Product properties; Wikidata statements with references and ranks",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Learn agent data needs from query logs",
+     "description": "Cluster Clementine and partner queries to find the attribute questions agents ask that catalog cannot answer, and rank new attributes by unanswered demand.",
+     "precedent": "Zero-result query analytics in Algolia and Elasticsearch",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Agent-facing catalog contract",
+     "description": "Define what an agent may assert about a product (verified, claimed, unknown) and expose it through a tool interface that requires uncertainty language.",
+     "precedent": "Model Context Protocol; Agentic Commerce Protocol from OpenAI and Stripe (Instacart's ChatGPT app uses it per its public release)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P10",
+   "title": "Shipped pipelines need refresh, audits, and monitoring",
+   "theme": "Enrichment pipelines and cost",
+   "summary": "Catalog is a data product, so maintenance never ends. Data has to be refreshed, AI pipelines need ongoing audits and quality monitoring, and every shipped attribute generates escalations. With hundreds of pipelines live, the best PMs think about that maintenance at scale alongside building new.",
+   "why_it_matters": "Products get reformulated and labels change, so a correct tag decays. Unmonitored pipelines drift quietly until a customer finds the error.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P14",
+    "P20",
+    "P03"
+   ],
+   "solutions": [
+    {
+     "name": "Refresh cadence per attribute",
+     "description": "Give each attribute a time-to-live based on how fast the truth changes, and re-verify on expiry or on UPC and label change signals.",
+     "precedent": "GS1 GDSN item change notifications; HTTP cache TTL semantics",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Pipeline observability",
+     "description": "Track volume, distribution shift, confidence mix, and override rate per pipeline, and alert on anomalies.",
+     "precedent": "Monte Carlo and Soda data observability; Great Expectations",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Continuous re-verification from the field",
+     "description": "Use shopper photos and shelf video to re-read labels of high-risk items on a rolling basis and diff them against stored claims.",
+     "precedent": "DoorDash Dasher in-store photo capture for attribute extraction (DoorDash engineering blog); Instacart's Arpalus acquisition (2026)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P11",
+   "title": "Subjective health claims need definitions and legal sign-off",
+   "theme": "Compliance and legal risk",
+   "summary": "Diet tags can be subjective and their terminology shifts over time. For a GLP-1 attribute, the business is interested, but legal is asking whether Instacart should do it at all and how to show it the right way.",
+   "why_it_matters": "A health claim with no consensus definition invites regulatory and reputational risk, and an inconsistent definition breaks trust across surfaces.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P24",
+    "P06",
+    "P21"
+   ],
+   "solutions": [
+    {
+     "name": "Claim definition review",
+     "description": "Legal, nutrition, product, and ops approve a written definition, scoring rule, and display language before any subjective attribute ships.",
+     "precedent": "FDA final rule updating the 'healthy' nutrient content claim (Dec 2024); Instacart's public Health Tag definitions",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Show objective facts and let the user set the filter",
+     "description": "For GLP-1, surface protein per serving, fiber, and portion size as facts with a user-set filter, and skip any 'GLP-1 friendly' endorsement.",
+     "precedent": "Open Food Facts nutrient levels; Nutri-Score transparent scoring",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Externally owned claim standard",
+     "description": "Co-develop a claim standard with a clinical or certifying body and license the mark, so the definition has an outside owner.",
+     "precedent": "American Heart Association Heart-Check program; Conagra's Healthy Choice line reportedly added a 'GLP-1 Friendly' badge in 2025",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P12",
+   "title": "The same incidents recur because fixes stay symptomatic",
+   "theme": "Org, planning, and process",
+   "summary": "The same issue has resurfaced as a new incident three or four months apart, because the real fix required changing the architecture. Instacart writes the equivalent of COEs but tends to take short-term action items, whereas at Amazon a bad COE could rebaseline the roadmap. Crisper ownership and runbooks would also help.",
+   "why_it_matters": "Repeat incidents cost twice and erode the trust leadership extends to catalog for bigger bets. The investment needed to fix the underlying causes has not been made yet.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P01",
+    "P29",
+    "P14"
+   ],
+   "solutions": [
+    {
+     "name": "Recurrence tracking",
+     "description": "Tag every incident with a root-cause category and link repeats. Any category that recurs twice gets a structural fix on the roadmap by default.",
+     "precedent": "Amazon COE process; Google SRE postmortem action-item tracking",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Ownership map and tested runbooks",
+     "description": "Publish an owner and runbook for each pipeline and service, and exercise runbooks in game days.",
+     "precedent": "PagerDuty incident response guide; Backstage service catalog ownership",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "AI incident analyst",
+     "description": "An agent clusters incident reports, logs, and postmortems to find a shared root cause across 'different' incidents and drafts the structural-fix proposal.",
+     "precedent": "AI agents already used internally to help run engineering teams; Instacart's Ava assistant used for RCA drafting (public post)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P13",
+   "title": "Coverage of dietary, allergen, and nutrition attributes is low",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Coverage across allergen, medical diet, and claim families is pretty low and has to be built out, and the open question is what to concede to move faster on coverage. Increasing nutrition fact panel coverage is already part of ops' enrichment work.",
+   "why_it_matters": "An untagged item is invisible to a filtered shopper. Public numbers suggest Health Tags cover about half a million items against tens of millions of products.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P05",
+    "P02",
+    "P06"
+   ],
+   "solutions": [
+    {
+     "name": "Claimed tier for recall",
+     "description": "Publish source-asserted claims as Claimed with clear wording so coverage rises without diluting Verified.",
+     "precedent": "Open Food Facts shows contributor-entered labels next to photo evidence",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Buy coverage before generating it",
+     "description": "Fill nutrition and allergen gaps from CSP syndication and USDA FoodData Central before generating anything.",
+     "precedent": "Uber Eats and NIQ Brandbank partnership (2026); Kroger Item API via Syndigo, 1WorldSync, and Salsify",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Coverage by demand",
+     "description": "Prioritize tagging by search and order demand from dietary shoppers, so the first slice of items tagged covers most filtered sessions.",
+     "precedent": "Amazon catalog reports generating over 70 percent of required attributes automatically (AWS blog)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P14",
+   "title": "Foundation work competes with new attributes for the same people",
+   "theme": "Org, planning, and process",
+   "summary": "The core trade-off came up more than once: how much time goes to rearchitecting, to building new, and to internal tools. Ops and engineering describe the same tension from their own sides. Health and meals have to ship, so the question is how to reduce tech debt while delivering them.",
+   "why_it_matters": "If catalog only builds new, escalations on shipped work keep growing. Instacart tends to take short-term action items, so foundation work loses by default unless someone argues for it with numbers.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P01",
+    "P10",
+    "P36",
+    "P03"
+   ],
+   "solutions": [
+    {
+     "name": "Explicit capacity allocation",
+     "description": "Agree a standing split of team capacity across new attributes, foundation, and maintenance, reviewed each quarter with ops and engineering leads, and report actuals against it. The split becomes a negotiated number in the plan.",
+     "precedent": "Google SRE guidance capping operational toil at 50 percent of an engineer's time (Site Reliability Engineering book)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Bundle foundation work into business bets",
+     "description": "Attach each foundation item to the bet it unlocks, for example provenance storage ships as part of the allergen launch, so it is funded from that bet's entitlement.",
+     "precedent": "Amazon OP1 practice of funding platform work through the initiatives it enables (my Feast Instock Portal funding case at Amazon Fresh)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Cost-of-escalation ledger",
+     "description": "Log every escalation and manual fix with hours and the pipeline it came from, then price foundation projects by the escalation cost they retire. Leadership sees a running bill for deferred maintenance.",
+     "precedent": "Stripe's 'The Developer Coefficient' study on time lost to technical debt (2018); SQALE technical debt method",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P15",
+   "title": "Retailers cannot see why their data shows up the way it does",
+   "theme": "Source arbitration and explainability",
+   "summary": "Retailers come to Instacart asking why a field shows a value they never sent. Internal diagnostics have improved, but explaining the result back to the retailer is still lacking. One catalog PM works on retailer tooling and two-way error sharing with retailers.",
+   "why_it_matters": "Every unexplained value becomes a support ticket and a trust problem with the retailer, who is also the buyer of Storefront Pro and Catalog Engine.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P07",
+    "P38",
+    "P25"
+   ],
+   "solutions": [
+    {
+     "name": "Retailer data health report",
+     "description": "A per-retailer page showing which of their fields were used, overridden, or enriched, with a reason code and the winning source. Start as a weekly export before building UI.",
+     "precedent": "Google Merchant Center item-level diagnostics with issue reasons; Amazon Seller Central listing quality dashboard",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Two-way correction loop",
+     "description": "When Instacart overrides a retailer value, send a structured correction the retailer can accept into its own system. Disputes feed back into the arbitration model.",
+     "precedent": "GS1 GDSN Catalogue Item Confirmation messages that return review status to the data source",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Retailer data copilot",
+     "description": "Retailers ask in plain language why an item looks the way it does or how to improve their data, and the copilot answers from lineage and proposes the exact file change.",
+     "precedent": "Shopify Sidekick merchant assistant; Instacart's enterprise AI assistant products for retailers (public, 2025)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P16",
+   "title": "Downstream use cases are not mapped",
+   "theme": "Attribute definitions and governance",
+   "summary": "Before committing to a semantic layer or a rebuild, catalog leadership wants to understand the challenges downstream teams have with catalog today. Catalog also wants to know how teams use the data, some of it explicitly and some implicitly, because that shapes how catalog builds.",
+   "why_it_matters": "Every big 2027 catalog decision depends on knowing who consumes which attributes and how. Without that map, the rebuild question cannot be answered with conviction.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P08",
+    "P01",
+    "P09"
+   ],
+   "solutions": [
+    {
+     "name": "Consumer interviews and a use-case matrix",
+     "description": "Interview each consuming team (search, replacements, item card, ads, health, Clementine) and build a matrix of attribute by surface with the decision each surface makes and its error cost.",
+     "precedent": "Jobs-to-be-done interviewing; Amazon working-backwards PR/FAQ",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Query-log mining",
+     "description": "Mine warehouse query logs and service calls to see which attributes are read, by whom, and how often, then confirm the top patterns in interviews.",
+     "precedent": "Snowflake ACCESS_HISTORY; DataHub usage statistics",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Attribute impact map",
+     "description": "Combine usage logs with outcome metrics to estimate each attribute's revenue and risk exposure, which also helps the catalog attribution problem.",
+     "precedent": "Shapley-value attribution methods",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P17",
+   "title": "Catalog PMs struggle to show impact, and the bench is junior",
+   "theme": "Org, planning, and process",
+   "summary": "Catalog finds it hard to claim attribution for outcomes it powers, which makes PM stories and promotions harder and drives product-side churn. The catalog PM team is four relatively junior PMs, and the attributes APM rotates every nine months.",
+   "why_it_matters": "Turnover resets context on long-running platform work like a rebuild, and mentorship is part of what this role is for.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P36",
+    "P35",
+    "P16"
+   ],
+   "solutions": [
+    {
+     "name": "Input metric tree for catalog",
+     "description": "Agree a metric tree linking catalog inputs (coverage, precision, freshness) to downstream outputs such as search conversion and replacement acceptance, and report it weekly.",
+     "precedent": "Amazon WBR input and output metrics; my UARC2 work at Amazon Fresh tying root causes to in-stock",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Review and handoff rituals",
+     "description": "A written PM review forum plus an APM handoff template so rotations keep context.",
+     "precedent": "Amazon six-pager reviews; Google APM program rotations",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Attribute holdouts",
+     "description": "Run periodic holdouts where a surface operates without a given attribute to measure its causal contribution.",
+     "precedent": "Long-running holdout groups, reportedly common at large consumer platforms",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P18",
+   "title": "Enrichment unit cost from frontier models and human labeling",
+   "theme": "Enrichment pipelines and cost",
+   "summary": "Frontier LLMs are expensive at catalog scale, so the partner ML team is looking at fine-tuned foundation models. Items the pipeline is unsure about go to BPO labelers. Both are per-item costs that grow with every new attribute.",
+   "why_it_matters": "Cost per attribute-item decides how many attributes catalog can afford and how often it can refresh them.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P31",
+    "P03",
+    "P02"
+   ],
+   "solutions": [
+    {
+     "name": "Model cascades",
+     "description": "Run a cheap model first and escalate only low-confidence items.",
+     "precedent": "FrugalGPT (Stanford, 2023); PARSE reported 70 percent lower cost on simple attributes with a cheaper model",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Batch and cache",
+     "description": "Use provider batch APIs and prompt caching for bulk extraction runs.",
+     "precedent": "OpenAI Batch API and Anthropic Message Batches (both priced at a discount); Instacart's Maple batch LLM service",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Distilled in-house extractor",
+     "description": "Distill frontier outputs into a small fine-tuned model per attribute family and keep the frontier model as judge.",
+     "precedent": "Distilling step-by-step (Google, 2023); Instacart fine-tunes Llama for its Intent Engine (public)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P19",
+   "title": "Unplanned intake and noisy feedback compete with the roadmap",
+   "theme": "Org, planning, and process",
+   "summary": "PMs hear a lot of different feedback, and the job is distilling the core challenges from the nice-to-haves. Handling escalations and urgent asks without derailing the core roadmap came up more than once, which suggests intake pressure is real on a live system.",
+   "why_it_matters": "Escalations land on catalog operations first, so weak triage turns into ops burnout and a roadmap that serves whoever is loudest.",
+   "sources": [],
+   "confirmed_by_count": 2,
+   "related": [
+    "P14",
+    "P39"
+   ],
+   "solutions": [
+    {
+     "name": "Weekly triage with a rubric",
+     "description": "Score requests on frequency and severity with catalog operations and publish the ranked list.",
+     "precedent": "My Feast Instock Portal frequency-by-magnitude matrix at Amazon Fresh; RICE scoring (Intercom)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Office hours",
+     "description": "Regular office hours where ops and downstream teams bring issues, many of which turn out to be misunderstandings.",
+     "precedent": "My three-time-zone office hours at Amazon Fresh",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "AI intake router",
+     "description": "An agent clusters Slack and ticket requests, links duplicates to existing work, and drafts the weekly triage.",
+     "precedent": "Linear Asks and Triage; Jira Service Management",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 2
+  },
+  {
+   "id": "P20",
+   "title": "Generated data multiplies the defect surface",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Catalog already has defects, and generating far more data with AI will grow the surface of those defects exponentially. The parallel in engineering is AI-generated code: when engineers produce far more code with AI, the hard part becomes knowing the output is good and safe.",
+   "why_it_matters": "A catalog defect is a big customer trust buster. More attributes under the same QA approach means more trust busters per week.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P05",
+    "P10",
+    "P06",
+    "P03"
+   ],
+   "solutions": [
+    {
+     "name": "Acceptance sampling on every publish",
+     "description": "Before a batch of generated values publishes, audit a random sample sized to the precision target and block the batch if the lower confidence bound misses.",
+     "precedent": "ANSI/ASQ Z1.4 acceptance sampling; Write-Audit-Publish pattern",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Defect budget per attribute family",
+     "description": "Set an allowed defect rate per family, track it like an error budget, and freeze new launches in a family once its budget is spent.",
+     "precedent": "Google SRE error budgets",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Standing red team for catalog",
+     "description": "An LLM red team continuously generates likely failure cases (reformulations, wheat-free versus gluten-free, may-contain warnings) and probes live pipelines.",
+     "precedent": "Frontier lab model red-teaming practice; Netflix Chaos Monkey as a continuous-failure precedent",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P21",
+   "title": "Compliance attributes like alcohol carry fines when wrong",
+   "theme": "Compliance and legal risk",
+   "summary": "Some catalog data drives compliance. One example: if catalog marks something as alcoholic incorrectly and a customer does not pass an ID check in Texas, Instacart gets a fine from the state.",
+   "why_it_matters": "These errors carry regulatory penalties on top of customer harm, and the same pattern applies to SNAP and FSA/HSA eligibility flags.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P05",
+    "P25",
+    "P11"
+   ],
+   "solutions": [
+    {
+     "name": "Compliance tier with stricter controls",
+     "description": "Flag alcohol, age-restricted, SNAP, and FSA/HSA attributes as a compliance tier with most-restrictive-wins conflicts, mandatory review on change, and audit logs.",
+     "precedent": "Instacart's public alcohol spec already resolves conflicts to the most restrictive value",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "External registry reconciliation",
+     "description": "Cross-check alcohol flags against federal label approvals and CSP alcohol-by-volume data, and flag any product with an approval that is not marked alcoholic.",
+     "precedent": "TTB Public COLA Registry; SIGIS eligible product list for FSA/HSA",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Jurisdiction-aware rules engine",
+     "description": "Encode state and local rules (sale hours, ID requirements, dry areas) as data and evaluate each cart item against the delivery address at checkout.",
+     "precedent": "Avalara and Vertex tax engines model jurisdiction rules as data",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P22",
+   "title": "Shoppers with medical diets do not trust online claims",
+   "theme": "Customer experience and dietary trust",
+   "summary": "A conversation with a celiac friend found he wants to see the label and does not trust brand or retailer claims. An open question is whether a Verified tag would earn trust given that sentiment. For allergies, trust is everything, because a mistake is a hospitalization.",
+   "why_it_matters": "This segment is loyal once trust is earned and gone after one mistake. Instacart's public disclaimer currently puts the risk on the customer.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P05",
+    "P33",
+    "P23"
+   ],
+   "solutions": [
+    {
+     "name": "Show the proof",
+     "description": "Next to a Verified badge, show the evidence: label photo with date, certification match, and sources.",
+     "precedent": "Open Food Facts label photos; GFCO certified product lookup",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Plain-language status",
+     "description": "Say 'label checked Oct 2' or 'brand says gluten-free; Instacart has not verified it' in place of a bare badge.",
+     "precedent": "Yuka app's transparent product scoring",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Customer and shopper label reports",
+     "description": "Let customers and shoppers submit a label photo that contradicts a claim, and close the loop with them.",
+     "precedent": "Open Food Facts crowd contributions; Waze user reports",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P23",
+   "title": "Replacements must respect dietary restrictions",
+   "theme": "Customer experience and dietary trust",
+   "summary": "When an item is out of stock, the replacement must still meet the customer's restriction, and the shopper needs that information to make the call. This is one of the places catalog data shows up most directly.",
+   "why_it_matters": "A non-gluten-free substitute for a celiac customer is the same safety event as a wrong badge, and it happens at the moment of least oversight.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P05",
+    "P33",
+    "P22"
+   ],
+   "solutions": [
+    {
+     "name": "Hard dietary constraints in replacement candidates",
+     "description": "Filter replacement candidates by the customer's strict restrictions using Verified status only.",
+     "precedent": "Instacart's Q2 2026 call described a replacement model that incorporates dietary preferences",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shopper-side safety prompt",
+     "description": "Show the shopper the restriction and the candidate's evidence status at pick time.",
+     "precedent": "Existing Instacart shopper app replacement flows",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Pre-approved safe swaps",
+     "description": "Let customers pre-approve safe alternates per item, learned from their history and Verified evidence.",
+     "precedent": "Substitution preference settings in online grocery apps",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P24",
+   "title": "No single source of truth for attribute definitions",
+   "theme": "Attribute definitions and governance",
+   "summary": "Over ten years of moving fast, where attribute decisions are stored and how terms were defined has spread across many places. Ops has no good source of truth listing every attribute ever created with its definition, usage, and guidelines. The simplest fix is a library that says what each attribute means and how to use it.",
+   "why_it_matters": "Without a registry, two teams can ship two meanings of gluten-free and nobody can audit either. It also blocks the semantic layer ops wants.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P08",
+    "P11",
+    "P25",
+    "P16"
+   ],
+   "solutions": [
+    {
+     "name": "Attribute registry",
+     "description": "One record per attribute: owner, definition, allowed values, regulatory basis, sources, precision target, consumers, refresh cadence, and status. Seed it by crawling existing attribute names and asking owners to claim them.",
+     "precedent": "GS1 Global Data Dictionary; DataHub and OpenMetadata business glossaries",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Definitions anchored to regulation",
+     "description": "Where a claim has a legal definition, link it, such as the FDA gluten-free rule (under 20 ppm), FALCPA allergens, and the FASTER Act for sesame. Where none exists, record Instacart's working definition and who approved it.",
+     "precedent": "FDA gluten-free labeling final rule (2013); Open Food Facts labels taxonomy",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shared machine-readable ontology",
+     "description": "Publish the registry as an ontology with relationships (nut-free implies tree-nut-free and peanut-free) so search, replacements, and agents reason over the same meanings.",
+     "precedent": "Schema.org and GS1 Web Vocabulary; Shopify Standard Product Taxonomy (open source, 2024)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P25",
+   "title": "Content rights limit where each source's data can be used",
+   "theme": "Compliance and legal risk",
+   "summary": "Product data comes with contracts that depend on where it came from, and downstream teams must use it properly for the channels they build. Content rights management is part of this role's scope, and one catalog PM already focuses on it.",
+   "why_it_matters": "A licensed field shown in a channel its license does not cover is a contract breach, and agent and partner surfaces make the channel map much larger.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P08",
+    "P24",
+    "P21"
+   ],
+   "solutions": [
+    {
+     "name": "Rights tags on every value",
+     "description": "Store source and license terms with each attribute value and evaluate allowed channels at read time.",
+     "precedent": "W3C ODRL (Open Digital Rights Language); Snowflake object tagging with masking policies",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Policy-as-code for channel access",
+     "description": "Write channel rules (marketplace, Storefront Pro, partner agents, ads, model training) as policies and test them in CI.",
+     "precedent": "Open Policy Agent; Immuta attribute-based access control",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Rights-aware data product API",
+     "description": "The semantic layer returns only values licensed for the caller's channel and substitutes an owned or derived value when one exists.",
+     "precedent": "Territory-based licensing enforcement in streaming media catalogs",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P26",
+   "title": "Deli and hot bar codes change often and break matching",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "On a shopper run I hit a deli item the app would not recognize after the store changed it. Hot bar SKUs and UPCs change frequently, and catalog has workstreams to group products that belong together.",
+   "why_it_matters": "Shoppers cannot fulfill what the app cannot match, which hits found rate and satisfaction on prepared foods.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P32",
+    "P27"
+   ],
+   "solutions": [
+    {
+     "name": "Product families above the UPC",
+     "description": "Group volatile codes into a stable family ID (store, department, name pattern, price band) so picks match at the family level when a code changes.",
+     "precedent": "GS1 restricted circulation numbers (prefix 2) for variable-measure items; IFPS PLU codes",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shopper-confirmed matching",
+     "description": "When a shopper scans an unrecognized code for a requested item, ask them to confirm it is the same product and keep that as a training label.",
+     "precedent": "Human-in-the-loop entity resolution",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Entity resolution on text and images",
+     "description": "Match new deli codes to existing families with embeddings of name, image, and price, and auto-merge above a confidence threshold.",
+     "precedent": "Splink probabilistic record linkage (UK Ministry of Justice); Instacart Semantic IDs (tech blog, 2026)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P27",
+   "title": "Produce is sold in inconsistent units",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "The industry has not standardized how bananas are sold: by the bunch, by each, or per unit. Customers see a picture of a bunch, the stepper does not match, and they end up with one banana or the reverse. It is a grocery-industry problem catalog alone cannot solve.",
+   "why_it_matters": "Unit mismatches become wrong-quantity orders, refunds, and confused shoppers, and they are among the most visible catalog failures.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P26",
+    "P32"
+   ],
+   "solutions": [
+    {
+     "name": "Canonical sold-by model",
+     "description": "Normalize every produce item to a sold-by type (each, bunch, weight) with an average-weight conversion, and render the stepper and copy from it.",
+     "precedent": "IFPS PLU codes (4011 is bananas); GS1 net content and unit of measure attributes",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Image and stepper consistency check",
+     "description": "A vision model checks whether the hero image shows one unit or a bunch and flags mismatches against the sold-by type.",
+     "precedent": "Instacart PARSE multimodal extraction (public)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Industry convention",
+     "description": "Work with retailers and GS1 US on a produce sold-by convention for e-commerce and require it in the Catalog API.",
+     "precedent": "Amazon's ASIN standard as a single-identifier model; the Produce Traceability Initiative as an industry coordination model",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P28",
+   "title": "Telling a deep discount from a price error",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "Catalog has worked on price anomaly detection: deciding whether a grossly underpriced item is a real sale or a mistake. Getting precision and recall high enough was the hardest part, pricing is owned by two or three teams, and depending on the retailer's pricing model the loss lands on Instacart or the retailer.",
+   "why_it_matters": "A missed error loses money for whichever side bears it, and a false alarm blocks a real promotion. Catalog may no longer own this work, so ownership is unclear.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P35",
+    "P04"
+   ],
+   "solutions": [
+    {
+     "name": "Promotion flag in the retailer feed",
+     "description": "Ask retailers to flag promotions with start and end dates in the inventory file; any large drop without a flag goes to review.",
+     "precedent": "The team's own view that more retailer information would solve it",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Cross-store price consensus",
+     "description": "Compare a price with the same product at sibling stores of the banner and at nearby banners. A lone outlier is suspicious and a banner-wide drop is likely a promotion.",
+     "precedent": "Twitter's AnomalyDetection package (Seasonal Hybrid ESD); Keepa price-history tracking",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Loss-weighted thresholds",
+     "description": "Set review thresholds by who bears the loss and by the expected cost of a miss versus a false alarm.",
+     "precedent": "Cost-sensitive classification; adjustable risk thresholds in payment fraud tools",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P29",
+   "title": "Stream and batch ingestion merge with latency",
+   "theme": "Data model and architecture",
+   "summary": "Part of catalog ingestion is streaming and part is batch, and merging them introduces latency. It does not have to be this way, and a catalog built today would be designed differently.",
+   "why_it_matters": "Latency means stale values on the storefront, and merge logic is a common source of incidents.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P01",
+    "P12"
+   ],
+   "solutions": [
+    {
+     "name": "Change data capture from retailer systems",
+     "description": "Where retailers can emit changes, ingest them through CDC to cut full-file batch loads.",
+     "precedent": "Debezium CDC; Kroger's Item API cut speed to web from up to two weeks to 48 hours",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Freshness SLOs per field family",
+     "description": "Define and monitor freshness targets per field family so latency is visible before it becomes an incident.",
+     "precedent": "Google SRE SLOs; Uber INCA regression monitoring",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "One streaming path for everything",
+     "description": "Treat batch files as streams of change events so one pipeline handles both, with replay from the log for backfills.",
+     "precedent": "Kappa architecture (Jay Kreps, 2014); Apache Flink and Apache Beam unified batch and stream",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P30",
+   "title": "Fragmented stacks and short-horizon tech decisions",
+   "theme": "Data model and architecture",
+   "summary": "Instacart runs leaner than Amazon, so each small team owns a lot of vertical scope. Catalog engineering owns the catalog platform, content, and the seller-side tooling, and that has produced a lot of stack fragmentation. With several CEO and CTO changes, tech decisions have had less continuity, and Instacart does not always play the long game.",
+   "why_it_matters": "Fragmented stacks multiply maintenance and make cross-cutting changes such as provenance or rights tagging expensive.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P01",
+    "P14",
+    "P12"
+   ],
+   "solutions": [
+    {
+     "name": "Architecture decision records",
+     "description": "Record significant tech decisions with context and consequences so they survive leadership changes.",
+     "precedent": "Architecture Decision Records (Nygard, 2011)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Stack inventory with consolidation targets",
+     "description": "Inventory every catalog service and pipeline framework, score each on cost and risk, and set a yearly consolidation target.",
+     "precedent": "Thoughtworks Technology Radar adopt and hold format",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Paved-road platform",
+     "description": "Offer a supported default stack for new pipelines and tools and migrate opportunistically.",
+     "precedent": "Netflix paved road; Spotify Backstage golden paths",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P31",
+   "title": "Pipelines rerun expensive work because run outputs are not stored",
+   "theme": "Enrichment pipelines and cost",
+   "summary": "An open question is whether catalog stores enough provenance and metadata at each run, or keeps redoing processes that are expensive to rerun. The goal is a data layer that keeps what each run produced so teams stop rerunning the same queries.",
+   "why_it_matters": "Every rerun spends LLM budget and time, and without stored outputs there is no audit trail for why a value changed.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P18",
+    "P07",
+    "P01"
+   ],
+   "solutions": [
+    {
+     "name": "Memoize by input hash",
+     "description": "Key each extraction by product content hash, prompt version, and model version, and reuse results unless an input changes.",
+     "precedent": "Bazel content-addressed caching; Dagster asset materialization metadata",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Store raw evidence and intermediate outputs",
+     "description": "Persist extracted text, label reads, and model rationales so new attributes derive from stored evidence without re-reading images.",
+     "precedent": "Delta Lake and Apache Iceberg time travel",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Evidence store as the core asset",
+     "description": "Treat every label read and source claim as the durable asset and derive attributes as cheap views over it.",
+     "precedent": "Event sourcing (Martin Fowler); Wikidata statement model",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P32",
+   "title": "Normalizing and merging catalogs across retailers",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "Each retailer sends its own catalog, and showing one product consistently across them requires normalizing and merging. This is a core complexity behind any multi-retailer experience.",
+   "why_it_matters": "Agents and multi-store carts need the same product to resolve everywhere it is sold, and merge errors become wrong comparisons and wrong substitutions.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P37",
+    "P04",
+    "P26"
+   ],
+   "solutions": [
+    {
+     "name": "GTIN-first matching with fuzzy fallback",
+     "description": "Match on GTIN where present, then on normalized brand, name, size, and image, with a review queue for borderline pairs.",
+     "precedent": "GS1 GTIN; Splink record linkage",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Feed conformance standards",
+     "description": "Require normalized size and unit fields in the Catalog API and score retailers on conformance.",
+     "precedent": "Walmart Content Quality Score; Kroger Item API's 45 percent cut in required attributes",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Semantic ID clustering",
+     "description": "Use learned product codes to cluster equivalents across retailers, then audit the disagreements.",
+     "precedent": "Instacart Semantic IDs (tech blog, 2026); Google Shopping product clustering",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P33",
+   "title": "Dietary needs vary in stakes and stack in combinations",
+   "theme": "Customer experience and dietary trust",
+   "summary": "Segmentation matters here. An allergy is hospitalization-level, lactose intolerance allows an occasional choice, and diabetes is more about lower-sugar guidance. Customers stack a restriction, a diet, and a goal, and households shop for members with and without restrictions.",
+   "why_it_matters": "Treating every preference as a hard filter overwhelms the UI and the store scoring, while treating allergies softly is unsafe.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P22",
+    "P40",
+    "P23"
+   ],
+   "solutions": [
+    {
+     "name": "Strictness levels per preference",
+     "description": "Let each preference carry a level (avoid strictly, prefer to avoid, goal) that maps to hard filters, soft ranking, or nudges.",
+     "precedent": "Instacart Smart Shop preferences (public, 2025)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Household member profiles",
+     "description": "Attach restrictions to people in the household and show who each cart item is safe for.",
+     "precedent": "Netflix profiles; Amazon Household",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Constraint-aware ranking",
+     "description": "Rank with hard constraints for strict needs and learned soft preferences for the rest, tested on multi-preference users.",
+     "precedent": "Constrained recommendation research; dietary-aware replacement model cited on Instacart's Q2 2026 call",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P34",
+   "title": "Catalog data quality shows up as search failures",
+   "theme": "Customer experience and dietary trust",
+   "summary": "A clear example of unhealthy search is searching for chicken and getting mostly dog food. Missing images or dietary data could also suppress search conversion, so catalog data belongs in any search-quality investigation.",
+   "why_it_matters": "Search conversion is a top-line metric, and catalog classification and completeness sit upstream of it.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P13"
+   ],
+   "solutions": [
+    {
+     "name": "Completeness as a search input metric",
+     "description": "Track the share of searched items with image, category, and key attributes, and correlate it with search conversion by category.",
+     "precedent": "Walmart Content Quality Score; Amazon listing quality",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Taxonomy audit from search behavior",
+     "description": "Find products that appear for a query but never get added (dog food for chicken) and send them to taxonomy review.",
+     "precedent": "Instacart Semantic IDs catalog-audit pipeline (public)",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Attribute-aware query understanding",
+     "description": "Map queries to attribute constraints, for example gluten-free bread means category bread plus Verified gluten-free.",
+     "precedent": "Instacart Intent Engine (public tech blog)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P35",
+   "title": "A/B testing is hard in a dynamic catalog",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Product teams at Instacart run plenty of A/B tests, but catalog's system design and constantly changing data make regular A/B tests hard. Setting up experiments when prices fluctuate so much has been a recurring struggle.",
+   "why_it_matters": "If catalog changes cannot be tested, catalog cannot prove impact, which feeds the attribution and prioritization problems.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P17",
+    "P28"
+   ],
+   "solutions": [
+    {
+     "name": "Cluster or store-level randomization",
+     "description": "Randomize by product cluster or store and measure downstream conversion and refunds, accepting some interference where clusters are small.",
+     "precedent": "Cluster-randomized experiments; switchback experiments at DoorDash and Lyft",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Offline replay",
+     "description": "Replay historical searches and replacements against old and new attribute values to estimate impact before any live test.",
+     "precedent": "Counterfactual evaluation; interleaving for ranking tests at Netflix",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Synthetic control for catalog launches",
+     "description": "Measure a launch in one region or retailer against a synthetic control built from similar untreated ones.",
+     "precedent": "Synthetic control method (Abadie, Diamond, Hainmueller)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P36",
+   "title": "Internal tooling ROI looks too small to win prioritization",
+   "theme": "Org, planning, and process",
+   "summary": "At Amazon, ops tooling kept losing planning cycles because hours saved looked small next to big savings initiatives. Catalog operations sees the same pattern.",
+   "why_it_matters": "Ops tooling is how a nine-person team scales to hundreds of pipelines, so underfunding it caps catalog throughput.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P14",
+    "P03",
+    "P17"
+   ],
+   "solutions": [
+    {
+     "name": "Price tooling by error cost and throughput",
+     "description": "Value tooling by defects prevented and attributes shipped per quarter alongside hours saved.",
+     "precedent": "My Feast Instock Portal at Amazon Fresh (config-deletion errors eliminated, NPS up 78 percent); DORA metrics",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Builder satisfaction and adoption as leading metrics",
+     "description": "Survey ops builders twice a year and track adoption of each tool.",
+     "precedent": "My twice-yearly user survey at Amazon Fresh; DX developer experience surveys",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Fund tooling from agent bets",
+     "description": "Frame tooling as the capacity that lets catalog keep pace with Clementine and partner agents, and fund it from those bets.",
+     "precedent": "Amazon OP1 platform funding through enabled initiatives",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P37",
+   "title": "Multi-store carts are blocked by cost and live price logic",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "There is no single cart across retailers today. The blockers: who pays for delivery from several locations, normalizing catalogs across retailers, and cross-referencing cost and price live to choose which store's item to show while limiting store count.",
+   "why_it_matters": "For restricted-diet shoppers, selection spread across stores is the main reason to want one cart, and the live calculation is heavy.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P32",
+    "P40"
+   ],
+   "solutions": [
+    {
+     "name": "Two-store cap with precomputed pairs",
+     "description": "Limit carts to two stores and precompute good store pairs per zone, which bounds the live calculation.",
+     "precedent": "DoorDash DoubleDash, which as I understand it adds items from a second store along the route",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Marginal-cost delivery pricing",
+     "description": "Charge the customer the marginal cost of the extra stop, share the rest with retailers by order value, and test elasticity.",
+     "precedent": "Shapley-value cost allocation",
+     "ambition": "bold"
+    },
+    {
+     "name": "Basket optimizer service",
+     "description": "Solve a small optimization per cart (price, availability, dietary fit, stops) under a time budget using cached prices and availability predictions.",
+     "precedent": "Google OR-Tools routing; Instacart's public item availability prediction work",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P38",
+   "title": "Uneven retailer data makes any store comparison unfair",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "Scoring stores on dietary coverage is appealing, but retailers would have opinions about being compared, and the scores depend on getting label and certification data evenly across retailers.",
+   "why_it_matters": "A store with poor data looks like a store with poor selection, which is unfair to the retailer and misleading to the customer.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P15",
+    "P13",
+    "P40"
+   ],
+   "solutions": [
+    {
+     "name": "Scores adjusted for data completeness",
+     "description": "Report a store's dietary selection with a data-completeness confidence and suppress scores below a floor.",
+     "precedent": "Walmart Listing Quality Score shows content gaps to sellers",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Private scorecards first",
+     "description": "Show the score privately to retailers with fixes before any customer sees it.",
+     "precedent": "Salsify retailer scorecards; Google Merchant Center product data quality",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Instacart-captured evidence to even the field",
+     "description": "Fill gaps with Instacart's own shopper photos so every store is scored on the same evidence base.",
+     "precedent": "DoorDash Dasher photo capture; Instacart's Arpalus shelf scanning",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P39",
+   "title": "Competing needs across the four sides of the marketplace",
+   "theme": "Org, planning, and process",
+   "summary": "This role works with legal, brands and advertisers, customer experience, shopper experience, and retailers who want their sites to feel like their own. The four sides of the marketplace make Instacart complex to onboard into, and handling misaligned needs across them is a core part of the job.",
+   "why_it_matters": "Catalog data serves every side at once, so each attribute decision has winners and losers that need a clear process.",
+   "sources": [],
+   "confirmed_by_count": 1,
+   "related": [
+    "P25",
+    "P19"
+   ],
+   "solutions": [
+    {
+     "name": "Stakeholder map per attribute",
+     "description": "List which sides consume each attribute and what each needs, and review conflicts in one forum.",
+     "precedent": "My UARC2 seven-org coalition at Amazon Fresh with leadership and tactical syncs",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Published tie-break principles",
+     "description": "Write catalog tenets that rank customer safety, accuracy, retailer voice, and ads reach so conflicts resolve consistently.",
+     "precedent": "Amazon tenets documents",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Catalog policy council",
+     "description": "A monthly council with leads from each side that owns catalog policy changes.",
+     "precedent": "Data governance councils, reportedly common in large retailers",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "P40",
+   "title": "Choosing a store is blind for restricted-diet shoppers",
+   "theme": "Customer experience and dietary trust",
+   "summary": "My hypothesis is that shoppers cannot tell which store has the most options for their restriction without exploring. A fair counterpoint: research might show most of these customers already know their stores. This is unconfirmed.",
+   "why_it_matters": "If true, store-level dietary coverage is a differentiator for a multi-retailer marketplace. If false, the effort belongs elsewhere.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P38",
+    "P37",
+    "P33"
+   ],
+   "solutions": [
+    {
+     "name": "Validate with behavior data first",
+     "description": "Check whether users with a gluten-free preference switch stores more than others and how often new users explore several stores.",
+     "precedent": "Standard cohort analysis",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Dietary coverage on the store picker",
+     "description": "Show counts of Verified items for the user's restrictions on the store picker.",
+     "precedent": "Dietary filters on Yelp restaurant search",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Personal store recommendation",
+     "description": "Recommend a store or store pair for each user's restrictions and list, updated as stock changes.",
+     "precedent": "Clementine's store-aware recommendations (public launch, 2026)",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  }
+ ],
+ "research_only": [
+  {
+   "id": "R01",
+   "title": "Brand corrections silently overridden by retailer feeds",
+   "theme": "Source arbitration and explainability",
+   "summary": "Instacart's own brand help pages say a retailer may override a brand's updated images, and some retailers prioritize their own data over brand content. Brands diagnose it by comparing storefronts by hand, and nobody tells them when an override happens.",
+   "why_it_matters": "Brands pay for sponsored placement on product pages they cannot fix, and account teams absorb the frustration.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P07",
+    "P15"
+   ],
+   "solutions": [
+    {
+     "name": "Override notifications",
+     "description": "Notify the brand when a retailer value overrides its submission, naming the field and, where contracts allow, the retailer.",
+     "precedent": "GS1 GDSN Catalogue Item Confirmation messages",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Precedence configuration as visible data",
+     "description": "Record each retailer's precedence configuration as data so ops and account teams can see it in the lineage panel.",
+     "precedent": "Reltio MDM crosswalks",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Brand and retailer dispute workflow",
+     "description": "When brand and retailer disagree, open a structured dispute both sides resolve, with the result written back to both feeds.",
+     "precedent": "Marketplace brand dispute flows, such as those reportedly offered through Amazon Brand Registry",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R02",
+   "title": "No attribute fix SLA: quick breaks and slow fixes",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Public docs show a retailer item update reaches the storefront in about 90 minutes, while a brand correction can take up to 48 hours of review and 48 hours to publish. There is no public accuracy SLA, and the open Engineering Manager req asks the hire to set SLAs on core attributes.",
+   "why_it_matters": "Fix latency decides how long a wrong allergen badge stays live, and blocked campaigns delay ad revenue.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P10",
+    "P05"
+   ],
+   "solutions": [
+    {
+     "name": "SLOs per attribute family",
+     "description": "Publish internal time-to-correct and accuracy targets per family and report them weekly.",
+     "precedent": "Google SRE SLOs",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Safety fast lane",
+     "description": "Allergen and compliance corrections skip the standard review queue and publish within hours.",
+     "precedent": "Prop 65 rules give online sellers 60 days to update warnings, a statutory SLA example",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Contracted SLAs with CSPs and retailers",
+     "description": "Tie content partner agreements to correction latency and accuracy.",
+     "precedent": "Kroger's Item API promise of 48-hour speed to web",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R03",
+   "title": "Missing or wrong product images",
+   "theme": "Customer experience and dietary trust",
+   "summary": "Images come from retailer feeds, and when a retailer does not send one the customer sees a gray placeholder. Instacart's launch bar for new retailers is 70 percent of products with primary images.",
+   "why_it_matters": "Wrong images drive wrong picks and refunds, and brands lose value on sponsored placements over a gray box.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P34",
+    "P27"
+   ],
+   "solutions": [
+    {
+     "name": "CSP image fallback",
+     "description": "Fill missing retailer images from content service providers where rights allow.",
+     "precedent": "Syndigo and Salsify image syndication",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Image and product consistency check",
+     "description": "A vision model checks that the image matches the product name, size, and variant.",
+     "precedent": "Instacart PARSE multimodal extraction",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shopper-captured images",
+     "description": "Shoppers photograph items with missing or mismatched images during picks.",
+     "precedent": "DoorDash Dasher in-store photo capture",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R04",
+   "title": "Products mis-mapped to the wrong brand",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "Library Manager's headline feature lets brands claim and remove products, which suggests mis-mapping is common enough to need its own tool.",
+   "why_it_matters": "Mis-mapped products corrupt ad reporting and bidding and create brand disputes.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P32"
+   ],
+   "solutions": [
+    {
+     "name": "GTIN company prefix lookup",
+     "description": "Resolve brand owner from the GS1 company prefix in the GTIN and flag mismatches.",
+     "precedent": "Verified by GS1",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Brand entity resolution",
+     "description": "Normalize brand names and subsidiaries into one brand graph.",
+     "precedent": "Splink record linkage",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Brand-verified ownership",
+     "description": "Brands verify ownership once and mappings inherit from that verification.",
+     "precedent": "Amazon Brand Registry",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R05",
+   "title": "Taxonomy mislabels",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Instacart's Semantic IDs post says when the learned code disagrees with the taxonomy label, the code is often right, with examples like a protein bar under Candy. An audit pipeline is being built.",
+   "why_it_matters": "Mislabels cause search misses, mis-targeted category ads, and health scores computed against the wrong baseline.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P34",
+    "P24"
+   ],
+   "solutions": [
+    {
+     "name": "Disagreement review queue",
+     "description": "Route semantic-code and taxonomy disagreements to prioritized human review.",
+     "precedent": "Instacart's described catalog-audit pipeline",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Map to a public taxonomy",
+     "description": "Crosswalk the internal taxonomy to a public standard to catch structural errors.",
+     "precedent": "GS1 Global Product Classification; Shopify Standard Product Taxonomy",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "LLM taxonomy judge",
+     "description": "An LLM judge classifies each product against the taxonomy definitions and flags disagreements with both the label and the code.",
+     "precedent": "LLM-as-judge with golden sets",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R06",
+   "title": "Benefit eligibility flags rely on retailer columns",
+   "theme": "Compliance and legal risk",
+   "summary": "SNAP eligibility is a retailer-supplied column, and FSA/HSA eligibility is hedged in help text. One SNAP rule depends on packaging: items with a Supplement Facts label are not eligible.",
+   "why_it_matters": "A false-eligible item is a compliance finding against the retailer and a false-ineligible item is a customer who cannot pay.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P21"
+   ],
+   "solutions": [
+    {
+     "name": "Supplement Facts detection",
+     "description": "Use the label reader to detect Supplement Facts panels and flag SNAP-eligible items that carry one.",
+     "precedent": "USDA FNS SNAP eligibility rules",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "FSA/HSA list reconciliation",
+     "description": "Reconcile eligibility against the industry eligible product list.",
+     "precedent": "SIGIS eligible product list",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Continuous eligibility monitoring",
+     "description": "Monitor eligibility flags like any compliance attribute with alerts and audit logs.",
+     "precedent": "Compliance monitoring in payment networks",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R07",
+   "title": "Agents remove the read-the-label backstop",
+   "theme": "Customer experience and dietary trust",
+   "summary": "Instacart's disclaimer assumes a human reads the packaging. When an agent filters on a wrong or missing attribute and places the order, that backstop is gone, and the same catalog now feeds several agent surfaces at once.",
+   "why_it_matters": "One bad attribute is shown in every agent surface at the same time, including partner products where Instacart does not control the disclaimer.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P09",
+    "P22",
+    "P05"
+   ],
+   "solutions": [
+    {
+     "name": "Status-gated agent assertions",
+     "description": "Agents may only assert safety for Verified attributes and must state uncertainty otherwise.",
+     "precedent": "Model Context Protocol tool contracts",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Agent-specific evaluation suite",
+     "description": "Test each agent surface against dietary prompts with known answers before release.",
+     "precedent": "LLM evaluation harnesses with golden sets",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Evidence attached to agent answers",
+     "description": "Every agent recommendation for a restricted diet carries a link to the evidence panel.",
+     "precedent": "Citation-backed answers in retrieval-augmented systems",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R08",
+   "title": "Overlapping dietary vocabularies and free-text allergens",
+   "theme": "Attribute definitions and governance",
+   "summary": "Public docs show several dietary vocabularies (inventory booleans, storefront tags, Health Tags, Smart Shop preferences, help-center definitions) with no published crosswalk, and allergens are a free-text column.",
+   "why_it_matters": "Clementine now offers nut-free as a preference while allergens are stored as text, which is the highest-consequence gap in the data model.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P24",
+    "P08"
+   ],
+   "solutions": [
+    {
+     "name": "Structured allergen schema",
+     "description": "Store allergens as coded values with contains and may-contain distinctions.",
+     "precedent": "FALCPA major allergens plus sesame under the FASTER Act; GS1 allergen type codes",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Published crosswalk",
+     "description": "Map every dietary vocabulary to the registry's canonical attributes.",
+     "precedent": "GS1 Global Data Dictionary",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Single vocabulary across surfaces",
+     "description": "Retire parallel vocabularies and serve every surface from one ontology.",
+     "precedent": "Shopify Standard Product Taxonomy",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R09",
+   "title": "Customers carry the risk and cannot report errors",
+   "theme": "Customer experience and dietary trust",
+   "summary": "The customer-facing disclaimer says Instacart cannot guarantee nutrition and allergen accuracy and that customers assume all risk. The page offers no way to report an error.",
+   "why_it_matters": "The most motivated error reporters, restricted-diet shoppers, have no channel to tell Instacart when a claim is wrong.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P22",
+    "P10"
+   ],
+   "solutions": [
+    {
+     "name": "Report-a-label-error button",
+     "description": "Add a report link on product pages for dietary and allergen claims.",
+     "precedent": "Open Food Facts contribution flow",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Close the loop",
+     "description": "Tell the reporter what changed and when.",
+     "precedent": "Waze report acknowledgments",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Reports as a ground-truth stream",
+     "description": "Feed verified reports into the gold set and source reliability model.",
+     "precedent": "Active learning from user feedback",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R10",
+   "title": "Defects surface through customers, and data quality tooling is fragmented",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "An Instacart data quality talk said issues often go unnoticed until too late and that Instacart grappled with a fragmented landscape of data quality tools.",
+   "why_it_matters": "Each late catch is a customer-visible incident with no attribute-level monitor to page on.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P10",
+    "P20",
+    "P12"
+   ],
+   "solutions": [
+    {
+     "name": "One data quality standard for catalog",
+     "description": "Pick one check framework for catalog pipelines and require it at publish.",
+     "precedent": "Great Expectations; Soda",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Attribute-level monitors",
+     "description": "Monitor coverage, distribution, and override rate per attribute with paging.",
+     "precedent": "Monte Carlo data observability",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Customer signal mining",
+     "description": "Mine support tickets and refunds for attribute-related complaints as an early warning.",
+     "precedent": "Uber INCA regression monitoring",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R11",
+   "title": "No canonical catalog denominator",
+   "theme": "Quality, measurement, and ground truth",
+   "summary": "Instacart publicly cites catalog size as 17 million, 22 million, tens of millions, and 2 billion depending on the source and level. Coverage percentages depend on which number is used.",
+   "why_it_matters": "Coverage and precision targets mean little without an agreed denominator.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P13",
+    "P17"
+   ],
+   "solutions": [
+    {
+     "name": "Define the denominators",
+     "description": "Publish canonical products, store-level item instances, and active-selling items as named denominators.",
+     "precedent": "Metric definitions in a semantic layer",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Demand-weighted denominator",
+     "description": "Report coverage weighted by views or orders alongside raw counts.",
+     "precedent": "Search-weighted quality metrics",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Metric registry",
+     "description": "Store every catalog metric with its formula and owner.",
+     "precedent": "dbt Semantic Layer",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  },
+  {
+   "id": "R12",
+   "title": "Shelf and catalog accuracy now carry an external SLA",
+   "theme": "Retailer and cross-retailer data",
+   "summary": "The September 2026 store software sells shelf-state data to brands and grocers. That turns inventory and catalog accuracy into a commitment to paying customers.",
+   "why_it_matters": "Errors now hit paying B2B customers as well as shoppers.",
+   "sources": [],
+   "confirmed_by_count": 0,
+   "related": [
+    "P10",
+    "P05"
+   ],
+   "solutions": [
+    {
+     "name": "External accuracy reporting",
+     "description": "Publish accuracy and freshness metrics to B2B customers.",
+     "precedent": "Cloud provider status and SLA reporting",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Shared evidence with brands",
+     "description": "Let brands see the evidence behind their products' data.",
+     "precedent": "Store Excellence Portal model",
+     "ambition": "pragmatic"
+    },
+    {
+     "name": "Accuracy-backed pricing",
+     "description": "Tie B2B data product pricing to measured accuracy.",
+     "precedent": "SLA credits in cloud contracts",
+     "ambition": "bold"
+    }
+   ],
+   "mentions": 0
+  }
+ ]
+}

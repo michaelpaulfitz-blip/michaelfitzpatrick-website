@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1200 1127.0099999999998" font-family='"Open Sans", Helvetica, Arial, sans-serif' role="img" aria-labelledby="demoD-t demoD-d"><title id="demoD-t">Gluten-free evidence engine, worked example</title><desc id="demoD-d">Stages run top to bottom on the left; the right column follows one illustrative product through each stage.</desc><defs><marker id="demoD-ah" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0.8 L9,5 L0,9.2 z" fill="#003d29"/></marker></defs><rect width="1200" height="1127.0099999999998" fill="#ffffff"/>
+<rect x="16.0" y="767.0" width="1168.0" height="144.0" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="681.0" width="1168.0" height="72.0" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="580.3" width="1168.0" height="86.7" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="437.3" width="1168.0" height="129.0" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="336.7" width="1168.0" height="86.7" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="236.0" width="1168.0" height="86.7" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<rect x="16.0" y="110.0" width="1168.0" height="112.0" rx="10" fill="#f7f5f0" stroke="none" stroke-width="1"/>
+<path d="M84.0,170.0 L84.0,186.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M198.0,170.0 L198.0,186.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M312.0,170.0 L312.0,186.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M426.0,170.0 L426.0,186.0" fill="none" stroke="#72767e" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="4 3"/>
+<path d="M540.0,170.0 L540.0,186.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M84.0,186.0 L540.0,186.0" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M312.0,186.0 L312.0,244.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,314.7 L312.0,344.7" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,415.3 L312.0,445.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,558.3 L312.0,588.3" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,659.0 L312.0,689.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,745.0 L312.0,777.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M88.0,807.0 L536.0,807.0" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M312.0,777.0 L312.0,807.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M84.0,807.0 L84.0,831.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M198.0,807.0 L198.0,831.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M312.0,807.0 L312.0,831.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M426.0,807.0 L426.0,831.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M540.0,807.0 L540.0,831.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<rect x="16.0" y="941.0" width="1168.0" height="128.0" rx="10" fill="#faf1e5" stroke="none" stroke-width="1"/>
+<path d="M290.0,1016.0 L324.0,1016.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M586.0,1016.0 L620.0,1016.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<path d="M882.0,1016.0 L916.0,1016.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<rect x="32.0" y="118.0" width="104.0" height="52.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="146.0" y="118.0" width="104.0" height="52.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="260.0" y="118.0" width="104.0" height="52.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="374.0" y="118.0" width="104.0" height="52.0" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="488.0" y="118.0" width="104.0" height="52.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="32.0" y="244.0" width="560.0" height="70.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="32.0" y="344.7" width="560.0" height="70.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="32.0" y="445.3" width="560.0" height="113.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="640.0" y="449.3" width="480.0" height="21.0" rx="0" fill="#faf1e5" stroke="none" stroke-width="1"/>
+<path d="M640.0,470.3 L1120.0,470.3" fill="none" stroke="#e8e9eb" stroke-width="1" stroke-linejoin="round"/>
+<path d="M640.0,491.3 L1120.0,491.3" fill="none" stroke="#e8e9eb" stroke-width="1" stroke-linejoin="round"/>
+<path d="M640.0,512.3 L1120.0,512.3" fill="none" stroke="#e8e9eb" stroke-width="1" stroke-linejoin="round"/>
+<path d="M640.0,533.3 L1120.0,533.3" fill="none" stroke="#e8e9eb" stroke-width="1" stroke-linejoin="round"/>
+<rect x="32.0" y="588.3" width="560.0" height="70.7" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="32.0" y="689.0" width="560.0" height="56.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="32.0" y="831.0" width="104.0" height="70.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="146.0" y="831.0" width="104.0" height="70.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="260.0" y="831.0" width="104.0" height="70.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="374.0" y="831.0" width="104.0" height="70.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="488.0" y="831.0" width="104.0" height="70.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="28.0" y="979.0" width="262.0" height="74.0" rx="8" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="324.0" y="979.0" width="262.0" height="74.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="620.0" y="979.0" width="262.0" height="74.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="916.0" y="979.0" width="262.0" height="74.0" rx="8" fill="#ffffff" stroke="#003d29" stroke-width="1"/>
+<rect x="474.5" y="1092.0" width="26.0" height="16.0" rx="4" fill="#ffffff" stroke="#72767e" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="24.0" y="38.0" font-size="22" font-weight="700" fill="#003d29" text-anchor="start">Gluten-free evidence engine: follow one product down the page</text>
+<text x="24.0" y="62.0" font-size="13" fill="#56595e" text-anchor="start">Left: what the system does at each step, top to bottom, one arrow per step. Right: what happens to one illustrative product at that same step.</text>
+<text x="32.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">WHAT THE ENGINE DOES</text>
+<text x="640.0" y="104.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">ONE PRODUCT, ILLUSTRATIVE: AN OAT GRANOLA</text>
+<text x="84.0" y="141.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Open Food</text>
+<text x="84.0" y="156.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Facts</text>
+<text x="198.0" y="149.1" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">USDA FDC</text>
+<text x="312.0" y="149.1" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">GFCO finder</text>
+<text x="426.0" y="139.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Kroger API</text>
+<text x="426.0" y="157.9" font-size="12" fill="#343538" text-anchor="middle">blocked</text>
+<text x="540.0" y="139.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Claude vision</text>
+<text x="540.0" y="157.9" font-size="12" fill="#343538" text-anchor="middle">label photos</text>
+<text x="640.0" y="132.0" font-size="12" font-weight="700" fill="#242529" text-anchor="start">Open Food Facts</text>
+<text x="758.0" y="132.0" font-size="12" fill="#343538" text-anchor="start">label says gluten-free; ingredients list whole grain oats</text>
+<text x="640.0" y="151.0" font-size="12" font-weight="700" fill="#242529" text-anchor="start">USDA FDC</text>
+<text x="758.0" y="151.0" font-size="12" fill="#343538" text-anchor="start">ingredient statement also lists whole grain oats</text>
+<text x="640.0" y="170.0" font-size="12" font-weight="700" fill="#242529" text-anchor="start">GFCO finder</text>
+<text x="758.0" y="170.0" font-size="12" fill="#343538" text-anchor="start">product is listed as certified</text>
+<text x="640.0" y="189.0" font-size="12" font-weight="700" fill="#242529" text-anchor="start">Claude vision</text>
+<text x="758.0" y="189.0" font-size="12" fill="#343538" text-anchor="start">front panel shows a certification mark</text>
+<text x="640.0" y="208.0" font-size="12" font-weight="700" fill="#72767e" text-anchor="start">Kroger API</text>
+<text x="758.0" y="208.0" font-size="12" fill="#72767e" text-anchor="start">not called yet</text>
+<text x="588.0" y="204.0" font-size="12" fill="#56595e" text-anchor="end">five feeds join one bus</text>
+<circle cx="51.0" cy="262.0" r="11" fill="#108910"/>
+<text x="51.0" y="266.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="66.0" y="266.8" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">Fetch + raw cache</text>
+<text x="42.0" y="285.9" font-size="12" fill="#343538" text-anchor="start">One fetcher per source. Every raw response is saved with fetched_at, so reruns read the</text>
+<text x="42.0" y="302.5" font-size="12" fill="#343538" text-anchor="start">cache.</text>
+<text x="640.0" y="262.0" font-size="12" fill="#343538" text-anchor="start">Four raw responses saved, each with its own timestamp</text>
+<text x="640.0" y="281.0" font-size="12" fill="#343538" text-anchor="start">Kroger skipped until keys arrive</text>
+<circle cx="51.0" cy="362.6" r="11" fill="#108910"/>
+<text x="51.0" y="367.0" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="66.0" y="367.5" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">Normalize identity</text>
+<text x="42.0" y="386.6" font-size="12" fill="#343538" text-anchor="start">UPC-A, UPC-E and EAN-13 padded to GTIN-14; check digit validated; rows that share a</text>
+<text x="42.0" y="403.2" font-size="12" fill="#343538" text-anchor="start">key merge into one product.</text>
+<text x="640.0" y="362.7" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">UPC-A 0 12345 67890 5 becomes GTIN-14 00012345678905</text>
+<text x="640.0" y="381.7" font-size="12" fill="#343538" text-anchor="start">All four responses now point at the same product</text>
+<circle cx="51.0" cy="463.3" r="11" fill="#108910"/>
+<text x="51.0" y="467.6" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="66.0" y="468.2" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">Evidence store</text>
+<text x="42.0" y="487.3" font-size="12" fill="#343538" text-anchor="start">One row per product per source: source, fetched_at, claim, certified, ingredients, hits.</text>
+<text x="42.0" y="503.8" font-size="12" fill="#343538" text-anchor="start">Provenance stays on every row.</text>
+<text x="646.0" y="464.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">source</text>
+<text x="766.0" y="464.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">claim</text>
+<text x="916.0" y="464.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">certified</text>
+<text x="1006.0" y="464.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">hits</text>
+<text x="646.0" y="485.3" font-size="12" fill="#242529" text-anchor="start">Open Food Facts</text>
+<text x="766.0" y="485.3" font-size="12" fill="#242529" text-anchor="start">gluten-free</text>
+<text x="916.0" y="485.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="1006.0" y="485.3" font-size="12" fill="#242529" text-anchor="start">oats</text>
+<text x="646.0" y="506.3" font-size="12" fill="#242529" text-anchor="start">USDA FDC</text>
+<text x="766.0" y="506.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="916.0" y="506.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="1006.0" y="506.3" font-size="12" fill="#242529" text-anchor="start">oats</text>
+<text x="646.0" y="527.3" font-size="12" fill="#242529" text-anchor="start">GFCO</text>
+<text x="766.0" y="527.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="916.0" y="527.3" font-size="12" fill="#242529" text-anchor="start">yes</text>
+<text x="1006.0" y="527.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="646.0" y="548.3" font-size="12" fill="#242529" text-anchor="start">Claude vision</text>
+<text x="766.0" y="548.3" font-size="12" fill="#242529" text-anchor="start">certification mark</text>
+<text x="916.0" y="548.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<text x="1006.0" y="548.3" font-size="12" fill="#8f939b" text-anchor="start">none</text>
+<circle cx="51.0" cy="606.3" r="11" fill="#108910"/>
+<text x="51.0" y="610.6" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="66.0" y="611.2" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">Detect + apply rules</text>
+<text x="42.0" y="630.3" font-size="12" fill="#343538" text-anchor="start">Detector finds wheat, barley, rye, malt, brewer&#x27;s yeast and uncertified oats. Rules weigh</text>
+<text x="42.0" y="646.8" font-size="12" fill="#343538" text-anchor="start">certification, claims and hits across sources.</text>
+<text x="640.0" y="606.3" font-size="12" fill="#343538" text-anchor="start">Detector: oats found in two sources</text>
+<text x="640.0" y="625.3" font-size="12" fill="#343538" text-anchor="start">Rule: oats pass when a certifier lists the product, and GFCO does</text>
+<circle cx="51.0" cy="707.0" r="11" fill="#108910"/>
+<text x="51.0" y="711.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="66.0" y="711.8" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">State + confidence</text>
+<text x="42.0" y="731.0" font-size="12" fill="#343538" text-anchor="start">One of Verified, Claimed, Conflict, Not gluten-free or Unknown, plus a score from 0 to 1.</text>
+<text x="640.0" y="707.0" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Verified, confidence 0.96 (illustrative)</text>
+<text x="640.0" y="726.0" font-size="12" fill="#343538" text-anchor="start">Without the GFCO listing, a bare claim plus oats would be a Conflict</text>
+<circle cx="334.0" cy="785.0" r="11" fill="#108910"/>
+<text x="334.0" y="789.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="352.0" y="789.0" font-size="13.5" font-weight="700" fill="#003d29" text-anchor="start">Use</text>
+<text x="84.0" y="863.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Product</text>
+<text x="84.0" y="878.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">browser</text>
+<text x="198.0" y="863.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Conflict</text>
+<text x="198.0" y="878.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">queue</text>
+<text x="312.0" y="871.1" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Killer stats</text>
+<text x="426.0" y="863.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Gold-set</text>
+<text x="426.0" y="878.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">labeling tool</text>
+<text x="540.0" y="863.3" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">Threshold</text>
+<text x="540.0" y="878.9" font-size="12" font-weight="700" fill="#003d29" text-anchor="middle">slider</text>
+<text x="640.0" y="793.0" font-size="12" fill="#343538" text-anchor="start">Shows in the browser with a badge, since 0.96 clears the badge threshold. It also passes</text>
+<text x="640.0" y="809.6" font-size="12" fill="#343538" text-anchor="start">the looser filter threshold.</text>
+<text x="640.0" y="849.0" font-size="12" fill="#343538" text-anchor="start">A Conflict would have sent it to the conflict queue instead.</text>
+<text x="28.0" y="965.0" font-size="12" font-weight="700" letter-spacing="0.3" fill="#003d29" text-anchor="start">WHERE THE BADGE AND FILTER THRESHOLDS COME FROM</text>
+<text x="38.0" y="1000.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Claude Haiku pre-labels</text>
+<text x="38.0" y="1019.7" font-size="12" fill="#343538" text-anchor="start">Stand in until a person labels</text>
+<text x="334.0" y="1000.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Gold set</text>
+<text x="334.0" y="1019.7" font-size="12" fill="#343538" text-anchor="start">Hand labels from the labeling tool</text>
+<text x="630.0" y="1000.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Precision and recall</text>
+<text x="630.0" y="1019.7" font-size="12" fill="#343538" text-anchor="start">Scored at every threshold</text>
+<text x="926.0" y="1000.9" font-size="12.5" font-weight="700" fill="#003d29" text-anchor="start">Two operating points</text>
+<text x="926.0" y="1019.7" font-size="12" fill="#343538" text-anchor="start">Badge: precision first. Filter: recall first.</text>
+<text x="24.0" y="1105.0" font-size="12" font-weight="700" fill="#003d29" text-anchor="start">Legend</text>
+<circle cx="98.8" cy="1101.0" r="10" fill="#108910"/>
+<text x="98.8" y="1105.3" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="112.8" y="1105.0" font-size="12" fill="#343538" text-anchor="start">step order</text>
+<path d="M194.4,1100.0 L224.4,1100.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<text x="232.4" y="1105.0" font-size="12" fill="#343538" text-anchor="start">data moves</text>
+<path d="M322.9,1093.0 L322.9,1107.0" fill="none" stroke="#003d29" stroke-width="3" stroke-linejoin="round"/>
+<path d="M322.9,1100.0 L344.9,1100.0" fill="none" stroke="#003d29" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#demoD-ah)"/>
+<text x="352.9" y="1105.0" font-size="12" fill="#343538" text-anchor="start">many join or split</text>
+<text x="508.5" y="1105.0" font-size="12" fill="#343538" text-anchor="start">not live yet (blocked or stand-in)</text>
+</svg>

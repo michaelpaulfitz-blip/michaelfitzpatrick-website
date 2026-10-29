@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Catalog Lab</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%23003d29'/%3E%3Cpath d='M6 15.5h12' stroke='%23ffdc23' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M6 9.5h12' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Instacart IDS tokens, same source as ../../instacart-senior-product-manager-catalog/ (evidence in jobbot3000/demos/instacart/design-tokens.css). */
+:root{
+  --accent:#108910; --accent-hover:#0d720d; --accent-wash:#f6fdf6; --accent-tint:#e9fbe9;
+  --kale:#003d29; --kale-deep:#003121; --mint:#edf7f4;
+  --yellow:#ffdc23;
+  --white:#fff; --cream-100:#f7f5f0; --cream-200:#faf1e5; --cream-300:#efe9e1;
+  --grey-100:#e8e9eb; --grey-200:#c7c8cd; --grey-400:#8f939b; --grey-500:#72767e; --grey-700:#343538; --ink:#242529;
+  --red:#c4291c; --red-wash:#fdecea; --amber:#b25e09; --amber-wash:#fff4e5; --blue:#1a5fb4; --blue-wash:#eaf1fb;
+  --orange:#f58039; --orange-ink:#2a1403;
+  --r:.5rem; --pill:999px; --rail:224px; --maxw:1180px;
+  --head:'DM Serif Display',Georgia,serif;
+  --body:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream-100);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--head);font-weight:400;letter-spacing:0;color:var(--kale)}
+h3,h4{font-weight:600;letter-spacing:0}
+a{color:var(--kale)} a:hover{color:var(--accent)}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+@media(min-width:768px){.wrap{padding:0 2rem}}
+
+/* Rail: horizontal under 1024px, fixed left at 1024 and up. Same pattern as the experience map. */
+header.nav{position:sticky;top:0;z-index:60;background:var(--white);border-bottom:1px solid var(--grey-100)}
+.nav-inner{padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.wordmark{font-weight:700;font-size:.9375rem;color:var(--kale);display:flex;gap:.5rem;align-items:center}
+.wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+nav.links{display:flex;gap:.25rem;flex-wrap:wrap}
+nav.links a{color:var(--grey-700);font-size:.8125rem;font-weight:500;padding:.4rem .8rem;border-radius:var(--pill);text-decoration:none;display:flex;justify-content:space-between;gap:.5rem}
+nav.links a:hover{background:var(--accent-wash);color:var(--accent)}
+nav.links a.active{background:var(--accent);color:var(--white)}
+nav.links a .st{font-size:.625rem;font-weight:700;opacity:.8}
+nav.links a.sub{font-size:.75rem;padding-left:1.6rem;color:var(--grey-500)}
+@media(min-width:1024px){
+  body{padding-left:var(--rail)}
+  header.nav{position:fixed;top:0;left:0;bottom:0;width:var(--rail);border-bottom:none;border-right:1px solid var(--grey-100);overflow-y:auto}
+  .nav-inner{flex-direction:column;align-items:stretch;padding:1.5rem .875rem;gap:1.5rem;min-height:100%}
+  nav.links{flex-direction:column}
+  .nav-foot{margin-top:auto;font-size:.6875rem;color:var(--grey-400);border-top:1px solid var(--grey-100);padding-top:.75rem}
+}
+@media(max-width:1023px){.nav-foot{display:none} nav.links a.sub{display:none}}
+
+.draftbar{background:var(--orange);color:var(--orange-ink);font-size:.75rem;font-weight:600;text-align:center;padding:.45rem 1rem}
+.hero{background:var(--kale);color:var(--white);padding:2.5rem 0 2.25rem}
+.hero h1{color:var(--white);font-size:clamp(1.8rem,1.2rem+2vw,2.4rem);line-height:1.2;margin-bottom:.75rem}
+.hero p{color:var(--mint);max-width:78ch}
+.hero .eyebrow{color:#c7e8d8}
+.band{padding:3rem 0;border-bottom:1px solid var(--grey-100)}
+.band.white{background:var(--white)}
+.eyebrow{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:700;display:block;margin-bottom:.5rem}
+.sechead{max-width:72ch;margin-bottom:1.5rem}
+.sechead h2{font-size:clamp(1.6rem,1.1rem+1.5vw,2.1rem);line-height:1.2;margin-bottom:.5rem}
+.sechead p{color:var(--grey-700)}
+.pending{border:1px dashed var(--grey-200);border-radius:var(--r);padding:1.25rem;color:var(--grey-500);background:var(--white)}
+
+.grid{display:grid;gap:1rem}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);padding:1rem 1.125rem}
+.stat .n{font-size:1.75rem;font-weight:700;color:var(--kale);line-height:1.1}
+.stat .l{font-size:.8125rem;color:var(--grey-500)}
+.pill{display:inline-block;font-size:.6875rem;font-weight:700;padding:.15rem .55rem;border-radius:var(--pill);background:var(--grey-100);color:var(--grey-700);margin:0 .25rem .25rem 0;white-space:nowrap}
+.pill.g{background:var(--accent-tint);color:var(--accent-hover)}
+.pill.r{background:var(--red-wash);color:var(--red)}
+.pill.a{background:var(--amber-wash);color:var(--amber)}
+.pill.b{background:var(--blue-wash);color:var(--blue)}
+.pill.k{background:var(--kale);color:var(--white)}
+.muted{color:var(--grey-500);font-size:.8125rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:1rem}
+.chip{border:1px solid var(--grey-200);background:var(--white);border-radius:var(--pill);padding:.3rem .75rem;font-size:.8125rem;color:var(--grey-700)}
+.chip.on{background:var(--kale);border-color:var(--kale);color:var(--white)}
+input[type=search],select{border:1px solid var(--grey-200);border-radius:var(--pill);padding:.4rem .9rem;font:inherit;font-size:.875rem;background:var(--white)}
+input[type=search]{min-width:240px}
+
+/* Pain points */
+.pp{background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);margin-bottom:.75rem}
+.pp>summary{list-style:none;cursor:pointer;padding:1rem 1.125rem;display:grid;grid-template-columns:3.2rem 1fr auto;gap:.75rem;align-items:start}
+.pp>summary::-webkit-details-marker{display:none}
+.pp .pid{font-weight:700;color:var(--grey-400);font-size:.8125rem;padding-top:.15rem}
+.pp h3{font-size:1rem;color:var(--ink);margin-bottom:.2rem}
+.pp .sum{color:var(--grey-700);font-size:.875rem}
+.pp .cnt{text-align:right}
+.pp .body{padding:0 1.125rem 1.125rem 4.95rem;display:grid;gap:1rem}
+@media(max-width:700px){.pp .body{padding-left:1.125rem}.pp>summary{grid-template-columns:2.6rem 1fr}.pp .cnt{grid-column:2}}
+.pp h4{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.4rem}
+.quote{border-left:3px solid var(--accent);background:var(--accent-wash);padding:.5rem .75rem;border-radius:0 var(--r) var(--r) 0;margin-bottom:.5rem;font-size:.875rem}
+.quote .who{font-size:.75rem;font-weight:700;color:var(--kale);margin-top:.25rem}
+.quote .ctx{font-size:.75rem;color:var(--grey-500)}
+ul.sol{list-style:none;display:grid;gap:.5rem}
+ul.sol li{border:1px solid var(--grey-100);border-radius:var(--r);padding:.5rem .75rem;font-size:.875rem}
+ul.sol li b{color:var(--kale)}
+.prec{font-size:.75rem;color:var(--grey-500);margin-top:.15rem}
+
+/* Lab */
+table{border-collapse:collapse;width:100%;font-size:.8125rem;background:var(--white)}
+th,td{border-bottom:1px solid var(--grey-100);padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-500);background:var(--cream-100);position:sticky;top:0}
+.tablewrap{max-height:520px;overflow:auto;border:1px solid var(--grey-100);border-radius:var(--r)}
+tr.click{cursor:pointer} tr.click:hover td{background:var(--accent-wash)}
+.thumb{width:44px;height:44px;object-fit:contain;background:var(--cream-100);border-radius:4px}
+.sliderbox{display:grid;grid-template-columns:minmax(260px,1fr) minmax(260px,1fr);gap:1.25rem;align-items:start}
+@media(max-width:820px){.sliderbox{grid-template-columns:1fr}}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.cm{display:grid;grid-template-columns:auto 1fr 1fr;gap:2px;font-size:.8125rem;text-align:center}
+.cm div{padding:.5rem;background:var(--cream-100)}
+.cm .h{background:none;font-weight:700;color:var(--grey-500);font-size:.6875rem;text-transform:uppercase}
+.cm .tp{background:var(--accent-tint)} .cm .tn{background:var(--mint)} .cm .fp{background:var(--red-wash)} .cm .fn{background:var(--amber-wash)}
+.big{font-size:2rem;font-weight:700;color:var(--kale);line-height:1}
+.banner{background:var(--amber-wash);border:1px solid #f3d3a6;color:#6b3a05;border-radius:var(--r);padding:.6rem .9rem;font-size:.8125rem;margin-bottom:1rem}
+.btn{border:1px solid var(--kale);background:var(--white);color:var(--kale);border-radius:var(--pill);padding:.4rem .9rem;font-size:.8125rem;font-weight:600}
+.btn.solid{background:var(--kale);color:var(--white)}
+.btn.gf{border-color:var(--accent);background:var(--accent);color:#fff}
+.btn.no{border-color:var(--red);background:var(--red);color:#fff}
+.labeler{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:1.25rem}
+@media(max-width:820px){.labeler{grid-template-columns:1fr}}
+.labeler img{width:100%;max-height:280px;object-fit:contain;background:var(--cream-100);border-radius:var(--r);margin-bottom:.5rem}
+.ev{border:1px solid var(--grey-100);border-radius:var(--r);padding:.5rem .7rem;margin-bottom:.5rem;font-size:.8125rem}
+.ev b{color:var(--kale)}
+mark{background:#ffe9a8;padding:0 .1em}
+dialog{border:none;border-radius:var(--r);max-width:min(980px,94vw);width:100%;padding:1.25rem;box-shadow:0 0 24px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(0,24,16,.45)}
+
+/* Diagrams */
+.tabs{display:flex;gap:.25rem;flex-wrap:wrap;margin-bottom:.75rem}
+.tab{border:1px solid var(--grey-200);background:var(--white);border-radius:var(--pill);padding:.35rem .85rem;font-size:.8125rem}
+.tab.on{background:var(--kale);color:#fff;border-color:var(--kale)}
+.diag{background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);padding:.75rem;overflow:auto}
+.diag img{width:100%;min-width:900px;display:block}
+.crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;margin:.75rem 0}
+ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);padding:.6rem .8rem}
+.tag1w{background:var(--red-wash);color:var(--red)} .tag2w{background:var(--accent-tint);color:var(--accent-hover)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner">
+  <div class="wordmark"><span class="dot"></span><span>Catalog Lab<br><span class="muted" style="font-weight:500">Michael Fitzpatrick</span></span></div>
+  <nav class="links" id="navLinks">
+    <a href="#overview">Overview</a>
+    <a href="#pain">Pain points <span class="st" data-st="pain"></span></a>
+    <a class="sub" href="#pain-research">From public research</a>
+    <a href="#lab">Gluten-free evidence lab <span class="st" data-st="lab"></span></a>
+    <a class="sub" href="#lab-slider">Precision and recall</a>
+    <a class="sub" href="#lab-conflicts">Conflict queue</a>
+    <a class="sub" href="#lab-browse">All products</a>
+    <a href="#reader">Label photo reader <span class="st" data-st="reader"></span></a>
+    <a href="#diagrams">System diagrams <span class="st" data-st="diagrams"></span></a>
+    <a class="sub" href="#diag-demo">Demo architecture</a>
+    <a class="sub" href="#diag-instacart">Instacart current state</a>
+    <a href="#method">How this was built</a>
+  </nav>
+  <div class="nav-foot">Built by Michael Fitzpatrick, October 2026, from public data sources.</div>
+</div></header>
+
+
+<section class="hero" id="overview"><div class="wrap">
+  <span class="eyebrow">Instacart, Senior PM, Catalog</span>
+  <h1>Catalog Lab: catalog pain points and a working gluten-free evidence engine</h1>
+  <p>I built this after my conversations with the catalog team. The pain points gather what came up across those conversations, grouped by theme, with real-world approaches for each. The lab collects gluten-free evidence from independent public sources, scores every product with provenance on each claim, and measures precision and recall at any threshold. The photo reader tests whether package images can act as one more source. The diagrams show the demo architecture next to my current picture of Instacart's catalog.</p>
+  <div class="grid g4" style="margin-top:1.5rem" id="statusCards"></div>
+</div></section>
+
+<section class="band white" id="pain"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Part 1</span><h2>Pain points</h2>
+  <p>Pains that came up in my conversations with the team, grouped by theme. The ones mentioned more than once sort first because they are the strongest signal. Each carries possible approaches, most with a real-world precedent.</p></div>
+  <div id="painStats" class="grid g4" style="margin-bottom:1.25rem"></div>
+  <div class="controls" id="painControls"></div>
+  <div id="painList"><div class="pending">Loading.</div></div>
+  <div style="margin-top:2.5rem" id="pain-research">
+    <div class="sechead"><span class="eyebrow">Outside the conversations</span><h2 style="font-size:1.5rem">From public research</h2><p>Pains that showed up in public material but did not come up in conversation. Lower confidence, and better treated as questions.</p></div>
+    <div id="painResearch"><div class="pending">Pending.</div></div>
+  </div>
+</div></section>
+
+<section class="band" id="lab"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Part 2</span><h2>Gluten-free evidence lab</h2>
+  <p>Independent sources, one product record, provenance on every claim. Each product lands in one of five states and gets a continuous confidence score. The slider sets the operating point.</p></div>
+  <div id="labStats"><div class="pending">Loading.</div></div>
+
+  <div id="lab-slider" style="margin-top:2rem">
+    <h3 style="color:var(--kale);margin-bottom:.5rem">Precision and recall at a chosen threshold</h3>
+    <p class="muted" style="margin-bottom:1rem">Positive class is "gluten-free." A false positive is an unsafe badge on a product with gluten. A false negative is a safe product the filter hides. Products at or above the threshold get the badge.</p>
+    <div id="sliderBox"><div class="pending">Pending.</div></div>
+  </div>
+
+  <div id="lab-conflicts" style="margin-top:2rem">
+    <h3 style="color:var(--kale);margin-bottom:.5rem">Conflict queue</h3>
+    <p class="muted" style="margin-bottom:1rem">Products where sources disagree, or where a gluten-free claim sits next to a gluten ingredient. These are where a wrong badge would come from.</p>
+    <div id="conflicts"><div class="pending">Pending.</div></div>
+  </div>
+
+  <div id="lab-browse" style="margin-top:2rem">
+    <h3 style="color:var(--kale);margin-bottom:.5rem">All products</h3>
+    <div class="controls" id="browseControls"></div>
+    <div id="browse"><div class="pending">Pending.</div></div>
+  </div>
+</div></section>
+
+<section class="band white" id="reader"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Part 3, experimental</span><h2>Label photo reader</h2>
+  <p>A vision model reads the ingredient panel and front of pack, then the read is compared to the listed data. Two models run on every product so the cost and accuracy trade-off is visible. Neither the model nor the crowd-sourced listing is ground truth.</p></div>
+  <div id="readerBox"><div class="pending">Loading.</div></div>
+</div></section>
+
+<section class="band" id="diagrams"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Part 4</span><h2>System diagrams</h2>
+  <p>The demo architecture, then my current picture of Instacart's catalog. In the Instacart diagram, dashed boxes are guesses I would want to confirm with the team. Click a diagram to open it full size.</p></div>
+  <div id="diag-demo"><h3 style="color:var(--kale);margin-bottom:.75rem">Demo architecture</h3><div id="diagDemo"><div class="pending">Pending.</div></div></div>
+  <div id="diag-instacart" style="margin-top:2.5rem"><h3 style="color:var(--kale);margin-bottom:.75rem">Instacart catalog, current state as I understand it</h3><div id="diagIc"><div class="pending">Pending.</div></div></div>
+</div></section>
+
+<section class="band white" id="method"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Method and limits</span><h2>How this was built</h2>
+  <p>What the lab uses, what it assumes, and what I would do next.</p></div>
+  <div class="grid g2">
+    <div class="card"><h3 style="color:var(--kale);margin-bottom:.4rem">Sources</h3><ul style="padding-left:1.1rem">
+      <li>Open Food Facts through its documented API, as an identified client within the published rate limit.</li>
+      <li>USDA FoodData Central branded foods.</li>
+      <li>The GFCO public product finder for certification, matched by UPC.</li>
+      <li>No Instacart data, and nothing collected from Instacart's site. The Kroger product API is wired in and waiting on keys, so the same checks can run on a retail partner's feed.</li></ul></div>
+    <div class="card"><h3 style="color:var(--kale);margin-bottom:.4rem">The sample</h3><ul style="padding-left:1.1rem">
+      <li>402 products: twelve gluten-free and twelve regular in each of 13 categories, extra oats, and every genuine conflict found in a wider sweep.</li>
+      <li>The sample is enriched for conflicts on purpose. Its rates show what the engine catches and are not catalog rates. Each headline number states its frame.</li></ul></div>
+    <div class="card"><h3 style="color:var(--kale);margin-bottom:.4rem">Rules and assumptions</h3><ul style="padding-left:1.1rem">
+      <li>Verified means a GFCO listing matched by UPC. Other certifiers are not checked yet, and a listing under a similar name with a different UPC carries no weight.</li>
+      <li>Implied wheat counts as gluten: bare flour, plain soy sauce, bread crumbs, beer and ale. This rule is the likeliest source of a false conflict.</li>
+      <li>Confidence weights are set by hand today. They should be fit to a hand-labeled gold set.</li>
+      <li>Until that gold set exists, precision and recall are measured against Claude Haiku pre-labels, three votes per product, 145 of 150 unanimous.</li></ul></div>
+    <div class="card"><h3 style="color:var(--kale);margin-bottom:.4rem">What I would do next</h3><ul style="padding-left:1.1rem">
+      <li>Label a gold set by hand, ideally with a second labeler so agreement can be reported.</li>
+      <li>Add the other certifiers and the Kroger partner feed.</li>
+      <li>Extend to dairy-free and the major allergens. The detector and scorer take new families as new term lists and certifier sources.</li></ul></div>
+  </div>
+</div></section>
+
+<dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
+
+<script>
+const V = '20261029a';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';
+async function load(name){ try{ const r = await fetch('data/' + name + '?v=' + V + '-' + Date.now()); if(!r.ok) return null; return await r.json(); }catch(e){ return null; } }
+const store = { get(k, d){ try{ return JSON.parse(localStorage.getItem(k)) ?? d; }catch(e){ return d; } }, set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} } };
+function setStatus(key, ok, txt){ const el = document.querySelector(`[data-st="${key}"]`); if(el) el.textContent = ok ? txt : 'pending'; }
+
+/* ── Status cards ── */
+function statusCards(D){
+  const c = [
+    ['Pain points', D.pain ? D.pain.painpoints.length + ' found' : 'pending', D.pain ? D.pain.painpoints.filter(p => nPeople(p) > 1).length + ' mentioned more than once' : 'loading'],
+    ['Products scored', D.gf ? D.gf.products.length : 'pending', D.gf ? Object.entries(countBy(D.gf.products, p => p.state)).map(([k,v]) => k + ' ' + v).join(', ') : 'loading'],
+    ['Photos read', D.reader ? (D.reader.products||[]).length : 'pending', D.reader ? (D.reader.models||[]).map(m => String(m.id||m).replace('claude-','').replace(/-5-5$/,' 5.5')).join(' and ') : 'loading'],
+    ['Diagrams', D.diag ? D.diag.diagrams.length : 'pending', D.diag ? 'The demo and Instacart today' : 'loading'],
+  ];
+  $('#statusCards').innerHTML = c.map(([l,n,s]) => `<div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff"><div style="font-size:1.5rem;font-weight:700">${esc(n)}</div><div style="font-weight:600">${esc(l)}</div><div style="font-size:.75rem;color:#c7e8d8">${esc(s)}</div></div>`).join('');
+}
+const nPeople = p => p.mentions ?? p.confirmed_by_count ?? 0;
+function countBy(a, f){ const o = {}; for(const x of a){ const k = f(x) ?? 'unknown'; o[k] = (o[k]||0) + 1; } return o; }
+
+/* ── Pain points ── */
+const painState = { theme:null, multi:false, q:'' };
+function renderPain(P){
+  if(!P){ return; }
+  setStatus('pain', true, P.painpoints.length);
+  const people = {};
+  P.painpoints.sort((a,b) => nPeople(b) - nPeople(a));
+  const multi = P.painpoints.filter(p => nPeople(p) > 1);
+  $('#painStats').innerHTML = [
+    [P.painpoints.length, 'pain points from conversations'],
+    [multi.length, 'mentioned more than once'],
+    [(P.themes||[]).length, 'themes'],
+    [(P.research_only||[]).length, 'more from public research'],
+  ].map(([n,l]) => `<div class="card stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+  const themes = P.themes || [...new Set(P.painpoints.map(p => p.theme))];
+  $('#painControls').innerHTML = `<input type="search" id="painQ" placeholder="Search pain points">
+    <button class="chip ${painState.multi?'on':''}" data-multi="1">Mentioned more than once</button>
+    <span style="flex-basis:100%;height:0"></span>
+    <button class="chip ${!painState.theme?'on':''}" data-theme="">All themes</button>
+    ${themes.map(t => `<button class="chip ${painState.theme===t?'on':''}" data-theme="${esc(t)}">${esc(t)}</button>`).join('')}`;
+  $('#painQ').value = painState.q;
+  $('#painQ').oninput = e => { painState.q = e.target.value.toLowerCase(); drawPainList(P, people); };
+  $('#painControls').querySelectorAll('[data-theme]').forEach(b => b.onclick = () => { painState.theme = b.dataset.theme || null; renderPain(P); });
+  $('#painControls').querySelector('[data-multi]').onclick = () => { painState.multi = !painState.multi; renderPain(P); };
+  drawPainList(P, people);
+  $('#painResearch').innerHTML = (P.research_only||[]).length ? (P.research_only).map(p => painCard(p, people, true)).join('') : '<div class="pending">None listed.</div>';
+}
+function painCard(p, people, research){
+  return `<details class="pp" id="${esc(p.id)}"><summary>
+    <div class="pid">${esc(p.id)}</div>
+    <div><h3>${esc(p.title)}</h3><div class="sum">${esc(p.summary)}</div>
+      <div style="margin-top:.4rem"><span class="pill b">${esc(p.theme||'')}</span></div></div>
+    <div class="cnt">${research ? `<span class="pill">research</span>` : nPeople(p) > 1 ? `<span class="pill k">Mentioned several times</span>` : `<span class="pill">Mentioned once</span>`}</div>
+  </summary><div class="body">
+    ${p.why_it_matters ? `<div><h4>Why it matters</h4><div style="font-size:.875rem">${esc(p.why_it_matters)}</div></div>` : ''}
+    <div><h4>Possible approaches</h4><ul class="sol">${(p.solutions||[]).map(s => `<li><b>${esc(s.name)}</b> <span class="pill ${s.ambition==='bold'?'a':''}">${esc(s.ambition||'')}</span><div>${esc(s.description)}</div>${s.precedent ? `<div class="prec">Precedent: ${esc(s.precedent)}</div>` : ''}</li>`).join('')}</ul></div>
+    ${(p.related||[]).length ? `<div class="muted">Related: ${p.related.map(r => `<a href="#${esc(r)}">${esc(r)}</a>`).join(', ')}</div>` : ''}
+  </div></details>`;
+}
+function drawPainList(P, people){
+  const q = painState.q;
+  const list = P.painpoints.filter(p =>
+    (!painState.theme || p.theme === painState.theme) &&
+    (!painState.multi || nPeople(p) > 1) &&
+    (!q || JSON.stringify(p).toLowerCase().includes(q)));
+  $('#painList').innerHTML = list.length ? list.map(p => painCard(p, people)).join('') : '<div class="pending">No pain points match.</div>';
+}
+
+/* ── Lab ── */
+let GF = null;
+const GOLD_KEY = 'iclab.gold.v1';
+function gold(){ return store.get(GOLD_KEY, {}); }
+function truthSet(){
+  const g = gold(); const labeled = Object.entries(g).filter(([,v]) => v === 'gf' || v === 'not');
+  if(labeled.length >= 20){
+    return { kind:'gold', n:labeled.length, map:Object.fromEntries(labeled.map(([k,v]) => [k, v === 'gf'])) };
+  }
+  const m = {};
+  for(const p of GF.products){ const v = p.prelabel?.gluten_free; if(v === 'yes' || v === true) m[p.gtin14] = true; else if(v === 'no' || v === false) m[p.gtin14] = false; }
+  return { kind:'prelabel', n:Object.keys(m).length, map:m };
+}
+function stateClass(s){ s = (s||'').toLowerCase(); return s.startsWith('verified') ? 'g' : s.startsWith('conflict') ? 'r' : s.startsWith('claimed') ? 'a' : s.startsWith('not') ? '' : 'b'; }
+function renderLab(G, S){
+  if(!G){ return; }
+  GF = G; setStatus('lab', true, G.products.length);
+  const st = countBy(G.products, p => p.state);
+  const ss = G.sources_status || {};
+  const srcLine = Object.entries(ss).map(([k,v]) => `<span class="pill ${/ok|done|live|complete/i.test(JSON.stringify(v)) ? 'g' : /block|skip|pending|prohib/i.test(JSON.stringify(v)) ? 'a' : ''}">${esc(k)}: ${esc(typeof v === 'object' ? (v.status || (v.matched != null ? v.matched + ' matched of ' + v.queried : JSON.stringify(v))) : v)}</span>`).join('');
+  $('#labStats').innerHTML = `<div class="grid g4">${Object.entries(st).sort((a,b)=>b[1]-a[1]).map(([k,v]) => `<div class="card stat"><div class="n">${v}</div><div class="l"><span class="pill ${stateClass(k)}">${esc(k)}</span></div></div>`).join('')}</div>
+    <div class="card" style="margin-top:1rem"><div class="muted" style="margin-bottom:.35rem">Source status</div>${srcLine || '<span class="muted">Not reported.</span>'}</div>
+    ${S && (S.killer_stats||S.killer||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Headline findings</div><ul style="padding-left:1.1rem">${(S.killer_stats||S.killer).map(k => `<li style="margin-bottom:.4rem">${esc(typeof k === 'string' ? k : (k.sentence || k.text || JSON.stringify(k)))}${k.frame ? `<div class="muted">${k.numerator != null ? k.numerator + ' of ' + k.denominator + '. ' : ''}${esc(k.frame)}</div>` : ''}</li>`).join('')}</ul><p class="muted">Where a count comes from the 402-product sample, the sample was built to surface conflicts, so the rate is not a catalog-wide rate.</p></div>` : ''}
+    ${S && (S.top_conflicts||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Strongest conflicts</div><p class="muted" style="margin-bottom:.4rem">Ranked by the pipeline. In each, at least one source is stale or wrong, and a person should look before any badge changes. Click one for its evidence.</p><ol style="padding-left:1.25rem">${S.top_conflicts.slice(0,10).map(t => `<li style="margin-bottom:.35rem"><a href="#" data-top="${esc(t.gtin14)}"><b>${esc(t.brand || 'Unbranded')}</b> ${esc(t.name)}</a><div class="muted">${esc((t.reasons||[])[0]||'')}</div></li>`).join('')}</ol></div>` : ''}`;
+  $('#labStats').querySelectorAll('[data-top]').forEach(a => a.onclick = e => { e.preventDefault(); openProduct(a.dataset.top); });
+  drawSlider(); drawConflicts(); drawBrowse();
+}
+function prAt(t, T){
+  let tp=0, fp=0, fn=0, tn=0;
+  for(const p of GF.products){ if(!(p.gtin14 in T.map) || p.confidence_gf == null) continue; const y = T.map[p.gtin14], yhat = p.confidence_gf >= t;
+    if(y && yhat) tp++; else if(!y && yhat) fp++; else if(y && !yhat) fn++; else tn++; }
+  const prec = tp+fp ? tp/(tp+fp) : null, rec = tp+fn ? tp/(tp+fn) : null;
+  return { t, tp, fp, fn, tn, prec, rec, f1: prec && rec ? 2*prec*rec/(prec+rec) : null };
+}
+let sliderT = 0.5;
+function drawSlider(){
+  const T = truthSet();
+  const curve = []; for(let i=1;i<100;i++) curve.push(prAt(i/100, T));
+  const badge = curve.filter(c => c.prec != null && c.prec >= 0.99 && c.tp > 0).sort((a,b) => (b.rec??0)-(a.rec??0))[0] || curve.filter(c=>c.prec!=null).sort((a,b)=>b.prec-a.prec)[0];
+  const filt = curve.filter(c => c.prec != null && c.prec >= 0.90).sort((a,b) => (b.rec??0)-(a.rec??0))[0] || curve[0];
+  $('#sliderBox').innerHTML = `
+    <div class="banner">${T.kind === 'gold' ? `Measuring against your ${T.n} gold labels.` : `Measured against ${T.n} model pre-labels from Claude Haiku, three votes per product. These are provisional until a hand-labeled gold set replaces them.`}</div>
+    <div class="sliderbox">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><b>Threshold</b><span class="big" id="tVal"></span></div>
+        <input type="range" min="0.01" max="0.99" step="0.01" id="tRange" value="${sliderT}">
+        <div class="controls" style="margin-top:.5rem">
+          <button class="btn" id="pBadge">Badge: precision first (${badge ? badge.t.toFixed(2) : 'n/a'})</button>
+          <button class="btn" id="pFilter">Filter: recall first (${filt ? filt.t.toFixed(2) : 'n/a'})</button>
+        </div>
+        <div class="grid g4" style="grid-template-columns:repeat(3,1fr);margin-top:.5rem">
+          <div class="stat"><div class="n" id="mP"></div><div class="l">Precision</div></div>
+          <div class="stat"><div class="n" id="mR"></div><div class="l">Recall</div></div>
+          <div class="stat"><div class="n" id="mF"></div><div class="l">F1</div></div>
+        </div>
+        <div class="cm" style="margin-top:1rem" id="cm"></div>
+        <p class="muted" style="margin-top:.75rem" id="cmText"></p>
+      </div>
+      <div class="card"><b>Precision and recall across thresholds</b><div id="prChart"></div><p class="muted">Green is precision, amber is recall. The vertical line is the current threshold.</p></div>
+    </div>`;
+  const upd = () => {
+    sliderT = +$('#tRange').value; const m = prAt(sliderT, T);
+    $('#tVal').textContent = sliderT.toFixed(2); $('#mP').textContent = pct(m.prec); $('#mR').textContent = pct(m.rec); $('#mF').textContent = m.f1 == null ? 'n/a' : m.f1.toFixed(2);
+    $('#cm').innerHTML = `<div class="h"></div><div class="h">Truth: gluten-free</div><div class="h">Truth: has gluten</div>
+      <div class="h" style="text-align:right">Badged</div><div class="tp"><b>${m.tp}</b><br>correct badge</div><div class="fp"><b>${m.fp}</b><br>unsafe badge</div>
+      <div class="h" style="text-align:right">Not badged</div><div class="fn"><b>${m.fn}</b><br>hidden safe item</div><div class="tn"><b>${m.tn}</b><br>correctly hidden</div>`;
+    $('#cmText').textContent = `At ${sliderT.toFixed(2)}, ${m.fp} product${m.fp===1?'':'s'} with gluten would carry a gluten-free badge and ${m.fn} safe product${m.fn===1?'':'s'} would be hidden from the filter.`;
+    drawPR(curve, sliderT);
+  };
+  $('#tRange').oninput = upd;
+  $('#pBadge').onclick = () => { if(badge){ $('#tRange').value = badge.t; upd(); } };
+  $('#pFilter').onclick = () => { if(filt){ $('#tRange').value = filt.t; upd(); } };
+  upd();
+}
+function drawPR(curve, t){
+  const W=460,H=240,L=36,B=26, x = v => L + v*(W-L-8), y = v => H-B - v*(H-B-10);
+  const line = k => curve.filter(c => c[k] != null).map((c,i) => (i?'L':'M') + x(c.t).toFixed(1) + ',' + y(c[k]).toFixed(1)).join('');
+  const ticks = [0,.25,.5,.75,1];
+  $('#prChart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Precision and recall by threshold">
+    ${ticks.map(v => `<line x1="${L}" x2="${W-8}" y1="${y(v)}" y2="${y(v)}" stroke="#e8e9eb"/><text x="${L-6}" y="${y(v)+4}" font-size="10" text-anchor="end" fill="#72767e">${v*100}%</text><text x="${x(v)}" y="${H-8}" font-size="10" text-anchor="middle" fill="#72767e">${v}</text>`).join('')}
+    <path d="${line('prec')}" fill="none" stroke="#108910" stroke-width="2.5"/>
+    <path d="${line('rec')}" fill="none" stroke="#b25e09" stroke-width="2.5"/>
+    <line x1="${x(t)}" x2="${x(t)}" y1="8" y2="${H-B}" stroke="#003d29" stroke-dasharray="4 3"/>
+  </svg>`;
+}
+function drawConflicts(){
+  const c = GF.products.filter(p => /conflict/i.test(p.state||'')).sort((a,b) => (b.conflict_reasons||[]).length - (a.conflict_reasons||[]).length);
+  $('#conflicts').innerHTML = c.length ? `<p class="muted" style="margin-bottom:.5rem">${c.length} products. Click a row for the evidence.</p><div class="tablewrap"><table><thead><tr><th></th><th>Product</th><th>Brand</th><th>Why it conflicts</th><th>Score</th></tr></thead><tbody>
+    ${c.map(p => `<tr class="click" data-g="${esc(p.gtin14)}"><td>${p.image_front ? `<img class="thumb" loading="lazy" src="${esc(p.image_front)}" alt="">` : ''}</td><td>${esc(p.name)}</td><td>${esc(p.brand)}</td><td>${(p.conflict_reasons||[]).map(esc).join('<br>')}</td><td>${p.confidence_gf != null ? p.confidence_gf.toFixed(2) : ''}</td></tr>`).join('')}
+    </tbody></table></div>` : '<div class="pending">No conflicts found yet.</div>';
+  $('#conflicts').querySelectorAll('tr.click').forEach(r => r.onclick = () => openProduct(r.dataset.g));
+}
+const GLUTEN_RE = /\b(wheat|barley|rye|malt\w*|spelt|semolina|durum|farro|kamut|khorasan|einkorn|emmer|bulgur|couscous|seitan|triticale|brewer'?s yeast|oats?)\b/gi;
+const hl = s => esc(s).replace(GLUTEN_RE, m => `<mark>${m}</mark>`);
+const SRC_NAME = { off:'Open Food Facts', fdc:'USDA FoodData Central', gfco:'GFCO Product Finder', kroger:'Kroger API', label_photo:'Label photo reader' };
+const srcName = s => SRC_NAME[s] || s;
+const evUseful = e => e.status === 'ok' || e.status === 'listed';
+const hitTerms = hs => [...new Set((hs||[]).map(h => typeof h === 'string' ? h : (h.kind === 'conditional' ? h.term + ' (check)' : h.term)))];
+function evidenceHtml(p){
+  const ev = p.evidence||[], use = ev.filter(evUseful), rest = ev.filter(e => !evUseful(e));
+  return (use.map(e =>`<div class="ev"><b>${esc(srcName(e.source))}</b> ${e.claim_gf===true?'<span class="pill g">claims gluten-free</span>':e.claim_gf===false?'<span class="pill">no claim</span>':''}${e.certified===true?`<span class="pill k">certified${e.certifier?': '+esc(e.certifier):''}</span>`:''}${hitTerms(e.gluten_hits).length?`<span class="pill r">${hitTerms(e.gluten_hits).map(esc).join(', ')}</span>`:''}
+    ${e.ingredients_excerpt ? `<div style="margin-top:.25rem">${hl(e.ingredients_excerpt)}</div>` : ''}
+    ${e.contains_statement ? `<div class="muted">Contains: ${esc(e.contains_statement)}</div>` : ''}${e.may_contain ? `<div class="muted">May contain: ${esc(Array.isArray(e.may_contain)?e.may_contain.join(', '):e.may_contain)}</div>` : ''}
+    ${e.url ? `<div class="muted"><a href="${esc(e.url)}" target="_blank" rel="noopener">source</a>${e.fetched_at ? ' fetched ' + esc(e.fetched_at.slice(0,10)) : ''}</div>` : ''}</div>`).join('') || '<div class="muted">No evidence records.</div>')
+    + (rest.length ? `<div class="muted" style="margin-top:.4rem">No data from: ${rest.map(e => esc(srcName(e.source)) + ' (' + esc(String(e.status||'').replace(/_/g,' ')) + ')').join(', ')}</div>` : '');
+}
+function openProduct(g){
+  const p = GF.products.find(x => x.gtin14 === g); if(!p) return;
+  $('#dlgBody').innerHTML = `<div class="labeler"><div>${p.image_front?`<img src="${esc(p.image_front)}" alt="">`:''}${p.image_ingredients?`<img src="${esc(p.image_ingredients)}" alt="">`:''}</div>
+    <div><h3 style="color:var(--kale)">${esc(p.name)}</h3><div class="muted">${esc(p.brand)} · UPC ${esc(p.upc_original||p.gtin14)} · ${esc(p.category||'')}</div>
+    <div style="margin:.5rem 0"><span class="pill ${stateClass(p.state)}">${esc(p.state)}</span> <span class="pill">confidence ${p.confidence_gf!=null?p.confidence_gf.toFixed(2):'n/a'}</span>${p.off_url?` <a class="muted" href="${esc(p.off_url)}" target="_blank" rel="noopener">Open Food Facts</a>`:''}</div>
+    ${(p.conflict_reasons||[]).length?`<div class="banner">${p.conflict_reasons.map(esc).join('<br>')}</div>`:''}
+    ${(p.flags||[]).length?`<div class="muted" style="margin:.4rem 0">Flags: ${p.flags.map(esc).join('; ')}</div>`:''}
+    ${p.prelabel?`<div class="ev"><b>Model pre-label (not gold)</b>: ${esc(p.prelabel.gluten_free)}. ${esc(p.prelabel.reasoning||'')}</div>`:''}
+    ${evidenceHtml(p)}</div></div>`;
+  $('#dlg').showModal();
+}
+let labIdx = 0;
+function drawLabeler(){
+  const cands = GF.products.filter(p => p.gold_candidate);
+  if(!cands.length){ $('#labeler').innerHTML = '<div class="pending">No gold candidates in the data yet.</div>'; return; }
+  const g = gold(); labIdx = Math.max(0, Math.min(labIdx, cands.length - 1)); const p = cands[labIdx];
+  const done = cands.filter(c => g[c.gtin14]).length;
+  $('#labeler').innerHTML = `<div class="controls"><b>${done} of ${cands.length} labeled</b>
+      <button class="btn" id="lPrev">Previous</button><button class="btn" id="lNext">Next</button><button class="btn" id="lSkip">Next unlabeled</button>
+      <button class="btn solid" id="lExport">Export labels</button><label class="btn" style="cursor:pointer">Import<input type="file" id="lImport" accept="application/json" hidden></label></div>
+    <div class="card labeler"><div>${p.image_front?`<img src="${esc(p.image_front)}" alt="">`:''}${p.image_ingredients?`<img src="${esc(p.image_ingredients)}" alt="">`:''}</div>
+    <div><div class="muted">${labIdx+1} of ${cands.length}</div><h3 style="color:var(--kale)">${esc(p.name)}</h3><div class="muted">${esc(p.brand)} · UPC ${esc(p.upc_original||p.gtin14)}</div>
+      <div class="controls" style="margin:.75rem 0">
+        <button class="btn gf" data-l="gf">Gluten-free (G)</button><button class="btn no" data-l="not">Has gluten (N)</button><button class="btn" data-l="unsure">Unsure (U)</button>
+        <span class="pill ${g[p.gtin14]==='gf'?'g':g[p.gtin14]==='not'?'r':''}">${g[p.gtin14] ? 'Your label: ' + g[p.gtin14] : 'Unlabeled'}</span></div>
+      <p class="muted" style="margin-bottom:.5rem">Model pre-label and state are hidden here so they do not anchor you. Judge from the package and the ingredients.</p>
+      ${evidenceHtml({evidence:(p.evidence||[]).map(e => ({...e, claim_gf:e.claim_gf, certified:e.certified, gluten_hits:[]}))})}</div></div>`;
+  const setL = v => { const gg = gold(); gg[p.gtin14] = v; store.set(GOLD_KEY, gg); labIdx = Math.min(labIdx+1, cands.length-1); drawLabeler(); drawSlider(); };
+  $('#labeler').querySelectorAll('[data-l]').forEach(b => b.onclick = () => setL(b.dataset.l));
+  $('#lPrev').onclick = () => { labIdx--; drawLabeler(); };
+  $('#lNext').onclick = () => { labIdx++; drawLabeler(); };
+  $('#lSkip').onclick = () => { const gg = gold(); const i = cands.findIndex((c,i) => i > labIdx && !gg[c.gtin14]); if(i >= 0){ labIdx = i; drawLabeler(); } };
+  $('#lExport').onclick = () => { const blob = new Blob([JSON.stringify({labeled_by:'Michael Fitzpatrick', exported:new Date().toISOString(), labels:gold()}, null, 1)], {type:'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'gf-gold-labels.json'; a.click(); };
+  $('#lImport').onchange = async e => { try{ const j = JSON.parse(await e.target.files[0].text()); store.set(GOLD_KEY, {...gold(), ...(j.labels||j)}); drawLabeler(); drawSlider(); }catch(err){ alert('Could not read that file.'); } };
+}
+document.addEventListener('keydown', e => {
+  if(!GF || e.target.tagName === 'INPUT' || $('#dlg').open) return;
+  if(!$('#labeler')) return; const r = $('#labeler').getBoundingClientRect(); if(r.bottom < 0 || r.top > innerHeight) return;
+  const k = e.key.toLowerCase(); const b = $(`#labeler [data-l="${k==='g'?'gf':k==='n'?'not':k==='u'?'unsure':''}"]`);
+  if(b){ b.click(); e.preventDefault(); } else if(e.key === 'ArrowRight'){ labIdx++; drawLabeler(); } else if(e.key === 'ArrowLeft'){ labIdx--; drawLabeler(); }
+});
+const browseState = { q:'', state:'' };
+function drawBrowse(){
+  const states = Object.keys(countBy(GF.products, p => p.state));
+  $('#browseControls').innerHTML = `<input type="search" id="bQ" placeholder="Search name, brand, UPC, ingredient"><select id="bS"><option value="">All states</option>${states.map(s => `<option ${browseState.state===s?'selected':''}>${esc(s)}</option>`).join('')}</select><span class="muted" id="bN"></span>`;
+  $('#bQ').value = browseState.q;
+  const draw = () => {
+    const q = browseState.q.toLowerCase();
+    const list = GF.products.filter(p => (!browseState.state || p.state === browseState.state) && (!q || JSON.stringify([p.name,p.brand,p.upc_original,p.gtin14,(p.evidence||[]).map(e=>e.ingredients_excerpt)]).toLowerCase().includes(q)));
+    $('#bN').textContent = list.length + ' products';
+    $('#browse').innerHTML = `<div class="tablewrap"><table><thead><tr><th></th><th>Product</th><th>Brand</th><th>Category</th><th>State</th><th>Score</th><th>Sources</th></tr></thead><tbody>${list.slice(0,400).map(p => `<tr class="click" data-g="${esc(p.gtin14)}"><td>${p.image_front?`<img class="thumb" loading="lazy" src="${esc(p.image_front)}" alt="">`:''}</td><td>${esc(p.name)}</td><td>${esc(p.brand)}</td><td>${esc(p.category||'')}</td><td><span class="pill ${stateClass(p.state)}">${esc(p.state)}</span></td><td>${p.confidence_gf!=null?p.confidence_gf.toFixed(2):''}</td><td>${(p.evidence||[]).filter(evUseful).map(e => esc(e.source === 'label_photo' ? 'photo' : e.source.toUpperCase())).join(', ')}</td></tr>`).join('')}</tbody></table></div>${list.length>400?'<p class="muted">Showing the first 400. Search to narrow.</p>':''}`;
+    $('#browse').querySelectorAll('tr.click').forEach(r => r.onclick = () => openProduct(r.dataset.g));
+  };
+  $('#bQ').oninput = e => { browseState.q = e.target.value; draw(); };
+  $('#bS').onchange = e => { browseState.state = e.target.value; draw(); };
+  draw();
+}
+
+/* ── Reader ── */
+function renderReader(R){
+  if(!R){ return; }
+  setStatus('reader', true, (R.products||[]).length);
+  const cs = R.cost_summary?.per_model || {};
+  const byc = R.metrics?.by_class || {};
+  const models = R.models || Object.keys(cs);
+  const M = R.metrics || {};
+  const frac = o => o && o.denominator ? `${o.numerator} of ${o.denominator}` : 'n/a';
+  const vsl = M.agreement_with_listing?.verdict_vs_listing || {};
+  const rr = M.review_routing || {};
+  $('#readerBox').innerHTML = `<div class="grid g4">
+      <div class="card stat"><div class="n">${M.n ?? (R.products||[]).length}</div><div class="l">products read by both models</div></div>
+      <div class="card stat"><div class="n">${frac(M.agreement_sonnet_haiku?.verdict)}</div><div class="l">same verdict, Sonnet and Haiku</div></div>
+      ${Object.entries(vsl).map(([m,o]) => `<div class="card stat"><div class="n">${frac(o)}</div><div class="l">${esc(m)} verdict matches the listing</div></div>`).join('')}
+      ${Object.entries(byc).map(([k,v]) => `<div class="card stat"><div class="n">${v}</div><div class="l">${esc(k.replace(/_/g,' '))}</div></div>`).join('')}
+    </div>
+    ${M.ground_truth_note ? `<div class="banner" style="margin-top:1rem">${esc(M.ground_truth_note)}</div>` : ''}
+    ${(R.findings||[]).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Findings</div><ul style="padding-left:1.1rem">${R.findings.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
+    ${Object.keys(cs).length ? `<div class="card" style="margin-top:1rem"><div class="eyebrow">Cost</div><table><thead><tr><th>Model</th><th>Calls</th><th>Avg input tokens</th><th>Avg output tokens</th><th>Per product</th><th>Per million SKUs</th><th>This run</th></tr></thead><tbody>${Object.entries(cs).map(([m,c]) => `<tr><td>${esc(m)}</td><td>${c.calls??''}</td><td>${c.avg_input_tokens??''}</td><td>${c.avg_output_tokens??''}</td><td>$${c.usd_per_product!=null?(+c.usd_per_product).toFixed(4):'?'}</td><td>$${c.usd_per_million_skus!=null?Math.round(c.usd_per_million_skus).toLocaleString():'?'}</td><td>$${c.est_usd!=null?(+c.est_usd).toFixed(2):'?'}</td></tr>`).join('')}
+      ${rr.cascade_usd_per_million_skus ? `<tr><td>Haiku first, Sonnet on anything uncertain</td><td colspan="3">${frac(rr.escalated_to_sonnet)} escalated; missed ${frac(rr.sonnet_flags_missed_by_cascade)} Sonnet flags</td><td>$${(+rr.cascade_usd_per_product).toFixed(4)}</td><td>$${Math.round(rr.cascade_usd_per_million_skus).toLocaleString()}</td><td></td></tr>` : ''}
+      </tbody></table><p class="muted" style="margin-top:.5rem">${esc(R.cost_summary?.pricing_source || '')}</p>
+      ${rr.human_review_rule ? `<p class="muted">Human review rule: ${esc(rr.human_review_rule)} That routes ${frac(rr.human_review)} to a person.</p>` : ''}</div>` : ''}
+    <div class="controls" style="margin-top:1.25rem" id="rCtl"><button class="chip on" data-c="">All</button>${Object.keys(byc).map(k => `<button class="chip" data-c="${esc(k)}">${esc(k.replace(/_/g,' '))}</button>`).join('')}</div>
+    <div id="rList"></div>
+    <p class="muted" style="margin-top:1rem">Package photos from Open Food Facts contributors, licensed CC BY-SA. Each card links to its source.</p>`;
+  const draw = c => {
+    const list = (R.products||[]).filter(p => !c || p.comparison?.class === c);
+    $('#rList').innerHTML = list.map(p => {
+      const cls = p.comparison?.class || '';
+      return `<details class="pp"><summary><div>${p.img_front?`<img class="thumb" loading="lazy" src="${esc(p.img_front)}" alt="">`:''}</div><div><h3>${esc(p.name)}</h3><div class="sum">${esc(p.brand||'')} · UPC ${esc(p.upc_original||p.gtin14)}</div><div class="sum">${esc(p.comparison?.notes||'')}</div></div><div class="cnt"><span class="pill ${/agree/.test(cls)?'g':/contradict/.test(cls)?'r':/missing/.test(cls)?'a':''}">${esc(cls.replace(/_/g,' '))}</span></div></summary>
+        <div class="body" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+          <div>${p.img_ingredients?`<img style="width:100%;border-radius:8px" loading="lazy" src="${esc(p.img_ingredients)}" alt="Ingredient panel">`:''}<div class="muted">${p.image_sources?.ingredients?`<a href="${esc(p.image_sources.ingredients)}" target="_blank" rel="noopener">image source</a>`:''}</div></div>
+          <div><h4>Listing</h4><div class="ev">${p.listing?.labels_gf!=null?`GF label: ${esc(p.listing.labels_gf)}<br>`:''}${hl(p.listing?.ingredients_excerpt||'')}${p.listing?.allergens?`<div class="muted">Allergens: ${esc(Array.isArray(p.listing.allergens)?p.listing.allergens.join(', '):p.listing.allergens)}</div>`:''}</div></div>
+          ${Object.entries(p.reads||{}).map(([m,r]) => `<div><h4>${esc(m)}</h4><div class="ev"><span class="pill ${r.model_verdict==='gluten_free'?'g':r.model_verdict==='contains_gluten'?'r':'a'}">${esc((r.model_verdict||'').replace(/_/g,' '))}</span> <span class="pill">${esc(r.image_quality||'')}</span>${r.confidence!=null?` <span class="pill">conf ${(+r.confidence).toFixed(2)}</span>`:''}
+            ${r.gluten_free_claim_text?`<div>Claim on pack: "${esc(r.gluten_free_claim_text)}"</div>`:''}
+            ${(r.certification_marks||[]).length?`<div>Marks: ${r.certification_marks.map(c => esc(c.name||c)).join(', ')}</div>`:''}
+            ${r.contains_statement?`<div class="muted">Contains: ${esc(r.contains_statement)}</div>`:''}
+            <div style="margin-top:.25rem">${hl(r.ingredients_text||'')}</div>
+            ${r.verdict_reason?`<div class="muted" style="margin-top:.25rem">${esc(r.verdict_reason)}</div>`:''}</div></div>`).join('')}
+        </div></details>`;
+    }).join('') || '<div class="pending">None in this class.</div>';
+  };
+  $('#rCtl').querySelectorAll('[data-c]').forEach(b => b.onclick = () => { $('#rCtl').querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b)); draw(b.dataset.c); });
+  draw('');
+}
+
+/* ── Diagrams ── */
+function renderDiagrams(D){
+  if(!D){ return; }
+  setStatus('diagrams', true, D.diagrams.length);
+  for(const [subj, el] of [['demo','#diagDemo'],['instacart','#diagIc']]){
+    const list = D.diagrams.filter(d => d.subject === subj); if(!list.length) continue;
+    const rec = D.recommendation?.[subj];
+    let cur = list.find(d => d.id === rec) || list[0];
+    const draw = () => {
+      $(el).innerHTML = `${list.length > 1 ? `<div class="tabs">${list.map(d => `<button class="tab ${d===cur?'on':''}" data-id="${esc(d.id)}">${esc(d.title)}</button>`).join('')}</div>` : ''}
+        <p style="margin-bottom:.75rem;max-width:80ch">${esc(cur.caption||'')}</p>
+        <div class="diag"><a href="${esc(cur.file)}?v=${V}" target="_blank" rel="noopener"><img src="${esc(cur.file)}?v=${V}" alt="${esc(cur.title)}"></a></div>`;
+      $(el).querySelectorAll('.tab').forEach(b => b.onclick = () => { cur = list.find(d => d.id === b.dataset.id); draw(); });
+    };
+    draw();
+  }
+  if(false) $('#diagIc').insertAdjacentHTML('afterend', `<div class="card" style="margin-top:1.25rem"><div class="eyebrow">Recommendation</div>${esc(D.recommendation.why)}</div>`);
+}
+
+/* ── Decisions ── */
+function renderDecisions(N){
+  if(!N){ return; }
+  const sec = (title, items) => items?.length ? `<h3 style="color:var(--kale);margin:1.25rem 0 .5rem">${esc(title)}</h3><ol class="dec">${items.map(d => `<li><span class="pill ${d.one_way?'tag1w':'tag2w'}">${d.one_way?'one-way door':'reversible'}</span> <b>${esc(d.title)}</b><div>${esc(d.detail)}</div>${d.question?`<div class="muted">Question for you: ${esc(d.question)}</div>`:''}</li>`).join('')}</ol>` : '';
+  $('#decBox').innerHTML = sec('Decisions', N.decisions) + sec('Questions I would have asked', N.questions) + (N.blocked?.length ? `<h3 style="color:var(--kale);margin:1.25rem 0 .5rem">Blocked on you</h3><ul style="padding-left:1.1rem">${N.blocked.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : '');
+}
+
+/* ── Nav highlight ── */
+const navAs = [...document.querySelectorAll('nav.links a:not(.sub)')];
+addEventListener('scroll', () => { let cur = navAs[0]; for(const a of navAs){ const s = document.querySelector(a.getAttribute('href')); if(s && s.getBoundingClientRect().top < 140) cur = a; } navAs.forEach(a => a.classList.toggle('active', a === cur)); }, {passive:true});
+
+(async () => {
+  const [pain, gf, gfs, reader, diag] = await Promise.all(['painpoints.json','gf-products.json','gf-summary.json','label-reader.json','diagrams.json'].map(load));
+  const D = { pain, gf, gfs, reader, diag };
+  statusCards(D);
+  try{ renderPain(pain); }catch(e){ console.error(e); $('#painList').innerHTML = '<div class="pending">Pain point data failed to render: ' + esc(e.message) + '</div>'; }
+  try{ renderLab(gf, gfs); }catch(e){ console.error(e); $('#labStats').innerHTML = '<div class="pending">Lab data failed to render: ' + esc(e.message) + '</div>'; }
+  try{ renderReader(reader); }catch(e){ console.error(e); $('#readerBox').innerHTML = '<div class="pending">Reader data failed to render: ' + esc(e.message) + '</div>'; }
+  try{ renderDiagrams(diag); }catch(e){ console.error(e); }
+  navAs.forEach(a => { const k = a.querySelector('.st'); if(k && !k.textContent) k.textContent = 'pending'; });
+})();
+</script>
+</body>
+</html>

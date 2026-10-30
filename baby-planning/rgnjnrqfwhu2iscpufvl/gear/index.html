@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light">
+<title>Gear Guide | Baby Planning</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E%F0%9F%8D%BC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Same palette as the Baby Planning page. Source notes: baby-gear-research.md in the
+     home-and-personal-projects repo. */
+  :root{
+    color-scheme:light;
+    --paper:#f8f6f0; --paper-deep:#f2efe6; --card:#ffffff;
+    --ink:#1a1f2b; --ink-soft:#4b5160; --ink-faded:#7a8090;
+    --green:#2f6b3f; --navy:#2b4c7e; --navy-deep:#1e3a5f;
+    --tint-blue:#eef3fb; --tint-tan:#f6efe3; --tint-green:#eef6ee;
+    --brick:#b3261e; --orange:#c8641e; --star:#d9a521;
+    --hair:#d9dce4; --radius:10px;
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Inter','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{background:var(--paper); scroll-behavior:smooth}
+  body{background:var(--paper); color:var(--ink-soft); font-family:var(--body); font-size:15px;
+    line-height:1.55; -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums}
+  a{color:var(--navy); font-weight:500; text-decoration:none}
+  a:hover{color:var(--navy-deep); text-decoration:underline}
+  b{color:var(--ink); font-weight:600}
+  .wrap{max-width:1040px; margin:0 auto; padding:28px 24px 56px}
+  .crumb{font-size:13px; margin-bottom:10px}
+
+  header.top{padding-bottom:20px; border-bottom:1.5px solid var(--navy); margin-bottom:22px}
+  .eyebrow{font-family:var(--display); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--green); font-weight:800}
+  h1{font-family:var(--display); font-weight:800; font-size:34px; color:var(--ink); letter-spacing:-.4px; line-height:1.1; margin:4px 0 8px}
+  .lede{max-width:680px}
+
+  nav.jump{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px}
+  nav.jump a{font-size:13px; padding:5px 12px; border:1.5px solid var(--hair); border-radius:999px; background:var(--card)}
+  nav.jump a:hover{border-color:var(--navy); text-decoration:none}
+
+  .pick{background:var(--tint-green); border:1.5px solid var(--navy); border-radius:var(--radius); padding:16px 18px; margin-bottom:34px}
+  .pick h2{margin-bottom:8px}
+  .pick ul{padding-left:18px} .pick li{margin:4px 0}
+
+  section{margin-bottom:40px}
+  h2{font-family:var(--display); font-weight:800; font-size:21px; color:var(--ink); margin-bottom:4px}
+  h3{font-family:var(--display); font-weight:700; font-size:15px; color:var(--navy); margin:18px 0 6px}
+  .sub{color:var(--ink-faded); font-size:13.5px; margin-bottom:14px}
+
+  ol.rank{list-style:none; display:flex; flex-direction:column; gap:10px}
+  ol.rank li{background:var(--card); border:1.5px solid var(--navy); border-radius:var(--radius); padding:12px 16px;
+    display:grid; grid-template-columns:38px 1fr auto; gap:4px 12px; align-items:start}
+  ol.rank .n{font-family:var(--display); font-weight:800; font-size:24px; color:var(--navy); line-height:1.1; grid-row:span 2}
+  ol.rank li:first-child{background:var(--tint-blue)}
+  ol.rank li:first-child .n{color:var(--star)}
+  ol.rank .name{font-family:var(--display); font-weight:700; font-size:16px; color:var(--ink)}
+  ol.rank .meta{font-size:12.5px; color:var(--ink-faded); text-align:right; white-space:nowrap}
+  ol.rank .why{grid-column:2 / 4; font-size:14px}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:12px}
+  .card{background:var(--card); border:1.5px solid var(--hair); border-radius:var(--radius); padding:14px 16px}
+  .card.t-tan{background:var(--tint-tan); border-color:var(--navy)}
+  .card h3{margin-top:0}
+  .card ul{padding-left:18px} .card li{margin:3px 0; font-size:14px}
+  .warn{color:var(--brick); font-weight:600}
+  .note{font-size:12.5px; color:var(--ink-faded); font-style:italic; margin-top:10px}
+  footer{border-top:1px solid var(--hair); padding-top:14px; font-size:12px; color:var(--ink-faded)}
+  @media (max-width:600px){
+    .wrap{padding:20px 16px 44px}
+    h1{font-size:27px}
+    ol.rank li{grid-template-columns:30px 1fr}
+    ol.rank .meta{grid-column:2; text-align:left; white-space:normal}
+    ol.rank .why{grid-column:1 / 3}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="crumb"><a href="../">← Baby Planning</a></div>
+<header class="top">
+  <div class="eyebrow">Gear guide · Owner: Mike</div>
+  <h1>Car seat, stroller &amp; monitor</h1>
+  <p class="lede">What reviewers and parents say, what to look for, and ranked picks. Priorities: a <b>light</b> car seat and stroller (they'll get carried a lot) without skimping on quality, and a <b>feature-rich</b> monitor.</p>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#carseat">Infant car seat</a>
+  <a href="#stroller">Stroller</a>
+  <a href="#monitor">Baby monitor</a>
+  <a href="#sources">Sources</a>
+</nav>
+
+<div class="pick">
+  <h2>Recommended setup</h2>
+  <ul>
+    <li><b>Nuna PIPA rx + UPPAbaby Minu V3</b> (with adapter): about 8.5 lb + 16.7 lb, both best in their class, roughly $1,100–1,200 total.</li>
+    <li>Want no adapter? <b>Nuna TRIV next travel system</b>. Weight matters most? Swap in the <b>PIPA aire rx</b> (about 7 lb).</li>
+    <li><b>Monitor:</b> Nanit, plus a ~$77 VTech audio unit as an offline backup. If you'd rather skip subscriptions, get the eufy E21.</li>
+    <li><b>Before buying:</b> test-push strollers up a hill at a Seattle store, and check the car seat's manufacture date (see the side-impact note below).</li>
+  </ul>
+</div>
+
+<section id="carseat">
+  <h2>Infant car seat: top 5</h2>
+  <p class="sub">Weights are for the carrier only. The first number is the maker's spec; the second is BabyGearLab's as-used measurement, which includes the canopy and insert.</p>
+  <ol class="rank">
+    <li><span class="n">1</span><span class="name">Nuna PIPA rx</span><span class="meta">7.6 / 8.5 lb · ~$550</span>
+      <span class="why">Best crash score BabyGearLab has tested (9.0), with a load leg, anti-rebound bar, rigid LATCH and European belt path. Fits more strollers than any other seat here. Downside: you have to rethread the harness to adjust it.</span></li>
+    <li><span class="n">2</span><span class="name">Nuna PIPA aire rx</span><span class="meta">6.2 / 7.1 lb · $440–550</span>
+      <span class="why">Nearly the same crash score (8.7) at about 1.4 lb lighter. The catch: it fits fewer strollers, and installing it with the seat belt is harder.</span></li>
+    <li><span class="n">3</span><span class="name">UPPAbaby Aria V2</span><span class="meta">6.0 / 6.8 lb · $400–450</span>
+      <span class="why">The lightest seat available, with a load leg and anti-rebound panel. Effectively only works with UPPAbaby strollers.</span></li>
+    <li><span class="n">4</span><span class="name">Clek Liing</span><span class="meta">9 / 10.5 lb · $500–550</span>
+      <span class="why">Consumer Reports Expert Pick with excellent install hardware, and the narrowest seat here. About 2–3 lb heavier than the Nunas.</span></li>
+    <li><span class="n">5</span><span class="name">Cybex Aton G2 / G2 Swivel</span><span class="meta">~9 lb · $400–550</span>
+      <span class="why">Load leg and European belt path. Less independently tested than the others. The older Aton G had a 2025 recall; the G2 hasn't been recalled.</span></li>
+  </ol>
+  <div class="grid" style="margin-top:14px">
+    <div class="card t-tan">
+      <h3>The Snuggle Bugz video</h3>
+      <ul>
+        <li>"Best Infant Car Seat 2026": compares 7 seats on handle, canopy, fit, fabric, recline, base and install, then picks a top 3.</li>
+        <li>We couldn't get a transcript, so <b>its winners aren't reflected here</b>. Its lineup overlaps ours: Nuna PIPA, Clek Liing and Romer Juni. The Juni crash-tests well (8.8) but weighs 10–11 lb.</li>
+        <li>It's a Canadian store, so some of the models it shows differ from the US versions.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li><b>Carrier weight:</b> under 8 lb is light. Maker specs leave out the canopy and insert, which add about 1 lb.</li>
+        <li><b>Load leg + anti-rebound bar:</b> both reduce how much the seat moves in a crash. <b>Rigid LATCH</b> makes it easier to install correctly.</li>
+        <li><b>European belt path:</b> gives a solid install without the base, which matters for Ubers.</li>
+        <li>Babies usually outgrow these seats by height (30–32 in) before weight.</li>
+        <li>A <b>no-rethread harness</b> is a nice-to-have. <b>Fabric without flame retardants</b> is available from Nuna, UPPAbaby, Clek and Chicco ClearTex.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Also good / skip</h3>
+      <ul>
+        <li><b>Budget:</b> Joie Rue (~$170, ~7.5 lb) or Britax Willow S (~$250).</li>
+        <li><span class="warn">Skip:</span> Doona (17 lb, lowest crash score at 4.6), UPPAbaby Mesa V3 (crash score 5.1), Cybex Cloud T (12 lb).</li>
+        <li>Never import an EU-only seat such as the Bugaboo Turtle Air. It isn't certified to US standards.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Safety notes</h3>
+      <ul>
+        <li><b>New side-impact standard:</b> it applies to seats <b>made</b> on or after Dec 5, 2026. Black Friday stock will mostly be older. That's still legal, but check the date sticker.</li>
+        <li><b>2025–26 recalls:</b> Cybex Aton G (made 2023–24), the Britax B-Safe line, Graco SnugRide Turn &amp; Slide, and Evenflo LiteMax. None on the PIPA seats, Aria V2, Liing or KeyFit.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stroller">
+  <h2>Stroller: top 5</h2>
+  <p class="sub">Ranked for a light stroller that can still handle Seattle hills and rain.</p>
+  <ol class="rank">
+    <li><span class="n">1</span><span class="name">UPPAbaby Minu V3</span><span class="meta">16.7 lb · $500–600</span>
+      <span class="why">The only stroller under 17 lb that reviewers say works as your everyday main stroller. Seat lies flat from birth, big basket, #1 at BabyGearLab and a CR 2026 Top Pick. The rain shield costs extra.</span></li>
+    <li><span class="n">2</span><span class="name">Bugaboo Dragonfly Plus</span><span class="meta">~22 lb · ~$1,349</span>
+      <span class="why">The lightest stroller with a real bassinet that folds with the frame, which is good for long rainy-season walks. The Clek Liing clicks in directly.</span></li>
+    <li><span class="n">3</span><span class="name">Nuna TRIV next + PIPA</span><span class="meta">18.5 lb · ~$1,350 bundle</span>
+      <span class="why">Best light travel system: the car seat adapter is included and the ride is smooth.</span></li>
+    <li><span class="n">4</span><span class="name">Joolz Aer2</span><span class="meta">14.5 lb · ~$549</span>
+      <span class="why">Lightest stroller that's genuinely usable from birth, with four-wheel suspension. Small basket, and its car seat adapters were recalled in June 2026.</span></li>
+    <li><span class="n">5</span><span class="name">UPPAbaby Cruz V3</span><span class="meta">~26 lb · ~$900</span>
+      <span class="why">Best suspension and canopy for hills, and the rain shield is included. It's heavy, though, so you'd probably want a travel stroller too.</span></li>
+  </ol>
+  <div class="grid" style="margin-top:14px">
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li><b>Weight</b> under 17 lb, and a one-hand fold that stands up on its own.</li>
+        <li><b>Wheels and suspension</b> for rough sidewalks. Use a <b>wrist strap</b> on steep hills, since most of these have foot brakes.</li>
+        <li><b>Rain shield included?</b> Yes on the Cruz and Vista; extra on the Minu and Butterfly 2.</li>
+        <li><b>From birth</b> means a bassinet, a seat that lies flat, or a car seat that clicks in. Keep naps in the car seat short.</li>
+        <li><b>Resale:</b> UPPAbaby, Bugaboo and Nuna hold their value well.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Pairing with the car seat</h3>
+      <ul>
+        <li><b>PIPA rx / aire rx:</b> clicks straight into the Nuna TRVL lx. Ring adapter included with the TRIV, MIXX and SWIV. Fits the Minu, Cruz and Butterfly with an adapter.</li>
+        <li><b>Aria V2:</b> UPPAbaby strollers only.</li>
+        <li><b>Clek Liing:</b> clicks straight into the Bugaboo Dragonfly; needs an adapter for most others.</li>
+        <li><b>Chicco KeyFit:</b> doesn't fit the Minu, Butterfly or Nuna strollers.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Also good / skip</h3>
+      <ul>
+        <li><b>Travel stroller:</b> Joolz Aer2, or the Stokke YOYO3 if you want the tiniest fold. Skip a travel stroller entirely if the Minu is your main one.</li>
+        <li><b>Budget:</b> Mockingbird Travel (~$399, 17.7 lb).</li>
+        <li><span class="warn">Skip:</span> no-name strollers from Amazon and similar marketplaces. The CPSC issued stop-use warnings for some of them in 2025–26.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="monitor">
+  <h2>Baby monitor: features first</h2>
+  <p class="sub">Plan: the baby room-shares in a bassinet at first, then moves to the nursery around 4–6 months.</p>
+  <ol class="rank">
+    <li><span class="n">1</span><span class="name">Nanit (+ Home display)</span><span class="meta">$249–399 · plans optional ~$120–300/yr</span>
+      <span class="why">Best sleep analytics. Breathing-motion tracking, two-way audio, white noise and temperature/humidity are all free. Needs an overhead mount for the analytics. Depends on Wi-Fi and the cloud: an Oct 2025 outage lasted 18 hours.</span></li>
+    <li><span class="n">2</span><span class="name">Owlet Dream Duo Gen 3</span><span class="meta">~$380 · Owlet360 $99.99/yr optional</span>
+      <span class="why">The only FDA-cleared pulse and oxygen sock, paired with a 2K camera. Owners often report connection drops, and the readings can feed anxiety.</span></li>
+    <li><span class="n">3</span><span class="name">eufy E21</span><span class="meta">~$255 · no subscription</span>
+      <span class="why">4K camera, a handheld parent unit that works without Wi-Fi plus a phone app, and local storage, so it's its own backup. No breathing tracking.</span></li>
+    <li><span class="n">4</span><span class="name">Harbor</span><span class="meta">~$499</span>
+      <span class="why">10-inch parent unit, footage stored on the camera, keeps working without internet. Newer, less proven company.</span></li>
+    <li><span class="n">5</span><span class="name">Philips Avent Premium Connected</span><span class="meta">~$350</span>
+      <span class="why">Shows breathing rate without a paywall, but it won't sound an alarm if breathing stops.</span></li>
+  </ol>
+  <div class="grid" style="margin-top:14px">
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li><b>Wi-Fi app vs. a dedicated parent unit:</b> an app lets you check in remotely and gives you analytics. A dedicated non-Wi-Fi unit can't be hacked over the internet and works when the internet is down. Hybrid models do both.</li>
+        <li><b>Subscriptions:</b> check what's free vs. paywalled before you buy.</li>
+        <li>Features to compare: cry detection, night vision, two-way audio, temperature/humidity, multi-camera, travel mount.</li>
+        <li><b>Backup:</b> if you go Wi-Fi only, add a VTech DM1211 audio unit (~$77).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Breathing monitors</h3>
+      <ul>
+        <li>The AAP says consumer breathing monitors don't reduce SIDS risk and shouldn't replace safe-sleep practices. Using one on top of safe sleep is fine.</li>
+        <li>Owlet's sock is FDA-cleared for monitoring, not for preventing SIDS.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Skip</h3>
+      <ul>
+        <li><span class="warn">Miku</span>: put previously free features behind a paywall in 2023. <span class="warn">Lollipop</span>: key features are paywalled.</li>
+        <li><span class="warn">Babysense Max View VBM55</span>: recalled Feb 2026 (fire hazard).</li>
+        <li>No-name Wi-Fi cameras: a May 2026 flaw (Meari) exposed about 1.1M devices.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <p class="sub">Research done Oct 30, 2026. Wirecutter, Consumer Reports and Reddit were blocked or paywalled, so these picks lean on BabyGearLab's lab tests, Babylist, a car seat technician's reviews, Strolleria, and CPSC/NHTSA recall data. Weights and prices vary by source and by sale.</p>
+  <div class="grid">
+    <div class="card"><h3>Car seats</h3><ul>
+      <li><a href="https://www.babygearlab.com/topics/vehicle-safety/best-infant-car-seat" target="_blank" rel="noopener">BabyGearLab: best infant car seats</a></li>
+      <li><a href="https://www.babylist.com/hello-baby/best-infant-car-seats" target="_blank" rel="noopener">Babylist: best infant car seats</a></li>
+      <li><a href="https://www.safeintheseat.com/post/safe-in-the-seats-full-review-the-best-infant-car-seats-usa" target="_blank" rel="noopener">Safe in the Seat (car seat technician)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=_9Qj8EGOqsk" target="_blank" rel="noopener">Snuggle Bugz video</a></li>
+    </ul></div>
+    <div class="card"><h3>Strollers</h3><ul>
+      <li><a href="https://www.babygearlab.com/topics/getting-around/best-travel-stroller" target="_blank" rel="noopener">BabyGearLab: best travel strollers</a></li>
+      <li><a href="https://www.babylist.com/hello-baby/best-strollers" target="_blank" rel="noopener">Babylist: best strollers</a></li>
+      <li><a href="https://strolleria.com/pages/compatibility-guide-nuna-pipa-series" target="_blank" rel="noopener">Strolleria: PIPA compatibility</a></li>
+    </ul></div>
+    <div class="card"><h3>Monitors &amp; recalls</h3><ul>
+      <li><a href="https://www.babygearlab.com/topics/health-safety/best-baby-monitor" target="_blank" rel="noopener">BabyGearLab: best baby monitors</a></li>
+      <li><a href="https://fathercraft.com/baby-monitor-reviews/" target="_blank" rel="noopener">Fathercraft: monitor reviews</a></li>
+      <li><a href="https://pakidstravelsafe.org/wp-content/uploads/Car-Seat-Recall-List_4-7-2026rev.pdf" target="_blank" rel="noopener">Car seat recall list (NHTSA data)</a></li>
+    </ul></div>
+  </div>
+</section>
+
+<footer>Private page, not linked publicly. Last updated Oct 30, 2026.</footer>
+</div>
+</body>
+</html>

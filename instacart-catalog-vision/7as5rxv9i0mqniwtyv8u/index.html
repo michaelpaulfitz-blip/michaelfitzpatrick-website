@@ -29,8 +29,8 @@ h3,h4{font-weight:700;letter-spacing:0}
 a{color:var(--kale)} a:hover{color:var(--accent)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1rem}
 @media(min-width:768px){.wrap{padding:0 2rem}}
-@media(min-width:1200px){.wrap,.nav-inner{max-width:none}}
-@media(min-width:1500px){.wrap,.nav-inner{margin-left:230px;margin-right:0;max-width:1720px;padding-right:3rem}}
+@media(min-width:1200px){.wrap,header.nav .nav-inner{max-width:none}}
+@media(min-width:1500px){.wrap,header.nav .nav-inner{margin-left:230px;margin-right:0;max-width:1720px;padding-right:3rem}}
 .eyebrow{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:700;display:block;margin-bottom:.5rem}
 .muted{color:var(--grey-500);font-size:.8125rem}
 .pill{display:inline-block;font-size:.6875rem;font-weight:700;padding:.15rem .55rem;border-radius:var(--pill);background:var(--grey-100);color:var(--grey-700);margin:0 .25rem .25rem 0;white-space:nowrap}
@@ -513,7 +513,7 @@ async function ask(q){
   try{ const pre = await (await fetch('data/agent-answers.json?v=' + V)).json(); for(const [q, a] of Object.entries(pre)) ANS[q.toLowerCase()] = a; }catch(e){}
   const n = C.products.length, sm = C.source_meta || {};
   const cnt = s => C.products.filter(p => (p.sources_present || []).includes(s)).length;
-  $('#agStats').innerHTML = `<span class="tag bad">red</span>contains <span class="tag warn">amber</span>may contain. ` + esc(`${n} products from ${C.location?.name || 'a Kroger store'}. ${cnt('off')} cross-checked with Open Food Facts, ${cnt('fdc')} with USDA FoodData Central, ${cnt('gfco')} matched to the GFCO gluten-free registry.`);
+  $('#agStats').innerHTML = `Allergen colors: <span class="tag bad">contains</span><span class="tag warn">may contain</span> &nbsp;` + esc(`${n} products from ${C.location?.name || 'a Kroger store'}. ${cnt('off')} cross-checked with Open Food Facts, ${cnt('fdc')} with USDA FoodData Central, ${cnt('gfco')} matched to the GFCO gluten-free registry.`);
   $('#agNote').textContent = C.rules?.glp1?.note || '';
   showThree();
   $('#agMore').onclick = showThree;

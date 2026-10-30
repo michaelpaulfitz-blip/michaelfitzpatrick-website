@@ -145,7 +145,6 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
   <div class="wordmark"><span class="dot"></span>Catalog Vision</div>
   <nav class="links">
     <a href="#road">Three years</a>
-    <a href="#problems">Problems</a>
     <a href="#proof">Proof</a>
     <a class="below" href="#below">More detail</a>
   </nav>
@@ -199,18 +198,9 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
   <div class="found"><b>Always on</b><span>Golden sets per family</span><span>Lineage on every value</span><span>Cost per verified value</span><span>One owner per attribute family</span></div>
 </div></section>
 
-<section class="band white" id="problems"><div class="wrap">
-  <div class="sechead"><span class="eyebrow">Where to start</span><h2>Five problems worth fixing first</h2><p>Each came up more than once in my conversations with the team. Each fix is deliberately simple.</p></div>
-  <table class="pt"><thead><tr><th>#</th><th>Problem</th><th>Simple fix</th></tr></thead><tbody>
-    <tr><td>1</td><td>Every new attribute is built by hand, and demand keeps growing from search, replacements, health and agents.</td><td>A standard intake spec plus one reusable pipeline template with quality checks built in, so the tenth attribute costs less than the first.</td></tr>
-    <tr><td>2</td><td>Health tags such as gluten-free and allergens need near-perfect precision, and there is no ground truth to measure them against.</td><td>A small hand-labeled golden set per attribute that serves as the release gate.</td></tr>
-    <tr><td>3</td><td>Nobody can easily explain why a value won. Precedence differs by attribute and by retailer.</td><td>Record the winning source and the rule that picked it every time a value is written. The same record answers ops escalations and retailer questions.</td></tr>
-    <tr><td>4</td><td>Teams that consume catalog data cannot tell what a field means or how far to trust it.</td><td>An attribute card for each family, with confidence published next to every value so each consumer sets its own threshold.</td></tr>
-    <tr><td>5</td><td>Shipped pipelines decay, and some incidents return months later because the fix treated the symptom.</td><td>A refresh schedule and quality monitor per attribute, plus a recurrence tracker that moves repeat issues up the roadmap.</td></tr>
-  </tbody></table>
-</div></section>
 
-<section class="band" id="proof"><div class="wrap">
+
+<section class="band white" id="proof"><div class="wrap">
   <div class="sechead"><span class="eyebrow">Proof</span><h2>What I would build to show it works</h2><p>A working year-one slice already exists, and three small builds would cover the rest of the road.</p></div>
   <div class="proof">
     <div class="card"><span class="pill y1">Year one · built</span><h4>Gluten-free evidence lab</h4><p>402 products scored from independent public sources with provenance on every claim, a precision and recall slider, and a conflict queue. <a href="../../instacart-catalog-lab/fuqzgno45ojb3ycaysp9/">Open the lab</a></p></div>
@@ -224,6 +214,17 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
   <span class="tag">Below the line</span><h2>More detail and options under consideration</h2>
   <p>Everything above is the short version. Everything below is supporting detail and ideas I am still weighing. Some of it may not belong in the final plan.</p>
 </div></div></section>
+
+<section class="band white" id="problems"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Where to start</span><h2>Five problems worth fixing first</h2><p>Each came up more than once in my conversations with the team. Each fix is deliberately simple.</p></div>
+  <table class="pt"><thead><tr><th>#</th><th>Problem</th><th>Simple fix</th></tr></thead><tbody>
+    <tr><td>1</td><td>Every new attribute is built by hand, and demand keeps growing from search, replacements, health and agents.</td><td>A standard intake spec plus one reusable pipeline template with quality checks built in, so the tenth attribute costs less than the first.</td></tr>
+    <tr><td>2</td><td>Health tags such as gluten-free and allergens need near-perfect precision, and there is no ground truth to measure them against.</td><td>A small hand-labeled golden set per attribute that serves as the release gate.</td></tr>
+    <tr><td>3</td><td>Nobody can easily explain why a value won. Precedence differs by attribute and by retailer.</td><td>Record the winning source and the rule that picked it every time a value is written. The same record answers ops escalations and retailer questions.</td></tr>
+    <tr><td>4</td><td>Teams that consume catalog data cannot tell what a field means or how far to trust it.</td><td>An attribute card for each family, with confidence published next to every value so each consumer sets its own threshold.</td></tr>
+    <tr><td>5</td><td>Shipped pipelines decay, and some incidents return months later because the fix treated the symptom.</td><td>A refresh schedule and quality monitor per attribute, plus a recurrence tracker that moves repeat issues up the roadmap.</td></tr>
+  </tbody></table>
+</div></section>
 
 <section class="band"><div class="wrap">
   <div class="sechead"><span class="eyebrow">Detailed roadmap</span><h2>Quarter by quarter</h2><p>Four lanes over twelve quarters. Scroll sideways on a small screen.</p></div>

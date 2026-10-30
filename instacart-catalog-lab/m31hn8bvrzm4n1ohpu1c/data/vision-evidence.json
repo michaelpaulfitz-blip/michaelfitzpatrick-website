@@ -47,7 +47,7 @@
   },
   {
    "n": 2,
-   "title": "Aging system",
+   "title": "Legacy system",
    "strength": "Strong",
    "note": "Three people: Brittany, Peggy and Sonali. Ten-year-old architecture, legacy code tied to incidents, and an open rebuild question.",
    "quotes": [
@@ -409,7 +409,7 @@
   },
   {
    "n": 6,
-   "title": "Unclear meaning",
+   "title": "Unclear meaning of some attributes",
    "strength": "Strong",
    "note": "Downstream teams cannot tell what fields mean or whether to trust them. Peggy called a semantic layer her 2027 ask. Agents need attributes modeled differently from product page badges.",
    "quotes": [

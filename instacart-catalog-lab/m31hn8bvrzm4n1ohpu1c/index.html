@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Catalog Lab</title>
+<title>Claude and Mike Working Space</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%23003d29'/%3E%3Cpath d='M6 15.5h12' stroke='%23ffdc23' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M6 9.5h12' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,9 +146,10 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 </head>
 <body>
 <header class="nav"><div class="nav-inner">
-  <div class="wordmark"><span class="dot"></span><span>Catalog Lab<br><span class="muted" style="font-weight:500">working draft for Mike</span></span></div>
+  <div class="wordmark"><span class="dot"></span><span>Claude and Mike<br><span class="muted" style="font-weight:500">internal working space</span></span></div>
   <nav class="links" id="navLinks">
     <a href="#overview">Overview</a>
+    <a href="#evidence">Vision page evidence</a>
     <a href="#pain">Pain points <span class="st" data-st="pain"></span></a>
     <a class="sub" href="#pain-research">From public research</a>
     <a href="#lab">Gluten-free evidence lab <span class="st" data-st="lab"></span></a>
@@ -162,16 +163,22 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
     <a class="sub" href="#diag-instacart">Instacart current state</a>
     <a href="#decisions">Decisions and questions</a>
   </nav>
-  <div class="nav-foot">Private and unlisted. Interviewer quotes appear here for Mike only; strip names before this goes to anyone.</div>
+  <div class="nav-foot">Internal working space for Mike and Claude. Contains named interview quotes. Do not share.</div>
 </div></header>
 
-<div class="draftbar">Working draft. Built for Mike, not yet for interviewers. Data refreshes as each workstream lands.</div>
+<div class="draftbar">Internal. For Mike and Claude only. Named quotes from interviews; never share this link.</div>
 
 <section class="hero" id="overview"><div class="wrap">
   <span class="eyebrow">Instacart, Senior PM, Catalog</span>
-  <h1>Catalog Lab: every pain point from the loop, and a working gluten-free evidence engine</h1>
+  <h1>Claude and Mike Working Space: Instacart catalog</h1>
   <p>Four workstreams on one page. The pain points come from all nine conversations in the loop, merged where people said the same thing. The lab collects gluten-free evidence from independent sources, scores each product with provenance, and measures precision and recall against a gold set you label. The photo reader tests whether package images can serve as a fourth source. The diagrams try several ways to draw the same systems so the arrows stay readable.</p>
   <div class="grid g4" style="margin-top:1.5rem" id="statusCards"></div>
+</div></section>
+
+<section class="band" id="evidence"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Proof behind the vision page</span><h2>Vision page evidence</h2>
+  <p>Each pain point on the charter vision page, with the conversations it came from, the exact words, and how strong the support is. Lab IDs link to the full pain point below.</p></div>
+  <div id="evBox"><div class="pending">Loading.</div></div>
 </div></section>
 
 <section class="band white" id="pain"><div class="wrap">
@@ -238,7 +245,7 @@ ol.dec{padding-left:1.25rem;display:grid;gap:.6rem} ol.dec li{background:var(--w
 <dialog id="dlg"><div style="display:flex;justify-content:flex-end"><button class="btn" onclick="document.getElementById('dlg').close()">Close</button></div><div id="dlgBody"></div></dialog>
 
 <script>
-const V = '20261028e';
+const V = '20261029b';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pct = x => (x == null || isNaN(x)) ? 'n/a' : (100 * x).toFixed(1) + '%';
@@ -545,6 +552,12 @@ function renderDiagrams(D){
 }
 
 /* ── Decisions ── */
+function renderEvidence(E){
+  if(!E){ $('#evBox').innerHTML = '<div class="pending">No evidence file.</div>'; return; }
+  const cls = s => /^strong/i.test(s) ? 'g' : /weak/i.test(s) ? 'r' : 'a';
+  $('#evBox').innerHTML = E.items.map(it => `<details class="pp" ${it.n===4?'open':''}><summary><div class="pid">${it.n}</div><div><h3>${esc(it.title)}</h3><div class="sum">${esc(it.note)}</div></div><div class="cnt"><span class="pill ${cls(it.strength)}">${esc(it.strength)}</span><div class="muted">${it.quotes.length} quotes</div></div></summary>
+    <div class="body"><div>${it.quotes.map(q => `<div class="quote">"${esc(q.quote)}"<div class="who">${esc(q.who)}, ${esc(q.conversation||'')}, ${esc(q.date||'')}${q.lab_id ? ` · <a href="#${esc(q.lab_id)}">${esc(q.lab_id)}</a>` : ''}</div>${q.context ? `<div class="ctx">${esc(q.context)}</div>` : ''}${q.file ? `<div class="ctx">Source: ${esc(q.file)}</div>` : ''}</div>`).join('')}</div></div></details>`).join('');
+}
 function renderDecisions(N){
   if(!N){ return; }
   const sec = (title, items) => items?.length ? `<h3 style="color:var(--kale);margin:1.25rem 0 .5rem">${esc(title)}</h3><ol class="dec">${items.map(d => `<li><span class="pill ${d.one_way?'tag1w':'tag2w'}">${d.one_way?'one-way door':'reversible'}</span> <b>${esc(d.title)}</b><div>${esc(d.detail)}</div>${d.question?`<div class="muted">Question for you: ${esc(d.question)}</div>`:''}</li>`).join('')}</ol>` : '';
@@ -556,7 +569,8 @@ const navAs = [...document.querySelectorAll('nav.links a:not(.sub)')];
 addEventListener('scroll', () => { let cur = navAs[0]; for(const a of navAs){ const s = document.querySelector(a.getAttribute('href')); if(s && s.getBoundingClientRect().top < 140) cur = a; } navAs.forEach(a => a.classList.toggle('active', a === cur)); }, {passive:true});
 
 (async () => {
-  const [pain, gf, gfs, reader, diag, notes] = await Promise.all(['painpoints.json','gf-products.json','gf-summary.json','label-reader.json','diagrams.json','notes.json'].map(load));
+  const [pain, gf, gfs, reader, diag, notes, ev] = await Promise.all(['painpoints.json','gf-products.json','gf-summary.json','label-reader.json','diagrams.json','notes.json','vision-evidence.json'].map(load));
+  try{ renderEvidence(ev); }catch(e){ console.error(e); }
   const D = { pain, gf, gfs, reader, diag, notes };
   statusCards(D);
   try{ renderPain(pain); }catch(e){ console.error(e); $('#painList').innerHTML = '<div class="pending">Pain point data failed to render: ' + esc(e.message) + '</div>'; }

@@ -1,0 +1,595 @@
+{
+ "generated": "2026-10-29",
+ "items": [
+  {
+   "n": 1,
+   "title": "New markets",
+   "strength": "Moderate",
+   "note": "One director named it as his top catalog wish, and Brittany said a senior PM already owns international scaling. Real priority, with an existing owner. Frame the vision page as partnering with that work. The DoorDash angle is my inference from the news and nobody said it.",
+   "quotes": [
+    {
+     "who": "Daniel Kluesing",
+     "conversation": "Leadership & Drive",
+     "date": "2026-10-29",
+     "quote": "as we start to look to go international, um, the ability to do international means we need a lot more attributes and things like that into the catalog.",
+     "context": "Mike asked what is on his wish list for catalog.",
+     "lab_id": null,
+     "file": "research/32-daniel-kluesing-transcript-2026-10-29.md"
+    },
+    {
+     "who": "Daniel Kluesing",
+     "conversation": "Leadership & Drive",
+     "date": "2026-10-29",
+     "quote": "we need to be able to have, you know, additional tax information coming through. Other times, just, yeah, the international data formats are different.",
+     "context": "Same answer.",
+     "lab_id": null,
+     "file": "research/32-daniel-kluesing-transcript-2026-10-29.md"
+    },
+    {
+     "who": "Daniel Kluesing",
+     "conversation": "Leadership & Drive",
+     "date": "2026-10-29",
+     "quote": "a lot of the needs of international expansion are pretty high on the list of things that I'm looking for in the catalog stuff.",
+     "context": "Same answer.",
+     "lab_id": null,
+     "file": "research/32-daniel-kluesing-transcript-2026-10-29.md"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "today, um, we have a senior PM who is responsible for how do we take what we do in North America and scale it internationally to different languages, different markets.",
+     "context": "Describing the current team. Means an owner for international already exists.",
+     "lab_id": null,
+     "file": "research/31-working-doc-export-2026-10-26.md, line 2769"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Aging system",
+   "strength": "Strong",
+   "note": "Three people: Brittany, Peggy and Sonali. Ten-year-old architecture, legacy code tied to incidents, and an open rebuild question.",
+   "quotes": [
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "Instacart to make it easy decides to partner with point of sale. To get the point of sale data and then backwards construct a catalog out of the point of sale",
+     "context": "Mike asked whether diagnostics and explainability were a pain point. Speaker labeled 'Them' in the transcript; the section is Brittany's jam, so attribution is Brittany.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "It has 10 years of legacy code that we're fighting with, right, because of which we have incidents.",
+     "context": "Mike asked what was most broken from a software engineering perspective.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "We don't want to touch it because it's, like, there's legacy systems. It's a huge project, whatever, whatever.",
+     "context": "Mike asked what she looks for in a PM partner; she named knowing when to re-architect from first principles.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "because we've been around for so long, we, like, are, like, stuck with these systems, right? But when are the right times to re-architect or evolve, right?",
+     "context": "Same answer, continued.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "let's stress test the current framework to see if it enables us to scale.",
+     "context": "Mike asked whether a rebuild is likely in 2027. She said the proposal belongs to the PM, EM, and ops manager.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "we don't shy away from big projects, rebuilds if there's strong conviction that it's the right thing to do.",
+     "context": "Same answer, continued.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "should we actually be going and rebuilding the way that we store and generate attribute information?",
+     "context": "Mike asked about big projects for the first six months.",
+     "lab_id": "P01"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "simple things like we were literally, I feel like, three, four months apart, have the same issue bubble up as a different incident.",
+     "context": "Mike asked what was most broken.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "A lot of that actually meant something about the way we have architected our solution had to change. You can't symptomatically just fix it, right?",
+     "context": "Same answer, continued.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "getting really crisp on the ownership and getting all of those runbooks in order",
+     "context": "Same answer, the second half of the fix.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "But I feel like enough investment hasn't been made.",
+     "context": "Same answer, opening.",
+     "lab_id": "P12"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Attribute launch effort",
+   "strength": "Moderate",
+   "note": "Tarang described the per-attribute steps and said the process needs rethinking. Brittany called it time-consuming and error-prone. Nobody said \"hand-built\" and a self-serve platform exists (GenCon, grown out of PARSE), so the softened wording is right. Nobody mentioned a standard intake spec either way.",
+   "quotes": [
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "if we had to solve for actually everything that consumers of catalog are hoping to get from catalog over the next couple of years, they just need a lot more catalog data.",
+     "context": "Mike asked which roadmap projects he was excited about. Labeled 'Them'; section header confirms Tarang.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "the ways we have come up with how we even generate new attributes has to probably be, like, completely rethought.",
+     "context": "Same answer.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "All the way from product definition to the process of then, like, coming up with a pipeline structure, then running the pipelines, and then, like, actually doing it at scale with the quality bar.",
+     "context": "Same answer, continued.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "someone who understands data as a product and, and how that will scale with, like, agentic shopping, with these downstream teams wanting more and more data attributes.",
+     "context": "Mike asked what Brittany is looking for in this hire.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "We're always trying to deliver more data to these downstream teams, like search, replacements, etc.",
+     "context": "What she looks for in a PM partner.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "And the way that this process works today is time-consuming and also prone to human error.",
+     "context": "Mike asked about the first six months and the two-year outlook.",
+     "lab_id": "P02"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "I will then create the right audit steps. I'll maybe use testing using LLM as a judge, and then maybe I'll also send some stuff off to a BPO to then manually label, where I'm not sure.",
+     "context": "Describing how Peggy's team builds the gluten-free pipeline. Labeled 'Them'.",
+     "lab_id": "P03"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "And now, for them to do that, they need the right tooling and platform, right?",
+     "context": "Same description, continued.",
+     "lab_id": "P03"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "a really good PM partner balances those business needs with also the enablement or foundation needs as well because to build faster, we also have to invest in the tooling and how do we balance both those things.",
+     "context": "Mike asked what she looks for in a PM partner.",
+     "lab_id": "P03"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "how do we actually support and build tools that our operations team can use to create that new information",
+     "context": "Describing the role. A charter statement more than a complaint, so a soft confirmation.",
+     "lab_id": "P03"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Ground truth",
+   "strength": "Moderate on the problem, weak on \"no golden sets\"",
+   "note": "Tarang said there is no ground truth to ingest for generated tags, and the bar is 99 to 99.5 percent precision. Nobody said golden sets are missing. LLM-as-judge and BPO labeling are in use, a PM owns ground truth quality, and the JD asks for golden set audit experience. Golden sets may well exist, which is why the page says create or solidify.",
+   "quotes": [
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "All those tags, we actually generate them ourselves. ... there's no ground truth data that we can just ingest to make that happen.",
+     "context": "Describing the Generated Content team. Labeled 'Them'; an em-dash stutter elided.",
+     "lab_id": "P06"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "how would you think through, like, where to get that data from, right? Internal versus external.",
+     "context": "Posed as a case question about building a GLP-1 attribute, so it signals the problem without describing current state.",
+     "lab_id": "P06"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "what underlying data does it need for them to be able to hit a 99% precision and recall bar for that new data.",
+     "context": "Describing the role.",
+     "lab_id": "P05"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "Especially looking at allergens you're trying to hit 99.5% precision.",
+     "context": "Questioning Mike's source selection logic. Labeled 'Them'.",
+     "lab_id": "P05"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "especially for health, especially for, like, allergens, like, we cannot get tagging something tree nut free wrong.",
+     "context": "Roadmap excitement question. Labeled 'Them'.",
+     "lab_id": "P05"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "Um, they also think about general, like, ground truth catalog quality.",
+     "context": "Same PM as above. Means someone already owns ground truth quality, so golden sets may exist.",
+     "lab_id": null,
+     "file": "research/31-working-doc-export-2026-10-26.md, line 2771"
+    },
+    {
+     "who": "Job description",
+     "conversation": "JD 8143270",
+     "date": "2026-09",
+     "quote": "Familiarity with data pipelines, ML extraction workflows, or quality evaluation frameworks such as golden set audits, human-in-the-loop review, or precision/recall measurement.",
+     "context": "Listed as a preferred qualification. Shows the team values golden set audits; it does not say whether they exist.",
+     "lab_id": null,
+     "file": "research/00-JD-8143270-verbatim.md"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "I will then create the right audit steps. I'll maybe use testing using LLM as a judge, and then maybe I'll also send some stuff off to a BPO to then manually label, where I'm not sure.",
+     "context": "Describing how Peggy's team builds the gluten-free pipeline. Labeled 'Them'.",
+     "lab_id": "P03"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Opaque precedence",
+   "strength": "Strong",
+   "note": "Brittany and Peggy both described it, including retailer contracts that change precedence and retailers asking why a value shows.",
+   "quotes": [
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "It's absolutely a pain point. We have and I think the catalog was built 10 years ago.",
+     "context": "Mike asked whether diagnostics and explainability were a pain point for ops. Labeled 'Them'; section confirms Brittany.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "Very much so. We, we face the same issue.",
+     "context": "Mike asked the same diagnostics question.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "there's general confusion because, like, it's not linear across attributes and it's not linear across retailers.",
+     "context": "Same answer, continued.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "even sometimes between marketplace and SFP for a particular retailer, it can be different. So that adds to the confusion.",
+     "context": "Same answer. SFP is Storefront Pro, the white-label product.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "we have some, like, contractual obligations, right, with retailers where we, like, maybe promote more of their data, but that's not the same for, like, retailer B, right?",
+     "context": "Same answer, continued.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "I think documentation varies.",
+     "context": "Mike asked about documentation quality.",
+     "lab_id": "P07"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "So one of the challenges that we have within the catalog space is how do you actually make sure that when you have data from all of these different sources, you're making fast decisions on what's actually accurate at that given point of time.",
+     "context": "Mike asked where catalog data comes from.",
+     "lab_id": "P04"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "different sources, how would you determine what's the right source? Especially looking at allergens you're trying to hit 99.5% precision.",
+     "context": "Questioning Mike's proposed verification layer. Labeled 'Them'.",
+     "lab_id": "P04"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "we have varying data inputs from different sources at different quality levels. How might we, like, detect issues at scale and also fix them at scale",
+     "context": "Overview of the catalog ops team.",
+     "lab_id": "P04"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "Sometimes retailers will come to us and, like, oh, I never sent this in my file. Why is it XYZ, right?",
+     "context": "Diagnostics and explainability discussion.",
+     "lab_id": "P15"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "how might you explain it back to the, I don't know, retailer, right?",
+     "context": "Mike asked about documentation; she said internal tooling improved but retailer explanation lags.",
+     "lab_id": "P15"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "a PM who's focused on our enterprise relationships and how we work specifically with retailers to manage their catalogs and allow for bidirectional feedback with them so that we're sharing errors",
+     "context": "Describing the PM team. Stated as a charter, which implies the gap.",
+     "lab_id": "P15"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Unclear meaning",
+   "strength": "Strong",
+   "note": "Downstream teams cannot tell what fields mean or whether to trust them. Peggy called a semantic layer her 2027 ask. Agents need attributes modeled differently from product page badges.",
+   "quotes": [
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "we don't do a great job of this today on how we might build a better semantic layer for all of our downstream teams",
+     "context": "Mike asked about the biggest technology opportunity for 2027.",
+     "lab_id": "P08"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "there's lots of, like, data fields, a lot of, like, attributes, and they don't know what is this data? Should I use it or should I not use it?",
+     "context": "Same answer, continued.",
+     "lab_id": "P08"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "What's the quality? What is the freshness?",
+     "context": "Same answer, continued.",
+     "lab_id": "P08"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "maybe one of the challenges is that they are just using the attributes that we deliver incorrectly 'cause they just don't know how they're supposed to.",
+     "context": "Mike asked what a semantic layer looks like to her.",
+     "lab_id": "P08"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "any attribute we create now becomes a badge on the product detail page. And that's what an attribute is.",
+     "context": "Explaining pain points after Mike asked about diagnostics. Labeled 'Them'.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "what an attribute means for agentic shopping is very different than what an attribute means for what's shown on a PDP page.",
+     "context": "Same answer, continued.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Jam session",
+     "date": "2026-10-22",
+     "quote": "Partner called Clementine as well as integrations with OpenAI and starting to see how is that the same and different from how they shop Instacart. And what data needs are there?",
+     "context": "Mike asked about the 12-month outlook for the catalog PM.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "Screen",
+     "date": "2026-09-21",
+     "quote": "in the world of AI, it's going to force us to rethink ... the underlying infrastructure and data structure for how we store that information.",
+     "context": "Describing the first six months of the role.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "Now with agentic shopping, we have this Clementine, which is a kind of internal agentic shopping experience, which equates to more data needs.",
+     "context": "What she looks for in a PM partner.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "do we have to do that with the changing needs of our data and, like, AI and agentic?",
+     "context": "On when to re-architect.",
+     "lab_id": "P09"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "we need to understand better the challenges that downstream teams have with it today.",
+     "context": "Mike asked whether a rebuild is likely in 2027. Filler and a stutter removed.",
+     "lab_id": "P16"
+    },
+    {
+     "who": "Brittany Drager",
+     "conversation": "HM 2.0",
+     "date": "2026-10-26",
+     "quote": "don't wanna, like, commit to that before we actually understand the downstream use cases.",
+     "context": "Answering the semantic layer question. Stutter removed.",
+     "lab_id": "P16"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "we also want to understand how they're using the data. Some is more explicit and some is more implicit, but I think that also shapes how we build.",
+     "context": "Mike asked about catalog's role in surfacing a GLP-1 attribute.",
+     "lab_id": "P16"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Pipeline decay",
+   "strength": "Moderate",
+   "note": "Peggy on refreshes, audits and monitoring. Sonali and Tarang on incidents that recur because fixes stay short-term.",
+   "quotes": [
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "data has to get refreshed, right? We might have to do ongoing audits or monitor the quality of all our AI pipelines.",
+     "context": "What she looks for in a PM partner.",
+     "lab_id": "P10"
+    },
+    {
+     "who": "Peggy Men",
+     "conversation": "Ops cross-functional",
+     "date": "2026-10-23",
+     "quote": "If we just continue to build the new, then we'll continue to get escalations on the stuff we've already shipped and maintained. And catalog being a data product means that maintenance is always top of mind.",
+     "context": "Same answer, continued.",
+     "lab_id": "P10"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "her team creates now hundreds of these pipelines.",
+     "context": "Describing Peggy's team. Labeled 'Them'.",
+     "lab_id": "P10"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "simple things like we were literally, I feel like, three, four months apart, have the same issue bubble up as a different incident.",
+     "context": "Mike asked what was most broken.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "A lot of that actually meant something about the way we have architected our solution had to change. You can't symptomatically just fix it, right?",
+     "context": "Same answer, continued.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "getting really crisp on the ownership and getting all of those runbooks in order",
+     "context": "Same answer, the second half of the fix.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Sonali Parthasarathy",
+     "conversation": "Informal call",
+     "date": "2026-10-22",
+     "quote": "But I feel like enough investment hasn't been made.",
+     "context": "Same answer, opening.",
+     "lab_id": "P12"
+    },
+    {
+     "who": "Tarang Mittal",
+     "conversation": "Engineering director",
+     "date": "2026-10-26",
+     "quote": "here, like, we do have the equivalent of COEs, but we end up taking more shorter-term action items and longer-term ones.",
+     "context": "Comparing Instacart and Amazon decision-making. Labeled 'Them'. Likely means more short-term than long-term items.",
+     "lab_id": "P12"
+    }
+   ]
+  }
+ ]
+}

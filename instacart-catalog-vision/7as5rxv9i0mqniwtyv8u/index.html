@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Catalog Vision</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%23003d29'/%3E%3Cpath d='M5 17l5-5 4 3 5-7' stroke='%23ffdc23' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#108910; --accent-hover:#0d720d; --accent-wash:#f6fdf6; --accent-tint:#e9fbe9;
+  --kale:#003d29; --kale-deep:#003121; --mint:#edf7f4; --yellow:#ffdc23;
+  --white:#fff; --cream-100:#f7f5f0; --cream-200:#faf1e5; --cream-300:#efe9e1;
+  --grey-100:#e8e9eb; --grey-200:#c7c8cd; --grey-400:#8f939b; --grey-500:#72767e; --grey-700:#343538; --ink:#242529;
+  --red:#c4291c; --red-wash:#fdecea; --amber:#b25e09; --amber-wash:#fff4e5; --blue:#1a5fb4; --blue-wash:#eaf1fb;
+  --y1:#108910; --y1-wash:#e9fbe9; --y2:#1a5fb4; --y2-wash:#eaf1fb; --y3:#b25e09; --y3-wash:#fff4e5;
+  --r:.6rem; --pill:999px; --maxw:1120px;
+  --head:'DM Serif Display',Georgia,serif;
+  --body:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream-100);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--head);font-weight:400;color:var(--kale);letter-spacing:0}
+h3,h4{font-weight:700;letter-spacing:0}
+a{color:var(--kale)} a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1rem}
+@media(min-width:768px){.wrap{padding:0 2rem}}
+.eyebrow{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:700;display:block;margin-bottom:.5rem}
+.muted{color:var(--grey-500);font-size:.8125rem}
+.pill{display:inline-block;font-size:.6875rem;font-weight:700;padding:.15rem .55rem;border-radius:var(--pill);background:var(--grey-100);color:var(--grey-700);margin:0 .25rem .25rem 0;white-space:nowrap}
+.pill.y1{background:var(--y1-wash);color:var(--y1)} .pill.y2{background:var(--y2-wash);color:var(--y2)} .pill.y3{background:var(--y3-wash);color:var(--y3)}
+.pill.k{background:var(--kale);color:#fff}
+.card{background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);padding:1rem 1.125rem}
+
+/* Top nav */
+header.nav{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--grey-100)}
+.nav-inner{display:flex;align-items:center;gap:1rem;padding:.6rem 1rem;max-width:var(--maxw);margin:0 auto;flex-wrap:wrap}
+@media(min-width:768px){.nav-inner{padding:.6rem 2rem}}
+.wordmark{font-weight:700;color:var(--kale);display:flex;gap:.5rem;align-items:center;font-size:.9375rem}
+.wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+nav.links{display:flex;gap:.25rem;flex-wrap:wrap;margin-left:auto}
+nav.links a{font-size:.8125rem;font-weight:600;color:var(--grey-700);padding:.3rem .75rem;border-radius:var(--pill);text-decoration:none}
+nav.links a:hover{background:var(--accent-wash);color:var(--accent)}
+nav.links a.below{color:var(--grey-500);font-weight:500}
+
+/* Hero */
+.hero{background:var(--kale);color:#fff;padding:2.5rem 0 2rem}
+.hero .eyebrow{color:#c7e8d8}
+.hero h1{color:#fff;font-size:clamp(1.9rem,1.2rem+2.4vw,2.8rem);line-height:1.15;margin-bottom:.75rem;max-width:22ch}
+.hero p{color:var(--mint);max-width:70ch;font-size:1rem}
+.north{margin-top:1.5rem;display:grid;grid-template-columns:auto 1fr;gap:.25rem 1rem;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:.9rem 1.1rem;max-width:820px}
+.north .lbl{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:var(--yellow);font-weight:700}
+.north .val{font-weight:600}
+.north .sub{grid-column:2;font-size:.8125rem;color:#c7e8d8}
+@media(max-width:600px){.north{grid-template-columns:1fr}.north .sub{grid-column:1}}
+
+.band{padding:2.75rem 0}
+.band.white{background:var(--white);border-top:1px solid var(--grey-100);border-bottom:1px solid var(--grey-100)}
+.sechead{max-width:72ch;margin-bottom:1.5rem}
+.sechead h2{font-size:clamp(1.5rem,1.1rem+1.4vw,2rem);line-height:1.2;margin-bottom:.4rem}
+.sechead p{color:var(--grey-700)}
+
+/* Infographic: the road */
+.road{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding-top:3.25rem}
+.road::before{content:"";position:absolute;left:4%;right:4%;top:1.35rem;height:10px;border-radius:10px;background:linear-gradient(90deg,var(--y1) 0%,var(--y1) 30%,var(--y2) 36%,var(--y2) 63%,var(--y3) 70%,var(--y3) 100%)}
+.road::after{content:"";position:absolute;left:4%;right:4%;top:1.35rem;height:10px;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.85) 18px 30px);border-radius:10px;clip-path:inset(4px 0 4px 0)}
+.stage{position:relative;background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);padding:1.25rem 1.1rem 1.1rem;border-top:5px solid var(--c)}
+.stage .node{position:absolute;top:-3.25rem;left:50%;transform:translateX(-50%);width:2.6rem;height:2.6rem;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.05rem;border:4px solid var(--cream-100);z-index:2}
+.stage .yr{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--c)}
+.stage h3{font-family:var(--head);font-weight:400;font-size:1.45rem;color:var(--kale);line-height:1.2;margin:.15rem 0 .35rem}
+.stage .goal{color:var(--grey-700);font-size:.875rem;margin-bottom:.75rem}
+.stage ul{list-style:none;display:grid;gap:.45rem;margin-bottom:.9rem}
+.stage li{display:grid;grid-template-columns:1.6rem 1fr;gap:.5rem;font-size:.875rem;align-items:start}
+.stage li svg{width:1.6rem;height:1.6rem;flex:none}
+.stage .exit{background:var(--w);border-radius:.5rem;padding:.55rem .7rem;font-size:.8125rem}
+.stage .exit b{display:block;font-size:.625rem;text-transform:uppercase;letter-spacing:.1em;color:var(--c)}
+.found{margin-top:1rem;background:var(--kale);color:#fff;border-radius:var(--r);padding:.8rem 1.1rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;font-size:.875rem}
+.found b{color:var(--yellow);font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:860px){
+  .road{grid-template-columns:1fr;padding-top:0;padding-left:3.25rem;gap:1.5rem}
+  .road::before{left:1.05rem;right:auto;top:1rem;bottom:1rem;width:10px;height:auto;background:linear-gradient(180deg,var(--y1) 0%,var(--y1) 30%,var(--y2) 36%,var(--y2) 63%,var(--y3) 70%,var(--y3) 100%)}
+  .road::after{display:none}
+  .stage .node{top:1rem;left:-3.25rem;transform:none}
+}
+
+/* Problems table */
+.pt{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--grey-100);border-radius:var(--r);overflow:hidden;font-size:.875rem}
+.pt th,.pt td{padding:.65rem .8rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--grey-100)}
+.pt th{font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-500);background:var(--cream-100)}
+.pt td:first-child{font-weight:700;color:var(--kale);width:2rem}
+.pt tr:last-child td{border-bottom:none}
+@media(max-width:700px){.pt thead{display:none}.pt tr{display:grid;grid-template-columns:2rem 1fr;border-bottom:1px solid var(--grey-100)}.pt td{border:none;padding:.4rem .6rem}.pt td:nth-child(n+3){grid-column:2}.pt td:first-child{grid-row:span 3}}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.proof .card h4{color:var(--kale);font-size:.9375rem;margin-bottom:.25rem}
+.proof .card p{font-size:.875rem;color:var(--grey-700)}
+
+/* The line */
+.theline{background:repeating-linear-gradient(-45deg,var(--cream-300) 0 12px,var(--cream-200) 12px 24px);border-top:3px solid var(--kale);border-bottom:3px solid var(--kale);padding:1.5rem 0}
+.theline .inner{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.theline .tag{background:var(--kale);color:#fff;font-weight:700;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .8rem;border-radius:var(--pill)}
+.theline h2{font-size:1.5rem}
+.theline p{color:var(--grey-700);flex-basis:100%;max-width:72ch}
+
+/* Gantt */
+.gwrap{overflow-x:auto;border:1px solid var(--grey-100);border-radius:var(--r);background:var(--white)}
+.gantt{min-width:920px;display:grid;grid-template-columns:170px repeat(12,1fr);font-size:.75rem}
+.gantt .yh{grid-row:1;text-align:center;font-weight:700;padding:.5rem 0;color:#fff;font-size:.75rem;letter-spacing:.06em}
+.gantt .qh{grid-row:2;text-align:center;color:var(--grey-500);padding:.25rem 0;border-bottom:1px solid var(--grey-100);border-left:1px solid var(--grey-100);font-weight:600}
+.gantt .lane{grid-column:1;padding:.55rem .75rem;font-weight:700;color:var(--kale);border-bottom:1px solid var(--grey-100);display:flex;align-items:center;font-size:.8125rem;background:var(--cream-100)}
+.gantt .bar{margin:.3rem .2rem;border-radius:.4rem;padding:.3rem .5rem;font-weight:600;line-height:1.25;display:flex;align-items:center;min-height:2.2rem}
+.gantt .b1{background:var(--y1-wash);color:var(--y1);border:1px solid #bfe6bf}
+.gantt .b2{background:var(--y2-wash);color:var(--y2);border:1px solid #c3d6f0}
+.gantt .b3{background:var(--y3-wash);color:var(--y3);border:1px solid #f3d3a6}
+.gantt .ms{grid-column:1/-1;display:grid;grid-template-columns:170px repeat(3,1fr);background:var(--kale);color:#fff;font-weight:600}
+.gantt .ms div{padding:.55rem .75rem;text-align:right}
+.gantt .ms div:first-child{text-align:left;color:var(--yellow);font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center}
+
+/* Ideas */
+.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.idea{position:relative}
+.idea .num{font-family:var(--head);font-size:1.8rem;color:var(--grey-200);line-height:1;float:right}
+.idea h4{color:var(--kale);font-size:1rem;margin-bottom:.35rem;padding-right:2.5rem}
+.idea p{font-size:.875rem;color:var(--grey-700);margin-bottom:.5rem}
+.idea .proves{font-size:.8125rem;border-left:3px solid var(--accent);padding-left:.6rem;margin-bottom:.6rem}
+.idea.next{border:2px solid var(--accent)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+ol.steps,ul.ticks{padding-left:1.2rem;display:grid;gap:.5rem;font-size:.9rem}
+.tree{display:grid;gap:.6rem}
+.tree .root{background:var(--kale);color:#fff;border-radius:var(--r);padding:.8rem 1rem}
+.tree .root b{color:var(--yellow);font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;display:block}
+.tree .kids{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem}
+.tree .kid{background:var(--white);border:1px solid var(--grey-100);border-left:4px solid var(--accent);border-radius:.5rem;padding:.6rem .75rem;font-size:.8125rem}
+.tree .kid b{display:block;color:var(--kale);font-size:.875rem}
+.tree .guard{background:var(--red-wash);border:1px solid #f2c6c1;border-radius:.5rem;padding:.6rem .75rem;font-size:.8125rem;color:#7a1a11}
+footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner">
+  <div class="wordmark"><span class="dot"></span>Catalog Vision</div>
+  <nav class="links">
+    <a href="#road">Three years</a>
+    <a href="#problems">Problems</a>
+    <a href="#proof">Proof</a>
+    <a class="below" href="#below">More detail</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Instacart Catalog · A three-year vision · Michael Fitzpatrick</span>
+  <h1>A catalog that shoppers and their agents can trust</h1>
+  <p>Catalog is the platform every other surface stands on. Search, replacements, health filters and now shopping agents all read the same product facts. Over three years I would make those facts measurably correct, then build on that foundation until agents can query them and cite the evidence.</p>
+  <div class="north"><span class="lbl">North star</span><span class="val">Trusted coverage</span><span class="sub">The share of attribute values that shoppers and agents actually see which meet the quality bar for their family, weighted by views.</span></div>
+</div></section>
+
+<section class="band" id="road"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">The road</span><h2>Three years, three stages</h2><p>Each year builds on the last. Targets are proposals until they are set against measured baselines.</p></div>
+
+  <div class="road">
+    <div class="stage" style="--c:var(--y1);--w:var(--y1-wash)">
+      <div class="node">1</div>
+      <span class="yr">Year one</span><h3>Trust the facts</h3>
+      <p class="goal">Make the attributes that can hurt someone measurably right, and make every value explain itself.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e9fbe9"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#108910" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Hand-labeled golden sets for allergens and medical diets, used as the release gate</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e9fbe9"/><path d="M6 8h12M6 12h8M6 16h5" stroke="#108910" stroke-width="2" stroke-linecap="round"/></svg><span>Every value records which source won and why, at the moment it is written</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e9fbe9"/><rect x="7" y="6" width="10" height="12" rx="2" stroke="#108910" stroke-width="2" fill="none"/><path d="M9.5 10h5M9.5 13.5h3" stroke="#108910" stroke-width="2" stroke-linecap="round"/></svg><span>An attribute card for each family: definition, owner, freshness and confidence</span></li>
+      </ul>
+      <div class="exit"><b>Year-one target</b>Allergen values verified on 90% of the items shoppers view, at 99.5% precision</div>
+    </div>
+    <div class="stage" style="--c:var(--y2);--w:var(--y2-wash)">
+      <div class="node">2</div>
+      <span class="yr">Year two</span><h3>Make attributes cheap</h3>
+      <p class="goal">Turn each new attribute from a hand-built project into a repeatable launch.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#eaf1fb"/><path d="M8 7h8v10H8z" stroke="#1a5fb4" stroke-width="2" fill="none"/><path d="M10 11h4M10 14h4" stroke="#1a5fb4" stroke-width="2" stroke-linecap="round"/></svg><span>One intake spec and one pipeline template with quality checks built in</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#eaf1fb"/><path d="M6 16l4-4 3 2 5-6" stroke="#1a5fb4" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Model cascades that send only uncertain items to bigger models and people</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#eaf1fb"/><circle cx="12" cy="12" r="5" stroke="#1a5fb4" stroke-width="2" fill="none"/><path d="M12 9.5V12l1.8 1.2" stroke="#1a5fb4" stroke-width="2" stroke-linecap="round"/></svg><span>Refresh schedules and drift monitors, plus data formats for new markets</span></li>
+      </ul>
+      <div class="exit"><b>Year-two target</b>Time and cost to launch a new attribute family cut in half</div>
+    </div>
+    <div class="stage" style="--c:var(--y3);--w:var(--y3-wash)">
+      <div class="node">3</div>
+      <span class="yr">Year three</span><h3>Built for agents</h3>
+      <p class="goal">Publish facts that software can reason over, with the evidence attached.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#fff4e5"/><path d="M7 9h10v7H7z" stroke="#b25e09" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M10 6v3M14 6v3" stroke="#b25e09" stroke-width="2" stroke-linecap="round"/></svg><span>One interface that serves each fact with its confidence and provenance</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#fff4e5"/><path d="M8 15c1.5-4 6.5-4 8 0" stroke="#b25e09" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="9.5" cy="9.5" r="1.3" fill="#b25e09"/><circle cx="14.5" cy="9.5" r="1.3" fill="#b25e09"/></svg><span>Household restrictions honored in search and in replacements</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#fff4e5"/><path d="M7 17V7l10 5z" stroke="#b25e09" stroke-width="2" fill="none" stroke-linejoin="round"/></svg><span>Retailers and brands see and fix their own data problems</span></li>
+      </ul>
+      <div class="exit"><b>Year-three target</b>Most agent answers about dietary fit cite a verified fact</div>
+    </div>
+  </div>
+  <div class="found"><b>Always on</b><span>Golden sets per family</span><span>Lineage on every value</span><span>Cost per verified value</span><span>One owner per attribute family</span></div>
+</div></section>
+
+<section class="band white" id="problems"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Where to start</span><h2>Five problems worth fixing first</h2><p>Each came up more than once in my conversations with the team. Each fix is deliberately simple.</p></div>
+  <table class="pt"><thead><tr><th>#</th><th>Problem</th><th>Simple fix</th></tr></thead><tbody>
+    <tr><td>1</td><td>Every new attribute is built by hand, and demand keeps growing from search, replacements, health and agents.</td><td>A standard intake spec plus one reusable pipeline template with quality checks built in, so the tenth attribute costs less than the first.</td></tr>
+    <tr><td>2</td><td>Health tags such as gluten-free and allergens need near-perfect precision, and there is no ground truth to measure them against.</td><td>A small hand-labeled golden set per attribute that serves as the release gate.</td></tr>
+    <tr><td>3</td><td>Nobody can easily explain why a value won. Precedence differs by attribute and by retailer.</td><td>Record the winning source and the rule that picked it every time a value is written. The same record answers ops escalations and retailer questions.</td></tr>
+    <tr><td>4</td><td>Teams that consume catalog data cannot tell what a field means or how far to trust it.</td><td>An attribute card for each family, with confidence published next to every value so each consumer sets its own threshold.</td></tr>
+    <tr><td>5</td><td>Shipped pipelines decay, and some incidents return months later because the fix treated the symptom.</td><td>A refresh schedule and quality monitor per attribute, plus a recurrence tracker that moves repeat issues up the roadmap.</td></tr>
+  </tbody></table>
+</div></section>
+
+<section class="band" id="proof"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Proof</span><h2>What I would build to show it works</h2><p>A working year-one slice already exists, and three small builds would cover the rest of the road.</p></div>
+  <div class="proof">
+    <div class="card"><span class="pill y1">Year one · built</span><h4>Gluten-free evidence lab</h4><p>402 products scored from independent public sources with provenance on every claim, a precision and recall slider, and a conflict queue. <a href="../../instacart-catalog-lab/fuqzgno45ojb3ycaysp9/">Open the lab</a></p></div>
+    <div class="card"><span class="pill y1">Year one · next</span><h4>Value lineage explorer</h4><p>Pick a product and an attribute and see every source's value, the rule that picked the winner, and when it changed.</p></div>
+    <div class="card"><span class="pill y2">Year two · next</span><h4>New-market readiness check</h4><p>Load a non-US product feed, map it to the schema, and list the gaps in units, labeling rules and tax fields.</p></div>
+    <div class="card"><span class="pill y3">Year three · next</span><h4>Agent-ready catalog</h4><p>A tool interface an AI assistant can query for dietary fit, answering with evidence and declining when the evidence is thin.</p></div>
+  </div>
+</div></section>
+
+<section class="theline" id="below"><div class="wrap"><div class="inner">
+  <span class="tag">Below the line</span><h2>More detail and options under consideration</h2>
+  <p>Everything above is the short version. Everything below is supporting detail and ideas I am still weighing. Some of it may not belong in the final plan.</p>
+</div></div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Detailed roadmap</span><h2>Quarter by quarter</h2><p>Four lanes over twelve quarters. Scroll sideways on a small screen.</p></div>
+  <div class="gwrap"><div class="gantt">
+    <div style="grid-row:1;grid-column:1"></div>
+    <div class="yh" style="grid-column:2/6;background:var(--y1)">YEAR ONE · TRUST THE FACTS</div>
+    <div class="yh" style="grid-column:6/10;background:var(--y2)">YEAR TWO · MAKE ATTRIBUTES CHEAP</div>
+    <div class="yh" style="grid-column:10/14;background:var(--y3)">YEAR THREE · BUILT FOR AGENTS</div>
+    <div class="qh" style="grid-column:1;border-left:none"></div>
+    <div class="qh" style="grid-column:2">Q1</div><div class="qh" style="grid-column:3">Q2</div><div class="qh" style="grid-column:4">Q3</div><div class="qh" style="grid-column:5">Q4</div>
+    <div class="qh" style="grid-column:6">Q1</div><div class="qh" style="grid-column:7">Q2</div><div class="qh" style="grid-column:8">Q3</div><div class="qh" style="grid-column:9">Q4</div>
+    <div class="qh" style="grid-column:10">Q1</div><div class="qh" style="grid-column:11">Q2</div><div class="qh" style="grid-column:12">Q3</div><div class="qh" style="grid-column:13">Q4</div>
+
+    <div class="lane" style="grid-row:3/5">Quality and trust</div>
+    <div class="bar b1" style="grid-row:3;grid-column:2/4">Golden sets: allergens, medical diets</div>
+    <div class="bar b1" style="grid-row:3;grid-column:4/6">Allergen release gate at 99.5%</div>
+    <div class="bar b1" style="grid-row:4;grid-column:3/6">Lineage recorded on every write</div>
+    <div class="bar b2" style="grid-row:4;grid-column:6/10">Golden sets for every family</div>
+    <div class="bar b3" style="grid-row:3;grid-column:10/14">Second labeler and agreement scores on all golden sets</div>
+
+    <div class="lane" style="grid-row:5/7">Scale and cost</div>
+    <div class="bar b1" style="grid-row:5;grid-column:4/6">Attribute intake spec</div>
+    <div class="bar b2" style="grid-row:5;grid-column:6/8">Pipeline template with eval gates</div>
+    <div class="bar b2" style="grid-row:6;grid-column:7/10">Model cascades and review routing</div>
+    <div class="bar b2" style="grid-row:5;grid-column:8/11">Refresh and drift monitoring</div>
+    <div class="bar b3" style="grid-row:6;grid-column:11/14">Recurrence tracking tied to roadmap</div>
+
+    <div class="lane" style="grid-row:7/9">Consumers and agents</div>
+    <div class="bar b1" style="grid-row:7;grid-column:3/6">Attribute cards for consuming teams</div>
+    <div class="bar b2" style="grid-row:7;grid-column:6/8">Confidence published with values</div>
+    <div class="bar b3" style="grid-row:7;grid-column:9/12">Agent interface with provenance</div>
+    <div class="bar b3" style="grid-row:8;grid-column:10/14">Household restrictions in search and replacements</div>
+
+    <div class="lane" style="grid-row:9/11">Partners and new markets</div>
+    <div class="bar b1" style="grid-row:9;grid-column:2/4">Map downstream use cases</div>
+    <div class="bar b2" style="grid-row:9;grid-column:5/8">Retailer data health report</div>
+    <div class="bar b2" style="grid-row:10;grid-column:7/11">New-market schema: units, labeling, tax</div>
+    <div class="bar b3" style="grid-row:9;grid-column:11/14">Brand and retailer self-serve fixes</div>
+
+    <div class="ms" style="grid-row:11"><div>Milestones</div><div>Allergens verified on most viewed items</div><div>New family launches in weeks</div><div>Agents cite verified facts</div></div>
+  </div></div>
+</div></section>
+
+<section class="band white"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Demo ideas</span><h2>Ten demos that would pair with this plan</h2><p>Each one is small enough to build in days on public data. The three outlined in green are the ones I would build next.</p></div>
+  <div class="ideas">
+    <div class="card idea next"><span class="num">1</span><h4>Agent-ready catalog</h4><p>A tool server that exposes products with each attribute's value, confidence and evidence. An AI assistant answers a request like "nut-free snacks for a school party" and cites the evidence for every pick.</p><div class="proves">Proves the year-three idea: agents can use catalog facts safely when confidence travels with them.</div><span class="pill y3">Year three</span><span class="pill">3 to 4 days</span><span class="pill k">Build next</span></div>
+    <div class="card idea next"><span class="num">2</span><h4>Value lineage explorer</h4><p>Pick a product and an attribute. See every source's value side by side, the rule that chose the winner, and when the value last changed.</p><div class="proves">Proves that one record can answer an ops escalation and a retailer question.</div><span class="pill y1">Year one</span><span class="pill">2 to 3 days</span><span class="pill k">Build next</span></div>
+    <div class="card idea next"><span class="num">3</span><h4>New-market readiness check</h4><p>Load a UK or Canadian product feed from Open Food Facts, map it to a catalog schema, and report the gaps: metric units, bilingual labels, allergen rules that differ by country, and tax fields.</p><div class="proves">Proves the schema can stretch to new markets before anyone commits to a launch.</div><span class="pill y2">Year two</span><span class="pill">3 days</span><span class="pill k">Build next</span></div>
+    <div class="card idea"><span class="num">4</span><h4>Major-allergen evidence engine</h4><p>Extend the gluten-free lab to the nine major US allergens, treating "contains" and "may contain" separately, with a precision slider per allergen.</p><div class="proves">Proves the engine generalizes from one attribute to a family.</div><span class="pill y1">Year one</span><span class="pill">3 to 5 days</span></div>
+    <div class="card idea"><span class="num">5</span><h4>Attribute data cards</h4><p>A browsable set of cards generated from pipeline metadata: definition, owner, sources, freshness, coverage and measured precision.</p><div class="proves">Proves consuming teams can choose their own trust threshold.</div><span class="pill y1">Year one</span><span class="pill">2 days</span></div>
+    <div class="card idea"><span class="num">6</span><h4>Golden set studio</h4><p>A labeling tool for two people, with an agreement score and sampling that puts the products most likely to be wrong in front of labelers first.</p><div class="proves">Proves ground truth can be built quickly and honestly.</div><span class="pill y1">Year one</span><span class="pill">2 to 3 days</span></div>
+    <div class="card idea"><span class="num">7</span><h4>Attribute launch kit</h4><p>Fill in a one-page spec for a new attribute. It generates the pipeline configuration, a golden set template and a release checklist.</p><div class="proves">Proves the tenth attribute can cost less than the first.</div><span class="pill y2">Year two</span><span class="pill">3 to 4 days</span></div>
+    <div class="card idea"><span class="num">8</span><h4>Cost cascade simulator</h4><p>A small model first, a larger model on uncertain items, people last. Set a precision target and see cost per million products and the human review load, using measured token costs from the photo reader.</p><div class="proves">Proves quality and unit cost can be traded deliberately.</div><span class="pill y2">Year two</span><span class="pill">2 days</span></div>
+    <div class="card idea"><span class="num">9</span><h4>Retailer data health report</h4><p>A per-retailer scorecard of missing, conflicting and stale fields with a ranked fix list, built on a retail partner's public product API.</p><div class="proves">Proves partners can fix their own data with the right report.</div><span class="pill y2">Year two</span><span class="pill">2 to 3 days</span></div>
+    <div class="card idea"><span class="num">10</span><h4>Substitution safety checker</h4><p>Given an out-of-stock item and a household's restrictions, rank replacements and block any that would break a restriction, showing the evidence for each.</p><div class="proves">Proves trusted attributes change a live shopper decision.</div><span class="pill y3">Year three</span><span class="pill">2 to 3 days</span></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Measurement</span><h2>Metric tree</h2></div>
+  <div class="tree">
+    <div class="root"><b>North star</b>Trusted coverage: the share of viewed attribute values that meet their family's quality bar</div>
+    <div class="kids">
+      <div class="kid"><b>Verified coverage</b>Verified values divided by values viewed, by family and by retailer</div>
+      <div class="kid"><b>Precision</b>Measured against each family's golden set, reported with recall</div>
+      <div class="kid"><b>Freshness</b>Days since each value was last confirmed</div>
+      <div class="kid"><b>Unit cost</b>Cost per verified value, model and human review combined</div>
+      <div class="kid"><b>Launch speed</b>Weeks from intake spec to a gated release</div>
+      <div class="kid"><b>Agent citation rate</b>Share of agent answers on dietary fit that cite a verified fact</div>
+    </div>
+    <div class="guard"><b>Guardrail:</b> unsafe allergen badges, measured against golden sets, held at zero.</div>
+  </div>
+</div></section>
+
+<section class="band white"><div class="wrap">
+  <div class="two">
+    <div><div class="sechead" style="margin-bottom:1rem"><span class="eyebrow">Operating principles</span><h2>How the work would run</h2></div>
+      <ul class="ticks">
+        <li><b>Measure before you ship.</b> Every attribute family gets a golden set and a release bar before launch.</li>
+        <li><b>Confidence travels with the value.</b> Consumers decide their own threshold.</li>
+        <li><b>Every value can explain itself.</b> Lineage is written at the same moment as the value.</li>
+        <li><b>Fix the class of problem the second time it appears.</b> A repeat incident earns a root-cause slot on the roadmap.</li>
+        <li><b>Keep the vision current.</b> Refresh it each planning cycle and walk every new leader through it.</li>
+      </ul></div>
+    <div><div class="sechead" style="margin-bottom:1rem"><span class="eyebrow">First 90 days</span><h2>How I would start</h2></div>
+      <ol class="steps">
+        <li><b>Weeks 1 to 4.</b> Listen. Map how each consuming team uses catalog data, and measure two high-stakes families against a quick golden set.</li>
+        <li><b>Weeks 5 to 8.</b> Stand up golden sets and lineage logging for allergens and one medical diet.</li>
+        <li><b>Weeks 9 to 12.</b> Write the vision doc with the team, review it up the chain, and set year-one targets against the measured baselines.</li>
+      </ol></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Risks and open questions</span><h2>What could change the plan</h2></div>
+  <div class="two">
+    <div class="card"><h4 style="color:var(--kale)">Rebuild or extend</h4><p style="font-size:.875rem">The current model is about ten years old. Before deciding either way, I would stress-test it against the hardest upcoming use cases and price each gap.</p></div>
+    <div class="card"><h4 style="color:var(--kale)">Health claims need legal review</h4><p style="font-size:.875rem">Subjective tags change meaning over time. Definitions should be reviewed with legal before an attribute ships.</p></div>
+    <div class="card"><h4 style="color:var(--kale)">Model cost at catalog scale</h4><p style="font-size:.875rem">Frontier models are expensive across millions of products. Cascades and caching keep the cost bounded.</p></div>
+    <div class="card"><h4 style="color:var(--kale)">Foundation work competes with new attributes</h4><p style="font-size:.875rem">An explicit split of capacity each quarter keeps both moving and makes the trade visible.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Built by Michael Fitzpatrick, October 2026. Based on my conversations with the catalog team and public sources. Targets are proposals.</div></footer>
+</body>
+</html>

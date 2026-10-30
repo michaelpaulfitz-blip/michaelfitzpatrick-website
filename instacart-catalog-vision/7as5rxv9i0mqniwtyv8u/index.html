@@ -55,7 +55,8 @@ nav.links a.below{color:var(--grey-500);font-weight:500}
 .herogrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1.25rem 2.5rem;align-items:start}
 @media(max-width:860px){.herogrid{grid-template-columns:1fr}}
 .north{display:grid;gap:.3rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:1rem 1.1rem}
-.toc{margin-top:1rem}
+.toc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:.9rem 1.1rem}
+.hero .lead{color:#fff;margin-bottom:.6rem}
 .toc b{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:#c7e8d8;margin-bottom:.35rem}
 .toc ol{list-style:none;display:grid;gap:.3rem;counter-reset:toc}
 .toc li{counter-increment:toc;display:grid;grid-template-columns:1.6rem 1fr;align-items:baseline;font-size:.875rem}
@@ -150,6 +151,27 @@ ol.steps,ul.ticks{padding-left:1.2rem;display:grid;gap:.5rem;font-size:.9rem}
 .tree .guard{background:var(--red-wash);border:1px solid #f2c6c1;border-radius:.5rem;padding:.6rem .75rem;font-size:.8125rem;color:#7a1a11}
 .legend{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;margin-bottom:.75rem;font-size:.8125rem;color:var(--grey-700)}
 .legend span{display:flex;align-items:center;gap:.4rem}.legend i{width:.8rem;height:.8rem;border-radius:3px;display:inline-block}
+section.band{position:relative}
+.upnext{display:flex;align-items:center;gap:.6rem;margin-top:2rem;color:var(--accent);text-decoration:none;width:max-content;max-width:100%}
+.upnext svg{width:34px;height:52px;animation:upglow 2.4s ease-in-out infinite}
+.upnext .un-l{font-family:var(--head);font-size:1.35rem;color:var(--accent)}
+.upnext .un-n{font-size:.875rem;font-weight:700;color:var(--kale);border-bottom:1px solid var(--accent)}
+.upnext:hover .un-n{color:var(--accent)}
+@media(min-width:1500px){
+  .upnext{position:absolute;left:calc(50% - 560px - 185px);bottom:2.75rem;width:165px;flex-direction:column;align-items:flex-start;gap:.2rem;margin:0}
+  .upnext svg{width:60px;height:90px;order:3;margin-left:1.5rem}
+  .upnext .un-l{font-size:1.75rem;line-height:1}
+}
+@keyframes upglow{0%,100%{filter:drop-shadow(0 0 0 rgba(16,137,16,0));transform:translateY(0)}50%{filter:drop-shadow(0 0 6px rgba(16,137,16,.55));transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.upnext svg{animation:none}}
+.tips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem}
+.tip{position:relative;display:inline-block;border:1px solid var(--accent);color:var(--accent);background:var(--accent-wash);border-radius:var(--pill);padding:.35rem .9rem;font-size:.8125rem;font-weight:700;cursor:help;outline:none}
+.tip .pop{display:none;position:absolute;left:0;top:calc(100% + .5rem);z-index:20;width:min(420px,85vw);background:var(--white);color:var(--ink);border:1px solid var(--grey-200);border-radius:var(--r);box-shadow:0 6px 24px rgba(0,0,0,.15);padding:.85rem 1rem;font-weight:400;font-size:.8125rem;line-height:1.5;cursor:auto}
+.tip:hover .pop,.tip:focus .pop,.tip:focus-within .pop{display:block}
+.tip .pop b{display:block;color:var(--kale);margin-bottom:.4rem}
+.tip .pop .row{display:grid;grid-template-columns:2rem 1fr;gap:.3rem}
+.tip .pop .row i{font-style:normal;font-weight:700;color:var(--kale)}
+.tip .pop .foot{display:block;margin-top:.5rem;color:var(--grey-700)}
 footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
 /* Demo */
 .agcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -206,11 +228,11 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
 <header class="nav"><div class="nav-inner">
   <div class="wordmark"><span class="dot"></span>Catalog Charter Vision</div>
   <nav class="links">
-    <a href="#road">1 Stages</a>
-    <a href="#problems">2 Pain points</a>
+    <a href="#problems">1 Pain points</a>
+    <a href="#road">2 Stages</a>
     <a href="#roadmap">3 Roadmap</a>
     <a href="#start">4 First 90 days</a>
-    <a href="#demo">5 Demo</a>
+    <a href="#demo">5 GLP-1 demo</a>
   </nav>
 </div></header>
 
@@ -218,20 +240,35 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
   <div>
     <span class="eyebrow">Michael Fitzpatrick · October 2026</span>
     <h1>Instacart Catalog Charter Vision</h1>
-    <p>Every surface reads the same product facts. This vision makes them measurably correct and agent-ready from day one, then makes each new attribute cheaper to launch.</p>
-    <nav class="toc"><b>On this page</b><ol>
-      <li><div><a href="#road">Three stages</a> <span>of the charter, from trusted facts to every surface</span></div></li>
-      <li><div><a href="#problems">Pain points</a> <span>with a proposed solution for each</span></div></li>
-      <li><div><a href="#roadmap">Two-year roadmap</a> <span>quarter by quarter</span></div></li>
-      <li><div><a href="#start">First 90 days</a> <span>and the risks that could change the plan</span></div></li>
-      <li><div><a href="#demo">Live demo</a> <span>an agent that answers from the catalog and cites every claim</span></div></li>
-    </ol></nav>
+    <p class="lead">Hey guys, this is a demo / charter proposal that I created. My hope is that it demonstrates my style as a product leader, as well as what I've learned over the past few weeks through my conversations with all of you.</p>
+    <p>Every surface reads the same product facts. This vision makes them measurably correct and agent-ready, then makes new attributes cheaper to launch, enabling easier international scale &amp; expansion.</p>
   </div>
-  <div class="north"><span class="lbl">North star</span><span class="val">Trusted coverage</span><span class="sub">The share of attribute values that shoppers and agents actually see which meet the quality bar for their family, weighted by views.</span></div>
+  <nav class="toc"><b>On this page</b><ol>
+    <li><div><a href="#problems">Pain points</a> <span>with my initial thoughts on solutions</span></div></li>
+    <li><div><a href="#road">Three stages</a> <span>of the charter, from trusted facts to every surface</span></div></li>
+    <li><div><a href="#roadmap">Two-year roadmap</a> <span>quarter by quarter</span></div></li>
+    <li><div><a href="#start">First 90 days</a> <span>and the risks that could change the plan</span></div></li>
+    <li><div><a href="#demo">GLP-1 friendly catalog</a> <span>a live demo that answers from real products and cites every claim</span></div></li>
+  </ol></nav>
+</div></section>
+
+<section class="band white" id="problems"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Where to start</span><h2><span class="secnum">1</span>Pain points</h2><p>Through my discussions with the Catalog team I learned a number of opportunities &amp; pain points. These are seven that I heard vocalized more than once, along with my initial thoughts on solutions to tackle them.</p></div>
+  <table class="pt"><thead><tr><th>#</th><th>Pain point</th><th>Solution</th></tr></thead><tbody>
+    <tr><td>1</td><td><b>New markets</b> — Growth into new markets and onto new platforms will bring data attributes that the current model may not hold: new formats, units, labeling and allergen rules, tax fields and attributes.</td><td>The right answer is still open, and finding it should be a top priority. Partner with the team leading international expansion to inventory what a new market or platform needs, run a sample feed through the schema and pipelines, and harden what breaks before a launch depends on it.</td></tr>
+    <tr><td>2</td><td><b>Legacy system</b> — The catalog is about ten years old. It is difficult to navigate, and when a value looks wrong it is hard to diagnose why the system produced it.</td><td>Make the current system explainable first: a living map of how data flows and a decision record on every value. Then stress-test it against the hardest upcoming use cases and rebuild the parts that fail.</td></tr>
+    <tr><td>3</td><td><b>Attribute launch effort</b> — Demand for new attributes keeps growing from search, replacements, health and agents, and each new one still needs its own definition, pipeline design and audit plan. The process is time-consuming and prone to human error.</td><td>Build on the existing self-serve pipeline platform with a standard attribute spec, reusable templates and quality checks built in, so the tenth attribute costs less than the first.</td></tr>
+    <tr><td>4</td><td><b>Ground truth</b> — Health tags such as gluten-free and allergens need near-perfect precision, and there is no external ground truth to ingest for tags Instacart generates itself.</td><td>Build on the existing ground truth work. Where golden sets exist, solidify them into release gates. Where they do not, create a small hand-labeled set per attribute so every launch is measured against the same bar.</td></tr>
+    <tr><td>5</td><td><b>Opaque precedence</b> — My understanding is that it’s difficult to explain which values win, and that precedence can differ by attribute and retailer.</td><td>Record the winning source and the rule that picked it every time a value is written. The same record answers ops escalations and retailer questions.</td></tr>
+    <tr><td>6</td><td><b>Unclear meaning</b> — Teams that consume catalog data cannot tell what a field means or how far to trust it.</td><td>An attribute card for each family, with confidence published next to every value so each consumer sets its own threshold.</td></tr>
+    <tr><td>7</td><td><b>Pipeline decay</b> — Shipped pipelines drift, and some incidents return months later because the fix treated the symptom.</td><td>A refresh schedule and quality monitor per attribute, plus a recurrence tracker that moves repeat issues up the roadmap.</td></tr>
+  </tbody></table>
+
+  <a class="upnext" href="#road"><svg viewBox="0 0 60 90" aria-hidden="true"><path d="M48 6 C 14 10, 8 40, 26 78" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M14 68 L26 80 L34 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="un-l">Up next</span><span class="un-n">Three stages</span></a>
 </div></section>
 
 <section class="band" id="road"><div class="wrap">
-  <div class="sechead"><span class="eyebrow">The road</span><h2><span class="secnum">1</span>Three stages</h2><p>The stages overlap. Agent work starts in the first stage, because agents are already reading the catalog. Targets are proposals until they are set against measured baselines.</p></div>
+  <div class="sechead"><span class="eyebrow">The road</span><h2><span class="secnum">2</span>Three stages</h2><p>The stages overlap. Agent work starts in the first stage, because agents are already reading the catalog. Targets are proposals until they are set against measured baselines.</p></div>
 
   <div class="road">
     <div class="stage" style="--c:var(--y1);--w:var(--y1-wash)">
@@ -270,23 +307,14 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
     </div>
   </div>
   <div class="found"><b>Always on</b><span>Golden sets per family</span><span>Lineage on every value</span><span>Cost per verified value</span><span>One owner per attribute family</span></div>
+
+  <a class="upnext" href="#roadmap"><svg viewBox="0 0 60 90" aria-hidden="true"><path d="M48 6 C 14 10, 8 40, 26 78" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M14 68 L26 80 L34 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="un-l">Up next</span><span class="un-n">Two-year roadmap</span></a>
 </div></section>
 
-<section class="band white" id="problems"><div class="wrap">
-  <div class="sechead"><span class="eyebrow">Where to start</span><h2><span class="secnum">2</span>Pain points</h2><p>Each came up more than once in my conversations with the team.</p></div>
-  <table class="pt"><thead><tr><th>#</th><th>Pain point</th><th>Solution</th></tr></thead><tbody>
-    <tr><td>1</td><td><b>New markets</b> — Growth into new markets and onto new platforms will bring data the current model may not hold: new formats, units, labeling and allergen rules, tax fields and attributes.</td><td>The right answer is still open, and finding it should be a top priority. Partner with the team leading international expansion to inventory what a new market or platform needs, run a sample feed through the schema and pipelines, and harden what breaks before a launch depends on it.</td></tr>
-    <tr><td>2</td><td><b>Aging system</b> — The catalog is about ten years old. It is difficult to navigate, and when a value looks wrong it is hard to diagnose why the system produced it.</td><td>Make the current system explainable first: a living map of how data flows and a decision record on every value. Then stress-test it against the hardest upcoming use cases and rebuild the parts that fail.</td></tr>
-    <tr><td>3</td><td><b>Attribute launch effort</b> — Demand for new attributes keeps growing from search, replacements, health and agents, and each new one still needs its own definition, pipeline design and audit plan. The process is time-consuming and prone to human error.</td><td>Build on the existing self-serve pipeline platform with a standard attribute spec, reusable templates and quality checks built in, so the tenth attribute costs less than the first.</td></tr>
-    <tr><td>4</td><td><b>Ground truth</b> — Health tags such as gluten-free and allergens need near-perfect precision, and there is no external ground truth to ingest for tags Instacart generates itself.</td><td>Build on the existing ground truth work. Where golden sets exist, solidify them into release gates. Where they do not, create a small hand-labeled set per attribute so every launch is measured against the same bar.</td></tr>
-    <tr><td>5</td><td><b>Opaque precedence</b> — Nobody can easily explain why a value won. Precedence differs by attribute and by retailer.</td><td>Record the winning source and the rule that picked it every time a value is written. The same record answers ops escalations and retailer questions.</td></tr>
-    <tr><td>6</td><td><b>Unclear meaning</b> — Teams that consume catalog data cannot tell what a field means or how far to trust it.</td><td>An attribute card for each family, with confidence published next to every value so each consumer sets its own threshold.</td></tr>
-    <tr><td>7</td><td><b>Pipeline decay</b> — Shipped pipelines drift, and some incidents return months later because the fix treated the symptom.</td><td>A refresh schedule and quality monitor per attribute, plus a recurrence tracker that moves repeat issues up the roadmap.</td></tr>
-  </tbody></table>
-</div></section>
 
-<section class="band" id="roadmap"><div class="wrap">
-  <div class="sechead"><span class="eyebrow">Quarter by quarter</span><h2><span class="secnum">3</span>Two-year roadmap</h2><p>Four lanes over eight quarters, colored by stage. Agent work starts in the first quarter. Scroll sideways on a small screen.</p></div>
+
+<section class="band white" id="roadmap"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Quarter by quarter</span><h2><span class="secnum">3</span>(Hypothetical) Two-year roadmap</h2><p>Four lanes over eight quarters, colored by stage. Agent work starts in the first quarter.</p></div>
   <div class="legend"><span><i style="background:var(--y1)"></i>Stage one · Trust the facts</span><span><i style="background:var(--y2)"></i>Stage two · Make attributes cheap</span><span><i style="background:var(--y3)"></i>Stage three · Reach every surface</span></div>
   <div class="gwrap"><div class="gantt">
     <div style="grid-row:1;grid-column:1"></div>
@@ -324,11 +352,14 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
 
     <div class="ms" style="grid-row:11"><div>Milestones</div><div>Allergens verified and served to agents with evidence</div><div>New families launch in weeks, and agents cover every family</div></div>
   </div></div>
+
+  <a class="upnext" href="#start"><svg viewBox="0 0 60 90" aria-hidden="true"><path d="M48 6 C 14 10, 8 40, 26 78" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M14 68 L26 80 L34 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="un-l">Up next</span><span class="un-n">First 90 days</span></a>
 </div></section>
 
-<section class="band white" id="start"><div class="wrap">
+<section class="band" id="start"><div class="wrap">
   <div class="two">
     <div><div class="sechead" style="margin-bottom:1rem"><span class="eyebrow">First 90 days</span><h2><span class="secnum">4</span>How I would start</h2></div>
+      <p style="margin-bottom:.9rem">When I join a new firm or team, I like to form and track a 90-day plan. Early priorities are learning, relationship building, and then finding some low-hanging fruit to gain quick wins, earning trust from the team and excitement about forward momentum. Below is a hypothetical beginning, which would be driven by your priorities and objectives for me to tackle, Brittany.</p>
       <ol class="steps">
         <li><b>Weeks 1 to 4.</b> Listen, learn, and build relationships! My style of Product Management relies heavily on learning, trusting relationships, and documenting the current &amp; future state. I would map how each consuming team uses catalog data, and measure two high-stakes families against a quick golden set.</li>
         <li><b>Weeks 5 to 8.</b> Create or solidify golden sets and lineage logging for allergens and one medical diet, and expose them through a first agent interface.</li>
@@ -341,10 +372,24 @@ footer{padding:2rem 0 3rem;color:var(--grey-500);font-size:.8125rem}
         <div class="card"><h4 style="color:var(--kale)">Foundation work competes with new attributes</h4><p style="font-size:.875rem">An explicit split of capacity each quarter keeps both moving and makes the trade visible.</p></div>
       </div></div>
   </div>
+
+  <a class="upnext" href="#demo"><svg viewBox="0 0 60 90" aria-hidden="true"><path d="M48 6 C 14 10, 8 40, 26 78" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M14 68 L26 80 L34 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="un-l">Up next</span><span class="un-n">GLP-1 friendly catalog</span></a>
 </div></section>
 
-<section class="band" id="demo"><div class="wrap">
-  <div class="sechead"><span class="eyebrow">Live demo</span><h2><span class="secnum">5</span>Agent-ready catalog</h2><p>Real products from a Kroger store's public product API, cross-checked against Open Food Facts and USDA data by UPC. Every attribute shows what each source said and which value won. Ask a question and an AI agent answers from this catalog only, with a citation for every claim.</p></div>
+<section class="band white" id="demo"><div class="wrap">
+  <div class="sechead"><span class="eyebrow">Live demo</span><h2><span class="secnum">5</span>GLP-1 Friendly Catalog</h2><p>Real products from a Kroger store's public product API, each scored for GLP-1 fit and cross-checked against Open Food Facts and USDA data by UPC. Every attribute shows what each source said and which value won. Ask a question and an AI agent answers from this catalog only, with a citation for every claim.</p>
+  <div class="tips">
+    <span class="tip" tabindex="0">How are you deciding GLP-1 friendliness?<span class="pop"><b>A simple points score from each product's nutrition panel, per serving.</b>
+      <span class="row"><i>+2</i>8 g or more protein per 100 calories (+1 for 5 g or more)</span>
+      <span class="row"><i>+1</i>15 g or more protein</span>
+      <span class="row"><i>+1</i>3 g or more fiber</span>
+      <span class="row"><i>+1</i>5 g or less added sugar (−1 above 10 g)</span>
+      <span class="row"><i>+1</i>400 calories or fewer</span>
+      <span class="row"><i>−1</i>More than 5 g saturated fat</span>
+      <span class="row"><i>−1</i>Ultra-processed (NOVA group 4, from Open Food Facts)</span>
+      <span class="foot">4 or more is Friendly, 1 to 3 is Neutral, 0 or less is Not a fit. The signals follow common guidance for people on GLP-1 medications: favor protein and fiber, keep portions modest, and go easy on sugary and high-fat foods. Open any product to see its math.</span></span></span>
+    <span class="tip" tabindex="0">Disclaimer<span class="pop">We know this is a pretty primitive solution to what is a nuanced problem. We mean it only as a demonstration rather than something we'd propose launching to production.</span></span>
+  </div></div>
   <div id="agStats" class="muted" style="margin-bottom:1rem"></div>
   <div class="agcards" id="agCards"><div class="card muted">Loading products.</div></div>
   <div style="text-align:center;margin:1.25rem 0 2rem"><button class="bigbtn" id="agMore">Show me three more</button></div>
@@ -371,7 +416,7 @@ const SRC = { kroger:'Kroger', off:'Open Food Facts', fdc:'USDA FoodData Central
 const src = s => SRC[s] || s;
 const AL = { milk:'Milk', egg:'Egg', peanut:'Peanut', tree_nuts:'Tree nuts', soy:'Soy', wheat:'Wheat', fish:'Fish', shellfish:'Shellfish', sesame:'Sesame' };
 const NUT = [['calories','Calories',''],['protein_g','Protein','g'],['fiber_g','Fiber','g'],['added_sugars_g','Added sugars','g'],['total_sugars_g','Total sugars','g'],['sat_fat_g','Saturated fat','g'],['sodium_mg','Sodium','mg']];
-const QUESTIONS = ['Nut-free snacks for a school party','GLP-1 friendly frozen lunches','Gluten-free cereal a celiac can trust','High-protein snacks under 200 calories','Dairy-free yogurt'];
+const QUESTIONS = ['GLP-1 friendly frozen lunches','GLP-1 friendly snacks under 200 calories','Nut-free snacks for a school party','Gluten-free cereal a celiac can trust','High-protein snacks under 200 calories','Dairy-free yogurt'];
 const human = v => String(v ?? 'n/a').replace(/_/g, ' ');
 let C = null, ANS = {}, shown = new Set();
 

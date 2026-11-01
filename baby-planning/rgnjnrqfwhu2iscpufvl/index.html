@@ -195,7 +195,7 @@
   <div class="countdown" aria-label="Pregnancy progress">
     <div class="stat"><div class="n" id="wk">–</div><div class="l">Weeks along</div></div>
     <div class="stat"><div class="n" id="left">–</div><div class="l">Days to go</div></div>
-    <div class="stat"><div class="n">Mar 15</div><div class="l">Due date*</div></div>
+    <div class="stat"><div class="n">Mar 7</div><div class="l">Due date</div></div>
   </div>
 </header>
 
@@ -209,7 +209,7 @@
       <ul>
         <li>~45 action items, Oct 2026 to Feb 2027, each with a do-by date, pregnancy week, owner and status</li>
         <li>9 in progress, 1 done (Carla's dental cleaning), the rest not started</li>
-        <li>Due date in the sheet is still a placeholder (Mar 15, 2027)</li>
+        <li>Due date is March 7, 2027. The sheet still shows the old Mar 15 placeholder, so its pregnancy-week column is about a week off</li>
       </ul>
       <a class="open" href="https://docs.google.com/spreadsheets/d/1z8MsttkVzc5ZZeJkWSv6Jd1nAcxcB28Rm06MQVHMToY/edit" target="_blank" rel="noopener">Open the tracker →</a>
     </div>
@@ -579,7 +579,7 @@
 <div class="pick" id="daycare-plan">
   <h2>Plan in one glance</h2>
   <ul>
-    <li><b>We're at ~20 weeks: late-ish for Seattle infant waitlists, not doomed.</b> The median wait is about 8 months, and 12–18 in popular areas. Get on lists this week.</li>
+    <li><b>We're at ~22 weeks: late-ish for Seattle infant waitlists, not doomed.</b> The median wait is about 8 months, and 12–18 in popular areas. Get on lists this week.</li>
     <li><b>Likely start: Sept–Oct 2027.</b> With staggered leave (birthing parent up to 16 weeks of WA PFML, then the other parent's 12), the baby would be about 6.5 months old.</li>
     <li><b>Budget about $2,850–3,100 a month for a center</b> or <b>$1,950–2,150 for a licensed family home</b>, projected to 2027.</li>
     <li><b>Hours:</b> several close options run 6:00–6:00 or 6:30–6:00. Avoid 9–3 and part-time programs.</li>
@@ -744,13 +744,13 @@
   </div>
 </section>
 
-<footer>*Placeholder due date until the OB confirms it. Private page, not linked publicly. Last updated Nov 1, 2026.</footer>
+<footer>Private page, not linked publicly. Last updated Nov 1, 2026.</footer>
 </div>
 </div>
 
 <script>
-  // Placeholder due date; change here (and in the tracker) once the OB confirms it.
-  var DUE = new Date(2027, 2, 15);
+  // Due date (Mike, 2026-11-01).
+  var DUE = new Date(2027, 2, 7);
   var DAY = 864e5, today = new Date(); today.setHours(0,0,0,0);
   var daysLeft = Math.round((DUE - today) / DAY);
   var along = 280 - daysLeft;

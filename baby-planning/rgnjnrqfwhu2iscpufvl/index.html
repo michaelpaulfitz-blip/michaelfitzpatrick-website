@@ -163,6 +163,32 @@
   .anchor-btn:hover, .anchor-btn:focus-visible{color:var(--navy); border-color:var(--navy)}
   .anchor-btn.ok{color:var(--green); border-color:var(--green)}
   .anchor-btn svg{width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round}
+  /* Wide daycare table: lets #daycare-options use the full screen width */
+  .wrap{max-width:none}
+  .wrap > *:not(.wide){max-width:1080px; margin-left:auto; margin-right:auto}
+  .wrap > .wide{max-width:none}
+  #daycare-options table{min-width:1150px}
+  table.dc{font-size:13px}
+  table.dc th[data-k]{cursor:pointer; user-select:none}
+  table.dc th[data-k]:hover{color:var(--navy)}
+  table.dc th.sorted{color:var(--navy)}
+  table.dc th.sorted::after{content:" 95"}
+  table.dc td{padding:8px 10px}
+  table.dc td.nw{white-space:nowrap}
+  table.dc td.c-hours{min-width:90px; max-width:150px}
+  table.dc td.c-name{min-width:165px}
+  table.dc td.c-txt{min-width:115px; max-width:220px}
+  table.dc td.c-notes{min-width:220px}
+  table.dc textarea{width:100%; min-height:62px; font:inherit; font-size:13px; padding:6px 8px; border:1.5px solid var(--hair); border-radius:7px; resize:vertical; background:var(--paper)}
+  table.dc textarea:focus, table.dc select:focus{outline:none; border-color:var(--navy); background:#fff}
+  table.dc select{font:inherit; padding:4px 6px; border:1.5px solid var(--hair); border-radius:7px; background:var(--paper)}
+  table.dc textarea:disabled, table.dc select:disabled{opacity:.55; cursor:not-allowed}
+  .dc-meta{font-size:11px; color:var(--ink-faded); margin-top:3px}
+  .muted{color:var(--ink-faded)}
+  .dc-tools{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin-bottom:10px; font-size:13.5px}
+  .dc-tools label{display:inline-flex; align-items:center; gap:6px}
+  .dc-sync{font-size:12.5px; color:var(--ink-faded)} .dc-sync.ok{color:var(--green)} .dc-sync.err{color:var(--brick)}
+  .dc-who{margin-left:auto}
 </style>
 </head>
 <body>
@@ -186,6 +212,7 @@
   <a href="#daycare-how">How it works</a>
   <a href="#daycare-cost">Costs</a>
   <a href="#daycare-ask">What to ask</a>
+  <a href="#daycare-quality">What quality means</a>
   <a href="#daycare-options">Options &amp; drive times</a>
   <a href="#daycare-next">Shortlist &amp; timeline</a>
   <a href="#daycare-sources">Daycare sources</a>
@@ -590,7 +617,7 @@
     <li><b>Likely start: Sept–Oct 2027.</b> With staggered leave (birthing parent up to 16 weeks of WA PFML, then the other parent's 12), the baby would be about 6.5 months old.</li>
     <li><b>Budget about $2,850–3,100 a month for a center</b> or <b>$1,950–2,150 for a licensed family home</b>, projected to 2027.</li>
     <li><b>Hours:</b> several close options run 6:00–6:00 or 6:30–6:00. Avoid 9–3 and part-time programs.</li>
-    <li><b>Tour first:</b> Learning Way, Ages in Stages, YMCA West Seattle, Fauntleroy Children's Center, South Seattle KinderCare.</li>
+    <li><b>Tour first:</b> Learning Way, Children's Academy II, Ages in Stages II, EuropaKids, WorldKids Burien (see the shortlist).</li>
   </ul>
 </div>
 
@@ -677,57 +704,89 @@
   </div>
 </section>
 
-<section id="daycare-options">
+<section id="daycare-quality">
+  <h2>What "high quality" means for a baby</h2>
+  <p class="sub">There are standout daycares, but for infants the ones that stand out aren't the ones with academics. They're the ones where the same warm, attentive adult talks to your baby all day. That's what builds language, attention and the early foundations of being "smart."</p>
+  <div class="grid">
+    <div class="card t-green"><h3>What actually matters at this age</h3><ul>
+      <li><b>Responsive caregiving:</b> the adult notices cues, talks and narrates, does lots of back-and-forth ("serve and return"). This is the biggest driver of early language and thinking.</li>
+      <li><b>The same caregiver:</b> a primary caregiver who stays. Turnover is hard on babies.</li>
+      <li><b>Few babies per adult:</b> 1:3 beats the state's 1:4. Small rooms are calmer.</li>
+      <li><b>Trained, stable staff:</b> early childhood training (CDA or a degree), and paid well enough to stay.</li>
+      <li><b>Safety basics done perfectly:</b> safe sleep, hygiene, a clean inspection record.</li>
+    </ul></div>
+    <div class="card"><h3>What matters less (for now)</h3><ul>
+      <li>Curriculum labels (Montessori, Reggio) and "academics." For infants, these mostly describe the vibe of the room.</li>
+      <li>Fancy facilities and brand names.</li>
+      <li>Language immersion is a nice bonus, not a requirement.</li>
+      <li>These start to matter more around ages 2–3, when many families switch programs anyway.</li>
+    </ul></div>
+    <div class="card t-tan"><h3>How the table scores quality</h3><ul>
+      <li><b>Early Achievers level (1–5):</b> Washington's official quality rating, based on observed classroom quality. 3 is meeting standards, 4–5 is high. This is the best single objective signal.</li>
+      <li><b>NAEYC accreditation:</b> the national gold standard. Rare, so it's a strong plus.</li>
+      <li><b>Licensing record:</b> valid complaints or violations on DCYF Child Care Check.</li>
+      <li><b>Google rating + review count:</b> parent sentiment. A 4.8 from 60 reviews means more than a 5.0 from 3.</li>
+      <li><b>Our score (1–5):</b> our gut after touring. Rate the warmth of the infant room, how calm it was, and whether the staff talked to the babies.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="daycare-options" class="wide">
   <h2>Nearby options &amp; morning drive times</h2>
-  <p class="sub">Estimated 7:30–8:30am drive from home, based on road distance with typical weekday traffic added. These are estimates, not live traffic. Prices marked * are estimates from King County averages, not quotes. Hours and prices change often, so call to confirm.</p>
+  <p class="sub">43 licensed providers that take infants, sorted by estimated 7:30–8:30am drive from home (road distance with typical weekday traffic added; not live traffic). Click a column header to sort. Prices marked * are estimates from King County averages, not quotes. Ratings and hours change, so call to confirm. <b>Our score</b> and <b>Notes</b> save to our shared Google Sheet.</p>
+  <div class="dc-tools">
+    <label><input type="checkbox" id="dc-xh"> Extended hours only (opens by 6:30, closes 6pm+)</label>
+    <label><input type="checkbox" id="dc-centers"> Centers only</label>
+    <span class="dc-sync" id="dc-sync">Notes: connecting…</span>
+    <label class="dc-who">I'm <select id="dc-who"><option value="">—</option><option>Mike</option><option>Carla</option></select></label>
+  </div>
   <div class="tablewrap">
-  <table>
-    <thead><tr><th>Provider</th><th>Type</th><th>AM drive</th><th>Hours</th><th>Est. infant $/mo</th><th>Pros</th><th>Cons</th></tr></thead>
-    <tbody>
-      <tr><td><b>Educare (PSESD)</b><br><span class="note">White Center</span></td><td>Center (Early Head Start)</td><td>1–3 min · 0.2 mi</td><td>7–6</td><td>Free if eligible</td><td>Walkable; purpose-built; from ~2 months</td><td>Only for families under the income limit; federal funding at risk in the 2025 shutdown</td></tr>
-      <tr><td><b>Ages in Stages</b><br><span class="note">Highland Park</span></td><td>Center</td><td>4–6 min · 0.9 mi</td><td>7–6</td><td>~$1.7–2.3k*</td><td>Separate infant building; from 4 weeks; parents rave</td><td>No website; reviews are older, so call</td></tr>
-      <tr><td><b>Learning Way School</b><br><span class="note">White Center / Roxhill</span></td><td>Center</td><td>5–8 min · 1.2 mi</td><td class="xh">6–6 (or 5:30)</td><td>~$1.7–2.3k*</td><td>Earliest opening nearby; from 1–2 months; small (~40 kids)</td><td>Few reviews; closing time conflicts between sources</td></tr>
-      <tr><td><b>YMCA West Seattle</b><br><span class="note">Westwood Village</span></td><td>Center (nonprofit)</td><td>7–10 min · 1.6 mi</td><td>7–6</td><td>Sliding scale (~$2.3–2.9k full)*</td><td>Opened 2021; Y membership included; play-based</td><td>Likely a long infant waitlist</td></tr>
-      <tr><td><b>Nurture &amp; Grow</b><br><span class="note">Arbor Heights</span></td><td>Family home</td><td>7–10 min · ~2.1 mi</td><td>Unverified</td><td>~$1.9k (listed)</td><td>Small group; English/Spanish; meals included</td><td>One provider, so no backup if they're sick</td></tr>
-      <tr><td><b>Nearby family homes</b><br><span class="note">A Mother's Touch, Senait, Loving Hands</span></td><td>Family homes</td><td>5–10 min · 1–3 mi</td><td class="xh">5:30–6</td><td>~$1.5–2.0k*</td><td>Long hours; shorter waits; cheaper</td><td>No published reviews; addresses given on request</td></tr>
-      <tr><td><b>Fauntleroy Children's Center</b><br><span class="note">Fauntleroy</span></td><td>Center (nonprofit)</td><td>10–14 min · 2.5 mi</td><td>7–6</td><td>~$2.3–2.9k*</td><td>Staff who stay for decades; accredited; meals included</td><td>Long waitlist, so join now</td></tr>
-      <tr><td><b>South Seattle KinderCare</b><br><span class="note">Boulevard Park / Burien</span></td><td>Center (chain)</td><td>8–12 min · ~2.8 mi</td><td class="xh">6–6</td><td>~$2.5–3.1k*</td><td>Full 6–6; no violations listed; parents liked the infant room; app updates</td><td>Chain pricing; staff turnover</td></tr>
-      <tr><td><b>Millennium Kids Georgetown</b><br><span class="note">Georgetown</span></td><td>Center</td><td>9–15 min · 2.9 mi</td><td class="xh">6:30–6</td><td>Not published</td><td>Diapers, formula and meals included; on the way north via SR-99</td><td>Industrial area; outdoor space unknown</td></tr>
-      <tr><td><b>Kids Country Burien</b><br><span class="note">Burien</span></td><td>Center</td><td>10–14 min · 3.7 mi</td><td class="xh">6–6 or 6:30</td><td>~$1.9–2.5k*</td><td>Long hours; drive is against traffic</td><td>Very large (~170 kids); 3.9★ reviews</td></tr>
-      <tr><td><b>Children's Academy</b><br><span class="note">Delridge</span></td><td>Center</td><td>11–15 min · 3.1 mi</td><td class="xh">6:30–6</td><td>Not published</td><td>Spanish immersion</td><td>Unclear whether they take babies under 1</td></tr>
-      <tr><td><b>Bright Horizons West Seattle</b><br><span class="note">Junction</span></td><td>Center (chain)</td><td>15–22 min · 4.6 mi</td><td>7–5:30</td><td>~$2.9–3.4k*</td><td>Pursuing NAEYC accreditation; may come with an employer benefit</td><td>Short day; pricey</td></tr>
-      <tr><td><b>Mount St. Vincent ILC</b><br><span class="note">West Seattle</span></td><td>Center</td><td>15–22 min · 4.3 mi</td><td>Part-time</td><td>Not published</td><td>One-of-a-kind program inside a care home</td><td>1–3 days/week; huge waitlist; poor fit</td></tr>
-      <tr><td><b>Downtown</b><br><span class="note">Pike Market, Seattle Infant Development Center</span></td><td>Centers</td><td>25–40 min · 7–8 mi</td><td>7–6 / 7:30–5:30</td><td>Sliding scale / not published</td><td>Close to a downtown job</td><td>Baby rides the bridge commute twice a day</td></tr>
-    </tbody>
+  <table class="dc" id="dc-table">
+    <thead><tr>
+      <th data-k="name">Provider</th>
+      <th data-k="drive_min" data-num="1">AM drive</th>
+      <th data-k="hours">Hours</th>
+      <th data-k="infant_ages">Infants from</th>
+      <th data-k="tuition_num" data-num="1">Est. infant $/mo</th>
+      <th data-k="google_rating" data-num="1">Google</th>
+      <th data-k="ea_num" data-num="1">Early Achievers</th>
+      <th data-k="licensing_notes">Licensing</th>
+      <th data-k="pros">Pros</th>
+      <th data-k="cons">Cons</th>
+      <th data-k="our_score" data-num="1">Our score</th>
+      <th class="nosort">Notes</th>
+    </tr></thead>
+    <tbody></tbody>
   </table>
   </div>
-  <p class="note">Green hours = opens by 6:30am and closes at 6pm (Learning Way's closing time is unconfirmed). Most others run 7–6, which is still 11 hours.</p>
+  <p class="note">Green hours = opens by 6:30am and closes 6pm or later. Google ratings come from search snippets and listings and may be out of date; "—" means we couldn't verify one. Early Achievers is Washington's 1–5 quality rating. NAEYC accreditation couldn't be confirmed for any provider, so it's noted under Licensing where one claims it.</p>
 </section>
 
 <section id="daycare-next">
   <h2>Shortlist &amp; timeline</h2>
+  <p class="sub">Updated Nov 1 with state licensing data. Picked for quality signals (Early Achievers level, clean record), hours and distance. Ages in Stages' main site and Children's Academy on Juneau St turned out to take only toddlers, and South Seattle KinderCare dropped after a 2023 burn incident and its Level 2 rating.</p>
   <ol class="rank">
-    <li><span class="n">1</span><span class="name">Learning Way</span><span class="meta">5–8 min · 6–6</span><span class="why">Earliest drop-off nearby, closes at 6 (possibly 5:30), five minutes away.</span></li>
-    <li><span class="n">2</span><span class="name">Ages in Stages</span><span class="meta">4–6 min · 7–6</span><span class="why">The closest dedicated infant building, and parents speak highly of it.</span></li>
-    <li><span class="n">3</span><span class="name">YMCA West Seattle</span><span class="meta">7–10 min · 7–6</span><span class="why">Newer nonprofit center with sliding-scale fees.</span></li>
-    <li><span class="n">4</span><span class="name">Fauntleroy Children's Center</span><span class="meta">10–14 min · 7–6</span><span class="why">The quality pick with very stable staff. Its list is long, so join first.</span></li>
-    <li><span class="n">5</span><span class="name">South Seattle KinderCare</span><span class="meta">8–12 min · 6–6</span><span class="why">Guaranteed 6–6 hours and corporate backup. Swap in Millennium Kids Georgetown if one of us commutes north on SR-99.</span></li>
+    <li><span class="n">1</span><span class="name">Learning Way School &amp; Daycare</span><span class="meta">5–7 min · 6–6 · Level 4</span><span class="why">Highest state rating nearby, a true 6–6 day, small (40 kids), running since 1995 with a clean record. Almost no online reviews, so the tour matters.</span></li>
+    <li><span class="n">2</span><span class="name">Children's Academy of Seattle II</span><span class="meta">4–5 min · 6:30–6 · Level 3</span><span class="why">About a mile away, extended hours, Spanish immersion, clean record, and it reports an infant opening now.</span></li>
+    <li><span class="n">3</span><span class="name">Ages in Stages II (Infant Center)</span><span class="meta">3–4 min · 7–6 · Level 3</span><span class="why">An infant-only building 0.7 miles away, with a clean record and 5.0★ reviews.</span></li>
+    <li><span class="n">4</span><span class="name">EuropaKids Preschool (Burien)</span><span class="meta">9–11 min · 7–6 · Level 3</span><span class="why">Your cousins' pick: Spanish immersion, published infant rate of $2,399/mo, clean record. Ask the cousins what they really think.</span></li>
+    <li><span class="n">5</span><span class="name">WorldKids School Burien</span><span class="meta">9–11 min · 6:30–6 · Level 3</span><span class="why">Strongest parent sentiment nearby (4.9★ from 93 reviews), extended hours, infant openings. Ask about its 2025 complaints and billing.</span></li>
   </ol>
+  <p class="note" style="margin-top:8px">Also worth a call: <b>Kid's Country Burien</b> (the only Level 5 nearby, 6–6, but large with mixed reviews); <b>Solid Steps</b> and <b>Sabastian Bilingual</b>, small home daycares (6–6 and Level 4); <b>Fauntleroy</b> (beloved long-term staff, infant openings reported now).</p>
   <div class="grid" style="margin-top:14px">
     <div class="card t-tan"><h3>This week</h3><ul>
-      <li>Join the waitlists at all 5. Add Bright Horizons if either employer gives priority there.</li>
-      <li>Look each one up on DCYF Child Care Check.</li>
+      <li>Join the waitlists at all 5 (EuropaKids: $100 pre-registration).</li>
+      <li>Look each one up on <a href="https://www.findchildcarewa.org/PSS_Search" target="_blank" rel="noopener">Child Care Check</a> for the full inspection history.</li>
       <li><b>Dependent Care FSA:</b> ask Flexport and Meta HR whether starting daycare allows a mid-year election; if not, elect for 2027 at open enrollment.</li>
       <li>Ask both employers about backup care.</li>
       <li>Confirm whether we're inside Seattle city limits (King County iMap).</li>
-      <li>Optional: one call to Educare about eligibility.</li>
     </ul></div>
     <div class="card"><h3>Next months</h3><ul>
-      <li><b>Nov–Jan:</b> tour the top 5 plus 1–2 family homes, using the questions above. Settle the leave plan.</li>
+      <li><b>Nov–Jan:</b> tour the top 5 plus 1–2 home daycares, using the questions above, and rate each one in <b>Our score</b>. Settle the leave plan.</li>
       <li><b>Every 4–6 weeks:</b> email each waitlist to say we're still interested.</li>
-      <li><b>After the birth:</b> send each the birth date and confirm the start date.</li>
-      <li><b>Apr–Jun 2027:</b> offers usually come 2–4 months before the start. Deposit is about one month's tuition.</li>
-      <li><b>Nothing by May?</b> Go with a family home or a nanny share.</li>
+      <li><b>After the birth:</b> send each one the birth date and confirm the start date.</li>
+      <li><b>Apr–Jun 2027:</b> offers usually come 2–4 months before the start date. Deposit is about one month's tuition.</li>
+      <li><b>Nothing by May?</b> Fall back to a home daycare or a nanny share.</li>
       <li><b>2 weeks before returning to work:</b> gradual start.</li>
     </ul></div>
   </div>
@@ -752,7 +811,7 @@
   </div>
 </section>
 
-<footer>Private page, not linked publicly. Last updated Nov 1, 2026.</footer>
+<footer>Private page, not linked publicly. Last updated Nov 1, 2026 (daycare list v2).</footer>
 </div>
 </div>
 
@@ -793,6 +852,119 @@
     });
     h.appendChild(b);
   });
+
+
+  // Daycare options table: rendered from DAYCARES, sortable, with Notes / Our score saved to
+  // the "Baby Planning - Daycare notes" Google Sheet through an Apps Script web app.
+  // The repo is public, so the passcode is asked for once per browser and kept locally.
+  var NOTES_API = '__NOTES_API__';
+  var DAYCARES = [{"name": "Educare Early Learning Center (PSESD)", "type": "Center", "neighborhood": "White Center", "website": "https://www.educareseattle.org/", "infant_ages": "1 month", "hours": "7–6", "extended": false, "drive_min": 2.0, "drive_mi": 0.3, "tuition": "Free if income-eligible", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 16, "early_achievers": "Level 2", "naeyc": null, "licensing_notes": "Cap 152. 2 valid complaints in 3 yrs, incl. Jun 2026 nap-time restraint case (resolved)", "philosophy": "Early Head Start model", "pros": "Walkable; free if eligible; big infant program", "cons": "Income-qualified; Level 2; serious 2026 complaint", "drive_label": "2–3 min"}, {"name": "Ages in Stages II (Infant Center)", "type": "Center", "neighborhood": "White Center", "website": "https://www.agesinstageschildcare.com/", "infant_ages": "4 weeks", "hours": "7–6", "extended": false, "drive_min": 3.0, "drive_mi": 0.7, "tuition": "$1,900–2,400", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 9, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 34, since 2012; 0 valid complaints", "philosophy": "Play-based", "pros": "0.7 mi; infant-only site; clean record; reports an infant opening", "cons": "7am open; little published info", "drive_label": "3–4 min"}, {"name": "Sabastian Bilingual Preschool", "type": "Family home", "neighborhood": "Highland Park", "website": "https://sabastian.org/", "infant_ages": "Birth (confirm)", "hours": "7–5 (site: baby program 7–6)", "extended": false, "drive_min": 4.0, "drive_mi": 0.9, "tuition": "$1,700–2,300", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 2, "early_achievers": "Level 4", "naeyc": null, "licensing_notes": "Cap 12, since 2022; 0 valid complaints", "philosophy": "Spanish immersion, Reggio-inspired", "pros": "Level 4 home; Spanish; under 1 mi", "cons": "Few reviews; confirm infant slots", "drive_label": "4–5 min"}, {"name": "Children's Academy of Seattle II", "type": "Center", "neighborhood": "White Center", "website": "https://www.childrensacademyofseattle.com/", "infant_ages": "2 months", "hours": "6:30–6", "extended": true, "drive_min": 4.0, "drive_mi": 1.1, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 4.4, "google_reviews": 7, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 86, since 2016; 0 valid complaints", "philosophy": "Spanish immersion, play-based + STEM", "pros": "Extended hours; Spanish; 1 mi; clean; infant opening reported", "cons": "Few reviews; tuition not published", "drive_label": "4–5 min"}, {"name": "Bella Mente Early Learning", "type": "Center", "neighborhood": "White Center / Westwood", "website": "http://bellamente.org/", "infant_ages": "Birth", "hours": null, "extended": null, "drive_min": 5.0, "drive_mi": 1.2, "tuition": "$1,950 (Winnie; unverified)", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 6, "early_achievers": "Not enrolled", "naeyc": null, "licensing_notes": "Cap 117, since 2018; 0 valid complaints", "philosophy": "Reggio / play-based", "pros": "Close; clean record", "cons": "Not in Early Achievers; hours unknown; rare openings", "drive_label": "5–6 min"}, {"name": "Learning Way School & Daycare", "type": "Center", "neighborhood": "White Center / Westwood", "website": null, "infant_ages": "Birth", "hours": "6–6", "extended": true, "drive_min": 5.0, "drive_mi": 1.2, "tuition": "$1,700–2,300", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 1, "early_achievers": "Level 4", "naeyc": null, "licensing_notes": "Cap 40, since 1995; 0 valid complaints", "philosophy": "Small nonprofit (est. 1984)", "pros": "Level 4; 6–6; long-running; small", "cons": "No website; almost no reviews", "drive_label": "5–7 min"}, {"name": "Loving Hands ChildCare Preschool", "type": "Family home", "neighborhood": "Highland Park", "website": "https://lovinghandschildcarepreschool.com/", "infant_ages": "Birth", "hours": "7–5:30 (city list: 5:30am)", "extended": false, "drive_min": 6.0, "drive_mi": 1.5, "tuition": "$1,600–2,200", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 4, "early_achievers": "Rating expired", "naeyc": null, "licensing_notes": "Cap 12, since 1992; 0 valid complaints", "philosophy": "Home preschool, 29+ yrs experience", "pros": "Very experienced provider", "cons": "Early Achievers lapsed", "drive_label": "6–8 min"}, {"name": "Y Early Education West Seattle (YMCA)", "type": "Center", "neighborhood": "Westwood Village", "website": "https://www.seattleymca.org/programs/child-care-and-school-enrichment/early-education", "infant_ages": "Birth", "hours": "7–6", "extended": false, "drive_min": 7.0, "drive_mi": 1.6, "tuition": "$2,300–2,900 (sliding scale)", "tuition_is_estimate": true, "google_rating": 4.2, "google_reviews": 9, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 127, since 2021; 0 valid complaints", "philosophy": "YMCA curriculum", "pros": "Newer building; clean record", "cons": "No rating yet; 7am open", "drive_label": "7–9 min"}, {"name": "Solid Steps Family Home Day Care", "type": "Family home", "neighborhood": "North Burien", "website": "https://www.facebook.com/SolidStepsFamilyHomeDaycare/", "infant_ages": "Birth", "hours": "6–6", "extended": true, "drive_min": 7.0, "drive_mi": 1.8, "tuition": "~$1,960 (Upwards; unverified)", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 7, "early_achievers": "Level 3+", "naeyc": null, "licensing_notes": "Cap 12, since 2022; 0 valid complaints", "philosophy": "Spanish/English, play-based", "pros": "6–6; Spanish; strong reviews", "cons": "Newer license; small", "drive_label": "7–8 min"}, {"name": "Early Learning Garden", "type": "Family home", "neighborhood": "North Burien", "website": "https://www.earlylearninggardenwa.com/", "infant_ages": "2 months", "hours": "6:30–6", "extended": true, "drive_min": 7.0, "drive_mi": 1.9, "tuition": "$1,700–2,200", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 3, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Since 2024; 0 valid complaints", "philosophy": "Play-based", "pros": "Extended hours; close", "cons": "New; thin track record", "drive_label": "7–9 min"}, {"name": "Nurture & Grow Childcare", "type": "Family home", "neighborhood": "Arbor Heights", "website": null, "infant_ages": "Birth", "hours": "6:30–6 (unverified)", "extended": true, "drive_min": 8.0, "drive_mi": 2.1, "tuition": "~$2,093 (Upwards; unverified)", "tuition_is_estimate": false, "google_rating": 4.5, "google_reviews": 8, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 12, since 2022; 0 valid complaints", "philosophy": "Play-based; garden, chickens", "pros": "Farm-ish home; 3 teachers; families stay for years", "cons": "Hours unverified; no website", "drive_label": "8–9 min"}, {"name": "Akin – Burien Early Learning Center", "type": "Center", "neighborhood": "North Burien", "website": "https://akinfamily.org/", "infant_ages": "Birth (confirm)", "hours": "6:30–5:30", "extended": false, "drive_min": 8.0, "drive_mi": 2.5, "tuition": "Free if income-eligible", "tuition_is_estimate": false, "google_rating": 4.6, "google_reviews": 24, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 86; complaint record not checked", "philosophy": "Head Start model; Spanish spoken", "pros": "Free if eligible; many openings", "cons": "Income-qualified; closes 5:30", "drive_label": "8–10 min"}, {"name": "98146 family homes (Little Jumpers, Gardenhouse, Kelli's Kind Care, Organic Sprouts)", "type": "Family home", "neighborhood": "White Center / North Burien", "website": null, "infant_ages": "Birth", "hours": "7–5 to 7:30–5:30", "extended": false, "drive_min": 4.0, "drive_mi": 1.8, "tuition": "$1,600–2,200", "tuition_is_estimate": true, "google_rating": null, "google_reviews": null, "early_achievers": "Little Jumpers Level 3", "naeyc": null, "licensing_notes": "All cap 12; 0 valid complaints; Kelli's since 1992", "philosophy": "Home-based", "pros": "Long-tenured providers; clean records", "cons": "No online reviews; call DCYF for contacts", "drive_label": "4–12 min"}, {"name": "98106 family homes (Senait, A Mother's Touch, Creciendo Juntos, Playmates, Le/Phan)", "type": "Family home", "neighborhood": "White Center / Highland Park / Delridge", "website": null, "infant_ages": "Birth", "hours": "Senait 6–6; Mother's Touch 6:30–6; others 7–5ish", "extended": null, "drive_min": 5.0, "drive_mi": 2.0, "tuition": "Senait ~$2,925 (unverified)", "tuition_is_estimate": false, "google_rating": null, "google_reviews": null, "early_achievers": "Senait Level 4; Mother's Touch, Playmates, Le/Phan Level 3", "naeyc": null, "licensing_notes": "Cap 12 each; 0 valid complaints", "philosophy": "Spanish (Creciendo), Vietnamese (Le/Phan)", "pros": "Senait and Mother's Touch run long hours; language options", "cons": "Little public info", "drive_label": "5–15 min"}, {"name": "EuropaKids Preschool (Burien)", "type": "Center", "neighborhood": "North Burien", "website": "https://europakids.com/", "infant_ages": "2–3 months", "hours": "7–6", "extended": false, "drive_min": 9.0, "drive_mi": 2.8, "tuition": "$2,399 (2026–27)", "tuition_is_estimate": false, "google_rating": 4.4, "google_reviews": 13, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 111, since 2012; 0 valid complaints; inspected May 2026", "philosophy": "Spanish immersion, play-based", "pros": "Cousins' pick; published pricing; clean record", "cons": "7–6 only; $100 registration + $500 deposit", "drive_label": "9–11 min"}, {"name": "WorldKids School Burien", "type": "Center", "neighborhood": "Burien", "website": "https://worldkidsschool.com/worldkids-in-burien/", "infant_ages": "1 month", "hours": "6:30–6", "extended": true, "drive_min": 9.0, "drive_mi": 2.8, "tuition": "$2,200–2,800", "tuition_is_estimate": true, "google_rating": 4.9, "google_reviews": 93, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 180; 2 valid complaints (Aug 2025, resolved); BBB billing complaint", "philosophy": "Spanish/Mandarin immersion", "pros": "Most-reviewed nearby (4.9/93); extended hours; openings", "cons": "Big center; billing complaints", "drive_label": "9–11 min"}, {"name": "Jackson Family Daycare", "type": "Family home", "neighborhood": "Highland Park / Delridge", "website": "http://www.jacksonfamilydaycare.net/", "infant_ages": "Birth", "hours": "7–5", "extended": false, "drive_min": 10.0, "drive_mi": 2.4, "tuition": "~$1,517 (Winnie; unverified)", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 19, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 8, since 2013; 0 valid complaints", "philosophy": "Play-based, mixed ages", "pros": "Best-reviewed home (5.0/19); group of 8", "cons": "Closes 5pm", "drive_label": "10–13 min"}, {"name": "Ages in Stages – Holden St", "type": "Center", "neighborhood": "Highland Park / Delridge", "website": "https://www.agesinstageschildcare.com/", "infant_ages": "Birth", "hours": "7–6", "extended": false, "drive_min": 10.0, "drive_mi": 2.4, "tuition": "$1,900–2,400", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 4, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 44, since Oct 2024; 0 valid complaints", "philosophy": "Play-based", "pros": "New infant room; clean", "cons": "New; few reviews", "drive_label": "10–13 min"}, {"name": "South Seattle KinderCare", "type": "Center", "neighborhood": "Boulevard Park", "website": "https://www.kindercare.com/our-centers/seattle/wa/070892", "infant_ages": "6 weeks", "hours": "6–6", "extended": true, "drive_min": 10.0, "drive_mi": 2.9, "tuition": "$2,600–3,200", "tuition_is_estimate": true, "google_rating": 4.9, "google_reviews": 34, "early_achievers": "Level 2", "naeyc": null, "licensing_notes": "Cap 120; 4 valid complaints in 3 yrs, incl. Dec 2023 severe burn", "philosophy": "KinderCare curriculum", "pros": "6–6; strong Google rating", "cons": "Burn incident + 3 complaints; Level 2; full", "drive_label": "10–13 min"}, {"name": "Sea Mar Child Development Center", "type": "Center", "neighborhood": "South Park", "website": "http://www.seamar.org/king-child-development-center.html", "infant_ages": "1 month", "hours": "6–6", "extended": true, "drive_min": 11.0, "drive_mi": 2.7, "tuition": "Subsidy focus; private pay unknown", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 3, "early_achievers": "Level 4", "naeyc": null, "licensing_notes": "Cap 99, since 1994; 1 valid complaint (Apr 2026 rough handling, resolved)", "philosophy": "Spanish/English bilingual", "pros": "Level 4; 6–6; bilingual", "cons": "2026 rough-handling finding", "drive_label": "11–13 min"}, {"name": "Fauntleroy Children's Center", "type": "Center", "neighborhood": "Fauntleroy", "website": "http://www.fauntleroychildrenscenter.org/", "infant_ages": "1 month", "hours": "7–6", "extended": false, "drive_min": 11.0, "drive_mi": 2.5, "tuition": "$2,400–3,000", "tuition_is_estimate": true, "google_rating": 3.9, "google_reviews": 17, "early_achievers": "Level 3+", "naeyc": null, "licensing_notes": "Cap 131, since 1992; 1 valid complaint (Oct 2024); NAEYC claimed (unverified)", "philosophy": "Nonprofit since 1977; Creative Curriculum; meals included", "pros": "Decades-long staff; infant openings reported now", "cons": "Mixed Google rating (3.9)", "drive_label": "11–13 min"}, {"name": "Kid's Country Learning Center – Burien", "type": "Center", "neighborhood": "Burien (Ambaum)", "website": "https://kidscountryinc.com/", "infant_ages": "1 month", "hours": "6–6", "extended": true, "drive_min": 11.0, "drive_mi": 3.7, "tuition": "$2,000–2,600", "tuition_is_estimate": true, "google_rating": 4.2, "google_reviews": 45, "early_achievers": "Level 5", "naeyc": null, "licensing_notes": "Cap 173; 2 valid complaints (2024)", "philosophy": "Infant 'Discovery' program", "pros": "Only Level 5 nearby; 6–6", "cons": "Large; mixed reviews", "drive_label": "11–14 min"}, {"name": "Millennium Kids @ Georgetown", "type": "Center", "neighborhood": "Georgetown", "website": "https://www.mkgeorgetown.com/", "infant_ages": "Birth", "hours": "6:30–6", "extended": true, "drive_min": 12.0, "drive_mi": 3.0, "tuition": "$2,200–2,800 (diapers, formula, meals incl.)", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 4, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 84; 4 valid complaints incl. May 2026 broken bone on playground", "philosophy": "Enrichment (dance, swim, piano, Spanish)", "pros": "Diapers/formula included; extended", "cons": "Most complaints nearby; full", "drive_label": "12–19 min"}, {"name": "From Roots To Wings", "type": "Center", "neighborhood": "Burien", "website": "http://www.fromrootstowings.com/", "infant_ages": "Birth", "hours": "6–8:30pm", "extended": true, "drive_min": 12.0, "drive_mi": 3.3, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 3.9, "google_reviews": 38, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 74, since 1998; 3 valid complaints (2024–25)", "philosophy": "Play-based, lots of outdoor time", "pros": "Latest hours around; lists infant openings", "cons": "3.9 rating; 3 complaints", "drive_label": "12–15 min"}, {"name": "WorldKids Georgetown/SODO (infant site)", "type": "Center", "neighborhood": "Georgetown / SODO", "website": "https://worldkidsschool.com/worldkids-georgetown/", "infant_ages": "Birth (infant-only site)", "hours": null, "extended": null, "drive_min": 13.0, "drive_mi": 3.2, "tuition": "$2,300–2,900", "tuition_is_estimate": true, "google_rating": 4.8, "google_reviews": 77, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 36, since Feb 2025; 0 valid complaints (rating is the main SODO campus)", "philosophy": "Spanish/Mandarin immersion", "pros": "Dedicated infant building", "cons": "Toward downtown traffic; new", "drive_label": "13–21 min"}, {"name": "Children's Academy of Seattle III", "type": "Center", "neighborhood": "Burien", "website": "https://www.childrensacademyofseattle.com/", "infant_ages": "2 months", "hours": "6:30–6", "extended": true, "drive_min": 13.0, "drive_mi": 4.1, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 4.0, "google_reviews": 4, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 45; 0 valid complaints", "philosophy": "Spanish immersion", "pros": "Extended; Spanish; clean", "cons": "Few reviews", "drive_label": "13–16 min"}, {"name": "Kre-8-tive Kidz International Academy", "type": "Center", "neighborhood": "Burien (1st Ave S)", "website": "https://www.kre-8-tive-kidz-academy.com/", "infant_ages": "1 month", "hours": null, "extended": null, "drive_min": 13.0, "drive_mi": 4.1, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 4.7, "google_reviews": 18, "early_achievers": "Level 2", "naeyc": null, "licensing_notes": "Cap 58; 2 valid complaints (2024)", "philosophy": "Multilingual, Spanish immersion", "pros": "Infant openings; Spanish-speaking infant staff", "cons": "Level 2; complaints", "drive_label": "13–16 min"}, {"name": "Discovery Childcare and Preschool", "type": "Family home", "neighborhood": "West Seattle", "website": "https://www.discoverychildcare.info/", "infant_ages": "Birth", "hours": "7–5", "extended": false, "drive_min": 14.0, "drive_mi": 3.2, "tuition": "$1,700–2,300", "tuition_is_estimate": true, "google_rating": null, "google_reviews": null, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 12, since 2012; 0 valid complaints", "philosophy": "Reggio / nature (unverified)", "pros": "Level 3; clean", "cons": "Closes 5pm; currently full", "drive_label": "14–17 min"}, {"name": "Edugether Child Development Center", "type": "Center", "neighborhood": "Delridge", "website": "https://edugether.us/", "infant_ages": "1 month", "hours": "7–5:30", "extended": false, "drive_min": 14.0, "drive_mi": 3.3, "tuition": "$2,200–2,800", "tuition_is_estimate": true, "google_rating": 4.9, "google_reviews": 75, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 57, since Nov 2024; 1 valid complaint (Jun 2025)", "philosophy": "Spanish/English, Scandinavian play-based", "pros": "4.9 from 75 reviews in under 2 yrs", "cons": "Full; closes 5:30", "drive_label": "14–17 min"}, {"name": "Millennium Kids Creative Center (Burien)", "type": "Center", "neighborhood": "Burien (Ambaum)", "website": "http://www.millenniumkids.org/", "infant_ages": "1 month", "hours": "6:30–6", "extended": true, "drive_min": 14.0, "drive_mi": 5.1, "tuition": "$2,000–2,600", "tuition_is_estimate": true, "google_rating": 4.3, "google_reviews": 11, "early_achievers": "Not enrolled", "naeyc": null, "licensing_notes": "Cap 91, since 2005; 0 valid complaints", "philosophy": "Enrichment", "pros": "Extended; clean record", "cons": "Not in Early Achievers; full", "drive_label": "14–18 min"}, {"name": "Kalkaal Early Learning Center", "type": "Center", "neighborhood": "Boulevard Park", "website": null, "infant_ages": "Birth", "hours": "6–8pm", "extended": true, "drive_min": 14.0, "drive_mi": 4.4, "tuition": "$1,800–2,300", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 1, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 29, since Nov 2024; 1 valid complaint (Apr 2025)", "philosophy": null, "pros": "Very long hours; small", "cons": "New; almost no info", "drive_label": "14–18 min"}, {"name": "Starlight Academy & Preschool", "type": "Center", "neighborhood": "Burien", "website": "https://starlightacademy.us/", "infant_ages": "6 weeks", "hours": "7–6", "extended": false, "drive_min": 14.0, "drive_mi": 4.3, "tuition": "~$2,080 (Care.com; unverified)", "tuition_is_estimate": false, "google_rating": 4.7, "google_reviews": 24, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 32; 0 valid complaints", "philosophy": "Play-based", "pros": "Small; good reviews; clean", "cons": "Not extended", "drive_label": "14–18 min"}, {"name": "Smarter Kids – Las Gotitas de Colores", "type": "Family home", "neighborhood": "Delridge / Youngstown", "website": "https://www.westseattledaycare.com/", "infant_ages": "3 months", "hours": null, "extended": null, "drive_min": 15.0, "drive_mi": 3.7, "tuition": "$1,800–2,400", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 4, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 12, since 2023; 0 valid complaints", "philosophy": "Full Spanish immersion", "pros": "Real immersion in a small home", "cons": "Hours unknown; farther", "drive_label": "15–19 min"}, {"name": "Kidkare Daycare", "type": "Center", "neighborhood": "Tukwila", "website": null, "infant_ages": "1 month", "hours": null, "extended": null, "drive_min": 16.0, "drive_mi": 5.3, "tuition": "$1,800–2,300", "tuition_is_estimate": true, "google_rating": null, "google_reviews": null, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 46; 0 valid complaints", "philosophy": null, "pros": "Level 3; clean", "cons": "No online presence", "drive_label": "16–20 min"}, {"name": "Inspire Kids Early Learning Center", "type": "Center", "neighborhood": "Tukwila", "website": "https://www.inspireprek.org/", "infant_ages": "1 month", "hours": "6–6", "extended": true, "drive_min": 16.0, "drive_mi": 5.2, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 5.0, "google_reviews": 10, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 89, since Apr 2025; 0 valid complaints", "philosophy": "Play-based", "pros": "6–6; good early reviews", "cons": "New; Tukwila", "drive_label": "16–20 min"}, {"name": "Normandy Park KinderCare", "type": "Center", "neighborhood": "SeaTac / Normandy Park", "website": "https://www.kindercare.com/our-centers/seatac/wa/301366", "infant_ages": "1 month", "hours": "6–6:30", "extended": true, "drive_min": 16.0, "drive_mi": 6.5, "tuition": "$2,600–3,200", "tuition_is_estimate": true, "google_rating": 4.4, "google_reviews": 42, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 131; 4 valid complaints incl. 2026 ratio findings (20 kids incl. infants, 2 staff)", "philosophy": "KinderCare curriculum", "pros": "Longest center hours (6–6:30)", "cons": "2026 ratio findings", "drive_label": "16–20 min"}, {"name": "Evergreen Learning Center", "type": "Center", "neighborhood": "Morgan Junction", "website": "http://evergreen-lc.com/", "infant_ages": "3 months", "hours": "8–5", "extended": false, "drive_min": 17.0, "drive_mi": 4.1, "tuition": "From $1,900 (Care.com; unverified)", "tuition_is_estimate": false, "google_rating": 4.5, "google_reviews": 32, "early_achievers": "Not enrolled", "naeyc": null, "licensing_notes": "Cap 90; 1 valid complaint (Nov 2024)", "philosophy": null, "pros": "Good reviews", "cons": "8–5 only", "drive_label": "17–21 min"}, {"name": "Child Academy / KinderWorld Learning Center", "type": "Center", "neighborhood": "Tukwila", "website": "https://kinderworldcenter.com/", "infant_ages": "1 month", "hours": null, "extended": null, "drive_min": 17.0, "drive_mi": 6.4, "tuition": "$1,700–2,200", "tuition_is_estimate": true, "google_rating": null, "google_reviews": null, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 17, since Feb 2024; 0 valid complaints", "philosophy": null, "pros": "Tiny center", "cons": "Hours unknown", "drive_label": "17–20 min"}, {"name": "Kre-8-Tive Kidz II (Normandy Park)", "type": "Center", "neighborhood": "Normandy Park", "website": "https://www.kre-8-tive-kidz-academy.com/", "infant_ages": "1 month", "hours": null, "extended": null, "drive_min": 17.0, "drive_mi": 6.1, "tuition": "$1,900–2,500", "tuition_is_estimate": true, "google_rating": 3.9, "google_reviews": 19, "early_achievers": "Level 3", "naeyc": null, "licensing_notes": "Cap 155; 3 valid complaints incl. Jan 2026", "philosophy": "Multilingual, Spanish", "pros": "Many openings", "cons": "3.9 rating; complaints", "drive_label": "17–21 min"}, {"name": "Providence Mount St. Vincent ILC", "type": "Center", "neighborhood": "West Seattle", "website": "https://www.providence.org/locations/wa/mount-st-vincent/facility-profile/intergenerational-learning-center", "infant_ages": "6 weeks", "hours": "7–6", "extended": false, "drive_min": 18.0, "drive_mi": 4.2, "tuition": "$2,500–3,200", "tuition_is_estimate": true, "google_rating": 3.6, "google_reviews": 59, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 103; 2 valid complaints incl. 2026 allergy finding (rating is the whole care facility)", "philosophy": "Intergenerational, emergent curriculum", "pros": "Infant ratio 1:3; one of a kind", "cons": "Famously long waitlist; full", "drive_label": "18–22 min"}, {"name": "Bright Horizons at West Seattle", "type": "Center", "neighborhood": "West Seattle", "website": "https://www.brighthorizons.com/daycare-centers/wa/seattle/4530-38th-avenue-sw-98126", "infant_ages": "1 month", "hours": "6:30–6 (Google: 7am)", "extended": true, "drive_min": 19.0, "drive_mi": 4.6, "tuition": "$2,900–3,500", "tuition_is_estimate": true, "google_rating": 4.5, "google_reviews": 27, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 159; 3 valid complaints (2024–26)", "philosophy": "Bright Horizons curriculum", "pros": "Long-tenured teachers", "cons": "Priciest; edge of range", "drive_label": "19–24 min"}, {"name": "Giving Tree Learning Center", "type": "Center", "neighborhood": "Tukwila / SeaTac", "website": "http://www.thegivingtreelearningcenter.com/", "infant_ages": "1 month", "hours": "6–6", "extended": true, "drive_min": 19.0, "drive_mi": 7.2, "tuition": "$1,800–2,400", "tuition_is_estimate": true, "google_rating": 4.7, "google_reviews": 59, "early_achievers": "Level 3+", "naeyc": null, "licensing_notes": "Cap 74, since 2005; 0 valid complaints", "philosophy": null, "pros": "Clean record + 4.7/59; openings", "cons": "Edge of range", "drive_label": "19–24 min"}, {"name": "Alki Beach Academy", "type": "Center", "neighborhood": "Youngstown / Delridge", "website": "http://alkibeachacademy.com/", "infant_ages": "1 month", "hours": "7–6", "extended": false, "drive_min": 20.0, "drive_mi": 5.1, "tuition": "$1,450–1,650 (Winnie; unverified)", "tuition_is_estimate": false, "google_rating": 5.0, "google_reviews": 1, "early_achievers": "Participating, no level", "naeyc": null, "licensing_notes": "Cap 157; 1 valid complaint (Apr 2024)", "philosophy": "Spanish spoken", "pros": "Possibly lower price", "cons": "Farthest; full", "drive_label": "20–25 min"}];
+  (function(){
+    var table = document.getElementById('dc-table'); if (!table) return;
+    var tbody = table.querySelector('tbody'), sync = document.getElementById('dc-sync');
+    var who = document.getElementById('dc-who'), xh = document.getElementById('dc-xh'), centers = document.getElementById('dc-centers');
+    var notes = {}, sortKey = 'drive_min', sortDir = 1;
+    function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+    function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+    DAYCARES.forEach(function(d){
+      d.id = slug(d.name);
+      d.tuition_num = parseFloat(String(d.tuition || '').replace(/[^0-9.]/g, '')) || null;
+      d.ea_num = parseFloat(d.early_achievers) || null;
+    });
+    who.value = ls('dc-who') || '';
+    who.addEventListener('change', function(){ ls('dc-who', who.value); });
+
+    function status(t, cls){ sync.textContent = t; sync.className = 'dc-sync ' + (cls || ''); }
+    function cell(v){ return v == null || v === '' ? '<span class="muted">—</span>' : esc(v); }
+    function google(d){
+      if (d.google_rating == null) return '<span class="muted">—</span>';
+      return '<b>' + esc(Number(d.google_rating).toFixed(1)) + '★</b>' + (d.google_reviews != null ? '<br><span class="muted">' + esc(d.google_reviews) + ' reviews</span>' : '');
+    }
+    function render(){
+      var rows = DAYCARES.filter(function(d){
+        return (!xh.checked || d.extended) && (!centers.checked || /center/i.test(d.type));
+      }).map(function(d){ d.our_score = notes[d.id] && notes[d.id].score ? +notes[d.id].score : null; return d; });
+      rows.sort(function(a, b){
+        var x = a[sortKey], y = b[sortKey];
+        if (x == null || x === '') return 1; if (y == null || y === '') return -1;
+        return (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y))) * sortDir;
+      });
+      tbody.innerHTML = rows.map(function(d){
+        var n = notes[d.id] || {};
+        var name = d.website ? '<a href="' + esc(d.website) + '" target="_blank" rel="noopener">' + esc(d.name) + '</a>' : esc(d.name);
+        var opts = ['', 1, 2, 3, 4, 5].map(function(v){ return '<option' + (String(n.score || '') === String(v) ? ' selected' : '') + ' value="' + v + '">' + (v || '—') + '</option>'; }).join('');
+        return '<tr data-id="' + d.id + '">' +
+          '<td class="c-name"><b>' + name + '</b><br><span class="note">' + esc(d.type || '') + ' · ' + cell(d.neighborhood) + '</span></td>' +
+          '<td class="nw">' + (d.drive_min != null ? esc(d.drive_label || (d.drive_min + ' min')) : '<span class="muted">—</span>') + (d.drive_mi != null ? '<br><span class="muted">' + esc(d.drive_mi) + ' mi</span>' : '') + '</td>' +
+          '<td class="c-hours' + (d.extended ? ' xh' : '') + '">' + cell(d.hours) + '</td>' +
+          '<td>' + cell(d.infant_ages) + '</td>' +
+          '<td>' + cell(d.tuition) + (d.tuition && d.tuition_is_estimate ? '*' : '') + '</td>' +
+          '<td class="nw">' + google(d) + '</td>' +
+          '<td>' + cell(d.early_achievers) + '</td>' +
+          '<td class="c-txt">' + cell(d.licensing_notes) + '</td>' +
+          '<td class="c-txt">' + cell(d.pros) + '</td>' +
+          '<td class="c-txt">' + cell(d.cons) + '</td>' +
+          '<td><select class="dc-score" aria-label="Our score for ' + esc(d.name) + '">' + opts + '</select></td>' +
+          '<td class="c-notes"><textarea class="dc-note" rows="3" placeholder="Our notes…" aria-label="Notes for ' + esc(d.name) + '">' + esc(n.notes || '') + '</textarea>' +
+            '<div class="dc-meta">' + (n.by || n.at ? esc((n.by ? n.by + ' · ' : '') + (n.at ? new Date(n.at).toLocaleDateString() : '')) : '') + '</div></td>' +
+          '</tr>';
+      }).join('');
+      var locked = !NOTES_API || NOTES_API.indexOf('__') === 0 || !ls('dc-key');
+      tbody.querySelectorAll('.dc-note, .dc-score').forEach(function(el){ el.disabled = locked; });
+      table.querySelectorAll('th[data-k]').forEach(function(th){
+        th.classList.toggle('sorted', th.dataset.k === sortKey);
+        th.setAttribute('aria-sort', th.dataset.k === sortKey ? (sortDir > 0 ? 'ascending' : 'descending') : 'none');
+      });
+    }
+
+    function save(id, field, value, meta){
+      var d = DAYCARES.filter(function(x){ return x.id === id; })[0];
+      status('Saving…');
+      return fetch(NOTES_API, { method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify({ key: ls('dc-key'), id: id, provider: d ? d.name : '', field: field, value: value, by: who.value }) })
+        .then(function(r){ return r.json(); })
+        .then(function(res){
+          if (!res.ok) throw new Error(res.error || 'save failed');
+          notes[id] = notes[id] || {}; notes[id][field] = value; notes[id].by = who.value; notes[id].at = res.at;
+          if (meta) meta.textContent = (who.value ? who.value + ' · ' : '') + new Date(res.at).toLocaleDateString();
+          status('Saved ✓', 'ok');
+        })
+        .catch(function(e){ status('Not saved: ' + e.message + ' (your text is still here)', 'err'); });
+    }
+    tbody.addEventListener('change', function(e){
+      var tr = e.target.closest('tr'); if (!tr) return;
+      if (e.target.classList.contains('dc-note')) save(tr.dataset.id, 'notes', e.target.value, tr.querySelector('.dc-meta'));
+      if (e.target.classList.contains('dc-score')) save(tr.dataset.id, 'score', e.target.value, tr.querySelector('.dc-meta'));
+    });
+    table.querySelector('thead').addEventListener('click', function(e){
+      var th = e.target.closest('th[data-k]'); if (!th) return;
+      // Ratings sort best-first on the first click; everything else ascending.
+      if (sortKey === th.dataset.k) sortDir = -sortDir;
+      else { sortKey = th.dataset.k; sortDir = /google_rating|ea_num|our_score/.test(sortKey) ? -1 : 1; }
+      render();
+    });
+    xh.addEventListener('change', render); centers.addEventListener('change', render);
+
+    function load(){
+      if (!NOTES_API || NOTES_API.indexOf('__') === 0) { status('Notes: not connected yet (setup pending)', 'err'); render(); return; }
+      var key = ls('dc-key');
+      if (!key) {
+        sync.innerHTML = '<button type="button" class="anchor-btn" id="dc-unlock">Unlock notes</button>';
+        document.getElementById('dc-unlock').onclick = function(){
+          var k = window.prompt('Notes passcode (ask Mike):'); if (!k) return;
+          ls('dc-key', k.trim()); load();
+        };
+        render(); return;
+      }
+      status('Notes: loading…');
+      fetch(NOTES_API + '?key=' + encodeURIComponent(key)).then(function(r){ return r.json(); }).then(function(res){
+        if (!res.ok) { ls('dc-key', ''); status('Wrong passcode, click to retry', 'err'); sync.onclick = load; render(); return; }
+        notes = res.notes || {}; status('Notes: synced ✓', 'ok'); render();
+      }).catch(function(){ status('Notes: offline (can\'t reach the sheet)', 'err'); render(); });
+    }
+    render(); load();
+  })();
 
   // Highlight the rail link for the section in view.
   var railLinks = [].slice.call(document.querySelectorAll('nav.rail a'));

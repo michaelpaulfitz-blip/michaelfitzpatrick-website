@@ -136,6 +136,8 @@
   .part{border-top:3px solid var(--navy); padding-top:22px; margin:48px 0 24px}
   .part-h{font-size:28px; margin:4px 0 6px}
   section, .pick, .part{scroll-margin-top:16px}
+  #daycare-options table{min-width:880px}
+  td.xh{background:var(--tint-green); font-weight:600; color:var(--ink)}
   table.feat td.win{background:var(--tint-green); font-weight:600; color:var(--ink)}
   table.feat td:first-child{min-width:150px}
   @media (max-width:860px){
@@ -173,7 +175,13 @@
   <a href="#monitor">Baby monitor</a>
   <a href="#gear-sources">Gear sources</a>
   <div class="grp">Daycare</div>
-  <a href="#daycare">Daycare plan</a>
+  <a href="#daycare-plan">Plan at a glance</a>
+  <a href="#daycare-how">How it works</a>
+  <a href="#daycare-cost">Costs</a>
+  <a href="#daycare-ask">What to ask</a>
+  <a href="#daycare-options">Options &amp; drive times</a>
+  <a href="#daycare-next">Shortlist &amp; timeline</a>
+  <a href="#daycare-sources">Daycare sources</a>
 </nav>
 <div class="layout">
 <div class="wrap">
@@ -246,6 +254,7 @@
       <tr><td><b>Review and align on shopping list</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Split the $100+ items by owner; each of us brings prepped options next meeting</td></tr>
       <tr><td><b>Set up the baby registry</b></td><td><span class="pill p-carla">Carla</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Exploring one store vs. a shared list across stores</td></tr>
       <tr><td><b>Infant CPR and safety course</b></td><td><span class="pill p-mike">Mike</span></td><td class="due" data-due="2026-10-25">Oct 25</td><td>Mike mapping which classes we need, how they overlap, and a few options</td></tr>
+      <tr><td><b>Get on infant daycare waitlists</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-11-08">Nov 8</td><td>Top 5 picked (<a href="#daycare-next">shortlist</a>); also elect the $7,500 Dependent Care FSA</td></tr>
       <tr><td><b>Source car seat, stroller &amp; monitor</b></td><td><span class="pill p-mike">Mike</span></td><td class="due" data-due="2026-11-30">Nov 30</td><td>Research done (<a href="#gear">gear guide</a>); tracker targets Black Friday sales</td></tr>
       <tr><td><b>Anatomy scan</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-30">Oct 30</td><td>In progress</td></tr>
       <tr><td><b>Flu shots</b></td><td><span class="pill p-both">Both</span></td><td class="due" data-due="2026-10-31">Oct 31</td><td>Mike to get his within ~3 weeks of 10/17</td></tr>
@@ -567,8 +576,172 @@
   <p class="lede">How infant daycare works, what it costs, what to look for (including extended hours), and nearby options with morning drive times.</p>
 </div>
 
-<section id="daycare-status">
-  <div class="empty">Research in progress (started Nov 1). This section will fill in with the plan, costs, local options and a shortlist to tour.</div>
+<div class="pick" id="daycare-plan">
+  <h2>Plan in one glance</h2>
+  <ul>
+    <li><b>We're at ~20 weeks: late-ish for Seattle infant waitlists, not doomed.</b> The median wait is about 8 months, and 12–18 in popular areas. Get on lists this week.</li>
+    <li><b>Likely start: Sept–Oct 2027.</b> With staggered leave (birthing parent up to 16 weeks of WA PFML, then the other parent's 12), the baby would be about 6.5 months old.</li>
+    <li><b>Budget about $2,850–3,100 a month for a center</b> or <b>$1,950–2,150 for a licensed family home</b>, projected to 2027.</li>
+    <li><b>Hours:</b> several close options run 6:00–6:00 or 6:30–6:00. Avoid 9–3 and part-time programs.</li>
+    <li><b>Tour first:</b> Learning Way, Ages in Stages, YMCA West Seattle, Fauntleroy Children's Center, South Seattle KinderCare.</li>
+  </ul>
+</div>
+
+<section id="daycare-how">
+  <h2>How infant daycare works</h2>
+  <div class="grid">
+    <div class="card"><h3>Age &amp; timing</h3><ul>
+      <li>Most centers take babies from <b>4–6 weeks</b>; the usual start is <b>3–6 months</b>, after leave.</li>
+      <li><b>WA Paid Family &amp; Medical Leave:</b> up to 12 weeks of bonding leave for each parent. The birthing parent can reach 16 weeks with medical leave, or 18 if there are complications.</li>
+      <li>PFML pays wages. Whether your job is protected depends on FMLA or your employer's rules.</li>
+      <li>Plan a <b>1–2 week gradual start</b> before going back to work.</li>
+    </ul></div>
+    <div class="card"><h3>Ratios (WA DCYF rules)</h3><ul>
+      <li><b>Centers:</b> infants at 1 adult to 4 babies, with at most 8 in a room, in a dedicated infant room.</li>
+      <li><b>Licensed family homes:</b> at most 12 children of mixed ages in someone's home. Only a few can be under age 2.</li>
+      <li>Home: smaller and warmer, but one provider means no backup when they're sick. Center: more staff and coverage.</li>
+    </ul></div>
+    <div class="card"><h3>Waitlists &amp; money</h3><ul>
+      <li>Waitlist fees run $0–250. When a spot opens, the deposit is usually <b>one month's tuition</b>.</li>
+      <li>Tuition is <b>monthly, and paid even on sick days, holidays and vacations</b>. Infant care is the most expensive tier.</li>
+      <li>Expect a yearly registration fee of $100–300 and annual increases of about 6%.</li>
+      <li>Part-time is usually 60–80% of full-time, and many infant rooms don't offer it.</li>
+    </ul></div>
+    <div class="card"><h3>Day to day</h3><ul>
+      <li>Infants eat and nap on <b>their own schedule</b>; the room adds tummy time, books, songs and stroller walks.</li>
+      <li>Most centers send <b>app updates</b> (bottles, diapers, naps, photos).</li>
+      <li><b>Sick rules:</b> fever of 100.4°F or more, vomiting or diarrhea means home until 24 hours symptom-free. First-year babies get sick a lot, <b>so plan backup care</b>.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="daycare-cost">
+  <h2>What it costs</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Option</th><th>Typical full-time cost / month</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><b>Center</b></td><td>$2,500–3,300 now; <b>~$2,850–3,100</b> projected for 2027</td><td>King County median: $2,530 (2024). Chains and downtown centers often charge $3,000–3,400+.</td></tr>
+      <tr><td><b>Licensed family home</b></td><td>$1,500–2,100 now; <b>~$1,950–2,150</b> projected for 2027</td><td>King County median: $1,777 (2024). Shorter waitlists.</td></tr>
+      <tr><td><b>Nanny</b></td><td>~$5,000–6,000</td><td>$26–30/hr at 45 hrs/week, plus employer taxes</td></tr>
+      <tr><td><b>Nanny share</b> (2 families)</td><td>~$3,000–4,000 each</td><td>Need a partner family; could find one through PEPS or the West Seattle Blog forums</td></tr>
+      <tr><td><b>Au pair</b></td><td>~$1,750–2,000 + room &amp; board</td><td>Capped at 45 hrs/week; needs a spare bedroom</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid" style="margin-top:14px">
+    <div class="card t-green"><h3>Ways to pay less</h3><ul>
+      <li><b>Dependent Care FSA: $7,500 per household</b> starting in 2026 (new federal law), if your employer's plan adopts it. <b>Elect it now during open enrollment.</b> Five months of tuition will use it all up.</li>
+      <li>Ask both employers about <b>backup-care</b> benefits (Bright Horizons, Care.com) and priority daycare spots.</li>
+      <li><b>Seattle's subsidy (CCAP) probably doesn't apply.</b> Our address appears to be in unincorporated King County rather than Seattle city limits. Confirm on King County iMap.</li>
+      <li>King County's Best Starts subsidy and the state's Working Connections program are income-limited. Check whether we qualify.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="daycare-ask">
+  <h2>What to look for &amp; ask on tours</h2>
+  <div class="grid">
+    <div class="card t-tan"><h3>Hours (our must-have)</h3><ul>
+      <li>Ask for the <b>exact opening and closing times and the late-pickup fee</b>. 6:00–6:00 versus 7:00–5:30 is 90 minutes of slack every day.</li>
+      <li>Rule out 9–3 and part-time-only programs.</li>
+      <li>Make sure one of us can always make it before closing, even on bad traffic days.</li>
+    </ul></div>
+    <div class="card"><h3>Safety &amp; quality</h3><ul>
+      <li>Look it up on <a href="https://dcyf.wa.gov/services/earlylearning-childcare/child-care-check" target="_blank" rel="noopener">DCYF Child Care Check</a>: license history, inspections and complaints.</li>
+      <li>Early Achievers level; NAEYC accreditation.</li>
+      <li>"What are your ratios at 7am and 5:45pm?" Rooms often get combined at opening and closing.</li>
+      <li>Infant staff tenure and turnover. Will one person be our baby's main caregiver?</li>
+      <li>Safe sleep: on their backs, alone in a crib, nothing else in it.</li>
+    </ul></div>
+    <div class="card"><h3>Daily care</h3><ul>
+      <li>How breast milk is labeled and stored, paced bottle feeding, and whether they follow our feeding schedule.</li>
+      <li>Are formula, diapers and meals included?</li>
+      <li>App updates and photos; cameras?</li>
+      <li>Outdoor and stroller time; philosophy (play-based, Montessori, Reggio, language immersion).</li>
+    </ul></div>
+    <div class="card"><h3>Policies &amp; money</h3><ul>
+      <li>Sick policy: fever threshold, return rules, how fast we must pick up.</li>
+      <li>Closure days, holidays, staff training days, snow days.</li>
+      <li>Current rate, usual yearly increase, waitlist fee, deposit.</li>
+      <li>"How many families are ahead of us for a Sept 2027 infant start? When do you make offers?"</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="daycare-options">
+  <h2>Nearby options &amp; morning drive times</h2>
+  <p class="sub">Estimated 7:30–8:30am drive from home, based on road distance with typical weekday traffic added. These are estimates, not live traffic. Prices marked * are estimates from King County averages, not quotes. Hours and prices change often, so call to confirm.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Provider</th><th>Type</th><th>AM drive</th><th>Hours</th><th>Est. infant $/mo</th><th>Pros</th><th>Cons</th></tr></thead>
+    <tbody>
+      <tr><td><b>Educare (PSESD)</b><br><span class="note">White Center</span></td><td>Center (Early Head Start)</td><td>1–3 min · 0.2 mi</td><td>7–6</td><td>Free if eligible</td><td>Walkable; purpose-built; from ~2 months</td><td>Only for families under the income limit; federal funding at risk in the 2025 shutdown</td></tr>
+      <tr><td><b>Ages in Stages</b><br><span class="note">Highland Park</span></td><td>Center</td><td>4–6 min · 0.9 mi</td><td>7–6</td><td>~$1.7–2.3k*</td><td>Separate infant building; from 4 weeks; parents rave</td><td>No website; reviews are older, so call</td></tr>
+      <tr><td><b>Learning Way School</b><br><span class="note">White Center / Roxhill</span></td><td>Center</td><td>5–8 min · 1.2 mi</td><td class="xh">6–6 (or 5:30)</td><td>~$1.7–2.3k*</td><td>Earliest opening nearby; from 1–2 months; small (~40 kids)</td><td>Few reviews; closing time conflicts between sources</td></tr>
+      <tr><td><b>YMCA West Seattle</b><br><span class="note">Westwood Village</span></td><td>Center (nonprofit)</td><td>7–10 min · 1.6 mi</td><td>7–6</td><td>Sliding scale (~$2.3–2.9k full)*</td><td>Opened 2021; Y membership included; play-based</td><td>Likely a long infant waitlist</td></tr>
+      <tr><td><b>Nurture &amp; Grow</b><br><span class="note">Arbor Heights</span></td><td>Family home</td><td>7–10 min · ~2.1 mi</td><td>Unverified</td><td>~$1.9k (listed)</td><td>Small group; English/Spanish; meals included</td><td>One provider, so no backup if they're sick</td></tr>
+      <tr><td><b>Nearby family homes</b><br><span class="note">A Mother's Touch, Senait, Loving Hands</span></td><td>Family homes</td><td>5–10 min · 1–3 mi</td><td class="xh">5:30–6</td><td>~$1.5–2.0k*</td><td>Long hours; shorter waits; cheaper</td><td>No published reviews; addresses given on request</td></tr>
+      <tr><td><b>Fauntleroy Children's Center</b><br><span class="note">Fauntleroy</span></td><td>Center (nonprofit)</td><td>10–14 min · 2.5 mi</td><td>7–6</td><td>~$2.3–2.9k*</td><td>Staff who stay for decades; accredited; meals included</td><td>Long waitlist, so join now</td></tr>
+      <tr><td><b>South Seattle KinderCare</b><br><span class="note">Boulevard Park / Burien</span></td><td>Center (chain)</td><td>8–12 min · ~2.8 mi</td><td class="xh">6–6</td><td>~$2.5–3.1k*</td><td>Full 6–6; no violations listed; parents liked the infant room; app updates</td><td>Chain pricing; staff turnover</td></tr>
+      <tr><td><b>Millennium Kids Georgetown</b><br><span class="note">Georgetown</span></td><td>Center</td><td>9–15 min · 2.9 mi</td><td class="xh">6:30–6</td><td>Not published</td><td>Diapers, formula and meals included; on the way north via SR-99</td><td>Industrial area; outdoor space unknown</td></tr>
+      <tr><td><b>Kids Country Burien</b><br><span class="note">Burien</span></td><td>Center</td><td>10–14 min · 3.7 mi</td><td class="xh">6–6 or 6:30</td><td>~$1.9–2.5k*</td><td>Long hours; drive is against traffic</td><td>Very large (~170 kids); 3.9★ reviews</td></tr>
+      <tr><td><b>Children's Academy</b><br><span class="note">Delridge</span></td><td>Center</td><td>11–15 min · 3.1 mi</td><td class="xh">6:30–6</td><td>Not published</td><td>Spanish immersion</td><td>Unclear whether they take babies under 1</td></tr>
+      <tr><td><b>Bright Horizons West Seattle</b><br><span class="note">Junction</span></td><td>Center (chain)</td><td>15–22 min · 4.6 mi</td><td>7–5:30</td><td>~$2.9–3.4k*</td><td>Pursuing NAEYC accreditation; may come with an employer benefit</td><td>Short day; pricey</td></tr>
+      <tr><td><b>Mount St. Vincent ILC</b><br><span class="note">West Seattle</span></td><td>Center</td><td>15–22 min · 4.3 mi</td><td>Part-time</td><td>Not published</td><td>One-of-a-kind program inside a care home</td><td>1–3 days/week; huge waitlist; poor fit</td></tr>
+      <tr><td><b>Downtown</b><br><span class="note">Pike Market, Seattle Infant Development Center</span></td><td>Centers</td><td>25–40 min · 7–8 mi</td><td>7–6 / 7:30–5:30</td><td>Sliding scale / not published</td><td>Close to a downtown job</td><td>Baby rides the bridge commute twice a day</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Green hours = opens by 6:30am and closes at 6pm (Learning Way's closing time is unconfirmed). Most others run 7–6, which is still 11 hours.</p>
+</section>
+
+<section id="daycare-next">
+  <h2>Shortlist &amp; timeline</h2>
+  <ol class="rank">
+    <li><span class="n">1</span><span class="name">Learning Way</span><span class="meta">5–8 min · 6–6</span><span class="why">Earliest drop-off nearby, closes at 6 (possibly 5:30), five minutes away.</span></li>
+    <li><span class="n">2</span><span class="name">Ages in Stages</span><span class="meta">4–6 min · 7–6</span><span class="why">The closest dedicated infant building, and parents speak highly of it.</span></li>
+    <li><span class="n">3</span><span class="name">YMCA West Seattle</span><span class="meta">7–10 min · 7–6</span><span class="why">Newer nonprofit center with sliding-scale fees.</span></li>
+    <li><span class="n">4</span><span class="name">Fauntleroy Children's Center</span><span class="meta">10–14 min · 7–6</span><span class="why">The quality pick with very stable staff. Its list is long, so join first.</span></li>
+    <li><span class="n">5</span><span class="name">South Seattle KinderCare</span><span class="meta">8–12 min · 6–6</span><span class="why">Guaranteed 6–6 hours and corporate backup. Swap in Millennium Kids Georgetown if one of us commutes north on SR-99.</span></li>
+  </ol>
+  <div class="grid" style="margin-top:14px">
+    <div class="card t-tan"><h3>This week</h3><ul>
+      <li>Join the waitlists at all 5. Add Bright Horizons if either employer gives priority there.</li>
+      <li>Look each one up on DCYF Child Care Check.</li>
+      <li><b>Elect the $7,500 Dependent Care FSA</b> for 2027.</li>
+      <li>Ask both employers about backup care.</li>
+      <li>Confirm whether we're inside Seattle city limits (King County iMap).</li>
+      <li>Optional: one call to Educare about eligibility.</li>
+    </ul></div>
+    <div class="card"><h3>Next months</h3><ul>
+      <li><b>Nov–Jan:</b> tour the top 5 plus 1–2 family homes, using the questions above. Settle the leave plan.</li>
+      <li><b>Every 4–6 weeks:</b> email each waitlist to say we're still interested.</li>
+      <li><b>After the birth:</b> send each the birth date and confirm the start date.</li>
+      <li><b>Apr–Jun 2027:</b> offers usually come 2–4 months before the start. Deposit is about one month's tuition.</li>
+      <li><b>Nothing by May?</b> Go with a family home or a nanny share.</li>
+      <li><b>2 weeks before returning to work:</b> gradual start.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="daycare-sources">
+  <h2>Daycare sources</h2>
+  <p class="sub">Research done Nov 1, 2026. Hours, tuition and infant ages come mostly from 2023–2026 directories and Seattle's provider list, so call to confirm. Drive times are estimates (OpenStreetMap routing plus a rush-hour factor).</p>
+  <div class="grid">
+    <div class="card"><h3>Costs &amp; rules</h3><ul>
+      <li><a href="https://childcareawarewa.org/wp-content/uploads/2025/06/King-County-2024.pdf" target="_blank" rel="noopener">Child Care Aware WA: King County 2024</a></li>
+      <li><a href="https://dcyf.wa.gov/services/earlylearning-childcare/child-care-check" target="_blank" rel="noopener">DCYF Child Care Check</a></li>
+      <li><a href="https://paidleave.wa.gov/" target="_blank" rel="noopener">WA Paid Family &amp; Medical Leave</a></li>
+      <li><a href="https://www.seattle.gov/ccap" target="_blank" rel="noopener">Seattle CCAP</a> · <a href="https://kingcounty.gov/en/dept/dchs/human-social-services/programs-children-families/childcare-resources" target="_blank" rel="noopener">King County child care help</a></li>
+    </ul></div>
+    <div class="card"><h3>Providers</h3><ul>
+      <li><a href="https://www.fauntleroychildrenscenter.org" target="_blank" rel="noopener">Fauntleroy Children's Center</a></li>
+      <li><a href="https://www.seattleymca.org/programs/child-care-and-school-enrichment/early-education" target="_blank" rel="noopener">YMCA early education</a></li>
+      <li><a href="https://winnie.com/place/learning-way-school-daycare-seattle-2" target="_blank" rel="noopener">Learning Way (Winnie)</a> · <a href="https://winnie.com/place/ages-in-stages-childcare-infant-center-seattle" target="_blank" rel="noopener">Ages in Stages (Winnie)</a></li>
+      <li><a href="https://winnie.com/place/south-seattle-kindercare-burien" target="_blank" rel="noopener">South Seattle KinderCare (Winnie)</a> · <a href="https://winnie.com/place/millennium-kids-georgetown-llc-seattle" target="_blank" rel="noopener">Millennium Kids (Winnie)</a></li>
+    </ul></div>
+  </div>
 </section>
 
 <footer>*Placeholder due date until the OB confirms it. Private page, not linked publicly. Last updated Nov 1, 2026.</footer>

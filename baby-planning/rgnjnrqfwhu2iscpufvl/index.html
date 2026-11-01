@@ -156,6 +156,13 @@
     ol.rank .why{grid-column:1 / 3}
     .part-h{font-size:24px}
   }
+  /* Copy-link buttons next to section headings */
+  .anchor-btn{display:inline-flex; align-items:center; gap:4px; margin-left:8px; vertical-align:middle;
+    font-family:var(--body); font-size:11.5px; font-weight:600; color:var(--ink-faded); background:var(--card);
+    border:1.5px solid var(--hair); border-radius:999px; padding:2px 8px; cursor:pointer; letter-spacing:0; text-transform:none}
+  .anchor-btn:hover, .anchor-btn:focus-visible{color:var(--navy); border-color:var(--navy)}
+  .anchor-btn.ok{color:var(--green); border-color:var(--green)}
+  .anchor-btn svg{width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round}
 </style>
 </head>
 <body>
@@ -759,6 +766,31 @@
   document.querySelectorAll('[data-due]').forEach(function(td){
     var p = td.getAttribute('data-due').split('-');
     if (new Date(+p[0], p[1] - 1, +p[2]) < today) td.classList.add('late');
+  });
+
+
+  // Copy-link button beside each section heading, for pasting into Google Docs etc.
+  var ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>';
+  function copyText(t){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(t);
+    var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } finally { ta.remove(); }
+    return Promise.resolve();
+  }
+  document.querySelectorAll('header#top, .part[id], .pick[id], section[id]').forEach(function(box){
+    var h = box.querySelector('h1, h2'); if (!h) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'anchor-btn'; b.innerHTML = ICON + '<span>Copy link</span>';
+    b.title = 'Copy a link to this section'; b.setAttribute('aria-label', 'Copy link to ' + h.textContent.trim());
+    b.addEventListener('click', function(){
+      var url = location.href.split('#')[0] + '#' + box.id;
+      history.replaceState(null, '', '#' + box.id);
+      copyText(url).then(function(){
+        b.classList.add('ok'); b.lastChild.textContent = 'Copied';
+        setTimeout(function(){ b.classList.remove('ok'); b.lastChild.textContent = 'Copy link'; }, 1600);
+      }, function(){ window.prompt('Copy this link:', url); });
+    });
+    h.appendChild(b);
   });
 
   // Highlight the rail link for the section in view.

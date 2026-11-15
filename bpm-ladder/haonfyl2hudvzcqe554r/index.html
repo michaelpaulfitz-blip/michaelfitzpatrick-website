@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>The BPM Ladder</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎧%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>
+  /* Apply a saved theme choice before first paint; otherwise follow the system setting */
+  try{ var t=localStorage.getItem('bpmLadder.theme'); if(t==='dark'||t==='light') document.documentElement.setAttribute('data-theme',t); }catch(e){}
+</script>
+<style>
+  /* Layout: a tempo map up top, then one "rung" per genre, sorted slowest to fastest.
+     Color encodes tempo: every genre's hue (--h) comes from its typical BPM, blue (slow) to red-orange (fast). */
+  :root{
+    --bg:oklch(0.975 0.006 275);
+    --panel:oklch(0.995 0.003 275);
+    --ink:oklch(0.23 0.03 275);
+    --muted:oklch(0.45 0.025 275);
+    --line:oklch(0.885 0.012 275);
+    --tone-l:0.53; --tone-c:0.17;      /* accent swatches */
+    --tone-text-l:0.47;                 /* accent used as text */
+    --on-tone:oklch(0.99 0 0);
+    --scrim:oklch(0.12 0.02 275 / .72); /* sits over video thumbnails in both themes */
+    --on-scrim:oklch(0.98 0 0);
+    --display:'Unbounded','Arial Black',system-ui,sans-serif;
+    --body:'Instrument Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:oklch(0.17 0.02 275); --panel:oklch(0.21 0.022 275); --ink:oklch(0.94 0.01 275);
+      --muted:oklch(0.74 0.02 275); --line:oklch(0.32 0.022 275);
+      --tone-l:0.76; --tone-c:0.15; --tone-text-l:0.8; --on-tone:oklch(0.18 0.02 275);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:oklch(0.17 0.02 275); --panel:oklch(0.21 0.022 275); --ink:oklch(0.94 0.01 275);
+    --muted:oklch(0.74 0.02 275); --line:oklch(0.32 0.022 275);
+    --tone-l:0.76; --tone-c:0.15; --tone-text-l:0.8; --on-tone:oklch(0.18 0.02 275);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px));
+    padding-block:max(28px, env(safe-area-inset-top, 0px)) max(40px, env(safe-area-inset-bottom, 0px))}
+  a{color:inherit}
+  button{font:inherit; color:inherit}
+  :focus-visible{outline:2px solid oklch(var(--tone-l) var(--tone-c) var(--h, 300)); outline-offset:3px; border-radius:4px}
+  img{max-width:100%}
+  .wrap{max-width:1080px; margin:0 auto; display:grid; gap:36px}
+
+  /* ── Header ── */
+  header{display:grid; gap:14px}
+  .topline{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  .theme-btn{margin-left:auto; border:1px solid var(--line); background:var(--panel); border-radius:6px;
+    padding:5px 11px; font-size:13px; cursor:pointer}
+  .theme-btn:hover{border-color:var(--muted)}
+  h1{font-family:var(--display); font-weight:700; font-size:clamp(34px, 6vw, 60px); line-height:1.02; letter-spacing:-.02em; text-wrap:balance}
+  .lead{font-size:18px; color:var(--muted); max-width:62ch}
+
+  /* ── Tempo map ── */
+  .map{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px 16px; display:grid; gap:12px}
+  .map h2{font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:500}
+  .rows{display:grid; gap:5px}
+  .row{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:12px; align-items:center}
+  .row a{font-size:13.5px; text-decoration:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--ink)}
+  .row a:hover{text-decoration:underline; text-underline-offset:3px}
+  .track{position:relative; height:16px}
+  .tick{position:absolute; top:0; bottom:0; width:1px; background:var(--line)}
+  .bar{position:absolute; top:4px; height:8px; border-radius:4px; background:oklch(var(--tone-l) var(--tone-c) var(--h))}
+  .bar.striped{background:repeating-linear-gradient(90deg, oklch(var(--tone-l) var(--tone-c) var(--h)) 0 6px, transparent 6px 10px)}
+  .ghost{position:absolute; top:2px; width:12px; height:12px; margin-left:-6px; border-radius:50%;
+    border:2px solid oklch(var(--tone-l) var(--tone-c) var(--h)); background:var(--panel)}
+  .axis{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:12px}
+  .axis .scale{position:relative; height:18px; font-family:var(--mono); font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums}
+  .axis .scale span{position:absolute; top:2px; transform:translateX(-50%)}
+  .axis .unit{font-family:var(--mono); font-size:11px; color:var(--muted); text-align:right}
+  .legend{font-size:13px; color:var(--muted); max-width:80ch}
+
+  /* ── Rungs (one per genre) ── */
+  .rungs{display:grid}
+  .rung{display:grid; grid-template-columns:minmax(0, 26rem) minmax(0, 1fr); gap:28px; align-items:start;
+    padding-block:30px; border-top:1px solid var(--line); scroll-margin-top:16px}
+  .player{position:relative; aspect-ratio:16/9; max-width:100%; border-radius:10px; overflow:hidden; background:oklch(0.12 0.02 275)}
+  .player iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .facade{position:absolute; inset:0; display:block; width:100%; border:0; padding:0; background:none; cursor:pointer; text-align:left}
+  .facade img{width:100%; height:100%; object-fit:cover; display:block}
+  .facade::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, var(--scrim), transparent 60%)}
+  .play{position:absolute; z-index:1; left:50%; top:50%; width:58px; height:58px; margin:-29px 0 0 -29px; border-radius:50%;
+    background:oklch(var(--tone-l) var(--tone-c) var(--h)); color:var(--on-tone); display:grid; place-items:center;
+    box-shadow:0 6px 18px oklch(0.1 0.02 275 / .35); transition:transform .15s ease}
+  .play svg{width:22px; height:22px; margin-left:3px; fill:currentColor}
+  .facade:hover .play{transform:scale(1.08)}
+  .cap{position:absolute; z-index:1; left:14px; right:14px; bottom:11px; color:var(--on-scrim); font-size:13.5px; font-weight:500;
+    text-shadow:0 1px 2px oklch(0.1 0 0 / .5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+  .text{display:grid; gap:12px; min-width:0}
+  .meta{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:13px; font-weight:700;
+    color:oklch(var(--tone-text-l) var(--tone-c) var(--h)); font-variant-numeric:tabular-nums}
+  .led{flex:none; width:10px; height:10px; border-radius:50%; background:oklch(var(--tone-l) var(--tone-c) var(--h));
+    box-shadow:0 0 0 3px oklch(var(--tone-l) var(--tone-c) var(--h) / .22);
+    animation:beat var(--beat, 1s) linear infinite}
+  .led.breathe{animation:breathe 8s ease-in-out infinite}
+  @keyframes beat{0%{opacity:1; transform:scale(1.18)} 22%{opacity:1; transform:scale(1)} 45%,100%{opacity:.28; transform:scale(1)}}
+  @keyframes breathe{0%,100%{opacity:.3} 50%{opacity:1}}
+  .rung h2{font-family:var(--display); font-weight:500; font-size:clamp(22px, 3vw, 28px); line-height:1.15; letter-spacing:-.01em; text-wrap:balance}
+  .vibe{font-size:15.5px}
+  .vibe b{font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-right:8px}
+  .desc{color:var(--muted); max-width:64ch}
+  .tracks{display:flex; flex-wrap:wrap; gap:8px}
+  .chip{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--panel); border-radius:999px;
+    padding:6px 13px; font-size:13.5px; cursor:pointer; text-align:left}
+  .chip:hover{border-color:var(--muted)}
+  .chip svg{width:9px; height:9px; fill:currentColor; flex:none}
+  .chip[aria-pressed="true"]{border-color:oklch(var(--tone-l) var(--tone-c) var(--h));
+    background:oklch(var(--tone-l) var(--tone-c) var(--h) / .12)}
+  .out{font-size:13px; color:var(--muted)}
+  .out a{color:oklch(var(--tone-text-l) var(--tone-c) var(--h)); text-underline-offset:3px}
+
+  footer{border-top:1px solid var(--line); padding-top:18px; font-size:13px; color:var(--muted)}
+
+  @media (max-width:820px){
+    .rung{grid-template-columns:minmax(0,1fr); gap:18px}
+  }
+  @media (max-width:520px){
+    .row, .axis{grid-template-columns:6.6rem minmax(0,1fr); gap:8px}
+    .row a{font-size:12.5px}
+    .axis .scale span.minor{display:none}
+    .map{padding:16px 14px 14px}
+    .lead{font-size:16.5px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .led, .led.breathe{animation:none}
+    .play{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="topline">
+      <span class="eyebrow">Electronic music, slowest to fastest</span>
+      <button class="theme-btn" id="themeBtn" type="button">Dark mode</button>
+    </div>
+    <h1>The BPM Ladder</h1>
+    <p class="lead">Fifteen kinds of electronic music, from beatless ambient up to 174&nbsp;BPM drum &amp; bass. Every card has a track you can play right on the page.</p>
+  </header>
+
+  <section class="map" aria-labelledby="mapTitle">
+    <h2 id="mapTitle">Tempo map</h2>
+    <div class="rows" id="mapRows"></div>
+    <div class="axis" aria-hidden="true"><span class="unit">BPM</span><div class="scale" id="axis"></div></div>
+    <p class="legend">Bars show each genre's usual tempo range. Striped bars mean there may be no beat at all, or the tempo moves around. The ring on dubstep marks the 70&nbsp;BPM it feels like, because its drums hit at half speed. Color follows tempo too, from blue (slow) to red (fast), and each card's light blinks at that genre's typical BPM.</p>
+  </section>
+
+  <main class="rungs" id="rungs"></main>
+
+  <footer>Links checked 14 November 2026. Players load from YouTube, and starting one track stops the last.</footer>
+</div>
+
+<script>
+const GENRES = [
+  { id:'ambient', name:'Ambient', range:[60,90], bpm:null, hueAt:60, style:'striped',
+    label:'No fixed beat (60–90 BPM when there is one)',
+    vibe:'Weightless, floaty, an airport at 6 a.m.',
+    desc:'Music built to sit in the background of a room rather than demand your attention. Slow pads, drones, and textures drift instead of driving forward. Brian Eno more or less named the category in the late 1970s, and it is still the go-to for focus, sleep, and pretending your apartment is a spa.',
+    tracks:[{a:'Brian Eno', t:'1/1 (Music for Airports)', id:'LKZ3fGR2SDY'}] },
+  { id:'vaporwave', name:'Vaporwave', range:[60,100], bpm:80,
+    label:'60–100 BPM (slowed-down samples)',
+    vibe:'A haunted shopping mall, nostalgia for a 1995 screensaver',
+    desc:'Born on the internet in the early 2010s. Artists take 1980s and 1990s smooth jazz, elevator music, and commercial jingles, then slow them down, chop them up, and soak them in reverb. It is half music and half art joke about consumer culture. The pick here is a slowed-down Diana Ross song.',
+    tracks:[{a:'Macintosh Plus', t:'リサフランク420 / 現代のコンピュー', id:'_4gl-FX2RvI', note:'Fan upload. Most vaporwave lives on these.'}] },
+  { id:'lofi', name:'Lo-fi hip hop', range:[70,90], bpm:82,
+    label:'70–90 BPM',
+    vibe:'Rainy-day studying, a warm mug, cozy',
+    desc:'Dusty, jazzy samples over lazy, swung drums, with vinyl crackle added on purpose. The roots are J Dilla and Nujabes. The studying anime girl on the Lofi Girl channel is the genre’s unofficial headquarters. Its opposite, for the record, is hi-fi.',
+    tracks:[{a:'Lofi Girl', t:'24/7 lofi hip hop radio', id:'rFZHOHl-L8A', note:'Live stream. Lofi Girl sometimes restarts it under a new link.'}] },
+  { id:'trip-hop', name:'Trip-hop', range:[70,100], bpm:85,
+    label:'70–100 BPM',
+    vibe:'Smoky, moody, late-night noir',
+    desc:'Bristol in the 1990s. Slowed hip-hop beats meet soul and jazz samples, cinematic strings, and usually a haunting vocal. Massive Attack and Portishead are the big names. It is the soundtrack for staring out a rainy window in a trench coat, and the first pick doubles as the theme song from House.',
+    tracks:[{a:'Massive Attack', t:'Teardrop', id:'u7K72X4eo_s'}, {a:'Portishead', t:'Glory Box', id:'4qQyUi4zfDs'}] },
+  { id:'synthwave', name:'Synthwave', range:[80,118], bpm:96,
+    label:'80–118 BPM',
+    vibe:'Neon, a night drive, a 1984 movie training montage',
+    desc:'Modern artists making the music they wish 1980s movies had, with analog synths, huge gated-reverb drums, and chrome sunsets. It also goes by outrun or retrowave. If a Lamborghini Countach had a genre, this would be it.',
+    tracks:[{a:'Kavinsky', t:'Nightcall', id:'MV_3Dpw-BRY'}] },
+  { id:'idm', name:'IDM', range:[90,160], bpm:120, style:'striped',
+    label:'Varies (90–160 BPM, sometimes within one track)',
+    vibe:'Brainy, glitchy, weird in a good way',
+    desc:'Short for Intelligent Dance Music, a name everyone hates, the artists included. It mostly means the 1990s Warp Records crew: Aphex Twin, Autechre, Squarepusher, and Boards of Canada. It is made more for headphones than dance floors, with complex rhythms, deliberate glitches, and odd, pretty melodies.',
+    tracks:[{a:'Aphex Twin', t:'minipops 67', id:'RUAJ8KLGqis'}, {a:'Boards of Canada', t:'Roygbiv', id:'SM4tQcUt_mQ'}] },
+  { id:'house', name:'House', range:[118,128], bpm:124,
+    label:'118–128 BPM',
+    vibe:'Warm, soulful, hands in the air',
+    desc:'The parent of most of this list. House grew out of disco in early-1980s Chicago and takes its name from the Warehouse, the club where Frankie Knuckles played. The signature is a kick on every beat, hi-hats on the off-beats, and soulful vocals. The family is huge, from deep house to French house to tech house.',
+    tracks:[{a:'Frankie Knuckles', t:'Your Love', id:'ottFhv0zD_8'}, {a:'Daft Punk', t:'One More Time', id:'FGBhQbmPwH8', note:'French house.'}] },
+  { id:'big-beat', name:'Big beat / breakbeat', short:'Big beat', range:[110,140], bpm:125,
+    label:'110–140 BPM',
+    vibe:'Punk energy, rowdy, a 1990s skate video',
+    desc:'The drums are chopped-up breakbeats sampled from old funk records instead of a steady thump. Late-1990s UK artists added rock attitude and distorted riffs, and the Chemical Brothers belong here too. The Praise You video reportedly cost about $800 and starred a fake community dance troupe.',
+    tracks:[{a:'The Prodigy', t:'Firestarter', id:'wmin5WkOuPw'}, {a:'Fatboy Slim', t:'Praise You', id:'ruAi4VBoBSM'}] },
+  { id:'edm', name:'Progressive house / festival EDM', short:'Prog house / EDM', range:[126,130], bpm:128,
+    label:'126–130 BPM',
+    vibe:'Main stage, stadium euphoria, the drop',
+    desc:'Progressive house builds slowly by stacking melodies over long tracks; Strobe takes about ten minutes to fully bloom. In the 2010s it grew into the festival sound Americans call EDM, with big synth leads, long buildups, and drops that make 40,000 people jump at once.',
+    tracks:[{a:'Avicii', t:'Levels', id:'_ovdm2yX4MA'}, {a:'deadmau5', t:'Strobe', id:'tKi9Z-f6qX4'}] },
+  { id:'techno', name:'Techno', range:[125,140], bpm:132,
+    label:'125–140 BPM (hard techno goes past 145)',
+    vibe:'Dark, hypnotic, a warehouse at 4 a.m.',
+    desc:'Born in mid-1980s Detroit, inspired by Kraftwerk and an industrial city. Berlin adopted it after the Wall fell and never gave it back. Compared with house it is more machine-like and repetitive, with fewer vocals, and it is built to put you in a trance through repetition.',
+    tracks:[{a:'Jeff Mills', t:'The Bells', id:'S-BlgAQ7uRQ'}] },
+  { id:'uk-garage', name:'UK garage', range:[130,138], bpm:134,
+    label:'130–138 BPM',
+    vibe:'Bouncy, flirty, a Sunday afternoon at a London club',
+    desc:'Late-1990s London. The trademark is 2-step drums that skip and shuffle, plus chopped-up R&B vocals over deep bass. It is the parent of grime and dubstep, and Disclosure’s records lean on it heavily.',
+    tracks:[{a:'Artful Dodger ft. Craig David', t:'Re-Rewind', id:'M0wv_cQv8As'}, {a:'Disclosure ft. Sam Smith', t:'Latch', id:'93ASUImTedo', note:'The modern revival sound.'}] },
+  { id:'trance', name:'Trance', range:[130,140], bpm:136,
+    label:'130–140 BPM',
+    vibe:'Euphoric, uplifting, arms up',
+    desc:'Germany and the Netherlands in the 1990s. Expect long buildups, rippling synth arpeggios, and big breakdowns where the beat drops out and everyone feels things. Armin van Buuren and early Tiësto are the big names. And yes, the meme song is trance, at 136 BPM.',
+    tracks:[{a:'Darude', t:'Sandstorm', id:'y6120QOlsfU'}] },
+  { id:'dubstep', name:'Dubstep', range:[139,141], bpm:140, ghost:70,
+    label:'140 BPM (feels like 70, with half-time drums)',
+    vibe:'UK side: dark and rainy. US side: a robot fight in a parking garage',
+    desc:'Came out of South London in the early 2000s as UK garage’s darker cousin, built on sub-bass you feel more than hear. Around 2010, Skrillex and friends turned it into the screaming, wobbling sound most Americans think of. Same tempo, opposite personalities.',
+    tracks:[{a:'Burial', t:'Archangel', id:'8k_f2QK77ew', note:'The moody UK side.'}, {a:'Skrillex', t:'Scary Monsters and Nice Sprites', id:'WSeNSzJ2-Jw', note:'The American wobble.'}] },
+  { id:'hardstyle', name:'Hardstyle', range:[150,160], bpm:150,
+    label:'150–160 BPM',
+    vibe:'Intense, stomping, festivals with real flamethrowers',
+    desc:'The Netherlands, early 2000s. The kick drum is distorted until it is basically the lead instrument, under big euphoric melodies. Gabber is its angrier grandparent at 180 BPM and up. The pick is built on the Skyrim theme.',
+    tracks:[{a:'Headhunterz', t:'Dragonborn', id:'VaiHTvifGt0'}] },
+  { id:'drum-and-bass', name:'Drum & bass', range:[160,180], bpm:174,
+    label:'160–180 BPM (usually about 174)',
+    vibe:'Fast, rolling, adrenaline, or silky smooth in the liquid style',
+    desc:'Grew out of 1990s UK jungle. Fast, chopped breakbeats, often the famous Amen break, run over basslines moving at half the speed, so it can feel frantic and chill at once. Subgenres run from liquid (soulful) to neurofunk (dark and technical) to jump-up (bouncy and silly). Pendulum is the rock-flavored stadium version.',
+    tracks:[{a:'Goldie', t:'Inner City Life', id:'6vHkOI-Z7lY'}, {a:'Pendulum', t:'Watercolour', id:'tEPB7uzKuh4'}] },
+];
+
+const MIN = 50, MAX = 190;                       /* map domain in BPM */
+const pct = v => ((v - MIN) / (MAX - MIN) * 100).toFixed(3) + '%';
+const hueFor = b => 250 + (b - 60) / (174 - 60) * 150; /* 250 = blue ... 400 (= 40) = red-orange */
+const TICKS = [60, 80, 100, 120, 140, 160, 180];
+const PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+
+function el(tag, attrs = {}, html) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else n.setAttribute(k, v);
+  }
+  if (html !== undefined) n.innerHTML = html;
+  return n;
+}
+
+/* ── Tempo map ── */
+const mapRows = document.getElementById('mapRows');
+for (const g of GENRES) {
+  const h = hueFor(g.hueAt ?? g.bpm);
+  const row = el('div', { class: 'row', style: `--h:${h.toFixed(1)}` });
+  row.append(el('a', { href: '#' + g.id, text: g.short || g.name, title: `${g.name}: ${g.label}` }));
+  const track = el('div', { class: 'track', role: 'img', 'aria-label': `${g.name}: ${g.label}` });
+  for (const t of TICKS) track.append(el('span', { class: 'tick', style: `left:${pct(t)}` }));
+  const [lo, hi] = g.range;
+  track.append(el('span', { class: 'bar' + (g.style === 'striped' ? ' striped' : ''), style: `left:${pct(lo)}; width:calc(${pct(hi)} - ${pct(lo)})` }));
+  if (g.ghost) track.append(el('span', { class: 'ghost', style: `left:${pct(g.ghost)}`, title: `Feels like ${g.ghost} BPM` }));
+  row.append(track);
+  mapRows.append(row);
+}
+const axis = document.getElementById('axis');
+TICKS.forEach((t, i) => axis.append(el('span', { class: i % 2 ? 'minor' : '', style: `left:${pct(t)}`, text: t })));
+
+/* ── Rungs and players ── */
+const rungs = document.getElementById('rungs');
+let playing = null;
+
+function facade(g, tr) {
+  const b = el('button', { class: 'facade', type: 'button', 'aria-label': `Play ${tr.a}, ${tr.t}` });
+  b.append(el('img', { src: `https://i.ytimg.com/vi/${tr.id}/hqdefault.jpg`, alt: '', loading: 'lazy', decoding: 'async' }));
+  b.append(el('span', { class: 'play' }, PLAY_SVG));
+  b.append(el('span', { class: 'cap', text: `${tr.a} – ${tr.t}` }));
+  b.addEventListener('click', () => select(g, g.current, true));
+  return b;
+}
+
+function frame(tr) {
+  return el('iframe', {
+    src: `https://www.youtube-nocookie.com/embed/${tr.id}?autoplay=1&rel=0&playsinline=1`,
+    title: `${tr.a} – ${tr.t}`,
+    allow: 'autoplay; encrypted-media; picture-in-picture; fullscreen',
+    allowfullscreen: '',
+    referrerpolicy: 'strict-origin-when-cross-origin' /* YouTube needs the site origin; the page path stays private */
+  });
+}
+
+function select(g, idx, play) {
+  g.current = idx;
+  const tr = g.tracks[idx];
+  if (play && playing && playing !== g) select(playing, playing.current, false);
+  g.player.replaceChildren(play ? frame(tr) : facade(g, tr));
+  playing = play ? g : (playing === g ? null : playing);
+  g.chips.forEach((c, i) => c.setAttribute('aria-pressed', String(i === idx)));
+  g.out.replaceChildren();
+  const link = el('a', { href: `https://www.youtube.com/watch?v=${tr.id}`, target: '_blank', rel: 'noopener noreferrer', text: 'Watch on YouTube ↗' });
+  g.out.append(link);
+  if (tr.note) g.out.append(document.createTextNode(' · ' + tr.note));
+}
+
+for (const g of GENRES) {
+  const h = hueFor(g.hueAt ?? g.bpm);
+  const art = el('article', { class: 'rung', id: g.id, style: `--h:${h.toFixed(1)}; --beat:${g.bpm ? (60 / g.bpm).toFixed(4) + 's' : '1s'}` });
+  g.player = el('div', { class: 'player' });
+
+  const text = el('div', { class: 'text' });
+  const meta = el('div', { class: 'meta' });
+  meta.append(el('span', { class: 'led' + (g.bpm ? '' : ' breathe'), 'aria-hidden': 'true', title: g.bpm ? `Blinks at ${g.bpm} BPM` : 'No steady beat, so it just breathes' }));
+  meta.append(el('span', { text: g.label }));
+  text.append(meta, el('h2', { text: g.name }));
+  const vibe = el('p', { class: 'vibe' });
+  vibe.append(el('b', { text: 'Vibe' }), document.createTextNode(g.vibe));
+  text.append(vibe, el('p', { class: 'desc', text: g.desc }));
+
+  const list = el('div', { class: 'tracks', role: 'group', 'aria-label': `${g.name} tracks` });
+  g.chips = g.tracks.map((tr, i) => {
+    const c = el('button', { class: 'chip', type: 'button', 'aria-pressed': 'false' }, PLAY_SVG);
+    c.append(document.createTextNode(`${tr.a} – ${tr.t}`));
+    c.addEventListener('click', () => select(g, i, true));
+    list.append(c);
+    return c;
+  });
+  g.out = el('p', { class: 'out' });
+  text.append(list, g.out);
+
+  art.append(g.player, text);
+  rungs.append(art);
+  select(g, 0, false);
+}
+
+/* ── Theme toggle (follows the system until you pick) ── */
+const btn = document.getElementById('themeBtn');
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+const isDark = () => { const t = document.documentElement.getAttribute('data-theme'); return t ? t === 'dark' : mq.matches; };
+const label = () => { btn.textContent = isDark() ? 'Light mode' : 'Dark mode'; };
+btn.addEventListener('click', () => {
+  const next = isDark() ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('bpmLadder.theme', next); } catch (e) {}
+  label();
+});
+mq.addEventListener?.('change', label);
+label();
+</script>
+</body>
+</html>

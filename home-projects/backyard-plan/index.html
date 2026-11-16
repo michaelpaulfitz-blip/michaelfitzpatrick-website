@@ -69,7 +69,7 @@
 <body>
 <header class="top">
   <div class="wordmark">Backyard Plan<span>.</span></div>
-  <nav><a href="/home-projects/">&larr; Home Projects</a><a href="#plan">Plan</a><a href="#schedule">Plant list</a><a href="#berms">Berms</a><a href="#marking">Marking</a><a href="#crew">Crew notes</a><a href="#open">Open items</a></nav>
+  <nav><a href="/home-projects/">&larr; Home Projects</a><a href="#plan">Plan</a><a href="#mockups">Mockups</a><a href="#schedule">Plant list</a><a href="#berms">Berms</a><a href="#marking">Marking</a><a href="#crew">Crew notes</a><a href="#open">Open items</a></nav>
   <span class="badge">DRAFT FOR CARLA</span>
 </header>
 <main>
@@ -82,6 +82,12 @@
     <a href="/home-projects/designs/backyard-2026-11-15-design-v2.svg" target="_blank" rel="noopener"><img class="plan-img" src="/home-projects/designs/backyard-2026-11-15-design-v2.svg" alt="Design v2 planting plan of the backyard with tagged plants, berms and a raspberry trellis"></a>
     <p class="hint">Tap the plan to open it full size. Each plant shows three sizes: the dark dot is planting day, the filled circle is year 7, and the dashed ring is mature spread. Hinokis are the dark circles.</p>
     <div class="warn" id="scaleNote"></div>
+  </section>
+
+  <section class="card" id="mockups">
+    <h2>Mockups: today → planting day → year 7</h2>
+    <p class="sub">AI-edited versions of our own May 2026 photos (OpenAI image model), with this plan drawn in. They show the look and feel, not exact measurements. The image model tends to render the Hinokis a bit like spruces, so trust the plan drawing for placement and the library photos for what the plants really look like.</p>
+    <div id="mockGrid"></div>
   </section>
 
   <section class="card" id="schedule">
@@ -188,6 +194,16 @@ document.getElementById('bermRows').innerHTML = PLAN.berms.map(function(b){
   cu += b.cuyd;
   return '<tr><td><span class="tag" style="border-color:var(--soil);color:var(--soil)">' + esc(b.tag) + '</span></td><td><b>' + esc(b.name) + '</b></td>' +
     '<td class="sz">~' + b.lengthFt + ' × ' + b.widthFt + ' ft</td><td class="sz">' + esc(b.heightIn) + ' in</td><td class="sz">~' + b.cuyd + ' cu yd</td><td class="why">' + esc(b.notes) + '</td></tr>';
+}).join('');
+var MOCKS = [
+  { id:'south-view', title:'From the south fence, looking at the house', note:'SW berm with the Hinoki pair and vine maple (left), lavender row on the house wall, blueberries + rosemary on the patio edge, east bed with Hinoki H3 (right).' },
+  { id:'west-view', title:'From the SW corner, looking along the west fence', note:'The woodland berm up close: Hinokis H1/H2, dwarf Hinoki D1, vine maple, sword ferns, forest grass edge; clematis on the fence; lavender by the house.' },
+  { id:'southeast-view', title:'From the raised bed, looking northwest', note:'Raspberry trellis and strawberries by the raised bed, the east bed (Hinoki, heath, grasses, asters), and the SW berm in the distance.' }
+];
+var M = '/home-projects/designs/mockups/backyard-2026-11-16-';
+document.getElementById('mockGrid').innerHTML = MOCKS.map(function(m){
+  return '<h3>' + esc(m.title) + '</h3><a href="' + M + 'compare-' + m.id + '.jpg" target="_blank" rel="noopener"><img class="plan-img" loading="lazy" src="' + M + 'compare-' + m.id + '.jpg" alt="' + esc(m.title) + ': today, planting day, year 7"></a>' +
+    '<p class="hint">' + esc(m.note) + ' Full size: <a href="' + M + 'mockup-' + m.id + '-planting-day.jpg" target="_blank" rel="noopener">planting day</a> · <a href="' + M + 'mockup-' + m.id + '-year-7.jpg" target="_blank" rel="noopener">year 7</a></p>';
 }).join('');
 var hinokis = PLAN.plants.filter(function(p){ return p.id === 'hinoki-cypress'; }).length;
 var stats = [

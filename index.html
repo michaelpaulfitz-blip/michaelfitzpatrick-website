@@ -22,7 +22,7 @@
     --brick:#9C3A2E;     /* negative / error */
     --hairline:#DCD6C8;  /* borders, rules */
     --serif:Georgia,'Times New Roman',serif;
-    --maxw:980px;
+    --maxw:1280px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
   html{scroll-behavior:smooth}
@@ -41,7 +41,7 @@
   /* ── Top nav ── */
   header.nav{position:sticky; top:0; z-index:100; background:rgba(240,238,230,.92);
     backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline)}
-  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+  .nav-inner{max-width:var(--maxw); margin:0 auto; padding:16px clamp(22px,4vw,48px);
     display:flex; align-items:baseline; justify-content:space-between; gap:20px; flex-wrap:wrap}
   .wordmark{font-size:20px; font-weight:bold; color:var(--ink); letter-spacing:.2px; white-space:nowrap}
   .wordmark .dot{color:var(--clay)}
@@ -78,10 +78,28 @@
   .dd-menu a[data-tip]:hover::after,.dd-menu a[data-tip]:focus-visible::after{opacity:1}
   .dd-menu a[data-tip]{padding-right:86px}
 
+  /* ── Hinoki tree line under the hero ── */
+  /* Pinned to the bottom of the screen on load; fades away as the visitor scrolls (see script). */
+  .treeline{position:fixed; left:0; right:0; bottom:0; z-index:50; height:clamp(130px,26vh,330px);
+    pointer-events:none; will-change:opacity}
+  .treeline img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom;
+    -webkit-mask-image:linear-gradient(to bottom,#000 45%,transparent 100%);
+            mask-image:linear-gradient(to bottom,#000 45%,transparent 100%)}
+  .scroll-cue{position:absolute; left:50%; bottom:40%; transform:translateX(-50%); pointer-events:auto;
+    display:flex; align-items:center; gap:10px; color:var(--paper); font-style:italic; font-size:15px;
+    letter-spacing:.3px; text-shadow:0 1px 6px rgba(0,0,0,.45)}
+  .scroll-cue:hover{color:#fff}
+  .scroll-cue svg{filter:drop-shadow(0 1px 4px rgba(0,0,0,.4)); animation:cue 2.2s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @media (prefers-reduced-motion:reduce){ .scroll-cue svg{animation:none} }
+  .hero-wrap + section{border-top:0}
+
   /* ── Section shell ── */
-  section{max-width:var(--maxw); margin:0 auto; padding:78px 28px; scroll-margin-top:70px}
+  section{max-width:var(--maxw); margin:0 auto; padding:78px clamp(22px,4vw,48px); scroll-margin-top:70px}
+  /* keep running prose at a readable line length even on wide screens */
+  section > p, .card p{max-width:76ch}
   section + section{border-top:1px solid var(--hairline)}
-  h1{font-size:56px; line-height:1.05; letter-spacing:-1px; font-weight:bold}
+  h1{font-size:clamp(40px,4.6vw,68px); line-height:1.05; letter-spacing:-1px; font-weight:bold}
   h2{font-size:30px; line-height:1.15; letter-spacing:-.4px; margin-bottom:8px}
   h3{font-size:20px; margin-bottom:4px}
   p{margin-bottom:16px}
@@ -89,8 +107,10 @@
   strong{font-weight:bold; color:var(--ink)}
 
   /* ── Hero ── */
-  #home{display:grid; grid-template-columns:1.15fr .85fr; gap:52px; align-items:center;
-    padding-top:64px; padding-bottom:64px}
+  #home{display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(36px,5vw,80px); align-items:center;
+    padding-top:56px; padding-bottom:28px; border-top:0}
+  .hero-copy{max-width:720px}
+  .hero-portrait{max-width:460px; justify-self:end; width:100%}
   .hero-copy p{color:var(--faded); font-size:17px}
   .hero-copy p.lede{color:var(--ink); font-size:19px; margin-top:22px; margin-bottom:22px}
   .hero-copy h1{margin-bottom:6px}
@@ -104,6 +124,8 @@
   .card{background:var(--paper); border:1px solid var(--hairline); border-radius:6px;
     padding:26px; margin-bottom:22px}
   .card:last-child{margin-bottom:0}
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:26px; align-items:start}
+  .card-grid .card{margin-bottom:0}
   .card p{color:var(--faded)}
   .card .meta{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--clay);
     font-weight:bold; margin-bottom:10px}
@@ -126,7 +148,7 @@
   .board li::before{content:''; position:absolute; left:0; top:14px; width:6px; height:6px;
     border-radius:50%; background:var(--clay)}
   .board .card.person{padding:0; overflow:hidden}
-  .board .card.person .face{width:100%; height:300px; object-fit:cover; object-position:center 25%;
+  .board .card.person .face{width:100%; height:clamp(280px,26vw,380px); object-fit:cover; object-position:center 25%;
     display:block; border-bottom:1px solid var(--hairline)}
   .board .card.person .card-body{padding:22px 24px 24px}
 
@@ -151,10 +173,11 @@
   /* ── Responsive ── */
   @media (max-width:760px){
     body{font-size:16px}
-    h1{font-size:40px}
     h2{font-size:26px}
     #home{grid-template-columns:1fr; gap:34px; padding-top:44px}
-    .hero-portrait{max-width:340px}
+    .hero-portrait{max-width:340px; justify-self:start}
+    .treeline{display:none}
+    .card-grid{grid-template-columns:1fr}
     .hero-portrait .sprig{display:none}
     .board{grid-template-columns:1fr; gap:22px}
     .contact-details{gap:28px}
@@ -181,10 +204,13 @@
           <li><a href="/woodworking/" role="menuitem"><span class="lock-spacer" aria-hidden="true"></span><span>Woodworking</span></a></li>
           <li><a href="/home-projects/#overview" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Backyard Landscape Design</span></a></li>
           <li><a href="/home-projects/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Home Projects</span></a></li>
+          <li><a href="/home-projects/couches/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Couch Guide</span></a></li>
           <li><a href="/baby-planning/" class="private" data-tip="Private" data-key="baby-planning" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Baby Planning</span></a></li>
-          <li><a href="/NEDWaur/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Video Game Projects</span></a></li>
+          <li><a href="/otto/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Otto HQ</span></a></li>
+          <li><a href="/NEDWaur/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Video Game Projects (NEDWaur)</span></a></li>
           <li><a href="/growth-and-best-practices/" class="private" data-tip="Private" data-key="growth-and-best-practices" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Growth and Best Practices</span></a></li>
           <li><a href="/the-bridge/" class="private" data-tip="Private" data-key="the-bridge" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>The Bridge</span></a></li>
+          <li><a href="/job-hunt/" class="private" data-tip="Private" data-key="job-hunt" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Job Hunt &amp; Demos</span></a></li>
         </ul>
       </div>
       <a href="#about">About Me</a>
@@ -195,6 +221,7 @@
 </header>
 
 <!-- ── HERO ── -->
+<div class="hero-wrap">
 <section id="home">
   <div class="hero-copy">
     <h1>Hi, I&rsquo;m Mike Fitzpatrick</h1>
@@ -214,6 +241,16 @@
     </svg>
   </div>
 </section>
+
+<div class="treeline" id="treeline">
+  <!-- Swap-friendly: replace img/hinoki-treeline.svg (or point src at a PNG/WebP) to change the art. -->
+  <img src="img/hinoki-treeline.svg" alt="" aria-hidden="true">
+  <a class="scroll-cue" href="#portfolio">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M5.5 12.5 12 19l6.5-6.5"/></svg>
+    <span>Scroll for more</span>
+  </a>
+</div>
+</div>
 
 <!-- ── PROFESSIONAL PORTFOLIO ── -->
 <section id="portfolio">
@@ -236,7 +273,7 @@
     </li>
   </ul>
 
-  <div style="margin-top:34px">
+  <div class="card-grid" style="margin-top:34px">
     <div class="card">
       <img class="shot" src="FeastInstockPortalScreenshots-4.webp" alt="Feast Instock Portal interface">
       <div class="meta">Platform Rebuild · Grocery Replenishment</div>
@@ -333,6 +370,21 @@
     });
   }, {rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+  // Tree line fades out as you scroll past it.
+  (function(){
+    const tl = document.getElementById('treeline');
+    let ticking = false;
+    const update = () => {
+      const fadeOver = Math.max(180, window.innerHeight * 0.35);
+      const o = Math.max(0, 1 - window.scrollY / fadeOver);
+      tl.style.opacity = o.toFixed(3);
+      tl.style.visibility = o === 0 ? 'hidden' : 'visible';
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    update();
+  })();
 
   // Projects dropdown: hover opens it on desktop (CSS); click/tap and keyboard handled here.
   (function(){

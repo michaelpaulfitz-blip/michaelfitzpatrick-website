@@ -51,13 +51,32 @@
   nav.links a:hover{color:var(--ink)}
   nav.links a.active{color:var(--ink); border-bottom-color:var(--clay)}
   .tree-ico{fill:var(--clay); vertical-align:-1px; margin-right:5px}
-  /* Personal projects group: set apart from the public links by a hairline + small label */
   nav.links{align-items:baseline}
-  .nav-personal{display:inline-flex; align-items:baseline; gap:16px; flex-wrap:wrap;
-    border-left:1px solid var(--hairline); padding-left:20px; margin-left:2px}
-  .nav-personal .nav-label{font-size:10px; letter-spacing:2px; text-transform:uppercase;
-    color:var(--clay); font-weight:bold; white-space:nowrap}
-  nav.links .nav-personal a{font-size:13px; font-style:italic}
+  /* ── Woodworking & Personal Projects dropdown ── */
+  .dropdown{position:relative}
+  .dd-toggle{background:none; border:0; font:inherit; font-size:14px; color:var(--faded); cursor:pointer;
+    padding:0 0 3px; border-bottom:2px solid transparent; display:inline-flex; align-items:center; gap:6px}
+  .dd-toggle:hover,.dropdown.open .dd-toggle{color:var(--ink)}
+  .dd-toggle .caret{transition:transform .15s}
+  .dropdown.open .caret{transform:rotate(180deg)}
+  .dd-menu{list-style:none; position:absolute; top:calc(100% + 10px); left:-14px; min-width:270px;
+    background:var(--paper); border:1px solid var(--hairline); border-radius:6px; padding:8px 0;
+    box-shadow:0 10px 28px rgba(31,30,27,.10); display:none; z-index:200}
+  .dd-menu::before{content:''; position:absolute; left:0; right:0; top:-12px; height:12px} /* hover bridge */
+  .dropdown.open .dd-menu{display:block}
+  @media (hover:hover){ .dropdown:hover .dd-menu{display:block} .dropdown:hover .caret{transform:rotate(180deg)} }
+  nav.links .dd-menu a{display:flex; align-items:center; gap:9px; padding:7px 18px; font-size:14px;
+    color:var(--faded); border-bottom:0; position:relative; white-space:nowrap}
+  nav.links .dd-menu a:hover,nav.links .dd-menu a:focus-visible{color:var(--ink); background:var(--bone)}
+  .dd-menu .lock{fill:var(--clay); opacity:.8; flex:none}
+  .dd-menu .lock-spacer{width:12px; flex:none}
+  /* "Private" hover tip */
+  .dd-menu a[data-tip]::after{content:attr(data-tip); position:absolute; right:12px; top:50%;
+    transform:translateY(-50%); font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
+    font-weight:bold; color:var(--paper); background:var(--ink); padding:2px 7px; border-radius:3px;
+    opacity:0; transition:opacity .12s; pointer-events:none}
+  .dd-menu a[data-tip]:hover::after,.dd-menu a[data-tip]:focus-visible::after{opacity:1}
+  .dd-menu a[data-tip]{padding-right:86px}
 
   /* ── Section shell ── */
   section{max-width:var(--maxw); margin:0 auto; padding:78px 28px; scroll-margin-top:70px}
@@ -142,10 +161,8 @@
     section{padding:56px 22px}
     nav.links{gap:16px}
     nav.links a{font-size:13px}
-    .nav-personal{display:flex; width:100%; border-left:none; padding-left:0; margin-left:0;
-      border-top:1px solid var(--hairline); padding-top:8px; gap:6px 14px}
-    nav.links .nav-personal a{font-size:12.5px}
-    .nav-personal .nav-label{width:100%}
+    .dd-toggle{font-size:13px}
+    .dd-menu{left:auto; right:auto; min-width:250px}
   }
 </style>
 </head>
@@ -158,17 +175,21 @@
       <a href="#home" class="active">Home</a>
       <a href="#portfolio">Professional Portfolio</a>
       <a href="hemlock.html"><svg class="tree-ico" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 2.5 8.2 8.4h2.2L6.4 14h2.6l-3.2 4.8h5.1V22h2.2v-3.2h5.1L14.9 14h2.6l-4-5.6h2.2L12 2.5z"/></svg>Hemlock Holdings</a>
+      <div class="dropdown" id="projectsMenu">
+        <button class="dd-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="projectsList">Woodworking and Personal Projects<svg class="caret" viewBox="0 0 10 6" width="9" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+        <ul class="dd-menu" id="projectsList" role="menu">
+          <li><a href="/woodworking/" role="menuitem"><span class="lock-spacer" aria-hidden="true"></span><span>Woodworking</span></a></li>
+          <li><a href="/home-projects/#overview" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Backyard Landscape Design</span></a></li>
+          <li><a href="/home-projects/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Home Projects</span></a></li>
+          <li><a href="/baby-planning/" class="private" data-tip="Private" data-key="baby-planning" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Baby Planning</span></a></li>
+          <li><a href="/NEDWaur/" class="private" data-tip="Private" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Video Game Projects</span></a></li>
+          <li><a href="/growth-and-best-practices/" class="private" data-tip="Private" data-key="growth-and-best-practices" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>Growth and Best Practices</span></a></li>
+          <li><a href="/the-bridge/" class="private" data-tip="Private" data-key="the-bridge" role="menuitem"><svg class="lock" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1.5A1.5 1.5 0 0 1 20 11.5v9A1.5 1.5 0 0 1 18.5 22h-13A1.5 1.5 0 0 1 4 20.5v-9A1.5 1.5 0 0 1 5.5 10H7zm2 0h6V7a3 3 0 0 0-6 0v3z"/></svg><span>The Bridge</span></a></li>
+        </ul>
+      </div>
       <a href="#about">About Me</a>
       <a href="#board">Personal Board of Directors</a>
       <a href="#contact">Contact</a>
-      <span class="nav-personal" role="group" aria-label="Personal projects">
-        <span class="nav-label" aria-hidden="true">Workbench</span>
-        <a href="/the-bridge">The Bridge</a>
-        <a href="/growth-and-best-practices">Growth and Best Practices</a>
-        <a href="/home-projects/">Home Projects</a>
-        <a href="/video_game_projects">Video Game Projects</a>
-        <a href="/baby-planning">Baby Planning</a>
-      </span>
     </nav>
   </div>
 </header>
@@ -312,6 +333,23 @@
     });
   }, {rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+  // Projects dropdown: hover opens it on desktop (CSS); click/tap and keyboard handled here.
+  (function(){
+    const dd = document.getElementById('projectsMenu');
+    const btn = dd.querySelector('.dd-toggle');
+    const set = (open) => { dd.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); };
+    btn.addEventListener('click', (e) => { e.stopPropagation(); set(!dd.classList.contains('open')); });
+    document.addEventListener('click', (e) => { if(!dd.contains(e.target)) set(false); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ set(false); btn.focus(); } });
+
+    // Private links point at public "nothing to see here" stubs. A browser that has visited the
+    // private key URL (/k/<token>/) carries a map of the real addresses in localStorage, so the
+    // menu swaps them in. The real addresses never appear in this public page.
+    let keys = null;
+    try { keys = JSON.parse(localStorage.getItem('mf.privateLinks') || 'null'); } catch(e) {}
+    if (keys) dd.querySelectorAll('a[data-key]').forEach(a => { if (keys[a.dataset.key]) a.href = keys[a.dataset.key]; });
+  })();
 </script>
 
 </body>

@@ -202,6 +202,9 @@
   /* designs gallery */
   .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px}
   .design{border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--bg); cursor:zoom-in; padding:0; text-align:left}
+  .design-wrap{display:flex; flex-direction:column; gap:6px}
+  .design-wrap .design{width:100%}
+  .design-link{font-size:13px; font-weight:600; padding:0 4px}
   .design img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--tint); border-bottom:1px solid var(--line)}
   .design .dmeta{padding:9px 11px}
   .design .dt{font-weight:700; font-size:13px}
@@ -537,7 +540,9 @@ var SECTIONS = [
 ];
 var DESIGNS = [
   { src:'/home-projects/designs/backyard-2026-10-11-first-draft.webp', title:'First Draft', date:'10/11/26',
-    note:'Hand sketch: tree cluster SW, shrubs along the patio, lawn in the middle.' }
+    note:'Hand sketch: tree cluster SW, shrubs along the patio, lawn in the middle.' },
+  { src:'/home-projects/designs/backyard-2026-11-15-design-v2.svg', title:'Design v2: Planting Plan', date:'11/15/26',
+    note:'Every spot gets a plant (5 Hinokis), plus 3 berms from the soil pile.', href:'/home-projects/backyard-plan/', hrefLabel:'Full plan, plant list & crew notes' }
 ];
 
 var PLANTS = Array.isArray(window.PLANTS) ? window.PLANTS : [];
@@ -1120,9 +1125,10 @@ document.addEventListener('keydown', function(e){
 /* ───────────── designs gallery ───────────── */
 function renderDesigns(){
   $('gallery').innerHTML = DESIGNS.map(function(d, i){
-    return '<button type="button" class="design" data-design="' + i + '" aria-label="' + esc('Open ' + d.title + ', ' + d.date) + '">' +
+    return '<div class="design-wrap"><button type="button" class="design" data-design="' + i + '" aria-label="' + esc('Open ' + d.title + ', ' + d.date) + '">' +
       '<img loading="lazy" src="' + esc(d.src) + '" alt="' + esc(d.title) + '">' +
-      '<div class="dmeta"><div class="dt">' + esc(d.title) + '</div><div class="dd">' + esc(d.date) + (d.note ? ' &middot; ' + esc(d.note) : '') + '</div></div></button>';
+      '<div class="dmeta"><div class="dt">' + esc(d.title) + '</div><div class="dd">' + esc(d.date) + (d.note ? ' &middot; ' + esc(d.note) : '') + '</div></div></button>' +
+      (d.href ? '<a class="design-link" href="' + esc(d.href) + '">' + esc(d.hrefLabel || 'Open') + ' &rarr;</a>' : '') + '</div>';
   }).join('') || '<p class="caveat">No designs yet.</p>';
 }
 $('gallery').addEventListener('click', function(e){
